@@ -3,12 +3,11 @@ import { Link } from 'react-router'
 import { brandNames, brandClasses } from '../custom';
 import Navigation from './navigation';
 
-
 var NavigationBar = React.createClass({
   render() {
     let queryMatches = true;
     return (
-      <div className='container unlimiter'>
+      <div>
 
         {/* Top left logo */ }
         <div className={`fill-denim z100 dark width16 bottom-shadow fixed-top pad1y pad2x`}>
@@ -59,15 +58,11 @@ var NavigationBar = React.createClass({
             </div>
           </div>
         </div>
-        {/* End navigation bar */ }
 
-        {/* Desktop nav */ }
-        {queryMatches.desktop && <div className='space-top5 overflow-auto pad1 width16 sidebar fixed-left fill-dark dark'>
-          <Navigation
-            navigationItemClicked={this.navigationItemClicked}
-            activeSection={activeSection}
-            ast={ast} />
-        </div>}
+
+
+
+
       </div>);
   }
 });
