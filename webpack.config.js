@@ -1,9 +1,10 @@
 module.exports = {
-  entry: './src/index.js',
+  context: __dirname + "/src",
+  entry: './index.js',
 
   output: {
+    path: __dirname + "/site",
     filename: 'bundle.js',
-    publicPath: ''
   },
 
   module: {

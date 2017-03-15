@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { brandNames, brandClasses } from '../custom';
+import Navigation from './navigation';
 
 
-export default React.createClass({
+var NavigationBar = React.createClass({
   render() {
     let queryMatches = true;
     return (
@@ -58,7 +59,17 @@ export default React.createClass({
             </div>
           </div>
         </div>
-      </div>
-    )
+        {/* End navigation bar */ }
+
+        {/* Desktop nav */ }
+        {queryMatches.desktop && <div className='space-top5 overflow-auto pad1 width16 sidebar fixed-left fill-dark dark'>
+          <Navigation
+            navigationItemClicked={this.navigationItemClicked}
+            activeSection={activeSection}
+            ast={ast} />
+        </div>}
+      </div>);
   }
-})
+});
+
+module.exports = NavigationBar;
