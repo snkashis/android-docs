@@ -29,8 +29,8 @@ module.exports = React.createClass({
           <link href='css/custom.css' rel='stylesheet' />
         </head>
         <body>
-          <div id="react-mount" dangerouslySetInnerHTML={{ __html: this.props.body }} />
-          <script src={prefixLink("/bundle.js")}/>
+        <div id="react-mount" dangerouslySetInnerHTML={{__html: this.props.body}} />
+        <script src={prefixLink("/bundle.js")}/>
         </body>
       </html>
     )
