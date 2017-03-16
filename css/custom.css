@@ -1,0 +1,7 @@
+.bg-denim {
+  background-color: #50667f !important;
+}
+
+.btn {
+  border-radius: 0; /* fully round by default */
+}
