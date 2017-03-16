@@ -27,7 +27,7 @@ module.exports = React.createClass({
         <div className={'w240'}></div>
 
             <Link className={`flex-parent-inline p12 btn color-white color-white-on-active bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s ml3 ${mapSdkActive ? 'is-active' : ''}`} to={prefixLink('/map-sdk/5.0.0/getting-started/')}>Map SDK</Link>
-            <Link className={`flex-parent-inline p12 btn color-white color-white-on-active bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s ml3 ${mapboxJavaActive ? 'is-active' : ''}`} to={prefixLink('/mapbox-java/')}>Mapbox Java</Link>
+            <Link className={`flex-parent-inline p12 btn color-white color-white-on-active bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s ml3 ${mapboxJavaActive ? 'is-active' : ''}`} to={prefixLink('/mapbox-java/2.0.0/getting-started/')}>Mapbox Java</Link>
             <Link className={`flex-parent-inline p12 btn color-white color-white-on-active bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s ml3 ${examplesActive ? 'is-active' : ''}`} to={prefixLink('/examples/')}>Examples</Link>
 
 

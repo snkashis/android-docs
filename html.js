@@ -17,6 +17,7 @@ module.exports = React.createClass({
     if (this.props.title) {
       title = this.props.title;
     }
+
     return (
       <html lang="en">
         <head>
@@ -27,6 +28,7 @@ module.exports = React.createClass({
           <link href='https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.min.css' rel='stylesheet'/>
           <script async defer src='https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.js'></script>
           <link href='css/custom.css' rel='stylesheet' />
+          <link href='css/markdown-styles.css' rel='stylesheet' />
         </head>
         <body>
         <div id="react-mount" dangerouslySetInnerHTML={{__html: this.props.body}} />

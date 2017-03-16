@@ -14,3 +14,15 @@
     padding: 50px;
     width: inherit;
 }
+
+code p {
+  font-weight: lighter;
+  font-size: 11px;
+}
+
+code, pre {
+  font-family: 'Fira Mono Medium', Monaco, monospace;
+  font-weight: bold;
+  font-size: 13px;
+  word-break: normal;
+}

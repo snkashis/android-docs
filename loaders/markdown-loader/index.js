@@ -1,30 +1,53 @@
 import frontMatter from 'front-matter'
-import markdownIt from 'markdown-it'
+import markdownIt from 'markdown-it';
+import markdownItSub from 'markdown-it-sub';
+import markdownItFootnote from 'markdown-it-footnote';
+import markdownItDeflist from 'markdown-it-deflist';
+import markdownItAbbr from 'markdown-it-abbr';
+import markdownItAttrs from 'markdown-it-attrs';
+import markdownItAnchor from 'markdown-it-anchor';
+import markdownItDecorate from 'markdown-it-decorate';
 import hljs from 'highlight.js'
 import objectAssign from 'object-assign'
+import mdFigCaption from './figcaption';
 
 const highlight = (str, lang) => {
-  if ((lang !== null) && hljs.getLanguage(lang)) {
+  if (lang && hljs.getLanguage(lang)) {
     try {
-      return hljs.highlight(lang, str).value
-    } catch (_error) {
-      console.error(_error)
-    }
+      return '<pre class="col col--6 col--offl6 bg-gray-dark hljs"><code>' +
+             hljs.highlight(lang, str, true).value +
+             '</code></pre>';
+    } catch (__) {}
   }
-  try {
-    return hljs.highlightAuto(str).value
-  } catch (_error) {
-    console.error(_error)
-  }
-  return ''
+
+  return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
 }
+
+
+
+
+
+
 
 const md = markdownIt({
   html: true,
   linkify: true,
   typographer: true,
-  highlight,
-})
+  highlight
+}).use(mdFigCaption)
+.use(markdownItSub)
+  .use(markdownItFootnote)
+  .use(markdownItDeflist)
+  .use(markdownItAbbr)
+  .use(markdownItAttrs)
+  .use(markdownItDecorate)
+  .use(markdownItAnchor, {
+    level: 1,
+    permalink: false,
+    permalinkClass: 'header-anchor',
+    permalinkSymbol: '¶',
+    permalinkBefore: false
+  });
 
 module.exports = function (content) {
   this.cacheable()
