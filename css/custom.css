@@ -25,10 +25,14 @@ code p {
 }
 
 code, pre {
-  font-family: 'Fira Mono Medium', Monaco, monospace;
-  font-weight: bold;
-  font-size: 13px;
-  word-break: normal;
+  font-family: 'Fira Mono Medium', Monaco, monospace !important;
+  font-weight: bold !important;
+  font-size: 13px !important;
+  word-break: normal !important;
+}
+
+pre {
+  background-color: #232323 !important;
 }
 
 .toc {

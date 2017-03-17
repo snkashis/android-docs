@@ -6,6 +6,7 @@ import { Container, Grid, Span } from 'react-responsive-grid';
 import { config } from 'config';
 
 import 'css/custom.css';
+import 'css/markdown-styles.css'
 
 module.exports = React.createClass({
   propTypes () {
@@ -31,7 +32,7 @@ module.exports = React.createClass({
 
             {this.props.children}
 
-        
+
       </div>
     );
   }
