@@ -2,7 +2,6 @@
 title: Geocoder
 path: /mapbox-java/2.0.0/geocoder/
 ---
-## Geocoder
 Included in the mapbox-java-services module you'll find the wrapper for our geocoder API. Specifically, the MapboxGeocoding is used to request both geocoding and reverse geocoding. Forward geocoding will take a String such as a street address or point of interest and transform it into a [Position](#position-and-point-objects) object. Reverse geocoding does the opposite, taking in a Position object and transforming it into an address. The amount of detail provided in the response varies, for example one response might contain a full address while another response will only contain the city and country.
 
 It's recommended to first read over the general [geocoding API](https://www.mapbox.com/api-documentation/#geocoding) documentation since not all available parameters are listed here.

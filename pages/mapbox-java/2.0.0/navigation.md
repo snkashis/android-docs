@@ -2,7 +2,6 @@
 title: Navigation
 path: /mapbox-java/2.0.0/navigation/
 ---
-## Navigation
 
 <!-- preview -->
 
@@ -12,20 +11,7 @@ The navigation part of Mapbox Java is built on top of our Directions API and con
 
 Much of the navigation APIs require being inside an Android application. However, we do expose some of the lower level logic inside the RouteUtils class.
 
-Ensure your Android project includes the `mapbox-android-ui` dependency to gain full access to the navigation APIs. Much of the navigation logic is handled in an Android service meaning you'll be able to continue tracking the users progress along the navigation route even when your application is not in the foreground. Since this is a service, it's required to add the service inside your `AndroidManifest.xml` file. In addition, navigation requires adding two permissions, internet and fine location. The user location permission should also be checked during runtime using the PermissionManager.
-
-```xml
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-<uses-permission android:name="android.permission.INTERNET"/>
-
-<application>
-
-  ...
-
-  <service android:name="com.mapbox.services.android.navigation.NavigationService"/>
-
-</application>
-```
+Ensure your Android project includes the `mapbox-android-ui` dependency to gain full access to the navigation APIs. Much of the navigation logic is handled in an Android service meaning you'll be able to continue tracking the users progress along the navigation route even when your application is not in the foreground. A few permissions are added into your application, there's no need to add the permissions by default due to manifest merging. The permissions in use are the Internet permission and the access fine location.
 
 ## MapboxNavigation object
 
@@ -55,11 +41,11 @@ navigation.setLocationEngine(locationEngine);
 Now that you have setup a way for the MapboxNavigation object to get the users location, the other thing it will need is a route. The order in which these Positions are passed in doesn't matter as long as they are both provided before calling `getRoute`.
 
 ```java
-navigation.setStart(Position.fromCoordinates());
-navigation.setEnd(Position.fromCoordinates());
+navigation.setOrigin(Position.fromCoordinates());
+navigation.setDestination(Position.fromCoordinates());
 ```
 
-Actually requesting the route's done by calling `getRoute` passing in a new callback. If you've ever worked with Retrofit, the callback here will look familiar since this is what we are using under the hood.
+Actually requesting the route's done by calling `getRoute` passing in a new callback. If you've ever worked with Retrofit, the callback here will look familiar since this is what we are using under the hood. Inside the onResponse, you can draw the directions route on a map or present time and distance since the full directions response is provided.
 
 ```java
 navigation.getRoute(new Callback<DirectionsResponse>() {
@@ -113,7 +99,7 @@ Chances are, if you are using the navigation SDK, you'll want to listen in to ev
 The event callback is handy for being notified when the navigation session has started, user has canceled the session, or the user has arrived at their final destination. From this information you are able to determine when to show navigation notifications, know when it's safe to stop requesting user location updates, and much more.
 
 ```java
-navigation.setEventCallback(new NavigationEventListener() {
+navigation.setNavigationEventListener(new NavigationEventListener() {
   @Override
   public void onRunning(boolean running) {
 

@@ -3,7 +3,6 @@ title: Mapbox Java
 path: /mapbox-java/2.0.0/getting-started/
 ---
 
-## Introduction
 Mapbox Java is an open source toolset for building applications that need navigation, directions, geocoding, static map imagery, etc. It conveniently wraps Mapbox APIs and builds off of them with with tools useful for your applications. This SDK consist of two parts:
 
 1. **Mapbox-Java-Services:** Has no dependency on the Android API and can be used in any of your Java projects.
@@ -19,13 +18,13 @@ Mapbox Java is an open source toolset for building applications that need naviga
 ### API reference
 All public methods in all the project modules are well documented and even include a since tag so you can determine when an API was first added. A link for all the module javadoc pages can be found in the list below:
 
-- [mapbox-java-core](http://mapbox.com/mapbox-java/api/libjava-core/2.0.0-beta.3/)
-- [mapbox-java-geojson](http://mapbox.com/mapbox-java/api/libjava-geojson/2.0.0-beta.3/)
-- [mapbox-java-services](http://mapbox.com/mapbox-java/api/libjava-services/2.0.0-beta.3/)
-- [mapbox-java-services-rx](http://mapbox.com/mapbox-java/api/libjava-services-rx/2.0.0-beta.3/)
-- [mapbox-android-services](http://mapbox.com/mapbox-java/api/libandroid-services/2.0.0-beta.3/)
-- [mapbox-android-telemetry](http://mapbox.com/mapbox-java/api/libandroid-telemetry/2.0.0-beta.3/)
-- [mapbox-android-ui](http://mapbox.com/mapbox-java/api/libandroid-ui/2.0.0-beta.3/)
+- [mapbox-java-core](http://mapbox.com/mapbox-java/api/libjava-core/2.0.0/)
+- [mapbox-java-geojson](http://mapbox.com/mapbox-java/api/libjava-geojson/2.0.0/)
+- [mapbox-java-services](http://mapbox.com/mapbox-java/api/libjava-services/2.0.0/)
+- [mapbox-java-services-rx](http://mapbox.com/mapbox-java/api/libjava-services-rx/2.0.0/)
+- [mapbox-android-services](http://mapbox.com/mapbox-java/api/libandroid-services/2.0.0/)
+- [mapbox-android-telemetry](http://mapbox.com/mapbox-java/api/libandroid-telemetry/2.0.0/)
+- [mapbox-android-ui](http://mapbox.com/mapbox-java/api/libandroid-ui/2.0.0/)
 
 ### Access tokens
 If you plan to use any of our APIs such as directions, geocoding, navigation, etc. you'll need to have a Mapbox access token which you'll pass in as a parameter. An access token isn't needed if you plan to use Mapbox Java only for GeoJSON parsing, or Turf calculations. To learn more about access tokens, read [this document](https://www.mapbox.com/help/create-api-access-token/).
