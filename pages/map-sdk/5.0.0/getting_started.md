@@ -1,14 +1,11 @@
 ---
-title: Getting Started
+title: Map SDK
 path: /map-sdk/5.0.0/getting-started/
 ---
 
 ## Introduction
 
 The Mapbox Maps SDK is an open source toolset for displaying maps inside your application. A demo app is available on the Google Play Store that includes an abundance of examples, including the ones referenced throughout this documentation.
-
-<!-- example -->
-This is cool.
 
 ### Support and contributions
 

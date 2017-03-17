@@ -9,12 +9,11 @@ import markdownItAnchor from 'markdown-it-anchor';
 import markdownItDecorate from 'markdown-it-decorate';
 import hljs from 'highlight.js'
 import objectAssign from 'object-assign'
-import mdFigCaption from './figcaption';
 
 const highlight = (str, lang) => {
   if (lang && hljs.getLanguage(lang)) {
     try {
-      return '<pre class="col col--6 col--offl6 bg-gray-dark hljs"><code>' +
+      return '<pre class="hljs"><code>' +
              hljs.highlight(lang, str, true).value +
              '</code></pre>';
     } catch (__) {}
@@ -23,19 +22,12 @@ const highlight = (str, lang) => {
   return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
 }
 
-
-
-
-
-
-
 const md = markdownIt({
   html: true,
   linkify: true,
   typographer: true,
   highlight
-}).use(mdFigCaption)
-.use(markdownItSub)
+}).use(markdownItSub)
   .use(markdownItFootnote)
   .use(markdownItDeflist)
   .use(markdownItAbbr)

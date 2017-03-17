@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Mapbox Java
 path: /mapbox-java/2.0.0/getting-started/
 ---
 

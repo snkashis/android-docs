@@ -10,8 +10,12 @@
   position: fixed;
   top: 42px;
   bottom: 0px;
-    overflow-y: scroll;
-    padding: 50px;
+    overflow-y: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-top: 24px;
+    margin-left: 250px;
     width: inherit;
 }
 
@@ -25,4 +29,16 @@ code, pre {
   font-weight: bold;
   font-size: 13px;
   word-break: normal;
+}
+
+.toc {
+  position: fixed;
+  top: 42px;
+  bottom: 0px;
+    overflow-y: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 24px;
+    width: inherit;
 }
