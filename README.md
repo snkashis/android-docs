@@ -1,4 +1,4 @@
-## android-docs
+# Mapbox Android documentation
 Inside this repo, you'll find Android documentation for both the Maps SDK and Mapbox Java SDK.
 
 To view the documentation, head over to [the website]().
