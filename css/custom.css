@@ -1,22 +1,26 @@
 .bg-denim {
-  background-color: #50667f !important;
+  background-color: #607d9c !important;
 }
 
 .btn {
   border-radius: 0; /* fully round by default */
 }
 
+.txt-s {
+  line-height: inherit;
+}
+
 .main-content {
   position: fixed;
-  top: 42px;
+  top: 48px;
   bottom: 0px;
-    overflow-y: auto;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 50px;
-    padding-top: 24px;
-    margin-left: 250px;
-    width: inherit;
+  overflow-y: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-top: 24px;
+  margin-left: 250px;
+  width: inherit;
 }
 
 code p {
@@ -36,6 +40,7 @@ pre {
 }
 
 .toc {
+  background: #232323;
   position: fixed;
   top: 42px;
   bottom: 0px;
@@ -45,4 +50,5 @@ pre {
     padding-bottom: 20px;
     padding-top: 24px;
     width: inherit;
+    border-right: 1px solid grey;
 }

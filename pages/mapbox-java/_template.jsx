@@ -52,12 +52,12 @@ module.exports = React.createClass({
     return (
       <div className={'grid'}>
         {/* Sidebar Navigation */}
-        <div className={'col--3 toc'}>
+        <div className={'w240 toc'}>
           {docPages}
         </div>
 
         {/* Content */}
-        <div className={'prose scroll-styled main-content'}>
+        <div className={'prose ml240 scroll-styled main-content'}>
           <div className={'col--10'}>
             {this.props.children}
           </div>
