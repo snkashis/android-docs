@@ -22,7 +22,7 @@ Now navigate to this cloned projects root folder and execute:
 ```
 npm install
 ```
-
+ 
 #### Host locally
 When editing documents or working on the site, you'll most likely want to run it locally to enable hot reload editing. Tweak your pages, templates, and styles and see changes in real time. To run a locally hosted version of the documentation, follow the installation instructions above, and then within the root folder execute the develop command in terminal:
 
