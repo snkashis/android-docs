@@ -18,6 +18,11 @@ module.exports = React.createClass({
       title = this.props.title;
     }
 
+    let css
+    if (process.env.NODE_ENV === 'production') {
+      css = <style dangerouslySetInnerHTML={{ __html: require('!raw!./public/styles.css') }} />
+    }
+
     return (
       <html lang="en">
         <head>
@@ -27,7 +32,7 @@ module.exports = React.createClass({
           <title>{title}</title>
           <link href='https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.min.css' rel='stylesheet'/>
           <script async defer src='https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.js'></script>
-          <link href='css/custom.css' rel='stylesheet' />
+          {css}
         </head>
         <body>
         <div id="react-mount" dangerouslySetInnerHTML={{__html: this.props.body}} />

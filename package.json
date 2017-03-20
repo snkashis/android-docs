@@ -9,11 +9,7 @@
   },
   "author": "Cameron Mace",
   "license": "ISC",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+
   "dependencies": {
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",

@@ -5,7 +5,7 @@ import includes from 'underscore.string/include';
 import { Container, Grid, Span } from 'react-responsive-grid';
 import find from 'lodash/find';
 
-import 'css/custom.css';
+import 'css/styles.css';
 
 import pageList from './_pages.yaml';
 

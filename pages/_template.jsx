@@ -5,7 +5,7 @@ import includes from 'underscore.string/include';
 import { Container, Grid, Span } from 'react-responsive-grid';
 import { config } from 'config';
 
-import 'css/custom.css';
+import 'css/styles.css';
 import 'css/markdown-styles.css'
 
 module.exports = React.createClass({
