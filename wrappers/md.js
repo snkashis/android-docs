@@ -8,6 +8,7 @@ module.exports = React.createClass({
       route: React.PropTypes.object,
     }
   },
+
   render () {
     const post = this.props.route.page.data
 

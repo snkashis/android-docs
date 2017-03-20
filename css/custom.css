@@ -40,15 +40,17 @@ pre {
 }
 
 .toc {
+  list-style-type: none;
+  color: #ffffff;
   background: #232323;
   position: fixed;
   top: 42px;
   bottom: 0px;
-    overflow-y: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    padding-top: 24px;
-    width: inherit;
-    border-right: 1px solid grey;
+  overflow-y: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 24px;
+  width: inherit;
+  border-right: 1px solid grey;
 }

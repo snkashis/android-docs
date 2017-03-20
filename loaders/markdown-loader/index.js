@@ -7,8 +7,9 @@ import markdownItAbbr from 'markdown-it-abbr';
 import markdownItAttrs from 'markdown-it-attrs';
 import markdownItAnchor from 'markdown-it-anchor';
 import markdownItDecorate from 'markdown-it-decorate';
-import hljs from 'highlight.js'
-import objectAssign from 'object-assign'
+
+import hljs from 'highlight.js';
+import objectAssign from 'object-assign';
 
 const highlight = (str, lang) => {
   if (lang && hljs.getLanguage(lang)) {
@@ -33,18 +34,21 @@ const md = markdownIt({
   .use(markdownItAbbr)
   .use(markdownItAttrs)
   .use(markdownItDecorate)
-  .use(markdownItAnchor, {
-    level: 1,
-    permalink: false,
-    permalinkClass: 'header-anchor',
-    permalinkSymbol: '¶',
-    permalinkBefore: false
+  .use(require('markdown-it-anchor'), {
+    "level": "1",
+    "permalinkClass": "anchor",
+    "permalink": false
   });
 
 module.exports = function (content) {
   this.cacheable()
   const meta = frontMatter(content)
-  const body = md.render(meta.body)
+  const body = md.render(meta.body, {
+    tocCallback: function(tocMarkdown, tocArray, tocHtml) {
+      console.log(tocHtml)
+
+    }
+  })
   const result = objectAssign({}, meta.attributes, {
     body,
   })

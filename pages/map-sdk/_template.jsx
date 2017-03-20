@@ -32,6 +32,7 @@ module.exports = React.createClass({
       </option>
 
     )
+
     const docPages = childPages.map((child) => {
       const isActive = prefixLink(child.path) === this.props.location.pathname
       return (

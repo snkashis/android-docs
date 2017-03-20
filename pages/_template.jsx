@@ -31,8 +31,8 @@ module.exports = React.createClass({
           </div>
         </div>
 
-            {this.props.children}
-        
+          {this.props.children}
+
       </div>
     );
   }
