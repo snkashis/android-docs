@@ -16,7 +16,7 @@ To install Gatsby:
 ```
 npm install -g gatsby
 ```
-
+ 
 Now navigate to this cloned projects root folder and execute:
 
 ```
