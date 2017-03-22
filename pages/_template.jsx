@@ -25,9 +25,9 @@ module.exports = React.createClass({
         <div className={'col--12 z1 hmin48 bg-denim shadow-darken50 fixed'}>
           {/* Site Navigation */}
           <div className={'ml240'}>
-            <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapSdkActive ? 'is-active' : ''}`} to={prefixLink('/map-sdk/5.0.0/getting-started/')}>Map SDK</Link>
-            <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapboxJavaActive ? 'is-active' : ''}`} to={prefixLink('/mapbox-java/2.0.0/getting-started/')}>Mapbox Java</Link>
-            <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${examplesActive ? 'is-active' : ''}`} to={prefixLink('/examples/')}>Examples</Link>
+            <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapSdkActive ? 'is-active' : ''}`} to={'/map-sdk/5.0.0/getting-started/'}>Map SDK</Link>
+            <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapboxJavaActive ? 'is-active' : ''}`} to={'/mapbox-java/2.0.0/getting-started/'}>Mapbox Java</Link>
+            <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${examplesActive ? 'is-active' : ''}`} to={'/examples/'}>Examples</Link>
           </div>
         </div>
 
