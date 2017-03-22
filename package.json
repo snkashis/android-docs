@@ -8,7 +8,7 @@
     "url": "git@github.com:mapbox/android-docs.git"
   },
   "scripts": {
-    "build": "gatsby build --prefix-links",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
