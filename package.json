@@ -33,6 +33,11 @@
     "react-router": "^2.0.0",
     "underscore.string": "^3.2.2"
   },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "keywords": [
     "gatsby",
     "android",
