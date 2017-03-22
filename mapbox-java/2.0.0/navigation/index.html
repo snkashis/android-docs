@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Navigation | Android Documentation</title><link href="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.min.css" rel="stylesheet"/><script async="" defer="" src="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.js"></script><style>.bg-denim{background-color:#607d9c!important}.btn{border-radius:0}.txt-s{line-height:inherit}.main-content{position:fixed;top:48px;bottom:0;overflow-y:auto;padding:24px 50px 50px;margin-left:250px;width:inherit}code p{font-weight:lighter;font-size:11px}code,pre{font-family:Fira Mono Medium,Monaco,monospace!important;font-weight:700!important;font-size:13px!important;word-break:normal!important}pre{background-color:#232323!important}.toc{list-style-type:none;color:#fff;background:#232323;position:fixed;top:42px;bottom:0;overflow-y:auto;padding:24px 20px 20px;width:inherit;border-right:1px solid grey}.hljs{color:#a9b7c6;background:#232323;display:block;overflow-x:auto;padding:.5em}.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#6897bb}.hljs-deletion,.hljs-keyword,.hljs-selector-tag{color:#cc7832}.hljs-link,.hljs-template-variable,.hljs-variable{color:#56b881}.hljs-comment,.hljs-quote{color:gray}.hljs-meta{color:#bbb529}.hljs-addition,.hljs-attribute,.hljs-string{color:#56b881}.hljs-section,.hljs-title,.hljs-type{color:#ffc66d}.hljs-name,.hljs-selector-class,.hljs-selector-id{color:#e8bf6a}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}</style></head><body><div id="react-mount"><div class="grid" data-reactroot="" data-reactid="1" data-react-checksum="-1898797368"><div class="col--12 z1 hmin48 bg-denim shadow-darken50 fixed" data-reactid="2"><div class="ml240" data-reactid="3"><a class="py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  " href="/android-docs/map-sdk/5.0.0/getting-started/" data-reactid="4">Map SDK</a><a class="py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  is-active" href="/android-docs/mapbox-java/2.0.0/getting-started/" data-reactid="5">Mapbox Java</a><a class="py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  " href="/android-docs/examples/" data-reactid="6">Examples</a></div></div><div class="grid" data-reactid="7"><div class="w240 toc" data-reactid="8"><li data-reactid="9"><a style="text-decoration:none;" href="/android-docs/mapbox-java/2.0.0/getting-started/" data-reactid="10">Mapbox Java</a></li><li data-reactid="11"><a style="text-decoration:none;" href="/android-docs/mapbox-java/2.0.0/navigation/" data-reactid="12"><strong data-reactid="13">Navigation</strong></a></li><li data-reactid="14"><a style="text-decoration:none;" href="/android-docs/mapbox-java/2.0.0/geocoder/" data-reactid="15">Geocoder</a></li><li data-reactid="16"><a style="text-decoration:none;" href="/android-docs/mapbox-java/2.0.0/telemetry/" data-reactid="17">Telemetry</a></li></div><div class="prose ml240 scroll-styled main-content" data-reactid="18"><div class="col--10" data-reactid="19"><div class="markdown" data-reactid="20"><h1 data-reactid="21">Navigation</h1><div data-reactid="22"><!-- preview -->
+<p>The navigation part of Mapbox Java is built on top of our Directions API and contains logic needed to get timed navigation instructions. The calculations use the users current location and compare it to the current route the user’s traversing to provide critical information at any given moment.</p>
+<blockquote>
+<p>Currently this is only offered for Driving instructions and takes traffic into consideration by default.</p>
+</blockquote>
+<p>Much of the navigation APIs require being inside an Android application. However, we do expose some of the lower level logic inside the RouteUtils class.</p>
+<p>Ensure your Android project includes the <code>mapbox-android-ui</code> dependency to gain full access to the navigation APIs. Much of the navigation logic is handled in an Android service meaning you’ll be able to continue tracking the users progress along the navigation route even when your application is not in the foreground. A few permissions are added into your application, there’s no need to add the permissions by default due to manifest merging. The permissions in use are the Internet permission and the access fine location.</p>
+<h2 id="mapboxnavigation-object">MapboxNavigation object</h2>
+<!-- preview -->
+<p>Most of the navigation options are found inside the MapboxNavigation class including fetching the route, starting and ending the navigation session and attaching listeners for events you’d like to handle. Assign and initialize a new instance of MapboxNavigation inside your Navigation activity. When initializing, you’ll need to pass in a <code>Context</code> and your Mapbox access token. Checkout the access token section in the getting started section to learn how to attain a free access token.</p>
+<pre class="hljs"><code>MapboxNavigation navigation = <span class="hljs-keyword">new</span> MapboxNavigation(<span class="hljs-keyword">this</span>, MAPBOX_ACCESS_TOKEN);
+</code></pre>
+<h3 id="locationengine">LocationEngine</h3>
+<!-- preview -->
+<p>Navigation requires the users location in order to operate, this is done using the LocationEngine class introduced in 2.0. For detailed instructions on how to use this class, visit the LocationEngine documentation. You’ll need to setup an instance of a location engine and pass it into the MapboxNavigation object.</p>
+<pre class="hljs"><code>LocationEngine locationEngine = LostLocationEngine.getLocationEngine(<span class="hljs-keyword">this</span>);
+navigation.setLocationEngine(locationEngine);
+</code></pre>
+<h3 id="requesting-a-route">Requesting a route</h3>
+<!-- preview -->
+<p>Now that you have setup a way for the MapboxNavigation object to get the users location, the other thing it will need is a route. The order in which these Positions are passed in doesn’t matter as long as they are both provided before calling <code>getRoute</code>.</p>
+<pre class="hljs"><code>navigation.setOrigin(Position.fromCoordinates());
+navigation.setDestination(Position.fromCoordinates());
+</code></pre>
+<p>Actually requesting the route’s done by calling <code>getRoute</code> passing in a new callback. If you’ve ever worked with Retrofit, the callback here will look familiar since this is what we are using under the hood. Inside the onResponse, you can draw the directions route on a map or present time and distance since the full directions response is provided.</p>
+<pre class="hljs"><code>navigation.getRoute(<span class="hljs-keyword">new</span> Callback&lt;DirectionsResponse&gt;() {
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onResponse</span><span class="hljs-params">(
+    Call&lt;DirectionsResponse&gt; call, Response&lt;DirectionsResponse&gt; response)</span> </span>{
+
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFailure</span><span class="hljs-params">(Call&lt;DirectionsResponse&gt; call, Throwable t)</span> </span>{
+
+  }
+});
+</code></pre>
+<h2 id="routeprogress-object">RouteProgress object</h2>
+<!-- preview -->
+<p>The RouteProgress class contains all progress information of the user along the route, leg and steps. The objects provided inside <code>AlertLevelChangeListener</code> and <code>ProgressChangeListener</code> allowing you to get distance measurements, the percentage of route complete, current step index, and much more. A full list of the APIs exposed in RouteProgress is given in the table below.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getPreviousAlertLevel</td>
+<td style="text-align:center">Returns the previous alert level provided by the AlertLevelChangeListener</td>
+</tr>
+<tr>
+<td>getRoute</td>
+<td style="text-align:center">Get the route acquired from the directions API and being used for navigation.</td>
+</tr>
+<tr>
+<td>getDistanceTraveledOnRoute</td>
+<td style="text-align:center">The total distance the user has traveled along the route</td>
+</tr>
+<tr>
+<td>getFractionTraveledOnRoute</td>
+<td style="text-align:center">A <code>float</code> value between 0 and 1 giving the total percentage the user has completed in the navigation session.</td>
+</tr>
+<tr>
+<td>getDistanceRemainingOnRoute</td>
+<td style="text-align:center">The distance between the users current location to the next maneuver.</td>
+</tr>
+<tr>
+<td>getLegIndex</td>
+<td style="text-align:center">The routes current leg index the user’s on.</td>
+</tr>
+<tr>
+<td>getCurrentLeg</td>
+<td style="text-align:center">Returns the routes current leg as a <code>routeLeg</code> object.</td>
+</tr>
+<tr>
+<td>getUpComingStep</td>
+<td style="text-align:center">Returns the next step the user will be on from their current location.</td>
+</tr>
+<tr>
+<td>getStepIndex</td>
+<td style="text-align:center">The routes current step index the user’s on.</td>
+</tr>
+<tr>
+<td>getCurrentStep</td>
+<td style="text-align:center">Returns the current step the user’s on.</td>
+</tr>
+<tr>
+<td>getDistanceTraveledOnStep</td>
+<td style="text-align:center">Measures from the current steps maneuver to the users snapped position.</td>
+</tr>
+<tr>
+<td>getDurationRemainingOnStep</td>
+<td style="text-align:center">The estimated time remaining till the user reaches end of current step.</td>
+</tr>
+<tr>
+<td>getDistanceRemainingOnStep</td>
+<td style="text-align:center">Measures from the users current snapped position to the last coordinate in the step.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>This object will be null from when the NavigationService starts till the first location change occurs. Therefore if you are using this to initialize a variable, it’s reasonable to check if null beforehand. Since this object is mutable, the values given can change at anytime.</p>
+</blockquote>
+<h2 id="listeners">Listeners</h2>
+<!-- preview -->
+<p>Chances are, if you are using the navigation SDK, you’ll want to listen in to events such as when the user makes progress along the route or when they go off route. By listening into these events you are able to provide the user with instructions at the proper times. At the bare minimum, it is strongly encouraged to use the <code>OnProgressChange</code> listener which is called every time the users locations updated.</p>
+<h3 id="navigationrunning">NavigationRunning</h3>
+<!-- preview -->
+<p>The event callback is handy for being notified when the navigation session has started, user has canceled the session, or the user has arrived at their final destination. From this information you are able to determine when to show navigation notifications, know when it’s safe to stop requesting user location updates, and much more.</p>
+<pre class="hljs"><code>navigation.setNavigationEventListener(<span class="hljs-keyword">new</span> NavigationEventListener() {
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onRunning</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> running)</span> </span>{
+
+  }
+});
+</code></pre>
+<h3 id="alertlevelchange">AlertLevelChange</h3>
+<!-- preview -->
+<p>Listening in to the alertLevelChange is useful for correctly getting the timing of user notifications while the user is traversing along the route. The listener’s invoked only when the user’s reached a specific point along the current step they are on. The alert thresholds can be adjusted within the constants file while developing and are based on time (in seconds) till the user reaches the next maneuver.</p>
+<table>
+<thead>
+<tr>
+<th>Alert level</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DEPART_ALERT_LEVEL</code></td>
+<td style="text-align:center">Occurs when the user first leaves the origin and shouldn’t be invoked again for the rest of the navigation session.</td>
+</tr>
+<tr>
+<td><code>LOW_ALERT_LEVEL</code></td>
+<td style="text-align:center">Invoked right after the user performs a maneuver and they have started traversing along a new step.</td>
+</tr>
+<tr>
+<td><code>MEDIUM_ALERT_LEVEL</code></td>
+<td style="text-align:center">Occurs when the user’s x seconds away from their next maneuver. By default this is 70 seconds from next maneuver.</td>
+</tr>
+<tr>
+<td><code>HIGH_ALERT_LEVEL</code></td>
+<td style="text-align:center">Useful to know when the users about to perform the next maneuver on the route. By default this is 15 seconds.</td>
+</tr>
+<tr>
+<td><code>ARRIVE_ALERT_LEVEL</code></td>
+<td style="text-align:center">Occurs when the user has performed the last maneuver along the route and reached their final destination.</td>
+</tr>
+<tr>
+<td><code>NONE_ALERT_LEVEL</code></td>
+<td style="text-align:center">In a rare case when the alert level can not be determined this might be invoked.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>While the AlertLevelChange listener can help you correctly notify your users to perform an action, it relies heavily on the users current position, this means that the alert is rarely changed exactly at the correct time and might be delayed till a new location update occurs and the user is within the alerts threshold.</p>
+</blockquote>
+<pre class="hljs"><code>navigation.setAlertLevelChangeListener(<span class="hljs-keyword">new</span> AlertLevelChangeListener() {
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onAlertLevelChange</span><span class="hljs-params">(<span class="hljs-keyword">int</span> alertLevel, RouteProgress routeProgress)</span> </span>{
+    <span class="hljs-keyword">switch</span> (alertLevel) {
+      <span class="hljs-keyword">case</span> HIGH_ALERT_LEVEL:
+        Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">"HIGH"</span>, Toast.LENGTH_LONG).show();
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> MEDIUM_ALERT_LEVEL:
+        Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">"MEDIUM"</span>, Toast.LENGTH_LONG).show();
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> LOW_ALERT_LEVEL:
+        Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">"LOW"</span>, Toast.LENGTH_LONG).show();
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> ARRIVE_ALERT_LEVEL:
+        Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">"ARRIVE"</span>, Toast.LENGTH_LONG).show();
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> NONE_ALERT_LEVEL:
+        Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">"NONE"</span>, Toast.LENGTH_LONG).show();
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> DEPART_ALERT_LEVEL:
+        Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">"DEPART"</span>, Toast.LENGTH_LONG).show();
+        <span class="hljs-keyword">break</span>;
+    }
+  }
+});
+</code></pre>
+<h3 id="onprogresschange">OnProgressChange</h3>
+<!-- preview -->
+<p>Similar to listening into user location changes, this listener’s invoked every time the user’s location changes but provides an updated RouteProgress object. This listener is strong encouraged to use since you can typically update most of your application’s user interface. An example of this would be if you are displaying the users current progress till they need to perform the next maneuver, every time this listeners invoked, you are able to update your view with the new information from RouteProgress.</p>
+<p>Besides receiving information about the route progress, the callback also provides you with the users current location which can provide their current speed, bearing, etc. If you have snapping to the route enabled, the location object will be updated to provide the snapped coordinates.</p>
+<pre class="hljs"><code>navigation.setProgressChangeListener(<span class="hljs-keyword">new</span> ProgressChangeListener() {
+      <span class="hljs-meta">@Override</span>
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onProgressChange</span><span class="hljs-params">(Location location, RouteProgress routeProgress)</span> </span>{
+
+      }
+    });
+</code></pre>
+<h3 id="offroute">OffRoute</h3>
+<!-- preview -->
+<p>Not implemented in SDK yet.</p>
+<h2 id="routeutils">RouteUtils</h2>
+<!-- preview -->
+<p>The RouteUtils class can be found in the mapbox-java-services module and provides many of the methods used for calculations done in the RouteProgress object. Examples of this are getting the total route distance left till the user reaches their destination. If you would like to perform these calculations on your own or would like the change the behavior of navigation, you can directly call these methods and handle the calculations yourself.</p>
+</div></div></div></div></div></div></div><script src="/android-docs/bundle.js?t=1490226715362"></script></body></html>
