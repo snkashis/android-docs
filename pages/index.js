@@ -6,7 +6,9 @@ import { config } from 'config';
 export default class Index extends React.Component {
   render () {
     return (
-      <div></div>
+      <DocumentTitle title={config.siteTitle}>
+        {browserHistory.push(prefixLink('/map-sdk/5.0.0/getting-started/'))}
+      </DocumentTitle>
     )
   }
 }

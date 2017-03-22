@@ -8,13 +8,16 @@
     "url": "git@github.com:mapbox/android-docs.git"
   },
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-links",
+    "deploy": "gatsby build --prefix-links && gh-pages -d public",
     "develop": "gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Cameron Mace",
   "license": "ISC",
-
+  "devDependencies": {
+    "gh-pages": "^0.12.0"
+  },
   "dependencies": {
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
@@ -35,7 +38,6 @@
     "react-responsive-grid": "^0.3.0",
     "react": "^15.4.2",
     "react-document-title": "^2.0.1",
-    "react-dom": "^15.4.2",
     "react-router": "^2.0.0",
     "underscore.string": "^3.2.2"
   },
