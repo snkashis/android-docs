@@ -5,7 +5,7 @@ import { config } from 'config';
 
 module.exports = React.createClass({
   componentDidMount: function() {
-    window.location.href = "/map-sdk/5.0.1/getting-started/"
+    window.location.href = "/android-docs/map-sdk/5.0.1/getting-started/"
   },
   render () {
     return (<div></div>
