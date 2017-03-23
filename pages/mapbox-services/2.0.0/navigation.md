@@ -1,11 +1,11 @@
 ---
 title: Navigation
-path: /mapbox-java/2.0.0/navigation/
+path: /mapbox-services/2.0.0/navigation/
 ---
 
 <!-- preview -->
 
-The navigation part of Mapbox Java is built on top of our Directions API and contains logic needed to get timed navigation instructions. The calculations use the users current location and compare it to the current route the user's traversing to provide critical information at any given moment.
+The navigation part of Mapbox Services is built on top of our Directions API and contains logic needed to get timed navigation instructions. The calculations use the users current location and compare it to the current route the user's traversing to provide critical information at any given moment.
 
 > Currently this is only offered for Driving instructions and takes traffic into consideration by default.
 

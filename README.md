@@ -1,5 +1,5 @@
 # Mapbox Android documentation
-Inside this repo, you'll find Android documentation for both the Maps SDK and Mapbox Java SDK.
+Inside this repo, you'll find Android documentation for both the Maps SDK and Mapbox Services SDK.
 
 To view the documentation, head over to [the website]().
 
@@ -16,7 +16,7 @@ To install Gatsby:
 ```
 npm install -g gatsby
 ```
- 
+
 Now navigate to this cloned projects root folder and execute:
 
 ```

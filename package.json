@@ -47,6 +47,7 @@
     "documentation",
     "docs",
     "mapbox-java",
+    "mapbox-services",
     "maps-sdk"
   ]
 }

@@ -1,6 +1,6 @@
 ---
-title: Mapbox Java
-path: /mapbox-java/2.0.0/getting-started/
+title: Mapbox Services
+path: /mapbox-services/2.0.0/getting-started/
 ---
 
 Mapbox Java is an open source toolset for building applications that need navigation, directions, geocoding, static map imagery, etc. It conveniently wraps Mapbox APIs and builds off of them with with tools useful for your applications. This SDK consist of two parts:
