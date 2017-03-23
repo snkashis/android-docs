@@ -3,12 +3,13 @@ import { browserHistory } from 'react-router';
 import DocumentTitle from 'react-document-title';
 import { config } from 'config';
 
-export default class Index extends React.Component {
+module.exports = React.createClass({
+  componentDidMount: function() {
+    window.location.href = "/map-sdk/5.0.1/getting-started/"
+  },
   render () {
-    return (
-      <DocumentTitle title={config.siteTitle}>
-        {browserHistory.push(prefixLink('/map-sdk/5.0.0/getting-started/'))}
-      </DocumentTitle>
+    return (<div></div>
+
     )
   }
-}
+});
