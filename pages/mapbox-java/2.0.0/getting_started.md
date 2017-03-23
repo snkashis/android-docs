@@ -18,7 +18,7 @@ Mapbox Java is an open source toolset for building applications that need naviga
 ### API reference
 All public methods in all the project modules are well documented and even include a since tag so you can determine when an API was first added. A link for all the module javadoc pages can be found in the list below:
 
-- [mapbox-java-core](http://mapbox.com/mapbox-java/api/libjava-core/2.0.0/)
+- [mapbox-java-core](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-core/2.0.0/index.html)
 - [mapbox-java-geojson](http://mapbox.com/mapbox-java/api/libjava-geojson/2.0.0/)
 - [mapbox-java-services](http://mapbox.com/mapbox-java/api/libjava-services/2.0.0/)
 - [mapbox-java-services-rx](http://mapbox.com/mapbox-java/api/libjava-services-rx/2.0.0/)
