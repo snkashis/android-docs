@@ -9,7 +9,8 @@
   },
   "scripts": {
     "build": "gatsby build --prefix-links",
-    "deploy": "gatsby build --prefix-links && gh-pages -d public -b mb-pages",
+    "deploy": "gatsby build --prefix-links && gh-pages -a -d public -b mb-pages",
+    "help": "gh-pages --help",
     "develop": "gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
