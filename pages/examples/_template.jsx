@@ -7,17 +7,54 @@ import find from 'lodash/find';
 
 import 'css/styles.css';
 
+import pageList from './_pages.yaml';
+
 module.exports = React.createClass({
   propTypes () {
     return {route: React.PropTypes.object};
   },
   contextTypes: {router: React.PropTypes.object.isRequired},
   render: function() {
+    const childPages = pageList.map((p) => {
+      const page = find(this.props.route.pages, (_p) => _p.path === p);
+      return {
+        title: page.data.title,
+        path: page.path,
+      };
+    });
+    console.log('childPages');
+    const docOptions = childPages.map((child) =>
+      <option
+        key={prefixLink(child.path)}
+        value={prefixLink(child.path)}
+      >
+        {child.title}
+      </option>
+
+    )
+
+    const docPages = childPages.map((child) => {
+      const isActive = prefixLink(child.path) === this.props.location.pathname
+      return (
+        <li
+          key={child.path}
+        >
+          <Link
+            to={prefixLink(child.path)}
+            style={{
+              textDecoration: 'none'
+            }}
+          >
+            {isActive ? <strong>{child.title}</strong> : child.title }
+          </Link>
+        </li>
+      )
+    });
     return (
       <div className={'grid'}>
         {/* Sidebar Navigation */}
         <div className={'w240 toc'}>
-
+          {docPages}
         </div>
 
         {/* Content */}

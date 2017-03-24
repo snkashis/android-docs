@@ -5,7 +5,6 @@ path: /examples/simple-map-view/
 ---
 Show a map in your app using the Mapbox Android SDK.
 
-
 ```java
 package com.mapbox.mapboxandroiddemo.examples.basics;
 
@@ -88,4 +87,26 @@ public class SimpleMapViewActivity extends AppCompatActivity {
     mapView.onSaveInstanceState(outState);
   }
 }
+```
+
+```xml
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".examples.basics.SimpleMapViewActivity">
+
+  <!-- Set the starting camera position and map style using xml-->
+  <com.mapbox.mapboxsdk.maps.MapView
+    android:id="@+id/mapView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    mapbox:mapbox_cameraTargetLat="40.73581"
+    mapbox:mapbox_cameraTargetLng="-73.99155"
+    mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets"
+    mapbox:mapbox_cameraZoom="11"/>
+
+</RelativeLayout>
 ```
