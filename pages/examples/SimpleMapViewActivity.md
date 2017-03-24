@@ -2,6 +2,7 @@
 title: A simple map view
 img: ./simple-map-view.png
 path: /examples/simple-map-view/
+category: basics
 ---
 Show a map in your app using the Mapbox Android SDK.
 
