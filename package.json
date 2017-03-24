@@ -11,12 +11,16 @@
     "build": "gatsby build --prefix-links",
     "deploy": "gatsby build --prefix-links && gh-pages -a -d public -b mb-pages",
     "develop": "gatsby develop",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test-text",
+    "test-text": "retext-mapbox-standard pages"
   },
   "author": "Cameron Mace",
   "license": "ISC",
   "devDependencies": {
     "gh-pages": "^0.12.0"
+  },
+  "devDependencies": {
+    "retext-mapbox-standard": "^2.0.0"
   },
   "dependencies": {
     "babel-preset-es2015": "^6.3.13",

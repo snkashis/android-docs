@@ -6,7 +6,7 @@ path: /map-sdk/5.0.1/annotations/
 If you are including a Mapbox map inside your application, chances are that you'd want to add annotations. Annotations are objects drawn either on top of the map or in some cases, within the map itself. These annotations vary from markers to lines and polygons. This document walks through adding the high level objects, if you'd like more control over annotations, make sure to checkout the runtime styling documentation.
 
 ## Markers
-Markers are useful when identifying a single point on the map. The SDK comes with a default marker icon which can be configured to fit your specific needs. APIs are exposed to optionally change this icon to any bitmap image you desire. To create a marker for you map, you are only required to provide a `LatLng` position which defines where the marker will be placed on the map. To actually add the marker to the map, you'll need to call `mapboxMap.addMarker()`.
+Markers are useful when identifying a single point on the map. The SDK comes with a default marker icon which can be configured to fit your specific needs. APIs are exposed to optionally change this icon to any bitmap image you wish. To create a marker for you map, you are only required to provide a `LatLng` position which defines where the marker will be placed on the map. To actually add the marker to the map, you'll need to call `mapboxMap.addMarker()`.
 
 ```java
 mapboxMap.addMarker(new MarkerOptions()
@@ -14,9 +14,9 @@ mapboxMap.addMarker(new MarkerOptions()
   .title("Eiffel Tower")
   );
 ```
-In addition to providing the position, you can also add a title and snippet which are displayed inside an [info window](#info-window). The info window will be displayed when the user taps on the marker and closed when they tap outside the info window.
+Besides providing the position, you can also add a title and snippet which are displayed inside an [info window](#info-window). The info window will be displayed when the user taps on the marker and closed when they tap outside the info window.
 
-If you have an abundance of markers or are loading in them from a GeoJSON file, you can directly add a list of markers using `mapboxMap.addMarkers()`.
+If you have many markers or are loading in them from a GeoJSON file, you can directly add a list of markers using `mapboxMap.addMarkers()`.
 
 > **Note:** If you want more control over the behavior of a marker, you can use either the MarkerView API which extends a typical Android view or create a symbol layer using runtime styling.
 
@@ -69,10 +69,10 @@ marker.setIcon(icon);
 Info windows are used to display information in a popup window anchored to a marker. Their default behavior is to display when the marker is tapped, displaying a title textview above a snippet textview. An info window is automatically created if you provide a given marker with either a title or a snippet of text. This process is done when first creating the marker object but once built, you are able to update the info window information by using `marker.setTitle()` for example.
 
 ### Custom view
-The Maps SDK also provides an api to customize the contents and design of info windows. You'll need to create an implementation of the `InfoWindowAdapter` and then call `MapboxMap.setInfoWindowAdapter()` passing in your implementation as a parameter. One method is given inside the `InfoWindowAdapter` called `getInfoWindow` which gives the attached marker object and returns the info window view.
+The Maps SDK also provides an API to customize the contents and design of info windows. You'll need to create an implementation of the `InfoWindowAdapter` and then call `MapboxMap.setInfoWindowAdapter()` passing in your implementation as a parameter. One method is given inside the `InfoWindowAdapter` called `getInfoWindow` which gives the attached marker object and returns the info window view.
 
 ## Polyline and Polygons
-Adding a line or polygon to your map is similar to how adding a marker is added. Due to the nature of these object, different APIs are exposed such as polygon color or line width. Instead of taking in a single position, it's required to first bundle all your LatLng's inside a List and then pass them in using the `addAll()` API.
+Adding a line or polygon to your map is like how adding a marker is added. Due to the nature of these object, different APIs are exposed such as polygon color or line width. Instead of taking in a single position, it's required to first bundle all your LatLng's inside a List and then pass them in using the `addAll()` API.
 
 ```java
 // Draw polyline on the map

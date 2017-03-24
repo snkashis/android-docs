@@ -22,7 +22,7 @@ MapboxGeocoding mapboxGeocoding = new MapboxGeocoding.Builder()
 ```
 
 ### Geocoding response
-Once you have built your MapboxGeocoding object with all the parameters you'd like to use in the request, you'll need to asynchronously send the request using enqueueCall. Once the request receives a response it will notify the Callback where you can handle the response appropriately.
+Once you have built your MapboxGeocoding object with all the parameters you'd like to use in the request, you'll need to asynchronously send the request using enqueueCall. Once the request receives a response it will tell the Callback where you can handle the response appropriately.
 
 > **Note:** incase your user leaves the activity or application before the callback's notified, you should use `mapboxGeocoding.cancelCall()` within your onDestroy lifecycle method.
 
@@ -49,9 +49,9 @@ mapboxGeocoding.enqueueCall(new Callback<GeocodingResponse>() {
 ```
 
 ### Reverse geocoding
-The process of turning a string address to a coordinate is called reverse geocoding. Instead of supplying the builder with a string address you'd pass in coordinates instead. Handling the response is similar to forward geocoding. While one coordinate is given, you'll oftentimes get multiple results from the response all valid ways to describe to specific location. For example, one might be the street name while another result will be the country. The ordering of the list usually goes from most relevant to least.
+The process of turning a string address to a coordinate is called reverse geocoding. Instead of supplying the builder with a string address you'd pass in coordinates instead. Handling the response is like forward geocoding. While one coordinate is given, you'll oftentimes get multiple results from the response all valid ways to describe to specific location. For example, one might be the street name while another result will be the country. The ordering of the list usually goes from most relevant to least.
 
-You can narrow the response similar to forward geocoding by biasing the result using the available parameters provided in the builder.
+You can narrow the response like forward geocoding by biasing the result using the available parameters provided in the builder.
 
 ```java
 MapboxGeocoding reverseGeocode = new MapboxGeocoding.Builder()
@@ -65,7 +65,7 @@ MapboxGeocoding reverseGeocode = new MapboxGeocoding.Builder()
 ### Android widgets
 In the geocoding examples above, we have been performing request to the API by directly using the builder, making the call, and then handling the response. The Android widgets found in the mapbox-android-ui module make the process of geocoding a bit easier by offering basic widgets.
 
-For forward geocoding, the AutoCompleteWidget is offered. It provides a search box with support for autocomplete results. When the user clicks a result, `onFeatureClick`'s invoked and you can get the addresses coordinates and handle them accordingly.
+For forward geocoding, the AutoCompleteWidget is offered. It provides a search box with support for autocomplete results. When the user clicks a result, `onFeatureClick`'s invoked and you can get the addresses coordinates and handle them.
 
 <!-- TODO link Example -->
 ```xml
