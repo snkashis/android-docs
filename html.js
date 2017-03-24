@@ -17,6 +17,9 @@ module.exports = React.createClass({
     if (this.props.title) {
       title = this.props.title;
     }
+    if (this.props.img) {
+      img = this.props.img;
+    }
 
     let css
     if (process.env.NODE_ENV === 'production') {
