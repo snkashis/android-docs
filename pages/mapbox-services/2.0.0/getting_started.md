@@ -16,7 +16,7 @@ Mapbox Java is an open source toolset for building applications that need naviga
 - If you want to contribute, look over our contribution guild lines and open a pull request with your changes.
 
 ### API reference
-All public methods in all the project modules are well documented and even include a since tag so you can determine when an API was first added. A link for all the module javadoc pages can be found in the list below:
+All public methods in all the project modules are well documented and even include a since tag so you can find when an API was first added. A link for all the module javadoc pages can be found in the list below:
 
 - [mapbox-java-core](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-core/2.0.0/index.html)
 - [mapbox-java-geojson](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-geojson/2.0.0/index.html)
@@ -30,11 +30,11 @@ All public methods in all the project modules are well documented and even inclu
 If you plan to use any of our APIs such as directions, geocoding, navigation, etc. you'll need to have a Mapbox access token which you'll pass in as a parameter. An access token isn't needed if you plan to use Mapbox Java only for GeoJSON parsing, or Turf calculations. To learn more about access tokens, read [this document](https://www.mapbox.com/help/create-api-access-token/).
 
 ### Position and Point objects
-Throughout the APIs exposed within Mapbox-Java you'll notice the Position object's used heavily representing a coordinate. The order in which the coordinate pair are longitude followed by latitude. Creating a new Position is fairly straight forward and can easily be converted from a LatLng object if you are using our Maps SDK.
+Throughout the APIs exposed within Mapbox-Java you'll notice the Position object's used heavily representing a coordinate. The order in which the coordinate pair are longitude followed by latitude. Creating a new Position is fairly straight forward and can be converted from a LatLng object if you are using our Maps SDK.
 
-The SDK will attempt to detect if your coordinates are outside the excepted range and log a warning. This range is between -180 to 180 for longitudes and -90 to 90 for latitude.
+The SDK will try to detect if your coordinates are outside the excepted range and log a warning. This range is between -180 to 180 for longitudes and -90 to 90 for latitude.
 
-> **Note:** if you happen to be using our Maps SDK in addition to this SDK, you'll notice that the LatLng object has the reverse order, latitude comes before the longitude value.
+> **Note:** if you happen to be using our Maps SDK with this SDK, you'll notice that the LatLng object has the reverse order, latitude comes before the longitude value.
 
 Point will also be found in this SDK which is used specifically for GeoJSON objects. you can create a Point either directly from a Position object or passing in a longitude, latitude double array.
 
@@ -44,17 +44,17 @@ Position position = Position.fromCoordinates(-77.03655, 38.89770);
 ```
 
 ## Installation
-To start developing your application using Mapbox Java, you'll need to first determine which installation method works best for you. The SDK is fully compatible with Android using Gradle and most of the project (besides the Android dependent modules) can also be included in a generic Java project using either Gradle or Maven. All dependencies given below can be found on MavenCentral.
+To start developing your application using Mapbox Java, you'll need to first decide which installation method works best for you. The SDK is fully compatible with Android using Gradle and most of the project (besides the Android dependent modules) can also be included in a generic Java project using either Gradle or Maven. All dependencies given below can be found on MavenCentral.
 
 ### Gradle
 
 1. Start Android Studio
 2. Open up your applications `build.gradle`
-3. Ensure your projects `minSdkVersion` is at API 15 or higher
+3. Make sure your projects `minSdkVersion` is at API 15 or higher
 4. Under dependencies add a new build rule for the latest mapbox-android-services
 5. Click the Sync Project with Gradle Files near the toolbar in Studio
 
-> **Note:** If your application is close or exceeds the 65k method count limit, you can mitigate this problem by specifying only the specific Mapbox Android Service APIs instead of all of them. See the selectively compiling APIs section below.
+> **Note:** If your application is close or exceeds the 65k method count limit, you can mitigate this problem by specifying only the specific Mapbox Android Service APIs. See the selectively compiling APIs section below.
 
 ```groovy
 compile 'com.mapbox.mapboxsdk:mapbox-android-services:2.0.0'
@@ -74,7 +74,7 @@ If your project's using Maven instead of Gradle, you can add the dependency insi
 
 ### Selectively compiling APIs
 
-In previous versions of Mapbox Java prior to 2.0, you would have to compile the entire package of APIs. This in some cases, could cause Android applications to go over the 65,536 method count limit.
+In earlier versions of Mapbox Java before to 2.0, you would have to compile the entire package of APIs. This in some cases, could cause Android applications to go over the 65,536 method count limit.
 
 Starting with 2.0, you now have the option to include either the entire package of APIs (using the dependencies listed above) or you can now selectively choose which specific APIs your application needs. For example, if you only need to handle GeoJSON serialization or deserialization inside your application you only need to include the GeoJSON dependency in your project.
 

@@ -3,9 +3,7 @@ title: Map SDK
 path: /map-sdk/5.0.1/getting-started/
 ---
 
-## Introduction
-
-The Mapbox Maps SDK is an open source toolset for displaying maps inside your application. A demo app is available on the Google Play Store that includes an abundance of examples, including the ones referenced throughout this documentation.
+The Mapbox Maps SDK is an open source toolset for displaying maps inside your application. A demo app is available on the Google Play Store that includes a bunch of examples, including the ones referenced throughout this documentation.
 
 ### Support and contributions
 
@@ -15,12 +13,12 @@ The Mapbox Maps SDK is an open source toolset for displaying maps inside your ap
 - If you want to contribute, look over our contribution guild lines and open a pull request with your changes.
 
 ### API reference
-All public methods in the Maps SDK project are well documented and can be either viewed inside the source code or directly on the Javadoc (linked below). If you are using a older version of the SDK, you can still access the Javadoc simply by replacing the URL's version number to the one you are using inside your application.
+All public methods in the Maps SDK project are well documented and can be either viewed inside the source code or directly on the Javadoc (linked below). If you are using a older version of the SDK, you can still access the Javadoc by replacing the URL's version number to the one you are using inside your application.
 
 - [5.0.1 Maps SDK Javadoc](https://www.mapbox.com/android-docs/api/map-sdk/5.0.1/index.html)
 
 ### Access tokens
-An access token is necessary to use the Maps SDK. Your access tokens can be managed in [your account settings](https://www.mapbox.com/account/apps/), where you can retrieve current tokens and generate new ones. You should create a new token for each of your apps, which will help you track usage and minimize disruption in the event a token needs to be revoked.
+An access token is necessary to use the Maps SDK. Your access tokens can be managed in [your account settings](https://www.mapbox.com/account/apps/), where you can retrieve current tokens and generate new ones. You should create a new token for each of your apps, which will help you track usage and decrease disruption in the event a token needs to be revoked.
 
 You'll want to place the access token inside your application object inside the `onCreate()` method. To learn more about access tokens, read [this document](https://www.mapbox.com/help/create-api-access-token/).
 
@@ -38,11 +36,11 @@ public class MyApplication extends Application {
 ```
 
 ## Installation
-To start developing your application using the Maps SDK, a few simple steps must be taken before beginning. Note that while we should how to add the stable version of the SDK inside your project, you can also use the nightly build/snapshot or the beta version, if one is available. The dependency given below can be found on MavenCentral.
+To start developing your application using the Maps SDK, a few steps must be taken before beginning. Note that while we should how to add the stable version of the SDK inside your project, you can also use the nightly build/snapshot or the beta version, if one is available. The dependency given below can be found on MavenCentral.
 
 1. Start Android Studio
 2. Open up your applications `build.gradle`
-3. Ensure your projects `minSdkVersion` is at API 15 or higher
+3. Make sure your projects `minSdkVersion` is at API 15 or higher
 4. Under dependencies add a new build rule for the latest mapbox-android-sdk
 5. Click the Sync Project with Gradle Files near the toolbar in Studio
 
@@ -61,7 +59,7 @@ dependencies {
 ```
 
 ### Permissions
-Starting in 5.0, we are making use of the Manifest merge feature which reduces the need to include any Maps SDK required things inside your application's manifest file. If you plan to display the users location on the map or acquire user location information you'll need to include either the Fine or Coarse location permission. The user location permission should also be checked during runtime using the PermissionManager.
+Starting in 5.0, we are making use of the Manifest merge feature which reduces the need to include any Maps SDK required things inside your application's manifest file. If you plan to display the users location on the map or get user location information you'll need to include either the Fine or Coarse location permission. The user location permission should also be checked during runtime using the PermissionManager.
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
