@@ -16,25 +16,6 @@ module.exports = React.createClass({
     return {route: React.PropTypes.object};
   },
   contextTypes: {router: React.PropTypes.object.isRequired},
-  getInitialState() {
-      sections = document.getElementsByTagName('h2, h3');
-      return {
-        sections: sections
-      }
-  },
-  componentDidUpdate(_, prevState) {
-    if (prevState.sections !== this.state.sections) {
-
-      // if (!sections.length) return;
-      // for (var i = 0; i < sections.length; i++) {
-      //   this.setState({
-          this.setState({ sections: document.querySelectorAll('h2, h3')});
-      //     activeSection: sections[i].getAttribute('data-title')
-      //   });
-      //   return;
-      // }
-    }
-  },
   render: function() {
     var sections = this.state;
 
