@@ -44,3 +44,13 @@ Inside the `.md` file, there are a few requirements to help keep consistency acr
 1. The document needs front-matter at the top providing a `title` and `path`.
 2. Start off the document not including a title, it's already given in the front-matter
 3. Add the file path inside the same SDKs `_pages.yaml` file.
+
+#### Updating documentation upon new SDK version release
+
+Documentation in several different places needs to be updated whenever there's a new release of [the Android Maps SDK](https://www.mapbox.com/android-docs/map-sdk/5.0.1/getting-started/). Below's a list of the public examples/documentation that always need to be modified. Searching within each repo is an easy way to find the files that have the text which needs to be updated:
+
+* [/help](https://github.com/mapbox/help) (various documentation & config files)
+* [/android-sdk](https://github.com/mapbox/android-sdk) (examples' code  & config files)
+* [/www.mapbox.com](https://github.com/mapbox/www.mapbox.com) (mapbox.com/install/android/  & config files)
+* [android demo app](https://github.com/mapbox/mapbox-android-demo)
+
