@@ -5,8 +5,9 @@ import markdownItFootnote from 'markdown-it-footnote';
 import markdownItDeflist from 'markdown-it-deflist';
 import markdownItAbbr from 'markdown-it-abbr';
 import markdownItAttrs from 'markdown-it-attrs';
-import markdownItAnchor from 'markdown-it-anchor';
+
 import markdownItDecorate from 'markdown-it-decorate';
+import markdownItTocAndAnchor from 'markdown-it-toc-and-anchor';
 
 import hljs from 'highlight.js';
 import objectAssign from 'object-assign';
@@ -34,23 +35,22 @@ const md = markdownIt({
   .use(markdownItAbbr)
   .use(markdownItAttrs)
   .use(markdownItDecorate)
-  .use(require('markdown-it-anchor'), {
-    "level": "1",
-    "permalinkClass": "anchor",
-    "permalink": false
-  });
+  .use(markdownItTocAndAnchor, {
+    anchorLinkSymbol: ''
+  })
 
 module.exports = function (content) {
   this.cacheable()
+  var toc
   const meta = frontMatter(content)
   const body = md.render(meta.body, {
     tocCallback: function(tocMarkdown, tocArray, tocHtml) {
-      console.log(tocHtml)
-
+      toc = tocHtml
     }
   })
   const result = objectAssign({}, meta.attributes, {
     body,
+    toc
   })
   this.value = result
   return `module.exports = ${JSON.stringify(result)}`

@@ -32,7 +32,7 @@
     "highlight.js": "^9.8.0",
     "markdown-it": "^8.2.2",
     "markdown-it-abbr": "^1.0.4",
-    "markdown-it-anchor": "^4.0.0",
+    "markdown-it-toc-and-anchor": "4.1.2",
     "markdown-it-attrs": "^0.8.0",
     "markdown-it-decorate": "^1.2.2",
     "markdown-it-deflist": "^2.0.1",
