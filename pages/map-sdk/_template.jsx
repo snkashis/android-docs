@@ -44,21 +44,12 @@ module.exports = React.createClass({
     const docPages = childPages.map((child) => {
       const isActive = prefixLink(child.path) === this.props.location.pathname
       return (<div>
-        <li
-          key={child.path}
-        >
-          <Link
-            to={prefixLink(child.path)}
-            style={{
-              textDecoration: 'none'
-            }}
-          >
-            {isActive ? <strong>{child.title}</strong>
-             : child.title }
+        <li key={child.path}>
+          <Link to={prefixLink(child.path)} className={'color-blue-on-hover'} style={{textDecoration: 'none'}}>
+            {isActive ? <strong>{child.title}</strong> : child.title }
           </Link>
-
         </li>
-        {isActive? <div className={'m12 txt-s'} dangerouslySetInnerHTML={{ __html: child.toc }}/> : ''}
+        {isActive ? <div className={'ml12'} dangerouslySetInnerHTML={{ __html: child.toc }}/> : ''}
         </div>
       )
     });

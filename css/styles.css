@@ -74,3 +74,20 @@ body .prose blockquote {
   width: inherit;
   border-right: 1px solid grey;
 }
+
+.toc-subheaders ul li ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.toc-subheaders {
+  font-size: 12px;
+  display: inline-block;
+  line-height: 20px;
+  margin-bottom: 12px;
+
+}
+
+.toc-subheaders a:hover {
+  color: #56ADEC;
+}

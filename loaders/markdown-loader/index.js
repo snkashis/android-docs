@@ -36,7 +36,8 @@ const md = markdownIt({
   .use(markdownItAttrs)
   .use(markdownItDecorate)
   .use(markdownItTocAndAnchor, {
-    anchorLinkSymbol: ''
+    anchorLinkSymbol: '',
+    tocClassName: "toc-subheaders"
   })
 
 module.exports = function (content) {
