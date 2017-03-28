@@ -45,7 +45,7 @@ module.exports = React.createClass({
       const isActive = prefixLink(child.path) === this.props.location.pathname
       return (<div>
         <li key={child.path}>
-          <Link to={prefixLink(child.path)} className={'color-blue-on-hover'} style={{textDecoration: 'none'}}>
+          <Link to={prefixLink(child.path)} className={'page-hover'} style={{textDecoration: 'none'}}>
             {isActive ? <strong>{child.title}</strong> : child.title }
           </Link>
         </li>
