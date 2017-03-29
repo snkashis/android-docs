@@ -3,14 +3,14 @@ title: Telemetry
 path: /mapbox-services/2.0.0/telemetry/
 ---
 
-The telemetry library includes a bunch of utilities that you can use in your projects such as our locationEngine or permissionManager that you can include inside your project. The Telemetry module has no dependencies on any of the other Mapbox-Java modules and only depends on having the Android API plugin inside your project.
+The telemetry library includes many utilities, such as `locationEngine` or `permissionManager`, that you can use in your projects. The Telemetry module has no dependencies on any of the other Mapbox-Java modules and only depends on having the Android API plugin inside your project.
 
 > Find out more about telemetry on [our website](https://www.mapbox.com/telemetry/)
 
 ## PermissionsManager
-If your Android project is built targeting API level 23 or higher, your application will need to request permission during runtime. Handling this directly in your activity produces a bunch of boilerplate and can oftentimes be hard to get correct. That's where the PermissionsManager comes into play. With the PermissionsManager, you can check if the user has granted location permission and request permissions if the user hasn't granted them yet.
+Your application will need to request permission during runtime, if your Android project is built targeting API level 23 or higher. Handling this directly in your activity produces a bunch of boilerplate and can oftentimes be hard to get correct. That's where the PermissionsManager comes into play. With the PermissionsManager, you can check whether the user has granted location permission and request permissions if the user hasn't granted them yet.
 
-You'll notice that once you have setup your permission manager, you will still need to override your activities `onRequestPermissionsResult` and call the permissionsManagers same method.
+You'll notice that once you have set up your permission manager, you will still need to override your activity's `onRequestPermissionsResult` and call the permissionsManagers same method.
 
 > **Note:** The PermissionsManager can be used for requesting additional permissions and not only location.
 
@@ -28,9 +28,9 @@ int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 ```
 
 ### PermissionsListener
-The permissionsListener needs to also be setup and passed into the PermissionsManager constructor. You'll notice that it overrides two methods, `onExplanationNeeded` and `onPermissionResult`. an explanation isn't required but strongly encouraged to allow the user to understand why you are requesting this permission.
+The permissionsListener needs to also be set up and passed into the PermissionsManager constructor. You'll notice that it overrides two methods, `onExplanationNeeded` and `onPermissionResult`. An explanation isn't required but strongly encouraged to allow the user to understand why you are requesting this permission.
 
-The permission result is invoked once the user decided whether to allow or deny the permission. A boolean value is given which you can use to write an if statement. Both cases should be handled correct, if they approve, continue with your permission sensitive logic. Otherwise, if they deny, it's good to display a message to the user if the permission is required for your application to work.
+The permission result is invoked once the user decides whether to allow or deny the permission. A boolean value is given, which you can use to write an if statement. Both cases should be handled correctly. Continue with your permission sensitive logic if the user approves. Otherwise, if the user denies, it's good to display a message which tells the user that permission is required for your application to work.
 
 ```java
 PermissionsListener permissionsListener = new PermissionsListener() {
@@ -51,7 +51,7 @@ PermissionsListener permissionsListener = new PermissionsListener() {
 ```
 
 ## LocationEngine
-If your application needs location information, the locationEngine can help you get this information while also simplifying the process and being flexible enough to use different services. The LocationEngine found in the telemetry module now supports the following location providers:
+If your application needs location information, the `locationEngine` can help you get this information while also simplifying the process and being flexible enough to use different services. The LocationEngine found in the telemetry module now supports the following location providers:
 
 - [LOST](https://github.com/mapzen/lost/)
 - Google Play Services
@@ -79,10 +79,10 @@ locationEngine.addLocationEngineListener(new LocationEngineListener() {
 });
 ```
 
-To prevent your application from having a memory leak. It is a good idea to stop requesting location updated inside your activities `onStop` method and continue requesting them in `onStart`.
+To prevent your application from having a memory leak, it is a good idea to stop requesting location updated inside your activity's `onStop` method and continue requesting them in `onStart`.
 
 ### Last location
-If your application needs to quickly get a user location, you can call the `getLastLocation` which will return the users last position. You can then use the location object returned to decide the timing the location was given.
+If your application needs to quickly get a user location, you can call the `getLastLocation` which will return the user's last position. You can then use the location object returned to decide the timing the location was given.
 
 > **Note:** Careful with requesting the users last location since the location has the possibility of being null.
 
