@@ -3,7 +3,7 @@ title: Mapbox Services
 path: /mapbox-services/2.0.0/getting-started/
 ---
 
-Mapbox Java is an open source toolset for building applications that need navigation, directions, geocoding, static map imagery, etc. It conveniently wraps Mapbox APIs and builds off of them with with tools useful for your applications. This SDK consist of two parts:
+Mapbox Java is an open source toolset for building applications that need navigation, directions, geocoding, static map imagery, etc. It conveniently wraps Mapbox APIs and builds off of them with tools which're useful for your applications. This SDK consist of two parts:
 
 1. **Mapbox-Java-Services:** Has no dependency on the Android API and can be used in any of your Java projects.
 2. **Mapbox-Android-Services:** Contains specific code for Android applications such as widgets and UI elements.
@@ -27,16 +27,16 @@ All public methods in all the project modules are well documented and even inclu
 - [mapbox-android-ui](https://www.mapbox.com/android-docs/api/mapbox-java/libandroid-ui/2.0.0/index.html)
 
 ### Access tokens
-If you plan to use any of our APIs such as directions, geocoding, navigation, etc. you'll need to have a Mapbox access token which you'll pass in as a parameter. An access token isn't needed if you plan to use Mapbox Java only for GeoJSON parsing, or Turf calculations. To learn more about access tokens, read [this document](https://www.mapbox.com/help/create-api-access-token/).
+If you plan to use any of our APIs such as directions, geocoding, navigation, etc. you'll need to have a Mapbox access token which you'll pass in as a parameter. An access token isn't needed if you plan to use Mapbox Java only for GeoJSON parsing or Turf calculations. Read [this document](https://www.mapbox.com/help/create-api-access-token/) to learn more about access tokens.
 
 ### Position and Point objects
-Throughout the APIs exposed within Mapbox-Java you'll notice the Position object's used heavily representing a coordinate. The order in which the coordinate pair are longitude followed by latitude. Creating a new Position is fairly straight forward and can be converted from a LatLng object if you are using our Maps SDK.
+Throughout the APIs exposed within Mapbox-Java, you'll notice the Position object's used heavily representing a coordinate. The order in which the coordinate pair are longitude followed by latitude. Creating a new Position is fairly straightforward and can be converted from a LatLng object if you are using our Maps SDK.
 
 The SDK will try to detect if your coordinates are outside the excepted range and log a warning. This range is between -180 to 180 for longitudes and -90 to 90 for latitude.
 
 > **Note:** if you happen to be using our Maps SDK with this SDK, you'll notice that the LatLng object has the reverse order, latitude comes before the longitude value.
 
-Point will also be found in this SDK which is used specifically for GeoJSON objects. you can create a Point either directly from a Position object or passing in a longitude, latitude double array.
+Point will also be found in this SDK which is used specifically for GeoJSON objects. You can create a Point either directly from a Position object or passing in a longitude, latitude double array.
 
 ```java
 // Position representing The White House
