@@ -3,7 +3,7 @@ title: Mapbox Services
 path: /mapbox-services/2.0.0/getting-started/
 ---
 
-Mapbox Java is an open source toolset for building applications that need navigation, directions, geocoding, static map imagery, etc. It conveniently wraps Mapbox APIs and builds off of them with tools which're useful for your applications. This SDK consist of two parts:
+Mapbox Java is an open source toolset for building applications that need navigation, directions, geocoding, static map imagery, etc. It conveniently wraps Mapbox APIs and builds off of them with tools which are useful for your applications. This SDK consist of two parts:
 
 1. **Mapbox-Java-Services:** Has no dependency on the Android API and can be used in any of your Java projects.
 2. **Mapbox-Android-Services:** Contains specific code for Android applications such as widgets and UI elements.
