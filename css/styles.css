@@ -57,6 +57,9 @@ body .prose blockquote {
 	background-color: #FAFAFA;
 	border-radius: 2px;
   word-wrap: break-word;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 12px;
 }
 
 .toc {
