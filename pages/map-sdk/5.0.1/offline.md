@@ -3,15 +3,15 @@ title: Offline
 path: /map-sdk/5.0.1/offline/
 ---
 
-In many cases, you might find your user base spends most of its time off the grid. This causes issues because the map downloads tiles from the internet by default. The Maps SDK enables you to download and store pre-selected regions for usage when the device isn't connected to the internet. The result of downloading the map is a fully functional map using your styles, tiles, and other resources.
+Often, you might find your user base spends most of its time off the grid. This causes issues because the map downloads tiles from the internet by default. The Maps SDK enables you to download and store pre-selected regions for usage when the device isn't connected to the internet. The result of downloading the map is a fully functional map using your styles, tiles, and other resources.
 
 ### Limitations
 
 An app can download multiple regions for offline use, but the total offline download is capped at a maximum tile count “ceiling” across all downloaded regions. The tile ceiling is set to 6,000 tiles by default but can be raised [for paid plans](https://www.mapbox.com/pricing/). Use our [Tile Count Estimator](https://www.mapbox.com/labs/offline-estimator/) to calculate the number of tiles required by your offline use case. Six thousand tiles covers a region roughly the size of Greater London within the M25 at zoom levels 0–15 or the contiguous United States at zoom levels 0–9. The size of these tiles on disk will vary according to the selected style.
 
-There is no limit to the number of offline regions that may be created. Your Mapbox-powered application will reuse tiles and resources that are required by multiple regions. This conserves network traffic and disk space.
+The Maps SDK places no limit to the number of offline regions that may be created. Your Mapbox-powered application will reuse tiles and resources that are required by multiple regions. This conserves network traffic and disk space.
 
-There is also no limit to the download speed of offline regions, nor to disk space used by offline resources. The effective limits will depend on the storage capacity of the mobile device and the speed of the network to which it is connected.
+The SDK also places no limit to the download speed of offline regions, nor to disk space used by offline resources. The effective limits will depend on the storage capacity of the mobile device and the speed of the network to which it is connected.
 
 Our [terms of service](https://www.mapbox.com/tos/#[YmcMYmns]) do not allow you or an end user to redistribute offline maps downloaded from Mapbox servers.
 
@@ -47,7 +47,7 @@ OfflineTilePyramidRegionDefinition definition = new OfflineTilePyramidRegionDefi
 ```
 
 ### Metadata
-Providing a metadata object is encourage with at least a region name so that various regions your users download will be distinguishable. Besides the region name, you can store any arbitrary binary region information you'd like. The contents are opaque to the SDK implementation and won't affect your offline region download, it just stores and retrieves a byte array.
+Providing a metadata object is encourage with at least a region name so that various regions your users download will be distinguishable. Besides the region name, you can store any arbitrary binary region information you'd like. The contents are opaque to the SDK implementation and won't affect your offline region download, it only stores and retrieves a byte array.
 
 ```java
 // Implementation that uses JSON to store Yosemite National Park as the offline region name.
@@ -66,7 +66,7 @@ try {
 Besides creating the metadata, you can also update the information stored, allowing your users for example, to update the region name. To do this, the `offlineManager` object provides a methods called `updateMetadata` which takes in both the updated metadata byte array and a callback to be notified when the update is completed or an error occurs.
 
 ## Download a region
-Now that the bounds and definition object have been created, you can use the offlineManager to create an asynchronous download calling `createOfflineRegion`. You'll need to pass in the definition and metadata objects we created in the previous sections. This will provide you with two methods, `onCreate` and `onError`. onError occurs if there is an error starting or while downloading the region. The `onCreate` method provides a `offlineRegion` object which you can use to monitor the download and even display the progress to your users. If you need to pause a download, you can use the `offlineRegion.setDownloadState()` to handle this.
+Now that the bounds and definition object have been created, you can use the offlineManager to create an asynchronous download calling `createOfflineRegion`. You'll need to pass in the definition and metadata objects we created in both the [Defining a region](#defining-a-region) and [metadata](#metadata) sections. This will provide you with two methods, `onCreate` and `onError`. onError occurs if an error starting or while downloading the region occurs. The `onCreate` method provides a `offlineRegion` object which you can use to check the download and even display the progress to your users. If you need to pause a download, you can use the `offlineRegion.setDownloadState()` to handle this.
 
 ```java
 // Create the region asynchronously
@@ -120,7 +120,7 @@ offlineManager.createOfflineRegion(definition, metadata,
 Once you or your user has downloaded a region, the Maps SDK provides a few options to handle gathering list, positioning the camera inside the downloaded region, and a method for deletion of a region.
 
 ### List offline regions
-The listing of regions is useful for presenting downloaded information to your user or gathering information inside the code itself. The `offlineManager` offers a `listOfflineRegions` method which provides both a method `onList` and `onError`. Use the `OfflineRegion` array to perform all actions on a specific region.
+The listing of regions is useful for presenting downloaded information to your user or gathering information inside the code itself. The `offlineManager` offers a `listOfflineRegions` method which provides both a method `onList` and `onError`. Use the `OfflineRegion` array to do all the actions on a specific region.
 
 ```java
 // Get the region bounds and zoom and move the camera.
@@ -140,7 +140,7 @@ map.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 ```
 
 ### Delete region
-To remove an offline region from the database, you'll need to first receive the list of offline regions as explained in the previous section. The `onList` method will provide you with an array of the present offline regions downloaded on the device, this object being the `offlineRegions`. You'll then use this object to select the region to be deleted and call `delete` on it which will provide you with a callback to be notified when the region is successfully deleted or if an error occurs.
+To remove an offline region from the database, you'll need to first receive the list of offline regions as explained in the [earlier section](#list-offline-regions). The `onList` method will provide you with an array of the present offline regions downloaded on the device, this object being the `offlineRegions`. You'll then use this object to select the region to be deleted and call `delete` on it which will provide you with a callback to be notified when the region is successfully deleted or if an error occurs.
 
 > **Note:** Deleting a region will result in also removing the least-recently requested resources not required by other regions, until the database shrinks below a certain size.
 
