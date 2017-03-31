@@ -47,7 +47,23 @@ OfflineTilePyramidRegionDefinition definition = new OfflineTilePyramidRegionDefi
 ```
 
 ### Metadata
-TODO
+Providing a metadata object is encourage with at least a region name so that various regions your users download will be distinguishable. Besides the region name, you can store any arbitrary binary region information you'd like. The contents are opaque to the SDK implementation and won't affect your offline region download, it just stores and retrieves a byte array.
+
+```java
+// Implementation that uses JSON to store Yosemite National Park as the offline region name.
+byte[] metadata;
+try {
+  JSONObject jsonObject = new JSONObject();
+  jsonObject.put(JSON_FIELD_REGION_NAME, "Yosemite National Park");
+  String json = jsonObject.toString();
+  metadata = json.getBytes(JSON_CHARSET);
+} catch (Exception exception) {
+  Log.e(TAG, "Failed to encode metadata: " + exception.getMessage());
+  metadata = null;
+}
+```
+
+Besides creating the metadata, you can also update the information stored, allowing your users for example, to update the region name. To do this, the `offlineManager` object provides a methods called `updateMetadata` which takes in both the updated metadata byte array and a callback to be notified when the update is completed or an error occurs.
 
 ## Download a region
 Now that the bounds and definition object have been created, you can use the offlineManager to create an asynchronous download calling `createOfflineRegion`. You'll need to pass in the definition and metadata objects we created in the previous sections. This will provide you with two methods, `onCreate` and `onError`. onError occurs if there is an error starting or while downloading the region. The `onCreate` method provides a `offlineRegion` object which you can use to monitor the download and even display the progress to your users. If you need to pause a download, you can use the `offlineRegion.setDownloadState()` to handle this.
@@ -101,6 +117,51 @@ offlineManager.createOfflineRegion(definition, metadata,
 ```
 
 ## Managing downloaded regions
+Once you or your user has downloaded a region, the Maps SDK provides a few options to handle gathering list, positioning the camera inside the downloaded region, and a method for deletion of a region.
 
+### List offline regions
+The listing of regions is useful for presenting downloaded information to your user or gathering information inside the code itself. The `offlineManager` offers a `listOfflineRegions` method which provides both a method `onList` and `onError`. Use the `OfflineRegion` array to perform all actions on a specific region.
 
-## Add inside a service
+```java
+// Get the region bounds and zoom and move the camera.
+LatLngBounds bounds = ((OfflineTilePyramidRegionDefinition)
+  offlineRegions[regionSelected].getDefinition()).getBounds();
+double regionZoom = ((OfflineTilePyramidRegionDefinition)
+  offlineRegions[regionSelected].getDefinition()).getMinZoom();
+
+// Create new camera position
+CameraPosition cameraPosition = new CameraPosition.Builder()
+  .target(bounds.getCenter())
+  .zoom(regionZoom)
+  .build();
+
+// Move camera to new position
+map.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+```
+
+### Delete region
+To remove an offline region from the database, you'll need to first receive the list of offline regions as explained in the previous section. The `onList` method will provide you with an array of the present offline regions downloaded on the device, this object being the `offlineRegions`. You'll then use this object to select the region to be deleted and call `delete` on it which will provide you with a callback to be notified when the region is successfully deleted or if an error occurs.
+
+> **Note:** Deleting a region will result in also removing the least-recently requested resources not required by other regions, until the database shrinks below a certain size.
+
+```java
+offlineRegions[0].delete(new OfflineRegion.OfflineRegionDeleteCallback() {
+  @Override
+  public void onDelete() {
+    // Once the region is deleted, remove the
+    // progressBar and display a toast
+    progressBar.setVisibility(View.INVISIBLE);
+    progressBar.setIndeterminate(false);
+    Toast.makeText(OfflineManagerActivity.this, "Region deleted", Toast.LENGTH_LONG).show();
+  }
+
+  @Override
+  public void onError(String error) {
+    progressBar.setVisibility(View.INVISIBLE);
+    progressBar.setIndeterminate(false);
+    Log.e(TAG, "Error: " + error);
+  }
+});
+```
+
+<!-- TODO ## Add inside a service -->
