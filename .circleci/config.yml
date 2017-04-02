@@ -1,0 +1,24 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:7.4.0
+    working_directory: ~/android-docs
+    steps:
+      - checkout
+      - run:
+          name: Pre-Dependencies
+          command: mkdir -p ~/android-docs/artifacts
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: NPM Test
+          command: npm test
+      - store_artifacts:
+          path: ~/android-docs/artifacts
+      - deploy:
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            npm run deploy
+            fi
