@@ -66,7 +66,7 @@ navigation.getRoute(new Callback<DirectionsResponse>() {
 
 <!-- preview -->
 
-The RouteProgress class contains all of the user's progress information along the route, including leg and steps. The objects provided inside `AlertLevelChangeListener` and `ProgressChangeListener` allow you to get distance measurements, the percentage of route complete, current step index, and much more. A full list of the APIs exposed in RouteProgress is given in the table below.
+The RouteProgress class contains all the user's progress information along the route, including leg and steps. The objects provided inside `AlertLevelChangeListener` and `ProgressChangeListener` allow you to get distance measurements, the percentage of route complete, current step index, and much more. A full list of the APIs exposed in RouteProgress is given in the table below.
 
 | API                         | Description           |
 | --------------------------- |:-------------:|
@@ -156,7 +156,7 @@ navigation.setAlertLevelChangeListener(new AlertLevelChangeListener() {
 
 <!-- preview -->
 
-Like listening into user location changes, this listener's invoked every time the user's location changes but provides an updated RouteProgress object. The use of this listener is strongly encouraged, because you can typically update most of your application's user interface. An example of this would be if you are displaying the user's current progress until the user needs to do the next maneuver. Every time this listener's invoked, you are able to update your view with the new information from RouteProgress.
+Like listening into user location changes, this listener's invoked every time the user's location changes but provides an updated RouteProgress object. This listener is strongly encouraged, because you can typically update most of your application's user interface. An example of this would be if you are displaying the user's current progress until the user needs to do the next maneuver. Every time this listener's invoked, you are able to update your view with the new information from RouteProgress.
 
 Besides receiving information about the route progress, the callback also provides you with the user's current location which can provide their current speed, bearing, etc. If you have snapping to the route enabled, the location object will be updated to provide the snapped coordinates.
 

@@ -75,7 +75,7 @@ protected void onStart() {
 }
 ```
 
-All of the lifecycle methods that need to be overridden:
+All the lifecycle methods that need to be overridden:
 
 ```java
 onCreate();
@@ -91,7 +91,7 @@ onDestroy();
 ### Adding MapView
 You have the option to include the MapView inside of your layout file **or** build the MapView dynamically inside your application.
 
-```xml 
+```xml
 <com.mapbox.mapboxsdk.maps.MapView
   android:id="@+id/mapView"
   android:layout_width="match_parent"

@@ -72,7 +72,7 @@ Info windows are used to display information in a popup window anchored to a mar
 The Maps SDK also provides an API to customize the contents and design of info windows. You'll need to create an implementation of the `InfoWindowAdapter` and then call `MapboxMap.setInfoWindowAdapter()` passing in your implementation as a parameter. One method is given inside the `InfoWindowAdapter` called `getInfoWindow` which gives the attached marker object and returns the info window view.
 
 ## Polyline and Polygons
-Adding a line or polygon to your map is similar to adding a marker. Due to the nature of these objects, different APIs are exposed, such as polygon color or line width. Instead of taking in a single position, first bundle all your LatLng's inside a List and then pass them in using the `addAll()` API.
+Adding a line or polygon to your map is like adding a marker. Due to the nature of these objects, different APIs are exposed, such as polygon color or line width. Instead of taking in a single position, first bundle all your LatLng's inside a List and then pass them in using the `addAll()` API.
 
 ```java
 // Draw polyline on the map
