@@ -17,7 +17,7 @@ jobs:
           command: npm test
       - store_artifacts:
           path: ~/android-docs/artifacts
-- deploy:
+      - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
             npm run deploy
