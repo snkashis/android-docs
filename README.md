@@ -1,7 +1,7 @@
 # Mapbox Android documentation
 Inside this repo, you'll find Android documentation for both the Maps SDK and Mapbox Services SDK.
 
-To view the documentation, head over to [the website]().
+To view the documentation, head over to [the website](https://www.mapbox.com/android-docs).
 
 ### Getting started
 #### Installation
@@ -30,7 +30,7 @@ When editing documents or working on the site, you'll most likely want to run it
 gatsby develop
 ```
 
-This will set up a server running at http://localhost:8080.
+This will set up a server running at `http://localhost:8080`.
 
 #### Adding a new doc
 Inside the root directory, you'll see a `pages` folder which contains all the documentation. It's hierarchy is meant to allow for versioning.
@@ -42,6 +42,10 @@ SDK > Version > Document
 Inside the `.md` file, there are a few requirements to help keep consistency across documentation and organize properly.
 
 1. The document needs front-matter at the top providing a `title` and `path`.
-2. Start off the document not including a title, it's already given in the front-matter
+2. Start off the document not including a title in markdown, it's already given in the front-matter
 3. Add the file path inside the same SDKs `_pages.yaml` file.
 
+Once the documentation has been updated or added, open a pull request and let CI run. After the PR is reviewed, merging into master will run CI again but this time, will deploy your changes automatically to the website.
+
+#### Updating an SDK version
+In main directory, open the `constants.js` and update the version number.
