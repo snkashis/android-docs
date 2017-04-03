@@ -43,7 +43,7 @@ module.exports = React.createClass({
         </div>
 
         {/* Content */}
-        <div className={'scroll-styled main-content card-bg'}>
+        <div className={'scroll-styled card-bg card-container'}>
             {this.props.children}
         </div>
       </div>
