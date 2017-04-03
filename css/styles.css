@@ -103,6 +103,7 @@ body .prose blockquote {
   padding: 24px;
   top: 48px;
   bottom: 0px;
+  padding-bottom: 100px;
 }
 
 .card {
@@ -113,6 +114,7 @@ body .prose blockquote {
   margin: 1rem;
   position: relative;
   width: 325px;
+  vertical-align:top;
 }
 
 .card img {
