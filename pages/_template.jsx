@@ -81,7 +81,7 @@ module.exports = React.createClass({
       const isActive = prefixLink(child.path) === this.props.location.pathname
       isActive ? activeTitle = child.title : '';
 
-      return (<div>
+      return (<div onClick={this.toggleNav}>
         <li key={child.path}>
           <Link to={prefixLink(child.path)} className={'page-hover'} style={{textDecoration: 'none'}}>
             {isActive ? <strong>{child.title}</strong> : child.title }
@@ -115,7 +115,6 @@ module.exports = React.createClass({
             </div>}
 
           {queryMatches.desktop && <div className={'w240 toc'}>{docPages}</div>}
-
 
           <div className={queryMatches.desktop ? 'ml240 ' : ''}>
           {this.props.children}
