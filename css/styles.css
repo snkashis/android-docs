@@ -19,7 +19,6 @@
   padding-right: 50px;
   padding-bottom: 50px;
   padding-top: 24px;
-  margin-left: 240px;
   width: inherit;
 }
 
@@ -99,7 +98,6 @@ body .prose blockquote {
 }
 
 .card-container {
-  margin-left: 240px;
   padding: 24px;
   top: 48px;
   bottom: 0px;
