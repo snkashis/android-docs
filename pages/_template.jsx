@@ -99,18 +99,23 @@ module.exports = React.createClass({
 
         {/* Site top toolbar */}
         <div className={'col--12 z1 hmin48 bg-denim shadow-darken50 fixed'}>
-          {/* Site Navigation */}
-          <div className={'align-t hmin48 flex-parent-inline flex-parent--center-cross flex-parent--left-main w240'}><a href={'https://mapbox.com/'}><div className={queryMatches.desktop ? 'ml12 mb-logo--s mb-logo--white' : ''}/></a></div>
-            <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapSdkActive ? 'is-active' : ''}`} to={prefixLink('/map-sdk/5.0.1/getting-started/')}>Map SDK</Link>
-            <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapboxJavaActive ? 'is-active' : ''}`} to={prefixLink('/mapbox-services/2.0.0/getting-started/')}>Mapbox Services</Link>
-            <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${examplesActive ? 'is-active' : ''}`} to={prefixLink('/examples/basics/')}>Examples</Link>
-          </div>
+        {/* Site Navigation */}
+        <div className={`align-t hmin48 flex-parent-inline flex-parent--center-cross flex-parent--left-main ${queryMatches.desktop ? 'w240' : ''}`}><a href={'https://mapbox.com/'}><div className={queryMatches.desktop ? 'ml12 mb-logo--s mb-logo--white' : ''}/></a></div>
+        <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapSdkActive ? 'is-active' : ''}`} to={prefixLink('/map-sdk/5.0.1/getting-started/')}>Map SDK</Link>
+        <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapboxJavaActive ? 'is-active' : ''}`} to={prefixLink('/mapbox-services/2.0.0/getting-started/')}>Mapbox Services</Link>
+        <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${examplesActive ? 'is-active' : ''}`} to={prefixLink('/examples/basics/')}>Examples</Link>
+        </div>
+        {queryMatches.tablet && <div>
+          <button onClick={this.toggleNav}  className={`btn m6 bg-lighten10 bg-lighten25-on-hover round txt-s z1 right absolute`}>Hello world</button>
+          </div>}
 
-          <div className={'w240 toc'}>
-            {docPages}
-          </div>
 
+          {queryMatches.desktop && <div className={'w240 toc'}>{docPages}</div>}
+
+
+          <div className={queryMatches.desktop ? 'ml240 ' : ''}>
           {this.props.children}
+          </div>
       </div>
     );
   }
