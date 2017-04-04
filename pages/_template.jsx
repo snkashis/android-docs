@@ -20,18 +20,13 @@ module.exports = React.createClass({
         { name: 'tablet', query: window.matchMedia('(max-width: 960px)') },
         { name: 'mobile', query: window.matchMedia('(max-width: 640px)') }
       ];
-      let sections = [
-        {name: 'map-sdk'},
-        {name: 'mapbox-services'},
-        {name: 'examples'}
-      ];
       mqls.forEach(q => q.query.addListener(this.mediaQueryChanged));
       return {
         // media queryMatches
         mqls: mqls,
         // object of currently matched queries, like { desktop: true }
         queryMatches: {},
-        active: sections
+        showNav: false
       };
     } else {
       return {
@@ -39,10 +34,13 @@ module.exports = React.createClass({
         queryMatches: {
           desktop: true
         },
-        active: { }
+        showNav: false
       };
       }
     },
+    toggleNav() {
+  this.setState({ showNav: !this.state.showNav });
+},
   componentDidMount() {
     this.mediaQueryChanged();
   },
@@ -57,14 +55,12 @@ module.exports = React.createClass({
       }, {})
     });
   },
-  getActiveSection() {
-    this.setState({ active: this.state.active });
-  },
   render() {
     const mapSdkActive = includes(this.props.location.pathname, '/map-sdk/');
     const mapboxJavaActive = includes(this.props.location.pathname, '/mapbox-services/');
     const examplesActive = includes(this.props.location.pathname, '/examples/');
-    let { queryMatches, active } = this.state;
+    var activeTitle;
+    let { queryMatches, showNav } = this.state;
 
     const childPages = this.props.children.props.route.pages.map((p) => {
       if (includes(this.props.location.pathname, p.file.dir)) {
@@ -83,6 +79,7 @@ module.exports = React.createClass({
         return;
       }
       const isActive = prefixLink(child.path) === this.props.location.pathname
+      isActive ? activeTitle = child.title : '';
 
       return (<div>
         <li key={child.path}>
@@ -94,6 +91,7 @@ module.exports = React.createClass({
         </div>
       )
     });
+
     return (
       <div className={'grid'}>
 
@@ -101,13 +99,20 @@ module.exports = React.createClass({
         <div className={'col--12 z1 hmin48 bg-denim shadow-darken50 fixed'}>
         {/* Site Navigation */}
         <div className={`align-t hmin48 flex-parent-inline flex-parent--center-cross flex-parent--left-main ${queryMatches.desktop ? 'w240' : ''}`}><a href={'https://mapbox.com/'}><div className={queryMatches.desktop ? 'ml12 mb-logo--s mb-logo--white' : ''}/></a></div>
-        <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapSdkActive ? 'is-active' : ''}`} to={prefixLink('/map-sdk/5.0.1/getting-started/')}>Map SDK</Link>
-        <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapboxJavaActive ? 'is-active' : ''}`} to={prefixLink('/mapbox-services/2.0.0/getting-started/')}>Mapbox Services</Link>
-        <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${examplesActive ? 'is-active' : ''}`} to={prefixLink('/examples/basics/')}>Examples</Link>
+        <Link className={`py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapSdkActive ? 'is-active' : ''}`} to={prefixLink('/map-sdk/5.0.1/getting-started/')}>Map SDK</Link>
+        <Link className={`py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapboxJavaActive ? 'is-active' : ''}`} to={prefixLink('/mapbox-services/2.0.0/getting-started/')}>Mapbox Services</Link>
+        <Link className={`py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${examplesActive ? 'is-active' : ''}`} to={prefixLink('/examples/basics/')}>Examples</Link>
         </div>
         {queryMatches.tablet && <div>
-          <button onClick={this.toggleNav}  className={`btn m6 bg-lighten10 bg-lighten25-on-hover round txt-s z1 right absolute`}>Hello world</button>
-          </div>}
+          <button onClick={this.toggleNav}
+          className={`btn m6 flex-parent flex-parent--center-cross bg-lighten10 bg-lighten25-on-hover transition round txt-s z1 right absolute`}>
+          {activeTitle}
+          <svg className={'icon flex-child'}><use href={showNav ? '#icon-caret-up' : '#icon-caret-down'}/></svg></button>
+          {showNav && <div
+            className='mt48 scroll-styled'>
+              hello
+            </div>}
+            </div>}
 
 
           {queryMatches.desktop && <div className={'w240 toc'}>{docPages}</div>}
