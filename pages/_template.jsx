@@ -109,11 +109,10 @@ module.exports = React.createClass({
           {activeTitle}
           <svg className={'icon flex-child'}><use href={showNav ? '#icon-caret-up' : '#icon-caret-down'}/></svg></button>
           {showNav && <div
-            className='mt48 scroll-styled'>
-              hello
+            className='mt6 scroll-styled col--12 toc z1'>
+              {docPages}
             </div>}
             </div>}
-
 
           {queryMatches.desktop && <div className={'w240 toc'}>{docPages}</div>}
 
