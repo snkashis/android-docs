@@ -14,25 +14,32 @@ module.exports = React.createClass({
   },
   getInitialState() {
     if (process.browser) {
-    let mqls = [
+      let mqls = [
         { name: 'widescreen', query: window.matchMedia('(min-width: 1200px)') },
         { name: 'desktop', query: window.matchMedia('(min-width: 961px)') },
         { name: 'tablet', query: window.matchMedia('(max-width: 960px)') },
         { name: 'mobile', query: window.matchMedia('(max-width: 640px)') }
+      ];
+      let sections = [
+        {name: 'map-sdk'},
+        {name: 'mapbox-services'},
+        {name: 'examples'}
       ];
       mqls.forEach(q => q.query.addListener(this.mediaQueryChanged));
       return {
         // media queryMatches
         mqls: mqls,
         // object of currently matched queries, like { desktop: true }
-        queryMatches: {}
+        queryMatches: {},
+        active: sections
       };
     } else {
       return {
         mqls: { },
         queryMatches: {
           desktop: true
-        }
+        },
+        active: { }
       };
       }
     },
@@ -50,12 +57,43 @@ module.exports = React.createClass({
       }, {})
     });
   },
+  getActiveSection() {
+    this.setState({ active: this.state.active });
+  },
   render() {
     const mapSdkActive = includes(this.props.location.pathname, '/map-sdk/');
     const mapboxJavaActive = includes(this.props.location.pathname, '/mapbox-services/');
     const examplesActive = includes(this.props.location.pathname, '/examples/');
-    let { queryMatches } = this.state;
+    let { queryMatches, active } = this.state;
 
+    const childPages = this.props.children.props.route.pages.map((p) => {
+      if (includes(this.props.location.pathname, p.file.dir)) {
+        if (p.data.title !== undefined) {
+          return {
+            title: p.data.title,
+            path: p.path,
+            toc: p.data.toc,
+          };
+        }
+      }
+    });
+
+    const docPages = childPages.map((child) => {
+      if (child === undefined) {
+        return;
+      }
+      const isActive = prefixLink(child.path) === this.props.location.pathname
+
+      return (<div>
+        <li key={child.path}>
+          <Link to={prefixLink(child.path)} className={'page-hover'} style={{textDecoration: 'none'}}>
+            {isActive ? <strong>{child.title}</strong> : child.title }
+          </Link>
+        </li>
+        {isActive ? <div className={'ml12'} dangerouslySetInnerHTML={{ __html: child.toc }}/> : ''}
+        </div>
+      )
+    });
     return (
       <div className={'grid'}>
 
@@ -68,8 +106,11 @@ module.exports = React.createClass({
             <Link className={`py12 btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${examplesActive ? 'is-active' : ''}`} to={prefixLink('/examples/basics/')}>Examples</Link>
           </div>
 
-          {this.props.children}
+          <div className={'w240 toc'}>
+            {docPages}
+          </div>
 
+          {this.props.children}
       </div>
     );
   }
