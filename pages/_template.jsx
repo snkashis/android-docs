@@ -116,7 +116,7 @@ module.exports = React.createClass({
 
           {queryMatches.desktop && <div className={'w240 toc'}>{docPages}</div>}
 
-          <div className={queryMatches.desktop ? 'ml240 ' : ''}>
+          <div className={queryMatches.desktop ? 'ml240 p48' : 'p12'}>
           {this.props.children}
           </div>
       </div>
