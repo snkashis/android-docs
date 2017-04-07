@@ -104,7 +104,7 @@ Inside of layout file
   mapbox:mapbox_cameraZoom="12"/>
 ```
 
-Dynamic build inside of `onCreate()`
+Dynamic build
 
 ```java
 @Override
