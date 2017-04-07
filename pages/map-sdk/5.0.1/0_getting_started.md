@@ -104,8 +104,6 @@ Inside of layout file
   mapbox:mapbox_cameraZoom="12"/>
 ```
 
-<!-- TODO link to dynamically add a map example -->
-
 Dynamic build inside of `onCreate()`
 
 ```java
