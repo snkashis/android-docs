@@ -91,15 +91,22 @@ onDestroy();
 ### Adding MapView
 You have the option to include the MapView inside of your layout file **or** build the MapView dynamically inside your application.
 
+Inside of layout file
+
 ```xml
 <com.mapbox.mapboxsdk.maps.MapView
   android:id="@+id/mapView"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets" />
+  mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets" 
+  mapbox:mapbox_cameraTargetLat="43.7383"
+  mapbox:mapbox_cameraTargetLng="7.4094"
+  mapbox:mapbox_cameraZoom="12"/>
 ```
 
 <!-- TODO link to dynamically add a map example -->
+
+Dynamic build inside of `onCreate()`
 
 ```java
 @Override
@@ -111,7 +118,7 @@ You have the option to include the MapView inside of your layout file **or** bui
     Mapbox.getInstance(this, getString(R.string.access_token));
 
     MapboxMapOptions options = new MapboxMapOptions()
-      .styleUrl(Style.OUTDOORS)
+      .styleUrl(Style.MAPBOX_STREETS)
       .camera(new CameraPosition.Builder()
         .target(new LatLng(43.7383, 7.4094))
         .zoom(12)
