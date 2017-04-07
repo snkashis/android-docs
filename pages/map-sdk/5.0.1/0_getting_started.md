@@ -101,6 +101,38 @@ You have the option to include the MapView inside of your layout file **or** bui
 
 <!-- TODO link to dynamically add a map example -->
 
+```java
+@Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    // Mapbox access token is configured here. This needs to be called either in your application
+    // object or in the same activity which contains the mapview.
+    Mapbox.getInstance(this, getString(R.string.access_token));
+
+    MapboxMapOptions options = new MapboxMapOptions()
+      .styleUrl(Style.OUTDOORS)
+      .camera(new CameraPosition.Builder()
+        .target(new LatLng(43.7383, 7.4094))
+        .zoom(12)
+        .build());
+
+    // create map
+    mapView = new MapView(this, options);
+    mapView.onCreate(savedInstanceState);
+    mapView.getMapAsync(new OnMapReadyCallback() {
+      @Override
+      public void onMapReady(MapboxMap mapboxMap) {
+
+        // Customize map with markers, polylines, etc.
+
+      }
+    });
+
+    setContentView(mapView);
+  }
+```
+
 
 ### Fragments
 
