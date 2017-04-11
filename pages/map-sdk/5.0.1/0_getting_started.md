@@ -104,7 +104,7 @@ You have the option to include the MapView inside of your layout file **or** bui
 ### MapView XML Attributes
 
 As shown above, you don't have to use XML for setting a MapView's various visual properties. If you do use XML, you should know that all MapView XML attributes start with
-`mapbox_` for identification and for removing any potential conflicts with other libraries. This is best practice for exposing library resources. 
+`mapbox_` for identification and for removing any potential conflicts with other libraries. This is a best practice for exposing library resources. 
 
 Some examples of MapView attributes are:
 
