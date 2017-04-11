@@ -109,15 +109,15 @@ As shown above, you don't have to use XML for setting a MapView's various visual
 Some examples of MapView attributes are:
 
 ```xml
-mapbox:mapbox_cameraTargetLat=""
-mapbox:mapbox_cameraTargetLng=""
-mapbox:mapbox_cameraZoom=""
-mapbox:mapbox_cameraBearing=""
-mapbox:mapbox_cameraTilt=""
-mapbox:mapbox_styleUrl=""
-mapbox:mapbox_cameraZoomMax=""
-mapbox:mapbox_cameraZoomMin=""
-mapbox:mapbox_uiRotateGestures=""
+mapbox:mapbox_cameraTargetLat="-36.84"
+mapbox:mapbox_cameraTargetLng="174.76"
+mapbox:mapbox_cameraZoom="10"
+mapbox:mapbox_cameraBearing="34.33"
+mapbox:mapbox_cameraTilt="50.25"
+mapbox:mapbox_styleUrl="@string/mapbox_style_satellite_streets"
+mapbox:mapbox_cameraZoomMax="12.41"
+mapbox:mapbox_cameraZoomMin="6"
+mapbox:mapbox_uiRotateGestures="false"
 ```
 
 Attributes will not auto-generate as you type because of Android Studio's current implementation, which means that you might not know all the attributes that are available to use. **[Click here to view the full list of MapView XML attributes](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/res/values/attrs.xml)**.
