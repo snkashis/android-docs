@@ -103,10 +103,10 @@ You have the option to include the MapView inside of your layout file **or** bui
 
 ### MapView XML Attributes
 
-As shown above, you don't have to use XML for setting a MapView's various visual properties. If you do use XML, you should know that all MapView XML attributes start with
+As shown above, you don't have to use XML for setting various `MapView` visual properties. If you do use XML, you should know that all `MapView` XML attributes start with
 `mapbox_` for identification and for removing any potential conflicts with other libraries. This is a best practice for exposing library resources. 
 
-Some examples of MapView attributes are:
+Some examples of `MapView` attributes are:
 
 ```xml
 mapbox:mapbox_cameraTargetLat="-36.84"
@@ -120,7 +120,7 @@ mapbox:mapbox_cameraZoomMin="6"
 mapbox:mapbox_uiRotateGestures="false"
 ```
 
-Attributes will not auto-generate as you type because of Android Studio's current implementation, which means that you might not know all the attributes that are available to use. **[Click here to view the full list of MapView XML attributes](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/res/values/attrs.xml)**.
+Attributes will not auto-generate as you type because of Android Studio's current implementation, which means that you might not know all the attributes that are available to use. **[Click here to view the full list of `MapView` XML attributes](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/res/values/attrs.xml)**.
 
 Additionally, make sure that you add `xmlns:mapbox="http://schemas.android.com/apk/res-auto"` to the the top-level parent layout of the particular XML file. In the example below, you'll see that it's added to the `RelativeLayout`:
 
