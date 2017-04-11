@@ -122,7 +122,7 @@ mapbox:mapbox_uiRotateGestures="false"
 
 Attributes will not auto-generate as you type because of Android Studio's current implementation, which means that you might not know all the attributes that are available to use. **[Click here to view the full list of MapView XML attributes](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/res/values/attrs.xml)**.
 
-Additionally, make sure that you add `xmlns:mapbox="http://schemas.android.com/apk/res-auto"` to the the top-level parent layout of the particular xml file. In the example below, you'll see that it's added to the RelativeLayout:
+Additionally, make sure that you add `xmlns:mapbox="http://schemas.android.com/apk/res-auto"` to the the top-level parent layout of the particular XML file. In the example below, you'll see that it's added to the `RelativeLayout`:
 
 ```xml
 <RelativeLayout
@@ -133,7 +133,8 @@ Additionally, make sure that you add `xmlns:mapbox="http://schemas.android.com/a
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.mapbox.mapboxsdk.maps.MapView
+    <com.mapbox.mapboxsdk.maps.
+    
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
