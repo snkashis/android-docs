@@ -1,6 +1,6 @@
 ---
 title: Navigation
-path: /mapbox-services/2.0.1/navigation/
+path: /mapbox-services/2.1.0/navigation/
 ---
 
 <!-- preview -->
