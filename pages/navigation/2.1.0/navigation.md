@@ -1,10 +1,10 @@
 ---
-title: Navigation
+title: Mapbox Navigation
 path: /mapbox-navigation/2.1.0/navigation/
 ---
 
 <!-- preview -->
-
+<br>
 The navigation part of Mapbox Services is built on top of our Directions API and contains logic needed to get timed navigation instructions. The calculations use the user's current location and compare it to the current route that the user's traversing to provide critical information at any given moment.
 
 > This is only offered for Driving instructions and takes traffic into consideration by default.
