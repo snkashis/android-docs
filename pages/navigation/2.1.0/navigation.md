@@ -180,9 +180,3 @@ Not implemented in the SDK yet.
 <!-- preview -->
 
 The RouteUtils class can be found in the mapbox-java-services module and provides many of the methods used for calculations done in the RouteProgress object. An example of this is getting the total route distance left until the user reaches their destination. If you would like to do these calculations on your own or would like the change the behavior of navigation, you can directly call these methods and handle the calculations yourself.
-
-<br>
-<br>
-<br>
-<br>
-<br>
