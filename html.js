@@ -35,8 +35,8 @@ module.exports = React.createClass({
           <title>{title}</title>
           <link href='https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.min.css' rel='stylesheet'/>
           <script async defer src='https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.js'></script>
-          <link href="https://api.mapbox.com/mapbox-assembly/mapbox-addon/v0.9.1/assembly.min.css" rel="stylesheet"/>
-          <script src="https://api.mapbox.com/mapbox-assembly/mapbox-addon/v0.9.1/assembly.js"></script>
+          <link href="https://api.mapbox.com/mapbox-assembly/mapbox-addon/v0.10.0/assembly.min.css" rel="stylesheet"/>
+          <script src="https://api.mapbox.com/mapbox-assembly/mapbox-addon/v0.10.0/assembly.js"></script>
           {css}
         </head>
         <body>
