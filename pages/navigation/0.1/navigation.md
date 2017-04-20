@@ -11,7 +11,16 @@ The navigation part of Mapbox Services is built on top of our Directions API and
 
 Much of the navigation APIs require being inside an Android application but we do expose some of the lower level logic inside the RouteUtils class.
 
-Make sure your Android project includes the `mapbox-android-ui` dependency to gain full access to the navigation APIs. Much of the navigation logic is handled in an Android service meaning you'll be able to continue tracking the users progress along the navigation route even when your application is not in the foreground. A few permissions are added into your application. There's no need to add the permissions by default due to manifest merging. The permissions in use are the Internet permission and the access fine location.
+The snippet to add to your `build.gradle` to consume this SDK is the following:
+
+```
+// Mapbox Navigation SDK for Android
+compile('com.mapbox.mapboxsdk:mapbox-android-navigation:0.1.0@aar') {
+    transitive = true
+}
+
+
+Much of the navigation logic is handled in an Android service meaning you'll be able to continue tracking the users progress along the navigation route even when your application is not in the foreground. A few permissions are added into your application. There's no need to add the permissions by default due to manifest merging. The permissions in use are the Internet permission and the access fine location.
 
 ## MapboxNavigation object
 
