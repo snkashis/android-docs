@@ -18,7 +18,7 @@ The snippet to add to your `build.gradle` to consume this SDK is the following:
 compile('com.mapbox.mapboxsdk:mapbox-android-navigation:0.1.0@aar') {
     transitive = true
 }
-
+```
 
 Much of the navigation logic is handled in an Android service meaning you'll be able to continue tracking the users progress along the navigation route even when your application is not in the foreground. A few permissions are added into your application. There's no need to add the permissions by default due to manifest merging. The permissions in use are the Internet permission and the access fine location.
 
