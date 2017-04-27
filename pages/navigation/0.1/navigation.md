@@ -40,7 +40,11 @@ navigation.setLocationEngine(locationEngine);
 Now that you have set up a way for the MapboxNavigation object to get the user's location, the other thing it will need is a route. this is done by calling `getRoute` passing in a origin, destination, and a callback to handle the response. If you've ever worked with [Retrofit](http://square.github.io/retrofit/), the callback here will look familiar since this is what we are using under the hood. Inside the onResponse, you can draw the directions route on a map or present time and distance since the full directions response is provided.
 
 ```java
-navigation.getRoute(new Callback<DirectionsResponse>() {
+// From Mapbox to The White House
+Position origin = Position.fromLatLng(38.90992, -77.03613);
+Position destination = Position.fromLatLng(38.8977, -77.0365);
+
+navigation.getRoute(origin, destination, new Callback<DirectionsResponse>() {
   @Override
   public void onResponse(
     Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
