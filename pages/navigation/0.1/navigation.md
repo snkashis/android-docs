@@ -24,7 +24,7 @@ Much of the navigation logic is handled in an Android service meaning you'll be 
 
 <!-- preview -->
 
-Most of the navigation options are found inside the MapboxNavigation class including fetching the route, starting and ending the navigation session, and attaching listeners for events that you'd like to handle. Assign and initialize a new instance of MapboxNavigation inside your Navigation activity. When initializing, you'll need to pass in a `Context` and your Mapbox access token. Read the access token section in the [getting started](/mapbox-services/2.0.1/getting-started/#access-tokens) document to learn how to get a free access token.
+Most of the navigation options are found inside the `MapboxNavigation` class including fetching the route, starting and ending the navigation session, and attaching listeners for events that you'd like to handle. Assign and initialize a new instance of `MapboxNavigation` inside your Navigation activity. When initializing, you'll need to pass in a `Context` and your Mapbox access token. Read the access token section in the [getting started](/mapbox-services/2.0.1/getting-started/#access-tokens) document to learn how to get a free access token.
 
 ```java
 MapboxNavigation navigation = new MapboxNavigation(this, MAPBOX_ACCESS_TOKEN);
@@ -34,7 +34,7 @@ MapboxNavigation navigation = new MapboxNavigation(this, MAPBOX_ACCESS_TOKEN);
 
 <!-- preview -->
 
-Navigation requires the user's location to run. This is done using the LocationEngine class introduced in 2.0. Visit the [LocationEngine](/mapbox-services/2.0.1/telemetry/#locationengine) documentation for detailed instructions on how to use this class. You'll need to set up an instance of a location engine and pass it into the MapboxNavigation object.
+Navigation requires the user's location to run. This is done using the `LocationEngine` class introduced in 2.0. Visit the [`LocationEngine`](/mapbox-services/2.0.1/telemetry/#locationengine) documentation for detailed instructions on how to use this class. You'll need to set up an instance of a location engine and pass it into the `MapboxNavigation` object.
 
 ```java
 LocationEngine locationEngine = LostLocationEngine.getLocationEngine(this);
@@ -45,7 +45,7 @@ navigation.setLocationEngine(locationEngine);
 
 <!-- preview -->
 
-Now that you have set up a way for the MapboxNavigation object to get the user's location, the other thing it will need is a route. this is done by calling `getRoute` passing in a origin, destination, and a callback to handle the response. If you've ever worked with [Retrofit](http://square.github.io/retrofit/), the callback here will look familiar since this is what we are using under the hood. Inside the onResponse, you can draw the directions route on a map or present time and distance since the full directions response is provided.
+Now that you have set up a way for the `MapboxNavigation` object to get the user's location, the other thing it will need is a route. this is done by calling `getRoute` passing in a origin, destination, and a callback to handle the response. If you've ever worked with [Retrofit](http://square.github.io/retrofit/), the callback here will look familiar since this is what we are using under the hood. Inside the onResponse, you can draw the directions route on a map or present time and distance since the full directions response is provided.
 
 ```java
 // From Mapbox to The White House
@@ -70,7 +70,7 @@ navigation.getRoute(origin, destination, new Callback<DirectionsResponse>() {
 
 <!-- preview -->
 
-The RouteProgress class contains all the user's progress information along the route, including leg and steps. This object's provided inside `AlertLevelChangeListener` and `ProgressChangeListener`, allowing you to get distance measurements, the percentage of route complete, current step index, and much more.
+The `RouteProgress` class contains all the user's progress information along the route, including leg and steps. This object's provided inside `AlertLevelChangeListener` and `ProgressChangeListener`, allowing you to get distance measurements, the percentage of route complete, current step index, and much more.
 
 `RouteProgress` contains two subclasses for leg and step information, the tables below provide a full list of the APIs exposed.
 
@@ -166,7 +166,7 @@ navigation.addAlertLevelChangeListener(new AlertLevelChangeListener() {
 
 ### OnProgressChange
 
-Like listening into user location changes, this listener's invoked every time the user's location changes but provides an updated RouteProgress object. This listener is strongly encouraged, because you can typically update most of your application's user interface. An example of this would be if you are displaying the user's current progress until the user needs to do the next maneuver. Every time this listener's invoked, you are able to update your view with the new information from RouteProgress.
+Like listening into user location changes, this listener's invoked every time the user's location changes but provides an updated RouteProgress object. This listener is strongly encouraged, because you can typically update most of your application's user interface. An example of this would be if you are displaying the user's current progress until the user needs to do the next maneuver. Every time this listener's invoked, you are able to update your view with the new information from `RouteProgress`.
 
 Besides receiving information about the route progress, the callback also provides you with the user's current location which can provide their current speed, bearing, etc. If you have snapping to the route enabled, the location object will be updated to provide the snapped coordinates.
 
@@ -205,4 +205,4 @@ navigation.addOffRouteListener(new OffRouteListener() {
 
 ## RouteUtils
 
-The RouteUtils class can be found in the mapbox-java-services module and provides many of the methods used for calculations done in the RouteProgress object. An example of this is getting the total route distance left until the user reaches their destination. If you would like to do these calculations on your own or would like the change the behavior of navigation, you can directly call these methods and handle the calculations yourself.
+The RouteUtils class can be found in the mapbox-java-services module and provides many of the methods used for calculations done in the `RouteProgress` object. An example of this is getting the total route distance left until the user reaches their destination. If you would like to do these calculations on your own or would like the change the behavior of navigation, you can directly call these methods and handle the calculations yourself.
