@@ -1,5 +1,5 @@
 <!DOCTYPE html>
- <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Mapbox Navigation | Android Documentation</title><link href="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.min.css" rel="stylesheet"/><script async="" defer="" src="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.js"></script><link href="https://api.mapbox.com/mapbox-assembly/mapbox-addon/v0.10.0/assembly.min.css" rel="stylesheet"/><script src="https://api.mapbox.com/mapbox-assembly/mapbox-addon/v0.10.0/assembly.js"></script><style>.bg-denim{background-color:#607d9c!important}.btn{border-radius:0}.txt-s{line-height:inherit}.main-content{position:fixed;top:48px;bottom:0;overflow-y:auto;padding-top:24px;padding-bottom:250px;width:inherit}code p{font-weight:lighter;font-size:11px}code,pre{font-family:Fira Mono Medium,Monaco,monospace!important;font-weight:700!important;font-size:13px!important;word-break:normal!important}pre{background-color:#232323!important}.error,.info,.success,.warning{border-left:5px solid #fd0;padding:10px 15px;margin-left:-20px;margin-right:-15px;background-color:#fafafa;border-radius:2px}.info{border-color:#56adec}body .prose blockquote{border-left:5px solid #56adec;background-color:#fafafa;border-radius:2px;word-wrap:break-word;padding-top:12px;padding-bottom:12px;padding-right:12px}.toc{list-style-type:none;color:#fff;background:#232323;position:fixed;top:42px;bottom:0;overflow-y:auto;padding:24px 20px 20px;width:inherit;border-right:1px solid grey}.toc-subheaders{font-size:12px;display:inline-block;line-height:20px;margin-bottom:12px}.page-hover:hover,.toc-subheaders a:hover{color:#aab7ef}.card-bg{background:#f4f7fb;width:100%;position:fixed;overflow-y:auto}.card-container{top:48px;bottom:0;padding-bottom:100px}.card{background:#fff;border-radius:2px;display:inline-block;height:375px;margin:16px;margin:1rem;position:relative;width:325px;vertical-align:top}.card img{display:block;margin:auto}.card h4,p{margin:12px}.card-1{box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);transition:all .3s cubic-bezier(.25,.8,.25,1)}.card-1:hover{box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22)}.hljs{color:#a9b7c6;background:#232323;display:block;overflow-x:auto;padding:.5em}.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#6897bb}.hljs-deletion,.hljs-keyword,.hljs-selector-tag{color:#cc7832}.hljs-link,.hljs-template-variable,.hljs-variable{color:#56b881}.hljs-comment,.hljs-quote{color:gray}.hljs-meta{color:#bbb529}.hljs-addition,.hljs-attribute,.hljs-string{color:#56b881}.hljs-section,.hljs-title,.hljs-type{color:#ffc66d}.hljs-name,.hljs-selector-class,.hljs-selector-id{color:#e8bf6a}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}</style></head><body><div id="react-mount"><div class="grid" data-reactroot="" data-reactid="1" data-react-checksum="1011701819"><div class="col--12 z1 hmin48 bg-denim shadow-darken50 fixed" data-reactid="2"><div class="align-t hmin48 flex-parent-inline flex-parent--center-cross flex-parent--left-main w240" data-reactid="3"><a href="https://mapbox.com/" data-reactid="4"><div class="ml12 mb-logo--s mb-logo--white" data-reactid="5"></div></a></div><a class="py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  " href="/android-docs/map-sdk/5.0.2/getting-started/" data-reactid="6">Map SDK</a><a class="py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  " href="/android-docs/mapbox-services/2.1.0/getting-started/" data-reactid="7">Mapbox Services</a><a class="py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  is-active" href="/android-docs/mapbox-navigation/0.1/navigation/" data-reactid="8">Mapbox Navigation</a><a class="py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  " href="/android-docs/examples/basics/" data-reactid="9">Examples</a></div><div class="w240 toc" data-reactid="10"><div data-reactid="11"><li data-reactid="12"><a class="page-hover" style="text-decoration:none;" href="/android-docs/mapbox-navigation/0.1/navigation/" data-reactid="13"><strong data-reactid="14">Mapbox Navigation</strong></a></li><div class="ml12" data-reactid="15"><ul class="toc-subheaders">
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Mapbox Navigation | Android Documentation</title><link href="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.min.css" rel="stylesheet"/><script async="" defer="" src="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.js"></script><link href="https://api.mapbox.com/mapbox-assembly/mapbox-addon/v0.10.0/assembly.min.css" rel="stylesheet"/><script src="https://api.mapbox.com/mapbox-assembly/mapbox-addon/v0.10.0/assembly.js"></script><style>.bg-denim{background-color:#607d9c!important}.btn{border-radius:0}.txt-s{line-height:inherit}.main-content{position:fixed;top:48px;bottom:0;overflow-y:auto;padding-top:24px;padding-bottom:250px;width:inherit}code p{font-weight:lighter;font-size:11px}code,pre{font-family:Fira Mono Medium,Monaco,monospace!important;font-weight:700!important;font-size:13px!important;word-break:normal!important}pre{background-color:#232323!important}.error,.info,.success,.warning{border-left:5px solid #fd0;padding:10px 15px;margin-left:-20px;margin-right:-15px;background-color:#fafafa;border-radius:2px}.info{border-color:#56adec}body .prose blockquote{border-left:5px solid #56adec;background-color:#fafafa;border-radius:2px;word-wrap:break-word;padding-top:12px;padding-bottom:12px;padding-right:12px}.toc{list-style-type:none;color:#fff;background:#232323;position:fixed;top:42px;bottom:0;overflow-y:auto;padding:24px 20px 20px;width:inherit;border-right:1px solid grey}.toc-subheaders{font-size:12px;display:inline-block;line-height:20px;margin-bottom:12px}.page-hover:hover,.toc-subheaders a:hover{color:#aab7ef}.card-bg{background:#f4f7fb;width:100%;position:fixed;overflow-y:auto}.card-container{top:48px;bottom:0;padding-bottom:100px}.card{background:#fff;border-radius:2px;display:inline-block;height:375px;margin:16px;margin:1rem;position:relative;width:325px;vertical-align:top}.card img{display:block;margin:auto}.card h4,p{margin:12px}.card-1{box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);transition:all .3s cubic-bezier(.25,.8,.25,1)}.card-1:hover{box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22)}.hljs{color:#a9b7c6;background:#232323;display:block;overflow-x:auto;padding:.5em}.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#6897bb}.hljs-deletion,.hljs-keyword,.hljs-selector-tag{color:#cc7832}.hljs-link,.hljs-template-variable,.hljs-variable{color:#56b881}.hljs-comment,.hljs-quote{color:gray}.hljs-meta{color:#bbb529}.hljs-addition,.hljs-attribute,.hljs-string{color:#56b881}.hljs-section,.hljs-title,.hljs-type{color:#ffc66d}.hljs-name,.hljs-selector-class,.hljs-selector-id{color:#e8bf6a}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}</style></head><body><div id="react-mount"><div class="grid" data-reactroot="" data-reactid="1" data-react-checksum="452002495"><div class="col--12 z1 hmin48 bg-denim shadow-darken50 fixed" data-reactid="2"><div class="align-t hmin48 flex-parent-inline flex-parent--center-cross flex-parent--left-main w240" data-reactid="3"><a href="https://mapbox.com/" data-reactid="4"><div class="ml12 mb-logo--s mb-logo--white" data-reactid="5"></div></a></div><a class="py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  " href="/android-docs/map-sdk/5.0.2/getting-started/" data-reactid="6">Map SDK</a><a class="py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  " href="/android-docs/mapbox-services/2.1.0/getting-started/" data-reactid="7">Mapbox Services</a><a class="py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  is-active" href="/android-docs/mapbox-navigation/0.1/navigation/" data-reactid="8">Mapbox Navigation</a><a class="py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  " href="/android-docs/examples/basics/" data-reactid="9">Examples</a></div><div class="w240 toc" data-reactid="10"><div data-reactid="11"><li data-reactid="12"><a class="page-hover" style="text-decoration:none;" href="/android-docs/mapbox-navigation/0.1/navigation/" data-reactid="13"><strong data-reactid="14">Mapbox Navigation</strong></a></li><div class="ml12" data-reactid="15"><ul class="toc-subheaders">
 <li>
 <ul>
 <li><a href="#mapboxnavigation-object">MapboxNavigation object</a>
@@ -14,7 +14,7 @@
 <li><a href="#navigationrunning">NavigationRunning</a></li>
 <li><a href="#alertlevelchange">AlertLevelChange</a></li>
 <li><a href="#onprogresschange">OnProgressChange</a></li>
-<li><a href="#offroute">OffRoute</a></li>
+<li><a href="#useroffroute">UserOffRoute</a></li>
 </ul>
 </li>
 <li><a href="#routeutils">RouteUtils</a></li>
@@ -22,38 +22,36 @@
 </li>
 </ul>
 </div></div></div><div class="ml240 p48" data-reactid="16"><div class="grid" data-reactid="17"><div class="prose scroll-styled main-content" data-reactid="18"><div class="col--10" data-reactid="19"><div class="markdown" data-reactid="20"><h1 data-reactid="21">Mapbox Navigation</h1><div data-reactid="22"><!-- preview -->
-<br>
-The navigation part of Mapbox Services is built on top of our Directions API and contains logic needed to get timed navigation instructions. The calculations use the user's current location and compare it to the current route that the user's traversing to provide critical information at any given moment.
 <blockquote>
-<p>This is only offered for Driving instructions and takes traffic into consideration by default.</p>
+<p>Navigation is still in beta, there is currently a chance API breaking changes might occur without a major release.</p>
 </blockquote>
-<p>Much of the navigation APIs require being inside an Android application but we do expose some of the lower level logic inside the RouteUtils class.</p>
+<p>The navigation part of Mapbox Services is built on top of our Directions API and contains logic needed to get timed navigation instructions. The calculations use the user’s current location and compare it to the current route that the user’s traversing to provide critical information at any given moment.</p>
+<p>Much of the navigation APIs require being inside an Android application but we do expose some of the lower level logic inside the <a href="#routeutils">RouteUtils class</a>.</p>
 <p>The snippet to add to your <code>build.gradle</code> to consume this SDK is the following:</p>
-<pre class="hljs"><code>// Mapbox Navigation SDK for Android
+<pre class="hljs"><code><span class="hljs-comment">// Mapbox Navigation SDK for Android		</span>
 
-compile 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.1.0'
-
+compile <span class="hljs-string">'com.mapbox.mapboxsdk:mapbox-android-navigation:0.1.0'</span>
 </code></pre>
-<p>Much of the navigation logic is handled in an Android service meaning you’ll be able to continue tracking the users progress along the navigation route even when your application is not in the foreground. A few permissions are added into your application. There’s no need to add the permissions by default due to manifest merging. The permissions in use are the Internet permission and the access fine location.</p>
+<p>Much of the navigation logic is handled in an Android service meaning you’ll be able to continue tracking the users progress along the navigation route even when your application is not in the foreground. A few permissions are added into your application. There’s no need to add the permissions by default due to manifest merging. The permissions in use are the Internet permission and the access fine location which are required.</p>
 <h2 id="mapboxnavigation-object"><a class="markdownIt-Anchor" href="#mapboxnavigation-object"></a> MapboxNavigation object</h2>
 <!-- preview -->
-<p>Most of the navigation options are found inside the MapboxNavigation class including fetching the route, starting and ending the navigation session, and attaching listeners for events that you’d like to handle. Assign and initialize a new instance of MapboxNavigation inside your Navigation activity. When initializing, you’ll need to pass in a <code>Context</code> and your Mapbox access token. Read the access token section in the getting started section to learn how to get a free access token.</p>
+<p>Most of the navigation options are found inside the <code>MapboxNavigation</code> class including fetching the route, starting and ending the navigation session, and attaching listeners for events that you’d like to handle. Assign and initialize a new instance of <code>MapboxNavigation</code> inside your Navigation activity. When initializing, you’ll need to pass in a <code>Context</code> and your Mapbox access token. Read the access token section in the <a href="/mapbox-services/2.0.1/getting-started/#access-tokens">getting started</a> document to learn how to get a free access token.</p>
 <pre class="hljs"><code>MapboxNavigation navigation = <span class="hljs-keyword">new</span> MapboxNavigation(<span class="hljs-keyword">this</span>, MAPBOX_ACCESS_TOKEN);
 </code></pre>
 <h3 id="locationengine"><a class="markdownIt-Anchor" href="#locationengine"></a> LocationEngine</h3>
 <!-- preview -->
-<p>Navigation requires the user’s location to run. This is done using the LocationEngine class introduced in 2.0. Visit the LocationEngine documentation for detailed instructions on how to use this class. You’ll need to set up an instance of a location engine and pass it into the MapboxNavigation object.</p>
+<p>Navigation requires the user’s location to run. This is done using the <code>LocationEngine</code> class introduced in 2.0. Visit the <a href="/mapbox-services/2.0.1/telemetry/#locationengine"><code>LocationEngine</code></a> documentation for detailed instructions on how to use this class. You’ll need to set up an instance of a location engine and pass it into the <code>MapboxNavigation</code> object.</p>
 <pre class="hljs"><code>LocationEngine locationEngine = LostLocationEngine.getLocationEngine(<span class="hljs-keyword">this</span>);
 navigation.setLocationEngine(locationEngine);
 </code></pre>
 <h3 id="requesting-a-route"><a class="markdownIt-Anchor" href="#requesting-a-route"></a> Requesting a route</h3>
 <!-- preview -->
-<p>Now that you have set up a way for the MapboxNavigation object to get the user’s location, the other thing it will need is a route. The order in which these Positions are passed in doesn’t matter as long as they are both provided before calling <code>getRoute</code>.</p>
-<pre class="hljs"><code>navigation.setOrigin(Position.fromCoordinates());
-navigation.setDestination(Position.fromCoordinates());
-</code></pre>
-<p>Actually requesting the route’s done by calling <code>getRoute</code> passing in a new callback. If you’ve ever worked with Retrofit, the callback here will look familiar since this is what we are using under the hood. Inside the onResponse, you can draw the directions route on a map or present time and distance since the full directions response is provided.</p>
-<pre class="hljs"><code>navigation.getRoute(<span class="hljs-keyword">new</span> Callback&lt;DirectionsResponse&gt;() {
+<p>Now that you have set up a way for the <code>MapboxNavigation</code> object to get the user’s location, the other thing it will need is a route. this is done by calling <code>getRoute</code> passing in a origin, destination, and a callback to handle the response. If you’ve ever worked with <a href="http://square.github.io/retrofit/">Retrofit</a>, the callback here will look familiar since this is what we are using under the hood. Inside the onResponse, you can draw the directions route on a map or present time and distance since the full directions response is provided.</p>
+<pre class="hljs"><code><span class="hljs-comment">// From Mapbox to The White House</span>
+Position origin = Position.fromLatLng(<span class="hljs-number">38.90992</span>, -<span class="hljs-number">77.03613</span>);
+Position destination = Position.fromLatLng(<span class="hljs-number">38.8977</span>, -<span class="hljs-number">77.0365</span>);
+
+navigation.getRoute(origin, destination, <span class="hljs-keyword">new</span> Callback&lt;DirectionsResponse&gt;() {
   <span class="hljs-meta">@Override</span>
   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onResponse</span><span class="hljs-params">(
     Call&lt;DirectionsResponse&gt; call, Response&lt;DirectionsResponse&gt; response)</span> </span>{
@@ -68,34 +66,31 @@ navigation.setDestination(Position.fromCoordinates());
 </code></pre>
 <h2 id="routeprogress-object"><a class="markdownIt-Anchor" href="#routeprogress-object"></a> RouteProgress object</h2>
 <!-- preview -->
-<p>The RouteProgress class contains all the user’s progress information along the route, including leg and steps. The objects provided inside <code>AlertLevelChangeListener</code> and <code>ProgressChangeListener</code> allow you to get distance measurements, the percentage of route complete, current step index, and much more. A full list of the APIs exposed in RouteProgress is given in the table below.</p>
+<p>The <code>RouteProgress</code> class contains all the user’s progress information along the route, including leg and steps. This object’s provided inside <code>AlertLevelChangeListener</code> and <code>ProgressChangeListener</code>, allowing you to get distance measurements, the percentage of route complete, current step index, and much more.</p>
+<p><code>RouteProgress</code> contains two subclasses for leg and step information, the tables below provide a full list of the APIs exposed.</p>
 <table>
 <thead>
 <tr>
-<th>API</th>
+<th>RouteProgress APIs</th>
 <th style="text-align:center">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>getPreviousAlertLevel</td>
-<td style="text-align:center">The previous alert level provided by the AlertLevelChangeListener.</td>
+<td>getAlertUserLevel</td>
+<td style="text-align:center">The most recent alert level provided by the AlertLevelChangeListener.</td>
 </tr>
 <tr>
 <td>getRoute</td>
 <td style="text-align:center">The route acquired from the directions API and being used for navigation.</td>
 </tr>
 <tr>
-<td>getDistanceTraveledOnRoute</td>
+<td>getDistanceRemaining</td>
 <td style="text-align:center">The total distance the user has traveled along the route.</td>
 </tr>
 <tr>
-<td>getFractionTraveledOnRoute</td>
-<td style="text-align:center">A <code>float</code> value between 0 and 1 giving the total percentage the user has completed in the navigation session.</td>
-</tr>
-<tr>
-<td>getDistanceRemainingOnRoute</td>
-<td style="text-align:center">The distance between the user’s current location and the next maneuver.</td>
+<td>usersCurrentSnappedPosition</td>
+<td style="text-align:center">Provides the users location snapped to the current route they are navigating on.</td>
 </tr>
 <tr>
 <td>getLegIndex</td>
@@ -106,41 +101,100 @@ navigation.setDestination(Position.fromCoordinates());
 <td style="text-align:center">The route’s current leg as a <code>routeLeg</code> object.</td>
 </tr>
 <tr>
-<td>getUpComingStep</td>
-<td style="text-align:center">The next step the user will be on from their current location.</td>
+<td>getDistanceTraveled</td>
+<td style="text-align:center">Total distance the user has traveled along the entire route.</td>
+</tr>
+<tr>
+<td>getDurationRemaining</td>
+<td style="text-align:center">The estimated duration remaining till the user arrives at their destination.</td>
+</tr>
+<tr>
+<td>getFractionTraveled</td>
+<td style="text-align:center">A <code>float</code> value between 0 and 1 giving the total percentage the user has completed in the navigation session.</td>
+</tr>
+<tr>
+<td>getCurrentLegProgress</td>
+<td style="text-align:center">returns the <code>LegProgress</code> object with information specific to the current route leg. You can also access step information through this object.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>LegProgress APIs</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getCurrentStepProgress</td>
+<td style="text-align:center">returns the <code>stepProgress</code> object with information specific to the current route step.</td>
 </tr>
 <tr>
 <td>getStepIndex</td>
 <td style="text-align:center">The route’s current step index the user’s on.</td>
 </tr>
 <tr>
-<td>getCurrentStep</td>
-<td style="text-align:center">The current step that the user’s on.</td>
+<td>getDistanceTraveled</td>
+<td style="text-align:center">Total distance the user has traveled along the current leg.</td>
 </tr>
 <tr>
-<td>getDistanceTraveledOnStep</td>
-<td style="text-align:center">Measures from the current steps maneuver to the user’s snapped position.</td>
+<td>getDurationRemaining</td>
+<td style="text-align:center">The estimated duration remaining till the user reaches the last maneuver in current route leg.</td>
 </tr>
 <tr>
-<td>getDurationRemainingOnStep</td>
-<td style="text-align:center">The estimated time remaining until the user reaches end of current step.</td>
+<td>getFractionTraveled</td>
+<td style="text-align:center">A <code>float</code> value between 0 and 1 giving the total percentage the user has traveled along the current route leg.</td>
 </tr>
 <tr>
-<td>getDistanceRemainingOnStep</td>
-<td style="text-align:center">Measures from the user’s current snapped position to the last coordinate in the step.</td>
+<td>getDistanceRemaining</td>
+<td style="text-align:center">The total distance the user has traveled along the current leg.</td>
+</tr>
+<tr>
+<td>getPreviousStep</td>
+<td style="text-align:center">Get the previous step the user traversed along, if the user is still on the first step, this will return null.</td>
+</tr>
+<tr>
+<td>getCurrentStepProgress</td>
+<td style="text-align:center">Returns the current step the user is traversing along.</td>
+</tr>
+<tr>
+<td>getUpComingStep</td>
+<td style="text-align:center">Get the next/upcoming step immediately after the current step. If the user is on the last step on the last leg, this will return null since a next step doesn’t exist.</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>This object will be null from when the NavigationService starts till the first location change occurs. Thus, if you are using this to initialize a variable, it’s reasonable to check if null beforehand. The values given can change at anytime because this object is mutable.</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>StepProgress APIs</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getDistanceTraveled</td>
+<td style="text-align:center">Total distance the user has traveled along the current step.</td>
+</tr>
+<tr>
+<td>getDurationRemaining</td>
+<td style="text-align:center">The estimated duration remaining till the user reaches the next step maneuver.</td>
+</tr>
+<tr>
+<td>getFractionTraveled</td>
+<td style="text-align:center">A <code>float</code> value between 0 and 1 giving the total percentage the user has traveled along the current step.</td>
+</tr>
+<tr>
+<td>getDistanceRemaining</td>
+<td style="text-align:center">The total distance the user has traveled along the current step.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="listeners"><a class="markdownIt-Anchor" href="#listeners"></a> Listeners</h2>
-<!-- preview -->
 <p>Chances are, if you are using the navigation SDK, you’ll want to listen in to events such as when the user makes progress along the route or when the user goes off route. By listening into these events, you are able to provide the user with instructions at the proper times. At the bare minimum, it is strongly encouraged to use the <code>OnProgressChange</code> listener, which is called every time the user’s locations updated.</p>
 <h3 id="navigationrunning"><a class="markdownIt-Anchor" href="#navigationrunning"></a> NavigationRunning</h3>
-<!-- preview -->
 <p>The event callback is handy for being notified when the navigation session has started, the user has canceled the session, or the user has arrived at their final destination. From this information, you are able to decide when to show navigation notifications, know when it’s safe to stop requesting user location updates, and much more.</p>
-<pre class="hljs"><code>navigation.setNavigationEventListener(<span class="hljs-keyword">new</span> NavigationEventListener() {
+<pre class="hljs"><code>navigation.addNavigationEventListener(<span class="hljs-keyword">new</span> NavigationEventListener() {
   <span class="hljs-meta">@Override</span>
   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onRunning</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> running)</span> </span>{
 
@@ -148,7 +202,6 @@ navigation.setDestination(Position.fromCoordinates());
 });
 </code></pre>
 <h3 id="alertlevelchange"><a class="markdownIt-Anchor" href="#alertlevelchange"></a> AlertLevelChange</h3>
-<!-- preview -->
 <p>Listening in to the alertLevelChange is useful for correctly getting the timing of user notifications while the user is traversing along the route. The listener’s invoked only when the user’s reached a specific point along the current step that they are on. The alert thresholds can be adjusted within the constants file while developing and are based on time (in seconds) until the user reaches the next maneuver.</p>
 <table>
 <thead>
@@ -184,10 +237,7 @@ navigation.setDestination(Position.fromCoordinates());
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>While the AlertLevelChange listener can help you correctly tell your users to do an action, it relies heavily on the user’s current position. This means that the alert is rarely changed exactly at the correct time and might be delayed until a new location update occurs and the user is within the alerts threshold.</p>
-</blockquote>
-<pre class="hljs"><code>navigation.setAlertLevelChangeListener(<span class="hljs-keyword">new</span> AlertLevelChangeListener() {
+<pre class="hljs"><code>navigation.addAlertLevelChangeListener(<span class="hljs-keyword">new</span> AlertLevelChangeListener() {
   <span class="hljs-meta">@Override</span>
   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onAlertLevelChange</span><span class="hljs-params">(<span class="hljs-keyword">int</span> alertLevel, RouteProgress routeProgress)</span> </span>{
     <span class="hljs-keyword">switch</span> (alertLevel) {
@@ -214,20 +264,35 @@ navigation.setDestination(Position.fromCoordinates());
 });
 </code></pre>
 <h3 id="onprogresschange"><a class="markdownIt-Anchor" href="#onprogresschange"></a> OnProgressChange</h3>
-<!-- preview -->
-<p>Like listening into user location changes, this listener’s invoked every time the user’s location changes but provides an updated RouteProgress object. This listener is strongly encouraged, because you can typically update most of your application’s user interface. An example of this would be if you are displaying the user’s current progress until the user needs to do the next maneuver. Every time this listener’s invoked, you are able to update your view with the new information from RouteProgress.</p>
+<p>Like listening into user location changes, this listener’s invoked every time the user’s location changes but provides an updated RouteProgress object. This listener is strongly encouraged, because you can typically update most of your application’s user interface. An example of this would be if you are displaying the user’s current progress until the user needs to do the next maneuver. Every time this listener’s invoked, you are able to update your view with the new information from <code>RouteProgress</code>.</p>
 <p>Besides receiving information about the route progress, the callback also provides you with the user’s current location which can provide their current speed, bearing, etc. If you have snapping to the route enabled, the location object will be updated to provide the snapped coordinates.</p>
-<pre class="hljs"><code>navigation.setProgressChangeListener(<span class="hljs-keyword">new</span> ProgressChangeListener() {
+<pre class="hljs"><code>navigation.addProgressChangeListener(<span class="hljs-keyword">new</span> ProgressChangeListener() {
       <span class="hljs-meta">@Override</span>
       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onProgressChange</span><span class="hljs-params">(Location location, RouteProgress routeProgress)</span> </span>{
 
       }
     });
 </code></pre>
-<h3 id="offroute"><a class="markdownIt-Anchor" href="#offroute"></a> OffRoute</h3>
-<!-- preview -->
-<p>Not implemented in the SDK yet.</p>
+<h3 id="useroffroute"><a class="markdownIt-Anchor" href="#useroffroute"></a> UserOffRoute</h3>
+<p>During the navigation session you can listen into the listener which gets invoked once when the user location moves outside the threshold. You can adjust this threshold inside the <code>Constants.java</code> file, the default’s 50 meters. Inside the callback, you can alert the user and reroute them if needed using <code>updateRoute()</code>.</p>
+<pre class="hljs"><code>navigation.addOffRouteListener(<span class="hljs-keyword">new</span> OffRouteListener() {
+      <span class="hljs-meta">@Override</span>
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">userOffRoute</span><span class="hljs-params">(Location location)</span> </span>{
+        Position newOrigin = Position.fromCoordinates(location.getLongitude(), location.getLatitude());
+    navigation.updateRoute(newOrigin, destination, <span class="hljs-keyword">new</span> Callback&lt;DirectionsResponse&gt;() {
+      <span class="hljs-meta">@Override</span>
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onResponse</span><span class="hljs-params">(Call&lt;DirectionsResponse&gt; call, Response&lt;DirectionsResponse&gt; response)</span> </span>{
+        <span class="hljs-comment">// Remove the old route and redraw new one here</span>
+      }
+
+      <span class="hljs-meta">@Override</span>
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFailure</span><span class="hljs-params">(Call&lt;DirectionsResponse&gt; call, Throwable throwable)</span> </span>{
+        <span class="hljs-comment">// Log any failure that might occur here</span>
+      }
+    });
+  }
+});
+</code></pre>
 <h2 id="routeutils"><a class="markdownIt-Anchor" href="#routeutils"></a> RouteUtils</h2>
-<!-- preview -->
-<p>The RouteUtils class can be found in the mapbox-java-services module and provides many of the methods used for calculations done in the RouteProgress object. An example of this is getting the total route distance left until the user reaches their destination. If you would like to do these calculations on your own or would like the change the behavior of navigation, you can directly call these methods and handle the calculations yourself.</p>
-</div></div></div></div></div></div></div></div><script src="/android-docs/bundle.js?t=1493060631931"></script></body></html>
+<p>The RouteUtils class can be found in the mapbox-java-services module and provides many of the methods used for calculations done in the <code>RouteProgress</code> object. An example of this is getting the total route distance left until the user reaches their destination. If you would like to do these calculations on your own or would like the change the behavior of navigation, you can directly call these methods and handle the calculations yourself.</p>
+</div></div></div></div></div></div></div></div><script src="/android-docs/bundle.js?t=1493389046296"></script></body></html>
