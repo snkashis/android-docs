@@ -138,6 +138,49 @@ Dynamic build
   }
 ```
 
+### MapView XML Attributes
+
+As shown above, you don't have to use XML for setting various `MapView` visual properties. If you do use XML, you should know that all `MapView` XML attributes start with
+`mapbox_` for identification and for removing any potential conflicts with other libraries. This is a best practice for exposing library resources. 
+
+Some examples of `MapView` attributes are:
+
+```xml
+mapbox:mapbox_cameraTargetLat="-36.84"
+mapbox:mapbox_cameraTargetLng="174.76"
+mapbox:mapbox_cameraZoom="10"
+mapbox:mapbox_cameraBearing="34.33"
+mapbox:mapbox_cameraTilt="50.25"
+mapbox:mapbox_styleUrl="@string/mapbox_style_satellite_streets"
+mapbox:mapbox_cameraZoomMax="12.41"
+mapbox:mapbox_cameraZoomMin="6"
+mapbox:mapbox_uiRotateGestures="false"
+```
+
+Due to the current implementation of Android Studio, you can't autogenerate `MapView` attributes by typing. You can always **[view the full list of `MapView` attributes here](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/res/values/attrs.xml)**.
+
+Additionally, make sure that you add `xmlns:mapbox="http://schemas.android.com/apk/res-auto"` to the the top-level parent layout of the particular XML file. In the example below, you'll see that it's added to the `RelativeLayout`:
+
+```xml
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.mapbox.mapboxsdk.maps.MapView
+    
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets"/>
+
+ </RelativeLayout>
+```
+
+
 
 ### Fragments
 
