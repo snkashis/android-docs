@@ -3,7 +3,7 @@ title: Mapbox Plugins
 path: /plugins/latest/getting-started/
 ---
 
-Mapbox Plugins build on top of the [Map SDK](/map-sdk/latest/getting-started/) providing extra features in lightweight dependencies. Whether your looking to include traffic on top of your map or show the user location as a layer, plugins offer customizable APIs with just a few lines of code to get started. Separating features into different plugins also allows for a more aggressive updating timeline.
+Mapbox Plugins build on top of the [Map SDK](/map-sdk/latest/getting-started/) providing extra features in lightweight dependencies. Whether your looking to include traffic on top of your map or show the user location as a layer, plugins offer customizable APIs with a few lines of code to get started. Separating features into different plugins also allows for a more aggressive updating timeline.
 
 > **Note:** The Map SDK is required to use any of these plugins and many require passing in both the `MapView` and `MapboxMap` objects.
 
