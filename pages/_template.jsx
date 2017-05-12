@@ -103,7 +103,7 @@ module.exports = React.createClass({
         {/* Site Navigation */}
         <div className={`align-t hmin48 flex-parent-inline flex-parent--center-cross flex-parent--left-main ${queryMatches.desktop ? 'w240' : ''}`}><a href={'https://mapbox.com/'}><div className={queryMatches.desktop ? 'ml12 mb-logo--s mb-logo--white' : ''}/></a></div>
         <Link className={`py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapSdkActive ? 'is-active' : ''}`} to={prefixLink('/map-sdk/latest/getting-started/')}>Map SDK</Link>
-        <Link className={`py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${pluginsActive ? 'is-active' : ''}`} to={prefixLink('/plugins/latest/')}>Plugins</Link>
+        <Link className={`py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${pluginsActive ? 'is-active' : ''}`} to={prefixLink('/plugins/latest/getting-started/')}>Plugins</Link>
         <Link className={`py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapboxJavaActive ? 'is-active' : ''}`} to={prefixLink('/mapbox-services/latest/getting-started/')}>Mapbox Services</Link>
         <Link className={`py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${navigationActive ? 'is-active' : ''}`} to={prefixLink('/navigation/latest/getting-started/')}>Navigation SDK</Link>
         <Link className={`py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${examplesActive ? 'is-active' : ''}`} to={prefixLink('/examples/basics/')}>Examples</Link>

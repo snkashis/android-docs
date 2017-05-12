@@ -1,4 +1,4 @@
 ---
 title: Traffic Plugin
-path: /plugins/latest/
+path: /plugins/latest/traffic/
 ---
