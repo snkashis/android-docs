@@ -133,7 +133,7 @@ Additionally, make sure that you add `xmlns:mapbox="http://schemas.android.com/a
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.mapbox.mapboxsdk.maps.
+    <com.mapbox.mapboxsdk.maps.MapView
     
         android:id="@+id/mapView"
         android:layout_width="match_parent"
