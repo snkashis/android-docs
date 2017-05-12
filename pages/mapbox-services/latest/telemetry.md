@@ -1,6 +1,6 @@
 ---
 title: Telemetry
-path: /mapbox-services/2.1.0/telemetry/
+path: /mapbox-services/latest/telemetry/
 ---
 
 The telemetry library includes many utilities, such as `locationEngine` or `permissionManager`, that you can use in your projects. The Telemetry module has no dependencies on any of the other Mapbox-Java modules and only depends on having the Android API plugin inside your project.

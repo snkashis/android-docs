@@ -1,6 +1,6 @@
 ---
 title: Directions Matrix
-path: /mapbox-services/2.1.0/directions-matrix/
+path: /mapbox-services/latest/directions-matrix/
 ---
 The Directions Matrix API returns all travel times between many points. The Matrix API will always return the duration on the fastest route. Durations between points may not be symmetric (for example A to B may have a different duration than B to A), as the routes may differ by direction due to one-way streets or turn restrictions. The Matrix API returns durations in seconds. It does not return route geometries or distances. Make sure to have a look at the API documentation if you want [more information](https://www.mapbox.com/api-documentation/#directions-matrix).
 
