@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Navigation SDK | Android Documentation</title><link href="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.min.css" rel="stylesheet"/><script async="" defer="" src="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.js"></script><link href="https://api.mapbox.com/mapbox-assembly/mapbox-addon/v0.10.0/assembly.min.css" rel="stylesheet"/><script src="https://api.mapbox.com/mapbox-assembly/mapbox-addon/v0.10.0/assembly.js"></script><style>.bg-denim{background-color:#607d9c!important}.btn{border-radius:0}.txt-s{line-height:inherit}.main-content{position:fixed;top:48px;bottom:0;overflow-y:auto;padding-top:24px;padding-bottom:250px;width:inherit}code p{font-weight:lighter;font-size:11px}code,pre{font-family:Fira Mono Medium,Monaco,monospace!important;font-weight:700!important;font-size:13px!important;word-break:normal!important}pre{background-color:#232323!important}.error,.info,.success,.warning{border-left:5px solid #fd0;padding:10px 15px;margin-left:-20px;margin-right:-15px;background-color:#fafafa;border-radius:2px}.info{border-color:#56adec}body .prose blockquote{border-left:5px solid #56adec;background-color:#fafafa;border-radius:2px;word-wrap:break-word;padding-top:12px;padding-bottom:12px;padding-right:12px}.toc{list-style-type:none;color:#fff;background:#232323;position:fixed;top:42px;bottom:0;overflow-y:auto;padding:24px 20px 20px;width:inherit;border-right:1px solid grey}.toc-subheaders{font-size:12px;display:inline-block;line-height:20px;margin-bottom:12px}.page-hover:hover,.toc-subheaders a:hover{color:#aab7ef}.card-bg{background:#f4f7fb;width:100%;position:fixed;overflow-y:auto}.card-container{top:48px;bottom:0;padding-bottom:100px}.card{background:#fff;border-radius:2px;display:inline-block;height:375px;margin:16px;margin:1rem;position:relative;width:325px;vertical-align:top}.card img{display:block;margin:auto}.card h4,p{margin:12px}.card-1{box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);transition:all .3s cubic-bezier(.25,.8,.25,1)}.card-1:hover{box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22)}.hljs{color:#a9b7c6;background:#232323;display:block;overflow-x:auto;padding:.5em}.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#6897bb}.hljs-deletion,.hljs-keyword,.hljs-selector-tag{color:#cc7832}.hljs-link,.hljs-template-variable,.hljs-variable{color:#56b881}.hljs-comment,.hljs-quote{color:gray}.hljs-meta{color:#bbb529}.hljs-addition,.hljs-attribute,.hljs-string{color:#56b881}.hljs-section,.hljs-title,.hljs-type{color:#ffc66d}.hljs-name,.hljs-selector-class,.hljs-selector-id{color:#e8bf6a}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}</style></head><body><div id="react-mount"><div class="grid" data-reactroot="" data-reactid="1" data-react-checksum="-1602643542"><div class="col--12 z1 hmin48 bg-denim shadow-darken50 fixed" data-reactid="2"><div class="align-t hmin48 flex-parent-inline flex-parent--center-cross flex-parent--left-main w240" data-reactid="3"><a href="https://mapbox.com/" data-reactid="4"><div class="ml12 mb-logo--s mb-logo--white" data-reactid="5"></div></a></div><a class="py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  " href="/android-docs/map-sdk/latest/getting-started/" data-reactid="6">Map SDK</a><a class="py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  " href="/android-docs/plugins/latest/getting-started/" data-reactid="7">Plugins</a><a class="py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  " href="/android-docs/mapbox-services/latest/getting-started/" data-reactid="8">Mapbox Services</a><a class="py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  is-active" href="/android-docs/navigation/latest/getting-started/" data-reactid="9">Navigation SDK</a><a class="py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  " href="/android-docs/examples/basics/" data-reactid="10">Examples</a></div><div class="w240 toc" data-reactid="11"><div data-reactid="12"><li data-reactid="13"><a class="page-hover" style="text-decoration:none;" href="/android-docs/navigation/latest/getting-started/" data-reactid="14"><strong data-reactid="15">Navigation SDK</strong></a></li><div class="ml12" data-reactid="16"><ul class="toc-subheaders">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#support-and-contributions">Support and contributions</a></li>
+<li><a href="#api-reference">API reference</a></li>
+<li><a href="#access-tokens">Access tokens</a></li>
+</ul>
+</li>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#permissions">Permissions</a></li>
+</ul>
+</li>
+<li><a href="#mapboxnavigation-object">MapboxNavigation object</a>
+<ul>
+<li><a href="#locationengine">LocationEngine</a></li>
+<li><a href="#requesting-a-route">Requesting a route</a></li>
+<li><a href="#lifecycle-methods">Lifecycle methods</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></div><div data-reactid="17"><li data-reactid="18"><a class="page-hover" style="text-decoration:none;" href="/android-docs/navigation/latest/navigation-events/" data-reactid="19">Navigation Events</a></li><!-- react-text: 20 --><!-- /react-text --></div><div data-reactid="21"><li data-reactid="22"><a class="page-hover" style="text-decoration:none;" href="/android-docs/navigation/latest/navigation-options/" data-reactid="23">Navigation Options</a></li><!-- react-text: 24 --><!-- /react-text --></div><div data-reactid="25"><li data-reactid="26"><a class="page-hover" style="text-decoration:none;" href="/android-docs/navigation/latest/route-progress/" data-reactid="27">Route Progress Object</a></li><!-- react-text: 28 --><!-- /react-text --></div></div><div class="ml240 p48" data-reactid="29"><div class="grid" data-reactid="30"><div class="prose scroll-styled main-content" data-reactid="31"><div class="col--10" data-reactid="32"><div class="markdown" data-reactid="33"><h1 data-reactid="34">Navigation SDK</h1><div data-reactid="35"><blockquote>
+<p>Navigation is still in beta; API breaking changes might occur without a major release.</p>
+</blockquote>
+<p>The navigation SDK’s built on top of our Directions API and contains logic needed to get timed navigation instructions. The calculations use the user’s current location and compare it to the current route that the user’s traversing to provide critical information at any given moment.</p>
+<h3 id="support-and-contributions"><a class="markdownIt-Anchor" href="#support-and-contributions"></a> Support and contributions</h3>
+<ul>
+<li>Reach out through <a href="https://stackoverflow.com/questions/tagged/mapbox+android">Stack Overflow</a> or <a href="https://www.mapbox.com/contact/">the Mapbox contact page</a> if you are looking for support with using this SDK.</li>
+<li>If you have found a bug and can provide steps to reliably reproduce it, open an issue in the <a href="https://github.com/mapbox/mapbox-navigation-android/issues">/mapbox-navigation-android repository on Github</a>. Make sure to apply the bug label to your issue as well.</li>
+<li>If you have a feature request, open an issue in the /mapbox-navigation-android repository on Github and use the feature tag.</li>
+<li>If you want to contribute to this SDK, please read <a href="https://github.com/mapbox/mapbox-navigation-android/blob/master/CONTRIBUTING.md">our contribution guidelines</a> and then open a pull request with your changes.</li>
+</ul>
+<h3 id="api-reference"><a class="markdownIt-Anchor" href="#api-reference"></a> API reference</h3>
+<p>All public methods in the Navigation SDK project are well documented and can be either viewed inside of the source code or directly on the Javadoc (linked below). If you are using an older version of the SDK, you can still access the Javadoc by replacing the URL’s version number with the one that you are using inside of your application.</p>
+<ul>
+<li><a href="">{navigationVersion} Navigation SDK Javadoc</a> <!-- TODO --></li>
+</ul>
+<h3 id="access-tokens"><a class="markdownIt-Anchor" href="#access-tokens"></a> Access tokens</h3>
+<p>An access token is necessary to use the Navigation SDK. Manage your access tokens in <a href="https://www.mapbox.com/account/apps/">your account settings</a> to retrieve current tokens and generate new ones. You should create a new token for each of your apps, which will help you track usage and decrease disruption if a token needs to be revoked.</p>
+<p>You’ll want to pass in the access token when constructing a new <code>MapboxNavigation</code> object. Read <a href="https://www.mapbox.com/help/create-api-access-token/">this document</a> to learn more about access tokens.</p>
+<pre class="hljs"><code>MapboxNavigation navigation = <span class="hljs-keyword">new</span> MapboxNavigation(<span class="hljs-keyword">this</span>, MAPBOX_ACCESS_TOKEN);
+</code></pre>
+<h2 id="installation"><a class="markdownIt-Anchor" href="#installation"></a> Installation</h2>
+<p>Before starting to develop your application with the Navigation SDK, you’ll need to add the SDK as a dependency. Note that while we show how to insert the stable version of the SDK inside your project, you can also use the nightly build/snapshot or the beta version, if one is available. You can find the following dependency given below in the MavenCentral repository.</p>
+<ol>
+<li>Start Android Studio</li>
+<li>Open up your application’s <code>build.gradle</code></li>
+<li>Make sure that your project’s <code>minSdkVersion</code> is at API 15 or higher</li>
+<li>Under dependencies, add a new build rule for the latest <code>mapbox-android-navigation</code></li>
+<li>Click the Sync Project with Gradle Files near the toolbar in Studio.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> If your application is close or exceeds the 65k method count limit, you can mitigate this problem by enabling ProGuard. ProGuard directives are included in the Android dependencies to preserve the required classes.</p>
+</blockquote>
+<pre class="hljs"><code>repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile <span class="hljs-string">'com.mapbox.mapboxsdk:mapbox-android-navigation:0.1.1'</span>
+}
+</code></pre>
+<h3 id="permissions"><a class="markdownIt-Anchor" href="#permissions"></a> Permissions</h3>
+<p>The Navigation SDK makes use of the Android manifest merge feature to reduce the need to include any Navigation SDK required things inside of your application’s manifest file. You’ll need to include <em>either</em> the Fine <strong>or</strong> Coarse location permission, for navigation to work properly. The user location permission should also be checked during runtime using the <a href="/mapbox-services/latest/telemetry/#permissionsmanager">PermissionManager</a>.</p>
+<blockquote>
+<p><strong>Note:</strong> For best navigation results, it’s strongly recommended using the fine location permission which gives a more precise fix on the user’s current location.</p>
+</blockquote>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"android.permission.ACCESS_FINE_LOCATION"</span> /&gt;</span>
+</code></pre>
+<h2 id="mapboxnavigation-object"><a class="markdownIt-Anchor" href="#mapboxnavigation-object"></a> MapboxNavigation object</h2>
+<p>You will find Most of the navigation APIs inside the <code>MapboxNavigation</code> class including fetching the route, starting and ending the navigation session, and attaching listeners for events that you’d like to handle. Assign and initialize a new instance of <code>MapboxNavigation</code> inside your navigation activity. When initializing, you’ll need to pass in a <code>Context</code> and your Mapbox access token. Read the access token section in this <a href="#access-tokens">getting started</a> document to learn how to get a free access token.</p>
+<pre class="hljs"><code>MapboxNavigation navigation = <span class="hljs-keyword">new</span> MapboxNavigation(<span class="hljs-keyword">this</span>, MAPBOX_ACCESS_TOKEN);
+</code></pre>
+<h3 id="locationengine"><a class="markdownIt-Anchor" href="#locationengine"></a> LocationEngine</h3>
+<p>Navigation requires the user’s location to run; this is done using the <code>LocationEngine</code> class introduced in Mapbox Services 2.0. Visit the <a href="/mapbox-services/2.0.1/telemetry/#locationengine"><code>LocationEngine</code></a> documentation for detailed instructions on how to use this class. You’ll need to set up an instance of a location engine and pass it into the <code>MapboxNavigation</code> object.</p>
+<pre class="hljs"><code>LocationEngine locationEngine = LostLocationEngine.getLocationEngine(<span class="hljs-keyword">this</span>);
+navigation.setLocationEngine(locationEngine);
+</code></pre>
+<h3 id="requesting-a-route"><a class="markdownIt-Anchor" href="#requesting-a-route"></a> Requesting a route</h3>
+<p>Now that you have created a way for the <code>MapboxNavigation</code> object to get the user’s location, the other thing it will need is a route. Call <code>getRoute</code> passing in an origin, destination, and a callback to handle the response. If you’ve ever worked with <a href="http://square.github.io/retrofit/">Retrofit</a>, the callback here will look familiar since this is what we are using under the hood. Inside the onResponse, you can draw the directions route on a map or present time and distance using the full directions response.</p>
+<pre class="hljs"><code><span class="hljs-comment">// From Mapbox to The White House</span>
+Position origin = Position.fromLatLng(<span class="hljs-number">38.90992</span>, -<span class="hljs-number">77.03613</span>);
+Position destination = Position.fromLatLng(<span class="hljs-number">38.8977</span>, -<span class="hljs-number">77.0365</span>);
+
+navigation.getRoute(origin, destination, <span class="hljs-keyword">new</span> Callback&lt;DirectionsResponse&gt;() {
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onResponse</span><span class="hljs-params">(
+    Call&lt;DirectionsResponse&gt; call, Response&lt;DirectionsResponse&gt; response)</span> </span>{
+
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFailure</span><span class="hljs-params">(Call&lt;DirectionsResponse&gt; call, Throwable t)</span> </span>{
+
+  }
+});
+</code></pre>
+<h3 id="lifecycle-methods"><a class="markdownIt-Anchor" href="#lifecycle-methods"></a> Lifecycle methods</h3>
+<p>Inside your application’s activity, you’ll want to override the onDestroy lifecycle method and remove any navigation listeners you are using and end the navigation session. Doing this prevents any memory leaks from occurring but still allows navigation to run in the background if your user goes to their home screen for example.</p>
+<pre class="hljs"><code><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onDestroy</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">super</span>.onDestroy();
+  <span class="hljs-comment">// Remove all navigation listeners being used</span>
+  navigation.removeAlertLevelChangeListener(<span class="hljs-keyword">this</span>);
+  navigation.removeNavigationEventListener(<span class="hljs-keyword">this</span>);
+  navigation.removeProgressChangeListener(<span class="hljs-keyword">this</span>);
+  navigation.removeOffRouteListener(<span class="hljs-keyword">this</span>);
+
+  <span class="hljs-comment">// End the navigation session</span>
+  navigation.endNavigation();
+}
+</code></pre>
+</div></div></div></div></div></div></div></div><script src="/android-docs/bundle.js?t=1494887277498"></script></body></html>
