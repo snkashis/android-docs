@@ -1,5 +1,28 @@
-.bg-denim {
-  background-color: #607d9c !important;
+.bg-green {
+  background-color: #8CCA44 !important;
+}
+
+.navigation {
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 1px;
+  background-color: #ffffff !important;
+  border-color: #E8EBEE;
+  line-height: normal;
+}
+
+.link-li {
+  color: #0082FF !important;
+  text-decoration: none !important;
+}
+
+.active-button {
+  border-bottom-style: solid;
+  border-width: 5px;
+}
+
+.nav-icon {
+  display: inline-flex;
 }
 
 .btn {
@@ -8,6 +31,30 @@
 
 .txt-s {
   line-height: inherit;
+}
+
+.sdk-card {
+  color:  #ffffff;
+}
+
+.li-icon svg {
+  color: #8CCA44 !important;
+  display: inline-block !important;
+  margin-right: 12px;
+}
+
+.link-icon svg {
+  color: #0082FF !important;
+  display: inline-block !important;
+  margin-right: 12px;
+}
+
+
+
+.unstyled li {
+  list-style-type: none !important;
+  padding: 0;
+  margin: 0;
 }
 
 .main-content {
@@ -49,6 +96,10 @@ pre {
 	border-color: #56ADEC;
 }
 
+.prose h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cera';
+}
+
 body .prose blockquote {
   border-left: 5px solid #56ADEC;
 	background-color: #FAFAFA;
@@ -61,8 +112,7 @@ body .prose blockquote {
 
 .toc {
   list-style-type: none;
-  color: #ffffff;
-  background: #232323;
+  color: #273d56;
   position: fixed;
   top: 42px;
   bottom: 0px;
@@ -72,7 +122,6 @@ body .prose blockquote {
   padding-bottom: 20px;
   padding-top: 24px;
   width: inherit;
-  border-right: 1px solid grey;
 }
 
 .toc-subheaders {
@@ -84,7 +133,7 @@ body .prose blockquote {
 
 .page-hover:hover,
 .toc-subheaders a:hover {
-  color: #aab7ef;
+  color: #0082FF;
 }
 
 /* Example cards */
@@ -110,6 +159,10 @@ body .prose blockquote {
   position: relative;
   width: 325px;
   vertical-align:top;
+}
+
+.active-item {
+  color: #0082FF;
 }
 
 .card img {

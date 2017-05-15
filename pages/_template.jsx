@@ -4,6 +4,7 @@ import { prefixLink } from 'gatsby-helpers'
 import includes from 'underscore.string/include';
 import { Container, Grid, Span } from 'react-responsive-grid';
 import { config } from 'config';
+import Navigation from '../src/components/navigation';
 
 import 'css/styles.css';
 import 'css/markdown-styles.css'
@@ -83,9 +84,9 @@ module.exports = React.createClass({
       isActive ? activeTitle = child.title : '';
 
       return (<div onClick={this.toggleNav}>
-        <li key={child.path}>
+        <li className={'txt-fancy'} key={child.path}>
           <Link to={prefixLink(child.path)} className={'page-hover'} style={{textDecoration: 'none'}}>
-            {isActive ? <strong>{child.title}</strong> : child.title }
+            {isActive ? <div className={'active-item'}><strong>{child.title}</strong></div> : child.title }
           </Link>
         </li>
         {isActive ? <div className={'ml12'} dangerouslySetInnerHTML={{ __html: child.toc }}/> : ''}
@@ -97,14 +98,22 @@ module.exports = React.createClass({
       <div className={'grid'}>
 
         {/* Site top toolbar */}
-        <div className={'col--12 z1 hmin48 bg-denim shadow-darken50 fixed'}>
+          <div className={'z1 min48 flex-parent col col--12 flex-parent--space-between-main navigation fixed'}>
+
+        <div className={'flex-child pl36'}>
+        <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Platform</strong></div>
+        <div className={'txt-s py12 bg-transparent btn nav-icon color-gray-dark'}><strong>Android</strong><svg className={'icon'}><use href={'#icon-chevron-down'}/></svg></div>
+        <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Product</strong></div>
+        <div className={'txt-s py12 bg-transparent btn nav-icon color-gray-dark'}><strong>Maps SDK</strong><svg className={'icon'}><use href={'#icon-chevron-down'}/></svg></div>
+        </div>
 
         {/* Site Navigation */}
-        <div className={`align-t hmin48 flex-parent-inline flex-parent--center-cross flex-parent--left-main ${queryMatches.desktop ? 'w240' : ''}`}><a href={'https://mapbox.com/'}><div className={queryMatches.desktop ? 'ml12 mb-logo--s mb-logo--white' : ''}/></a></div>
-        <Link className={`py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapSdkActive ? 'is-active' : ''}`} to={prefixLink('/map-sdk/5.0.2/getting-started/')}>Map SDK</Link>
-        <Link className={`py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapboxJavaActive ? 'is-active' : ''}`} to={prefixLink('/mapbox-services/2.1.0/getting-started/')}>Mapbox Services</Link>
-        <Link className={`py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapboxNavigationActive ? 'is-active' : ''}`} to={prefixLink('/mapbox-navigation/0.1/navigation/')}>Mapbox Navigation</Link>
-        <Link className={`py12 transition btn color-white bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${examplesActive ? 'is-active' : ''}`} to={prefixLink('/examples/basics/')}>Examples</Link>
+        <div className={'flex-child pr36'}>
+        <Link className={`py12 transition btn color-gray-dark bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapSdkActive ? 'active-button' : ''}`} to={prefixLink('/map-sdk/5.1.0/getting-started/')}>Overview</Link>
+        <Link className={`py12 transition btn color-gray-dark bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapboxJavaActive ? 'active-button' : ''}`} to={prefixLink('/mapbox-services/2.1.0/getting-started/')}>Examples</Link>
+        <Link className={`py12 transition btn color-gray-dark bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${mapboxNavigationActive ? 'active-button' : ''}`} to={prefixLink('/mapbox-navigation/0.1/navigation/')}>Tutorials</Link>
+        <Link className={`py12 transition btn color-gray-dark bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${examplesActive ? 'active-button' : ''}`} to={prefixLink('/examples/basics/')}>SDK Reference</Link>
+        </div>
         </div>
         {queryMatches.tablet && <div>
           <button onClick={this.toggleNav}

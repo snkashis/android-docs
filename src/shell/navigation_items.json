@@ -1,0 +1,72 @@
+{
+  "menuOrder": [
+    "products",
+    "developers",
+    "industries",
+    "company"
+  ],
+  "menus": {
+    "products": {
+      "name": "Products",
+      "links": [
+        { "name": "Maps", "to": "/maps/" },
+        { "name": "Mapbox Studio", "to": "/mapbox-studio/" },
+        { "name": "Directions", "to": "/directions/" },
+        { "name": "Geocoding", "to": "/geocoding/" },
+        { "name": "Analysis", "to": "/analysis/" },
+        { "name": "Satellite", "to": "/maps/satellite/" },
+        { "name": "Atlas Server", "to": "/atlas/" }
+      ],
+      "highlightedLinks": [
+        { "name": "All products", "to": "/products/" }
+      ]
+    },
+    "developers": {
+      "name": "Developers",
+      "links": [
+        { "name": "iOS SDK", "to": "/ios-sdk/" },
+        { "name": "Android SDK", "to": "/android-sdk/" },
+        { "name": "Web", "to": "/mapbox-gl-js/api/" },
+        { "name": "Unity", "to": "/unity/" }
+      ],
+      "highlightedLinks": [
+        { "name": "Documentation", "to": "/developers/" },
+        { "name": "Help", "to": "/help/", "hideInHeader": true }
+      ]
+    },
+    "industries": {
+      "name": "Industries",
+      "twoColumns": true,
+      "links": [
+        { "name": "Agriculture", "to": "/industries/agriculture/" },
+        { "name": "BI & Analytics", "to": "/industries/business-intelligence/" },
+        { "name": "Drones", "to": "/industries/drones/" },
+        { "name": "Government", "to": "/industries/government/" },
+        { "name": "Logistics", "to": "/industries/logistics/" },
+        { "name": "Media", "to": "/industries/media/" },
+        { "name": "Outdoors", "to": "/industries/outdoors/" },
+        { "name": "Real estate", "to": "/industries/real-estate/" },
+        { "name": "Mobility", "to": "/industries/transportation/" },
+        { "name": "Travel", "to": "/industries/travel/" }
+      ],
+      "highlightedLinks": [
+        { "name": "Pricing", "to": "/pricing/", "hideInHeader": true },
+        { "name": "Showcase", "to": "/showcase/" }
+      ]
+    },
+    "company": {
+      "name": "Company",
+      "links": [
+        { "name": "About", "to": "/about/" },
+        { "name": "Jobs", "to": "/jobs/" },
+        { "name": "Teams", "to": "/about/team/" },
+        { "name": "Blog", "to": "/blog/" },
+        { "name": "Open source", "to": "/about/open/" },
+        { "name": "Security", "to": "/security/" }
+      ],
+      "highlightedLinks": [
+        { "name": "Contact", "to": "/contact/" }
+      ]
+    }
+  }
+}

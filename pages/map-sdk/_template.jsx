@@ -16,7 +16,7 @@ module.exports = React.createClass({
       <div className={'grid'}>
 
         {/* Content */}
-        <div className={'prose scroll-styled main-content'}>
+        <div className={'prose scroll-styled main-content color-gray-dark'}>
           <div className={'col--10'}>
             {this.props.children}
           </div>
