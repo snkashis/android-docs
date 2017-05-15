@@ -48,4 +48,4 @@ Inside the `.md` file, there are a few requirements to help keep consistency acr
 Once the documentation has been updated or added, open a pull request and let CI run. After the PR is reviewed, merging into master will run CI again but this time, will deploy your changes automatically to the website.
 
 #### Updating an SDK version
-In main directory, open the `constants.js` and update the version number. The latest version of each SDK should be labeled with `/latest/` in the YAML path field and all updated docs should go in a folder named `latest`. The previous version (which will be named latest), needs to be updated to simply reflect the version number the documentation's referring to.
+In the main directory, open the `constants.js` and update the version number. The latest version of each SDK should be labeled with `/latest/` in the YAML path field and all updated docs should go in a folder named `latest`. The previous version (which will be named latest), needs to be updated to simply reflect the version number the documentation's referring to.
