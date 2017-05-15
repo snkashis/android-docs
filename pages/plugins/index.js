@@ -5,7 +5,7 @@ import { prefixLink } from 'gatsby-helpers'
 
 module.exports = React.createClass({
   componentDidMount: function() {
-    window.location.href = prefixLink("/map-sdk/latest/getting-started/")
+    window.location.href = window.location.href = prefixLink("/plugins/latest/getting-started/")
   },
   render () {
     return (<div></div>

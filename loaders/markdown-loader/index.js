@@ -16,6 +16,9 @@ import * as constants from '../../constants';
 const highlight = (str, lang) => {
   str = str.replace(new RegExp('{masVersion}', 'g'), constants.MAS_VERSION)
   str = str.replace(new RegExp('{mapSdkVersion}', 'g'), constants.MAP_SDK_VERSION)
+  str = str.replace(new RegExp('{trafficPluginVersion}', 'g'), constants.TRAFFIC_PLUGIN_VERSION)
+  str = str.replace(new RegExp('{navigationVersion}', 'g'), constants.NAVIGATION_VERSION)
+
   if (lang && hljs.getLanguage(lang)) {
     try {
       return '<pre class="hljs"><code>' +
@@ -46,6 +49,8 @@ const md = markdownIt({
 md.renderer.rules.text = function customRenderRules(tokens, idx, options, env, renderer) {
   tokens[idx].content.replace(new RegExp('{masVersion}', 'g'), constants.MAS_VERSION)
   tokens[idx].content.replace(new RegExp('{mapSdkVersion}', 'g'), constants.MAP_SDK_VERSION)
+  tokens[idx].content.replace(new RegExp('{trafficPluginVersion}', 'g'), constants.TRAFFIC_PLUGIN_VERSION)
+  tokens[idx].content.replace(new RegExp('{navigationVersion}', 'g'), constants.NAVIGATION_VERSION)
   return tokens[idx].content;
 }
 

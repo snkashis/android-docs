@@ -5,7 +5,7 @@ import { prefixLink } from 'gatsby-helpers'
 
 module.exports = React.createClass({
   componentDidMount: function() {
-    window.location.href = window.location.href = prefixLink("/mapbox-services/2.1.0/getting-started/")
+    window.location.href = window.location.href = prefixLink("/mapbox-services/latest/getting-started/")
   },
   render () {
     return (<div></div>
