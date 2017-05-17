@@ -1,7 +1,8 @@
 ---
 title: Offline
-path: /map-sdk/5.0.2/offline/
+path: /map-sdk/overview/latest/offline/
 ---
+# Offline
 
 Often, you might find your user base spends most of its time off the grid. This causes issues because the map downloads tiles from the internet by default. The Maps SDK enables you to download and store pre-selected regions for usage when the device isn't connected to the internet. The result of downloading the map is a fully functional map using your styles, tiles, and other resources.
 

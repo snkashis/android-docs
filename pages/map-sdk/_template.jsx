@@ -17,7 +17,7 @@ module.exports = React.createClass({
 
         {/* Content */}
         <div className={'prose scroll-styled main-content color-gray-dark'}>
-          <div className={'col--10'}>
+          <div className={'col--8'}>
             {this.props.children}
           </div>
         </div>

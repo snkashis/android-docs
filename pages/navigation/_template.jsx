@@ -14,10 +14,10 @@ module.exports = React.createClass({
   render: function() {
     return (
       <div className={'grid'}>
-    
+
         {/* Content */}
         <div className={'prose scroll-styled main-content'}>
-          <div className={'col--10'}>
+          <div className={'col--8'}>
             {this.props.children}
           </div>
         </div>

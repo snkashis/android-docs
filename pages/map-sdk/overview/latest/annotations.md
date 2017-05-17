@@ -1,7 +1,8 @@
 ---
 title: Annotations
-path: /map-sdk/5.0.2/annotations/
+path: /map-sdk/overview/latest/annotations/
 ---
+# Annotations
 
 If you are including a Mapbox map inside of your application, chances are that you'd want to add annotations. Annotations are objects drawn either on top of the map or in some cases, within the map itself. These annotations vary from markers to lines to polygons. This document walks you through how to add high level objects. If you'd like more control over annotations, make sure to checkout the runtime styling documentation.
 

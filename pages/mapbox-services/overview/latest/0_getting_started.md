@@ -1,7 +1,33 @@
 ---
 title: Mapbox Services
-path: /mapbox-services/2.1.0/getting-started/
+path: /mapbox-services/overview/latest/
 ---
+
+<div>
+  <div class="sdk-card bg-green round-t p18 clip relative">
+    <div>
+    <h2 class="txt-h2-mm txt-fancy txt-h3">Mapbox Services</h2>
+    <p class="txt-m mt6">Current version <strong>v2.1.0</strong> <a href="https://github.com/mapbox/mapbox-java/blob/master/CHANGELOG.md">View changelog</a></p>
+    </div>
+  </div>
+  <div class="grid bg-gray-faint hmax180-mm">
+  <div class="round-b p24 pb0 col-6">
+    <ul class="unstyled">
+      <li class="li-icon flex-parent flex-parent--center-cross"><svg class='icon'><use xlink:href='#icon-check'/></svg>Directions</li>
+      <li class="li-icon flex-parent flex-parent--center-cross"><svg class='icon'><use xlink:href='#icon-check'/></svg>Geocoding</li>
+      <li class="li-icon flex-parent flex-parent--center-cross"><svg class='icon'><use xlink:href='#icon-check'/></svg>Map Matching</li>
+    </ul>
+  </div>
+  <div class="round-b p24 pb0 col-6">
+    <ul class="unstyled">
+      <li class="li-icon flex-parent flex-parent--center-cross"><svg class='icon'><use xlink:href='#icon-check'/></svg>Directions Matrix</li>
+      <li class="li-icon flex-parent flex-parent--center-cross"><svg class='icon'><use xlink:href='#icon-check'/></svg>Optimization</li>
+    </ul>
+  </div>
+  </div>
+  <div class="block p12 bg-gray-faint">
+  <a href="https://github.com/mapbox/mapbox-java" class="link-icon ml36 link-li flex-parent-inline flex-parent--center-cross"><svg class='icon'><use xlink:href='#icon-github'/></svg><strong>Contribute on Github</strong><svg class='icon'><use xlink:href='#icon-chevron-right'/></svg></a></div>
+</div>
 
 Mapbox Java is an open source toolset for building applications that need navigation, directions, geocoding, static map imagery, etc. It conveniently wraps Mapbox APIs and builds off of them with tools which are useful for your applications. This SDK consist of two parts:
 

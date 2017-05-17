@@ -1,13 +1,13 @@
 ---
 title: Map SDK
-path: /map-sdk/5.1.0/getting-started/
+path: /map-sdk/overview/latest/
 ---
 
 <div>
   <div class="sdk-card bg-green round-t p18 clip relative">
     <div>
     <h2 class="txt-h2-mm txt-fancy txt-h3">Mapbox Android SDK</h2>
-    <p class="txt-m mt6">Current version <strong>v5.1.0</strong> <a href="https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/CHANGELOG.md">View changlog</a></p>
+    <p class="txt-m mt6">Current version <strong>v5.1.0</strong> <a href="https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/CHANGELOG.md">View changelog</a></p>
     </div>
   </div>
   <div class="grid bg-gray-faint hmax180-mm">
