@@ -20,14 +20,18 @@ navigation.addNavigationEventListener(new NavigationEventListener() {
 
 ### AlertLevelChange
 
-Listening in to the alertLevelChange is useful for correctly getting the timing of user notifications while the user is traversing along the route. The listener only notifies you when the user's reached a particular point along the current step that they are on. The alert thresholds can be adjusted using the `MapboxNavigationOptions` while developing and are based on time (in seconds) until the user reaches the next maneuver.
+Listening in to the alertLevelChange is useful for correctly getting the timing of user notifications while the user is traversing along the route. The listener only notifies you when the user's reached a particular point along the current step that they are on. 
+
+It is possible for certain alert level notifications to be skipped if a higher priority alert level is valid. For example, if a maneuver is completed after a `HIGH_ALERT_LEVEL` notification and the next maneuver is less than 70 seconds from away, `LOW_ALERT_LEVEL` will be skipped and `MEDIUM_ALERT_LEVEL` will be immedately invoked.
+
+The alert thresholds can be adjusted using the `MapboxNavigationOptions` while developing and are based on time (in seconds) until the user reaches the next maneuver.
 
 | Alert level                         | Description           |
 | --------------------------- |:-------------:|
 | `DEPART_ALERT_LEVEL` | Occurs when the user first leaves the origin and shouldn't be invoked again for the rest of the navigation session. |
-| `LOW_ALERT_LEVEL` | Invoked right after the user does a maneuver and they have started traversing along a new step. |
-| `MEDIUM_ALERT_LEVEL` | Occurs when the user's x seconds away from their next maneuver. By default, this happens 70 seconds from the next maneuver. |
-| `HIGH_ALERT_LEVEL` | Useful to know when the user's about to do the next maneuver on the route. By default, this happens 15 seconds from the next maneuver. |
+| `LOW_ALERT_LEVEL` | Invoked right after the user completes a maneuver and has started traversing along a new step. This alert may not be invoked if the user is already less than 70 seconds away from the next maneuver, in which case `MEDIUM_ALERT_LEVEL` will be invoked. |
+| `MEDIUM_ALERT_LEVEL` | Occurs when the user's x seconds away from their next maneuver. By default, this happens 70 seconds from the next maneuver. This alert may not be invoked if the user is already less than 15 seconds from the next maneuver, in which case `HIGH_ALERT_LEVEL` will be invoked. |
+| `HIGH_ALERT_LEVEL` | Useful to know when the user's about to commence the next maneuver on the route. By default, this happens 15 seconds from the next maneuver. |
 | `ARRIVE_ALERT_LEVEL` | Occurs when the user has performed the last maneuver along the route and reached their final destination. |
 | `NONE_ALERT_LEVEL` | Used as the starting alert when a navigation session has started. |
 
