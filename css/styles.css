@@ -21,6 +21,15 @@
   border-width: 5px;
 }
 
+.limiter {
+  max-width: 1200px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
 .nav-icon {
   display: inline-flex;
 }
@@ -64,7 +73,6 @@
   overflow-y: auto;
   padding-top: 24px;
   padding-bottom: 250px;
-  width: inherit;
 }
 
 code p {
@@ -117,7 +125,6 @@ body .prose blockquote {
   top: 42px;
   bottom: 0px;
   overflow-y: auto;
-  padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
   padding-top: 24px;
@@ -148,6 +155,11 @@ body .prose blockquote {
   top: 48px;
   bottom: 0px;
   padding-bottom: 100px;
+}
+
+.nav-item:hover {
+  color: #0082FF !important;
+  border-color: #273d56;
 }
 
 .card {

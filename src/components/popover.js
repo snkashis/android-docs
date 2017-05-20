@@ -44,7 +44,7 @@ class Popover extends React.Component {
   focusTriggerTimer: ?number;
 
   static defaultProps = {
-    placement: 'bottom',
+    placement: 'right',
     alignment: 'top',
     backgroundColor: '#fff',
     popoverClasses: 'round py6 px12 shadow-darken25',

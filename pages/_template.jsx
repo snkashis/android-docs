@@ -116,69 +116,69 @@ module.exports = React.createClass({
     });
 
     return (
-      <div className={'grid'}>
+      <div className={'grid flex-parent--center-main limiter flex-parent'}>
 
         {/* Site top toolbar */}
-          <div className={'z1 min48 flex-parent col col--12 flex-parent--space-between-main navigation fixed'}>
-
-        <div className={'flex-child pl36'}>
+          <div className={'z1 min48 flex-child col col--12 navigation fixed'}>
+ <div className={'limiter'}>
+        <div className={'flex-child inline-block'}>
           <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Platform</strong></div>
           <div className={'txt-s py12 bg-transparent btn nav-icon color-gray-dark'}><strong>Android</strong>{/*}<svg className={'icon'}><use href={'#icon-chevron-down'}/></svg>*/}</div>
           <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Product</strong></div>
-          <button>
+
           <PopoverTrigger
             content={
               <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
                 <strong className={'color-gray-light p6 txt-mm'}>Products</strong>
-                <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`} to={prefixLink('/map-sdk/' + activeSection + '/latest/')}>Map SDK</Link>
-                <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`} to={prefixLink('/plugins/' + activeSection + '/latest/')}>Plugins</Link>
-                <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`} to={prefixLink('/mapbox-services/' + activeSection + '/latest/')}>Mapbox Services</Link>
-                <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`} to={prefixLink('/navigation/' + activeSection + '/latest/')}>Navigation</Link>
+                <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`} to={prefixLink('/map-sdk/' + activeSection + '/')}>Map SDK</Link>
+                <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`} to={prefixLink('/plugins/' + activeSection + '/')}>Plugins</Link>
+                <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`} to={prefixLink('/mapbox-services/' + activeSection + '/')}>Mapbox Services</Link>
+                <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`} to={prefixLink('/navigation/' + activeSection + '/')}>Navigation</Link>
               </div>
             }
-            placement={'bottom'}
-            hoverEnterDelay={150}
-            hoverExitDelay={300}
-            receiveFocus={true}
-
-            respondsToClick={true}
-            respondsToFocus={false}
-            respondsToHover={true}>
-              <div className={'txt-s py12 bg-transparent btn nav-icon color-gray-dark'}>
+            respondsToHover={true}
+            popoverProps={_.assign({
+              placement: 'bottom',
+              alignment: 'center'
+            })}>
+              <button className={'txt-s py12 nav-item bg-transparent btn nav-icon color-gray-dark'}>
               <strong>
               {`${mapSdkActive ? 'Map SDK' : ''}`}
               {`${pluginsActive ? 'Plugins' : ''}`}
               {`${mapboxJavaActive ? 'Mapbox Services' : ''}`}
               {`${navigationActive ? 'Navigation' : ''}`}
-              </strong><svg className={'icon'}><use href={'#icon-chevron-down'}/></svg></div>
+              </strong><svg className={'icon'}><use href={'#icon-chevron-down'}/></svg></button>
             </PopoverTrigger>
-          </button>
+
         </div>
 
         {/* Site Navigation */}
-        <div className={'flex-child pr36'}>
-        <Link className={`py12 transition btn color-gray-dark bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${activeSection === "overview" ? 'active-button' : ''}`} to={prefixLink('/' + activeSdk + '/overview/latest/')}>Overview</Link>
-        <Link className={`py12 transition btn color-gray-dark bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${activeSection === "examples" ? 'active-button' : ''}`} to={prefixLink('/' + activeSdk + '/examples/latest/')}>Examples</Link>
-        <Link className={`py12 transition btn color-gray-dark bg-transparent bg-darken10-on-active bg-darken10-on-hover txt-s  ${activeSection === "tutorials" ? 'active-button' : ''}`} to={prefixLink('/' + activeSdk + '/tutorials/latest/')}>Tutorials</Link>
+        <div className={'flex-child fr inline-block'}>
+        <Link className={`py12 transition btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "overview" ? 'active-button' : ''}`} to={prefixLink('/' + activeSdk + '/overview/')}>Overview</Link>
+        <Link className={`py12 transition btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "examples" ? 'active-button' : ''}`} to={prefixLink('/' + activeSdk + '/examples/')}>Examples</Link>
+        <Link className={`py12 transition btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "tutorials" ? 'active-button' : ''}`} to={prefixLink('/' + activeSdk + '/tutorials/')}>Tutorials</Link>
         </div>
-        </div>
+        </div></div>
         {queryMatches.tablet && <div>
           <button onClick={this.toggleNav}
           className={`btn m6 flex-parent flex-parent--center-cross bg-lighten10 bg-lighten25-on-hover transition round txt-s z1 right absolute`}>
           {activeTitle}
           <svg className={'icon flex-child'}><use href={showNav ? '#icon-caret-up' : '#icon-caret-down'}/></svg></button>
           {showNav && <div
-            className='mt6 scroll-styled col--12 toc z1'>
+            className='mt6 scroll-styled  toc z1'>
               {docPages}
             </div>}
             </div>}
 
-          {queryMatches.desktop && <div className={'w240 toc'}>{docPages}</div>}
+            <div className={'scroll-styled main-content limiter flex-child'}>
 
-          <div className={queryMatches.desktop ? 'ml240 p48' : 'p12'}>
+          <div className={queryMatches.desktop ? '' : 'p12'}>
+          {queryMatches.desktop && <div className={'col--3 col toc'}>{docPages}</div>}
           {this.props.children}
           </div>
+</div>
       </div>
+
     );
   }
 });

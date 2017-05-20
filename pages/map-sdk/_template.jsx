@@ -13,11 +13,11 @@ module.exports = React.createClass({
   contextTypes: {router: React.PropTypes.object.isRequired},
   render: function() {
     return (
-      <div className={'grid'}>
+      <div>
 
         {/* Content */}
-        <div className={'prose scroll-styled main-content color-gray-dark'}>
-          <div className={'col--8'}>
+        <div className={'prose color-gray-dark'}>
+          <div className={'col--9 col fr'}>
             {this.props.children}
           </div>
         </div>
