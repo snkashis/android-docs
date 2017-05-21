@@ -1,5 +1,5 @@
 ---
-title: Displaying a map inside your app
+title: First steps guide
 path: /map-sdk/tutorials/
 ---
 # First steps guide
@@ -144,7 +144,7 @@ mapView.getMapAsync(new OnMapReadyCallback() {
 
 Now you're ready to start building with Mapbox!
 
-<h2 id='adding-a-map'>Adding a map</h2>
+## Adding a map
 
 Let's add a map of Chicago to our app. To start, open your `My First Mapbox App` in Android Studio and navigate to `~/app/src/main/java/com.mycompany.myfirstmapboxapp/MainActivity.java`.
 
@@ -166,7 +166,6 @@ private MapView mapView;
         mapView.onCreate(savedInstanceState);
     }
 ```
-<!--*-->
 
 Next, use your new `mapView` class to create a `MapboxMap` object. `MapboxMap` has lots of built-in methods that will allow you to change map styles or camera position, add markers, and more. Create your `MapboxMap` inside an `OnMapReadyCallback`:
 
@@ -195,7 +194,7 @@ private MapView mapView;
     }
 ```
 
-<h3 id="configure-map-view">Configure your mapView</h3>
+### Configure your mapView
 
 You can configure many of your map's characteristics, including starting camera position, and style URL, in your activity's layout file. Add the following to your activity's layout file, inside your `com.mapbox.mapboxsdk.maps.MapView` tags:
 
@@ -273,7 +272,7 @@ Click the **Run 'app'** button <img src="{{site.baseurl}}/img/android/run.png" c
 
 ![]({{site.baseurl}}/img/android/initial-map.png)
 
-<h2 id='map-style'>Changing the map style</h2>
+## Changing the map style
 
 The Mapbox Android SDK comes bundled with a handful of map styles, so let’s try changing it up a bit. You can find a list of the current bundled styles with the Mapbox SDK's Style constant. Let’s use the `LIGHT` style (the version of Mapbox Light that conforms to the {{site.styleVersion}} release of the [GL style specification](https://www.mapbox.com/mapbox-gl-style-spec/)).
 
@@ -295,7 +294,7 @@ mapboxMap.setStyleUrl(Style.LIGHT);
 
 ![]({{site.baseurl}}/img/android/change_style.png)
 
-<h3 id='creating-your-style'>Creating your own styles</h3>
+### Creating your own styles
 
 You can create custom styles with [Mapbox Studio](https://www.mapbox.com/mapbox-studio/) and add them to your app. To add one of your custom styles to your `mapboxMap`, head to your [styles page](https://www.mapbox.com/studio/styles/), copy your style's [style URL](https://www.mapbox.com/help/define-style-url/), then add it to your `mapboxMap` with `setStyleURL()`:
 
@@ -309,11 +308,11 @@ Starting with version `4.2.0` you can tweak your map style on the fly at runtime
 
 <!-- TODO You can access many of the options using the `MapboxMap` object, checkout the [style examples](https://www.mapbox.com/android-sdk/examples/) to get started. -->
 
-<h3 id='mapbox-studio-classic'>Using Mapbox Studio Classic styles and maps</h3>
+### Using Mapbox Studio Classic styles and maps
 
 Raster maps and styles created with [Mapbox Studio Classic](https://www.mapbox.com/mapbox-studio-classic/) are not directly compatible with the Android SDK, though you can still load these maps [via a custom  style](https://www.mapbox.com/android-sdk/examples/custom-raster/). Please note that associated markers, lines, and shapes are not supported.
 
-<h2 id='next-steps'>Next steps</h2>
+## Next steps
 
 You just built a small Android app with Mapbox! You can now create an Android Studio project, install the Mapbox SDK, and change the map style. Pat yourself on the back!
 

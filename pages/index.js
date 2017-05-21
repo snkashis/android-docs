@@ -1,14 +1,15 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
-import { config } from 'config';
-import { prefixLink } from 'gatsby-helpers'
+import {browserHistory} from 'react-router';
+import {config} from 'config';
+import {prefixLink} from 'gatsby-helpers'
 
 module.exports = React.createClass({
   componentDidMount: function() {
     window.location.href = prefixLink("/map-sdk/overview/")
   },
-  render () {
-    return (<div></div>
+  render() {
+    return (
+      <div></div>
     )
   }
 });

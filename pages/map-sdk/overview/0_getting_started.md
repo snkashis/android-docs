@@ -2,33 +2,6 @@
 title: Map SDK
 path: /map-sdk/overview/
 ---
-
-<div>
-  <div class="sdk-card bg-green round-t p18 clip relative">
-    <div>
-    <h2 class="txt-h2-mm txt-fancy txt-h3">Mapbox Android SDK</h2>
-    <p class="txt-m mt6">Current version <strong>v5.1.0</strong> <a href="https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/CHANGELOG.md">View changelog</a></p>
-    </div>
-  </div>
-  <div class="grid bg-gray-faint hmax180-mm">
-  <div class="round-b p24 pb0 col-6">
-    <ul class="unstyled">
-      <li class="li-icon flex-parent flex-parent--center-cross"><svg class='icon'><use xlink:href='#icon-check'/></svg>Live traffic data</li>
-      <li class="li-icon flex-parent flex-parent--center-cross"><svg class='icon'><use xlink:href='#icon-check'/></svg>Offline support</li>
-      <li class="li-icon flex-parent flex-parent--center-cross"><svg class='icon'><use xlink:href='#icon-check'/></svg>Annotations</li>
-    </ul>
-  </div>
-  <div class="round-b p24 pb0 col-6">
-    <ul class="unstyled">
-      <li class="li-icon flex-parent flex-parent--center-cross"><svg class='icon'><use xlink:href='#icon-check'/></svg>Runtime styling</li>
-      <li class="li-icon flex-parent flex-parent--center-cross"><svg class='icon'><use xlink:href='#icon-check'/></svg>3D extrusions</li>
-    </ul>
-  </div>
-  </div>
-  <div class="block p12 bg-gray-faint">
-  <a href="https://github.com/mapbox/mapbox-gl-native" class="link-icon ml36 link-li flex-parent-inline flex-parent--center-cross"><svg class='icon'><use xlink:href='#icon-github'/></svg><strong>Contribute on Github</strong><svg class='icon'><use xlink:href='#icon-chevron-right'/></svg></a></div>
-</div>
-
 The Mapbox Maps SDK is an open source toolset for displaying maps inside of your Android application. [Mapbox's demo app on the Google Play Store](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en) includes many examples of how to use Mapbox Maps. Various pages in this documentation reference a few of the examples in the demo app.
 
 ## Installation
@@ -48,7 +21,7 @@ repositories {
 }
 
 dependencies {
-  compile ('com.mapbox.mapboxsdk:mapbox-android-sdk:{MAP_SDK_VERSION}@aar'){
+  compile ('com.mapbox.mapboxsdk:mapbox-android-sdk:{mapSdkVersion}@aar'){
       transitive=true
   }
 }

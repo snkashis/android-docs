@@ -2,10 +2,6 @@
 title: Navigation SDK
 path: /navigation/overview/
 ---
-# Navigation SDK
-
-> Navigation is still in beta; API breaking changes might occur without a major release.
-
 The navigation SDK's built on top of our Directions API and contains logic needed to get timed navigation instructions. The calculations use the user's current location and compare it to the current route that the user's traversing to provide critical information at any given moment.
 
 ### Support and contributions
