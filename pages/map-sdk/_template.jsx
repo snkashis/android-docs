@@ -28,25 +28,15 @@ module.exports = React.createClass({
         <div className={'prose color-gray-dark'}>
           <div className={'content col--9 col fr'}>
             {show && <OverviewHeader
+              deviceImg={"../../assets/imgs/map-sdk-splash.png"}
               sdk={"Map SDK"}
               version={constants.MAP_SDK_VERSION}
               changelogLink={"https://www.github.com/mapbox/mapbox-gl-native/blob/master/platform/android/CHANGELOG.md"}
               ghLink={"https://github.com/mapbox/mapbox-gl-native"}
-              featureListColumnOne={
-                <ul className={'unstyled'}>
-                  <li className={'li-icon flex-parent flex-parent--center-cross'}><svg className={'icon'}><use href='#icon-check'/></svg>Live traffic</li>
-                  <li className={'li-icon flex-parent flex-parent--center-cross'}><svg className={'icon'}><use href='#icon-check'/></svg>Offline support</li>
-                  <li className={'li-icon flex-parent flex-parent--center-cross'}><svg className={'icon'}><use href='#icon-check'/></svg>Annotations</li>
-                </ul>
-              }
-              featureListColumnTwo={
-                <ul className={'unstyled'}>
-                  <li className={'li-icon flex-parent flex-parent--center-cross'}><svg className={'icon'}><use href='#icon-check'/></svg>Runtime styling</li>
-                  <li className={'li-icon flex-parent flex-parent--center-cross'}><svg className={'icon'}><use href='#icon-check'/></svg>3D extrusions</li>
-                </ul>
-              }/>
-            }
+              sdkFeatures={['Live traffic', 'Offline support', 'Annotations', 'Runtime styling', '3D extrusions']}/>}
+            <div className='pt12 doc-ul doc-ol doc-ol-item'>
             {this.props.children}
+            </div>
           </div>
         </div>
       </div>

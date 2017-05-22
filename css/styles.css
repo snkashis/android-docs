@@ -3,6 +3,7 @@
 @custom-media --m-screen (min-width: 640px);
 @custom-media --m-max-screen (max-width: 640px);
 @custom-media --l-max-screen (max-width: 800px);
+@custom-media --xl-max-screen (max-width: 1200px);
 
 .bg-green {
   background-color: #8CCA44 !important;
@@ -73,6 +74,11 @@
   margin-right: 12px;
 }
 
+.no-link-style {
+    text-decoration: none !important;
+}
+
+
 
 
 .unstyled li {
@@ -102,6 +108,10 @@
 
 @media (--l-max-screen) {
 .content { width: 100% !important; }
+}
+
+.content {
+  max-width: 1200px;
 }
 
 code p {
@@ -134,7 +144,7 @@ pre {
 }
 
 .prose h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cera';
+  font-weight: normal !important;
 }
 
 body .prose blockquote {
@@ -164,9 +174,9 @@ body .prose blockquote {
 }
 
 @media (--l-max-screen) {
-.toc {
-  visibility: hidden;
-}
+  .toc {
+    visibility: hidden;
+  }
 }
 
 
