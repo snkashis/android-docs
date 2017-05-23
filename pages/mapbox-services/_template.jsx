@@ -28,25 +28,15 @@ module.exports = React.createClass({
         <div className={'prose color-gray-dark'}>
           <div className={'content col--9 col fr'}>
             {show && <OverviewHeader
-              sdk={"Mapbox Services"}
+              deviceImg={"../../assets/imgs/map-services-splash.png"}
+              sdk={"Mapbox Services SDK"}
               version={constants.MAS_VERSION}
               changelogLink={"https://github.com/mapbox/mapbox-java/blob/master/CHANGELOG.md"}
               ghLink={"https://github.com/mapbox/mapbox-java"}
-              featureListColumnOne={
-                <ul className={'unstyled'}>
-                  <li className={'li-icon flex-parent flex-parent--center-cross'}><svg className={'icon'}><use href='#icon-check'/></svg>Directions</li>
-                  <li className={'li-icon flex-parent flex-parent--center-cross'}><svg className={'icon'}><use href='#icon-check'/></svg>Geocoding</li>
-                  <li className={'li-icon flex-parent flex-parent--center-cross'}><svg className={'icon'}><use href='#icon-check'/></svg>Map Matching</li>
-                </ul>
-              }
-              featureListColumnTwo={
-                <ul className={'unstyled'}>
-                  <li className={'li-icon flex-parent flex-parent--center-cross'}><svg className={'icon'}><use href='#icon-check'/></svg>Directions Matrix</li>
-                  <li className={'li-icon flex-parent flex-parent--center-cross'}><svg className={'icon'}><use href='#icon-check'/></svg>Optimization</li>
-                </ul>
-              }/>
-            }
+              sdkFeatures={['Directions', 'Geocoding', 'Map Matching', 'Directions Matrix', 'Optimization']}/>}
+            <div className='pt12 doc-ul doc-ol doc-ol-item'>
             {this.props.children}
+            </div>
           </div>
         </div>
       </div>

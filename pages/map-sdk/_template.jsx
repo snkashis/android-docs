@@ -33,7 +33,7 @@ module.exports = React.createClass({
               version={constants.MAP_SDK_VERSION}
               changelogLink={"https://www.github.com/mapbox/mapbox-gl-native/blob/master/platform/android/CHANGELOG.md"}
               ghLink={"https://github.com/mapbox/mapbox-gl-native"}
-              sdkFeatures={['Live traffic', 'Offline support', 'Annotations', 'Runtime styling', '3D extrusions']}/>}
+              sdkFeatures={['Live traffic', 'Runtime styling', 'Annotations', '3D extrusions', 'Offline support']}/>}
             <div className='pt12 doc-ul doc-ol doc-ol-item'>
             {this.props.children}
             </div>
