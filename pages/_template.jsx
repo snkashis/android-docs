@@ -129,7 +129,7 @@ module.exports = React.createClass({
   <div className={'scroll-styled main-content flex-child'}>
 
 
-    <div className={'col--2 pt96 col toc scroll-styled'}>{docPages}
+    <div className={'col--2 pt42 col toc scroll-styled'}>{docPages}
     {mapboxJavaActive ? <PopoverTrigger content={
       <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
         <strong className={'color-gray-light p6 txt-mm'}>Javadoc</strong>
