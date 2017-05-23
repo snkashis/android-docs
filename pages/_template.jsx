@@ -7,6 +7,7 @@ import {config} from 'config';
 import {Popover} from '../src/components/popover';
 import {PopoverTrigger} from '../src/components/popover_trigger';
 import {OverviewHeader} from '../src/components/overview_header';
+import {MapboxPageShell} from '../src/components/mapbox_page_shell'
 
 import 'css/styles.css';
 import 'css/markdown-styles.css'
@@ -126,7 +127,31 @@ module.exports = React.createClass({
 
   {/* Start content */}
   <div className={'scroll-styled main-content flex-child'}>
-    <div className={'col--2 col toc scroll-styled'}>{docPages}</div>
+
+
+    <div className={'col--2 pt96 col toc scroll-styled'}>{docPages}
+    {mapboxJavaActive ? <PopoverTrigger content={
+      <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
+        <strong className={'color-gray-light p6 txt-mm'}>Javadoc</strong>
+          <a className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-core</a>
+          <a className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-geojson</a>
+          <a className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-services</a>
+          <a className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-services-rx</a>
+          <a className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-android-services</a>
+          <a className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-android-telemetry</a>
+          <a className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-android-ui</a>
+      </div>
+      }
+      respondsToHover={true}
+      popoverProps={_.assign({
+        placement: 'right',
+        alignment: 'center'
+      })}>
+      <button className={'txt-fancy page-hover'}>
+        <strong>API Reference</strong>
+      </button>
+    </PopoverTrigger>  : ''}
+    </div>
       {this.props.children}
     </div>
   </div>);

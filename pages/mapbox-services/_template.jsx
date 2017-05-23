@@ -28,8 +28,9 @@ module.exports = React.createClass({
         <div className={'prose color-gray-dark'}>
           <div className={'content col--9 col fr'}>
             {show && <OverviewHeader
-              deviceImg={"../../assets/imgs/map-services-splash.png"}
+              deviceImg={"../../assets/imgs/mas-sdk-splash.png"}
               sdk={"Mapbox Services SDK"}
+              imgWidth={480}
               version={constants.MAS_VERSION}
               changelogLink={"https://github.com/mapbox/mapbox-java/blob/master/CHANGELOG.md"}
               ghLink={"https://github.com/mapbox/mapbox-java"}

@@ -8,11 +8,16 @@ type Props = {
   changelogLink: string,
   sdkFeatures: string,
   ghLink: stringhttps,
-  deviceImg: string
+  deviceImg: string,
+  imgWidth: width
 };
 
 class OverviewHeader extends React.Component {
   props: Props;
+
+  static defaultProps = {
+    imgWidth: 360
+  };
 
   render() {
     return (
@@ -47,29 +52,13 @@ class OverviewHeader extends React.Component {
             </div>
             <div
               style={{ marginTop: -90, marginBottom: -60 }}
-              className="pr36 pl12 relative w360 hmax360 flex-child block-mxl none clip flex-child--no-shrink"
-            >
+              className={`pr36 pl12 relative w${this.props.imgWidth} hmax360 flex-child block-mxl none clip flex-child--no-shrink`}>
               <div className="">
                 <img className="pr36 pl12 flex-child block-mxl none clip flex-child--no-shrink absolute" src={this.props.deviceImg} />
               </div>
-
             </div>
           </div>
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
     );
   }
 }
