@@ -42,10 +42,10 @@ SDK > Version > Document
 Inside the `.md` file, there are a few requirements to help keep consistency across documentation and organize properly.
 
 1. The document needs front-matter at the top providing a `title` and `path`.
-2. Start off the document not including a title in markdown, it's already given in the front-matter
-3. Add the file path inside the same SDKs `_pages.yaml` file.
+2. Start off the document not including a title in markdown, it's already given in the front-matter.
+3. Ensure your file's path is referencing the correct version (most likely this should be `latest`).
 
 Once the documentation has been updated or added, open a pull request and let CI run. After the PR is reviewed, merging into master will run CI again but this time, will deploy your changes automatically to the website.
 
 #### Updating an SDK version
-In main directory, open the `constants.js` and update the version number.
+In the main directory, open the `constants.js` and update the version number. The latest version of each SDK should be labeled with `/latest/` in the YAML path field and all updated docs should go in a folder named `latest`. The previous version (which will be named latest), needs to be updated to simply reflect the version number the documentation's referring to.
