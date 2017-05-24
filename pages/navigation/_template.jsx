@@ -28,20 +28,16 @@ module.exports = React.createClass({
         <div className={'prose color-gray-dark'}>
           <div className={'content col--9 col fr'}>
             {show && <OverviewHeader
-              sdk={"Navigation SDK (Preview)"}
+              deviceImg={"../../assets/imgs/nav-sdk-splash.png"}
+              sdk={"Navigation SDK"}
+              imgWidth={360}
               version={constants.NAVIGATION_VERSION}
               changelogLink={"https://github.com/mapbox/mapbox-navigation-android/blob/master/CHANGELOG.md"}
               ghLink={"https://github.com/mapbox/mapbox-navigation-android"}
-              featureListColumnOne={
-                <ul className={'unstyled'}>
-                  <li className={'li-icon flex-parent flex-parent--center-cross'}><svg className={'icon'}><use href='#icon-check'/></svg>Upcoming maneuver alerts</li>
-                  <li className={'li-icon flex-parent flex-parent--center-cross'}><svg className={'icon'}><use href='#icon-check'/></svg>Show progress along route</li>
-                  <li className={'li-icon flex-parent flex-parent--center-cross'}><svg className={'icon'}><use href='#icon-check'/></svg>Off-route detection</li>
-                </ul>
-              }
-              />
-            }
+              sdkFeatures={['Off-route detection', 'Timed instructions', 'Snap to route', 'Route progress info', 'Traffic routing']}/>}
+            <div className='pt12 doc-ul doc-ol doc-ol-item'>
             {this.props.children}
+            </div>
           </div>
         </div>
       </div>

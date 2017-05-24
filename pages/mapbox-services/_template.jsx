@@ -30,7 +30,7 @@ module.exports = React.createClass({
             {show && <OverviewHeader
               deviceImg={"../../assets/imgs/mas-sdk-splash.png"}
               sdk={"Mapbox Services SDK"}
-              imgWidth={480}
+              imgWidth={420}
               version={constants.MAS_VERSION}
               changelogLink={"https://github.com/mapbox/mapbox-java/blob/master/CHANGELOG.md"}
               ghLink={"https://github.com/mapbox/mapbox-java"}

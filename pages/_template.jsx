@@ -119,8 +119,8 @@ module.exports = React.createClass({
       {/* Right side nav */}
       <div className={'flex-child fr inline-block'}>
         <Link className={`py12 transition btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "overview" ? 'active-button' : ''}`} to={prefixLink('/' + activeSdk + '/overview/')}>Overview</Link>
-        <Link className={`py12 transition btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "examples" ? 'active-button' : ''}`} to={prefixLink('/' + activeSdk + '/examples/')}>Examples</Link>
-        <Link className={`py12 transition btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "tutorials" ? 'active-button' : ''}`} to={prefixLink('/' + activeSdk + '/tutorials/')}>Tutorials</Link>
+        {mapSdkActive || mapboxJavaActive ? <Link className={`py12 transition btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "examples" ? 'active-button' : ''}`} to={prefixLink('/' + activeSdk + '/examples/')}>Examples</Link> : ''}
+        {mapSdkActive ? <Link className={`py12 transition btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "tutorials" ? 'active-button' : ''}`} to={prefixLink('/' + activeSdk + '/tutorials/')}>Tutorials</Link> : ''}
       </div>
     </div>
   </div>
