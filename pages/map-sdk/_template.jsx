@@ -22,11 +22,12 @@ module.exports = React.createClass({
         var show = true;
       }
     }
+    var isExample = includes(stringLink, "/examples/");
     return (
       <div>
         {/* Content */}
         <div className={'prose color-gray-dark'}>
-          <div className={'content col--9 col fr'}>
+          <div className={`content ${isExample ? 'col--12' : 'col--9'} col fr`}>
             {show && <OverviewHeader
               deviceImg={"../../assets/imgs/map-sdk-splash.png"}
               sdk={"Map SDK"}

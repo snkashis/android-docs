@@ -9,6 +9,10 @@
   background-color: #8CCA44 !important;
 }
 
+.bright-blue-color {
+  color: #0082FF
+}
+
 .navigation {
   top: 0;
   border-top-style: solid;
@@ -17,6 +21,22 @@
   background-color: #ffffff !important;
   border-color: #E8EBEE;
   line-height: normal;
+}
+
+.example-card img {
+  max-width:260px;
+    max-height:130px;
+    width:auto;
+    height:auto;
+}
+
+.remove-text-decoration {
+  text-decoration: none !important;
+}
+
+
+.example-card {
+  max-width:260px;
 }
 
 .link-li {
@@ -98,10 +118,17 @@
   padding-right: 24px;
 }
 
+@media (--l-screen) {
+.main-content {
+  width: 100%;
+}
+}
+
 @media (--xl-screen) {
 .main-content {
   padding-left: 12.5%;
   padding-right: 12.5%;
+  width: 100%;
 }
 }
 

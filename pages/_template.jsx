@@ -128,7 +128,7 @@ module.exports = React.createClass({
   {/* Start content */}
   <div className={'scroll-styled main-content flex-child'}>
 
-
+{includes(activeSection, 'examples') ? '' :
     <div className={'col--2 pt42 col toc scroll-styled'}>{docPages}
     {mapboxJavaActive ? <PopoverTrigger content={
       <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
@@ -151,7 +151,7 @@ module.exports = React.createClass({
         <strong>API Reference</strong>
       </button>
     </PopoverTrigger>  : ''}
-    </div>
+    </div>}
       {this.props.children}
     </div>
   </div>);
