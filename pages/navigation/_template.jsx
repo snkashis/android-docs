@@ -14,6 +14,11 @@ module.exports = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
+  getInitialState: function() {
+        return {
+            windowWidth: 1200
+        };
+    },
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
@@ -22,10 +27,12 @@ module.exports = React.createClass({
     window.removeEventListener('resize', this.updateWindowDimensions);
   },
   updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
+    if (window !== 'undefined') {
+      this.setState({ windowWidth: this.state.windowWidth = window.innerWidth });
+    }
   },
   render: function() {
-    var windowWidth = this.state.width;
+    let {windowWidth} = this.state;
 
     var stringLink = this.props.location.pathname;
     var overview = stringLink.match(/\/([^\/?]+)(?=\/$|\?|$)/)
@@ -39,7 +46,7 @@ module.exports = React.createClass({
         {/* Content */}
         <div className={'prose color-gray-dark'}>
         <div className={`content ${windowWidth < 800 ? 'col--12' : 'col--9 col col--offl3'}`}>
-          
+
             {show && <OverviewHeader
               deviceImg={"../../assets/imgs/nav-sdk-splash.png"}
               sdk={"Navigation SDK"}
