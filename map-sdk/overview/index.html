@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Map SDK | Android Documentation</title><meta name="type" data-type="enum" content="Android Documentation"/><meta name="title" data-type="string" content="Map SDK | Android Documentation"/><link href="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.min.css" rel="stylesheet"/><script async="" defer="" src="https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.js"></script><link href="https://api.mapbox.com/mapbox-assembly/mapbox-addon/v0.10.0/assembly.min.css" rel="stylesheet"/><script src="https://api.mapbox.com/mapbox-assembly/mapbox-addon/v0.10.0/assembly.js"></script><link rel="stylesheet" href="stylesheet.css" type="text/css"/><style>.border--3{border-width:3px!important}.bg-green{background-color:#8cca44!important}.icon-android-green svg{color:#8cca44}.bright-blue-color{color:#0082ff}.border--gray-less-faint{border-color:#e8ebee!important}.hmax130 img{max-height:130px}.wmax260{max-width:260px}.text-decoration-none{text-decoration:none!important}.unstyled-list li{list-style-type:none!important}.overflow-y{overflow-y:auto}.t48{top:48px}.b0{bottom:0}.limiter{padding-left:24px;padding-right:24px;width:100%}@media (min-width:1200px){.limiter{padding-left:12.5%!important;padding-right:12.5%!important}}@media (min-width:440px){.note-card{margin-top:-12px;width:240px;margin-left:24px;padding-bottom:24px}}@media (max-width:640px){.mobile-left-nav{visibility:collapse;width:0;padding:0}}@media (max-width:640px){.mobile-right-nav{visibility:hidden;width:0;padding:0}}@media (min-width:640px){.nav-mobile{visibility:hidden}}@media (max-width:640px){.mobile-right-nav svg{visibility:visible}}@media (max-width:800px){.content{width:100%!important}}code p{font-weight:lighter;font-size:11px}code,pre{font-family:Fira Mono Medium,Monaco,monospace!important;font-weight:700!important;font-size:13px!important;word-break:normal!important}pre{background-color:#232323!important}.prose h1,h2,h3,h4,h5,h6{font-weight:400!important}.prose h3{margin-top:32px;border-top:1px solid rgba(198,210,225,.50196)}.prose h3:first-child{border-top:0}body .prose blockquote{border-left:5px solid #56adec;background-color:#fafafa;border-radius:2px;word-wrap:break-word;padding-top:12px;padding-bottom:12px;padding-right:12px}.toc{display:block!important;-ms-flex-negative:0!important;flex-shrink:0!important;-ms-flex-preferred-size:auto!important;flex-basis:auto!important;list-style-type:none;color:#273d56;position:fixed;top:42px;bottom:0;overflow-y:auto;padding-right:20px;padding-bottom:20px;padding-top:24px}@media (max-width:800px){.toc{visibility:hidden}}.toc-subheaders{font-size:12px;display:inline-block;line-height:20px;margin-bottom:12px}.page-hover:hover,.toc-subheaders a:hover{color:#0082ff}.nav-item:hover{color:#0082ff!important;border-color:#273d56}.doc-ul>.doc-ul-item:before{content:"";width:8px;height:8px;border-radius:2px;border:1px solid #1f3349;opacity:.4;position:absolute;margin:9px 0 0 -20px}.doc-ol{counter-reset:listItem}.doc-ol>.doc-ol-item{margin:3px 0}ol li{list-style-type:none}ol li:before{counter-increment:listItem;content:counter(listItem);font-size:12px;border-radius:3px;padding:1px 6px;border:1px solid #c6d2e1;margin-right:12px}.hljs{color:#a9b7c6;background:#232323;display:block;overflow-x:auto;padding:.5em}.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#6897bb}.hljs-deletion,.hljs-keyword,.hljs-selector-tag{color:#cc7832}.hljs-link,.hljs-template-variable,.hljs-variable{color:#56b881}.hljs-comment,.hljs-quote{color:gray}.hljs-meta{color:#bbb529}.hljs-addition,.hljs-attribute,.hljs-string{color:#56b881}.hljs-section,.hljs-title,.hljs-type{color:#ffc66d}.hljs-name,.hljs-selector-class,.hljs-selector-id{color:#e8bf6a}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}</style></head><body><div id="react-mount"><div class="grid" data-reactroot="" data-reactid="1" data-react-checksum="-919510129"><div class="z1 min48 flex-parent--center-main flex-parent w-full border-b border-t bg-white border--gray-less-faint fixed" data-reactid="2"><div class="wmax1200 w-full pl24 pr24 flex-parent--space-between-main flex-parent" data-reactid="3"><div class="flex-child col col--6 inline-block" data-reactid="4"><div class="txt-s mobile-left-nav py12 bg-transparent btn px0 color-gray-light" data-reactid="5"><strong data-reactid="6">Platform</strong></div><div class="txt-s py12 bg-transparent btn  color-gray-dark" data-reactid="7"><strong data-reactid="8">Android</strong></div><div class="txt-s mobile-left-nav py12 bg-transparent btn px0 color-gray-light" data-reactid="9"><strong data-reactid="10">Product</strong></div><div style="display:inline-block;" data-reactid="11"><button class="txt-s py12 nav-item bg-transparent btn flex-parent flex-parent--center-cross color-gray-dark" data-reactid="12"><strong data-reactid="13"><!-- react-text: 14 -->Map SDK<!-- /react-text --><!-- react-text: 15 --><!-- /react-text --><!-- react-text: 16 --><!-- /react-text --><!-- react-text: 17 --><!-- /react-text --></strong><svg class="icon" data-reactid="18"><use href="#icon-chevron-down" data-reactid="19"></use></svg></button></div></div><div class="flex-child col col--6 flex-parent flex-parent--end-main" data-reactid="20"><div style="display:inherit;" data-reactid="21"><button class="block flex-parent flex-parent--center-cross" data-reactid="22"><svg class="icon--l nav-mobile color-gray-dark opacity75" data-reactid="23"><use href="#icon-menu" data-reactid="24"></use></svg></button></div><a class="py12 transition mobile-right-nav unround btn color-gray-dark nav-item bg-transparent txt-s  border-b border--3" href="/android-docs/map-sdk/overview/" data-reactid="25">Overview</a><a class="py12 transition mobile-right-nav unround btn color-gray-dark nav-item bg-transparent txt-s  " href="/android-docs/map-sdk/examples/" data-reactid="26">Examples</a><a class="py12 transition mobile-right-nav unround btn color-gray-dark nav-item bg-transparent txt-s  " href="/android-docs/map-sdk/tutorials/" data-reactid="27">Tutorials</a></div></div></div><div class="scroll-styled flex-parent--center-main flex-parent limiter pb96 pl24 pr24 pt24 overflow-y t48 b0 fixed flex-child" data-reactid="28"><div class="flex-parent--space-between-main flex-parent" data-reactid="29"><div class="col--3 pt42 col toc flex-child--no-shrink  scroll-styled" data-reactid="30"><div data-reactid="31"><li class="txt-bold txt-fancy" data-reactid="32"><a class="page-hover text-decoration-none" href="/android-docs/map-sdk/overview/" data-reactid="33"><div class="bright-blue-color" data-reactid="34">Map SDK</div></a></li><div class="ml6 pt6" data-reactid="35"><ul class="toc-subheaders">
+<li>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#install-the-map-sdk">Install the Map SDK</a></li>
+<li><a href="#attribution">Attribution</a></li>
+<li><a href="#mapview-xml-attributes">MapView XML Attributes</a></li>
+</ul>
+</li>
+</ul>
+</div></div><div data-reactid="36"><li class="txt-bold txt-fancy" data-reactid="37"><a class="page-hover text-decoration-none" href="/android-docs/map-sdk/overview/styling-map/" data-reactid="38">Styling the map</a></li><!-- react-text: 39 --><!-- /react-text --></div><div data-reactid="40"><li class="txt-bold txt-fancy" data-reactid="41"><a class="page-hover text-decoration-none" href="/android-docs/map-sdk/overview/annotations/" data-reactid="42">Annotations</a></li><!-- react-text: 43 --><!-- /react-text --></div><div data-reactid="44"><li class="txt-bold txt-fancy" data-reactid="45"><a class="page-hover text-decoration-none" href="/android-docs/map-sdk/overview/offline/" data-reactid="46">Offline</a></li><!-- react-text: 47 --><!-- /react-text --></div><div data-reactid="48"><li class="txt-bold txt-fancy" data-reactid="49"><a class="page-hover text-decoration-none" href="/android-docs/map-sdk/overview/runtime-styling/" data-reactid="50">Runtime Styling</a></li><!-- react-text: 51 --><!-- /react-text --></div><div data-reactid="52"><li class="txt-bold txt-fancy" data-reactid="53"><a class="page-hover text-decoration-none" href="/android-docs/api/map-sdk/5.0.2/index.html" data-reactid="54">API Reference</a></li><!-- react-text: 55 --><!-- /react-text --></div><!-- react-text: 56 --><!-- /react-text --></div><div data-reactid="57"><div class="prose color-gray-dark" data-reactid="58"><div class="content col--9 col col--offl3" data-reactid="59"><div class="bg-gray-faint clip mt12 wmax960 round-bold" data-reactid="60"><div class="bg-green py18 px24 color-white round-t-bold" data-reactid="61"><h2 class="txt-h2-mm txt-h3" data-reactid="62">Map SDK</h2><div class="txt-ms mt3" data-reactid="63"><span data-reactid="64">Current Version:</span><!-- react-text: 65 --> <!-- /react-text --><span class="txt-bold" data-reactid="66"><!-- react-text: 67 -->v<!-- /react-text --><!-- react-text: 68 -->5.0.2<!-- /react-text --></span><!-- react-text: 69 --> <!-- /react-text --><a class="link ml12 link--white opacity75 opacity100-on-hover txt-underline" href="https://www.github.com/mapbox/mapbox-gl-native/blob/master/platform/android/CHANGELOG.md" data-reactid="70">View changelog</a></div></div><div class="flex-parent" data-reactid="71"><div class="px24 flex-child py18" data-reactid="72"><div class="grid txt-ms" data-reactid="73"><div class="col mb3 mt0 col--6-mxl col--12 flex-parent--center-cross flex-parent icon-android-green inline-block" data-reactid="74"><svg class="icon" data-reactid="75"><use href="#icon-check" data-reactid="76"></use></svg><span class="color-dark pr6 pl6" data-reactid="77">Live traffic</span><!-- react-text: 78 --><!-- /react-text --></div><div class="col mb3 mt0 col--6-mxl col--12 flex-parent--center-cross flex-parent icon-android-green inline-block" data-reactid="79"><svg class="icon" data-reactid="80"><use href="#icon-check" data-reactid="81"></use></svg><span class="color-dark pr6 pl6" data-reactid="82">Runtime styling</span><!-- react-text: 83 --><!-- /react-text --></div><div class="col mb3 mt0 col--6-mxl col--12 flex-parent--center-cross flex-parent icon-android-green inline-block" data-reactid="84"><svg class="icon" data-reactid="85"><use href="#icon-check" data-reactid="86"></use></svg><span class="color-dark pr6 pl6" data-reactid="87">Annotations</span><!-- react-text: 88 --><!-- /react-text --></div><div class="col mb3 mt0 col--6-mxl col--12 flex-parent--center-cross flex-parent icon-android-green inline-block" data-reactid="89"><svg class="icon" data-reactid="90"><use href="#icon-check" data-reactid="91"></use></svg><span class="color-dark pr6 pl6" data-reactid="92">3D extrusions</span><span class="txt-xs txt-bold color-white align-middle px6 round-bold bg-green" data-reactid="93">New</span></div><div class="col mb3 mt0 col--6-mxl col--12 flex-parent--center-cross flex-parent icon-android-green inline-block" data-reactid="94"><svg class="icon" data-reactid="95"><use href="#icon-check" data-reactid="96"></use></svg><span class="color-dark pr6 pl6" data-reactid="97">Offline support</span><!-- react-text: 98 --><!-- /react-text --></div></div><div class="mt12 txt-ms" data-reactid="99"><a href="https://github.com/mapbox/mapbox-gl-native" class="bright-blue-color text-decoration-none flex-parent-inline flex-parent--center-cross txt-bold" data-reactid="100"><svg class="icon mr12" data-reactid="101"><use href="#icon-github" data-reactid="102"></use></svg><!-- react-text: 103 -->Contribute on Github<!-- /react-text --><svg class="icon" data-reactid="104"><use href="#icon-chevron-right" data-reactid="105"></use></svg></a></div></div><div style="margin-top:-90px;margin-bottom:-60px;" class="pr36 pl12 relative w360 hmax360 flex-child block-mxl none clip flex-child--no-shrink" data-reactid="106"><div class="" data-reactid="107"><img class="pr36 pl12 flex-child block-mxl none clip flex-child--no-shrink absolute" src="../../assets/imgs/map-sdk-splash.png" data-reactid="108"/></div></div></div></div><div class="pt12 doc-ul doc-ol pb96 wmax1200 doc-ol-item" data-reactid="109"><div class="markdown" data-reactid="110"><div data-reactid="111"><h3 id="overview"><a class="markdownIt-Anchor" href="#overview"></a> Overview</h3>
+<p>The Mapbox Map SDK is an open source toolset for displaying maps inside of your Android application. <a href="https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&amp;hl=en">Mapbox’s demo app on the Google Play Store</a> includes many examples of how to use Mapbox Maps. Various pages in this documentation reference examples in the demo app.</p>
+<h3 id="install-the-map-sdk"><a class="markdownIt-Anchor" href="#install-the-map-sdk"></a> Install the Map SDK</h3>
+<div class="fr flex-parent">
+  <a href="https://www.mapbox.com/install/android/" class="text-decoration-none flex-child--no-shrink mt6 color-blue-on-hover note-card flex-child-mxl">
+    <div class="border round wmax360 border--gray-light flex-parent">
+      <div class="flex-child p12">
+        <div class="txt-s txt-bold">
+          Begin installation
+          <span class="txt-xs txt-bold align-middle px6 color-purple round bg-purple-faint">GUIDE</span>
+        </div>
+        <div class="txt-s mt3 mb0 color-gray">
+          A step-by-step walkthrough to help you get started with Android Map SDK.
+        </div>
+      </div>
+      <div class="flex-child flex-child--no-shrink w18 fr border-l border--gray-light flex-parent flex-parent--center-cross">
+        <svg class='flex-child align-middle icon--l'><use href='#icon-chevron-right'/></svg>
+      </div>
+    </div>
+  </a>
+</div>
+<p>Before starting to develop your application with the Map SDK, you’ll need to add the SDK as a dependency. You can find the following dependency given below in the MavenCentral repository. While this document shows how to install the SDK through gradle, we also offer support for <a href="https://fabric.io/kits/android/mapbox/install">Fabric</a>.</p>
+<p>While we show how to insert the stable version of the SDK inside your project, you can also use the nightly build/snapshot or the beta version, if one is available. Find more information about how to do this inside the projects <a href="https://github.com/mapbox/mapbox-gl-native/tree/master/platform/android/#readme">Github repo</a>.</p>
+<p>If your application is close or exceeds the 65k method count limit, you can mitigate this problem by enabling ProGuard inside your application. ProGuard directives are included in the Android dependencies to preserve the required classes. You can also shrink the file APK file size by making use of APK splitting.</p>
+<h4 id="1-add-the-dependency"><a class="markdownIt-Anchor" href="#1-add-the-dependency"></a> 1. Add the dependency</h4>
+<ol>
+<li>Start Android Studio</li>
+<li>Open up your application’s <code>build.gradle</code></li>
+<li>Make sure that your project’s <code>minSdkVersion</code> is at API 15 or higher</li>
+<li>Under dependencies, add a new build rule for the latest <code>mapbox-android-sdk</code></li>
+<li>Click the Sync Project with Gradle Files near the toolbar in Studio.</li>
+</ol>
+<pre class="hljs"><code>repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile (<span class="hljs-string">'com.mapbox.mapboxsdk:mapbox-android-sdk:5.0.2@aar'</span>){
+      transitive=<span class="hljs-literal">true</span>
+  }
+}
+</code></pre>
+<h4 id="2-get-an-access-token"><a class="markdownIt-Anchor" href="#2-get-an-access-token"></a> 2. Get an access token</h4>
+<p>If you don’t have a Mapbox account, sign up for one <a href="https://www.mapbox.com/signup/">here</a>, then navigate to the <a href="https://www.mapbox.com/studio/account/tokens/">token page</a> in Mapbox Studio and copy your <strong>default public token</strong> to your clipboard. After you’ve added the Map SDK as a dependency inside your Android project, open the <code>string.xml</code> file, create a new string, and paste the access token. Then to pass this into the Map SDK, you’ll want to place the access token inside of your application’s <code>onCreate()</code> method.</p>
+<pre class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyApplication</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Application</span> </span>{
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">super</span>.onCreate();
+
+    <span class="hljs-comment">// Mapbox Access token</span>
+    Mapbox.getInstance(getApplicationContext(), <span class="hljs-string">"&lt;your access token&gt;"</span>);
+  }
+}
+</code></pre>
+<h4 id="3-setup-permissions"><a class="markdownIt-Anchor" href="#3-setup-permissions"></a> 3. Setup permissions</h4>
+<p>Starting in 5.0, we are making use of the Manifest merge feature to reduce the need to include any Maps SDK required things inside of your application’s manifest file. You’ll need to add <em>either</em> the Fine <strong>or</strong> Coarse location permission if you plan to display a user’s location on the map or get the user’s location information. The user location permission should also be checked during runtime using the PermissionManager.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"android.permission.ACCESS_FINE_LOCATION"</span> /&gt;</span>
+</code></pre>
+<h4 id="4-add-a-map"><a class="markdownIt-Anchor" href="#4-add-a-map"></a> 4. Add a map</h4>
+<p>Open the activity Java file you’d like to include the map in and add the code below to the file.</p>
+<pre class="hljs"><code><span class="hljs-keyword">private</span> MapView mapView;
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+  <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
+
+  mapView = (MapView) findViewById(R.id.mapView);
+  mapView.onCreate(savedInstanceState);
+  mapView.getMapAsync(<span class="hljs-keyword">new</span> OnMapReadyCallback() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onMapReady</span><span class="hljs-params">(MapboxMap mapboxMap)</span> </span>{
+
+      <span class="hljs-comment">// Customize map with markers, polylines, etc.</span>
+
+    }
+  });
+}
+
+  <span class="hljs-comment">// Add required Lifecycle methods listed in next section</span>
+</code></pre>
+<p>Open the acitvities layout file and add the map view within your layout.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">com.mapbox.mapboxsdk.maps.MapView</span>
+  <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/mapView"</span>
+  <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span>
+  <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span>
+  <span class="hljs-attr">mapbox:mapbox_styleUrl</span>=<span class="hljs-string">"@string/mapbox_style_mapbox_streets"</span> /&gt;</span>
+</code></pre>
+<h4 id="5-lifecycle-methods"><a class="markdownIt-Anchor" href="#5-lifecycle-methods"></a> 5. Lifecycle methods</h4>
+<p>The MapView contains its own lifecycle methods for managing Android’s OpenGL lifecycle, which must be called directly from the containing Activity. In order for your app to correctly call the MapView’s lifecycle methods, you must override the following lifecycle methods in the Activity that contains the MapView and call the respective MapView method. For example, your onStart() method should look like this:</p>
+<pre class="hljs"><code><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onStart</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">super</span>.onStart();
+  mapView.onStart();
+}
+</code></pre>
+<p>All the lifecycle methods that need to be overridden:</p>
+<pre class="hljs"><code>onCreate();
+onStart();
+onResume();
+onPause();
+onStop();
+onSaveInstanceState();
+onLowMemory();
+onDestroy();
+</code></pre>
+<h3 id="attribution"><a class="markdownIt-Anchor" href="#attribution"></a> Attribution</h3>
+<div class="fr flex-parent">
+  <a href="https://www.mapbox.com/help/attribution/" class="text-decoration-none flex-child--no-shrink mt6 color-blue-on-hover note-card flex-child-mxl">
+    <div class="border round wmax360 border--gray-light flex-parent">
+      <div class="flex-child p12">
+        <div class="txt-s txt-bold">
+          Attribution guidelines
+          <span class="txt-xs txt-bold align-middle px6 color-green round bg-green-faint">HELP</span>
+        </div>
+        <div class="txt-s mt3 mb0 color-gray">
+          Learn more about what kinds of attribution Mapbox require and why.
+        </div>
+      </div>
+      <div class="flex-child flex-child--no-shrink w18 fr border-l border--gray-light flex-parent flex-parent--center-cross">
+        <svg class='flex-child align-middle icon--l'><use href='#icon-chevron-right'/></svg>
+      </div>
+    </div>
+  </a>
+</div>
+<p>You must include the Mapbox wordmark and attribution notice on any map that uses the Mapbox Map SDK. We provide an Attribution layout that includes all required information and can be customized either in xml or using the <code>UiSettings</code> object.</p>
+<p>You may adjust the position of the Mapbox wordmark and attribution notice, but they must stay visible on the map. You may also change the background and text color of the attribution notice to best match your design aesthetics, but all information must be  legible.</p>
+<p>You may not otherwise alter the Mapbox wordmark or text attribution notice. If you wish to move or to remove the Mapbox wordmark, please <a href="https://www.mapbox.com/contact/sales/">contact our sales team</a> to discuss options available under our Enterprise plans.</p>
+<h3 id="mapview-xml-attributes"><a class="markdownIt-Anchor" href="#mapview-xml-attributes"></a> MapView XML Attributes</h3>
+<p>To further customize the map such as setting the starting camera position, style, or adjusting the UI, attributes can be added inside the xml map view. all <code>MapView</code> XML attributes start with
+<code>mapbox_</code> for identification and for removing any potential conflicts with other libraries.</p>
+<p>Some examples of <code>MapView</code> attributes are:</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">com.mapbox.mapboxsdk.maps.MapView</span>
+
+  <span class="hljs-attr">...</span>
+
+  <span class="hljs-attr">mapbox:mapbox_cameraTargetLat</span>=<span class="hljs-string">"-36.84"</span>
+  <span class="hljs-attr">mapbox:mapbox_cameraTargetLng</span>=<span class="hljs-string">"174.76"</span>
+  <span class="hljs-attr">mapbox:mapbox_cameraZoom</span>=<span class="hljs-string">"10"</span>
+  <span class="hljs-attr">mapbox:mapbox_cameraBearing</span>=<span class="hljs-string">"34.33"</span>
+  <span class="hljs-attr">mapbox:mapbox_cameraTilt</span>=<span class="hljs-string">"50.25"</span>
+  <span class="hljs-attr">mapbox:mapbox_styleUrl</span>=<span class="hljs-string">"@string/mapbox_style_satellite_streets"</span>
+  <span class="hljs-attr">mapbox:mapbox_cameraZoomMax</span>=<span class="hljs-string">"12.41"</span>
+  <span class="hljs-attr">mapbox:mapbox_cameraZoomMin</span>=<span class="hljs-string">"6"</span>
+  <span class="hljs-attr">mapbox:mapbox_uiRotateGestures</span>=<span class="hljs-string">"false"</span>/&gt;</span>
+</code></pre>
+<p>Due to the current implementation of Android Studio, you can’t autogenerate <code>MapView</code> attributes by typing. You can always <a href="https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/res/values/attrs.xml">view the full list of <code>MapView</code> attributes here</a>.</p>
+</div></div></div></div></div></div></div></div></div></div><script src="/android-docs/bundle.js?t=1496254323373"></script></body></html>
