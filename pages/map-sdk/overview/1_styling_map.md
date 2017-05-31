@@ -8,7 +8,7 @@ The maps SDK allows full customization when it comes to displaying your map. Thi
 ### Changing the default style
 As powerful as styling the map can be, to get started using the Map SDK, it offers six professional styles that will look great in your app:
 
-1. **Mapbox Streets:** Mapbox Streets is a comprehensive, general-purpose map that emphasizes accurate, legible styling of road and transit networks.
+1. **Mapbox Streets:** Mapbox Streets is a comprehensive, general-purpose map that emphasizes legible styling of road and transit networks.
 2. **Outdoor:** Mapbox Outdoors is a general-purpose map with curated datasets and specialized styling tailored to hiking, biking, and the most adventurous use cases.
 3. **Light and Dark:** Mapbox Light and Mapbox Dark are subtle, full-featured maps designed to provide geographic context while highlighting the data on your analytics dashboard, data visualization, or data overlay.
 4. **Satellite:** is our full global base map that is perfect as a blank canvas or an overlay for your own data.
@@ -21,4 +21,4 @@ As powerful as styling the map can be, to get started using the Map SDK, it offe
 
 To use a custom style, paste your style URL into your MapView's mapbox:mapbox_styleUrl attribute in your activity's layout file. If you would like to change the map style later on, call MapboxMap.setStyleUrl() with the new style and your map will update.
 
-### Using local JSON file
+<!-- ### Using local JSON file -->

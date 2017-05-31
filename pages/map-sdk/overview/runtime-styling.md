@@ -25,10 +25,10 @@ path: /map-sdk/overview/runtime-styling/
 
 Using Runtime styling, your able to dynamically change the look and feel of your map in real time. Lighten or darken the map based on the time of day, personalize icons and the colors of parks based on your users’ activity, switch languages on the fly, or bump the size of labels based on user preferences to improve legibility. Style existing map data or mix in your own – Runtime Styling is performant even with massive datasets.
 
-Runtime styling expands upon the design power of Mapbox Studio and exposes all of the same properties and attributes directly to mobile developers in our SDK.
+Runtime styling expands upon the design power of Mapbox Studio and exposes all the same properties and attributes directly to mobile developers in our SDK.
 
 ### Sources
-Sources hold the data to be used inside a layer in your map. There are a handful of different source types supported, choosing one depends on your data type. Adding a source won't immediately make data appear on the map because sources don't contain styling details like color or width. Layers refer to a source and give it a visual representation.
+Sources hold the data to be used inside a layer in your map. There are a handful of different source types supported, choosing one depends on your data type. Adding a source won't instantly make data appear on the map because sources don't contain styling details like color or width. Layers refer to a source and give it a visual representation.
 
 When creating a new source, two parameters are required, a source ID (String) and the source date.
 
@@ -42,7 +42,7 @@ mapboxMap.addSource(vectorSource);
 ```
 
 #### Raster
-Raster source tiles can be added to your map if they are in TileJSON format. If hosted by Mapbox, the "url" value should be of the form mapbox://mapid.
+Raster source tiles can be added to your map if they are in TileJSON format. If hosted by Mapbox, the "url" value should be of the form `mapbox://mapid`.
 
 ```java
 // Adding a raster source layer
@@ -171,7 +171,7 @@ private static class PointEvaluator implements TypeEvaluator<Point> {
 }
 ``` -->
 
-<!-- link to geojson plugin -->
+<!-- link to GoJSON plugin -->
 
 ### Layers
 

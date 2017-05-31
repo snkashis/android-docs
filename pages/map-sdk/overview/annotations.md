@@ -4,7 +4,7 @@ path: /map-sdk/overview/annotations/
 ---
 # Annotations
 
-The Map SDK provides several different ways to mark a single point, add a line between many points, or draw a polygon. Frequently, these objects are drawn either on top of the map or in some cases, within the map itself. This document walks you through how to add high-level objects. If you'd like more control over annotations, make sure to check out the [runtime styling]() documentation.
+The Map SDK provides several different ways to mark a single point, add a line between many points, or draw a polygon. Often, these objects are drawn either on top of the map or in some cases, within the map itself. This document walks you through how to add high-level objects. If you'd like more control over annotations, make sure to check out the [runtime styling]() documentation.
 
 ### Markers
 Markers are useful when identifying a single point on the map. The SDK comes with a default marker icon which can be configured to fit your specific needs. APIs are exposed to optionally change this icon to any bitmap image you wish. To create a marker for you map, you are only required to provide a `LatLng` position which defines where the marker will be placed on the map. Call `mapboxMap.addMarker()` to actually add the marker to the map.

@@ -11,7 +11,9 @@
     "build": "gatsby build --prefix-links",
     "deploy": "gatsby build --prefix-links && gh-pages -a -d public -b mb-pages",
     "develop": "gatsby develop",
-    "test": "npm run test-text",
+    "test": "",
+    "eslint": "eslint src",
+    "retext": "npm run test-text",
     "dep-test": "depcheck && ncu",
     "test-text": "retext-mapbox-standard pages"
   },
@@ -32,7 +34,13 @@
     "react": "^15.5.4",
     "react-document-title": "^2.0.1",
     "react-router": "^3.0.5",
-    "underscore.string": "^3.2.2"
+    "underscore.string": "^3.2.2",
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.1.0",
+   "eslint-plugin-babel": "^3.0.0",
+   "eslint-plugin-react": "^5.2.2",
+   "eslint-plugin-prettier": "^2.0.0",
+   "prettier": "^0.22.0"
   },
   "devDependencies": {
     "markdown-it": "^8.2.2",

@@ -33,7 +33,7 @@ Before starting to develop your application with the Map SDK, you'll need to add
 
 While we show how to insert the stable version of the SDK inside your project, you can also use the nightly build/snapshot or the beta version, if one is available. Find more information about how to do this inside the projects [Github repo](https://github.com/mapbox/mapbox-gl-native/tree/master/platform/android/#readme).
 
-If your application is close or exceeds the 65k method count limit, you can mitigate this problem by enabling ProGuard inside your application. ProGuard directives are included in the Android dependencies to preserve the required classes. In addition, you can also shrink the file APK file size by making use of APK splitting.
+If your application is close or exceeds the 65k method count limit, you can mitigate this problem by enabling ProGuard inside your application. ProGuard directives are included in the Android dependencies to preserve the required classes. You can also shrink the file APK file size by making use of APK splitting.
 
 #### 1. Add the dependency
 
@@ -162,9 +162,9 @@ onDestroy();
 
 You must include the Mapbox wordmark and attribution notice on any map that uses the Mapbox Map SDK. We provide an Attribution layout that includes all required information and can be customized either in xml or using the `UiSettings` object.
 
-You may adjust the position of the Mapbox wordmark and attribution notice, but they must remain visible on the map. You may also change the background and text color of the attribution notice to best match your design aesthetics, but all information must be clearly legible.
+You may adjust the position of the Mapbox wordmark and attribution notice, but they must stay visible on the map. You may also change the background and text color of the attribution notice to best match your design aesthetics, but all information must be  legible.
 
-You may not otherwise alter the Mapbox wordmark or text attribution notice. If you wish to relocate or to remove the Mapbox wordmark, please [contact our sales team](https://www.mapbox.com/contact/sales/) to discuss options available under our Enterprise plans.
+You may not otherwise alter the Mapbox wordmark or text attribution notice. If you wish to move or to remove the Mapbox wordmark, please [contact our sales team](https://www.mapbox.com/contact/sales/) to discuss options available under our Enterprise plans.
 
 ### MapView XML Attributes
 
