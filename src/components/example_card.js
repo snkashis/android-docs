@@ -1,5 +1,6 @@
 import React from 'react';
 import includes from 'underscore.string/include';
+import {prefixLink} from 'gatsby-helpers'
 
 type Props = {
   exampleTitle: string,
@@ -24,7 +25,7 @@ class ExampleCard extends React.Component {
     }
     return (
       <div className='ml12 mr12 pt24 inline-block'>
-      <a className='text-decoration-none' href={this.props.exampleUrl}>
+      <a className='text-decoration-none' href={prefixLink(this.props.exampleUrl)}>
         <div className='transition hmax130 wmax260 w-auto h-auto shadow-darken10-on-hover round-b'>
           <div>
             <img className='round bg-gray-dark' src={this.props.exampleImg} />
