@@ -1,6 +1,11 @@
 import React from 'react';
 import {ExampleCard} from '../../../src/components/example_card';
 
+exports.data = {
+  title: "Examples",
+  path: "/map-sdk/examples/",
+}
+
 /* Basic examples */
 export const gettingStarted = [
   <ExampleCard
