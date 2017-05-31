@@ -216,13 +216,13 @@ if (windowWidth > 640) {
     {mapboxJavaActive ? <PopoverTrigger content={
       <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
         <strong className={'color-gray-light p6 txt-mm'}>Javadoc</strong>
-          <a className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-core</a>
-          <a className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-geojson</a>
-          <a className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-services</a>
-          <a className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-services-rx</a>
-          <a className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-android-services</a>
-          <a className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-android-telemetry</a>
-          <a className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-android-ui</a>
+          <a href={prefixLink('/api/mapbox-java/libjava-core/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-core</a>
+          <a href={prefixLink('/api/mapbox-java/libjava-geojson/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-geojson</a>
+          <a href={prefixLink('/api/mapbox-java/libjava-services/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-services</a>
+          <a href={prefixLink('/api/mapbox-java/libjava-services-rx/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-services-rx</a>
+          <a href={prefixLink('/api/mapbox-java/libandroid-services/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-android-services</a>
+          <a href={prefixLink('/api/mapbox-java/libandroid-telemetry/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-android-telemetry</a>
+          <a href={prefixLink('/api/mapbox-java/libandroid-ui/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-android-ui</a>
       </div>
       }
       respondsToHover={true}
