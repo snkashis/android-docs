@@ -18,7 +18,6 @@ const highlight = (str, lang) => {
   str = str.replace(new RegExp('{mapSdkVersion}', 'g'), constants.MAP_SDK_VERSION)
   str = str.replace(new RegExp('{trafficPluginVersion}', 'g'), constants.TRAFFIC_PLUGIN_VERSION)
   str = str.replace(new RegExp('{navigationVersion}', 'g'), constants.NAVIGATION_VERSION)
-
   if (lang && hljs.getLanguage(lang)) {
     try {
       return '<pre class="hljs"><code>' +
@@ -42,6 +41,8 @@ const md = markdownIt({
   .use(markdownItAttrs)
   .use(markdownItDecorate)
   .use(markdownItTocAndAnchor, {
+    tocFirstLevel: 2,
+    tocLastLevel: 3,
     anchorLinkSymbol: '',
     tocClassName: "toc-subheaders"
   })

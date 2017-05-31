@@ -1,14 +1,15 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
-import { config } from 'config';
-import { prefixLink } from 'gatsby-helpers'
+import {browserHistory} from 'react-router';
+import {config} from 'config';
+import {prefixLink} from 'gatsby-helpers'
 
 module.exports = React.createClass({
   componentDidMount: function() {
-    window.location.href = window.location.href = prefixLink("/plugins/latest/getting-started/")
+    window.location.href = prefixLink("/plugins/overview/")
   },
-  render () {
-    return (<div></div>
+  render() {
+    return (
+      <div></div>
     )
   }
 });

@@ -1,7 +1,39 @@
-/*
-Date: 24 Fev 2015
-Author: Pedro Oliveira <kanytu@gmail . com>
-*/
+
+.doc-ul > .doc-ul-item::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  border: 1px solid #1f3349;
+  opacity: 0.4;
+  position: absolute;
+  margin: 9px 0 0 -20px;
+}
+
+.doc-ol {
+  counter-reset: listItem ;
+}
+
+.doc-ol > .doc-ol-item {
+  margin: 3px 0;
+}
+
+ol li {
+  list-style-type: none;
+}
+
+ol li::before {
+
+  counter-increment: listItem;
+  content: counter(listItem);
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 1px 6px;
+  border: 1px solid #c6d2e1;
+  margin-right: 12px;
+}
+
+/* ---------- Code Snippet highlighting ---------- */
 
 .hljs {
   color: #a9b7c6;
