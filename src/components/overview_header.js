@@ -46,7 +46,7 @@ class OverviewHeader extends React.Component {
               <div className="mt12 txt-ms">
                 <a href={this.props.ghLink} className="bright-blue-color text-decoration-none flex-parent-inline flex-parent--center-cross txt-bold">
                   <svg className={'icon mr12'}><use href='#icon-github'/></svg>
-                  Contribute on Github
+                  Contribute on GitHub
                   <svg className={'icon'}><use href='#icon-chevron-right'/></svg>
                 </a>
               </div>

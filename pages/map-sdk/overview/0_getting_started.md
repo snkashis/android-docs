@@ -31,7 +31,7 @@ The Mapbox Map SDK is an open source toolset for displaying maps inside of your 
 
 Before starting to develop your application with the Map SDK, you'll need to add the SDK as a dependency. You can find the following dependency given below in the MavenCentral repository. While this document shows how to install the SDK through gradle, we also offer support for [Fabric](https://fabric.io/kits/android/mapbox/install).
 
-While we show how to insert the stable version of the SDK inside your project, you can also use the nightly build/snapshot or the beta version, if one is available. Find more information about how to do this inside the projects [Github repo](https://github.com/mapbox/mapbox-gl-native/tree/master/platform/android/#readme).
+While we show how to insert the stable version of the SDK inside your project, you can also use the nightly build/snapshot or the beta version, if one is available. Find more information about how to do this inside the project’s [GitHub repository](https://github.com/mapbox/mapbox-gl-native/tree/master/platform/android/#readme).
 
 If your application is close or exceeds the 65k method count limit, you can mitigate this problem by enabling ProGuard inside your application. ProGuard directives are included in the Android dependencies to preserve the required classes. You can also shrink the file APK file size by making use of APK splitting.
 

@@ -10,9 +10,9 @@ Mapbox Java is an open source toolset for building applications that need naviga
 ### Support and contributions
 
 - If you are looking for support using this SDK, either reach out through [Stack Overflow](https://stackoverflow.com/questions/tagged/mapbox+android) or through our [contact page](https://www.mapbox.com/contact/).
-- If you have found a bug, and can provide steps to reliably reproduce it, open an issue in the /mapbox-java repository on Github and apply the bug label.
-- If you have a feature request, open an issue in the /mapbox-java repository on Github, and apply the enhancement label.
-- If you want to contribute, look over our contribution guild lines and open a pull request with your changes.
+- If you have found a bug, and can provide steps to reliably reproduce it, open an issue in the /mapbox-java repository on GitHub and apply the bug label.
+- If you have a feature request, open an issue in the /mapbox-java repository on GitHub, and apply the enhancement label.
+- If you want to contribute, look over our contribution guidelines and open a pull request with your changes.
 
 ### API reference
 All public methods in all the project modules are well documented and even include a since tag so you can find when an API was first added. A link for all the module javadoc pages can be found in the list below:
