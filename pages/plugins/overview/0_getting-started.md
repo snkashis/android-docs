@@ -11,8 +11,8 @@ Mapbox Plugins build on top of the [Map SDK](/map-sdk/latest/getting-started/) p
 ### Support and contributions
 
 - Reach out through [Stack Overflow](https://stackoverflow.com/questions/tagged/mapbox+android) or through [the Mapbox contact page](https://www.mapbox.com/contact/) if you are looking for support with using this SDK.
-- If you have found a bug and can provide steps to reliably reproduce it, open an issue in the [/mapbox-plugins-android repository on Github](https://github.com/mapbox/mapbox-plugins-android/issues). Make sure to apply the bug label to your issue as well.
-- If you have a feature request, open an issue in the /mapbox-plugins-android repository on Github and apply the feature label.
+- If you have found a bug and can provide steps to reliably reproduce it, open an issue in the [/mapbox-plugins-android repository on GitHub](https://github.com/mapbox/mapbox-plugins-android/issues). Make sure to apply the bug label to your issue as well.
+- If you have a feature request, open an issue in the /mapbox-plugins-android repository on GitHub and apply the feature label.
 <!--- If you want to contribute to this SDK, please read [our contribution guidelines](https://github.com/mapbox/mapbox-gl-native/blob/master/CONTRIBUTING.md) and then open a pull request with your changes.-->
 
 ### API reference
