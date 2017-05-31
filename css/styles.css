@@ -7,14 +7,6 @@
 @custom-media --l-max-screen (max-width: 800px);
 @custom-media --xl-max-screen (max-width: 1200px);
 
-h4, h5, body {
-  font-family: 'Clear Sans' !important;
-}
-
-h1, h2, h3 {
-  font-family: 'CeraPRO-Regular' !important;
-}
-
 /* ---------- Assembly Extensions ---------- */
 
 .border--3 { border-width: 3px !important; }
@@ -60,10 +52,6 @@ h1, h2, h3 {
     padding-bottom: 24px;
   }
 }
-
-
-
-
 
 @media (--m-max-screen) {
 .mobile-left-nav {

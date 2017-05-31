@@ -16,6 +16,16 @@ module.exports = React.createClass({
   propTypes: {
     children: React.PropTypes.object
   },
+  getInitialState: function() {
+        return {
+            opened: false
+        };
+    },
+    handleClick: function() {
+        this.setState({
+            opened: !this.state.opened
+        })
+    },
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
@@ -74,7 +84,7 @@ module.exports = React.createClass({
         : '';
       return (
         <div onClick={this.toggleNav}>
-          <li className={'txt-bold'} key={child.path}>
+          <li className={'txt-bold txt-fancy'} key={child.path}>
             <Link to={prefixLink(child.path)} className={'page-hover text-decoration-none'}>
               {isActive
                 ? <div className={'bright-blue-color'}>{child.title}</div> : child.title}
@@ -89,7 +99,29 @@ module.exports = React.createClass({
       )
     });
 
+    var mobileMenu = childPages.map((child, i) => {
+      if (child === undefined) { return; }
+      child.title = child.title.replace('Map SDK', 'Getting Started')
+      return (<Link to={prefixLink(child.path)} className='inline-block col col--6 color-gray-dark color-blue-on-hover txt-ms py3 px6-ml px0 mt3' key={i}>{child.title}</Link>)
+    })
 
+
+var mobileMenuDisabled;
+var icon = 'menu';
+var opened = this.state.opened;
+if (opened) {
+  icon = 'close';
+} else {
+  icon = 'menu';
+}
+
+if (windowWidth > 640) {
+  icon = 'menu'
+  mobileMenuDisabled = true;
+} else {
+  mobileMenuDisabled = false;
+}
+console.log(mobileMenuDisabled);
 
     return (
 <div className='grid'>
@@ -114,7 +146,7 @@ module.exports = React.createClass({
           respondsToHover={true}
           popoverProps={_.assign({
             placement: 'bottom',
-            alignment: 'center'
+            alignment: 'center',
           })}>
           <button className={'txt-s py12 nav-item bg-transparent btn flex-parent flex-parent--center-cross color-gray-dark'}>
             <strong>
@@ -130,31 +162,37 @@ module.exports = React.createClass({
       <div className={'flex-child col col--6 flex-parent flex-parent--end-main'}>
       <PopoverTrigger content={
 
-          <div className='top right w-full px6'>
-          <div className='bg-gray-faint py12 px24 mt-neg18 mr-neg24 ml-neg24 mb24'>
-          <div className='grid grid--gut12 mt-neg3'>
-          <div className='col w-full col--6'>
-          HELLOWORLD
-          </div>
-          <div className='col w-full col--6'>
 
+          <div className='grid'>
+            <div className='bg-gray-faint py12 px24 mt-neg18 mr-neg24 ml-neg24 mb24'>
+              <div className='block mt24 relative'>
+                <div className='grid grid--gut12'>
+                  <div className='mb3 txt-uppercase w-full txt-s txt-spacing1 txt-fancy color-darken50 color-dark opacity50'>Overview</div>
+                  <div className=''>{mobileMenu}</div>
+                </div>
+                <div className='grid grid--gut12'>
+                  <div className='mb3 txt-uppercase w-full txt-s txt-spacing1 txt-fancy color-darken50 color-dark opacity50'>Examples</div>
+                  <div className=''>{mobileMenu}</div>
+                </div>
+                <div className='grid grid--gut12'>
+                  <div className='mb3 txt-uppercase w-full txt-s txt-spacing1 txt-fancy color-darken50 color-dark opacity50'>Tutorial</div>
+                  <div className=''>{mobileMenu}</div>
+                </div>
+            </div>
           </div>
-
-</div>
-          </div>
-
-          </div>
+        </div>
 
 
         }
+        disabled={mobileMenuDisabled}
         display={'inherit'}
         respondsToHover={false}
         popoverProps={_.assign({
-          popoverClasses: 'round py12 px24 block w-auto shadow-darken25',
+          popoverClasses: 'round shadow-darken25-bold bg-white clip py18 px24',
 
         })}>
-        <button className={'block flex-parent flex-parent--center-cross'}>
-          <svg className={'icon--l nav-mobile color-gray-dark opacity75'}><use href={'#icon-menu'}/></svg>
+        <button onClick={this.handleClick} className={'block flex-parent flex-parent--center-cross'}>
+          <svg className={'icon--l nav-mobile color-gray-dark opacity75'}><use href={`#icon-${icon}`}/></svg>
         </button>
       </PopoverTrigger>
 
