@@ -25,11 +25,11 @@ class ExampleCard extends React.Component {
     }
     return (
       <div className='ml12 mr12 pt24 inline-block'>
-      <a className='text-decoration-none' href={prefixLink(this.props.exampleUrl)}>
+      <a className='text-decoration-none' href={this.props.exampleUrl}>
         <div className='transition hmax130 wmax260 w-auto h-auto shadow-darken10-on-hover round-b'>
           <div>
-            <img className='round bg-gray-dark' src={this.props.exampleImg} />
-            <img className='pl6' src={difficultyImageUrl} />
+            <img className='round bg-gray-dark' src={prefixLink(this.props.exampleImg)} />
+            <img className='pl6' src={prefixLink(difficultyImageUrl)} />
           </div>
           <div>
             <div className='pl6 pr6 txt-m mt-neg6 gray-dark'>{this.props.exampleTitle}</div>
