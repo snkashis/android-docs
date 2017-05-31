@@ -7,7 +7,6 @@ import {config} from 'config';
 import {Popover} from '../src/components/popover';
 import {PopoverTrigger} from '../src/components/popover_trigger';
 import {OverviewHeader} from '../src/components/overview_header';
-import {MapboxPageShell} from '../src/components/mapbox_page_shell'
 
 import 'css/styles.css';
 import 'css/markdown-styles.css'
@@ -18,7 +17,8 @@ module.exports = React.createClass({
   },
   getInitialState: function() {
         return {
-            opened: false
+            opened: false,
+            windowWidth: 1200
         };
     },
     handleClick: function() {
@@ -34,10 +34,14 @@ module.exports = React.createClass({
     window.removeEventListener('resize', this.updateWindowDimensions);
   },
   updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
+    if (window !== 'undefined') {
+      this.setState({ windowWidth: this.state.windowWidth = window.innerWidth });
+    }
   },
   render: function() {
-    var windowWidth = this.state.width;
+
+    let {windowWidth} = this.state;
+
 
 
 
@@ -121,7 +125,6 @@ if (windowWidth > 640) {
 } else {
   mobileMenuDisabled = false;
 }
-console.log(mobileMenuDisabled);
 
     return (
 <div className='grid'>

@@ -12,6 +12,11 @@ module.exports = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
+  getInitialState: function() {
+        return {
+            windowWidth: 1200
+        };
+    },
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
@@ -20,10 +25,12 @@ module.exports = React.createClass({
     window.removeEventListener('resize', this.updateWindowDimensions);
   },
   updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
+    if (window !== 'undefined') {
+      this.setState({ windowWidth: this.state.windowWidth = window.innerWidth });
+    }
   },
   render: function() {
-    var windowWidth = this.state.width;
+    let {windowWidth} = this.state;
     return (
       <div>
         {/* Content */}
