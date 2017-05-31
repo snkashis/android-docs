@@ -34,6 +34,8 @@ module.exports = React.createClass({
           <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <title>{title}</title>
+          <meta class='swiftype' name='type' data-type='enum' content='Android Documentation' />
+          <meta class='swiftype' name='title' data-type='string' content={title} />
           <link href='https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.min.css' rel='stylesheet'/>
           <script async defer src='https://api.mapbox.com/mapbox-assembly/v0.12.0/assembly.js'></script>
           <link href="https://api.mapbox.com/mapbox-assembly/mapbox-addon/v0.10.0/assembly.min.css" rel="stylesheet"/>
