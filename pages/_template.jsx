@@ -5,7 +5,7 @@ import includes from 'underscore.string/include';
 import {Container, Grid, Span} from 'react-responsive-grid';
 import {config} from 'config';
 import {Popover} from '../src/components/popover';
-import {PopoverTrigger} from '../src/components/popover_trigger';
+import {PopoverTrigger} from '@mapbox/assembly-components/popover-trigger';
 import {OverviewHeader} from '../src/components/overview_header';
 
 import 'css/styles.css';

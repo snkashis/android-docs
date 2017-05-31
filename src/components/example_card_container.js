@@ -6,35 +6,24 @@ type Props = {
   exampleTitle: string
 };
 
-export var ExampleCardContainer = React.createClass({
+class ExampleCardContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {expanded: false};
+    this.handleClick = this.handleClick.bind(this);
+  }
 
+  handleClick() {
+    console.log("clicked");
+    this.setState(prevState => ({
+      expanded: !prevState.expanded
+    }));
+  }
 
-  getInitialState: function() {
-        return {
-            expanded: false
-        };
-    },
-    handleClick: function() {
-        this.setState({
-            expanded: !this.state.expanded
-        })
-    },
-  render: function() {
-    var size = 3;
-    var icon = 'down';
-    var expand = this.state.expanded;
-    if (expand) {
-      size = this.props.exampleCategory.length;
-      icon = 'up';
-    } else {
-      size = 3;
-      icon = 'down';
-    }
+  render() {
     var id = this.props.exampleTitle.replace(/ /g, '-').toLowerCase();
     return (
       <div className='py12 w-full inline-block flex-child flex-child--grow' id={id}>
-        <div className=''>
-
         <div className='flex-parent--space-between-main flex-parent'>
           <div className='flex-child'>
           <div className='txt-l inline-block pl12'>{this.props.exampleTitle}</div>
@@ -43,16 +32,17 @@ export var ExampleCardContainer = React.createClass({
           {this.props.exampleCategory.length > 3 &&
             <button onClick={this.handleClick} className='flex-child flex-parent--center-cross pb24 pl6 flex-parent bright-blue-color'>
               <span className='txt-s txt-bold'>Show all</span>
-              <svg className='icon pl6'><use href={`#icon-chevron-${icon}`}/></svg>
+              <svg className='icon pl6'><use href={`#icon-chevron-${this.state.expanded ? 'up' : 'down'}`}/></svg>
             </button>}
           </div>
-        </div>
           <div className='grid'>
-          {this.props.exampleCategory.slice(0, size).map((example, i) => (
+          {this.props.exampleCategory.slice(0, (this.state.expanded ? this.props.exampleCategory.length : 3)).map((example, i) => (
             <div key={i}>{example}</div>
           ))}
           </div>
       </div>
     )
   }
-})
+}
+
+export { ExampleCardContainer };
