@@ -6,12 +6,12 @@ path: /map-sdk/overview/
 
 The Mapbox Map SDK is an open source toolset for displaying maps inside of your Android application. [Mapbox's demo app on the Google Play Store](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en) includes many examples of how to use Mapbox Maps. Various pages in this documentation reference examples in the demo app.
 
-### Install the Maps SDK
+### Install the Map SDK
 
-<div class="fr flex-parent mt-neg12">
-  <a href="https://www.mapbox.com/install/android/" class="no-link-style flex-child--no-shrink mt6 color-blue-on-hover w240 ml24 flex-child-mxl">
+<div class="fr flex-parent">
+  <a href="https://www.mapbox.com/install/android/" class="text-decoration-none flex-child--no-shrink mt6 color-blue-on-hover note-card flex-child-mxl">
     <div class="border round wmax360 border--gray-light flex-parent">
-      <div class="flex-child pl18 pt18 pr18 pb0">
+      <div class="flex-child p12">
         <div class="txt-s txt-bold">
           Begin installation
           <span class="txt-xs txt-bold align-middle px6 color-purple round bg-purple-faint">GUIDE</span>
@@ -21,7 +21,7 @@ The Mapbox Map SDK is an open source toolset for displaying maps inside of your 
         </div>
       </div>
       <div class="flex-child flex-child--no-shrink w18 fr border-l border--gray-light flex-parent flex-parent--center-cross">
-        <svg class={'flex-child align-middle icon--l'}><use href='#icon-chevron-right'/></svg>
+        <svg class='flex-child align-middle icon--l'><use href='#icon-chevron-right'/></svg>
       </div>
     </div>
   </a>
@@ -34,7 +34,7 @@ While we show how to insert the stable version of the SDK inside your project, y
 
 If your application is close or exceeds the 65k method count limit, you can mitigate this problem by enabling ProGuard inside your application. ProGuard directives are included in the Android dependencies to preserve the required classes. In addition, you can also shrink the file APK file size by making use of APK splitting.
 
-#### Add the dependency
+#### 1. Add the dependency
 
 1. Start Android Studio
 2. Open up your application's `build.gradle`
@@ -54,7 +54,7 @@ dependencies {
 }
 ```
 
-#### Get an access token
+#### 2. Get an access token
 
 If you don't have a Mapbox account, sign up for one [here](https://www.mapbox.com/signup/), then navigate to the [token page](https://www.mapbox.com/studio/account/tokens/) in Mapbox Studio and copy your **default public token** to your clipboard. After you've added the Map SDK as a dependency inside your Android project, open the `string.xml` file, create a new string, and paste the access token. Then to pass this into the Map SDK, you'll want to place the access token inside of your application's `onCreate()` method.
 
@@ -71,14 +71,14 @@ public class MyApplication extends Application {
 }
 ```
 
-#### Setup permissions
+#### 3. Setup permissions
 Starting in 5.0, we are making use of the Manifest merge feature to reduce the need to include any Maps SDK required things inside of your application's manifest file. You'll need to add _either_ the Fine **or** Coarse location permission if you plan to display a user's location on the map or get the user's location information. The user location permission should also be checked during runtime using the PermissionManager.
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
 
-#### Add a map
+#### 4. Add a map
 
 Open the activity Java file you'd like to include the map in and add the code below to the file.
 
@@ -114,7 +114,7 @@ Open the acitvities layout file and add the map view within your layout.
   mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets" />
 ```
 
-#### Lifecycle methods
+#### 5. Lifecycle methods
 The MapView contains its own lifecycle methods for managing Android's OpenGL lifecycle, which must be called directly from the containing Activity. In order for your app to correctly call the MapView's lifecycle methods, you must override the following lifecycle methods in the Activity that contains the MapView and call the respective MapView method. For example, your onStart() method should look like this:
 
 ```java
@@ -140,10 +140,10 @@ onDestroy();
 
 ### Attribution
 
-<div class="fr flex-parent mt-neg12">
-  <a href="https://www.mapbox.com/help/attribution/" class="no-link-style flex-child--no-shrink mt6 color-blue-on-hover w240 ml24 flex-child-mxl">
+<div class="fr flex-parent">
+  <a href="https://www.mapbox.com/help/attribution/" class="text-decoration-none flex-child--no-shrink mt6 color-blue-on-hover note-card flex-child-mxl">
     <div class="border round wmax360 border--gray-light flex-parent">
-      <div class="flex-child pl18 pt18 pr18 pb0">
+      <div class="flex-child p12">
         <div class="txt-s txt-bold">
           Attribution guidelines
           <span class="txt-xs txt-bold align-middle px6 color-green round bg-green-faint">HELP</span>
@@ -153,7 +153,7 @@ onDestroy();
         </div>
       </div>
       <div class="flex-child flex-child--no-shrink w18 fr border-l border--gray-light flex-parent flex-parent--center-cross">
-        <svg class={'flex-child align-middle icon--l'}><use href='#icon-chevron-right'/></svg>
+        <svg class='flex-child align-middle icon--l'><use href='#icon-chevron-right'/></svg>
       </div>
     </div>
   </a>

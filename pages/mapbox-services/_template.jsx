@@ -14,7 +14,19 @@ module.exports = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  },
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  },
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  },
   render: function() {
+    var windowWidth = this.state.width;
+
     var stringLink = this.props.location.pathname;
     var overview = stringLink.match(/\/([^\/?]+)(?=\/$|\?|$)/)
     if (overview) {
@@ -22,11 +34,12 @@ module.exports = React.createClass({
         var show = true;
       }
     }
+    var isExample = includes(stringLink, "/examples/");
     return (
       <div>
         {/* Content */}
         <div className={'prose color-gray-dark'}>
-          <div className={'content col--9 col fr'}>
+          <div className={`content ${isExample || windowWidth < 800 ? 'col--12' : 'col--9 col col--offl3'}`}>
             {show && <OverviewHeader
               deviceImg={"../../assets/imgs/mas-sdk-splash.png"}
               sdk={"Mapbox Services SDK"}
@@ -34,8 +47,9 @@ module.exports = React.createClass({
               version={constants.MAS_VERSION}
               changelogLink={"https://github.com/mapbox/mapbox-java/blob/master/CHANGELOG.md"}
               ghLink={"https://github.com/mapbox/mapbox-java"}
-              sdkFeatures={['Directions', 'Geocoding', 'Map Matching', 'Directions Matrix', 'Optimization']}/>}
-            <div className='pt12 doc-ul doc-ol doc-ol-item'>
+              sdkFeatures={['Directions', 'Geocoding', 'Map Matching', 'Directions Matrix', 'Optimization']}
+              newFeature={[false, false, false, false, true]}/>}
+            <div className='pt12 doc-ul pb96 doc-ol wmax1200 doc-ol-item'>
             {this.props.children}
             </div>
           </div>

@@ -176,7 +176,7 @@ class Popover extends React.Component {
         <div
           key="body"
           ref={this.setBodyElement}
-          style={{ backgroundColor: this.props.backgroundColor }}
+          style={{ backgroundColor: this.props.backgroundColor}}
           className={this.props.popoverClasses}
           onKeyDown={this.onBodyKeyDown}
           onFocus={this.onBodyFocus}

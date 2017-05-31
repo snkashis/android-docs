@@ -12,12 +12,23 @@ module.exports = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  },
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  },
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  },
   render: function() {
+    var windowWidth = this.state.width;
     return (
       <div>
         {/* Content */}
-        <div className={'prose color-gray-dark'}>
-          <div className={'col--9 col fr'}>
+        <div className='prose color-gray-dark'>
+          <div className={`content col ${windowWidth < 800 ? 'col--12' : 'col--9 col--offl3'}  pb96  pt12 doc-ul doc-ol wmax1200 doc-ol-item`}>
             {this.props.children}
           </div>
         </div>

@@ -9,7 +9,8 @@ type Props = {
   sdkFeatures: string,
   ghLink: stringhttps,
   deviceImg: string,
-  imgWidth: width
+  imgWidth: width,
+  newFeature: bool
 };
 
 class OverviewHeader extends React.Component {
@@ -21,9 +22,9 @@ class OverviewHeader extends React.Component {
 
   render() {
     return (
-      <div className="bg-gray-faint clip mt12 round-bold">
+      <div className="bg-gray-faint clip mt12 wmax960 round-bold">
           <div className="bg-green py18 px24 color-white round-t-bold">
-            <h2 className={'txt-h2-mm txt-fancy txt-h3'}>{this.props.sdk}</h2>
+            <h2 className={'txt-h2-mm txt-h3'}>{this.props.sdk}</h2>
             <div className="txt-ms mt3">
               <span>Current Version:</span>
               {' '}
@@ -36,15 +37,15 @@ class OverviewHeader extends React.Component {
             <div className="px24 flex-child py18">
               <div className="grid txt-ms">
                 {this.props.sdkFeatures.map((feature, i) => (
-                  <div key={i} className="col mb3 mt0 col--6-mxl col--12 flex-parent--center-cross flex-parent li-icon">
+                  <div key={i} className="col mb3 mt0 col--6-mxl col--12 flex-parent--center-cross flex-parent icon-android-green inline-block">
                     <svg className={'icon'}><use href='#icon-check'/></svg>
-                    <span className="color-dark pl6">{feature}</span>
+                    <span className="color-dark pr6 pl6">{feature}</span>{this.props.newFeature[i] ? <span className="txt-xs txt-bold color-white align-middle px6 round-bold bg-green">New</span> : ''}
                   </div>
                 ))}
               </div>
               <div className="mt12 txt-ms">
-                <a href={this.props.ghLink} className="link-icon link-li flex-parent-inline flex-parent--center-cross txt-bold">
-                  <svg className={'icon'}><use href='#icon-github'/></svg>
+                <a href={this.props.ghLink} className="bright-blue-color text-decoration-none flex-parent-inline flex-parent--center-cross txt-bold">
+                  <svg className={'icon mr12'}><use href='#icon-github'/></svg>
                   Contribute on Github
                   <svg className={'icon'}><use href='#icon-chevron-right'/></svg>
                 </a>

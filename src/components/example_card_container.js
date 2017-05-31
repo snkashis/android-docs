@@ -30,25 +30,26 @@ export var ExampleCardContainer = React.createClass({
       size = 3;
       icon = 'down';
     }
-
+    var id = this.props.exampleTitle.replace(/ /g, '-').toLowerCase();
     return (
-      <div className='pb12 w-auto inline-block'>
+      <div className='py12 w-full inline-block flex-child flex-child--grow' id={id}>
         <div className=''>
 
-        <div className='clearfix'>
+        <div className='flex-parent--space-between-main flex-parent'>
+          <div className='flex-child'>
           <div className='txt-l inline-block pl12'>{this.props.exampleTitle}</div>
           <div className='txt-l inline-block pb6 pl6 opacity50'>({this.props.exampleCategory.length})</div>
-
-            {this.props.exampleCategory.length > 3 &&
-              <button onClick={this.handleClick} className='fr flex-parent--center-cross pb24 pl6 flex-parent bright-blue-color'>
-                <span className='txt-s txt-bold'>Show all</span>
-                <svg className='icon pl6'><use href={`#icon-chevron-${icon}`}/></svg>
-              </button>}
-            </div>
+          </div>
+          {this.props.exampleCategory.length > 3 &&
+            <button onClick={this.handleClick} className='flex-child flex-parent--center-cross pb24 pl6 flex-parent bright-blue-color'>
+              <span className='txt-s txt-bold'>Show all</span>
+              <svg className='icon pl6'><use href={`#icon-chevron-${icon}`}/></svg>
+            </button>}
+          </div>
         </div>
-          <div className=' grid'>
+          <div className='grid'>
           {this.props.exampleCategory.slice(0, size).map((example, i) => (
-            <div className='flex-child' key={i}>{example}</div>
+            <div key={i}>{example}</div>
           ))}
           </div>
       </div>

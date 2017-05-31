@@ -42,6 +42,7 @@ const md = markdownIt({
   .use(markdownItDecorate)
   .use(markdownItTocAndAnchor, {
     tocFirstLevel: 2,
+    tocLastLevel: 3,
     anchorLinkSymbol: '',
     tocClassName: "toc-subheaders"
   })

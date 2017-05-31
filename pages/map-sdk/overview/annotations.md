@@ -16,10 +16,10 @@ mapboxMap.addMarker(new MarkerOptions()
   );
 ```
 
-<div class="fr flex-parent mt-neg12">
-  <a href="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/BasicMarkerViewActivity.java" class="no-link-style flex-child--no-shrink mt6 color-blue-on-hover w240 ml24 flex-child-mxl">
+<div class="fr flex-parent">
+  <a href="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/BasicMarkerViewActivity.java" class="text-decoration-none flex-child--no-shrink mt6 color-blue-on-hover note-card flex-child-mxl">
     <div class="border round wmax360 border--gray-light flex-parent">
-      <div class="flex-child pl18 pt18 pr18 pb0">
+      <div class="flex-child p12">
         <div class="txt-s txt-bold">
           Marker views
           <span class="txt-xs txt-bold align-middle px6 color-blue round bg-blue-faint">EXAMPLE</span>
@@ -29,7 +29,7 @@ mapboxMap.addMarker(new MarkerOptions()
         </div>
       </div>
       <div class="flex-child flex-child--no-shrink w18 fr border-l border--gray-light flex-parent flex-parent--center-cross">
-        <svg class={'flex-child align-middle icon--l'}><use href='#icon-chevron-right'/></svg>
+        <svg class='flex-child align-middle icon--l'><use href='#icon-chevron-right'/></svg>
       </div>
     </div>
   </a>
@@ -75,10 +75,10 @@ mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
 
 #### Update a marker
 
-<div class="fr flex-parent mt-neg12">
-  <a href="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/BasicMarkerViewActivity.java" class="no-link-style flex-child--no-shrink mt6 color-blue-on-hover w240 ml24 flex-child-mxl">
+<div class="fr flex-parent">
+  <a href="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/BasicMarkerViewActivity.java" class="text-decoration-none flex-child--no-shrink mt6 color-blue-on-hover note-card flex-child-mxl">
     <div class="border round wmax360 border--gray-light flex-parent">
-      <div class="flex-child pl18 pt18 pr18 pb0">
+      <div class="flex-child p12">
         <div class="txt-s txt-bold">
           Animate marker
           <span class="txt-xs txt-bold align-middle px6 color-blue round bg-blue-faint">EXAMPLE</span>
@@ -88,7 +88,7 @@ mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
         </div>
       </div>
       <div class="flex-child flex-child--no-shrink w18 fr border-l border--gray-light flex-parent flex-parent--center-cross">
-        <svg class={'flex-child align-middle icon--l'}><use href='#icon-chevron-right'/></svg>
+        <svg class='flex-child align-middle icon--l'><use href='#icon-chevron-right'/></svg>
       </div>
     </div>
   </a>
@@ -110,10 +110,10 @@ Info windows are used to display information in a popup window anchored to a mar
 
 #### Custom view
 
-<div class="fr flex-parent mt-neg12">
-  <a href="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/CustomInfoWindowActivity.java" class="no-link-style flex-child--no-shrink mt6 color-blue-on-hover w240 ml24 flex-child-mxl">
+<div class="fr flex-parent">
+  <a href="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/CustomInfoWindowActivity.java" class="text-decoration-none flex-child--no-shrink mt6 color-blue-on-hover note-card flex-child-mxl">
     <div class="border round wmax360 border--gray-light flex-parent">
-      <div class="flex-child pl18 pt18 pr18 pb0">
+      <div class="flex-child p18">
         <div class="txt-s txt-bold">
           Custom info window
           <span class="txt-xs txt-bold align-middle px6 color-blue round bg-blue-faint">EXAMPLE</span>
@@ -123,7 +123,7 @@ Info windows are used to display information in a popup window anchored to a mar
         </div>
       </div>
       <div class="flex-child flex-child--no-shrink w18 fr border-l border--gray-light flex-parent flex-parent--center-cross">
-        <svg class={'flex-child align-middle icon--l'}><use href='#icon-chevron-right'/></svg>
+        <svg class='flex-child align-middle icon--l'><use href='#icon-chevron-right'/></svg>
       </div>
     </div>
   </a>

@@ -24,8 +24,8 @@ class ExampleCard extends React.Component {
     }
     return (
       <div className='ml12 mr12 pt24 inline-block'>
-      <a className='remove-text-decoration' href={this.props.exampleUrl}>
-        <div className='transition example-card shadow-darken10-on-hover round-b'>
+      <a className='text-decoration-none' href={this.props.exampleUrl}>
+        <div className='transition hmax130 wmax260 w-auto h-auto shadow-darken10-on-hover round-b'>
           <div>
             <img className='round bg-gray-dark' src={this.props.exampleImg} />
             <img className='pl6' src={difficultyImageUrl} />

@@ -35,7 +35,7 @@ export const styleMap = [
   exampleTitle={'Create a heatmap from points'}
   exampleDescription={'Use the Map SDK to visualize point data as a heatmap.'}
   difficulty={'advanced'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/heatmap-runtime.png'}
+  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/heatmap-runtime.gif'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/CreateHeatmapPointsActivity.java'}/>,
   <ExampleCard
   exampleTitle={"Change a map's language"}
@@ -199,4 +199,40 @@ export const dds = [
   difficulty={'intermediate'}
   exampleImg={'../../../assets/imgs/map-sdk/examples/dds/color-zoom.gif'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/ZoomDependentFillColorActivity.java'}/>,
+]
+
+export const offline = [
+  <ExampleCard
+  exampleTitle={'A simple offline map'}
+  exampleDescription={"Download and view an offline map using the Map SDK."}
+  difficulty={'intermediate'}
+  exampleImg={'../../../assets/imgs/map-sdk/examples/offline/simple-offline.png'}
+  exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/offline/SimpleOfflineMapActivity.java'}/>,
+  <ExampleCard
+  exampleTitle={'Offline Manager'}
+  exampleDescription={"Download, view, navigate to, and delete an offline region."}
+  difficulty={'intermediate'}
+  exampleImg={'../../../assets/imgs/map-sdk/examples/offline/offline-manager.png'}
+  exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/offline/OfflineManagerActivity.java'}/>,
+]
+
+export const query = [
+  <ExampleCard
+  exampleTitle={'Select a building'}
+  exampleDescription={"Use the query feature to select a building, get its geometry and draw a polygon highlighting it."}
+  difficulty={'intermediate'}
+  exampleImg={'../../../assets/imgs/map-sdk/examples/query/select-building.gif'}
+  exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/query/SelectBuildingActivity.java'}/>,
+  <ExampleCard
+  exampleTitle={'Featue count'}
+  exampleDescription={"Get the feature count inside a bounding box nd highlight all the  buidings."}
+  difficulty={'intermediate'}
+  exampleImg={'../../../assets/imgs/map-sdk/examples/query/feature-count.png'}
+  exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/query/FeatureCountActivity.java'}/>,
+  <ExampleCard
+  exampleTitle={'Query a map feature'}
+  exampleDescription={"Click the map to add a marker at the location and display the maps property information for this feature."}
+  difficulty={'intermediate'}
+  exampleImg={'../../../assets/imgs/map-sdk/examples/query/query-map.png'}
+  exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/query/QueryFeatureActivity.java'}/>,
 ]
