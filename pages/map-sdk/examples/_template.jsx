@@ -7,14 +7,33 @@ module.exports = React.createClass({
   propTypes() {
     return {route: React.PropTypes.object};
   },
+  getInitialState: function() {
+        return {
+            windowWidth: 1200
+        };
+    },
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  },
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  },
+  updateWindowDimensions() {
+    if (window !== 'undefined') {
+      this.setState({ windowWidth: this.state.windowWidth = window.innerWidth });
+    }
+  },
   render: function() {
+    let {windowWidth} = this.state;
 
     return (
       <div className='grid'>
         {/* Table of contents */}
+        {(windowWidth > 800) &&
         <div className='col--2 pt12 fixed col scroll-styled '>
           <div className='txt-m txt-bold gray-dark'>Categories</div>
           <div className='pt24 unstyled-list ml-neg18'><ul>
@@ -27,9 +46,9 @@ module.exports = React.createClass({
             <li className='p0 m0'><a className='text-decoration-none txt-s' href={'#offline'}>Offline</a></li>
             <li className='p0 m0'><a className='text-decoration-none txt-s' href={'#query-map'}>Query Map</a></li>
           </ul></div>
-        </div>
+        </div>}
         {/* Examples */}
-        <div className='col col--offl2 col--10 flex-parent flex-parent--wrap'>
+        <div className={`${windowWidth > 800 ? 'col--offl2 col--10' : 'col--12'} col flex-parent flex-parent--wrap`}>
           <ExampleCardContainer exampleTitle={'Getting Started'} exampleCategory={exampleList.gettingStarted}/>
           <ExampleCardContainer exampleTitle={'Styling Map'} exampleCategory={exampleList.styleMap}/>
           <ExampleCardContainer exampleTitle={'Map Camera'} exampleCategory={exampleList.camera}/>
