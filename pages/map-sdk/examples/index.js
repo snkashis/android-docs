@@ -12,19 +12,19 @@ export const gettingStarted = [
   exampleTitle={'Simple map view'}
   exampleDescription={'Learn how to quickly display a Mapbox Street map in your app.'}
   difficulty={'intro'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/getting-started/simple-map.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/getting-started/simple-map.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/basics/SimpleMapViewActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Support map fragment'}
   exampleDescription={'Include a map fragment within your app using Android support library.'}
   difficulty={'intro'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/getting-started/support-fragment.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/getting-started/support-fragment.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/basics/SupportMapFragmentActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Dynamically build a map view'}
   exampleDescription={'Add a mapview in a dynamically created layout.'}
   difficulty={'intro'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/getting-started/dynamically-add-map.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/getting-started/dynamically-add-map.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/basics/MapboxMapOptionActivity.java'}/>
 ]
 
@@ -34,79 +34,79 @@ export const styleMap = [
   exampleTitle={'Mapbox Studio style'}
   exampleDescription={'Use a custom Mapbox-hosted style.'}
   difficulty={'intro'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/studio-style.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/style-map/studio-style.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/MapboxStudioStyleActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Create a heatmap from points'}
   exampleDescription={'Use the Map SDK to visualize point data as a heatmap.'}
   difficulty={'advanced'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/heatmap-runtime.gif'}
+  exampleImg={'/assets/imgs/map-sdk/examples/style-map/heatmap-runtime.gif'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/CreateHeatmapPointsActivity.java'}/>,
   <ExampleCard
   exampleTitle={"Change a map's language"}
   exampleDescription={'Switch the maps language dynamically.'}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/change-map-language.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/style-map/change-map-language.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/LanguageSwitchActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Custom raster style'}
   exampleDescription={'Use legacy raster tiles in your app.'}
   difficulty={'intro'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/custom-raster.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/style-map/custom-raster.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/CustomRasterStyleActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Default styles'}
   exampleDescription={'Use a variety of professionally designed styles with the Map SDK.'}
   difficulty={'intro'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/default-style.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/style-map/default-style.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/DefaultStyleActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Show and hide layers'}
   exampleDescription={'Create a custom layer switcher to display different datasets.'}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/show-hide-layer.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/style-map/show-hide-layer.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/ShowHideLayersActivity.java'}/>,
   <ExampleCard
   exampleTitle={"Change a layer's color"}
   exampleDescription={"Using layer set to change a layer's fill color."}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/custom-colors.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/style-map/custom-colors.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/ColorSwitcherActivity.java'}/>,
   <ExampleCard
   exampleTitle={"Adjust a layer's opacity"}
   exampleDescription={'Drag the seek bar to adjust the opacity of a raster layer on top of a map.'}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/layer-opacity.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/style-map/layer-opacity.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/AdjustLayerOpacityActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Add a new layer below labels'}
   exampleDescription={'Using the second argument of addLayerBelow, you can be more precise where your layer ends up in the map stack.'}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/geojson-layer.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/style-map/geojson-layer.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/GeojsonLayerInStackActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Add a vector tile source'}
   exampleDescription={'Add a vector source to a map and display it as a layer.'}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/vector-layer.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/style-map/vector-layer.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/VectorSourceActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Add a WMS source'}
   exampleDescription={'Adding an external Web Map Service layer to the map.'}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/wms-map.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/style-map/wms-map.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/AddWmsSourceActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Create and style data clusters'}
   exampleDescription={'Use GeoJSON to visualize point data in clusters.'}
   difficulty={'advanced'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/clustering.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/style-map/clustering.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/GeoJsonClusteringActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Marker symbol layer'}
   exampleDescription={'Display markers on the map by adding a symbol layer.'}
   difficulty={'advanced'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/style-map/symbol-layer.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/style-map/symbol-layer.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/SymbolLayerActivity.java'}/>,
 ]
 
@@ -115,13 +115,13 @@ export const camera = [
   exampleTitle={'Animate the map camera'}
   exampleDescription={"Animate the map's camera position, tilt, bearing, and zoom."}
   difficulty={'intro'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/camera/animated-camera.gif'}
+  exampleImg={'/assets/imgs/map-sdk/examples/camera/animated-camera.gif'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/camera/AnimateMapCameraActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Fit camera in bounding box'}
   exampleDescription={'Position the camera so that all the given markers are in view.'}
   difficulty={'intro'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/camera/camera-bbox.gif'}
+  exampleImg={'/assets/imgs/map-sdk/examples/camera/camera-bbox.gif'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/camera/BoundingBoxCameraActivity.java'}/>,
 ]
 
@@ -130,49 +130,49 @@ export const annotations = [
   exampleTitle={'Draw a marker'}
   exampleDescription={"Create a default marker with an InfoWindow."}
   difficulty={'intro'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/annotations/draw-marker.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/annotations/draw-marker.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/DrawMarkerActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Custom info window'}
   exampleDescription={'Use an info window adapter to customize the info window.'}
   difficulty={'intro'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/annotations/custom-info-window.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/annotations/custom-info-window.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/CustomInfoWindowActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Animate marker position'}
   exampleDescription={'Animate the marker to a new position on the map.'}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/annotations/animated-marker.gif'}
+  exampleImg={'/assets/imgs/map-sdk/examples/annotations/animated-marker.gif'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/AnimatedMarkerActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Draw a custom marker icon'}
   exampleDescription={'Create a marker with a custom icon using the Map SDK.'}
   difficulty={'intro'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/annotations/custom-icon.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/annotations/custom-icon.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/DrawCustomMarkerActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Draw a GeoJSON line'}
   exampleDescription={'Draw a polyline by parsing a GeoJSON file with the Map SDK.'}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/annotations/polyline.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/annotations/polyline.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/DrawGeojsonLineActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Draw a polygon'}
   exampleDescription={'Draw a vector polygon on a map with the Map SDK.'}
   difficulty={'intro'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/annotations/polygon.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/annotations/polygon.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/DrawPolygonActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Draw a marker view'}
   exampleDescription={'Attach a view to a given position on the map.'}
   difficulty={'intro'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/annotations/marker-view.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/annotations/marker-view.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/BasicMarkerViewActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Draw a polygon with holes'}
   exampleDescription={'Draw a vector polygon with holes on a map using the Map SDK.'}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/annotations/polygon-with-holes.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/annotations/polygon-with-holes.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/PolygonHolesActivity.java'}/>,
 ]
 
@@ -181,7 +181,7 @@ export const extrusions = [
   exampleTitle={'3D buildings'}
   exampleDescription={"Use extrusions to display builds' height in 3D"}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/3d-extrusions/3d-builds.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/3d-extrusions/3d-builds.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/BasicExtrusionActivity.java'}/>,
 ]
 
@@ -190,19 +190,19 @@ export const dds = [
   exampleTitle={'Style circles categorically'}
   exampleDescription={"Using a categorical circle-color property function for a visualization."}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/dds/categorically-dds.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/dds/categorically-dds.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/ChoroplethZoomChangeActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Update by zoom level'}
   exampleDescription={"Display state or county population depending on zoom level."}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/dds/population-zoom.gif'}
+  exampleImg={'/assets/imgs/map-sdk/examples/dds/population-zoom.gif'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/StyleCirclesCategoricallyActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Color dependent on zoom level'}
   exampleDescription={"Make a property depend on the map zoom level, in this case, the water layers fill color."}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/dds/color-zoom.gif'}
+  exampleImg={'/assets/imgs/map-sdk/examples/dds/color-zoom.gif'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/ZoomDependentFillColorActivity.java'}/>,
 ]
 
@@ -211,13 +211,13 @@ export const offline = [
   exampleTitle={'A simple offline map'}
   exampleDescription={"Download and view an offline map using the Map SDK."}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/offline/simple-offline.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/offline/simple-offline.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/offline/SimpleOfflineMapActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Offline Manager'}
   exampleDescription={"Download, view, navigate to, and delete an offline region."}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/offline/offline-manager.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/offline/offline-manager.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/offline/OfflineManagerActivity.java'}/>,
 ]
 
@@ -226,18 +226,18 @@ export const query = [
   exampleTitle={'Select a building'}
   exampleDescription={"Use the query feature to select a building, get its geometry and draw a polygon highlighting it."}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/query/select-building.gif'}
+  exampleImg={'/assets/imgs/map-sdk/examples/query/select-building.gif'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/query/SelectBuildingActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Featue count'}
   exampleDescription={"Get the feature count inside a bounding box nd highlight all the  buidings."}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/query/feature-count.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/query/feature-count.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/query/FeatureCountActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Query a map feature'}
   exampleDescription={"Click the map to add a marker at the location and display the maps property information for this feature."}
   difficulty={'intermediate'}
-  exampleImg={'../../../assets/imgs/map-sdk/examples/query/query-map.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/query/query-map.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/query/QueryFeatureActivity.java'}/>,
 ]

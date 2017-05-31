@@ -17,11 +17,11 @@ class ExampleCard extends React.Component {
     var difficultyImageUrl;
 
     if (includes(this.props.difficulty, 'advanced')) {
-      difficultyImageUrl = '../../../assets/imgs/advanced-icon.png'
+      difficultyImageUrl = '/assets/imgs/advanced-icon.png'
     } else if (includes(this.props.difficulty, 'intermediate')) {
-      difficultyImageUrl = '../../../assets/imgs/intermediate-icon.png'
+      difficultyImageUrl = '/assets/imgs/intermediate-icon.png'
     } else {
-      difficultyImageUrl = '../../../assets/imgs/intro-icon.png'
+      difficultyImageUrl = '/assets/imgs/intro-icon.png'
     }
     return (
       <div className='ml12 mr12 pt24 inline-block'>
