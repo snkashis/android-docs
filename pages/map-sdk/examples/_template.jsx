@@ -1,7 +1,7 @@
 import React from 'react';
 import {ExampleCard} from '../../../src/components/example_card';
 import {ExampleCardContainer} from '../../../src/components/example_card_container';
-import * as exampleList from './exampleList';
+import * as exampleList from './index';
 
 module.exports = React.createClass({
   propTypes() {
