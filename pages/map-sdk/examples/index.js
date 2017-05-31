@@ -229,8 +229,8 @@ export const query = [
   exampleImg={'/assets/imgs/map-sdk/examples/query/select-building.gif'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/query/SelectBuildingActivity.java'}/>,
   <ExampleCard
-  exampleTitle={'Featue count'}
-  exampleDescription={"Get the feature count inside a bounding box nd highlight all the  buidings."}
+  exampleTitle={'Feature count'}
+  exampleDescription={"Get the feature count inside a bounding box and highlight all the  buidings."}
   difficulty={'intermediate'}
   exampleImg={'/assets/imgs/map-sdk/examples/query/feature-count.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/query/FeatureCountActivity.java'}/>,
