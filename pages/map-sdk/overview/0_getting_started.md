@@ -4,12 +4,7 @@ path: /map-sdk/overview/
 ---
 ### Overview
 
-The Mapbox Map SDK is an open source toolset for displaying maps inside of your Android application. 
-
-[Mapbox's demo app on the Google Play Store](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en) includes many examples of how to use Mapbox Maps. Various pages in this documentation reference examples in the demo app.
-
-[![](../../assets/imgs/play_store_badge.png)](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en)
-![](../../assets/imgs/demo-splash-preview.png)
+The Mapbox Map SDK is an open source toolset for displaying maps inside of your Android application. [Mapbox's demo app on the Google Play Store](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en) includes many examples of how to use Mapbox Maps. Various pages in this documentation reference examples in the demo app.
 
 
 ### Install the Map SDK
