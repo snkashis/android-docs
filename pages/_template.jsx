@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import {Link} from 'react-router';
 import {prefixLink} from 'gatsby-helpers'
@@ -8,7 +9,7 @@ import {Popover} from '../src/components/popover';
 import {PopoverTrigger} from '@mapbox/assembly-components/popover-trigger';
 import {OverviewHeader} from '../src/components/overview_header';
 
-import 'css/styles.css';
+import 'css/site.css';
 import 'css/markdown-styles.css'
 
 module.exports = React.createClass({

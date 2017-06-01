@@ -1,33 +1,34 @@
+// @flow
 import React from 'react';
 import {ExampleCard} from '../../../src/components/example_card';
 import {ExampleCardContainer} from '../../../src/components/example_card_container';
 import * as exampleList from './index';
 
-module.exports = React.createClass({
-  propTypes() {
-    return {route: React.PropTypes.object};
-  },
-  getInitialState: function() {
-        return {
-            windowWidth: 1200
-        };
-    },
-  contextTypes: {
-    router: React.PropTypes.object.isRequired
-  },
+class MapSdkExamplesLayout extends React.Component {
+  state: {
+    windowWidth: number
+  };
+  constructor() {
+    super();
+    this.state = {windowWidth: 1200};
+  }
+
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
-  },
+  }
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
-  },
+  }
+
   updateWindowDimensions() {
     if (window !== 'undefined') {
       this.setState({ windowWidth: this.state.windowWidth = window.innerWidth });
     }
-  },
-  render: function() {
+  }
+  
+  render() {
     let {windowWidth} = this.state;
 
     return (
@@ -61,4 +62,6 @@ module.exports = React.createClass({
       </div>
     );
   }
-})
+}
+
+export default MapSdkExamplesLayout

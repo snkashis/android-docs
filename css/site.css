@@ -2,12 +2,8 @@
 @custom-media --l-screen (min-width: 800px);
 @custom-media --m-screen (min-width: 640px);
 @custom-media --s-screen (min-width: 440px);
-@custom-media --s-max-screen (min-width: 440px);
-@custom-media --m-max-screen (max-width: 640px);
-@custom-media --l-max-screen (max-width: 800px);
-@custom-media --xl-max-screen (max-width: 1200px);
 
-/* ---------- Assembly Extensions ---------- */
+/* ------------- Assembly Extensions ------------ */
 
 .border--3 { border-width: 3px !important; }
 
@@ -35,7 +31,7 @@
   line-height: 18px;
 }
 
-/* ---------- Limiter ---------- */
+/* ------------------- Limiter ------------------ */
 
 .limiter {
   padding-left: 24px;
@@ -50,7 +46,7 @@
   }
 }
 
-/* ---------- Content adjustments ---------- */
+/* ------------ Content adjustments ------------- */
 
 .prose h1, h2, h3, h4, h5, h6 {
   font-weight: normal !important;
