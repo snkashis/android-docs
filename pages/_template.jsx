@@ -89,7 +89,7 @@ module.exports = React.createClass({
       return (
         <div onClick={this.toggleNav}>
           <li className={'txt-bold txt-fancy'} key={child.path}>
-            <Link to={prefixLink(child.path)} className={'page-hover text-decoration-none'}>
+            <Link to={prefixLink(child.path)} className={'bright-blue-color-on-hover text-decoration-none'}>
               {isActive
                 ? <div className={'bright-blue-color'}>{child.title}</div> : child.title}
             </Link>
@@ -154,10 +154,10 @@ if (windowWidth > 640) {
 
       {/* Left side nav */}
       <div className={'flex-child col col--6 inline-block'}>
-        {windowWidth > 800 && <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Platform</strong></div>}
+        {windowWidth > 690 && <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Platform</strong></div>}
         <div className={'txt-s py12 bg-transparent btn  color-gray-dark'}><strong>Android</strong>{/*}<svg className={'icon'}><use href={'#icon-chevron-down'}/></svg>*/}</div>
-        {windowWidth > 800 && <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Product</strong></div>}
-        {windowWidth > 800 && <PopoverTrigger content={
+        {windowWidth > 690 && <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Product</strong></div>}
+        {windowWidth > 690 && <PopoverTrigger content={
           <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
             <strong className={'color-gray-light p6 txt-mm'}>Products</strong>
             <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/map-sdk/overview/')}>Map SDK</Link>
@@ -171,7 +171,7 @@ if (windowWidth > 640) {
             placement: 'bottom',
             alignment: 'center',
           })}>
-          <button className={'txt-s py12 nav-item bg-transparent btn flex-parent flex-parent--center-cross color-gray-dark'}>
+          <button className={'txt-s py12 border--bright-blue-color bright-blue-color-on-hover bg-transparent btn flex-parent flex-parent--center-cross color-gray-dark'}>
             <strong>
             {`${mapSdkActive ? 'Map SDK' : ''}`}
             {`${pluginsActive ? 'Plugins' : ''}`}
@@ -183,7 +183,7 @@ if (windowWidth > 640) {
       </div>
       {/* Right side nav */}
       <div className={'flex-child col col--6 flex-parent flex-parent--end-main'}>
-      {windowWidth < 800 && <PopoverTrigger content={
+      {windowWidth < 690 && <PopoverTrigger content={
 
 
           <div className='grid'>
@@ -221,20 +221,20 @@ if (windowWidth > 640) {
         </button>
       </PopoverTrigger>}
 
-        { windowWidth > 800 &&
-        <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "overview" ? 'border-b border--3' : ''}`} to={prefixLink('/' + activeSdk + '/overview/')}>Overview</Link>}
-        {windowWidth > 800 && mapSdkActive || mapboxJavaActive ? <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "examples" ? 'border-b border--3' : ''}`} to={prefixLink('/' + activeSdk + '/examples/')}>Examples</Link> : ''}
-        {windowWidth > 800 && mapSdkActive ? <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "tutorials" ? 'border-b border--3' : ''}`} to={prefixLink('/' + activeSdk + '/tutorials/')}>Tutorials</Link> : ''}
+        { windowWidth > 690 &&
+        <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark border--bright-blue-color bright-blue-color-on-hover bg-transparent txt-s  ${activeSection === "overview" ? 'border-b border--3' : ''}`} to={prefixLink('/' + activeSdk + '/overview/')}>Overview</Link>}
+        {windowWidth > 690 && mapSdkActive || mapboxJavaActive ? <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark border--bright-blue-color bright-blue-color-on-hover bg-transparent txt-s  ${activeSection === "examples" ? 'border-b border--3' : ''}`} to={prefixLink('/' + activeSdk + '/examples/')}>Examples</Link> : ''}
+        {windowWidth > 690 && mapSdkActive ? <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark border--bright-blue-color bright-blue-color-on-hover bg-transparent txt-s  ${activeSection === "tutorials" ? 'border-b border--3' : ''}`} to={prefixLink('/' + activeSdk + '/tutorials/')}>Tutorials</Link> : ''}
       </div>
     </div>
   </div>
 
   {/* Start content */}
-  <div className={`scroll-styled ${windowWidth > 800 && 'flex-parent--center-main flex-parent'} limiter pb96 pl24 pr24 pt24 overflow-y t48 b0 fixed flex-child`}>
-  <div className={`${windowWidth > 800 && 'flex-parent--space-between-main flex-parent'}`}>
+  <div className={`scroll-styled ${windowWidth > 690 && 'flex-parent--center-main flex-parent'} limiter pb96 pl24 pr24 pt24 overflow-y t48 b0 fixed flex-child`}>
+  <div className={`${windowWidth > 690 && 'flex-parent--space-between-main flex-parent'}`}>
 
 {includes(activeSection, 'examples') ? '' :
-    windowWidth > 800 && <div className={'col col--2 pt42 pr18 pb18 flex-child--no-shrink fixed color-gray-dark unstyled-list scroll-styled'}>{docPages}
+    windowWidth > 690 && <div className={'col col--2 pt42 pr18 pb18 flex-child--no-shrink fixed color-gray-dark unstyled-list scroll-styled'}>{docPages}
     {mapboxJavaActive ? <PopoverTrigger content={
       <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
         <strong className={'color-gray-light p6 txt-mm'}>Javadoc</strong>
@@ -252,7 +252,7 @@ if (windowWidth > 640) {
         placement: 'right',
         alignment: 'center'
       })}>
-      <button className={'txt-fancy page-hover'}>
+      <button className={'txt-fancy bright-blue-color-on-hover'}>
         <strong>API Reference</strong>
       </button>
     </PopoverTrigger>  : ''}

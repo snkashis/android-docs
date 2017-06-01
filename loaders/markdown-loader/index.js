@@ -44,7 +44,7 @@ const md = markdownIt({
     tocFirstLevel: 2,
     tocLastLevel: 3,
     anchorLinkSymbol: '',
-    tocClassName: "toc-subheaders"
+    tocClassName: 'txt-s inline-block mb12 bright-blue-color-on-hover-anchor'
   })
 
 md.renderer.rules.text = function customRenderRules(tokens, idx, options, env, renderer) {

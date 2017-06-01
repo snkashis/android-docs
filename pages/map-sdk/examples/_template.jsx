@@ -33,7 +33,7 @@ module.exports = React.createClass({
     return (
       <div className='grid'>
         {/* Table of contents */}
-        {(windowWidth > 800) &&
+        {(windowWidth > 690) &&
         <div className='col--2 pt12 fixed col scroll-styled '>
           <div className='txt-m txt-bold gray-dark'>Categories</div>
           <div className='pt24 unstyled-list ml-neg18'><ul>
@@ -48,7 +48,7 @@ module.exports = React.createClass({
           </ul></div>
         </div>}
         {/* Examples */}
-        <div className={`${windowWidth > 800 ? 'col--offl2 col--10' : 'col--12'} col flex-parent flex-parent--wrap`}>
+        <div className={`${windowWidth > 690 ? 'col--offl2 col--10' : 'col--12'} col flex-parent flex-parent--wrap`}>
           <ExampleCardContainer exampleTitle={'Getting Started'} exampleCategory={exampleList.gettingStarted}/>
           <ExampleCardContainer exampleTitle={'Styling Map'} exampleCategory={exampleList.styleMap}/>
           <ExampleCardContainer exampleTitle={'Map Camera'} exampleCategory={exampleList.camera}/>

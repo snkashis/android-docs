@@ -45,7 +45,7 @@ module.exports = React.createClass({
       <div>
         {/* Content */}
         <div className={'prose color-gray-dark'}>
-        <div className={`content ${windowWidth < 800 ? 'col--12' : 'col--9 col col--offl3'}`}>
+        <div className={`content ${windowWidth < 690 ? 'col--12' : 'col--9 col col--offl3'}`}>
 
             {show && <OverviewHeader
               deviceImg={"../../assets/imgs/nav-sdk-splash.png"}

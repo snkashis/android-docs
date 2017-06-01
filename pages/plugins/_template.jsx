@@ -35,7 +35,7 @@ module.exports = React.createClass({
       <div>
         {/* Content */}
         <div className='prose color-gray-dark'>
-          <div className={`content col ${windowWidth < 800 ? 'col--12' : 'col--9 col--offl3'}  pb96  pt12 doc-ul doc-ol wmax1200 doc-ol-item`}>
+          <div className={`content col ${windowWidth < 690 ? 'col--12' : 'col--9 col--offl3'}  pb96  pt12 doc-ul doc-ol wmax1200 doc-ol-item`}>
             {this.props.children}
           </div>
         </div>
