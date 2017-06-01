@@ -234,7 +234,7 @@ if (windowWidth > 640) {
   <div className={`${windowWidth > 800 && 'flex-parent--space-between-main flex-parent'}`}>
 
 {includes(activeSection, 'examples') ? '' :
-    <div className={'col--3 pt42 col toc flex-child--no-shrink  scroll-styled'}>{docPages}
+    windowWidth > 800 && <div className={'col col--2 pt42 pr18 pb18 flex-child--no-shrink fixed color-gray-dark unstyled-list scroll-styled'}>{docPages}
     {mapboxJavaActive ? <PopoverTrigger content={
       <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
         <strong className={'color-gray-light p6 txt-mm'}>Javadoc</strong>

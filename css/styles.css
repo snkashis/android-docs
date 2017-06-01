@@ -136,18 +136,11 @@ body .prose blockquote {
 
 
 .toc {
-  display: block !important;
- flex-shrink: 0 !important;
- flex-basis: auto !important;
-  list-style-type: none;
-  color: #273d56;
-  position: fixed;
+
+ 
   top: 42px;
   bottom: 0px;
   overflow-y: auto;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  padding-top: 24px;
 }
 
 @media (--l-max-screen) {
