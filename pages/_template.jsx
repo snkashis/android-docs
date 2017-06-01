@@ -106,9 +106,29 @@ module.exports = React.createClass({
     var mobileMenu = childPages.map((child, i) => {
       if (child === undefined) { return; }
       child.title = child.title.replace('Map SDK', 'Getting Started')
-      return (<Link to={prefixLink(child.path)} className='inline-block col col--6 color-gray-dark color-blue-on-hover txt-ms py3 px6-ml px0 mt3' key={i}>{child.title}</Link>)
+      return (<Link to={prefixLink(child.path)} className='inline-block col col--6 color-gray-dark bright-blue-color-on-hover txt-ms py3 px6-ml px0 mt3' key={i}>{child.title}</Link>)
     })
 
+    const masPages = this.props.children.props.route.pages.map((p, i) => {
+      if (includes(p.path, '/mapbox-services/')) {
+        if (p.data.title === undefined) { return; }
+        return (<Link to={prefixLink(p.path)} className='inline-block col col--6 color-gray-dark bright-blue-color-on-hover txt-ms py3 px6-ml px0 mt3' key={i}>{p.data.title}</Link>)
+      }
+    });
+
+
+    const navPages = this.props.children.props.route.pages.map((p, i) => {
+      if (includes(p.path, '/navigation/')) {
+        if (p.data.title === undefined) { return; }
+        return (<Link to={prefixLink(p.path)} className='inline-block col col--6 color-gray-dark bright-blue-color-on-hover txt-ms py3 px6-ml px0 mt3' key={i}>{p.data.title}</Link>)
+      }
+    });
+    const pluginPages = this.props.children.props.route.pages.map((p, i) => {
+      if (includes(p.path, '/plugins/')) {
+        if (p.data.title === undefined) { return; }
+        return (<Link to={prefixLink(p.path)} className='inline-block col col--6 color-gray-dark bright-blue-color-on-hover txt-ms py3 px6-ml px0 mt3' key={i}>{p.data.title}</Link>)
+      }
+    });
 
 var mobileMenuDisabled;
 var icon = 'menu';
@@ -134,10 +154,10 @@ if (windowWidth > 640) {
 
       {/* Left side nav */}
       <div className={'flex-child col col--6 inline-block'}>
-        <div className={'txt-s mobile-left-nav py12 bg-transparent btn px0 color-gray-light'}><strong>Platform</strong></div>
+        {windowWidth > 800 && <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Platform</strong></div>}
         <div className={'txt-s py12 bg-transparent btn  color-gray-dark'}><strong>Android</strong>{/*}<svg className={'icon'}><use href={'#icon-chevron-down'}/></svg>*/}</div>
-        <div className={'txt-s mobile-left-nav py12 bg-transparent btn px0 color-gray-light'}><strong>Product</strong></div>
-        <PopoverTrigger content={
+        {windowWidth > 800 && <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Product</strong></div>}
+        {windowWidth > 800 && <PopoverTrigger content={
           <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
             <strong className={'color-gray-light p6 txt-mm'}>Products</strong>
             <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/map-sdk/overview/')}>Map SDK</Link>
@@ -159,29 +179,31 @@ if (windowWidth > 640) {
             {`${navigationActive ? 'Navigation' : ''}`}
             </strong><svg className={'icon'}><use href={'#icon-chevron-down'}/></svg>
           </button>
-        </PopoverTrigger>
+        </PopoverTrigger>}
       </div>
       {/* Right side nav */}
       <div className={'flex-child col col--6 flex-parent flex-parent--end-main'}>
-      <PopoverTrigger content={
+      {windowWidth < 800 && <PopoverTrigger content={
 
 
           <div className='grid'>
-            <div className='bg-gray-faint py12 px24 mt-neg18 mr-neg24 ml-neg24 mb24'>
-              <div className='block mt24 relative'>
-                <div className='grid grid--gut12'>
-                  <div className='mb3 txt-uppercase w-full txt-s txt-spacing1 txt-fancy color-darken50 color-dark opacity50'>Overview</div>
-                  <div className=''>{mobileMenu}</div>
+            <div className='py12 px24 mt-neg18 mr-neg24 ml-neg24 mb24'>
+              <div className='block mt12 relative'>
+                  <div className='mb3 txt-uppercase w-full txt-s txt-spacing1 txt-fancy color-darken50 color-dark opacity50'>Map SDK</div>
+                  <div className='pb18'>{mobileMenu}</div>
+                  <div className='border-t border--gray-faint top left right pb18'/>
+                  <div className='mb3 txt-uppercase w-full txt-s txt-spacing1 txt-fancy color-darken50 color-dark opacity50'>Plugins</div>
+                  <div className='pb24'>{pluginPages}</div>
+                  <div className='border-t border--gray-faint top left right pb18'/>
+                  <div className='mb3 txt-uppercase w-full txt-s txt-spacing1 txt-fancy color-darken50 color-dark opacity50'>Mapbox Services</div>
+                  <div className='pb24'>{masPages}</div>
+                  <div className='border-t border--gray-faint top left right pb18'/>
+                  <div className='mb3 txt-uppercase w-full txt-s txt-spacing1 txt-fancy color-darken50 color-dark opacity50'>Navigation SDK</div>
+                  <div className='pb24'>{navPages}</div>
                 </div>
-                <div className='grid grid--gut12'>
-                  <div className='mb3 txt-uppercase w-full txt-s txt-spacing1 txt-fancy color-darken50 color-dark opacity50'>Examples</div>
-                  <div className=''>{mobileMenu}</div>
-                </div>
-                <div className='grid grid--gut12'>
-                  <div className='mb3 txt-uppercase w-full txt-s txt-spacing1 txt-fancy color-darken50 color-dark opacity50'>Tutorial</div>
-                  <div className=''>{mobileMenu}</div>
-                </div>
-            </div>
+
+
+
           </div>
         </div>
 
@@ -195,14 +217,14 @@ if (windowWidth > 640) {
 
         })}>
         <button onClick={this.handleClick} className={'block flex-parent flex-parent--center-cross'}>
-          <svg className={'icon--l nav-mobile color-gray-dark opacity75'}><use href={`#icon-${icon}`}/></svg>
+          <svg className={'icon--l color-gray-dark opacity75'}><use href={`#icon-${icon}`}/></svg>
         </button>
-      </PopoverTrigger>
+      </PopoverTrigger>}
 
-      {
+        { windowWidth > 800 &&
         <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "overview" ? 'border-b border--3' : ''}`} to={prefixLink('/' + activeSdk + '/overview/')}>Overview</Link>}
-        {mapSdkActive || mapboxJavaActive ? <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "examples" ? 'border-b border--3' : ''}`} to={prefixLink('/' + activeSdk + '/examples/')}>Examples</Link> : ''}
-        {mapSdkActive ? <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "tutorials" ? 'border-b border--3' : ''}`} to={prefixLink('/' + activeSdk + '/tutorials/')}>Tutorials</Link> : ''}
+        {windowWidth > 800 && mapSdkActive || mapboxJavaActive ? <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "examples" ? 'border-b border--3' : ''}`} to={prefixLink('/' + activeSdk + '/examples/')}>Examples</Link> : ''}
+        {windowWidth > 800 && mapSdkActive ? <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "tutorials" ? 'border-b border--3' : ''}`} to={prefixLink('/' + activeSdk + '/tutorials/')}>Tutorials</Link> : ''}
       </div>
     </div>
   </div>

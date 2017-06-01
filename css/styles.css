@@ -14,6 +14,7 @@
 .bg-green { background-color: #8CCA44 !important; }
 .icon-android-green svg {color: #8CCA44; }
 .bright-blue-color { color: #0082FF; }
+.bright-blue-color-on-hover:hover {color: #0082FF !important; }
 .border--gray-less-faint { border-color: #E8EBEE !important; }
 
 .hmax130 img { max-height: 130px; }
@@ -26,6 +27,11 @@
 
 .t48 { top: 48px; }
 .b0 { bottom: 0; }
+
+.txt-ms {
+  font-size: 13px !important;
+  line-height: 18px;
+}
 
 /* ---------- Limiter ---------- */
 
