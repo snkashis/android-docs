@@ -5,7 +5,7 @@ import {prefixLink} from 'gatsby-helpers'
 import includes from 'underscore.string/include';
 import {Container, Grid, Span} from 'react-responsive-grid';
 import {config} from 'config';
-import {Popover} from '../src/components/popover';
+import {Popover} from '@mapbox/assembly-components/popover';
 import {PopoverTrigger} from '@mapbox/assembly-components/popover-trigger';
 import {OverviewHeader} from '../src/components/overview_header';
 
@@ -168,10 +168,11 @@ if (windowWidth > 640) {
           </div>
           }
           respondsToHover={true}
-          popoverProps={_.assign({
+          popoverProps={Object.assign({
             placement: 'bottom',
-            alignment: 'center',
-          })}>
+            alignment: 'center'
+          })}
+          >
           <button className={'txt-s py12 border--bright-blue-color bright-blue-color-on-hover bg-transparent btn flex-parent flex-parent--center-cross color-gray-dark'}>
             <strong>
             {`${mapSdkActive ? 'Map SDK' : ''}`}
@@ -213,10 +214,11 @@ if (windowWidth > 640) {
         disabled={mobileMenuDisabled}
         display={'inherit'}
         respondsToHover={false}
-        popoverProps={_.assign({
-          popoverClasses: 'round shadow-darken25-bold bg-white clip py18 px24',
-
-        })}>
+        popoverProps={Object.assign({
+          placement: 'bottom',
+          alignment: 'center'
+        })}
+        >
         <button onClick={this.handleClick} className={'block flex-parent flex-parent--center-cross'}>
           <svg className={'icon--l color-gray-dark opacity75'}><use href={`#icon-${icon}`}/></svg>
         </button>
@@ -249,7 +251,7 @@ if (windowWidth > 640) {
       </div>
       }
       respondsToHover={true}
-      popoverProps={_.assign({
+      popoverProps={Object.assign({
         placement: 'right',
         alignment: 'center'
       })}>
