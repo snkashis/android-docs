@@ -20,11 +20,11 @@ class MainLayout extends React.Component {
   constructor() {
     super();
     this.state = {
-      windowWidth: window.innerWidth
+      windowWidth: 1200
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     window.addEventListener('resize', this.handleWindowSizeChange);
   }
 
@@ -33,7 +33,9 @@ class MainLayout extends React.Component {
   }
 
   handleWindowSizeChange = () => {
-    this.setState({ windowWidth: window.innerWidth });
+    if (window !== 'undefined') {
+      this.setState({ windowWidth: window.innerWidth });
+    }
   }
 
   render() {
