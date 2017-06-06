@@ -32,7 +32,7 @@ class ExampleCardContainer extends React.Component {
       {this.props.exampleCategory.length > 3 &&
         <button onClick={this.handleClick} className='flex-child flex-parent--center-cross pb24 pl6 flex-parent bright-blue-color'>
         <span className='txt-s txt-bold'>Show all</span>
-        <svg className='icon pl6'><use href={`#icon-chevron-${this.state.expanded ? 'up' : 'down'}`}/></svg>
+        <svg className='icon pl6'><use xlinkHref={`#icon-chevron-${this.state.expanded ? 'up' : 'down'}`}/></svg>
         </button>}
         </div>
         <div className='grid'>
