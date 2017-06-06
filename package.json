@@ -11,7 +11,7 @@
     "build": "gatsby build --prefix-links",
     "deploy": "gatsby build --prefix-links && gh-pages -a -d public -b mb-pages",
     "develop": "gatsby develop",
-    "test": "npm run flow",
+    "test": "npm run build",
     "flow": "flow",
     "eslint": "eslint src",
     "retext": "npm run test-text",

@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router';
-import {prefixLink} from 'gatsby-helpers'
+
+
 import includes from 'underscore.string/include';
-import {Container, Grid, Span} from 'react-responsive-grid';
+
 import find from 'lodash/find';
 import {OverviewHeader} from '../../src/components/overview_header';
 import * as constants from '../../constants';

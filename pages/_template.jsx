@@ -14,6 +14,9 @@ import 'css/site.css';
 import 'css/markdown-styles.css'
 
 class MainLayout extends React.Component {
+  state: {
+        windowWidth: number;
+    };
   constructor() {
     super();
     this.state = {
