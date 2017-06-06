@@ -129,8 +129,8 @@ class MainLayout extends React.Component {
       </button>
     </PopoverTrigger>  : ''}
 
-    {includes(this.props.location.pathname, '/map-sdk/') ? <div className={'flex-parent wmin180 pb12 flex-parent--column'}><a href={prefixLink('/api/map-sdk/' + constants.MAP_SDK_VERSION + '/index.html')} className='txt-fancy bright-blue-color-on-hover'>API Reference</a></div>: ''}
-    {includes(this.props.location.pathname, '/navigation/') ? <div className={'flex-parent wmin180 pb12 flex-parent--column'}><a href={prefixLink('/api/navigation-sdk/' + constants.NAVIGATION_VERSION + '/index.html')} className='txt-fancy bright-blue-color-on-hover'>API Reference</a></div>: ''}
+    {includes(this.props.location.pathname, '/map-sdk/overview/') ? <div className={'flex-parent wmin180 pb12 flex-parent--column'}><a href={prefixLink('/api/map-sdk/' + constants.MAP_SDK_VERSION + '/index.html')} className='txt-fancy bright-blue-color-on-hover'>API Reference</a></div>: ''}
+    {includes(this.props.location.pathname, '/navigation/overview/') ? <div className={'flex-parent wmin180 pb12 flex-parent--column'}><a href={prefixLink('/api/navigation-sdk/' + constants.NAVIGATION_VERSION + '/index.html')} className='txt-fancy bright-blue-color-on-hover'>API Reference</a></div>: ''}
 
     </div>}
       {this.props.children}
