@@ -56,9 +56,9 @@ class Navbar extends React.Component {
           {this.props.windowWidth < 690 && <NavbarMobileMenu pages={this.props.pages}/>}
 
             { this.props.windowWidth > 690 &&
-            <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark border--bright-blue-color bright-blue-color-on-hover bg-transparent txt-s  ${this.props.activeSection === "overview" ? 'border-b border--3' : ''}`} to={prefixLink('/' + this.props.activeSdk + '/overview/')}>Overview</Link>}
-            { this.props.windowWidth > 690 && this.props.activeSdk == 'map-sdk' || this.props.activeSdk == 'mapbox-services' ? <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark border--bright-blue-color bright-blue-color-on-hover bg-transparent txt-s  ${this.props.activeSection === "examples" ? 'border-b border--3' : ''}`} to={prefixLink('/' + this.props.activeSdk + '/examples/')}>Examples</Link> : ''}
-            { this.props.windowWidth > 690 && this.props.activeSdk == 'map-sdk' ? <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark border--bright-blue-color bright-blue-color-on-hover bg-transparent txt-s  ${this.props.activeSection === "tutorials" ? 'border-b border--3' : ''}`} to={prefixLink('/' + this.props.activeSdk + '/tutorials/')}>Tutorials</Link> : ''}
+            <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark border--bright-blue-color bright-blue-color-on-hover bg-transparent txt-s  ${includes(this.props.pathname, '/overview/') ? 'border-b border--3' : ''}`} to={prefixLink('/' + this.props.activeSdk + '/overview/')}>Overview</Link>}
+            { this.props.windowWidth > 690 && (this.props.activeSdk == 'map-sdk' || this.props.activeSdk == 'mapbox-services') ? <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark border--bright-blue-color bright-blue-color-on-hover bg-transparent txt-s  ${includes(this.props.pathname, '/examples/') ? 'border-b border--3' : ''}`} to={prefixLink('/' + this.props.activeSdk + '/examples/')}>Examples</Link> : ''}
+            { this.props.windowWidth > 690 && this.props.activeSdk == 'map-sdk' ? <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark border--bright-blue-color bright-blue-color-on-hover bg-transparent txt-s  ${includes(this.props.pathname, '/tutorials/') ? 'border-b border--3' : ''}`} to={prefixLink('/' + this.props.activeSdk + '/tutorials/')}>Tutorials</Link> : ''}
           </div>
         </div>
       </div>

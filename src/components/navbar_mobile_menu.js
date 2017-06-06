@@ -17,26 +17,32 @@ class NavbarMobileMenu extends React.Component {
   //
   handleClick() {
     this.setState({ opened: !this.state.opened })
+    this.refs.mobileMenu.hide();
   }
+
+
+
+
 
 render() {
   let {opened} = this.state;
-
-  console.log(this.props.children);
-
   var icon = 'menu';
   if (opened) {
     icon = 'close';
   } else {
     icon = 'menu';
   }
-
-
-
   const mapPages = this.props.pages.map((p, i) => {
     if (includes(p.path, '/map-sdk/')) {
       if (p.data.title === undefined) { return; }
-      return (<Link to={prefixLink(p.path)} className='inline-block col col--6 color-gray-dark bright-blue-color-on-hover txt-ms py3 px6-ml px0 mt3' key={i}>{p.data.title}</Link>)
+      return (
+        <Link
+          onClick={this.handleClick}
+          to={prefixLink(p.path)}
+          className={`${p.data.title == 'Examples' ? 'txt-bold' : ''} inline-block col col--6 color-gray-dark bright-blue-color-on-hover txt-ms py3 px6-ml px0 mt3`}
+          key={i}>
+          {p.data.title}
+        </Link>)
     }
   });
 
@@ -44,7 +50,13 @@ render() {
   const masPages = this.props.pages.map((p, i) => {
     if (includes(p.path, '/mapbox-services/')) {
       if (p.data.title === undefined) { return; }
-      return (<Link to={prefixLink(p.path)} className='inline-block col col--6 color-gray-dark bright-blue-color-on-hover txt-ms py3 px6-ml px0 mt3' key={i}>{p.data.title}</Link>)
+      return (
+        <Link
+          onClick={this.handleClick}
+          to={prefixLink(p.path)}
+          className={`${p.data.title == 'Examples' ? 'txt-bold' : ''} inline-block col col--6 color-gray-dark bright-blue-color-on-hover txt-ms py3 px6-ml px0 mt3`}
+          key={i}>{p.data.title}
+        </Link>)
     }
   });
 
@@ -52,18 +64,30 @@ render() {
   const navPages = this.props.pages.map((p, i) => {
     if (includes(p.path, '/navigation/')) {
       if (p.data.title === undefined) { return; }
-      return (<Link to={prefixLink(p.path)} className='inline-block col col--6 color-gray-dark bright-blue-color-on-hover txt-ms py3 px6-ml px0 mt3' key={i}>{p.data.title}</Link>)
+      return (
+        <Link
+          onClick={this.handleClick}
+          to={prefixLink(p.path)}
+          className={`${p.data.title == 'Examples' ? 'txt-bold' : ''} inline-block col col--6 color-gray-dark bright-blue-color-on-hover txt-ms py3 px6-ml px0 mt3`}
+          key={i}>{p.data.title}
+        </Link>)
     }
   });
   const pluginPages = this.props.pages.map((p, i) => {
     if (includes(p.path, '/plugins/')) {
       if (p.data.title === undefined) { return; }
-      return (<Link to={prefixLink(p.path)} className='inline-block col col--6 color-gray-dark bright-blue-color-on-hover txt-ms py3 px6-ml px0 mt3' key={i}>{p.data.title}</Link>)
+      return (
+        <Link
+          onClick={this.handleClick}
+          to={prefixLink(p.path)}
+          className={`${p.data.title == 'Examples' ? 'txt-bold' : ''} inline-block col col--6 color-gray-dark bright-blue-color-on-hover txt-ms py3 px6-ml px0 mt3`}
+          key={i}>{p.data.title}
+        </Link>)
     }
   });
 
   return(
-    <PopoverTrigger content={
+    <PopoverTrigger ref='mobileMenu' content={
       <div className='grid'>
         <div className='py12 px24 mt-neg18 mr-neg24 ml-neg24 mb24'>
           <div className='block mt12 relative'>

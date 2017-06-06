@@ -29,23 +29,12 @@ class MainLayout extends React.Component {
     window.removeEventListener('resize', this.handleWindowSizeChange);
   }
 
-
-
   handleWindowSizeChange = () => {
     this.setState({ windowWidth: window.innerWidth });
   }
 
   render() {
     let {windowWidth} = this.state;
-
-
-
-    var activeSection = "overview";
-    if (includes(this.props.location.pathname, '/examples/')) {
-      activeSection = "examples";
-    } else if (includes(this.props.location.pathname, '/tutorials/')) {
-      activeSection = "tutorials";
-    }
 
     var activeSdk;
     if (includes(this.props.location.pathname, '/mapbox-services/')) {
@@ -102,16 +91,16 @@ class MainLayout extends React.Component {
     windowWidth={windowWidth}
     pages={this.props.children.props.route.pages}
     activeSdk={activeSdk}
-    activeSection={activeSection}
+    pathname={this.props.location.pathname}
   />
 
   {/* Start content */}
   <div className={`scroll-styled ${windowWidth > 690 && 'flex-parent--center-main flex-parent'} limiter pb96 pl24 pr24 pt24 overflow-y t48 b0 fixed flex-child`}>
   <div className={`${windowWidth > 690 && 'flex-parent--space-between-main flex-parent'}`}>
 
-{includes(activeSection, 'examples') ? '' :
+{includes(this.props.location.pathname, '/examples/') ? '' :
     windowWidth > 690 && <div className={'col col--2 pt42 pr18 pb18 flex-child--no-shrink fixed color-gray-dark unstyled-list scroll-styled'}>{docPages}
-    {activeSdk.match('mapbox-services') ? <PopoverTrigger content={
+    {includes(this.props.location.pathname, '/mapbox-services/') ? <PopoverTrigger content={
       <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
         <strong className={'color-gray-light p6 txt-mm'}>Javadoc</strong>
           <a href={prefixLink('/api/mapbox-java/libjava-core/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-core</a>
