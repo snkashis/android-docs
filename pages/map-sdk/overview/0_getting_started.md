@@ -50,7 +50,7 @@ repositories {
 
 dependencies {
   compile ('com.mapbox.mapboxsdk:mapbox-android-sdk:{mapSdkVersion}@aar'){
-      transitive=true
+    transitive=true
   }
 }
 ```
