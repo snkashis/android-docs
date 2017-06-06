@@ -22,7 +22,7 @@ The Mapbox Map SDK is an open source toolset for displaying maps inside of your 
         </div>
       </div>
       <div class="flex-child flex-child--no-shrink w18 fr border-l border--gray-light flex-parent flex-parent--center-cross">
-        <svg class='flex-child align-middle icon--l'><use href='#icon-chevron-right'/></svg>
+        <svg class='flex-child align-middle icon--l'><use xlink:href='#icon-chevron-right'/></svg>
       </div>
     </div>
   </a>
@@ -154,7 +154,7 @@ onDestroy();
         </div>
       </div>
       <div class="flex-child flex-child--no-shrink w18 fr border-l border--gray-light flex-parent flex-parent--center-cross">
-        <svg class='flex-child align-middle icon--l'><use href='#icon-chevron-right'/></svg>
+        <svg class='flex-child align-middle icon--l'><use xlink:href='#icon-chevron-right'/></svg>
       </div>
     </div>
   </a>

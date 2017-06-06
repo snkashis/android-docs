@@ -1,37 +1,33 @@
+// @flow
 import React from 'react';
-import {Link} from 'react-router';
-import {prefixLink} from 'gatsby-helpers'
-import includes from 'underscore.string/include';
-import {Container, Grid, Span} from 'react-responsive-grid';
-import find from 'lodash/find';
 import {OverviewHeader} from '../../src/components/overview_header';
 import * as constants from '../../constants';
 
-module.exports = React.createClass({
-  propTypes() {
-    return {route: React.PropTypes.object};
-  },
-  contextTypes: {
-    router: React.PropTypes.object.isRequired
-  },
-  getInitialState: function() {
-        return {
-            windowWidth: 1200
-        };
-    },
+class NavigationLayout extends React.Component {
+  state: {
+    windowWidth: number
+  };
+  constructor() {
+    super();
+    this.state = {windowWidth: 1200};
+  }
+
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
-  },
+  }
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
-  },
+  }
+
   updateWindowDimensions() {
     if (window !== 'undefined') {
       this.setState({ windowWidth: this.state.windowWidth = window.innerWidth });
     }
-  },
-  render: function() {
+  }
+
+  render() {
     let {windowWidth} = this.state;
 
     var stringLink = this.props.location.pathname;
@@ -45,8 +41,7 @@ module.exports = React.createClass({
       <div>
         {/* Content */}
         <div className={'prose color-gray-dark'}>
-        <div className={`content ${windowWidth < 800 ? 'col--12' : 'col--9 col col--offl3'}`}>
-
+          <div className={`content ${windowWidth < 690 ? 'col--12' : 'col--9 col col--offl3'}`}>
             {show && <OverviewHeader
               deviceImg={"../../assets/imgs/nav-sdk-splash.png"}
               sdk={"Navigation SDK"}
@@ -57,11 +52,13 @@ module.exports = React.createClass({
               sdkFeatures={['Off-route detection', 'Timed instructions', 'Snap to route', 'Route progress info', 'Traffic routing']}
               newFeature={[false, false, false, false, false]}/>}
             <div className='pt12 doc-ul doc-ol pb96 wmax1200 doc-ol-item'>
-            {this.props.children}
+              {this.props.children}
             </div>
           </div>
         </div>
       </div>
     );
   }
-});
+}
+
+export default NavigationLayout

@@ -1,67 +1,51 @@
+// @flow
 import React from 'react';
 import {Link} from 'react-router';
 import {prefixLink} from 'gatsby-helpers'
 import includes from 'underscore.string/include';
 import {Container, Grid, Span} from 'react-responsive-grid';
 import {config} from 'config';
-import {Popover} from '../src/components/popover';
+import {Popover} from '@mapbox/assembly-components/popover';
 import {PopoverTrigger} from '@mapbox/assembly-components/popover-trigger';
 import {OverviewHeader} from '../src/components/overview_header';
+import {Navbar} from '../src/components/navbar';
 
-import 'css/styles.css';
+import 'css/site.css';
 import 'css/markdown-styles.css'
 
-module.exports = React.createClass({
-  propTypes: {
-    children: React.PropTypes.object
-  },
-  getInitialState: function() {
-        return {
-            opened: false,
-            windowWidth: 1200
-        };
-    },
-    handleClick: function() {
-        this.setState({
-            opened: !this.state.opened
-        })
-    },
+class MainLayout extends React.Component {
+  state: {
+        windowWidth: number;
+    };
+  constructor() {
+    super();
+    this.state = {
+      windowWidth: 1200
+    };
+  }
+
   componentDidMount() {
-    this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
-  },
+    window.addEventListener('resize', this.handleWindowSizeChange);
+  }
+
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
-  },
-  updateWindowDimensions() {
+    window.removeEventListener('resize', this.handleWindowSizeChange);
+  }
+
+  handleWindowSizeChange = () => {
     if (window !== 'undefined') {
-      this.setState({ windowWidth: this.state.windowWidth = window.innerWidth });
+      this.setState({ windowWidth: window.innerWidth });
     }
-  },
-  render: function() {
+  }
 
+  render() {
     let {windowWidth} = this.state;
-
-
-
-
-    const mapSdkActive = includes(this.props.location.pathname, '/map-sdk/');
-    const mapboxJavaActive = includes(this.props.location.pathname, '/mapbox-services/');
-    const pluginsActive = includes(this.props.location.pathname, '/plugins/');
-    const navigationActive = includes(this.props.location.pathname, '/navigation/');
-
-    var activeSection = "overview";
-    if (includes(this.props.location.pathname, '/examples/')) {
-      activeSection = "examples";
-    } else if (includes(this.props.location.pathname, '/tutorials/')) {
-      activeSection = "tutorials";
-    }
 
     var activeSdk;
     if (includes(this.props.location.pathname, '/mapbox-services/')) {
       activeSdk = "mapbox-services";
     } else if (includes(this.props.location.pathname, '/plugins/')) {
-      activeSdk = "plugins";
+      activeSdk = "plugins";``
     } else if (includes(this.props.location.pathname, '/navigation/')) {
       activeSdk = "navigation";
     } else {
@@ -89,7 +73,7 @@ module.exports = React.createClass({
       return (
         <div onClick={this.toggleNav}>
           <li className={'txt-bold txt-fancy'} key={child.path}>
-            <Link to={prefixLink(child.path)} className={'page-hover text-decoration-none'}>
+            <Link to={prefixLink(child.path)} className={'bright-blue-color-on-hover text-decoration-none'}>
               {isActive
                 ? <div className={'bright-blue-color'}>{child.title}</div> : child.title}
             </Link>
@@ -103,117 +87,25 @@ module.exports = React.createClass({
       )
     });
 
-    var mobileMenu = childPages.map((child, i) => {
-      if (child === undefined) { return; }
-      child.title = child.title.replace('Map SDK', 'Getting Started')
-      return (<Link to={prefixLink(child.path)} className='inline-block col col--6 color-gray-dark color-blue-on-hover txt-ms py3 px6-ml px0 mt3' key={i}>{child.title}</Link>)
-    })
 
-
-var mobileMenuDisabled;
-var icon = 'menu';
-var opened = this.state.opened;
-if (opened) {
-  icon = 'close';
-} else {
-  icon = 'menu';
-}
-
-if (windowWidth > 640) {
-  icon = 'menu'
-  mobileMenuDisabled = true;
-} else {
-  mobileMenuDisabled = false;
-}
 
     return (
 <div className='grid'>
   {/* Site top toolbar */}
-  <div className={'z1 min48 flex-parent--center-main flex-parent w-full border-b border-t bg-white border--gray-less-faint fixed'}>
-    <div className={'wmax1200 w-full pl24 pr24 flex-parent--space-between-main flex-parent'}>
-
-      {/* Left side nav */}
-      <div className={'flex-child col col--6 inline-block'}>
-        <div className={'txt-s mobile-left-nav py12 bg-transparent btn px0 color-gray-light'}><strong>Platform</strong></div>
-        <div className={'txt-s py12 bg-transparent btn  color-gray-dark'}><strong>Android</strong>{/*}<svg className={'icon'}><use href={'#icon-chevron-down'}/></svg>*/}</div>
-        <div className={'txt-s mobile-left-nav py12 bg-transparent btn px0 color-gray-light'}><strong>Product</strong></div>
-        <PopoverTrigger content={
-          <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
-            <strong className={'color-gray-light p6 txt-mm'}>Products</strong>
-            <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/map-sdk/overview/')}>Map SDK</Link>
-            <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/plugins/overview/')}>Plugins</Link>
-            <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/mapbox-services/overview/')}>Mapbox Services</Link>
-            <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/navigation/overview/')}>Navigation</Link>
-          </div>
-          }
-          respondsToHover={true}
-          popoverProps={_.assign({
-            placement: 'bottom',
-            alignment: 'center',
-          })}>
-          <button className={'txt-s py12 nav-item bg-transparent btn flex-parent flex-parent--center-cross color-gray-dark'}>
-            <strong>
-            {`${mapSdkActive ? 'Map SDK' : ''}`}
-            {`${pluginsActive ? 'Plugins' : ''}`}
-            {`${mapboxJavaActive ? 'Mapbox Services' : ''}`}
-            {`${navigationActive ? 'Navigation' : ''}`}
-            </strong><svg className={'icon'}><use href={'#icon-chevron-down'}/></svg>
-          </button>
-        </PopoverTrigger>
-      </div>
-      {/* Right side nav */}
-      <div className={'flex-child col col--6 flex-parent flex-parent--end-main'}>
-      <PopoverTrigger content={
-
-
-          <div className='grid'>
-            <div className='bg-gray-faint py12 px24 mt-neg18 mr-neg24 ml-neg24 mb24'>
-              <div className='block mt24 relative'>
-                <div className='grid grid--gut12'>
-                  <div className='mb3 txt-uppercase w-full txt-s txt-spacing1 txt-fancy color-darken50 color-dark opacity50'>Overview</div>
-                  <div className=''>{mobileMenu}</div>
-                </div>
-                <div className='grid grid--gut12'>
-                  <div className='mb3 txt-uppercase w-full txt-s txt-spacing1 txt-fancy color-darken50 color-dark opacity50'>Examples</div>
-                  <div className=''>{mobileMenu}</div>
-                </div>
-                <div className='grid grid--gut12'>
-                  <div className='mb3 txt-uppercase w-full txt-s txt-spacing1 txt-fancy color-darken50 color-dark opacity50'>Tutorial</div>
-                  <div className=''>{mobileMenu}</div>
-                </div>
-            </div>
-          </div>
-        </div>
-
-
-        }
-        disabled={mobileMenuDisabled}
-        display={'inherit'}
-        respondsToHover={false}
-        popoverProps={_.assign({
-          popoverClasses: 'round shadow-darken25-bold bg-white clip py18 px24',
-
-        })}>
-        <button onClick={this.handleClick} className={'block flex-parent flex-parent--center-cross'}>
-          <svg className={'icon--l nav-mobile color-gray-dark opacity75'}><use href={`#icon-${icon}`}/></svg>
-        </button>
-      </PopoverTrigger>
-
-      {
-        <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "overview" ? 'border-b border--3' : ''}`} to={prefixLink('/' + activeSdk + '/overview/')}>Overview</Link>}
-        {mapSdkActive || mapboxJavaActive ? <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "examples" ? 'border-b border--3' : ''}`} to={prefixLink('/' + activeSdk + '/examples/')}>Examples</Link> : ''}
-        {mapSdkActive ? <Link className={`py12 transition mobile-right-nav unround btn color-gray-dark nav-item bg-transparent txt-s  ${activeSection === "tutorials" ? 'border-b border--3' : ''}`} to={prefixLink('/' + activeSdk + '/tutorials/')}>Tutorials</Link> : ''}
-      </div>
-    </div>
-  </div>
+  <Navbar
+    windowWidth={windowWidth}
+    pages={this.props.children.props.route.pages}
+    activeSdk={activeSdk}
+    pathname={this.props.location.pathname}
+  />
 
   {/* Start content */}
-  <div className={`scroll-styled ${windowWidth > 800 && 'flex-parent--center-main flex-parent'} limiter pb96 pl24 pr24 pt24 overflow-y t48 b0 fixed flex-child`}>
-  <div className={`${windowWidth > 800 && 'flex-parent--space-between-main flex-parent'}`}>
+  <div className={`scroll-styled ${windowWidth > 690 && 'flex-parent--center-main flex-parent'} limiter pb96 pl24 pr24 pt24 overflow-y t48 b0 fixed flex-child`}>
+  <div className={`${windowWidth > 690 && 'flex-parent--space-between-main flex-parent'}`}>
 
-{includes(activeSection, 'examples') ? '' :
-    <div className={'col--3 pt42 col toc flex-child--no-shrink  scroll-styled'}>{docPages}
-    {mapboxJavaActive ? <PopoverTrigger content={
+{includes(this.props.location.pathname, '/examples/') ? '' :
+    windowWidth > 690 && <div className={'col col--2 pt42 pr18 pb18 flex-child--no-shrink fixed color-gray-dark unstyled-list scroll-styled'}>{docPages}
+    {includes(this.props.location.pathname, '/mapbox-services/') ? <PopoverTrigger content={
       <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
         <strong className={'color-gray-light p6 txt-mm'}>Javadoc</strong>
           <a href={prefixLink('/api/mapbox-java/libjava-core/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-core</a>
@@ -226,11 +118,11 @@ if (windowWidth > 640) {
       </div>
       }
       respondsToHover={true}
-      popoverProps={_.assign({
+      popoverProps={Object.assign({
         placement: 'right',
         alignment: 'center'
       })}>
-      <button className={'txt-fancy page-hover'}>
+      <button className={'txt-fancy bright-blue-color-on-hover'}>
         <strong>API Reference</strong>
       </button>
     </PopoverTrigger>  : ''}
@@ -240,4 +132,6 @@ if (windowWidth > 640) {
     </div></div>
   </div>);
   }
-});
+}
+
+export default MainLayout

@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router';
-import {prefixLink} from 'gatsby-helpers'
+
+
 import includes from 'underscore.string/include';
-import {Container, Grid, Span} from 'react-responsive-grid';
+
 import find from 'lodash/find';
 import {OverviewHeader} from '../../src/components/overview_header';
 import * as constants from '../../constants';
@@ -46,7 +46,7 @@ module.exports = React.createClass({
       <div>
         {/* Content */}
         <div className={'prose color-gray-dark'}>
-          <div className={`content ${isExample || (windowWidth < 800) ? 'col--12' : 'col--9 col col--offl3'}`}>
+          <div className={`content ${isExample || (windowWidth < 690) ? 'col--12' : 'col--9 col col--offl3'}`}>
             {show && <OverviewHeader
               deviceImg={"../../assets/imgs/map-sdk-splash.png"}
               sdk={"Map SDK"}

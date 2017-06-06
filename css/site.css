@@ -1,0 +1,75 @@
+@custom-media --xl-screen (min-width: 1200px);
+@custom-media --l-screen (min-width: 800px);
+@custom-media --m-screen (min-width: 640px);
+@custom-media --s-screen (min-width: 440px);
+
+/* ------------- Assembly Extensions ------------ */
+
+.border--3 { border-width: 3px !important; }
+
+.bg-green { background-color: #8CCA44 !important; }
+.icon-android-green svg {color: #8CCA44; }
+.bright-blue-color { color: #0082FF; }
+.bright-blue-color-on-hover:hover {color: #0082FF !important; }
+.border--bright-blue-color { border-color: #273d56; }
+.border--gray-less-faint { border-color: #E8EBEE !important; }
+.bright-blue-color-on-hover-anchor a:hover { color: #0082FF; }
+
+.hmax130 img { max-height: 130px; }
+.wmax260 { max-width: 260px; }
+
+.text-decoration-none { text-decoration: none !important; }
+.unstyled-list li { list-style-type: none !important; }
+
+.overflow-y { overflow-y: auto; }
+
+.t48 { top: 48px; }
+.b0 { bottom: 0; }
+
+.txt-ms {
+  font-size: 13px !important;
+  line-height: 18px;
+}
+
+/* ------------------- Limiter ------------------ */
+
+.limiter {
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%;
+}
+
+@media (--xl-screen) {
+  .limiter {
+    padding-left: 12.5% !important;
+    padding-right: 12.5% !important;
+  }
+}
+
+/* ------------ Content adjustments ------------- */
+
+.prose h1, h2, h3, h4, h5, h6 {
+  font-weight: normal !important;
+}
+
+@media (--s-screen) {
+  .note-card {
+    margin-top: -12px;
+    width: 240px;
+    margin-left: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+/* ---------- Code snippet adjustments ---------- */
+
+code, pre {
+  font-family: 'Fira Mono Medium', Monaco, monospace !important;
+  font-weight: bold !important;
+  font-size: 12px !important;
+  word-break: normal !important;
+}
+
+pre {
+  background-color: #232323 !important;
+}

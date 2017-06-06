@@ -29,7 +29,7 @@ mapboxMap.addMarker(new MarkerOptions()
         </div>
       </div>
       <div class="flex-child flex-child--no-shrink w18 fr border-l border--gray-light flex-parent flex-parent--center-cross">
-        <svg class='flex-child align-middle icon--l'><use href='#icon-chevron-right'/></svg>
+        <svg class='flex-child align-middle icon--l'><use xlink:href='#icon-chevron-right'/></svg>
       </div>
     </div>
   </a>
@@ -88,7 +88,7 @@ mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
         </div>
       </div>
       <div class="flex-child flex-child--no-shrink w18 fr border-l border--gray-light flex-parent flex-parent--center-cross">
-        <svg class='flex-child align-middle icon--l'><use href='#icon-chevron-right'/></svg>
+        <svg class='flex-child align-middle icon--l'><use xlink:href='#icon-chevron-right'/></svg>
       </div>
     </div>
   </a>
@@ -123,7 +123,7 @@ Info windows are used to display information in a popup window anchored to a mar
         </div>
       </div>
       <div class="flex-child flex-child--no-shrink w18 fr border-l border--gray-light flex-parent flex-parent--center-cross">
-        <svg class='flex-child align-middle icon--l'><use href='#icon-chevron-right'/></svg>
+        <svg class='flex-child align-middle icon--l'><use xlink:href='#icon-chevron-right'/></svg>
       </div>
     </div>
   </a>
