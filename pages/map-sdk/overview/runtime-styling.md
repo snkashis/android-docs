@@ -174,10 +174,22 @@ private static class PointEvaluator implements TypeEvaluator<Point> {
 <!-- link to GoJSON plugin -->
 
 ### Layers
+While sources hold the data, layers are used to style and display the information. Several layer types are offered depending on your source geometry. Except for layers of the background type, each layer needs to refer to a source. You can optionally filter features and then define how those features are styled.
+
+Each layer offers a `setProperties` API which can be used to style the layer in many different ways. Note that instead of creating different layers depending on certain cases inside your source data, it's recommended to use data driven styling instead to reduce the amount of layers the map needs to render.
 
 #### Background
+The background layer type is unique in that it doesn't require a source to be added to the map. Background layers can be a solid color or a pattern can be added.
+
+```java
+BackgroundLayer backgroundLayer = new BackgroundLayer("background-layer");
+backgroundLayer.setProperties(
+  PropertyFactory.backgroundColor(Color.BLUE)
+);
+```
 
 #### Fill
+
 
 #### Line
 
