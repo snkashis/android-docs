@@ -9,6 +9,7 @@ import {Popover} from '@mapbox/assembly-components/popover';
 import {PopoverTrigger} from '@mapbox/assembly-components/popover-trigger';
 import {OverviewHeader} from '../src/components/overview_header';
 import {Navbar} from '../src/components/navbar';
+import * as constants from '../constants';
 
 import 'css/site.css';
 import 'css/markdown-styles.css'
@@ -127,6 +128,9 @@ class MainLayout extends React.Component {
         <strong>API Reference</strong>
       </button>
     </PopoverTrigger>  : ''}
+
+    {includes(this.props.location.pathname, '/map-sdk/') ? <div className={'flex-parent wmin180 pb12 flex-parent--column'}><a href={prefixLink('/api/map-sdk/' + constants.MAP_SDK_VERSION + '/index.html')} className='txt-fancy bright-blue-color-on-hover'>API Reference</a></div>: ''}
+    {includes(this.props.location.pathname, '/navigation/') ? <div className={'flex-parent wmin180 pb12 flex-parent--column'}><a href={prefixLink('/api/navigation-sdk/' + constants.NAVIGATION_VERSION + '/index.html')} className='txt-fancy bright-blue-color-on-hover'>API Reference</a></div>: ''}
 
     </div>}
       {this.props.children}
