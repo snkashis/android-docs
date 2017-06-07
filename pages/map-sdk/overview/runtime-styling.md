@@ -290,7 +290,7 @@ A filter selects specific features from a layer. A filter is an array of one of 
 
 A key must be a string that identifies a feature property or a special key. Read [more on filters here](https://www.mapbox.com/mapbox-gl-js/style-spec/#types-filter)
 
-#### Modify Properties
+### Modify Properties
 Sources and layers aren't immutable and therefore, can be modified anytime during the map render. For example, to alter the fill color of a layer after it's been added to the map, you use the `mapboxMap` object to get the layer and set the property.
 
 ```java
@@ -311,5 +311,5 @@ if (geoJsonSource != null) {
 }
 ```
 
-#### Capturing click events
+### Capturing click events
 Layers are not clickable and don't expose any event listeners for you to handle user input. Instead, the map querying feature described in a separate doc go over how to detect when a user has clicked on a polygon inside your fill layer for example.
