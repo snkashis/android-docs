@@ -280,7 +280,7 @@ A filter selects specific features from a layer. A filter is an array of one of 
 | `Filter.lt`     | Check the property does not exceed the given value            |
 | `Filter.gte`    | Check the property exceeds or equals the given value          |
 | `Filter.gt`     | Check the property exceeds the given value                    |
-| `Filter.neq'    | Check the property does not equal the given value             |
+| `Filter.neq`    | Check the property does not equal the given value             |
 | `Filter.eq`     | Check the property equals the given value                     |
 | `Filter.notHas` | Check the property's existence, negated                       |
 | `Filter.has`    | Check the property's existence                                |
