@@ -311,5 +311,5 @@ if (geoJsonSource != null) {
 }
 ```
 
-#### Capturing click events:
+#### Capturing click events
 Layers are not clickable and don't expose any event listeners for you to handle user input. Instead, the map querying feature described in a separate doc go over how to detect when a user has clicked on a polygon inside your fill layer for example.
