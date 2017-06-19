@@ -32,10 +32,10 @@ class Navbar extends React.Component {
             {this.props.windowWidth > 690 && <PopoverTrigger content={
               <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
                 <strong className={'color-gray-light p6 txt-mm'}>Products</strong>
-                <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/map-sdk/overview/')}>Map SDK</Link>
-                <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/plugins/overview/')}>Plugins</Link>
-                <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/mapbox-services/overview/')}>Mapbox Services</Link>
-                <Link className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/navigation/overview/')}>Navigation</Link>
+                <Link className={`transition txt-bold bright-blue-color-on-hover color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/map-sdk/overview/')}>Map SDK</Link>
+                <Link className={`transition txt-bold bright-blue-color-on-hover color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/plugins/overview/')}>Plugins</Link>
+                <Link className={`transition txt-bold bright-blue-color-on-hover color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/mapbox-services/overview/')}>Mapbox Services</Link>
+                <Link className={`transition txt-bold bright-blue-color-on-hover color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/navigation/overview/')}>Navigation</Link>
               </div>
               }
               respondsToHover={true}
