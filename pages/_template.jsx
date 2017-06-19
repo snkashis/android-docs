@@ -9,6 +9,7 @@ import {Popover} from '@mapbox/assembly-components/popover';
 import {PopoverTrigger} from '@mapbox/assembly-components/popover-trigger';
 import {OverviewHeader} from '../src/components/overview_header';
 import {Navbar} from '../src/components/navbar';
+import * as constants from '../constants';
 
 import 'css/site.css';
 import 'css/markdown-styles.css'
@@ -109,13 +110,13 @@ class MainLayout extends React.Component {
     {includes(this.props.location.pathname, '/mapbox-services/') ? <PopoverTrigger content={
       <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
         <strong className={'color-gray-light p6 txt-mm'}>Javadoc</strong>
-          <a href={prefixLink('/api/mapbox-java/libjava-core/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-core</a>
-          <a href={prefixLink('/api/mapbox-java/libjava-geojson/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-geojson</a>
-          <a href={prefixLink('/api/mapbox-java/libjava-services/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-services</a>
-          <a href={prefixLink('/api/mapbox-java/libjava-services-rx/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-java-services-rx</a>
-          <a href={prefixLink('/api/mapbox-java/libandroid-services/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-android-services</a>
-          <a href={prefixLink('/api/mapbox-java/libandroid-telemetry/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-android-telemetry</a>
-          <a href={prefixLink('/api/mapbox-java/libandroid-ui/2.1.0/index.html')} className={`transition txt-bold color-gray-dark pl6 bg-transparent txt-s`}>mapbox-android-ui</a>
+          <a href={prefixLink(`/api/mapbox-java/libjava-core/${constants.MAS_VERSION}/index.html`)} className={`transition bright-blue-color-on-hover txt-bold color-gray-dark pl6 bg-transparent txt-ms`}>mapbox-java-core</a>
+          <a href={prefixLink(`/api/mapbox-java/libjava-geojson/${constants.MAS_VERSION}/index.html`)} className={`transition bright-blue-color-on-hover txt-bold color-gray-dark pl6 bg-transparent txt-ms`}>mapbox-java-geojson</a>
+          <a href={prefixLink(`/api/mapbox-java/libjava-services/${constants.MAS_VERSION}/index.html`)} className={`transition bright-blue-color-on-hover txt-bold color-gray-dark pl6 bg-transparent txt-ms`}>mapbox-java-services</a>
+          <a href={prefixLink(`/api/mapbox-java/libjava-services-rx/${constants.MAS_VERSION}/index.html`)} className={`transition bright-blue-color-on-hover txt-bold color-gray-dark pl6 bg-transparent txt-ms`}>mapbox-java-services-rx</a>
+          <a href={prefixLink(`/api/mapbox-java/libandroid-services/${constants.MAS_VERSION}/index.html`)} className={`transition bright-blue-color-on-hover txt-bold color-gray-dark pl6 bg-transparent txt-ms`}>mapbox-android-services</a>
+          <a href={prefixLink(`/api/mapbox-java/libandroid-telemetry/${constants.MAS_VERSION}/index.html`)} className={`transition bright-blue-color-on-hover txt-bold color-gray-dark pl6 bg-transparent txt-ms`}>mapbox-android-telemetry</a>
+          <a href={prefixLink(`/api/mapbox-java/libandroid-ui/${constants.MAS_VERSION}/index.html`)} className={`transition bright-blue-color-on-hover txt-bold color-gray-dark pl6 bg-transparent txt-ms`}>mapbox-android-ui</a>
       </div>
       }
       respondsToHover={true}
@@ -127,6 +128,9 @@ class MainLayout extends React.Component {
         <strong>API Reference</strong>
       </button>
     </PopoverTrigger>  : ''}
+
+    {includes(this.props.location.pathname, '/map-sdk/overview/') ? <div className={'flex-parent wmin180 pb12 flex-parent--column'}><a href={prefixLink('/api/map-sdk/' + constants.MAP_SDK_VERSION + '/index.html')} className='txt-fancy bright-blue-color-on-hover'>API Reference</a></div>: ''}
+    {includes(this.props.location.pathname, '/navigation/overview/') ? <div className={'flex-parent wmin180 pb12 flex-parent--column'}><a href={prefixLink('/api/navigation-sdk/' + constants.NAVIGATION_VERSION + '/index.html')} className='txt-fancy bright-blue-color-on-hover'>API Reference</a></div>: ''}
 
     </div>}
       {this.props.children}

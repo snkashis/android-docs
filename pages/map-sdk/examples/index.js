@@ -183,6 +183,12 @@ export const extrusions = [
   difficulty={'intermediate'}
   exampleImg={'/assets/imgs/map-sdk/examples/3d-extrusions/3d-builds.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/BasicExtrusionActivity.java'}/>,
+  <ExampleCard
+  exampleTitle={'Display 3D building height based on data'}
+  exampleDescription={"Use extrusions to display 3D building height based on data"}
+  difficulty={'intermediate'}
+  exampleImg={'/assets/imgs/map-sdk/examples/3d-extrusions/data-height.png'}
+  exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/extrusions/PopulationDensityExtrusionActivity.java'}/>,
 ]
 
 export const dds = [
