@@ -6,7 +6,7 @@ path: /plugins/overview/traffic/
 The Mapbox Traffic Plugin adds a real-time traffic layer to any Mapbox base map. If you want to display a traffic layer inside your application, you only need to include this plugin dependency in your project.
 
 ### Install the Traffic Plugin
-By using the Traffic Plugin, you are also including the Android Map SDK which means that you'll need to setup your project by also following the steps in the [overview documentation]().
+By using the Traffic Plugin, you are also including the Android Map SDK which means that you'll need to set up your project by also following the steps in the [overview documentation]().
 
 #### 1. Add the dependency
 
@@ -28,7 +28,7 @@ dependencies {
 
 #### 2. Add traffic
 
-Open the activity Java file you'd like to include the traffic plugin in and add the code below to the file.
+Open the Java file of the activity that you'd like to include the traffic plugin in and add the code below to the file.
 
 ```java
 @Override
@@ -39,4 +39,4 @@ public void onMapReady(MapboxMap mapboxMap) {
 ```
 
 ### Features
-`isEnabled()` can be used to determine whether or not the traffic layer is currently visible on the map and then you can react accordingly if needed. The map can change styles at anytime and the map traffic will be redrawn in the new map style.
+`isEnabled()` can be used to determine whether or not the traffic layer is currently visible on the map. You can react accordingly to whether the layer is visible or not. The map can change styles at anytime and the map traffic will be redrawn in the new map style.
