@@ -189,6 +189,12 @@ export const extrusions = [
   difficulty={'intermediate'}
   exampleImg={'/assets/imgs/map-sdk/examples/3d-extrusions/data-height.png'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/extrusions/PopulationDensityExtrusionActivity.java'}/>,
+  <ExampleCard
+  exampleTitle={'Use GeoJSON data to set extrusion height'}
+  exampleDescription={"Use GeoJSON data to set extrusion height"}
+  difficulty={'intermediate'}
+  exampleImg={'/assets/imgs/map-sdk/examples/3d-extrusions/geojson_extrusions.gif'}
+  exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/5937a1c4cb677f2056deb9170792e169a85b4fa0/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/extrusions/MarathonExtrusionActivity.java'}/>,
 ]
 
 export const dds = [
