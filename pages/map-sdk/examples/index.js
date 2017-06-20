@@ -181,8 +181,26 @@ export const extrusions = [
   exampleTitle={'3D buildings'}
   exampleDescription={"Use extrusions to display builds' height in 3D"}
   difficulty={'intermediate'}
-  exampleImg={'/assets/imgs/map-sdk/examples/3d-extrusions/3d-builds.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/3d-extrusions/3d-builds.gif'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/BasicExtrusionActivity.java'}/>,
+  <ExampleCard
+  exampleTitle={'Display 3D building height based on vector data'}
+  exampleDescription={"Use imported vector data to set the height of 3D building extrusions"}
+  difficulty={'intermediate'}
+  exampleImg={'/assets/imgs/map-sdk/examples/3d-extrusions/population_extrusions.gif'}
+  exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/extrusions/PopulationDensityExtrusionActivity.java'}/>,
+  <ExampleCard
+  exampleTitle={'Use GeoJSON data to set extrusion height'}
+  exampleDescription={"Use data-driven styling and GeoJSON data to set extrusions' heights"}
+  difficulty={'intermediate'}
+  exampleImg={'/assets/imgs/map-sdk/examples/3d-extrusions/geojson_extrusions.gif'}
+  exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/5937a1c4cb677f2056deb9170792e169a85b4fa0/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/extrusions/MarathonExtrusionActivity.java'}/>,
+  <ExampleCard
+  exampleTitle={'Adjust light location and color'}
+  exampleDescription={"Change the location and color of the light that's shined on extrusions"}
+  difficulty={'intermediate'}
+  exampleImg={'/assets/imgs/map-sdk/examples/3d-extrusions/extrusion_light.gif'}
+  exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/5937a1c4cb677f2056deb9170792e169a85b4fa0/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/extrusions/AdjustExtrusionLightActivity.java'}/>
 ]
 
 export const dds = [
@@ -190,7 +208,7 @@ export const dds = [
   exampleTitle={'Style circles categorically'}
   exampleDescription={"Using a categorical circle-color property function for a visualization."}
   difficulty={'intermediate'}
-  exampleImg={'/assets/imgs/map-sdk/examples/dds/categorically-dds.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/dds/categorically-dds.gif'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/ChoroplethZoomChangeActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Update by zoom level'}
@@ -232,7 +250,7 @@ export const query = [
   exampleTitle={'Feature count'}
   exampleDescription={"Get the feature count inside a bounding box and highlight all the  buidings."}
   difficulty={'intermediate'}
-  exampleImg={'/assets/imgs/map-sdk/examples/query/feature-count.png'}
+  exampleImg={'/assets/imgs/map-sdk/examples/query/feature-count.gif'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/query/FeatureCountActivity.java'}/>,
   <ExampleCard
   exampleTitle={'Query a map feature'}

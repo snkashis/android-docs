@@ -31,6 +31,29 @@
   line-height: 18px;
 }
 
+td,th {
+  text-align: left !important;
+  padding: 4px !important;
+  font-size: 12px !important;
+}
+
+th {
+    background-color: #E8EBEE;
+}
+
+td, code, pre {
+  font-weight: normal !important;
+  font-size: 12px !important;
+}
+
+
+
+
+pre {
+  background-color: #232323 !important;
+}
+
+
 /* ------------------- Limiter ------------------ */
 
 .limiter {
@@ -63,13 +86,19 @@
 
 /* ---------- Code snippet adjustments ---------- */
 
+code {
+  font-family: 'Fira Mono Medium', Monaco, monospace !important;
+  font-weight: normal;
+}
+
 code, pre {
   font-family: 'Fira Mono Medium', Monaco, monospace !important;
-  font-weight: bold !important;
+
   font-size: 12px !important;
   word-break: normal !important;
 }
 
 pre {
+  font-weight: bold;
   background-color: #232323 !important;
 }
