@@ -165,7 +165,7 @@ Now you're ready to start building with Mapbox!
 
 Let's add a map of Chicago to our app. To start, open your `My First Mapbox App` in Android Studio and navigate to `~/app/src/main/java/com.mycompany.myfirstmapboxapp/MainActivity.java`.
 
-![](../../assets/img/first-steps/final_workspace.png)
+![](../../assets/img/first-steps/final-workspace.png)
 
 We're going to use the `mapView` class we set up earlier to add a Mapbox map to our app. The app needs to know *when* to add the map, so we'll do so when the activity is initialized with `onCreate`.
 
