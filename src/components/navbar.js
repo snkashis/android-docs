@@ -27,7 +27,28 @@ class Navbar extends React.Component {
           {/* Left side nav */}
           <div className={'flex-child col col--6 inline-block'}>
             {this.props.windowWidth > 690 && <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Platform</strong></div>}
-            <div className={'txt-s py12 bg-transparent btn  color-gray-dark'}><strong>Android</strong>{/*}<svg className={'icon'}><use xlinkHref={'#icon-chevron-down'}/></svg>*/}</div>
+            {this.props.windowWidth > 690 && <PopoverTrigger content={
+              <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
+                <strong className={'color-gray-light p6 txt-mm'}>Platforms</strong>
+                <Link className={`transition txt-bold bright-blue-color-on-hover color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/')}>Android</Link>
+                <Link className={`transition txt-bold bright-blue-color-on-hover color-gray-dark pl6 bg-transparent txt-m`} to='https://www.mapbox.com/ios-sdk/'>iOS</Link>
+                <Link className={`transition txt-bold bright-blue-color-on-hover color-gray-dark pl6 bg-transparent txt-m`} to='https://doc.qt.io/qt-5/location-plugin-mapbox.html'>Qt</Link>
+                <Link className={`transition txt-bold bright-blue-color-on-hover color-gray-dark pl6 bg-transparent txt-m`} to='https://www.mapbox.com/unity/'>Unity</Link>
+                <Link className={`transition txt-bold bright-blue-color-on-hover color-gray-dark pl6 bg-transparent txt-m`} to='https://www.mapbox.com/mapbox-gl-js/'>Web</Link>
+              </div>
+              }
+              respondsToHover={true}
+              popoverProps={Object.assign({
+                placement: 'bottom',
+                alignment: 'center'
+              })}
+              >
+              <button className={'txt-s py12 border--bright-blue-color bright-blue-color-on-hover bg-transparent btn flex-parent flex-parent--center-cross color-gray-dark'}>
+                <strong>
+                Android
+                </strong><svg className={'icon'}><use xlinkHref={'#icon-chevron-down'}/></svg>
+              </button>
+            </PopoverTrigger>}
             {this.props.windowWidth > 690 && <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Product</strong></div>}
             {this.props.windowWidth > 690 && <PopoverTrigger content={
               <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
