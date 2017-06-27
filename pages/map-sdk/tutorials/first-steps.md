@@ -305,7 +305,7 @@ To set your map's initial style to `LIGHT`, open your `activity_main.xml` layout
 />
 ```
 
-You can also change your style programmatically using `MapboxMap` class' `setStyleURL();` method. Inside `onCreate()`, change the line that sets `mapboxMap`'s style to:
+You can also change your style programmatically using `MapboxMap` class' `setStyleUrl();` method. Inside `onCreate()`, change the line that sets `mapboxMap`'s style to:
 
 ```java
 mapboxMap.setStyleUrl(Style.LIGHT);
@@ -315,7 +315,7 @@ mapboxMap.setStyleUrl(Style.LIGHT);
 
 ### Creating your own styles
 
-You can create custom styles with [Mapbox Studio](https://www.mapbox.com/mapbox-studio/) and then add them to your app. To programmatically add one of your custom styles to your `mapboxMap`, head to your [styles page](https://www.mapbox.com/studio/styles/), copy your style's [style URL](https://www.mapbox.com/help/define-style-url/), and then add it to your `mapboxMap` object with `setStyleURL();`:
+You can create custom styles with [Mapbox Studio](https://www.mapbox.com/mapbox-studio/) and then add them to your app. To programmatically add one of your custom styles to your `mapboxMap`, head to your [styles page](https://www.mapbox.com/studio/styles/), copy your style's [style URL](https://www.mapbox.com/help/define-style-url/), and then add it to your `mapboxMap` object with `setStyleUrl();`:
 
 ```java
 mapboxMap.setStyleUrl("mapbox://styles/<your-account-name>/<your-style-ID>");
