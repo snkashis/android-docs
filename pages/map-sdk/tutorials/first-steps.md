@@ -39,13 +39,13 @@ Android Studio can help you set up virtual Android devices on your computer to h
 
 We recommend installing with [Gradle](http://www.gradle.org/). This will automatically install the necessary dependencies and pull the Map SDK binaries from the Maven Central repository.
 
-To install the current stable version, add this to your **Module Build File** `~/MyFirstMapboxApp/app/build.gradle`:
+First, find your app's **Module Build File**, look for the "Gradle Scripts" section in the sidebar on the left hand side of Android Studio. Expand the section and double click on the "build.gradle (Module: app)" which is highlighted in blue in the screenshot below :
+
+![](../../assets/imgs/first-steps/build-gradle.png)
+
+To install the current stable version, add the following to the `dependencies` of your **Module Build File** `~/MyFirstMapboxApp/app/build.gradle`:
 
 ```groovy
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     // add the Mapbox SDK dependency below
     compile ('com.mapbox.mapboxsdk:mapbox-android-sdk:{mapSdkVersion}@aar'){
@@ -53,8 +53,15 @@ dependencies {
     }
 }
 ```
+Above the `dependencies` section (`dependencies { ...`), add the following code:
 
-[](../../assets/imgs/first-steps/build-gradle.png)
+```groovy
+repositories {
+    mavenCentral()
+}
+```
+
+
 
 ### App permissions
 
@@ -73,7 +80,7 @@ To use Mapbox services and APIs, such as maps, directions, and geocoding, you mu
 
 First, go to your account settings and create a new access token for `My First Mapbox App`. Once you've got your token, open `strings.xml` file from `~/MyFirstMapboxApp/app/src/main/res/values`.
 
-[](../../assets/imgs/first-steps/strings.png)
+![](../../assets/imgs/first-steps/strings.png)
 
 Add a new string for your access token:
 
@@ -98,6 +105,10 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
+**Make sure that `Mapbox.getInstance(this, getString(R.string.access_token));` always runs before `setContentView`.** If not, your app will crash!
+
+
+
 ### MapView
 
 The `MapView` behaves like any other `View` and its behavior can be changed statically with an [XML layout](http://developer.android.com/guide/topics/ui/declaring-layout.html) file, or programmatically during runtime.
@@ -120,6 +131,12 @@ To add the `MapView` as a layout element, replace the code in the `activity_main
     android:layout_height="match_parent" />
 </RelativeLayout>
 ```
+
+Once you add the `MapView` to your layout, your layout preview should have a map which fills the device's screen _similar_ to:
+
+
+![](../../assets/imgs/first-steps/mapview_setup.png)
+
 
 Later on, you can call the `MapView` class programmatically within an Activity:
 
@@ -148,7 +165,7 @@ Now you're ready to start building with Mapbox!
 
 Let's add a map of Chicago to our app. To start, open your `My First Mapbox App` in Android Studio and navigate to `~/app/src/main/java/com.mycompany.myfirstmapboxapp/MainActivity.java`.
 
-![Screenshot]({{site.baseurl}}/img/android/workspace.png)
+![](../../assets/imgs/first-steps/final-workspace.png)
 
 We're going to use the `mapView` class we set up earlier to add a Mapbox map to our app. The app needs to know *when* to add the map, so we'll do so when the activity is initialized with `onCreate`.
 
@@ -167,7 +184,7 @@ private MapView mapView;
     }
 ```
 
-Next, use your new `mapView` class to create a `MapboxMap` object. `MapboxMap` has lots of built-in methods that will allow you to change map styles or camera position, add markers, and more. Create your `MapboxMap` inside an `OnMapReadyCallback`:
+Next, use your new `mapView` object to create a `MapboxMap` object. `MapboxMap` has lots of built-in methods that will allow you to change map styles or camera position, add markers, and more. Create your `MapboxMap` inside an `OnMapReadyCallback`:
 
 ```java
 private MapView mapView;
@@ -209,7 +226,9 @@ You can configure many of your map's characteristics, including starting camera 
 />
 ```
 
-When you've finished entering the above code, you will probably see some red warning text from Android Studio. This is because we haven't yet imported some of the classes we're referencing in `MainActivity.java`. You can automatically import these classes by pressing Alt + Enter (option + return on Mac). Alternatively, manually add the following to the top of your `MainActivity.java` file:
+[Click here](https://www.mapbox.com/android-docs/map-sdk/overview/#mapview-xml-attributes) to view all of the XML attributes that you can set for a `MapView`. Customize your map to your heart's content!
+
+When you've finished entering the above code, you will probably see some red warning text from Android Studio. This is because we haven't yet imported some of the classes we're referencing in `MainActivity.java`. You can automatically import these classes by pressing <kbd class='txt-kbd'>Alt</kbd>+<kbd class='txt-kbd'>Enter</kbd> (<kbd class='txt-kbd'>Option</kbd>+<kbd class='txt-kbd'>Return</kbd> on Mac). Alternatively, manually add the following to the top of your `MainActivity.java` file, anywhere above the line that reads `public class MainActivity extends AppCompatActivity`:
 
 ```java
 import android.app.Activity;
@@ -221,7 +240,7 @@ import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.MapboxAccountManager;
 ```
 
-Next, we'll handle the other types of events that might affect our map app:
+Next, we'll handle the other types of events that might affect our map app. This code is related to the map's behavior with [an Android app's activity lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle.html):
 
 ```java
 
@@ -268,13 +287,13 @@ protected void onDestroy() {
 }
 ```
 
-Click the **Run 'app'** button <img src="{{site.baseurl}}/img/android/run.png" class="inline" style="margin: 0" /> to build your app. Android Studio will take a few seconds to build and if it finishes without errors, you'll be able to test drive it in the AVD you set up earlier.
+Click the **Run 'app'** button <img src="../../assets/imgs/first-steps/run.png" class="inline" style="margin: 0" /> to build your app. Android Studio will take a few seconds to build and if it finishes without errors, you'll be able to test drive it in the AVD you set up earlier.
 
-![]({{site.baseurl}}/img/android/initial-map.png)
+![](../../assets/imgs/first-steps/initial-map.png)
 
 ## Changing the map style
 
-The Mapbox Android SDK comes bundled with a handful of map styles, so let’s try changing it up a bit. You can find a list of the current bundled styles with the Mapbox SDK's Style constant. Let’s use the `LIGHT` style (the version of Mapbox Light that conforms to the {{site.styleVersion}} release of the [GL style specification](https://www.mapbox.com/mapbox-gl-style-spec/)).
+The Mapbox Android SDK comes bundled with a handful of map styles, so let’s try changing it up a bit. You can find a list of the current bundled styles with constants found in the Mapbox SDK's `Style` class.  Let’s use the `LIGHT` style (the version of Mapbox Light that conforms to the {{site.styleVersion}} release of the [GL style specification](https://www.mapbox.com/mapbox-gl-style-spec/)).
 
 To set your map's initial style to `LIGHT`, open your `activity_main.xml` layout file and set `mapbox:mapbox_styleUrl` to
 `@string/mapbox_style_light`:
@@ -286,17 +305,17 @@ To set your map's initial style to `LIGHT`, open your `activity_main.xml` layout
 />
 ```
 
-You can also change your style programmatically using `MapboxMap`'s `setStyleURL` method. Inside `onCreate()`, change the line that sets `mapboxMap`'s style to:
+You can also change your style programmatically using `MapboxMap` class' `setStyleUrl();` method. Inside `onCreate()`, change the line that sets `mapboxMap`'s style to:
 
 ```java
 mapboxMap.setStyleUrl(Style.LIGHT);
 ```
 
-![]({{site.baseurl}}/img/android/change_style.png)
+![](../../assets/imgs/first-steps/change_style.png)
 
 ### Creating your own styles
 
-You can create custom styles with [Mapbox Studio](https://www.mapbox.com/mapbox-studio/) and add them to your app. To add one of your custom styles to your `mapboxMap`, head to your [styles page](https://www.mapbox.com/studio/styles/), copy your style's [style URL](https://www.mapbox.com/help/define-style-url/), then add it to your `mapboxMap` with `setStyleURL()`:
+You can create custom styles with [Mapbox Studio](https://www.mapbox.com/mapbox-studio/) and then add them to your app. To programmatically add one of your custom styles to your `mapboxMap`, head to your [styles page](https://www.mapbox.com/studio/styles/), copy your style's [style URL](https://www.mapbox.com/help/define-style-url/), and then add it to your `mapboxMap` object with `setStyleUrl();`:
 
 ```java
 mapboxMap.setStyleUrl("mapbox://styles/<your-account-name>/<your-style-ID>");
@@ -319,9 +338,13 @@ You just built a small Android app with Mapbox! You can now create an Android St
 As you continue to develop your Mapbox app, we recommend that you read the following:
 
 * [Draw and configure markers](https://www.mapbox.com/help/android-markers/) &mdash; learn how to add and customize markers in your application
-* [Attribution]({{site.url}}/android-sdk/#attribution) &mdash; comply with the licensing terms of the map data used in your application
+* [Attribution](https://www.mapbox.com/android-docs/map-sdk/overview/#attribution) &mdash; comply with the licensing terms of the map data used in your application
 
 We'll be adding and updating guides to help you learn all of Mapbox's amazing features as we continue to develop it. Here are a few resources to keep you up-to-date with Mapbox:
 
-* [Mapbox Android SDK documentation]({{site.url}}/android-sdk)
+* [Mapbox Android SDK documentation](https://www.mapbox.com/android-docs/map-sdk/overview)
 * [Mapbox GL Native on GitHub](https://github.com/mapbox/mapbox-gl-native) to follow the open source project behind Mapbox Mobile
+
+* [Download and explore our Android demo app](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en) to see all of the simple, complex, and beautiful ways that you can use Mapbox in your Android project. 
+
+

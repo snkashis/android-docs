@@ -179,7 +179,7 @@ export const annotations = [
 export const extrusions = [
   <ExampleCard
   exampleTitle={'3D buildings'}
-  exampleDescription={"Use extrusions to display builds' height in 3D"}
+  exampleDescription={"Use extrusions to display building heights in 3D"}
   difficulty={'intermediate'}
   exampleImg={'/assets/imgs/map-sdk/examples/3d-extrusions/3d-builds.gif'}
   exampleUrl={'https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/BasicExtrusionActivity.java'}/>,
