@@ -165,7 +165,7 @@ Now you're ready to start building with Mapbox!
 
 Let's add a map of Chicago to our app. To start, open your `My First Mapbox App` in Android Studio and navigate to `~/app/src/main/java/com.mycompany.myfirstmapboxapp/MainActivity.java`.
 
-![](../../assets/img/first-steps/final-workspace.png)
+![](../../assets/imgs/first-steps/final-workspace.png)
 
 We're going to use the `mapView` class we set up earlier to add a Mapbox map to our app. The app needs to know *when* to add the map, so we'll do so when the activity is initialized with `onCreate`.
 
@@ -287,9 +287,9 @@ protected void onDestroy() {
 }
 ```
 
-Click the **Run 'app'** button <img src="../../assets/img/first-steps/run.png" class="inline" style="margin: 0" /> to build your app. Android Studio will take a few seconds to build and if it finishes without errors, you'll be able to test drive it in the AVD you set up earlier.
+Click the **Run 'app'** button <img src="../../assets/imgs/first-steps/run.png" class="inline" style="margin: 0" /> to build your app. Android Studio will take a few seconds to build and if it finishes without errors, you'll be able to test drive it in the AVD you set up earlier.
 
-![](../../assets/img/first-steps/initial-map.png)
+![](../../assets/imgs/first-steps/initial-map.png)
 
 ## Changing the map style
 
@@ -311,7 +311,7 @@ You can also change your style programmatically using `MapboxMap` class' `setSty
 mapboxMap.setStyleUrl(Style.LIGHT);
 ```
 
-![](../../assets/img/first-steps/change_style.png)
+![](../../assets/imgs/first-steps/change_style.png)
 
 ### Creating your own styles
 
