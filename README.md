@@ -32,7 +32,7 @@ gatsby develop
 
 This will set up a server running at `http://localhost:8080`.
 
-### Documentation
+### Writing documentation
 #### Adding a new doc
 Inside the root directory, you'll see a `pages` folder which contains all of the documentation. It's divided into the different SDKs and within those folders, you'll find sections for `overview`, `examples`, and `tutorials` (if the sections are relevant).
 
@@ -46,6 +46,9 @@ Inside the `.md` file, there are a few requirements to help keep consistency acr
 2. Start off the document with a level one header.
 
 Open a pull request and let CI run once the documentation has been updated or added. After the PR is reviewed, merging into master will run CI again. However, this time it will deploy your changes automatically to the website.
+
+#### Linking in markdown
+If you want to link to a different document inside `/android-docs` you'll write `[](/map-sdk/overview/runtime-styling/)` for example, not including the `https://mapbox.com/android-docs`. Otherwise, if it's an external link, place the full path.
 
 #### Updating an SDK version
 In the main directory, open the `constants.js` and update the version number for the relevant SDK. When writing documentation, make sure to not hardcode the version numbers but instead use the constants. For example, write `{mapSdkVersion}` inside the document if you would want to mention `5.0.0` as the Map SDK.
