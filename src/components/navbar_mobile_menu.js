@@ -20,10 +20,6 @@ class NavbarMobileMenu extends React.Component {
     this.refs.mobileMenu.hide();
   }
 
-
-
-
-
 render() {
   let {opened} = this.state;
   var icon = 'menu';
@@ -46,7 +42,6 @@ render() {
     }
   });
 
-
   const masPages = this.props.pages.map((p, i) => {
     if (includes(p.path, '/mapbox-services/')) {
       if (p.data.title === undefined) { return; }
@@ -59,7 +54,6 @@ render() {
         </Link>)
     }
   });
-
 
   const navPages = this.props.pages.map((p, i) => {
     if (includes(p.path, '/navigation/')) {
@@ -109,7 +103,8 @@ render() {
     respondsToHover={false}
     popoverProps={Object.assign({
       placement: 'bottom',
-      alignment: 'center'
+      alignment: 'center',
+      accessibleTitle: 'Navigation drawer menu'
     })}
     >
     <button onClick={this.handleClick} className={'block flex-parent flex-parent--center-cross'}>
