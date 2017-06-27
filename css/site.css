@@ -80,8 +80,12 @@ pre {
     margin-top: -12px;
     width: 240px;
     margin-left: 24px;
-    padding-bottom: 24px;
+    padding-bottom: 0px !important;
   }
+}
+
+.note-card {
+  padding-bottom: 24px;
 }
 
 /* ---------- Code snippet adjustments ---------- */

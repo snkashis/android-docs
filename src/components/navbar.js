@@ -21,7 +21,7 @@ class Navbar extends React.Component {
     SdkTitle = SdkTitle.replace('navigation', 'Navigation SDK');
 
     return (
-      <div className={'z1 min48 flex-parent--center-main flex-parent w-full border-b border-t bg-white border--gray-less-faint fixed'}>
+      <div className={'z1 h48 flex-parent--center-main flex-parent w-full border-b border-t bg-white border--gray-less-faint fixed'}>
         <div className={'wmax1200 w-full pl24 pr24 flex-parent--space-between-main flex-parent'}>
 
           {/* Left side nav */}

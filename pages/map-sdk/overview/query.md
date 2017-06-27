@@ -57,8 +57,44 @@ public void onMapClick(@NonNull LatLng point) {
 
 #### Query features inside a bounding box
 
+<div class="fr flex-parent">
+  <a href="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/query/FeatureCountActivity.java" class="text-decoration-none flex-child--no-shrink mt6 color-blue-on-hover note-card flex-child-mxl">
+    <div class="border round wmax360 border--gray-light flex-parent">
+      <div class="flex-child p12">
+        <div class="txt-s txt-bold">
+          Query region
+          <span class="txt-xs txt-bold align-middle px6 color-blue round bg-blue-faint">EXAMPLE</span>
+        </div>
+        <div class="txt-s mt3 mb0 color-gray">
+          Query the rendered map to get the features found inside an Android view.
+        </div>
+      </div>
+      <div class="flex-child flex-child--no-shrink w18 fr border-l border--gray-light flex-parent flex-parent--center-cross">
+        <svg class='flex-child align-middle icon--l'><use xlink:href='#icon-chevron-right'/></svg>
+      </div>
+    </div>
+  </a>
+</div>
 
-#### Query & Modify GeoJSON Sources
+In addition to querying a specific point on the map, it is also possible to pass in a bounding box by passing in a `RectF` object. This can either come from a Android view currently displayed to the user on top of the map, or 4 coordinates that are currently showing within the viewport. The snippet below shows how to take four coordinates, convert them into `PointF` objects, adding them into a new `RectF` and finally, passing the "bounding box" into `queryRenderedFeatures()`.
 
+```java
+RectF rectF = new RectF(
+  mapboxMap.getProjection().toScreenLocation(<left coordinate>),
+  mapboxMap.getProjection().toScreenLocation(<top coordinate>),
+  mapboxMap.getProjection().toScreenLocation(<right coordinate>),
+  mapboxMap.getProjection().toScreenLocation(<bottom coordinate>)
+);
+mapboxMap.queryRenderedFeatures(rectF);
+```
 
-### Alter layers using the querying features
+### Query source features
+
+In contrast to `mapboxMap.queryRenderedFeatures()`, using `querySourceFeatures` returns all features matching the query parameters, whether or not they are rendered by the current style (i.e. visible). The domain of the query includes all currently-loaded vector tiles and GeoJSON source tiles: this function does not check tiles outside the currently visible viewport.
+
+Since features come from tiled vector data or GeoJSON data that is converted to tiles internally, feature geometries may be split or duplicated across tile boundaries just like if you were going to queryRenderedFeatures(). To query a source, you must pass in the query parameters as a set of `Filters` and only the features that satisfy the statement will be added to the returning list of features. For example, in the snippet below, the map style contains a GeoJSON source called population-source which contains a property for each feature defining it's population. When we query we are only wanting features which have a greater population than 100000.
+
+```java
+GeoJsonSource source = mapboxMap.getSourceAs("population-source");
+List<Feature> features = source.querySourceFeatures(Filter.gt("population", "100000"))
+```

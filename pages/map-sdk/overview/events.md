@@ -21,7 +21,7 @@ mapboxMap.setOnMapClickListener(new MapboxMap.OnMapClickListener() {
 #### Convert from screen pixel
 In occasions when you need to know the corresponding location on the screen where the user gesture occurred, you can convert the LatLng point to screen pixels. The MapboxMap object provides the `Projection` from the map which allows you to convert between `LatLng` coordinates to screen pixel using `mapboxMap.getProjection().toScreenLocation(<LatLng>);`. The reverse is available when you have a screen location in pixels and need to convert it to a corresponding `LatLng` object.
 
-A common use case for converting the values between `LatLng` and pixel coordinates is when you'd like to query a map layer or source to, for example, determine whether or not the users clicked on a POI. You can read more on how to do this in the [Query map features]() documentation.
+A common use case for converting the values between `LatLng` and pixel coordinates is when you'd like to query a map layer or source to, for example, determine whether or not the users clicked on a POI. You can read more on how to do this in the [Query map features](/map-sdk/overview/query-map/) documentation.
 
 ### Camera change events
 The map's camera represents the view looking down on the maps flat plane. In almost all cases, you'll be interacting with the camera to adjust the map's starting zoom and target position. The user also can manipulate the camera by performing gestures on the map such as pinch-to-zoom, two-finger scroll to tilt, and single finger moves to adjust the position.
