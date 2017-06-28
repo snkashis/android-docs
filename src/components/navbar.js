@@ -7,13 +7,33 @@ import {PopoverTrigger} from '@mapbox/assembly-components/popover-trigger';
 import {Link} from 'react-router';
 import {NavbarMobileMenu} from './navbar_mobile_menu';
 
+
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {isHoverOn: true};
+    this.togglePopoverHovering = this.togglePopoverHovering.bind(this);
+    this.hidePlatform = this.hidePlatform.bind(this);
+    this.hideSdk = this.hideSdk.bind(this);
+  }
+
+  togglePopoverHovering() {
+    this.setState(prevState => ({
+      isHoverOn: !prevState.isHoverOn
+    }));
+  }
+
+  hidePlatform() {
+    this.refs.platformDropDown.hide();
+    this.setState({ isHoverOn: !this.state.isHoverOn })
+  }
+
+  hideSdk() {
+    this.refs.sdkDropDown.hide();
+    this.setState({ isHoverOn: !this.state.isHoverOn })
   }
 
   render() {
-
     var SdkTitle = this.props.activeSdk;
     SdkTitle = SdkTitle.replace('map-sdk', 'Map SDK');
     SdkTitle = SdkTitle.replace('mapbox-services', 'Mapbox Services');
@@ -26,8 +46,8 @@ class Navbar extends React.Component {
 
           {/* Left side nav */}
           <div className={'flex-child col col--6 inline-block'}>
-            {this.props.windowWidth > 690 && <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Platform</strong></div>}
-            {this.props.windowWidth > 690 && <PopoverTrigger content={
+            <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Platform</strong></div>
+            <PopoverTrigger ref='platformDropDown' content={
               <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
                 <strong className={'color-gray-light p6 txt-mm'}>Platforms</strong>
                 <Link className={`transition txt-bold bright-blue-color-on-hover color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/')}>Android</Link>
@@ -37,20 +57,22 @@ class Navbar extends React.Component {
                 <Link className={`transition txt-bold bright-blue-color-on-hover color-gray-dark pl6 bg-transparent txt-m`} to='https://www.mapbox.com/mapbox-gl-js/'>Web</Link>
               </div>
               }
-              respondsToHover={true}
+              respondsToHover={this.state.isHoverOn}
               popoverProps={Object.assign({
                 placement: 'bottom',
-                alignment: 'center'
+                alignment: 'center',
+                onClose: (this.hidePlatform)
+
               })}
               >
-              <button className={'txt-s py12 border--bright-blue-color bright-blue-color-on-hover bg-transparent btn flex-parent flex-parent--center-cross color-gray-dark'}>
+              <button onClick={this.togglePopoverHovering} className={'txt-s py12 border--bright-blue-color bright-blue-color-on-hover bg-transparent btn flex-parent flex-parent--center-cross color-gray-dark'}>
                 <strong>
                 Android
                 </strong><svg className={'icon'}><use xlinkHref={'#icon-chevron-down'}/></svg>
               </button>
-            </PopoverTrigger>}
+            </PopoverTrigger>
             {this.props.windowWidth > 690 && <div className={'txt-s py12 bg-transparent btn px0 color-gray-light'}><strong>Product</strong></div>}
-            {this.props.windowWidth > 690 && <PopoverTrigger content={
+            {this.props.windowWidth > 690 && <PopoverTrigger ref='sdkDropDown' content={
               <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
                 <strong className={'color-gray-light p6 txt-mm'}>Products</strong>
                 <Link className={`transition txt-bold bright-blue-color-on-hover color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/map-sdk/overview/')}>Map SDK</Link>
@@ -59,13 +81,14 @@ class Navbar extends React.Component {
                 <Link className={`transition txt-bold bright-blue-color-on-hover color-gray-dark pl6 bg-transparent txt-m`} to={prefixLink('/navigation/overview/')}>Navigation</Link>
               </div>
               }
-              respondsToHover={true}
+              respondsToHover={this.state.isHoverOn}
               popoverProps={Object.assign({
                 placement: 'bottom',
-                alignment: 'center'
+                alignment: 'center',
+                onClose: (this.hideSdk)
               })}
               >
-              <button className={'txt-s py12 border--bright-blue-color bright-blue-color-on-hover bg-transparent btn flex-parent flex-parent--center-cross color-gray-dark'}>
+              <button onClick={this.togglePopoverHovering} className={'txt-s py12 border--bright-blue-color bright-blue-color-on-hover bg-transparent btn flex-parent flex-parent--center-cross color-gray-dark'}>
                 <strong>
                 {SdkTitle}
                 </strong><svg className={'icon'}><use xlinkHref={'#icon-chevron-down'}/></svg>
