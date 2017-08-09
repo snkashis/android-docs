@@ -46,10 +46,6 @@
 
 /* ------------- Assembly Extensions ------------ */
 
-.scroll-styled {
-  -webkit-overflow-scrolling: touch;
-}
-
 .icon-android-green svg {
   color: #8cca44;
 }

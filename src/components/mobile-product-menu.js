@@ -51,15 +51,26 @@ export class MobileProductMenu extends React.PureComponent {
     );
   }
 
+  onPopoverOpen = () => {
+    this.setState({ open: true });
+  };
+
+  onPopoverClose = () => {
+    this.setState({ open: false });
+  };
+
   render() {
+    const iconName = this.state.open ? 'close' : 'menu';
     return (
       <PopoverTrigger
         content={this.renderMenu}
         triggerProps={triggerProps}
         popoverProps={popoverProps}
+        onPopoverOpen={this.onPopoverOpen}
+        onPopoverClose={this.onPopoverClose}
       >
         <button className="block">
-          <Icon name="menu" themeIcon="icon--l" />
+          <Icon name={iconName} themeIcon="icon--l" />
         </button>
       </PopoverTrigger>
     );
