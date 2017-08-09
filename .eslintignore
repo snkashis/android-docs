@@ -1,0 +1,8 @@
+node_modules
+*.log
+.DS_Store
+coverage
+_site
+_tmp
+api
+_batfish_*

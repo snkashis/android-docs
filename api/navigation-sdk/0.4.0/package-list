@@ -1,0 +1,8 @@
+com.mapbox.services.android.navigation.v5
+com.mapbox.services.android.navigation.v5.instruction
+com.mapbox.services.android.navigation.v5.listeners
+com.mapbox.services.android.navigation.v5.milestone
+com.mapbox.services.android.navigation.v5.offroute
+com.mapbox.services.android.navigation.v5.osrm
+com.mapbox.services.android.navigation.v5.routeprogress
+com.mapbox.services.android.navigation.v5.snap

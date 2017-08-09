@@ -1,0 +1,143 @@
+@custom-media --s-screen (min-width: 440px);
+
+/* MAKE THESE CHANGES IN MAPBOX-HIGHLIGHTER THEME */
+
+.prose pre:not(.unprose) {
+  background-color: #273d56 !important;
+  border-radius: 3px;
+  padding: 12px !important;
+  white-space: pre-wrap;
+}
+
+.editor {
+  background-color: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* MAPBOX-ASSEMBLY */
+
+@keyframes progress-cycle {
+  0% {
+    background: #163cde;
+  }
+  100% {
+    background: #3b2093;
+  }
+}
+
+.page-loader {
+  /* Keep the rounded corners offscreen */
+  transform: translate3d(-100%, 0, 0);
+  transition: all 150ms ease-in;
+  animation: progress-cycle 0.75s ease-in-out alternate-reverse infinite;
+  width: 200%;
+}
+
+.page-loader-enter {
+  transform: translate3d(-10%, 0, 0);
+  transition: all 150ms ease-in;
+}
+
+.page-loader-leave {
+  transform: translate3d(100%, 0, 0);
+  transition: all 150ms ease-in;
+}
+
+/* ------------- Assembly Extensions ------------ */
+
+.scroll-styled {
+  -webkit-overflow-scrolling: touch;
+}
+
+.icon-android-green svg {
+  color: #8cca44;
+}
+.border--gray-less-faint {
+  border-color: #e8ebee !important;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+.unstyled-list li {
+  list-style-type: none !important;
+}
+
+.txt-ms {
+  font-size: 13px !important;
+  line-height: 18px;
+}
+
+td,
+th {
+  text-align: left !important;
+  padding: 4px !important;
+  font-size: 12px !important;
+}
+
+th {
+  background-color: #e8ebee;
+}
+
+td,
+code {
+  font-weight: normal !important;
+  font-size: 12px !important;
+}
+.prose pre:not(.unprose) {
+  padding: 0;
+  background: transparent;
+}
+
+@media (max-width: 1200px) {
+  .pr24-until-mxl {
+    padding-right: 24px !important;
+  }
+}
+
+/* ------------ Content adjustments ------------- */
+
+.prose h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal !important;
+}
+
+/* ------------- Markdown styles ---------------- */
+
+.doc-ul > .doc-ul-item::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  border: 1px solid #1f3349;
+  opacity: 0.4;
+  position: absolute;
+  margin: 9px 0 0 -20px;
+}
+
+.doc-ol {
+  counter-reset: listItem;
+}
+
+.doc-ol > .doc-ol-item {
+  margin: 3px 0;
+}
+
+ol li {
+  list-style-type: none;
+}
+
+ol li::before {
+  counter-increment: listItem;
+  content: counter(listItem);
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 1px 6px;
+  border: 1px solid #c6d2e1;
+  margin-right: 12px;
+}
