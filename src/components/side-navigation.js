@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import GithubSlugger from 'github-slugger';
 import PopoverTrigger from '@mapbox/react-popover-trigger';
 import { prefixUrl } from '@mapbox/batfish/modules/prefix-url';
@@ -178,10 +179,13 @@ class SideNavigation extends React.Component {
     slugger.reset();
     const childPageNavigation =
       props.childNavItems &&
-      props.childNavItems.map(item => {
+      props.childNavItems.map((item, i) => {
         const slug = slugger.slug(item.title);
+        const itemClasses = classnames({
+          mt6: i !== 0
+        });
         return (
-          <li key={slug}>
+          <li key={slug} className={itemClasses}>
             <a
               href={`${props.currentPath}#${slug}`}
               className="color-blue-on-hover"
