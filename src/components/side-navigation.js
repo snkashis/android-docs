@@ -233,7 +233,7 @@ class SideNavigation extends React.Component {
       apiItem = this.getNavigationApiItem();
     }
     return (
-      <div className="col col--2-mm pt12 fixed none block-mm color-gray-dark unstyled-list scroll-styled">
+      <div className="col col--2-mm pt12 fixed none block-mm color-gray-dark unstyled-list scroll-styled scroll-auto">
         {siblingPageNavigation}
         {apiItem}
       </div>

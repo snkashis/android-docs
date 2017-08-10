@@ -112,10 +112,7 @@ class PageShell extends React.PureComponent {
               currentSubnavItemText={currentSubnavItemText}
             />
           </div>
-          <div
-            className="flex-child pt12 scroll-styled"
-            style={{ overflow: 'auto' }}
-          >
+          <div className="flex-child pt12 scroll-styled scroll-auto">
             <div className="limiter grid pb120">
               {sideNavigation}
               <div className="pt6 color-gray-dark content col col--12 col--offl3-mm col--9-mm">
