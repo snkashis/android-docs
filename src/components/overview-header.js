@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Icon from '@mapbox/react-icon';
 import { AppropriateImage } from './appropriate-image';
 import * as constants from '../constants';
 
@@ -69,11 +70,9 @@ export class OverviewHeader extends React.PureComponent {
               {props.sdkFeatures.map((feature, i) =>
                 <div
                   key={i}
-                  className="col mb3 mt0 col--6-mxl col--12 flex-parent--center-cross flex-parent icon-android-green inline-block"
+                  className="col mb3 mt0 col--6-mxl col--12 flex-parent--center-cross flex-parent inline-block"
                 >
-                  <svg className={'icon'}>
-                    <use xlinkHref="#icon-check" />
-                  </svg>
+                  <Icon name="check" themeIcon="color-green" />
                   <span className="color-dark pr6 pl6">
                     {feature}
                   </span>
@@ -90,13 +89,11 @@ export class OverviewHeader extends React.PureComponent {
                 href={this.props.ghLink}
                 className="link text-decoration-none flex-parent-inline flex-parent--center-cross txt-bold"
               >
-                <svg className={'icon mr12'}>
-                  <use xlinkHref="#icon-github" />
-                </svg>
+                <div className="mr12">
+                  <Icon name="github" />
+                </div>
                 Contribute on GitHub
-                <svg className={'icon'}>
-                  <use xlinkHref="#icon-chevron-right" />
-                </svg>
+                <Icon name="chevron-right" />
               </a>
             </div>
           </div>
