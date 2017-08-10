@@ -1,85 +1,18 @@
 /*eslint-disable*/
 !(function() {
   'use strict';
-  function e(e, t, n) {
-    function o(e, t) {
-      return f && (f = clearTimeout(f)), (v = 0), n.call(e, t);
-    }
-    function i(e) {
-      (u = e.clientX), (c = e.clientY);
-    }
-    function r(e, n) {
-      if (
-        (
-          f && (f = clearTimeout(f)),
-          Math.abs(s - u) + Math.abs(d - c) < g.sensitivity
-        )
-      )
-        return (v = 1), t.call(e, n);
-      (s = u), (d = c), (f = setTimeout(function() {
-        r(e, n);
-      }, g.interval));
-    }
-    function a(t) {
-      return f && (f = clearTimeout(f)), e.removeEventListener(
-        'mousemove',
-        i,
-        !1
-      ), 1 !== v &&
-        (
-          (s = t.clientX),
-          (d = t.clientY),
-          e.addEventListener('mousemove', i, !1),
-          (f = setTimeout(function() {
-            r(e, t);
-          }, g.interval))
-        ), this;
-    }
-    function l(t) {
-      return f && (f = clearTimeout(f)), e.removeEventListener(
-        'mousemove',
-        i,
-        !1
-      ), 1 === v &&
-        (f = setTimeout(function() {
-          o(e, t);
-        }, g.timeout)), this;
-    }
-    var u,
-      c,
-      s,
-      d,
-      m = {},
-      v = 0,
-      f = 0,
-      g = { sensitivity: 7, interval: 100, timeout: 0 };
-    return (m.options = function(e) {
-      for (var t in e) e.hasOwnProperty(t) && (g[t] = e[t]);
-      return m;
-    }), (m.remove = function() {
-      e &&
-        (
-          e.removeEventListener('mouseover', a, !1),
-          e.removeEventListener('mouseout', l, !1)
-        );
-    }), e &&
-      (
-        e.addEventListener('mouseover', a, !1),
-        e.addEventListener('mouseout', l, !1)
-      ), m;
-  }
-  function t() {
+  function e() {
     return (
       !0 === window.MapboxPageShellProduction ||
       /mapbox\.com$/.test(window.location.hostname)
     );
   }
-  function n(e) {
+  function t(e) {
     'loading' !== document.readyState
       ? e()
       : document.addEventListener('DOMContentLoaded', e);
   }
-  function o() {
+  function n() {
     var e = document.createElement('div');
     e.className = 'shell-wrapper';
     var t = document.createElement('div');
@@ -87,55 +20,55 @@
       'shell-loading shell-loading--dark shell-fixed shell-top shell-left shell-right shell-bottom shell-flex-parent shell-bg-darken50'), (t.style.zIndex =
       '9999'), e.appendChild(t), document.body.appendChild(e);
   }
-  function i() {
-    return oe;
+  function o() {
+    return se;
   }
-  function r(e) {
-    oe = e;
+  function i(e) {
+    se = e;
+  }
+  function r() {
+    return ge;
   }
   function a() {
-    return ue;
+    ge = !0;
   }
   function l() {
-    ue = !0;
+    return de;
   }
-  function u() {
-    return ie;
+  function u(e) {
+    de = e;
   }
   function c(e) {
-    ie = e;
+    me.push(e);
   }
-  function s(e) {
-    re.push(e);
-  }
-  function d() {
-    re.forEach(function(e) {
+  function s() {
+    me.forEach(function(e) {
       e();
-    }), (re = []);
+    }), (me = []);
   }
-  function m(e) {
-    le = e;
+  function d(e) {
+    fe = e;
   }
-  function v() {
-    le && le();
+  function m() {
+    fe && fe();
   }
-  function f(e) {
-    ae.push(e);
+  function v(e) {
+    ve.push(e);
   }
-  function g() {
-    ae.forEach(function(e) {
+  function f() {
+    ve.forEach(function(e) {
       e();
-    }), (ae = []);
+    }), (ve = []);
   }
-  function y(e) {
-    s(e);
+  function g(e) {
+    c(e);
   }
-  function p(e, t) {
+  function y(e, t) {
     for (var n = document.querySelectorAll(e), o = 0; o < n.length; o++)
       if (n[o].contains(t)) return !0;
     return !1;
   }
-  function h() {
+  function p() {
     b();
     for (
       var e = document.querySelectorAll('[data-show-unauthenticated]'), t = 0;
@@ -152,7 +85,7 @@
     )
       e[t].style.display = 'none';
   }
-  function E(e) {
+  function h(e) {
     w();
     var t = void 0,
       n = document.querySelectorAll('[data-user-name]');
@@ -175,21 +108,21 @@
     )
       e[t].style.display = 'none';
   }
-  function k(e) {
-    throw (h(), e);
+  function E(e) {
+    throw (p(), e);
+  }
+  function k() {
+    return e() ? ne : oe;
   }
   function I() {
-    return t() ? G : $;
-  }
-  function L() {
-    o();
+    n();
     var e = new XMLHttpRequest();
-    (e.withCredentials = !0), (e.onerror = k), (e.onload = function() {
+    (e.withCredentials = !0), (e.onerror = E), (e.onload = function() {
       if (200 === e.status) return window.location.reload();
       throw new Error(e.statusText);
-    }), e.open('DELETE', I() + '/api/logout'), e.send();
+    }), e.open('DELETE', k() + '/api/logout'), e.send();
   }
-  function B(e) {
+  function L(e) {
     if (e && e.authorizations)
       for (var t = void 0, n = 0, o = e.authorizations.length; n < o; n++)
         if (
@@ -199,20 +132,36 @@
         )
           return t.token;
   }
-  function x() {
-    return ce;
+  function S() {
+    return ye;
   }
-  function S(e) {
-    if (ce && ('Escape' === e.key || 'Esc' === e.key || 27 === e.keyCode)) {
-      C();
+  function x(e) {
+    if (ye && ('Escape' === e.key || 'Esc' === e.key || 27 === e.keyCode)) {
+      T();
       var t = document.getElementById('user-menu-trigger');
       t && t.focus();
     }
   }
-  function A(e) {
+  function B(e) {
     var t = document.getElementById('user-menu-body'),
       n = document.getElementById('user-menu-trigger');
-    t && n && (t.contains(e.target) || n.contains(e.target) || C());
+    t && n && (t.contains(e.target) || n.contains(e.target) || T());
+  }
+  function A() {
+    var e = document.getElementById('user-menu-body'),
+      t = document.getElementById('user-menu-trigger');
+    e &&
+      t &&
+      (
+        m && m(),
+        (ye = !0),
+        (e.style.display = 'block'),
+        d(T),
+        e.addEventListener('keydown', x),
+        t.setAttribute('aria-expanded', 'true'),
+        t.addEventListener('keydown', x),
+        document.addEventListener('focusin', B)
+      );
   }
   function T() {
     var e = document.getElementById('user-menu-body'),
@@ -220,153 +169,162 @@
     e &&
       t &&
       (
-        v && v(),
-        (ce = !0),
-        (e.style.display = 'block'),
-        m(C),
-        e.addEventListener('keydown', S),
-        t.setAttribute('aria-expanded', 'true'),
-        t.addEventListener('keydown', S),
-        document.addEventListener('focusin', A)
-      );
-  }
-  function C() {
-    var e = document.getElementById('user-menu-body'),
-      t = document.getElementById('user-menu-trigger');
-    e &&
-      t &&
-      (
-        (ce = !1),
+        (ye = !1),
         (e.style.display = 'none'),
-        e.removeEventListener('keydown', S),
+        e.removeEventListener('keydown', x),
         t.setAttribute('aria-expanded', 'false'),
-        t.removeEventListener('keydown', S),
-        document.removeEventListener('focusin', A)
+        t.removeEventListener('keydown', x),
+        document.removeEventListener('focusin', B)
       );
   }
-  function P(e) {
-    if (p('[data-sign-out]', e.target)) return e.preventDefault(), L();
-    var t = x(),
+  function C(e) {
+    if (y('[data-sign-out]', e.target)) return e.preventDefault(), I();
+    var t = S(),
       n = document.getElementById('user-menu-trigger');
-    if (!t && n && n.contains(e.target)) return T();
+    if (!t && n && n.contains(e.target)) return A();
     var o = document.getElementById('user-menu-body');
-    return t && o && !o.contains(e.target) ? C() : void 0;
+    return t && o && !o.contains(e.target) ? T() : void 0;
   }
-  function M(e, t) {
+  function P(e, t) {
     if (
       (
         'function' == typeof e ? ((t = e), (e = {})) : (e = e || {}),
         (e.cache = void 0 === e.cache || e.cache),
-        a() && e.cache
+        r() && e.cache
       )
     ) {
-      var n = i();
-      return n ? E(n, u()) : h(), d(), void (t && t());
+      var n = o();
+      return n ? h(n, l()) : p(), s(), void (t && t());
     }
-    if (se) t && y(t);
+    if (pe) t && g(t);
     else {
-      se = !0;
-      var o = new XMLHttpRequest();
-      o.open('GET', I() + '/api/session'), o.setRequestHeader(
+      pe = !0;
+      var c = new XMLHttpRequest();
+      c.open('GET', k() + '/api/session'), c.setRequestHeader(
         'Accept',
         'application/json'
-      ), (o.onerror = k), (o.onload = function() {
-        if ((l(), 403 === o.status)) h();
-        else if (200 !== o.status) h(), console.log(o.statusText);
+      ), (c.onerror = E), (c.onload = function() {
+        if ((a(), 403 === c.status)) p();
+        else if (200 !== c.status) p(), console.log(c.statusText);
         else {
-          var e = JSON.parse(o.response);
-          r(e), c(B(e)), E(e), analytics.identify(e.id, {
+          var e = JSON.parse(c.response);
+          i(e), u(L(e)), h(e), analytics.identify(e.id, {
             username: e.id,
             email: e.email
           });
         }
-        document.addEventListener('click', P), d(), t && t(), (se = !1);
-      }), (o.withCredentials = !0), o.send();
+        document.addEventListener('click', C), s(), t && t(), (pe = !1);
+      }), (c.withCredentials = !0), c.send();
     }
   }
-  function q(t, n) {
-    function o(e) {
-      t.contains(e.target) || n.contains(e.target) || r();
+  function M(e, t) {
+    function n(n) {
+      e.contains(n.target) || t.contains(n.target) || i();
+    }
+    function o() {
+      m && m(), s ||
+        (
+          (s = !0),
+          clearTimeout(g),
+          (t.style.display = 'block'),
+          e.setAttribute('aria-expanded', 'true'),
+          d(i),
+          y.addEventListener('focusin', n)
+        );
     }
     function i() {
-      v && v(), d ||
+      s &&
         (
-          (d = !0),
-          clearTimeout(y),
-          (n.style.display = 'block'),
-          t.setAttribute('aria-expanded', 'true'),
-          m(r),
-          p.addEventListener('focusin', o)
+          (s = !1),
+          clearTimeout(g),
+          (f = null),
+          (t.style.display = 'none'),
+          e.setAttribute('aria-expanded', 'false'),
+          y.removeEventListener('focusin', n)
         );
     }
     function r() {
-      d &&
-        (
-          (d = !1),
-          clearTimeout(y),
-          (g = null),
-          (n.style.display = 'none'),
-          t.setAttribute('aria-expanded', 'false'),
-          p.removeEventListener('focusin', o)
-        );
+      if (s && f === he) return i();
+      (f = he), s || (clearTimeout(g), o());
     }
     function a() {
-      if (d && g === me) return r();
-      (g = me), d || (clearTimeout(y), i());
-    }
-    function l() {
-      g !== me &&
+      f !== he &&
         (
-          (g = null),
-          (y = setTimeout(function() {
-            d && null === g && r();
-          }, ve))
+          (f = null),
+          (g = setTimeout(function() {
+            s && null === f && i();
+          }, be))
         );
     }
-    function u() {
-      g !== me && (clearTimeout(y), (g = de));
+    function l() {
+      f !== he && (clearTimeout(g), (f = we));
     }
-    function c(e) {
-      if (e.target.getAttribute && e.target.getAttribute('data-nav-link'))
-        return r();
-      if (!n.contains(e.target)) return t.contains(e.target) ? a() : void r();
+    function u(n) {
+      if (n.target.getAttribute && n.target.getAttribute('data-nav-link'))
+        return i();
+      if (!t.contains(n.target)) return e.contains(n.target) ? r() : void i();
     }
-    function s(e) {
-      d &&
-        (('Escape' !== e.key && 'Esc' !== e.key && 27 !== e.keyCode) ||
-          (r(), t.focus()));
+    function c(t) {
+      s &&
+        (('Escape' !== t.key && 'Esc' !== t.key && 27 !== t.keyCode) ||
+          (i(), e.focus()));
     }
-    var d = !1,
-      g = null,
-      y = void 0,
-      p = window.document;
-    if (!t.hasAttribute('data-page-shell-hover-menu')) {
-      t.setAttribute('data-page-shell-hover-menu', '');
-      var h = e(
-        t,
+    var s = !1,
+      f = null,
+      g = void 0,
+      y = window.document;
+    if (!e.hasAttribute('data-page-shell-hover-menu')) {
+      e.setAttribute('data-page-shell-hover-menu', '');
+      var p = te(
+        e,
         function() {
-          g !== me && (clearTimeout(y), (g = de), i());
+          f !== he && (clearTimeout(g), (f = we), o());
         },
         function() {}
       );
-      t.addEventListener('mouseleave', l), t.addEventListener(
+      e.addEventListener('mouseleave', a), e.addEventListener(
         'keydown',
-        s
-      ), n.addEventListener('mouseenter', u), n.addEventListener(
-        'mouseleave',
-        l
-      ), n.addEventListener('keydown', s), p.addEventListener(
-        'click',
         c
-      ), f(function() {
-        t.removeAttribute(
+      ), t.addEventListener('mouseenter', l), t.addEventListener(
+        'mouseleave',
+        a
+      ), t.addEventListener('keydown', c), y.addEventListener(
+        'click',
+        u
+      ), v(function() {
+        e.removeAttribute(
           'data-page-shell-hover-menu'
-        ), h.remove(), t.removeEventListener('mouseleave', l), t.removeEventListener('keydown', s), n.removeEventListener('mouseenter', u), n.removeEventListener('mouseleave', l), n.removeEventListener('keydown', s), p.removeEventListener('click', c);
+        ), p.remove(), e.removeEventListener('mouseleave', a), e.removeEventListener('keydown', c), t.removeEventListener('mouseenter', l), t.removeEventListener('mouseleave', a), t.removeEventListener('keydown', c), y.removeEventListener('click', u);
       });
     }
   }
-  function N() {
-    if (!fe) {
+  function j(e) {
+    console.log('Raven failed to initialize'), e && console.log(e);
+  }
+  function q() {
+    t(function() {
+      if (!window.Raven) {
+        var e = {
+            shouldSendCallback: function() {
+              return Ee;
+            }
+          },
+          t = document.createElement('script');
+        (t.type = 'text/javascript'), (t.src =
+          'https://cdn.ravenjs.com/' + ue + '/raven.min.js'), t.setAttribute(
+          'crossorigin',
+          'anonymous'
+        ), t.setAttribute('async', ''), t.setAttribute(
+          'defer',
+          ''
+        ), (t.onerror = j), (t.onload = function() {
+          window.Raven ? window.Raven.config(ce, e).install() : j();
+        }), document.head.appendChild(t);
+      }
+    });
+  }
+  function R() {
+    if (!ke) {
       var e = document.getElementById('page-shell'),
         t = document.getElementById('mobile-nav-menu'),
         n = document.getElementById('mobile-nav-backdrop');
@@ -377,12 +335,12 @@
         );
         (e.style.height = String(o) + 'px'), (e.style.overflow =
           'hidden'), (n.style.display = 'block'), (n.style.height =
-          String(o - parseInt(n.style.top)) + 'px'), (fe = !0);
+          String(o - parseInt(n.style.top)) + 'px'), (ke = !0);
       }
     }
   }
   function z() {
-    if (fe) {
+    if (ke) {
       var e = document.getElementById('page-shell'),
         t = document.getElementById('mobile-nav-backdrop');
       e &&
@@ -393,11 +351,11 @@
           (e.style.overflowX = 'hidden'),
           (t.style.display = 'none'),
           (t.style.height = ''),
-          (fe = !1)
+          (ke = !1)
         );
     }
   }
-  function j() {
+  function N() {
     var e = document.getElementById('mobile-nav-menu'),
       t = document.getElementById('mobile-nav-pointer'),
       n = document.getElementById('mobile-nav-trigger-menu'),
@@ -407,12 +365,12 @@
       n &&
       o &&
       (
-        (ge = !0),
+        (Ie = !0),
         (e.style.display = 'block'),
         (t.style.display = 'block'),
         (n.style.display = 'none'),
         (o.style.display = 'block'),
-        N()
+        R()
       );
   }
   function D() {
@@ -425,7 +383,7 @@
       n &&
       o &&
       (
-        (ge = !1),
+        (Ie = !1),
         (e.style.display = 'none'),
         (t.style.display = 'none'),
         (n.style.display = 'block'),
@@ -433,7 +391,7 @@
         z()
       );
   }
-  function U(e) {
+  function O(e) {
     var t = document.getElementById('mobile-nav-trigger'),
       n = document.getElementById('mobile-nav-menu');
     t &&
@@ -445,38 +403,38 @@
             D()
           )
         : t.contains(e.target)
-          ? ge ? D() : j()
-          : ge && !n.contains(e.target) && D());
+          ? Ie ? D() : N()
+          : Ie && !n.contains(e.target) && D());
   }
-  function X() {
-    if (!ye) {
-      ye = !0;
+  function U() {
+    if (!Le) {
+      Le = !0;
       var e = document.querySelectorAll('[data-nav-trigger]');
       if (0 !== e.length) {
         var t = void 0,
           n = void 0,
           o = void 0;
         for (o = 0; o < e.length; o++)
-          (n = (t = e[o]).getAttribute('data-nav-trigger')), q(
+          (n = (t = e[o]).getAttribute('data-nav-trigger')), M(
             t,
             document.querySelector('[data-nav-menu="' + n + '"]')
           );
-        document.addEventListener('click', U);
+        document.addEventListener('click', O);
       }
     }
   }
-  function Y() {
-    ye && ((ye = !1), g(), z(), D(), document.removeEventListener('click', U));
+  function X() {
+    Le && ((Le = !1), f(), z(), D(), document.removeEventListener('click', O));
   }
-  function H() {
-    var e = (window.analytics = window.analytics || []);
-    if (((window.analytics = e), !e.initialize))
-      if (e.invoked)
+  function Y() {
+    var t = (window.analytics = window.analytics || []);
+    if (((window.analytics = t), !t.initialize))
+      if (t.invoked)
         window.console &&
           console.error &&
           console.error('Segment snippet included twice.');
       else {
-        (e.invoked = !0), (e.methods = [
+        (t.invoked = !0), (t.methods = [
           'trackSubmit',
           'trackClick',
           'trackLink',
@@ -493,17 +451,17 @@
           'once',
           'off',
           'on'
-        ]), (e.factory = function(t) {
+        ]), (t.factory = function(e) {
           return function() {
             var n = Array.prototype.slice.call(arguments);
-            return n.unshift(t), e.push(n), e;
+            return n.unshift(e), t.push(n), t;
           };
         });
-        for (var n = 0; n < e.methods.length; n++) {
-          var o = e.methods[n];
-          e[o] = e.factory(o);
+        for (var n = 0; n < t.methods.length; n++) {
+          var o = t.methods[n];
+          t[o] = t.factory(o);
         }
-        (e.load = function(e) {
+        (t.load = function(e) {
           var t = document.createElement('script');
           (t.type = 'text/javascript'), (t.async = !0), (t.src =
             ('https:' === document.location.protocol ? 'https://' : 'http://') +
@@ -512,88 +470,106 @@
             '/analytics.min.js');
           var n = document.getElementsByTagName('script')[0];
           n.parentNode.insertBefore(t, n);
-        }), (e.SNIPPET_VERSION = '4.0.0');
+        }), (t.SNIPPET_VERSION = '4.0.0');
       }
-    t() ? e.load(te) : e.load(ne), e.page();
+    e() ? t.load(ae) : t.load(le), t.page();
   }
-  function O(e, t) {
-    return '' + e + F(t);
+  function H() {
+    if (window.history && window.history.pushState) {
+      var e = void 0,
+        t = function(t) {
+          (t = t || {}), setTimeout(function() {
+            (t.referrer = e), analytics.page(t), window._cio && window._cio.page && window._cio.page(window.location.href), (e = window.location.href);
+          }, 300);
+        },
+        n = window.history.pushState;
+      (window.history.pushState = function() {
+        (e = window.location.href), t({
+          clientSideRouting: 'pushstate'
+        }), n.apply(window.history, arguments);
+      }), window.addEventListener('popstate', function() {
+        t({ clientSideRouting: 'popstate' });
+      });
+    }
   }
-  function R(e, t) {
+  function F(e, t) {
+    return '' + e + W(t);
+  }
+  function J(e, t) {
     return '-' + e + '-' + t;
   }
-  function F(e) {
+  function W(e) {
     return '' + e.charAt(0).toUpperCase() + e.substr(1);
   }
-  function J(e) {
+  function _(e) {
     return (
       e in
       (arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : window)
     );
   }
-  function W(e) {
+  function Q(e) {
     var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
-      n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : pe;
+      n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : Se;
     return (
       e in n.style ||
       (!!t &&
-        he.some(function(t) {
-          return W(O(t, e));
+        xe.some(function(t) {
+          return Q(F(t, e));
         }))
     );
   }
-  function Q(e, t) {
+  function V(e, t) {
     var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {},
-      o = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : pe,
+      o = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : Se,
       i = n.allowPrefixedProp,
       r = n.allowPrefixedValue,
       a = !1;
     return (i || r) &&
-      (a = he.some(function(n) {
-        return Q(i ? O(n, e) : e, r ? R(n, t) : t);
+      (a = xe.some(function(n) {
+        return V(i ? F(n, e) : e, r ? J(n, t) : t);
       })), a || ((o.style[e] = t), o.style[e] === t);
   }
-  function V() {
+  function Z() {
     var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
-      t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : pe;
-    (we = {
+      t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : Se;
+    (Be = {
       flexBox:
-        W('flex', e, t) &&
-        Q(
+        Q('flex', e, t) &&
+        V(
           'display',
           'flex',
           { allowPrefixedProp: !1, allowPrefixedValue: e },
           t
         ),
-      viewportUnits: Q(
+      viewportUnits: V(
         'width',
         '100vw',
         { allowPrefixedProp: !1, allowPrefixedValue: !1 },
         t
       ),
-      visibilityState: J('visibilityState', window.document),
-      devicePixelRatio: J('devicePixelRatio')
-    }).doesCutMustard = Object.keys(we).every(function(e) {
-      return we[e];
+      visibilityState: _('visibilityState', window.document),
+      devicePixelRatio: _('devicePixelRatio')
+    }).doesCutMustard = Object.keys(Be).every(function(e) {
+      return Be[e];
     });
   }
-  function Z() {
+  function G() {
     var e = window.document.getElementById('page-shell-compatibility-dismiss'),
       t = window.document.getElementById('page-shell-compatibility-warning');
-    (be = !0), (Ee = !1), e && e.removeEventListener('click', Z), t &&
+    (Te = !0), (Ae = !1), e && e.removeEventListener('click', G), t &&
       (t.style.display = 'none'), window.localStorage &&
       window.localStorage.setItem(
         'suppress-browser-compatibility-warning',
         'true'
       );
   }
-  function _() {
+  function $() {
     if (
       (
-        null == we.doesCutMustard && V(!0),
+        null == Be.doesCutMustard && Z(!0),
         !(
-          be ||
-          we.doesCutMustard ||
+          Te ||
+          Be.doesCutMustard ||
           ('localStorage' in window &&
             'true' ===
               window.localStorage.getItem(
@@ -605,73 +581,153 @@
       var e = window.document.getElementById(
         'page-shell-compatibility-warning'
       );
-      if ((e && (e.style.display = 'block'), !Ee)) {
+      if ((e && (e.style.display = 'block'), !Ae)) {
         var t = window.document.getElementById(
           'page-shell-compatibility-dismiss'
         );
-        t && t.addEventListener('click', Z);
+        t && t.addEventListener('click', G);
       }
-      Ee = !0;
+      Ae = !0;
     }
   }
-  var G = 'https://www.mapbox.com',
-    $ = 'https://122e4e-mapbox.global.ssl.fastly.net',
-    K =
+  var K = function() {
+      for (var e = {}, t = 0; t < arguments.length; t++) {
+        var n = arguments[t];
+        for (var o in n) ee.call(n, o) && (e[o] = n[o]);
+      }
+      return e;
+    },
+    ee = Object.prototype.hasOwnProperty,
+    te = function(e, t, n) {
+      function o(e, t) {
+        return f && (f = clearTimeout(f)), (v = 0), n.call(e, t);
+      }
+      function i(e) {
+        (u = e.clientX), (c = e.clientY);
+      }
+      function r(e, n) {
+        if (
+          (
+            f && (f = clearTimeout(f)),
+            Math.abs(s - u) + Math.abs(d - c) < g.sensitivity
+          )
+        )
+          return (v = 1), t.call(e, n);
+        (s = u), (d = c), (f = setTimeout(function() {
+          r(e, n);
+        }, g.interval));
+      }
+      function a(t) {
+        return f && (f = clearTimeout(f)), e.removeEventListener(
+          'mousemove',
+          i,
+          !1
+        ), 1 !== v &&
+          (
+            (s = t.clientX),
+            (d = t.clientY),
+            e.addEventListener('mousemove', i, !1),
+            (f = setTimeout(function() {
+              r(e, t);
+            }, g.interval))
+          ), this;
+      }
+      function l(t) {
+        return f && (f = clearTimeout(f)), e.removeEventListener(
+          'mousemove',
+          i,
+          !1
+        ), 1 === v &&
+          (f = setTimeout(function() {
+            o(e, t);
+          }, g.timeout)), this;
+      }
+      var u,
+        c,
+        s,
+        d,
+        m = {},
+        v = 0,
+        f = 0,
+        g = { sensitivity: 7, interval: 100, timeout: 0 };
+      return (m.options = function(e) {
+        return (g = K({}, g, e)), m;
+      }), (m.remove = function() {
+        e &&
+          (
+            e.removeEventListener('mouseover', a, !1),
+            e.removeEventListener('mouseout', l, !1)
+          );
+      }), e &&
+        (
+          e.addEventListener('mouseover', a, !1),
+          e.addEventListener('mouseout', l, !1)
+        ), m;
+    },
+    ne = 'https://www.mapbox.com',
+    oe = 'https://122e4e-mapbox.global.ssl.fastly.net',
+    ie =
       'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA',
-    ee =
+    re =
       'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpZ3BqeDZlcDAwMDBzcmt1YnQ1OTM4cTEifQ.54XwgUSkvlmB7gHW4vWJ3w',
-    te = 'fl0c8p240n',
-    ne = '0biiejpgfj',
-    oe = void 0,
-    ie = void 0,
-    re = [],
-    ae = [],
-    le = void 0,
-    ue = !1,
-    ce = !1,
-    se = !1,
-    de = 'mouse',
-    me = 'click',
-    ve = 300,
-    fe = !1,
+    ae = 'fl0c8p240n',
+    le = '0biiejpgfj',
+    ue = '3.17.0',
+    ce = 'https://581913e6cd0845d785f5b551a4986b61@sentry.io/11290',
+    se = void 0,
+    de = void 0,
+    me = [],
+    ve = [],
+    fe = void 0,
     ge = !1,
     ye = !1,
-    pe = window.document.createElement('div'),
-    he = ['webkit', 'moz', 'o', 'ms'],
-    we = {},
-    Ee = !1,
-    be = !1,
+    pe = !1,
+    we = 'mouse',
+    he = 'click',
+    be = 300,
+    Ee = !0,
     ke = !1,
-    Ie = {
-      isProduction: t,
-      afterDomContentLoaded: n,
-      hoverIntent: e,
-      appendFullscreenLoader: o,
+    Ie = !1,
+    Le = !1,
+    Se = window.document.createElement('div'),
+    xe = ['webkit', 'moz', 'o', 'ms'],
+    Be = {},
+    Ae = !1,
+    Te = !1,
+    Ce = !1,
+    Pe = {
+      isProduction: e,
+      afterDomContentLoaded: t,
+      hoverintent: te,
+      appendFullscreenLoader: n,
       getMapboxAccessToken: function() {
-        return t() ? K : ee;
+        return e() ? ie : re;
       },
-      getUser: i,
-      isUserChecked: a,
-      onNextUserCheck: y,
+      getUser: o,
+      isUserChecked: r,
+      onNextUserCheck: g,
       afterUserCheck: function(e) {
-        a() ? e() : y(e);
+        r() ? e() : g(e);
       },
-      getUserPublicAccessToken: u,
-      querySelectorContainsElement: p,
-      signOut: L,
-      checkSession: M,
-      createHoverMenu: q,
-      initializeNavigation: X,
-      removeNavigation: Y,
+      getUserPublicAccessToken: l,
+      querySelectorContainsElement: y,
+      signOut: I,
+      checkSession: P,
+      createHoverMenu: M,
+      initializeNavigation: U,
+      removeNavigation: X,
       initialize: function() {
-        ke || H(), (ke = !0), n(function() {
-          M(), Y(), X(), _();
+        Ce || (Y(), q(), H()), (Ce = !0), t(function() {
+          P(), X(), U(), $();
         });
       },
-      generateCompatibilitySummary: V,
+      disableRaven: function() {
+        Ee = !1;
+      },
+      generateCompatibilitySummary: Z,
       getCompatibilitySummary: function() {
-        return we;
+        return Be;
       }
     };
-  (window.MapboxPageShell = Ie), Ie.initialize();
+  (window.MapboxPageShell = Pe), Pe.initialize();
 })();
