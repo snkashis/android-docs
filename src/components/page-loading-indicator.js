@@ -2,7 +2,7 @@ const BASE_CLASSNAME = 'page-loader h6 round-full opacity50 fixed top left';
 const ENTER_CLASSNAME = 'page-loader-enter';
 const LEAVE_CLASSNAME = 'page-loader-leave';
 let el;
-let canEnd;
+let canEnd = Promise.resolve();
 let mounted = false;
 
 function createElement() {
