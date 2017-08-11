@@ -1,0 +1,22 @@
+{
+  "version": 8,
+  "name": "Raster Tiles",
+  "sources": {
+    "yourTileLayer": {
+      "type": "raster",
+      "tiles": [
+        "https://1.tile.server/{z}/{x}/{y}.png",
+        "https://2.tile.server/{z}/{x}/{y}.png"
+      ],
+      "tileSize": 256
+    }
+  },
+  "layers": [{
+    "id": "yourTileLayer",
+    "type": "raster",
+    "source": "yourTileLayer",
+    "paint": {
+      "raster-fade-duration": 100
+    }
+  }]
+}
