@@ -9,7 +9,7 @@ import {
   addRouteChangeStartListener,
   addRouteChangeEndListener
 } from '@mapbox/batfish/modules/route-change-listeners';
-import { pageLoadingIndicator } from './page-loading-indicator';
+import pageLoadingIndicator from '@mapbox/page-loading-indicator';
 import { OverviewHeader } from './overview-header';
 import { TopNavigation } from './top-navigation';
 import { SideNavigation } from './side-navigation';
