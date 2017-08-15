@@ -28,12 +28,9 @@ prependJs:
   - "import { Floater } from '../../../components/floater';"
   - "import { MAP_SDK_VERSION } from '../../../constants';"
 ---
+The Mapbox Android Map SDK is an open source toolset for displaying maps inside of your Android application. [Mapbox's demo app on the Google Play Store](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en) includes many examples of how to use Mapbox Maps. Various pages in this documentation reference examples in the demo app.
 
-### Map SDK
-
-The Mapbox Map SDK is an open source toolset for displaying maps inside of your Android application. [Mapbox's demo app on the Google Play Store](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en) includes many examples of how to use Mapbox Maps. Various pages in this documentation reference examples in the demo app.
-
-### Install the Map SDK
+## Install the Map SDK
 
 {{
   <Floater
@@ -50,7 +47,7 @@ While we show how to insert the stable version of the SDK inside your project, y
 
 If your application is close or exceeds the 65k method count limit, you can mitigate this problem by enabling ProGuard inside your application. ProGuard directives are included in the Android dependencies to preserve the required classes. You can also shrink the file APK file size by making use of APK splitting.
 
-#### 1. Add the dependency
+### 1. Add the dependency
 
 1. Start Android Studio
 2. Open up your application's `build.gradle`
@@ -70,7 +67,7 @@ dependencies {
 }
 ```
 
-#### 2. Get an access token
+### 2. Get an access token
 
 If you don't have a Mapbox account, sign up for one [here](https://www.mapbox.com/signup/), then navigate to the [token page](https://www.mapbox.com/studio/account/tokens/) in Mapbox Studio and copy your **default public token** to your clipboard. After you've added the Map SDK as a dependency inside your Android project, open the `string.xml` file, create a new string, and paste the access token. Then to pass this into the Map SDK, you'll want to place the access token inside of your application's `onCreate()` method.
 
@@ -87,7 +84,7 @@ public class MyApplication extends Application {
 }
 ```
 
-#### 3. Setup permissions
+### 3. Setup permissions
 
 Starting in 5.0, we are making use of the Manifest merge feature to reduce the need to include any Maps SDK required things inside of your application's manifest file. You'll need to add _either_ the Fine **or** Coarse location permission if you plan to display a user's location on the map or get the user's location information. The user location permission should also be checked during runtime using the PermissionManager.
 
@@ -95,7 +92,7 @@ Starting in 5.0, we are making use of the Manifest merge feature to reduce the n
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
 
-#### 4. Add a map
+### 4. Add a map
 
 Open the activity Java file you'd like to include the map in and add the code below to the file.
 
@@ -131,7 +128,7 @@ Open the acitvities layout file and add the map view within your layout.
   mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets" />
 ```
 
-#### 5. Lifecycle methods
+### 5. Lifecycle methods
 
 The MapView contains its own lifecycle methods for managing Android's OpenGL lifecycle, which must be called directly from the containing Activity. In order for your app to correctly call the MapView's lifecycle methods, you must override the following lifecycle methods in the Activity that contains the MapView and call the respective MapView method. For example, your onStart() method should look like this:
 
@@ -156,7 +153,7 @@ onLowMemory();
 onDestroy();
 ```
 
-### Attribution
+## Attribution
 
 {{
   <Floater
@@ -173,7 +170,10 @@ You may adjust the position of the Mapbox wordmark and attribution notice, but t
 
 You may not otherwise alter the Mapbox wordmark or text attribution notice. If you wish to move or to remove the Mapbox wordmark, please [contact our sales team](https://www.mapbox.com/contact/sales/) to discuss options available under our Enterprise plans.
 
-### MapView XML attributes
+## Telemetry opt out
+Mapbox Telemetry is a [powerful location analytics platform](https://www.mapbox.com/telemetry/) included in this SDK. By default, anonymized location and usage data is sent to Mapbox whenever the host app causes it to be gathered. The [Mapbox Terms of Service](https://www.mapbox.com/tos/) require your app to provide users with a way to individually opt out of Mapbox Telemetry, which is provided automatically as part of the [attribution](#attribution) control. If you hide the attribution control, you must provide an alternative opt out for your users to use.
+
+## MapView XML attributes
 
 To further customize the map such as setting the starting camera position, style, or adjusting the UI, attributes can be added inside the xml map view. all `MapView` XML attributes start with
 `mapbox_` for identification and for removing any potential conflicts with other libraries.

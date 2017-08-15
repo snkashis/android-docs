@@ -10,7 +10,7 @@ sideNavSections:
 
 The `RouteProgress` class contains all the user's progress information along the route, including leg and steps. This object's provided inside `AlertLevelChangeListener` and `ProgressChangeListener`, allowing you to get distance measurements, the percentage of route complete, current step index, and much more.
 
-### On progress change
+## On progress change
 
 Like tracking user location changes, this listener's invoked every time the user's location changes but provides an updated RouteProgress object. It is strongly encouraged to use this listener since you can typically refresh most of your application's user interface. An example of this will be if you are displaying the user's current progress until the user needs to do the next maneuver. Every time this listener's invoked, you can update your view with the new information from `RouteProgress`.
 
@@ -25,7 +25,7 @@ navigation.addProgressChangeListener(new ProgressChangeListener() {
     });
 ```
 
-### RouteProgress object
+## RouteProgress object
 
 `RouteProgress` contains two subclasses for leg and step information, the tables below provide a full list of the APIs exposed.
 

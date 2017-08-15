@@ -2,7 +2,6 @@
 title: "Off-Route detection"
 description: "Mapbox Android Navigation SDK off-route detection"
 ---
-
 # Off-Route detection
 
 A default off-route detection class is included inside the Navigation SDK which measures the distance from the users actual location to the one you'd expect the user to be and where they should be. If the measured distance is greater than the set threshold, the `userOffRoute` callback will get invoked. It is within the `OffRouteListener` that you can handle a reroute event by using `navigation.updateRoute()`.

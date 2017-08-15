@@ -25,7 +25,7 @@ Querying the map can be done considering a specific point on the screen or by fi
 
 Since the features come from tiled vector data or GeoJSON data that is converted to tiles internally, feature geometries may be split or duplicated across tile boundaries and, as a result, features may appear multiple times in query results. For example, suppose there is a highway running through the bounding rectangle of a query. The results of the query will be those parts of the highway that lie within the map tiles covering the bounding rectangle, even if the highway extends into other tiles, and the portion of the highway within each map tile will be returned as a separate feature. Similarly, a point feature near a tile boundary may appear in multiple tiles due to tile buffering.
 
-### Query rendered features
+## Query rendered features
 
 A common usage for querying the map is to acquire information at a specific position the user is looking at. The point must be viewable inside the user devices viewport and fully rendered before you can access any information. Querying the map only accepts a screen pixel value instead of LatLng so in many cases you'll need to convert beforehand. In the snippet below, the maps clicked on which provides a LatLng we use to query the map and get the properties at that location.
 
@@ -52,7 +52,7 @@ public void onMapClick(@NonNull LatLng point) {
 }
 ```
 
-#### Query features inside a bounding box
+### Query features inside a bounding box
 
 {{
   <Floater
@@ -75,7 +75,7 @@ RectF rectF = new RectF(
 mapboxMap.queryRenderedFeatures(rectF);
 ```
 
-### Query source features
+## Query source features
 
 In contrast to `mapboxMap.queryRenderedFeatures()`, using `querySourceFeatures` returns all features matching the query parameters, whether or not they are rendered by the current style (i.e. visible). The domain of the query includes all currently-loaded vector tiles and GeoJSON source tiles: this function does not check tiles outside the currently visible viewport.
 

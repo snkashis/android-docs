@@ -5,7 +5,6 @@ sideNavSections:
   - title: Adjusting step completion thresholds
   - title: Off-route threshold
 ---
-
 # Navigation options
 
 The set constants for navigation such as duration or distance an event must occur have been thoroughly tested, however, in some situations you might find yourself wanting to adjust these values to your liking. The `MapboxNavigtionOptions` object allows for tweaking of all the default values for maneuver zone thresholds, tolerance for offline, etc. The `MapboxNavigation` object constructor optionally takes in an instance of the `MapboxNavigtionOptions` object and uses the values set inside the options class until `MapboxNavigation`'s destroyed.

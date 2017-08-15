@@ -10,7 +10,7 @@ sideNavSections:
 
 The maps SDK allows full customization when it comes to displaying your map. This means you can brand the map with the colors, icons, and fonts that match your apps UI. The customization can either be done using [Mapbox Studio](https://www.mapbox.com/help/studio-manual/) or during runtime using the [Runtime Styling APIs](https://www.mapbox.com/android-docs/map-sdk/overview/runtime-styling/).
 
-### Changing the default style
+## Changing the default style
 
 As powerful as styling the map can be, to get started using the Map SDK, it offers six professional styles that will look great in your app:
 
@@ -21,6 +21,6 @@ As powerful as styling the map can be, to get started using the Map SDK, it offe
 5. **Satellite Streets:** combines our Mapbox Satellite with vector data from Mapbox Streets. The comprehensive set of road, label, and POI information brings clarity and context to the crisp detail in our high-resolution satellite imagery.
 6. **Traffic:** Visually show realtime traffic using either the provided day or night traffic styles.
 
-### Custom Mapbox Studio style
+## Custom Mapbox Studio style
 
 To use a custom style, paste your style URL into your MapView's mapbox:mapbox_styleUrl attribute in your activity's layout file. If you would like to change the map style later on, call MapboxMap.setStyleUrl() with the new style and your map will update.

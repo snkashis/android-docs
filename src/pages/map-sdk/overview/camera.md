@@ -19,7 +19,7 @@ By default, the camera can be tilted, rotated, zoomed, and/or moved either by th
 
 A few camera event listeners are provided in the Map SDK to notify when, for example, the camera's adjusted. You can read more about these listeners inside the [Events documentation](https://www.mapbox.com/android-docs/map-sdk/overview/events/#camera-change-events).
 
-### Camera position
+## Camera position
 
 The Maps SDK includes a `CameraPosition` class which comprises of the camera's target, angle, zoom, and tilt. These APIs shape the user's perspective of the map tile(s).
 
@@ -35,23 +35,23 @@ CameraPosition position = new CameraPosition.Builder()
 
 Read all about [mapView XML attributes](https://www.mapbox.com/android-docs/map-sdk/overview/#mapview-xml-attributes) to learn about setting the camera's initial position. It's best to either set the initial camera position in XML or through `MapboxMapOptions` to prevent unnecessary downloading of map tiles using up your user's data.
 
-#### Target
+### Target
 
 The target is a single latitude and longitude coordinate that the camera centers itself on. Changing the camera's target will move the camera to the inputted coordinates. The target is a `LatLng` object. The target coordinate is always _at the center of the viewport_.
 
-#### Tilt
+### Tilt
 
 Tilt is the camera's angle from the nadir (directly facing the Earth) and uses unit degrees. The camera's minimum (default) tilt is 0 degrees, and the maximum tilt is 60. Tilt levels use six decimal point of precision, which enables you to restrict/set/lock a map's bearing with extreme precision.
 
 The map camera tilt can also adjust by placing two fingertips on the map and moving both fingers up and down in parallel at the same time or
 
-#### Bearing
+### Bearing
 
 Bearing represents the direction that the camera is pointing in and measured in degrees _clockwise from north_.
 
 The camera's default bearing is 0 degrees (i.e. "true north") causing the map compass to hide until the camera bearing becomes a non-zero value. [The `mapbox_uiCompass` boolean XML attribute](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/res/values/attrs.xml#L45) allows adjustment of the compass' visibility. Bearing levels use six decimal point precision, which enables you to restrict/set/lock a map's bearing with extreme precision. In addition to programmatically adjusting the camera bearing, the user can place two fingertips on the map and rotate their fingers.
 
-#### Zoom
+### Zoom
 
 Zoom controls the scale of the map and consumes any value between 0 and 22. At zoom level 0, the viewport shows continents and other world features. A middle value of 11 will show city level details, and at a higher zoom level, the map will begin to show buildings and points of interest. The camera can zoom in the following ways:
 
@@ -61,7 +61,7 @@ Zoom controls the scale of the map and consumes any value between 0 and 22. At z
 
 Check out [this Mapbox blogpost](https://www.mapbox.com/blog/designing-maps-for-mobile-devices/) about the art/science of maps and visual information to ensure your map style shows the right data at the correct camera positions.
 
-### Update the camera position
+## Update the camera position
 
 {{
   <Floater
@@ -83,11 +83,11 @@ Aside from consuming a Camera Update object, a cancelable callback can be added 
 | `animateCamera()` | Animate the camera to a new location defined within CameraUpdate using a transition animation that evokes powered flight. |
 
 
-### Get the current camera position
+## Get the current camera position
 
 The `MapboxMap` class' `getCameraPosition()` method makes it easy for your code to understand what is going on with your map's camera and what the user's currently viewing. The method returns a `CameraPosition` object, and once you have the object, you can easily get and use the camera's target, tilt, zoom, and bearing values. For example, `mapboxMap.getCameraPosition().zoom` is how you would get the camera's zoom value.
 
-### Center the camera within a map area
+## Center the camera within a map area
 
 {{
   <Floater
@@ -109,7 +109,7 @@ LatLngBounds latLngBounds = new LatLngBounds.Builder()
 mapboxMap.animateCamera(CameraUpdateFactory.newLatLngBounds(latLngBounds, 10));
 ```
 
-### Restricting the user's panning to a given area
+## Restricting the user's panning to a given area
 
 {{
   <Floater

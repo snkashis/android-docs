@@ -7,7 +7,6 @@ sideNavSections:
   - title: "Custom instructions"
   - title: "Milestone event listener"
 ---
-
 # Milestones
 
 Navigation milestones inside the SDK provide a powerful way to give your user instructions at custom defined locations along their route. Aside from the default milestones that you'd expect from a Navigation SDK, you can create custom milestones that fit your particular app needs.

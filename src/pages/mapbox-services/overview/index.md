@@ -30,7 +30,6 @@ overviewHeaderProps:
 prependJs:
   - "import { MAS_VERSION } from '../../../constants';"
 ---
-
 Mapbox Java is an open source toolset for building applications that need navigation, directions, geocoding, static map imagery, etc. It conveniently wraps Mapbox APIs and builds off of them with tools which are useful for your applications. This SDK consist of two parts:
 
 1. **Mapbox-Java-Services:** Has no dependency on the Android API and can be used in any of your Java projects.

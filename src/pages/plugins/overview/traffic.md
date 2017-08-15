@@ -14,7 +14,7 @@ Similar to other plugins, a third optional parameter in the traffic plugin's con
 
 To install, head over to the [Mapbox Plugin Overview](/android-docs/plugins/overview/) page which will walk you through adding the dependency.
 
-### Add traffic
+## Add traffic
 
 Since the Traffic Plugin requires the `mapboxMap` object, it's necessary to initialize the plugin either inside `onMapReady` (recommended) or in another place you know the `mapboxMap` will not be null. Once initialized, `trafficPlugin.setVisibility()` to true will enable the traffic. You can use `isVisible()` which returns a boolean true if the traffic's visible, otherwise false.
 
@@ -26,7 +26,7 @@ public void onMapReady(MapboxMap mapboxMap) {
 }
 ```
 
-### Traffic colors
+## Traffic colors
 
 The table below provides information for each color displayed in the traffic layer and what the corresponding congestion level is.
 

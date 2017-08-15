@@ -69,11 +69,11 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/LanguageSwitchActivity.java"
           />
           <ExampleCard
-            exampleTitle="Custom raster style"
-            exampleDescription="Use legacy raster tiles in your app."
+            exampleTitle="Local style source"
+            exampleDescription="Example loads the map style via a locally stored style JSON file or custom raster style."
             difficulty="intro"
             exampleImgID="examplesStyleMapCustomRaster"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/CustomRasterStyleActivity.java"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/LocalStyleSourceActivity.java"
           />
           <ExampleCard
             exampleTitle="Default styles"

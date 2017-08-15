@@ -27,13 +27,13 @@ Runtime styling expands upon the design power of Mapbox Studio and exposes all t
 
 If you'd like to add simple annotations on your map quickly, you might want to make use of the [annotations offered](/map-sdk/overview/annotations/).
 
-### Sources
+## Sources
 
 Sources hold the data for layers to use in your map. There are a handful of different source types supported, choosing one depends on your data type. Adding a source won't instantly make data appear on the map because sources don't contain styling details like color or width. Layers refer to a source and give it a visual representation.
 
 When creating a new source, two parameters are required, a source ID (String) and the source date.
 
-#### Vector
+### Vector
 
 Vector source tiles must be in [Mapbox Vector Tile format](https://www.mapbox.com/developers/vector-tiles/). All layers that use a vector source must specify a "source-layer" value. For vector tiles hosted by Mapbox, the "url" value should be of the form `mapbox://mapid`.
 
@@ -43,7 +43,7 @@ VectorSource vectorSource = new VectorSource("vector-source", "mapbox://mapbox.m
 mapboxMap.addSource(vectorSource);
 ```
 
-#### Raster
+### Raster
 
 Raster source tiles can be added to your map if they are in TileJSON format. If hosted by Mapbox, the "url" value should be of the form `mapbox://mapid`.
 
@@ -53,7 +53,7 @@ RasterSource rasterSource = new RasterSource("raster-source", "mapbox://mapbox.u
 mapboxMap.addSource(rasterSource);
 ```
 
-#### GeoJson
+### GeoJson
 
 {{
   <Floater
@@ -123,13 +123,13 @@ A benefit of having your data inside a GeoJSON source is that you can update, re
 
 <!-- NOTE link to GoJSON plugin -->
 
-### Layers
+## Layers
 
 While sources hold the data, layers are used to style and display the information. Several layer types are offered depending on your source geometry. Except for layers of the background type, each layer needs to refer to a source. You can optionally filter features and then define how those features are styled.
 
 Each layer offers a `setProperties` API which can be used to style the layer in many different ways. Note that instead of creating different layers depending on certain cases inside your source data, it's recommended to use data-driven styling instead to reduce the number of layers the map needs to render.
 
-#### Background
+### Background
 
 The background layer type is unique in that it doesn't require a source. Background layers can be a solid color or a pattern.
 
@@ -140,7 +140,7 @@ backgroundLayer.setProperties(
 );
 ```
 
-#### Fill
+### Fill
 
 Fill layers have an enclosed shape geometry that can be useful for marking areas on a map. The geometry's similar to a line layer consisting of a series of coordinates in a particular order with the first and last points having the same coordinate.
 
@@ -157,7 +157,7 @@ To alter the shape of the geometry once you have added it, the layer can remain 
 <!-- NOTE talk about mapboxMap.getLayers(); -->
 <!-- NOTE talk about mapboxMap.addLayerBelow(); -->
 
-#### Line
+### Line
 
 {{
   <Floater
@@ -190,7 +190,7 @@ lineLayer.setProperties(
 mapboxMap.addLayer(lineLayer);
 ```
 
-#### Symbol
+### Symbol
 
 Symbol layers indicate a single position on the map with either an icon or text label. Similar to GL Markers and Marker Views, the symbol layer can represent the same data and offers the most power for in map displaying. To begin with, we will show how to add a marker image to the map and then display it as your symbol layer.
 
@@ -221,7 +221,7 @@ mapboxMap.addLayer(selectedMarker);
 
 <!-- NOTE build an example showing how to display text stored in source property -->
 
-#### Raster
+### Raster
 
 Raster layers are typically a collection of images that display on top of the base map tiles. While Vector tiles are preferred, satellite imagery or legacy map styles render as a raster layer.
 
@@ -233,7 +233,7 @@ RasterLayer rasterLayer = new RasterLayer("layer-id", "source-id");
 mapboxMap.addLayer(rasterLayer);
 ```
 
-#### Circle
+### Circle
 
 Circle layers have a single center coordinate which comes from the source data. It's a geographically accurate projection of a circle on the Earth's surface drawn on the map. A few default properties are provided but can be overriddenwhen the layers first created.
 
@@ -250,7 +250,7 @@ museumsLayer.setProperties(
 );
 ```
 
-### Filtering
+## Filtering
 
 A filter selects specific features from a layer. A filter is an array of one of the following forms:
 
@@ -272,7 +272,7 @@ A filter selects specific features from a layer. A filter is an array of one of 
 
 A key must be a string that identifies a feature property or a special key. Read [more on filters here](https://www.mapbox.com/mapbox-gl-js/style-spec/#types-filter)
 
-### Modify properties
+## Modify properties
 
 Sources and layers aren't immutable and therefore, can be modified anytime during the map render. For example, to alter the fill color of a layer after it's been added to the map, you use the `mapboxMap` object to get the layer and set the property.
 
@@ -294,6 +294,6 @@ if (geoJsonSource != null) {
 }
 ```
 
-### Capturing click events
+## Capturing click events
 
 Layers are not clickable and don't expose any event listeners for you to handle user input. Instead, the map querying feature described in a separate doc go over how to detect when a user has clicked on a polygon inside your fill layer for example.

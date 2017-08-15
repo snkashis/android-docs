@@ -8,14 +8,13 @@ sideNavSections:
   - title: "Usage with navigation"
   - title: "Customization"
 ---
-
 # Location Layer
 
 A popular, often critical feature is showing the users current location as an annotation to give a reference point on the map. This plugin makes use of the latest [runtime styling](/android-docs/map-sdk/overview/runtime-styling/) features to display the location icons/markers within the map itself rather than on top as an Android view. This brings several fixes and performance improvements previously experienced when using the now deprecated `MyLocationView`.
 
 To install, head over to the [Mapbox Plugin Overview](/android-docs/plugins/overview/) page which will walk you through adding the dependency.
 
-### Setup permissions
+## Setup permissions
 
 Before using the location layer plugin, you'll need to include either the coarse _or_ fine location permission inside your applications manifest.
 
@@ -34,11 +33,11 @@ Before using the location layer plugin, you'll need to include either the coarse
 
 If your application's targeting Android 6.0 (API 23) or higher, you'll want to use the new permissions model which request permissions at runtime rather than during the installation process. It's important to request the permission either during the application startup or when the location layer gets initialized. [PermissionsManager](/android-docs/mapbox-services/overview/telemetry/#permissionsmanager) is a utility offered as part of the Mapbox Services package inside the Map SDK and streamlines the permission request process.
 
-### Lifecycles
+## Lifecycles
 
 It's important to include the location layer `onStart()` and `onStop()` lifecycle events in their respective activity methods. This prevents memory leaks from occurring and reduces battery consumption. The plugin has support for the new `LifecycleObserver` APIs, by adding the plugin as a lifecycle observer in your activity, you won't need to handle the lifecycles manually.
 
-### Add the location layer
+## Add the location layer
 
 To initialize the Location layer plugin, you'll need to pass in both the map view and the `mapboxMap` object. Depending on whether or not you'd like the Location Layer to track the user's location automatically or not, you can either pass in a locationEngine or `null`. If no location engines provided, you are responsible for updating the location position manually using `forceLocationUpdate()`.
 
@@ -55,7 +54,7 @@ There are several location layer modes inside the plugin which are useful for di
 | `COMPASS` | Identical to the tracking mode except a compass listeners attached which displays on the map as a chevron/arrow icon surrounding the default blue icon.  |
 | `NAVIGATION` | A unique marker icon specific to a navigation session. By default, this icon's larger and has an arrow centered pointing in the location bearing direction. No accuracy ring's shown in this mode. |
 
-### Usage with navigation
+## Usage with navigation
 
 Another difference between the Location Layer plugin versus the `MyLocationView` is the inclusion of support for navigation usage. Once a navigation session's started using the [Mapbox Navigation SDK](/android-docs/navigation/overview/), a few adjustments will need to be made to the Location Layer plugin to improve the performance and behavior. First, the mode must be changed to `NAVIGATION` so the icon displays and works in the most optimal way.
 
@@ -63,7 +62,7 @@ If you plan to use the snapped location provided by the navigation SDK, you'll n
 
 Once a navigation sessions complete, you can return to the plugin's previous state by passing back in your locationEngine and changing the mode back to the previous mode.
 
-### Customization
+## Customization
 
 The plugin allows for several customizations such as drawables, opacities, and more by passing in a style either while constructing the plugin or using the provided `applyStyle()` API. For example, if you'd like to change the location layer icon from the default blue to red, I'd first need to generate a new icon drawable showing the change, add the drawable to my project, and then create a new style with the parentLayout being `LocationLayer`. The snippet below shows all the currently customizable attributes.
 

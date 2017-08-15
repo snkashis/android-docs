@@ -13,7 +13,7 @@ prependJs:
 
 The Map SDK provides several different ways to mark a single point, add a line between many points, or draw a polygon. Often, these objects are drawn either on top of the map or in some cases, within the map itself. This document walks you through how to add high-level objects. If you'd like more control over annotations, make sure to check out the [runtime styling](/map-sdk/overview/runtime-styling/) documentation.
 
-### Markers
+## Markers
 
 Markers are useful when identifying a single point on the map. The SDK comes with a default marker icon which can be configured to fit your specific needs. APIs are exposed to optionally change this icon to any bitmap image you wish. To create a marker for you map, you are only required to provide a `LatLng` position which defines where the marker will be placed on the map. Call `mapboxMap.addMarker()` to actually add the marker to the map.
 
@@ -37,11 +37,11 @@ Besides providing the position, you can also add a title and snippet which displ
 
 Add a list of markers using `mapboxMap.addMarkers()` if you have many markers or are loading them from a GeoJSON file.
 
-#### Removing markers
+### Removing markers
 
 The Mapbox Android SDK comes with two methods for removing markers. If you'd like to remove a particular marker, use `mapboxMap.removeMarker()` while passing in the marker object to be removed. If you would like to remove _all_ markers, call the `mapboxMap.clear()` method. Note that this will also remove any polylines and polygons you’ve added to your map.
 
-#### Customize marker icon
+### Customize marker icon
 
 You can specify a custom icon by using the `IconFactory` object and passing it to the marker. The default marker icon's used if you don’t specify an icon while creating your marker. The anchoring of the marker will be in the center, meaning if you have an icon with a point, you'll need to add padding to the bottom of the image.
 
@@ -58,7 +58,7 @@ mapboxMap.addMarker(new MarkerViewOptions()
   .icon(icon));
 ```
 
-#### Capturing marker events
+### Capturing marker events
 
 The Maps SDK provides a handy listener for capturing when a user taps on a marker. By default, all markers come with an onMarkerClick event listener for displaying and hiding info windows. You can override this default event listener and set your own with the `setOnMarkerClickListener` method.
 
@@ -74,7 +74,7 @@ mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
 });
 ```
 
-#### Update a marker
+### Update a marker
 
 {{
   <Floater
@@ -95,11 +95,11 @@ marker.setPosition(new LatLng(-37.822884, 144.981916));
 marker.setIcon(icon);
 ```
 
-### Info window
+## Info window
 
 Info windows are used to display information in a popup window anchored to a marker. Their default behavior is to appear when the marker is tapped and then show a title text view above a snippet text view. An info window gets created if you provide a given marker with either a title or a snippet of text. If you need to add an info window at a later time or need to update the title, for example, use `marker.setTitle()`.
 
-#### Custom view
+### Custom view
 
 {{
   <Floater
@@ -112,7 +112,7 @@ Info windows are used to display information in a popup window anchored to a mar
 
 The Maps SDK also provides an API to customize the contents and design of info windows. You'll need to create an implementation of the `InfoWindowAdapter` and then call `MapboxMap.setInfoWindowAdapter()` and pass in your implementation as a parameter.  Inside the `InfoWindowAdapter`, a method called `getInfoWindow` gives the attached marker object and returns the info window view.
 
-### Polyline and polygons
+## Polyline and polygons
 
 Adding a line or polygon to your map is like adding a marker. Due to the nature of these objects, different APIs are exposed, such as polygon color or line width. Instead of taking in a single position,  bundle all your LatLng's inside a List and then pass them in using the `addAll()` API.
 
