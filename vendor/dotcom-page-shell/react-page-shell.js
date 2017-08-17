@@ -2137,7 +2137,10 @@ var PageFooter = function (_React$Component) {
           { className: 'limiter' },
           React.createElement(
             'div',
-            { className: 'shell-grid shell-mt24 shell-flex-parent shell-flex-parent--space-between-main' },
+            {
+              id: 'page-footer-nav',
+              className: 'shell-grid shell-mt24 shell-flex-parent shell-flex-parent--space-between-main'
+            },
             React.createElement(
               'div',
               { className: columnClassList + ' shell-none shell-block-ml' },
@@ -2174,7 +2177,10 @@ var PageFooter = function (_React$Component) {
           ),
           React.createElement(
             'div',
-            { className: 'shell-grid shell-txt-s shell-color-darken50 shell-py12 shell-py0-ml shell-mt42-ml' },
+            {
+              id: 'page-footer-legal-social',
+              className: 'shell-grid shell-txt-s shell-color-darken50 shell-py12 shell-py0-ml shell-mt42-ml'
+            },
             React.createElement(FooterLegalStrip, { className: 'shell-col shell-col--12 shell-col--6-mm shell-my12' }),
             React.createElement(FooterSocialMediaStrip, { className: 'shell-col shell-col--12 shell-col--6-mm shell-my12 shell-footer-fr' })
           )
