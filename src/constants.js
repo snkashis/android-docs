@@ -1,5 +1,5 @@
 /* SDK Versions */
-export const MAS_VERSION = '2.2.0';
+export const MAS_VERSION = '2.2.1';
 export const MAP_SDK_VERSION = '5.1.2';
 export const NAVIGATION_VERSION = '0.4.0';
 export const TRAFFIC_PLUGIN_VERSION = '0.3.0';
