@@ -793,7 +793,7 @@ var navigationMenuData = {
       }, {
         name: 'Studio',
         description: 'Design custom maps',
-        to: '/studio/'
+        to: '/mapbox-studio/'
       }],
       highlightedLinks: [{
         name: 'More products',
@@ -2190,7 +2190,7 @@ var PageFooter = function (_React$Component) {
           {
             xmlns: 'http://www.w3.org/2000/svg',
             xmlnsXlink: 'http://www.w3.org/1999/xlink',
-            className: 'none'
+            className: 'shell-none'
           },
           React.createElement(
             'symbol',
