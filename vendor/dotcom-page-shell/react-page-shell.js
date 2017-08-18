@@ -190,13 +190,13 @@ var PageHelmet = function (_React$Component) {
 
 var shellStyles = {
   // Header names
-  headerMenuName: 'shell-txt-s shell-txt-s-mxl shell-txt-bold shell-txt-nowrap',
+  headerMenuName: 'shell-txt-s shell-txt-s-mxl shell-txt-bold shell-txt-nowrap shell-py6',
 
   // Mobile navigation popover
   mobilePopoverContainer: 'shell-absolute shell-z5',
 
   // Medium to X-large navigation
-  navigationMenu: 'shell-relative shell-flex-child shell-mx6 shell-mx12-ml shell-mx18-mxl',
+  navigationMenu: 'shell-relative shell-mx6 shell-mx12-ml shell-mx18-mxl',
 
   // Medium to X-large navigation popover
   popoverContainer: 'shell-absolute shell-w-full shell-z2 shell-disable-text-size-adjust',
@@ -1053,7 +1053,7 @@ function SecondaryMenu(props) {
                 },
                 React.createElement(
                   'div',
-                  { className: 'shell-col shell-col--4 shell-pt3' },
+                  { className: 'shell-col shell-col--4' },
                   React.createElement(
                     'div',
                     {
@@ -1067,7 +1067,7 @@ function SecondaryMenu(props) {
                   { className: 'shell-col shell-col--8' },
                   React.createElement(
                     'p',
-                    { className: 'shell-txt-bold shell-txt-s shell-py3 shell-mt18 shell-mb0' },
+                    { className: 'shell-txt-bold shell-txt-s shell-pb3 shell-mt18 shell-mb0' },
                     link.name
                   ),
                   React.createElement(
@@ -1306,7 +1306,7 @@ function NavigationMenu(props) {
   }
   return React.createElement(
     'div',
-    { className: props.className },
+    { style: { lineHeight: 1 } },
     React.createElement(
       'div',
       { className: shellStyles.navigationMenu },
@@ -1315,9 +1315,6 @@ function NavigationMenu(props) {
         {
           id: triggerId,
           className: menuNameClasses,
-          style: {
-            lineHeight: 'inherit'
-          },
           'data-nav-trigger': props.name,
           'data-test': 'nav-menu-trigger-' + props.name,
           'aria-haspopup': 'true',
@@ -1379,11 +1376,15 @@ var Navigation = function (_React$Component) {
 
       var menuEls = navigationMenuData.headerMainMenuOrder.map(function (menuId, i) {
         var menuData = navigationMenuData.headerMainMenus[menuId];
-        return React.createElement(NavigationMenu, _extends({ key: i, darkText: _this2.props.darkText }, menuData));
+        return React.createElement(
+          'div',
+          { key: i, className: 'shell-flex-child' },
+          React.createElement(NavigationMenu, _extends({ darkText: _this2.props.darkText }, menuData))
+        );
       });
       return React.createElement(
         'div',
-        { className: 'shell-flex-parent' },
+        { className: 'shell-flex-parent shell-flex-parent--center-cross' },
         menuEls
       );
     }
@@ -1821,36 +1822,37 @@ var PageHeader = function (_React$Component) {
             React.createElement(
               'div',
               { className: 'shell-flex-parent shell-flex-parent--center-cross shell-flex-parent--end-main' },
-              React.createElement(Navigation, {
-                className: 'shell-flex-child',
-                darkText: this.props.darkText
-              }),
               React.createElement(
                 'div',
-                { className: 'shell-flex-child shell-mx6 shell-mx12-ml shell-mx18-mxl' },
+                { className: 'shell-flex-child' },
+                React.createElement(Navigation, { darkText: this.props.darkText })
+              ),
+              React.createElement(
+                'div',
+                {
+                  className: 'shell-flex-child shell-mx6 shell-mx12-ml shell-mx18-mxl',
+                  style: { lineHeight: 1 }
+                },
                 React.createElement(
                   'a',
                   {
-                    className: 'shell-txt-s shell-txt-bold ' + colorBasedClasses,
-                    href: '/about/',
-                    style: {
-                      lineHeight: 'inherit'
-                    }
+                    className: 'shell-txt-s shell-py6 shell-txt-bold ' + colorBasedClasses,
+                    href: '/about/'
                   },
                   'About'
                 )
               ),
               React.createElement(
                 'div',
-                { className: 'shell-flex-child shell-mx6 shell-mx12-ml shell-mx18-mxl' },
+                {
+                  className: 'shell-flex-child shell-mx6 shell-mx12-ml shell-mx18-mxl',
+                  style: { lineHeight: 1 }
+                },
                 React.createElement(
                   'a',
                   {
-                    className: 'shell-txt-s shell-txt-bold ' + colorBasedClasses,
-                    href: '/blog/',
-                    style: {
-                      lineHeight: 'inherit'
-                    }
+                    className: 'shell-txt-s shell-py6 shell-txt-bold ' + colorBasedClasses,
+                    href: '/blog/'
                   },
                   'Blog'
                 )
