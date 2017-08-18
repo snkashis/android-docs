@@ -1294,7 +1294,7 @@ function DocumentationMenu() {
 
 function NavigationMenu(props) {
   var menuNameClasses = shellStyles.headerMenuName;
-  menuNameClasses += props.darkText ? ' shell-transition shell-color-gray-dark shell-color-blue-on-hover' : ' shell-link shell-link--white';
+  menuNameClasses += props.darkText ? ' shell-navigation-menu-button shell-transition shell-color-gray-dark shell-color-blue-on-hover' : ' shell-navigation-menu-button shell-link shell-link--white';
   var menuId = props.name.replace(/\s+/g, '').toLowerCase() + '-menu';
   var triggerId = menuId + '-trigger';
   var pointerId = menuId + '-pointer';
@@ -1408,18 +1408,18 @@ var MobileMenuButton = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var menuIconClasses = 'shell-icon--l';
+      var extraMenuButtonClasses = void 0;
       if (!this.props.darkText) {
-        menuIconClasses += ' shell-link shell-link--white';
+        extraMenuButtonClasses = 'shell-link shell-link--white';
       } else {
-        menuIconClasses += ' shell-color-blue';
+        extraMenuButtonClasses = 'shell-color-blue';
       }
       return React.createElement(
         'button',
         {
           id: 'mobile-nav-trigger-toggle',
           'aria-label': 'Toggle navigation',
-          className: 'shell-p6y shell-p3x',
+          className: extraMenuButtonClasses + ' shell-p6y shell-p3x',
           'data-test': 'mobile-nav-trigger-toggle'
         },
         React.createElement(
@@ -1427,7 +1427,7 @@ var MobileMenuButton = function (_React$Component) {
           {
             id: 'mobile-nav-trigger-menu',
             viewBox: '0 0 18 18',
-            className: 'shell-mobile-nav__trigger shell-icon shell-transition ' + menuIconClasses
+            className: 'shell-mobile-nav__trigger shell-icon shell-transition shell-icon--l'
           },
           React.createElement(
             'g',
@@ -1803,7 +1803,7 @@ var PageHeader = function (_React$Component) {
       if (this.props.position === 'absolute') {
         headerClasses = 'shell-absolute shell-w-full shell-z1';
       }
-      var colorBasedClasses = this.props.darkText ? 'shell-color-gray-dark shell-color-blue-on-hover' : 'shell-link shell-link--white';
+      var colorBasedClasses = this.props.darkText ? 'shell-navigation-menu-button shell-color-gray-dark shell-color-blue-on-hover' : 'shell-navigation-menu-button shell-link shell-link--white';
       return React.createElement(
         'header',
         { className: headerClasses, 'data-swiftype-index': 'false' },
