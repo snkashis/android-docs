@@ -8,21 +8,19 @@ sideNavSections:
 
 # Directions
 
-- talk about how it's a wrapper for the mb directions api specifically for java/android users
-- multiple waypoints between origin and final destination (up to 25 except traffic)
-- point out the navigation SDK
-- link to api documentation
+The Directions API delivers routes for navigating the world. Driving, walking, and cycling directions are all possible for you to request, retrieve, and use in your Android project however you would like. 
 
-- link to directions request example
+The API is a wrapper for the Mapbox Directions API and it is specifically for Java/Android developers/users.
 
-The Directions API delivers routes for navigating the world. Driving, walking, and cycling directions are all possible for you to request, retrieve, and use in your Android project however you would like.
-
-
+Directions API requests for driving, walking, and cycling routes can specify up to 25 total waypoints along the route.  Requests using the driving-traffic profile can specify up to 3 waypoints.
 
 The Directions API does not return estimated time of arrival (ETA). If you'd like ETAs, please review [the Mapbox Matrix API](https://www.mapbox.com/android-docs/mapbox-services/overview/directions-matrix/), which returns ETAs but not route geometries or distances.
 
+The Directions API is used on its own to get routes. [The Mapbox Navigation SDK](https://www.mapbox.com/android-docs/navigation/overview/) is also built on top of this API.
+
 Make sure to have a look at the API documentation if you want [more information](https://www.mapbox.com/api-documentation/#directions).
 
+Along with the API documentation, you can also view [the Directions example in the Mapbox Android demo app](https://github.com/mapbox/mapbox-android-demo/blob/eadaf3a81c01f1390753dbe24b560f77d117ec27/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/mas/DirectionsActivity.java) to see how to use the Directions API.
 
 
 ### Directions request
@@ -31,15 +29,7 @@ Before requesting and receiving the Directions response, you'll need to use the 
 
 [Our API documentation has a list of all of the ways that you customize the Directions request](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-services/2.2.1/com/mapbox/services/api/directions/v5/DirectionsCriteria.html)
 
-```java
- MapboxDirections client = new MapboxDirections.Builder()
-      .setOrigin(origin)
-      .setDestination(destination)
-      .setOverview(DirectionsCriteria.OVERVIEW_FULL)
-      .setProfile(DirectionsCriteria.PROFILE_DRIVING)
-      .setAccessToken(Mapbox.getAccessToken())
-      .build();
-```
+
 
 - Requests using driving, walking, and cycling profiles can specify up to 25 total waypoints along the route.
 - Requests using the driving-traffic profile can specify up to 3 waypoints.
@@ -55,11 +45,27 @@ Before requesting and receiving the Directions response, you'll need to use the 
 - alternative routes (ordered by descending recommendation rank. May contain at most two routes.)
 - bearings and continue straight and how that effects the route
 
-- code snippet
+```java
+ MapboxDirections client = new MapboxDirections.Builder()
+      .setOrigin(origin)
+      .setDestination(destination)
+      .setOverview(DirectionsCriteria.OVERVIEW_FULL)
+      .setProfile(DirectionsCriteria.PROFILE_DRIVING)
+      .setAccessToken(Mapbox.getAccessToken())
+      .build();
+```
 
 ### Directions response
 
-Like all API calls inside of Mapbox Services, the response will come inside a Retrofit callback. If the call was successful, you can access the API's returned response inside of `onResponse`.
+If the call was successful, you can access the API's returned response inside of `onResponse`.
+
+
+- not all request have a result, go through potential outcomes (usage of `code`)
+- waypoints inside response (original points snapped to route and with additional info)
+
+Like all API calls inside of Mapbox Services, the response will come inside a Retrofit callback. 
+
+- convert line geometry to a lineString
 
 ```java
     client.enqueueCall(new Callback<DirectionsResponse>() {
@@ -75,13 +81,6 @@ Like all API calls inside of Mapbox Services, the response will come inside a Re
     });
 ```
 
-- not all request have a result, go through potential outcomes (usage of `code`)
-- waypoints inside response (original points snapped to route and with additional info)
-- retrofit
-- convert line geometry to a lineString
-
-- code snippet
-
 #### Legs
 
 - discuss what could cause 2 or more legs in a response (rare)
@@ -92,7 +91,6 @@ Like all API calls inside of Mapbox Services, the response will come inside a Re
 - getting the step object
 - getting step instructions
 - intersections
-
 
 #### Maneuvers
 
