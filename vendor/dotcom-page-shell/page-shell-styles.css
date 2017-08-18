@@ -884,8 +884,21 @@
   transition: opacity 0.25s, transform 0.25s;
   -webkit-transform: translateY(0) rotate(0deg) scale(1);
           transform: translateY(0) rotate(0deg) scale(1);
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
+}
+
+.shell-mobile-nav__trigger__bar--middle {
+  -webkit-transform-origin: 9px 9px;
+          transform-origin: 9px 9px;
+}
+
+.shell-mobile-nav__trigger__bar--top {
+  -webkit-transform-origin: 9px 5px;
+          transform-origin: 9px 5px;
+}
+
+.shell-mobile-nav__trigger__bar--bottom {
+  -webkit-transform-origin: 9px 13px;
+          transform-origin: 9px 13px;
 }
 
 .shell-mobile-nav--visible .shell-mobile-nav__trigger__bar--middle {
