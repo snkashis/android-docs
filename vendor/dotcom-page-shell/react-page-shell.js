@@ -181,7 +181,8 @@ var PageHelmet = function (_React$Component) {
           content: '57838af58c8045c2c024bc2f9d1577f9'
         }),
         React.createElement('meta', { name: 'twitter:site', content: '@Mapbox' }),
-        React.createElement('meta', { property: 'og:site_name', content: 'Mapbox' })
+        React.createElement('meta', { property: 'og:site_name', content: 'Mapbox' }),
+        React.createElement('script', { src: 'https://cdn.optimizely.com/js/8601340720.js' })
       );
     }
   }]);
@@ -946,7 +947,7 @@ var navigationMenuData = {
       name: 'Jobs',
       to: '/jobs/'
     }, {
-      name: 'Teams',
+      name: 'Team',
       to: '/about/team/'
     }, {
       name: 'Blog',
@@ -986,7 +987,7 @@ var navigationMenuData = {
       name: 'Jobs',
       to: '/jobs/'
     }, {
-      name: 'Teams',
+      name: 'Team',
       to: '/about/team/'
     }, {
       name: 'Blog',
