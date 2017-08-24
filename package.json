@@ -31,7 +31,7 @@
     "@mapbox/mapbox-assembly": "^0.20.1",
     "@mapbox/page-loading-indicator": "^0.1.0",
     "@mapbox/react-icon": "^0.1.0",
-    "@mapbox/react-popover-trigger": "^0.2.1",
+    "@mapbox/react-popover-trigger": "^0.3.0",
     "array-find": "^1.0.0",
     "classnames": "^2.2.5",
     "github-slugger": "^1.1.3",
