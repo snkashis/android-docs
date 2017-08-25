@@ -181,8 +181,7 @@ var PageHelmet = function (_React$Component) {
           content: '57838af58c8045c2c024bc2f9d1577f9'
         }),
         React.createElement('meta', { name: 'twitter:site', content: '@Mapbox' }),
-        React.createElement('meta', { property: 'og:site_name', content: 'Mapbox' }),
-        React.createElement('script', { src: 'https://cdn.optimizely.com/js/8601340720.js' })
+        React.createElement('meta', { property: 'og:site_name', content: 'Mapbox' })
       );
     }
   }]);
@@ -1841,6 +1840,21 @@ var PageHeader = function (_React$Component) {
                     href: '/about/'
                   },
                   'About'
+                )
+              ),
+              React.createElement(
+                'div',
+                {
+                  className: 'shell-flex-child shell-mx6 shell-mx12-ml shell-mx18-mxl',
+                  style: { lineHeight: 1 }
+                },
+                React.createElement(
+                  'a',
+                  {
+                    className: 'shell-txt-s shell-py6 shell-txt-bold ' + colorBasedClasses,
+                    href: '/pricing/'
+                  },
+                  'Pricing'
                 )
               ),
               React.createElement(
