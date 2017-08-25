@@ -946,7 +946,7 @@ var navigationMenuData = {
       name: 'Jobs',
       to: '/jobs/'
     }, {
-      name: 'Teams',
+      name: 'Team',
       to: '/about/team/'
     }, {
       name: 'Blog',
@@ -986,7 +986,7 @@ var navigationMenuData = {
       name: 'Jobs',
       to: '/jobs/'
     }, {
-      name: 'Teams',
+      name: 'Team',
       to: '/about/team/'
     }, {
       name: 'Blog',
@@ -1840,6 +1840,21 @@ var PageHeader = function (_React$Component) {
                     href: '/about/'
                   },
                   'About'
+                )
+              ),
+              React.createElement(
+                'div',
+                {
+                  className: 'shell-flex-child shell-mx6 shell-mx12-ml shell-mx18-mxl',
+                  style: { lineHeight: 1 }
+                },
+                React.createElement(
+                  'a',
+                  {
+                    className: 'shell-txt-s shell-py6 shell-txt-bold ' + colorBasedClasses,
+                    href: '/pricing/'
+                  },
+                  'Pricing'
                 )
               ),
               React.createElement(
