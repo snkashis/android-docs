@@ -219,15 +219,6 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
         </ExampleCardContainer>
         <ExampleCardContainer exampleTitle="3D Extrusions">
           <ExampleCard
-            exampleTitle="3D buildings"
-            exampleDescription={
-              'Use extrusions to display building heights in 3D'
-            }
-            difficulty="intermediate"
-            exampleImgID="examples3dExtrusions3dBuilds"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/extrusions/BasicExtrusionActivity.java"
-          />
-          <ExampleCard
             exampleTitle="Display 3D building height based on vector data"
             exampleDescription={
               'Use imported vector data to set the height of 3D building extrusions'
@@ -252,7 +243,7 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             }
             difficulty="intermediate"
             exampleImgID="examples3dExtrusionsExtrusionLight"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/5937a1c4cb677f2056deb9170792e169a85b4fa0/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/extrusions/AdjustExtrusionLightActivity.java"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/extrusions/AdjustExtrusionLightActivity.java"
           />
         </ExampleCardContainer>
         <ExampleCardContainer exampleTitle="Data Driven Styling">
