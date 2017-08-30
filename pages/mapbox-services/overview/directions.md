@@ -20,28 +20,17 @@ The Directions API can be completely used on its own to get routes and other dir
 compile 'com.mapbox.mapboxsdk:mapbox-java-services:{masVersion}'
 ```
 
-Make sure to have a look at the API documentation if you want [more information](https://www.mapbox.com/api-documentation/#directions).
+Make sure to have a look at the API documentation if you want [more information about the Directions API](https://www.mapbox.com/api-documentation/#directions).
 
-Along with the API documentation, you can also view [the Directions example in the Mapbox Android demo app](https://github.com/mapbox/mapbox-android-demo/blob/eadaf3a81c01f1390753dbe24b560f77d117ec27/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/mas/DirectionsActivity.java) to see how to use the Directions API.
-
+Along with the API documentation, you can also view [the Directions API example in the Mapbox Android demo app](https://github.com/mapbox/mapbox-android-demo/blob/eadaf3a81c01f1390753dbe24b560f77d117ec27/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/mas/DirectionsActivity.java) to see a complete example of how the API is used.
 
 
 ### Directions request
 
-Before requesting and receiving the Directions response, you'll need to use the `MapboxDirections` builder to set the request parameters. Building the request requires an origin `Position` object, a destination `Position` object.
+Using the Mapbox Directions API requires you to build a url with various parameters to request the information that you want. This url has required and optional parameters. We've created a `MapboxDirections.Builder()` to help you easily set these various parameters.
 
-[Our API documentation has a list of all of the ways that you customize the Directions request](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-services/2.2.1/com/mapbox/services/api/directions/v5/DirectionsCriteria.html)
+The two Building the request requires an origin `Position` object, a destination `Position` object.
 
-
-Directions API requests for driving, walking, and cycling routes can specify up to 25 total waypoints along the route.  
-
-Requests using the driving-traffic profile can specify up to 3 waypoints.
-
-- Traffic coverage for the driving-traffic profile is available in supported geographies. Requests to this profile revert to driving profile results for areas without traffic coverage.
-- Maximum 60 requests per minute
-- Computing route alternatives is not supported on the driving-traffic profile.
-
-The In order to correctly send all of the required and optional parameters to the Directions API
 
 - Talk about Builder
 - required parameters
@@ -59,6 +48,19 @@ The In order to correctly send all of the required and optional parameters to th
       .setAccessToken(Mapbox.getAccessToken())
       .build();
 ```
+
+[Our API documentation has a list of all of the ways that you customize the Directions request](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-services/2.2.1/com/mapbox/services/api/directions/v5/DirectionsCriteria.html)
+
+
+
+Directions API requests for driving, walking, and cycling routes can specify up to 25 total waypoints along the route.  
+
+Requests using the driving-traffic profile can specify up to 3 waypoints.
+
+- Traffic coverage for the driving-traffic profile is available in supported geographies. Requests to this profile revert to driving profile results for areas without traffic coverage.
+- Maximum 60 requests per minute
+- Computing route alternatives is not supported on the driving-traffic profile.
+
 
 ### Directions response
 
