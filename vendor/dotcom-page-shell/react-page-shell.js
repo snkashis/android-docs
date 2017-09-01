@@ -226,27 +226,45 @@ var NavigationHighlightLink = function (_React$Component) {
   }
 
   createClass(NavigationHighlightLink, [{
-    key: "shouldComponentUpdate",
+    key: 'shouldComponentUpdate',
     value: function shouldComponentUpdate() {
       return false;
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
+      var splitText = this.props.label.split(' ');
+      var lastWord = splitText.pop();
+      var textWithoutLastWord = splitText.join(' ');
+
       return React.createElement(
-        "span",
-        { className: "shell-txt-bold shell-icon-inliner" },
-        this.props.label,
+        'span',
+        { className: 'shell-txt-bold' },
+        textWithoutLastWord,
+        ' ',
         React.createElement(
-          "svg",
-          { className: "shell-icon" },
-          React.createElement("use", { xlinkHref: "#shell-icon-chevron-right" })
+          'span',
+          { className: 'shell-txt-nowrap' },
+          lastWord,
+          React.createElement(
+            'span',
+            { className: 'shell-icon-inliner' },
+            React.createElement(
+              'svg',
+              { className: 'shell-icon' },
+              React.createElement('use', { xlinkHref: '#shell-icon-chevron-right' })
+            )
+          )
         )
       );
     }
   }]);
   return NavigationHighlightLink;
 }(React.Component);
+
+NavigationHighlightLink.propTypes = {
+  label: PropTypes.string.isRequired
+};
 
 var UserMenu = function (_React$Component) {
   inherits(UserMenu, _React$Component);
@@ -277,7 +295,6 @@ var UserMenu = function (_React$Component) {
           signInQuery = '?' + match[1];
         }
       }
-
       return (
         // Hard-coded width matches the width of the sign-in button, which is slightly
         // wider than the user-menu trigger. By hard-coding this value we can prevent
@@ -391,6 +408,10 @@ var UserMenu = function (_React$Component) {
   return UserMenu;
 }(React.Component);
 
+UserMenu.propTypes = {
+  darkText: PropTypes.bool
+};
+
 var HowMapboxWorksImg = function (_React$Component) {
   inherits(HowMapboxWorksImg, _React$Component);
 
@@ -400,87 +421,87 @@ var HowMapboxWorksImg = function (_React$Component) {
   }
 
   createClass(HowMapboxWorksImg, [{
-    key: "shouldComponentUpdate",
+    key: 'shouldComponentUpdate',
     value: function shouldComponentUpdate() {
       return false;
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "svg",
+        'svg',
         {
-          xmlns: "http://www.w3.org/2000/svg",
+          xmlns: 'http://www.w3.org/2000/svg',
           className: this.props.className,
-          viewBox: "0 0 110 66"
+          viewBox: '0 0 110 66'
         },
         React.createElement(
-          "g",
-          { "data-name": "svg" },
-          React.createElement("path", {
-            d: "M37.58 22.37h-6.43a7.37 7.37 0 1 0 0 2h6.43z",
-            fill: "#1078bf"
+          'g',
+          { 'data-name': 'svg' },
+          React.createElement('path', {
+            d: 'M37.58 22.37h-6.43a7.37 7.37 0 1 0 0 2h6.43z',
+            fill: '#1078bf'
           }),
-          React.createElement("path", {
-            d: "M26.87 22.78a3 3 0 0 0-3.1-3 3 3 0 0 0-2.93 3.11 3 3 0 0 0 1.88 2.69l.89 1.54a.3.3 0 0 0 .52 0l.9-1.56a3 3 0 0 0 1.84-2.78z",
-            fill: "#fff"
+          React.createElement('path', {
+            d: 'M26.87 22.78a3 3 0 0 0-3.1-3 3 3 0 0 0-2.93 3.11 3 3 0 0 0 1.88 2.69l.89 1.54a.3.3 0 0 0 .52 0l.9-1.56a3 3 0 0 0 1.84-2.78z',
+            fill: '#fff'
           }),
-          React.createElement("circle", { cx: "23.86", cy: "22.78", r: "1.34", fill: "#62baed" }),
-          React.createElement("path", {
-            d: "M37.25 40.54h-6.09a7.37 7.37 0 1 0 0 2h6.09z",
-            fill: "#1078bf"
+          React.createElement('circle', { cx: '23.86', cy: '22.78', r: '1.34', fill: '#62baed' }),
+          React.createElement('path', {
+            d: 'M37.25 40.54h-6.09a7.37 7.37 0 1 0 0 2h6.09z',
+            fill: '#1078bf'
           }),
-          React.createElement("path", {
-            d: "M29.27 41.65A2.57 2.57 0 0 0 26 39.19a3.18 3.18 0 0 0-5.53.64 2.2 2.2 0 0 0 .25 4.39h6.12a2.57 2.57 0 0 0 2.43-2.57z",
-            fill: "#fff"
+          React.createElement('path', {
+            d: 'M29.27 41.65A2.57 2.57 0 0 0 26 39.19a3.18 3.18 0 0 0-5.53.64 2.2 2.2 0 0 0 .25 4.39h6.12a2.57 2.57 0 0 0 2.43-2.57z',
+            fill: '#fff'
           }),
-          React.createElement("path", {
-            d: "M25.92 41.6L24 39.22a.38.38 0 0 0-.58 0l-1.95 2.38a.38.38 0 0 0 .29.61h1.09v2h1.67v-2h1.1a.38.38 0 0 0 .3-.61z",
-            fill: "#62baed"
+          React.createElement('path', {
+            d: 'M25.92 41.6L24 39.22a.38.38 0 0 0-.58 0l-1.95 2.38a.38.38 0 0 0 .29.61h1.09v2h1.67v-2h1.1a.38.38 0 0 0 .3-.61z',
+            fill: '#62baed'
           }),
-          React.createElement("path", {
-            d: "M91.83 13.74H69.06a1.68 1.68 0 0 0-1.68 1.68v17.07a1.68 1.68 0 0 0 1.68 1.68h10.89v7.61a4.69 4.69 0 0 1-.83 3 2 2 0 0 1-1.52.59H61v2h16.6a4 4 0 0 0 3-1.22 6.52 6.52 0 0 0 1.36-4.47v-7.51h9.88a1.68 1.68 0 0 0 1.68-1.68V15.42a1.68 1.68 0 0 0-1.69-1.68z",
-            fill: "#1078bf"
+          React.createElement('path', {
+            d: 'M91.83 13.74H69.06a1.68 1.68 0 0 0-1.68 1.68v17.07a1.68 1.68 0 0 0 1.68 1.68h10.89v7.61a4.69 4.69 0 0 1-.83 3 2 2 0 0 1-1.52.59H61v2h16.6a4 4 0 0 0 3-1.22 6.52 6.52 0 0 0 1.36-4.47v-7.51h9.88a1.68 1.68 0 0 0 1.68-1.68V15.42a1.68 1.68 0 0 0-1.69-1.68z',
+            fill: '#1078bf'
           }),
-          React.createElement("rect", {
-            x: "39.26",
-            y: "10.73",
-            width: "23.45",
-            height: "44.55",
-            rx: "4.19",
-            ry: "4.19",
-            fill: "#1078bf"
+          React.createElement('rect', {
+            x: '39.26',
+            y: '10.73',
+            width: '23.45',
+            height: '44.55',
+            rx: '4.19',
+            ry: '4.19',
+            fill: '#1078bf'
           }),
-          React.createElement("rect", {
-            x: "36.58",
-            y: "10.73",
-            width: "23.45",
-            height: "44.55",
-            rx: "4.19",
-            ry: "4.19",
-            fill: "#62baed"
+          React.createElement('rect', {
+            x: '36.58',
+            y: '10.73',
+            width: '23.45',
+            height: '44.55',
+            rx: '4.19',
+            ry: '4.19',
+            fill: '#62baed'
           }),
-          React.createElement("path", { fill: "#fff", d: "M39.26 15.75h18.76v32.16H39.26z" }),
-          React.createElement("path", {
-            d: "M49 47.91h-2V27.48a5.49 5.49 0 0 1 1.27-3.72 4.35 4.35 0 0 1 3.32-1.3H58v2h-6.45a2.41 2.41 0 0 0-1.86.67 3.5 3.5 0 0 0-.69 2.28z",
-            fill: "#1078bf"
+          React.createElement('path', { fill: '#fff', d: 'M39.26 15.75h18.76v32.16H39.26z' }),
+          React.createElement('path', {
+            d: 'M49 47.91h-2V27.48a5.49 5.49 0 0 1 1.27-3.72 4.35 4.35 0 0 1 3.32-1.3H58v2h-6.45a2.41 2.41 0 0 0-1.86.67 3.5 3.5 0 0 0-.69 2.28z',
+            fill: '#1078bf'
           }),
-          React.createElement("circle", { cx: "47.97", cy: "34.19", r: "3.35", fill: "#2d9bdf" }),
-          React.createElement("path", {
-            d: "M47.65 32.8l-1.22 2.44a.27.27 0 0 0 .4.35l1-.73 1.26.81a.27.27 0 0 0 .39-.35l-1.2-2.52a.35.35 0 0 0-.63 0z",
-            fill: "#fff"
+          React.createElement('circle', { cx: '47.97', cy: '34.19', r: '3.35', fill: '#2d9bdf' }),
+          React.createElement('path', {
+            d: 'M47.65 32.8l-1.22 2.44a.27.27 0 0 0 .4.35l1-.73 1.26.81a.27.27 0 0 0 .39-.35l-1.2-2.52a.35.35 0 0 0-.63 0z',
+            fill: '#fff'
           }),
-          React.createElement("path", {
-            d: "M79.11 20.52h-4a.75.75 0 0 1 0-1.5h4a.75.75 0 0 1 0 1.5z",
-            fill: "#f7f8f9"
+          React.createElement('path', {
+            d: 'M79.11 20.52h-4a.75.75 0 0 1 0-1.5h4a.75.75 0 0 1 0 1.5z',
+            fill: '#f7f8f9'
           }),
-          React.createElement("path", {
-            d: "M71.4 20.52a.75.75 0 0 1-.5-1.3l.71-.64-.69-.58a.75.75 0 0 1 1-1.15l1.3 1.15a.75.75 0 0 1 0 1.13l-1.34 1.22a.74.74 0 0 1-.48.17z",
-            fill: "#fff"
+          React.createElement('path', {
+            d: 'M71.4 20.52a.75.75 0 0 1-.5-1.3l.71-.64-.69-.58a.75.75 0 0 1 1-1.15l1.3 1.15a.75.75 0 0 1 0 1.13l-1.34 1.22a.74.74 0 0 1-.48.17z',
+            fill: '#fff'
           }),
-          React.createElement("path", {
-            d: "M80.78 27.89H71.4a.75.75 0 0 1 0-1.5h9.38a.75.75 0 0 1 0 1.5zM90.83 27.89h-6.7a.75.75 0 0 1 0-1.5h6.7a.75.75 0 0 1 0 1.5zM86.48 31.24H71.4a.75.75 0 0 1 0-1.5h15.08a.75.75 0 0 1 0 1.5zM85.47 24.54H71.4a.75.75 0 0 1 0-1.5h14.07a.75.75 0 0 1 0 1.5z",
-            fill: "#62baed"
+          React.createElement('path', {
+            d: 'M80.78 27.89H71.4a.75.75 0 0 1 0-1.5h9.38a.75.75 0 0 1 0 1.5zM90.83 27.89h-6.7a.75.75 0 0 1 0-1.5h6.7a.75.75 0 0 1 0 1.5zM86.48 31.24H71.4a.75.75 0 0 1 0-1.5h15.08a.75.75 0 0 1 0 1.5zM85.47 24.54H71.4a.75.75 0 0 1 0-1.5h14.07a.75.75 0 0 1 0 1.5z',
+            fill: '#62baed'
           })
         )
       );
@@ -488,6 +509,10 @@ var HowMapboxWorksImg = function (_React$Component) {
   }]);
   return HowMapboxWorksImg;
 }(React.Component);
+
+HowMapboxWorksImg.propTypes = {
+  className: PropTypes.string
+};
 
 var AssetTrackingImg = function (_React$Component) {
   inherits(AssetTrackingImg, _React$Component);
@@ -498,60 +523,64 @@ var AssetTrackingImg = function (_React$Component) {
   }
 
   createClass(AssetTrackingImg, [{
-    key: "shouldComponentUpdate",
+    key: 'shouldComponentUpdate',
     value: function shouldComponentUpdate() {
       return false;
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "svg",
+        'svg',
         {
-          xmlns: "http://www.w3.org/2000/svg",
+          xmlns: 'http://www.w3.org/2000/svg',
           className: this.props.className,
-          viewBox: "0 0 110 66"
+          viewBox: '0 0 110 66'
         },
         React.createElement(
-          "g",
-          { "data-name": "svg" },
-          React.createElement("path", {
-            d: "M12.29 28.26a1.25 1.25 0 0 1-.88-.36A1.3 1.3 0 0 1 11 27a1.28 1.28 0 0 1 .37-.88 1.3 1.3 0 0 1 1.77 0 1.27 1.27 0 0 1 .36.88 1.23 1.23 0 0 1-1.25 1.25zM20.33 41.06a1.25 1.25 0 0 1 .33-1.74 1.24 1.24 0 0 1 1.73.33 1.25 1.25 0 0 1-.33 1.74 1.27 1.27 0 0 1-.7.21 1.25 1.25 0 0 1-1.03-.54zm-3-4.45a1.25 1.25 0 0 1 .34-1.74 1.24 1.24 0 0 1 1.73.33 1.25 1.25 0 0 1-.4 1.74 1.2 1.2 0 0 1-.7.22 1.29 1.29 0 0 1-1-.55zm-3-4.45a1.24 1.24 0 0 1 .33-1.73 1.25 1.25 0 0 1 1.74.33 1.24 1.24 0 0 1-.4 1.73 1.23 1.23 0 0 1-.7.22 1.25 1.25 0 0 1-1.02-.55zM24.38 46a1.26 1.26 0 0 1-1.25-1.25 1.3 1.3 0 0 1 .37-.89 1.27 1.27 0 0 1 1.13-.34l.23.07a1.48 1.48 0 0 1 .22.12 1.43 1.43 0 0 1 .19.15 1.29 1.29 0 0 1 .36.89 1.25 1.25 0 0 1-.36.88l-.19.16-.22.11a.88.88 0 0 1-.23.07 1 1 0 0 1-.25.03zM27.78 42.23a1.25 1.25 0 0 1 .22-1.75 1.24 1.24 0 0 1 1.75.24 1.25 1.25 0 0 1-.24 1.75 1.23 1.23 0 0 1-.75.25 1.26 1.26 0 0 1-.98-.49zm4.39-3.33a1.25 1.25 0 0 1 .24-1.75 1.27 1.27 0 0 1 1.76.25 1.26 1.26 0 0 1-.25 1.75 1.23 1.23 0 0 1-.75.25 1.25 1.25 0 0 1-1-.5zM41 32.26a1.25 1.25 0 0 1 .24-1.75 1.25 1.25 0 0 1 1.75.24 1.25 1.25 0 0 1-.24 1.75 1.25 1.25 0 0 1-.75.25 1.25 1.25 0 0 1-1-.49zm4.39-3.33a1.25 1.25 0 0 1 .24-1.75 1.25 1.25 0 0 1 1.75.24 1.25 1.25 0 0 1-.24 1.75 1.24 1.24 0 0 1-.75.26 1.25 1.25 0 0 1-1.04-.5zM50.74 26.1h-.24l-.23-.1a.94.94 0 0 1-.22-.12.88.88 0 0 1-.19-.15 1.3 1.3 0 0 1-.37-.89 1.26 1.26 0 0 1 .37-.88l.19-.16a1.44 1.44 0 0 1 .22-.11.86.86 0 0 1 .23-.07 1.33 1.33 0 0 1 .49 0 .86.86 0 0 1 .23.07 1.49 1.49 0 0 1 .22.11l.19.16a1.35 1.35 0 0 1 .15.19 1 1 0 0 1 .12.22 1.56 1.56 0 0 1 .07.23 1 1 0 0 1 0 .24 1.29 1.29 0 0 1-.36.89.87.87 0 0 1-.19.15 1 1 0 0 1-.22.12l-.23.07zM72 51.95a1.25 1.25 0 0 1 .14-1.76 1.24 1.24 0 0 1 1.76.15 1.25 1.25 0 0 1-.14 1.76 1.24 1.24 0 0 1-.81.29 1.24 1.24 0 0 1-.95-.44zm-3.71-4.38a1.25 1.25 0 0 1 .15-1.76 1.25 1.25 0 0 1 1.76.14 1.25 1.25 0 0 1-.15 1.77 1.27 1.27 0 0 1-.8.29 1.26 1.26 0 0 1-.94-.44zm-7.39-8.76a1.26 1.26 0 0 1 .15-1.81 1.25 1.25 0 0 1 1.76.15 1.24 1.24 0 0 1-.15 1.76 1.22 1.22 0 0 1-.8.3 1.26 1.26 0 0 1-.96-.4zm-3.7-4.39a1.25 1.25 0 0 1 .14-1.76 1.26 1.26 0 0 1 1.77.15 1.25 1.25 0 0 1-.11 1.76 1.25 1.25 0 0 1-.81.3 1.22 1.22 0 0 1-.99-.46zM53.49 30a1.25 1.25 0 0 1 .15-1.76 1.25 1.25 0 0 1 1.76.15 1.24 1.24 0 0 1-.15 1.76 1.22 1.22 0 0 1-.8.3 1.24 1.24 0 0 1-.96-.45zM76.68 56.77a1.29 1.29 0 0 1-.89-.36 1.27 1.27 0 0 1-.36-.89 1.25 1.25 0 0 1 .36-.88 1.26 1.26 0 0 1 2.14.88 1.3 1.3 0 0 1-.37.89 1.25 1.25 0 0 1-.88.36zM80.18 53a1.25 1.25 0 0 1 .29-1.74 1.26 1.26 0 0 1 1.75.29 1.24 1.24 0 0 1-.3 1.74 1.21 1.21 0 0 1-.72.23 1.24 1.24 0 0 1-1.02-.52zm4.52-3.23A1.25 1.25 0 0 1 85 48a1.26 1.26 0 0 1 1.75.29 1.25 1.25 0 0 1-.29 1.74 1.25 1.25 0 0 1-.73.24 1.27 1.27 0 0 1-1.03-.48zM90.24 47.08a1.25 1.25 0 0 1-.88-.36 1.3 1.3 0 0 1-.37-.89 1 1 0 0 1 0-.24.86.86 0 0 1 .07-.23 1.42 1.42 0 0 1 .11-.22 1.5 1.5 0 0 1 .16-.19 1.3 1.3 0 0 1 1.77 0 1.35 1.35 0 0 1 .15.19 1 1 0 0 1 .12.22 1.56 1.56 0 0 1 .07.23 2 2 0 0 1 0 .24 2 2 0 0 1 0 .25 1.56 1.56 0 0 1-.07.23 1 1 0 0 1-.12.22 1.35 1.35 0 0 1-.15.19 1.29 1.29 0 0 1-.86.36zM65.61 46.26a3.85 3.85 0 1 1 3.85-3.85 3.85 3.85 0 0 1-3.85 3.85zm0-5.7a1.85 1.85 0 1 0 1.85 1.85 1.85 1.85 0 0 0-1.85-1.85z",
-            fill: "#fff"
+          'g',
+          { 'data-name': 'svg' },
+          React.createElement('path', {
+            d: 'M12.29 28.26a1.25 1.25 0 0 1-.88-.36A1.3 1.3 0 0 1 11 27a1.28 1.28 0 0 1 .37-.88 1.3 1.3 0 0 1 1.77 0 1.27 1.27 0 0 1 .36.88 1.23 1.23 0 0 1-1.25 1.25zM20.33 41.06a1.25 1.25 0 0 1 .33-1.74 1.24 1.24 0 0 1 1.73.33 1.25 1.25 0 0 1-.33 1.74 1.27 1.27 0 0 1-.7.21 1.25 1.25 0 0 1-1.03-.54zm-3-4.45a1.25 1.25 0 0 1 .34-1.74 1.24 1.24 0 0 1 1.73.33 1.25 1.25 0 0 1-.4 1.74 1.2 1.2 0 0 1-.7.22 1.29 1.29 0 0 1-1-.55zm-3-4.45a1.24 1.24 0 0 1 .33-1.73 1.25 1.25 0 0 1 1.74.33 1.24 1.24 0 0 1-.4 1.73 1.23 1.23 0 0 1-.7.22 1.25 1.25 0 0 1-1.02-.55zM24.38 46a1.26 1.26 0 0 1-1.25-1.25 1.3 1.3 0 0 1 .37-.89 1.27 1.27 0 0 1 1.13-.34l.23.07a1.48 1.48 0 0 1 .22.12 1.43 1.43 0 0 1 .19.15 1.29 1.29 0 0 1 .36.89 1.25 1.25 0 0 1-.36.88l-.19.16-.22.11a.88.88 0 0 1-.23.07 1 1 0 0 1-.25.03zM27.78 42.23a1.25 1.25 0 0 1 .22-1.75 1.24 1.24 0 0 1 1.75.24 1.25 1.25 0 0 1-.24 1.75 1.23 1.23 0 0 1-.75.25 1.26 1.26 0 0 1-.98-.49zm4.39-3.33a1.25 1.25 0 0 1 .24-1.75 1.27 1.27 0 0 1 1.76.25 1.26 1.26 0 0 1-.25 1.75 1.23 1.23 0 0 1-.75.25 1.25 1.25 0 0 1-1-.5zM41 32.26a1.25 1.25 0 0 1 .24-1.75 1.25 1.25 0 0 1 1.75.24 1.25 1.25 0 0 1-.24 1.75 1.25 1.25 0 0 1-.75.25 1.25 1.25 0 0 1-1-.49zm4.39-3.33a1.25 1.25 0 0 1 .24-1.75 1.25 1.25 0 0 1 1.75.24 1.25 1.25 0 0 1-.24 1.75 1.24 1.24 0 0 1-.75.26 1.25 1.25 0 0 1-1.04-.5zM50.74 26.1h-.24l-.23-.1a.94.94 0 0 1-.22-.12.88.88 0 0 1-.19-.15 1.3 1.3 0 0 1-.37-.89 1.26 1.26 0 0 1 .37-.88l.19-.16a1.44 1.44 0 0 1 .22-.11.86.86 0 0 1 .23-.07 1.33 1.33 0 0 1 .49 0 .86.86 0 0 1 .23.07 1.49 1.49 0 0 1 .22.11l.19.16a1.35 1.35 0 0 1 .15.19 1 1 0 0 1 .12.22 1.56 1.56 0 0 1 .07.23 1 1 0 0 1 0 .24 1.29 1.29 0 0 1-.36.89.87.87 0 0 1-.19.15 1 1 0 0 1-.22.12l-.23.07zM72 51.95a1.25 1.25 0 0 1 .14-1.76 1.24 1.24 0 0 1 1.76.15 1.25 1.25 0 0 1-.14 1.76 1.24 1.24 0 0 1-.81.29 1.24 1.24 0 0 1-.95-.44zm-3.71-4.38a1.25 1.25 0 0 1 .15-1.76 1.25 1.25 0 0 1 1.76.14 1.25 1.25 0 0 1-.15 1.77 1.27 1.27 0 0 1-.8.29 1.26 1.26 0 0 1-.94-.44zm-7.39-8.76a1.26 1.26 0 0 1 .15-1.81 1.25 1.25 0 0 1 1.76.15 1.24 1.24 0 0 1-.15 1.76 1.22 1.22 0 0 1-.8.3 1.26 1.26 0 0 1-.96-.4zm-3.7-4.39a1.25 1.25 0 0 1 .14-1.76 1.26 1.26 0 0 1 1.77.15 1.25 1.25 0 0 1-.11 1.76 1.25 1.25 0 0 1-.81.3 1.22 1.22 0 0 1-.99-.46zM53.49 30a1.25 1.25 0 0 1 .15-1.76 1.25 1.25 0 0 1 1.76.15 1.24 1.24 0 0 1-.15 1.76 1.22 1.22 0 0 1-.8.3 1.24 1.24 0 0 1-.96-.45zM76.68 56.77a1.29 1.29 0 0 1-.89-.36 1.27 1.27 0 0 1-.36-.89 1.25 1.25 0 0 1 .36-.88 1.26 1.26 0 0 1 2.14.88 1.3 1.3 0 0 1-.37.89 1.25 1.25 0 0 1-.88.36zM80.18 53a1.25 1.25 0 0 1 .29-1.74 1.26 1.26 0 0 1 1.75.29 1.24 1.24 0 0 1-.3 1.74 1.21 1.21 0 0 1-.72.23 1.24 1.24 0 0 1-1.02-.52zm4.52-3.23A1.25 1.25 0 0 1 85 48a1.26 1.26 0 0 1 1.75.29 1.25 1.25 0 0 1-.29 1.74 1.25 1.25 0 0 1-.73.24 1.27 1.27 0 0 1-1.03-.48zM90.24 47.08a1.25 1.25 0 0 1-.88-.36 1.3 1.3 0 0 1-.37-.89 1 1 0 0 1 0-.24.86.86 0 0 1 .07-.23 1.42 1.42 0 0 1 .11-.22 1.5 1.5 0 0 1 .16-.19 1.3 1.3 0 0 1 1.77 0 1.35 1.35 0 0 1 .15.19 1 1 0 0 1 .12.22 1.56 1.56 0 0 1 .07.23 2 2 0 0 1 0 .24 2 2 0 0 1 0 .25 1.56 1.56 0 0 1-.07.23 1 1 0 0 1-.12.22 1.35 1.35 0 0 1-.15.19 1.29 1.29 0 0 1-.86.36zM65.61 46.26a3.85 3.85 0 1 1 3.85-3.85 3.85 3.85 0 0 1-3.85 3.85zm0-5.7a1.85 1.85 0 1 0 1.85 1.85 1.85 1.85 0 0 0-1.85-1.85z',
+            fill: '#fff'
           }),
-          React.createElement("path", {
-            d: "M93.7 42.77h-4.63a1.25 1.25 0 0 1 0-2.5h4.63a1.25 1.25 0 0 1 0 2.5z",
-            fill: "#269561"
+          React.createElement('path', {
+            d: 'M93.7 42.77h-4.63a1.25 1.25 0 0 1 0-2.5h4.63a1.25 1.25 0 0 1 0 2.5z',
+            fill: '#269561'
           }),
-          React.createElement("path", {
-            d: "M99.46 27.53H83.31a4.19 4.19 0 1 0 0 8.37h6l1.5 2.6a.69.69 0 0 0 1.2 0l1.5-2.6h5.93a4.19 4.19 0 0 0 0-8.37z",
-            fill: "#afdec5"
+          React.createElement('path', {
+            d: 'M99.46 27.53H83.31a4.19 4.19 0 1 0 0 8.37h6l1.5 2.6a.69.69 0 0 0 1.2 0l1.5-2.6h5.93a4.19 4.19 0 0 0 0-8.37z',
+            fill: '#afdec5'
           }),
-          React.createElement("path", {
-            d: "M97.46 33H85.3a1.24 1.24 0 0 1 0-2.48h12.16a1.24 1.24 0 0 1 0 2.48z",
-            fill: "#33c377"
+          React.createElement('path', {
+            d: 'M97.46 33H85.3a1.24 1.24 0 0 1 0-2.48h12.16a1.24 1.24 0 0 1 0 2.48z',
+            fill: '#33c377'
           }),
-          React.createElement("path", {
-            d: "M14.44 24.44H9.19a1.25 1.25 0 1 1 0-2.5h5.25a1.25 1.25 0 0 1 0 2.5z",
-            fill: "#269561"
+          React.createElement('path', {
+            d: 'M14.44 24.44H9.19a1.25 1.25 0 1 1 0-2.5h5.25a1.25 1.25 0 0 1 0 2.5z',
+            fill: '#269561'
           }),
-          React.createElement("path", {
-            d: "M17.28 14.7a5.46 5.46 0 0 0-5.62-5.46 5.52 5.52 0 0 0-5.3 5.64 5.46 5.46 0 0 0 3.41 4.88l1.61 2.79a.55.55 0 0 0 .95 0L14 19.72a5.46 5.46 0 0 0 3.28-5.02z",
-            fill: "#afdec5"
+          React.createElement('path', {
+            d: 'M17.28 14.7a5.46 5.46 0 0 0-5.62-5.46 5.52 5.52 0 0 0-5.3 5.64 5.46 5.46 0 0 0 3.41 4.88l1.61 2.79a.55.55 0 0 0 .95 0L14 19.72a5.46 5.46 0 0 0 3.28-5.02z',
+            fill: '#afdec5'
           }),
-          React.createElement("circle", { cx: "11.82", cy: "14.7", r: "2.43", fill: "#33c377" }),
-          React.createElement("circle", { cx: "65.61", cy: "42.41", r: "1.85", fill: "#269561" }),
-          React.createElement("path", {
-            d: "M37.44 38.38a3.85 3.85 0 1 1 3.85-3.85 3.85 3.85 0 0 1-3.85 3.85zm0-5.7a1.85 1.85 0 1 0 1.85 1.85 1.85 1.85 0 0 0-1.85-1.85z",
-            fill: "#fff"
+          React.createElement('circle', { cx: '11.82', cy: '14.7', r: '2.43', fill: '#33c377' }),
+          React.createElement('circle', { cx: '65.61', cy: '42.41', r: '1.85', fill: '#269561' }),
+          React.createElement('path', {
+            d: 'M37.44 38.38a3.85 3.85 0 1 1 3.85-3.85 3.85 3.85 0 0 1-3.85 3.85zm0-5.7a1.85 1.85 0 1 0 1.85 1.85 1.85 1.85 0 0 0-1.85-1.85z',
+            fill: '#fff'
           }),
-          React.createElement("circle", { cx: "37.44", cy: "34.53", r: "1.85", fill: "#269561" })
+          React.createElement('circle', { cx: '37.44', cy: '34.53', r: '1.85', fill: '#269561' })
         )
       );
     }
   }]);
   return AssetTrackingImg;
 }(React.Component);
+
+AssetTrackingImg.propTypes = {
+  className: PropTypes.string
+};
 
 var TutorialsImg = function (_React$Component) {
   inherits(TutorialsImg, _React$Component);
@@ -562,90 +591,94 @@ var TutorialsImg = function (_React$Component) {
   }
 
   createClass(TutorialsImg, [{
-    key: "shouldComponentUpdate",
+    key: 'shouldComponentUpdate',
     value: function shouldComponentUpdate() {
       return false;
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "svg",
+        'svg',
         {
-          xmlns: "http://www.w3.org/2000/svg",
+          xmlns: 'http://www.w3.org/2000/svg',
           className: this.props.className,
-          viewBox: "0 0 110 66"
+          viewBox: '0 0 110 66'
         },
         React.createElement(
-          "g",
-          { "data-name": "svg" },
-          React.createElement("path", {
-            d: "M24.57 17.68h-4.2a2.1 2.1 0 0 0-2.09 2.1v2.79h8.38v-2.79a2.1 2.1 0 0 0-2.09-2.1zM57.12 44.23H38a4.83 4.83 0 0 0-4.76 3.84 4.54 4.54 0 0 0-.08.65 4.72 4.72 0 0 0 4.71 4.94h19.78a4.19 4.19 0 0 0 4.19-4.19v-10a4.71 4.71 0 0 1-4.72 4.76z",
-            fill: "#269561"
+          'g',
+          { 'data-name': 'svg' },
+          React.createElement('path', {
+            d: 'M24.57 17.68h-4.2a2.1 2.1 0 0 0-2.09 2.1v2.79h8.38v-2.79a2.1 2.1 0 0 0-2.09-2.1zM57.12 44.23H38a4.83 4.83 0 0 0-4.76 3.84 4.54 4.54 0 0 0-.08.65 4.72 4.72 0 0 0 4.71 4.94h19.78a4.19 4.19 0 0 0 4.19-4.19v-10a4.71 4.71 0 0 1-4.72 4.76z',
+            fill: '#269561'
           }),
-          React.createElement("rect", {
-            x: "38.44",
-            y: "16.99",
-            width: "26.19",
-            height: "30.04",
-            rx: "6.06",
-            ry: "6.06",
-            fill: "#afdec5"
+          React.createElement('rect', {
+            x: '38.44',
+            y: '16.99',
+            width: '26.19',
+            height: '30.04',
+            rx: '6.06',
+            ry: '6.06',
+            fill: '#afdec5'
           }),
-          React.createElement("path", {
-            d: "M57.12 44.23a4.71 4.71 0 0 0 4.71-4.71V13.46A3.46 3.46 0 0 0 58.38 10H36.66a3.46 3.46 0 0 0-3.46 3.46v34.61h.09A4.83 4.83 0 0 1 38 44.23z",
-            fill: "#fcfcfc"
+          React.createElement('path', {
+            d: 'M57.12 44.23a4.71 4.71 0 0 0 4.71-4.71V13.46A3.46 3.46 0 0 0 58.38 10H36.66a3.46 3.46 0 0 0-3.46 3.46v34.61h.09A4.83 4.83 0 0 1 38 44.23z',
+            fill: '#fcfcfc'
           }),
-          React.createElement("path", {
-            d: "M43.51 55.85L40.88 54l-3 1.91a.55.55 0 0 1-.84-.46v-5a1.66 1.66 0 0 1 1.66-1.66h4a1.66 1.66 0 0 1 1.66 1.66v5a.55.55 0 0 1-.85.4z",
-            fill: "#afdec5"
+          React.createElement('path', {
+            d: 'M43.51 55.85L40.88 54l-3 1.91a.55.55 0 0 1-.84-.46v-5a1.66 1.66 0 0 1 1.66-1.66h4a1.66 1.66 0 0 1 1.66 1.66v5a.55.55 0 0 1-.85.4z',
+            fill: '#afdec5'
           }),
-          React.createElement("rect", {
-            x: "37.39",
-            y: "14.19",
-            width: "20.61",
-            height: "11.87",
-            rx: "1.73",
-            ry: "1.73",
-            fill: "#33c377"
+          React.createElement('rect', {
+            x: '37.39',
+            y: '14.19',
+            width: '20.61',
+            height: '11.87',
+            rx: '1.73',
+            ry: '1.73',
+            fill: '#33c377'
           }),
-          React.createElement("path", {
-            d: "M52.41 18.78H41.23a.75.75 0 0 1 0-1.5h11.18a.75.75 0 0 1 0 1.5zM47.17 21.93h-5.94a.75.75 0 0 1 0-1.5h5.94a.75.75 0 0 1 0 1.5z",
-            fill: "#f7f8f9"
+          React.createElement('path', {
+            d: 'M52.41 18.78H41.23a.75.75 0 0 1 0-1.5h11.18a.75.75 0 0 1 0 1.5zM47.17 21.93h-5.94a.75.75 0 0 1 0-1.5h5.94a.75.75 0 0 1 0 1.5z',
+            fill: '#f7f8f9'
           }),
-          React.createElement("path", {
-            d: "M26.66 48.07l-1.5-1a.71.71 0 0 0-.93 0l-1.19 1a.64.64 0 0 1-.81 0L20.87 47a.71.71 0 0 0-.87 0l-1.7 1V22.57h8.38z",
-            fill: "#afdec5"
+          React.createElement('path', {
+            d: 'M26.66 48.07l-1.5-1a.71.71 0 0 0-.93 0l-1.19 1a.64.64 0 0 1-.81 0L20.87 47a.71.71 0 0 0-.87 0l-1.7 1V22.57h8.38z',
+            fill: '#afdec5'
           }),
-          React.createElement("path", {
-            d: "M24.23 47.07l-1.19 1a.64.64 0 0 1-.81 0L20.87 47a.71.71 0 0 0-.87 0l-1.7 1v.18a1.49 1.49 0 0 0 .33.93l3.37 4.3a.61.61 0 0 0 1 0l3.39-4.23a1.49 1.49 0 0 0 .33-.93v-.18l-1.5-1a.71.71 0 0 0-.99 0z",
-            fill: "#fff"
+          React.createElement('path', {
+            d: 'M24.23 47.07l-1.19 1a.64.64 0 0 1-.81 0L20.87 47a.71.71 0 0 0-.87 0l-1.7 1v.18a1.49 1.49 0 0 0 .33.93l3.37 4.3a.61.61 0 0 0 1 0l3.39-4.23a1.49 1.49 0 0 0 .33-.93v-.18l-1.5-1a.71.71 0 0 0-.99 0z',
+            fill: '#fff'
           }),
-          React.createElement("path", {
-            d: "M26.34 49.17l-3.39 4.23a.61.61 0 0 1-1 0l-3.35-4.23a1.49 1.49 0 0 1-.33-.93v-4h8.38v4a1.49 1.49 0 0 1-.31.93z",
-            fill: "#fcfcfc"
+          React.createElement('path', {
+            d: 'M26.34 49.17l-3.39 4.23a.61.61 0 0 1-1 0l-3.35-4.23a1.49 1.49 0 0 1-.33-.93v-4h8.38v4a1.49 1.49 0 0 1-.31.93z',
+            fill: '#fcfcfc'
           }),
-          React.createElement("path", {
-            d: "M22.47 51.56a3.47 3.47 0 0 0-1.63.41L22 53.41a.61.61 0 0 0 1 0L24.1 52a3.47 3.47 0 0 0-1.63-.44z",
-            fill: "#269561"
+          React.createElement('path', {
+            d: 'M22.47 51.56a3.47 3.47 0 0 0-1.63.41L22 53.41a.61.61 0 0 0 1 0L24.1 52a3.47 3.47 0 0 0-1.63-.44z',
+            fill: '#269561'
           }),
-          React.createElement("rect", {
-            x: "70.42",
-            y: "15.59",
-            width: "21.3",
-            height: "37.72",
-            rx: "4.19",
-            ry: "4.19",
-            fill: "#269561"
+          React.createElement('rect', {
+            x: '70.42',
+            y: '15.59',
+            width: '21.3',
+            height: '37.72',
+            rx: '4.19',
+            ry: '4.19',
+            fill: '#269561'
           }),
-          React.createElement("circle", { cx: "81.07", cy: "48.94", r: "1.92", fill: "#33c377" }),
-          React.createElement("path", { fill: "#afdec5", d: "M73.73 21.53H88.4v23.05H73.73z" })
+          React.createElement('circle', { cx: '81.07', cy: '48.94', r: '1.92', fill: '#33c377' }),
+          React.createElement('path', { fill: '#afdec5', d: 'M73.73 21.53H88.4v23.05H73.73z' })
         )
       );
     }
   }]);
   return TutorialsImg;
 }(React.Component);
+
+TutorialsImg.propTypes = {
+  className: PropTypes.string
+};
 
 var DataVisualizationImg = function (_React$Component) {
   inherits(DataVisualizationImg, _React$Component);
@@ -656,115 +689,115 @@ var DataVisualizationImg = function (_React$Component) {
   }
 
   createClass(DataVisualizationImg, [{
-    key: "shouldComponentUpdate",
+    key: 'shouldComponentUpdate',
     value: function shouldComponentUpdate() {
       return false;
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "svg",
+        'svg',
         {
-          xmlns: "http://www.w3.org/2000/svg",
+          xmlns: 'http://www.w3.org/2000/svg',
           className: this.props.className,
-          viewBox: "0 0 110 66"
+          viewBox: '0 0 110 66'
         },
         React.createElement(
-          "g",
-          { "data-name": "svg" },
-          React.createElement("path", {
-            fill: "#5a3fc0",
-            d: "M57.6 19.85l-5.99-3.51 5.99-3.51 5.99 3.51-5.99 3.51z"
+          'g',
+          { 'data-name': 'svg' },
+          React.createElement('path', {
+            fill: '#5a3fc0',
+            d: 'M57.6 19.85l-5.99-3.51 5.99-3.51 5.99 3.51-5.99 3.51z'
           }),
-          React.createElement("path", { fill: "#fff", d: "M57.6 19.85v28.62l5.99-3.1V16.34l-5.99 3.51z" }),
-          React.createElement("path", {
-            fill: "#c5b9eb",
-            d: "M57.6 19.85v28.62l-5.89-3.93v-28.2l5.89 3.51z"
+          React.createElement('path', { fill: '#fff', d: 'M57.6 19.85v28.62l5.99-3.1V16.34l-5.99 3.51z' }),
+          React.createElement('path', {
+            fill: '#c5b9eb',
+            d: 'M57.6 19.85v28.62l-5.89-3.93v-28.2l5.89 3.51z'
           }),
-          React.createElement("path", {
-            fill: "#5a3fc0",
-            d: "M46.74 32.02l-5.99-3.52 5.99-3.51 5.99 3.51-5.99 3.52z"
+          React.createElement('path', {
+            fill: '#5a3fc0',
+            d: 'M46.74 32.02l-5.99-3.52 5.99-3.51 5.99 3.51-5.99 3.52z'
           }),
-          React.createElement("path", { fill: "#fff", d: "M46.74 32.02v21.15l5.99-3.1V28.5l-5.99 3.52z" }),
-          React.createElement("path", {
-            fill: "#c5b9eb",
-            d: "M46.74 32.02v21.15l-5.89-3.92V28.5l5.89 3.52z"
+          React.createElement('path', { fill: '#fff', d: 'M46.74 32.02v21.15l5.99-3.1V28.5l-5.99 3.52z' }),
+          React.createElement('path', {
+            fill: '#c5b9eb',
+            d: 'M46.74 32.02v21.15l-5.89-3.92V28.5l5.89 3.52z'
           }),
-          React.createElement("path", {
-            fill: "#5a3fc0",
-            d: "M68.79 36.4l-5.99-3.52 5.99-3.51 5.99 3.51-5.99 3.52z"
+          React.createElement('path', {
+            fill: '#5a3fc0',
+            d: 'M68.79 36.4l-5.99-3.52 5.99-3.51 5.99 3.51-5.99 3.52z'
           }),
-          React.createElement("path", { fill: "#fff", d: "M68.79 36.4v15.73l5.99-3.1V32.88l-5.99 3.52z" }),
-          React.createElement("path", {
-            fill: "#c5b9eb",
-            d: "M68.79 36.4v15.73L62.9 48.2V32.88l5.89 3.52z"
+          React.createElement('path', { fill: '#fff', d: 'M68.79 36.4v15.73l5.99-3.1V32.88l-5.99 3.52z' }),
+          React.createElement('path', {
+            fill: '#c5b9eb',
+            d: 'M68.79 36.4v15.73L62.9 48.2V32.88l5.89 3.52z'
           }),
-          React.createElement("path", {
-            d: "M42.28 38.36h-8v-6.73a1.37 1.37 0 0 0-1.36-1.36H14.37A1.37 1.37 0 0 0 13 31.63v13.89a1.37 1.37 0 0 0 1.36 1.36h18.53a1.37 1.37 0 0 0 1.36-1.36v-5.16h8a1 1 0 0 0 0-2z",
-            fill: "#5a3fc0"
+          React.createElement('path', {
+            d: 'M42.28 38.36h-8v-6.73a1.37 1.37 0 0 0-1.36-1.36H14.37A1.37 1.37 0 0 0 13 31.63v13.89a1.37 1.37 0 0 0 1.36 1.36h18.53a1.37 1.37 0 0 0 1.36-1.36v-5.16h8a1 1 0 0 0 0-2z',
+            fill: '#5a3fc0'
           }),
-          React.createElement("path", {
-            d: "M18.12 43.06a.75.75 0 0 1-.75-.75v-7.47a.75.75 0 0 1 1.5 0v7.48a.75.75 0 0 1-.75.74z",
-            fill: "#7753eb"
+          React.createElement('path', {
+            d: 'M18.12 43.06a.75.75 0 0 1-.75-.75v-7.47a.75.75 0 0 1 1.5 0v7.48a.75.75 0 0 1-.75.74z',
+            fill: '#7753eb'
           }),
-          React.createElement("path", {
-            d: "M18.12 43.06a.75.75 0 0 1-.75-.75v-4.9a.75.75 0 0 1 1.5 0v4.91a.75.75 0 0 1-.75.74z",
-            fill: "#c5b9eb"
+          React.createElement('path', {
+            d: 'M18.12 43.06a.75.75 0 0 1-.75-.75v-4.9a.75.75 0 0 1 1.5 0v4.91a.75.75 0 0 1-.75.74z',
+            fill: '#c5b9eb'
           }),
-          React.createElement("path", {
-            d: "M21.71 43.06a.75.75 0 0 1-.75-.75v-7.47a.75.75 0 0 1 1.5 0v7.48a.75.75 0 0 1-.75.74z",
-            fill: "#7753eb"
+          React.createElement('path', {
+            d: 'M21.71 43.06a.75.75 0 0 1-.75-.75v-7.47a.75.75 0 0 1 1.5 0v7.48a.75.75 0 0 1-.75.74z',
+            fill: '#7753eb'
           }),
-          React.createElement("path", {
-            d: "M21.71 43.06a.75.75 0 0 1-.75-.75v-2.62a.75.75 0 0 1 1.5 0v2.62a.75.75 0 0 1-.75.75z",
-            fill: "#c5b9eb"
+          React.createElement('path', {
+            d: 'M21.71 43.06a.75.75 0 0 1-.75-.75v-2.62a.75.75 0 0 1 1.5 0v2.62a.75.75 0 0 1-.75.75z',
+            fill: '#c5b9eb'
           }),
-          React.createElement("path", {
-            d: "M25.55 43.06a.75.75 0 0 1-.75-.75v-7.47a.75.75 0 0 1 1.5 0v7.48a.75.75 0 0 1-.75.74z",
-            fill: "#7753eb"
+          React.createElement('path', {
+            d: 'M25.55 43.06a.75.75 0 0 1-.75-.75v-7.47a.75.75 0 0 1 1.5 0v7.48a.75.75 0 0 1-.75.74z',
+            fill: '#7753eb'
           }),
-          React.createElement("path", {
-            d: "M25.55 43.06a.75.75 0 0 1-.75-.75v-4.9a.75.75 0 0 1 1.5 0v4.91a.75.75 0 0 1-.75.74z",
-            fill: "#c5b9eb"
+          React.createElement('path', {
+            d: 'M25.55 43.06a.75.75 0 0 1-.75-.75v-4.9a.75.75 0 0 1 1.5 0v4.91a.75.75 0 0 1-.75.74z',
+            fill: '#c5b9eb'
           }),
-          React.createElement("path", {
-            d: "M29.14 43.06a.75.75 0 0 1-.75-.75v-7.47a.75.75 0 0 1 1.5 0v7.48a.75.75 0 0 1-.75.74z",
-            fill: "#7753eb"
+          React.createElement('path', {
+            d: 'M29.14 43.06a.75.75 0 0 1-.75-.75v-7.47a.75.75 0 0 1 1.5 0v7.48a.75.75 0 0 1-.75.74z',
+            fill: '#7753eb'
           }),
-          React.createElement("path", {
-            d: "M29.14 43.06a.75.75 0 0 1-.75-.75v-3.58a.75.75 0 0 1 1.5 0v3.58a.75.75 0 0 1-.75.75z",
-            fill: "#c5b9eb"
+          React.createElement('path', {
+            d: 'M29.14 43.06a.75.75 0 0 1-.75-.75v-3.58a.75.75 0 0 1 1.5 0v3.58a.75.75 0 0 1-.75.75z',
+            fill: '#c5b9eb'
           }),
-          React.createElement("path", {
-            d: "M86.65 15.11a8.34 8.34 0 0 0-8.26 7.22H62.32a1 1 0 0 0 0 2h16a8.35 8.35 0 1 0 8.3-9.22z",
-            fill: "#5a3fc0"
+          React.createElement('path', {
+            d: 'M86.65 15.11a8.34 8.34 0 0 0-8.26 7.22H62.32a1 1 0 0 0 0 2h16a8.35 8.35 0 1 0 8.3-9.22z',
+            fill: '#5a3fc0'
           }),
-          React.createElement("path", {
-            d: "M91.52 19.84a.75.75 0 0 0-1 .42L89.05 24l-3.83-2.42a.71.71 0 0 0-.14-.05h-.42l-.14.06-.13.06a.77.77 0 0 0-.11.11.71.71 0 0 0-.1.1l-2.72 4.09a.75.75 0 1 0 1.25.83L85 23.22l4 2.51h.08a.75.75 0 0 0 .25 0 .74.74 0 0 0 .32-.08h.05a.74.74 0 0 0 .24-.22v-.08l1.82-4.55a.75.75 0 0 0-.24-.96z",
-            fill: "#7753eb"
+          React.createElement('path', {
+            d: 'M91.52 19.84a.75.75 0 0 0-1 .42L89.05 24l-3.83-2.42a.71.71 0 0 0-.14-.05h-.42l-.14.06-.13.06a.77.77 0 0 0-.11.11.71.71 0 0 0-.1.1l-2.72 4.09a.75.75 0 1 0 1.25.83L85 23.22l4 2.51h.08a.75.75 0 0 0 .25 0 .74.74 0 0 0 .32-.08h.05a.74.74 0 0 0 .24-.22v-.08l1.82-4.55a.75.75 0 0 0-.24-.96z',
+            fill: '#7753eb'
           }),
-          React.createElement("circle", { cx: "82.1", cy: "26.28", r: "1.12", fill: "#c5b9eb" }),
-          React.createElement("circle", {
-            cx: "89.41",
-            cy: "25.09",
-            r: "1.2",
-            transform: "rotate(-45 89.41 25.085)",
-            fill: "#c5b9eb"
+          React.createElement('circle', { cx: '82.1', cy: '26.28', r: '1.12', fill: '#c5b9eb' }),
+          React.createElement('circle', {
+            cx: '89.41',
+            cy: '25.09',
+            r: '1.2',
+            transform: 'rotate(-45 89.41 25.085)',
+            fill: '#c5b9eb'
           }),
-          React.createElement("circle", {
-            cx: "91.24",
-            cy: "20.54",
-            r: "1.03",
-            transform: "rotate(-45 91.237 20.538)",
-            fill: "#c5b9eb"
+          React.createElement('circle', {
+            cx: '91.24',
+            cy: '20.54',
+            r: '1.03',
+            transform: 'rotate(-45 91.237 20.538)',
+            fill: '#c5b9eb'
           }),
-          React.createElement("circle", {
-            cx: "84.83",
-            cy: "22.19",
-            r: "1.47",
-            transform: "rotate(-45 84.823 22.195)",
-            fill: "#c5b9eb"
+          React.createElement('circle', {
+            cx: '84.83',
+            cy: '22.19',
+            r: '1.47',
+            transform: 'rotate(-45 84.823 22.195)',
+            fill: '#c5b9eb'
           })
         )
       );
@@ -772,6 +805,10 @@ var DataVisualizationImg = function (_React$Component) {
   }]);
   return DataVisualizationImg;
 }(React.Component);
+
+DataVisualizationImg.propTypes = {
+  className: PropTypes.string
+};
 
 var navigationMenuData = {
   headerMainMenuOrder: ['products', 'documentation'],
@@ -909,7 +946,7 @@ var navigationMenuData = {
       displayImage: DataVisualizationImg
     }],
     highlightedLinks: [{
-      name: 'Showcase',
+      name: 'Customer showcase',
       to: '/showcase/'
     }, {
       name: 'Talk to sales',
@@ -968,7 +1005,7 @@ var navigationMenuData = {
   },
   mobileCombinationMenu: {
     links: [{
-      name: 'Showcase',
+      name: 'Customer showcase',
       to: '/showcase/'
     }, {
       name: 'Documentation',
@@ -1392,6 +1429,10 @@ var Navigation = function (_React$Component) {
   return Navigation;
 }(React.Component);
 
+Navigation.propTypes = {
+  darkText: PropTypes.bool
+};
+
 var MobileMenuButton = function (_React$Component) {
   inherits(MobileMenuButton, _React$Component);
 
@@ -1451,6 +1492,10 @@ var MobileMenuButton = function (_React$Component) {
   }]);
   return MobileMenuButton;
 }(React.Component);
+
+MobileMenuButton.propTypes = {
+  darkText: PropTypes.bool
+};
 
 // This is currently used in the bottom half of the mobile navigation
 
@@ -1539,8 +1584,15 @@ var NavigationDividedLinkList = function (_React$Component) {
   return NavigationDividedLinkList;
 }(React.Component);
 
-NavigationDividedLinkList.defaultProps = {
-  highlightedLinks: []
+NavigationDividedLinkList.propTypes = {
+  name: PropTypes.string,
+  navigationType: PropTypes.string.isRequired,
+  links: PropTypes.arrayOf(PropTypes.shape({
+    to: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    hideInHeader: PropTypes.bool
+  })).isRequired
 };
 
 // This is currently used in the top half of the mobile navigation
@@ -1609,6 +1661,17 @@ var NavigationLinkList = function (_React$Component) {
   }]);
   return NavigationLinkList;
 }(React.Component);
+
+NavigationLinkList.propTypes = {
+  name: PropTypes.string,
+  navigationType: PropTypes.string.isRequired,
+  links: PropTypes.arrayOf(PropTypes.shape({
+    to: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    hideInHeader: PropTypes.bool
+  })).isRequired
+};
 
 var MobileUserMenu = function (_React$Component) {
   inherits(MobileUserMenu, _React$Component);
@@ -1695,6 +1758,10 @@ var MobileUserMenu = function (_React$Component) {
   }]);
   return MobileUserMenu;
 }(React.Component);
+
+MobileUserMenu.propTypes = {
+  className: PropTypes.string
+};
 
 var MOBILE_HEADER_HEIGHT = 72; // This number should match the actual height of the mobile header!
 
@@ -1925,50 +1992,54 @@ var FooterLegalStrip = function (_React$Component) {
   }
 
   createClass(FooterLegalStrip, [{
-    key: "shouldComponentUpdate",
+    key: 'shouldComponentUpdate',
     value: function shouldComponentUpdate() {
       return false;
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "div",
+        'div',
         { className: this.props.className },
         React.createElement(
-          "span",
-          { className: "shell-mr18" },
-          "\xA9 Mapbox"
+          'span',
+          { className: 'shell-mr18' },
+          '\xA9 Mapbox'
         ),
         React.createElement(
-          "a",
+          'a',
           {
-            className: "shell-link shell-color-darken50 shell-color-blue-on-hover shell-mr18",
-            href: "/tos/"
+            className: 'shell-link shell-color-darken50 shell-color-blue-on-hover shell-mr18',
+            href: '/tos/'
           },
-          "Terms"
+          'Terms'
         ),
         React.createElement(
-          "a",
+          'a',
           {
-            className: "shell-link shell-color-darken50 shell-color-blue-on-hover shell-mr18",
-            href: "/privacy/"
+            className: 'shell-link shell-color-darken50 shell-color-blue-on-hover shell-mr18',
+            href: '/privacy/'
           },
-          "Privacy"
+          'Privacy'
         ),
         React.createElement(
-          "a",
+          'a',
           {
-            className: "shell-link shell-color-darken50 shell-color-blue-on-hover",
-            href: "/platform/security/"
+            className: 'shell-link shell-color-darken50 shell-color-blue-on-hover',
+            href: '/platform/security/'
           },
-          "Security"
+          'Security'
         )
       );
     }
   }]);
   return FooterLegalStrip;
 }(React.Component);
+
+FooterLegalStrip.propTypes = {
+  className: PropTypes.string
+};
 
 var FooterSocialMediaStrip = function (_React$Component) {
   inherits(FooterSocialMediaStrip, _React$Component);
@@ -1979,101 +2050,101 @@ var FooterSocialMediaStrip = function (_React$Component) {
   }
 
   createClass(FooterSocialMediaStrip, [{
-    key: "shouldComponentUpdate",
+    key: 'shouldComponentUpdate',
     value: function shouldComponentUpdate() {
       return false;
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "div",
+        'div',
         { className: this.props.className },
         React.createElement(
-          "a",
+          'a',
           {
-            "aria-label": "Twitter",
-            className: "shell-mr18 shell-color-blue shell-color-gray-dark-on-hover",
-            href: "https://twitter.com/mapbox/"
+            'aria-label': 'Twitter',
+            className: 'shell-mr18 shell-color-blue shell-color-gray-dark-on-hover',
+            href: 'https://twitter.com/mapbox/'
           },
           React.createElement(
-            "svg",
+            'svg',
             {
-              viewBox: "0 0 50 50",
-              className: "shell-icon shell-icon--s shell-inline"
+              viewBox: '0 0 50 50',
+              className: 'shell-icon shell-icon--s shell-inline'
             },
             React.createElement(
-              "g",
-              { id: "77744030-a5d8-4d71-88ad-2c70d4dcad7b", "data-name": "svg" },
-              React.createElement("path", { d: "M15.72,45.31c18.87,0,29.19-15.63,29.19-29.19,0-.44,0-.89,0-1.33A20.87,20.87,0,0,0,50,9.49a20.48,20.48,0,0,1-5.89,1.61,10.29,10.29,0,0,0,4.51-5.67A20.56,20.56,0,0,1,42.1,7.92a10.27,10.27,0,0,0-17.48,9.36A29.12,29.12,0,0,1,3.48,6.56,10.27,10.27,0,0,0,6.66,20.25,10.18,10.18,0,0,1,2,19v.13a10.26,10.26,0,0,0,8.23,10.06,10.24,10.24,0,0,1-4.63.18,10.27,10.27,0,0,0,9.58,7.12,20.58,20.58,0,0,1-12.74,4.4A20.88,20.88,0,0,1,0,40.71a29,29,0,0,0,15.72,4.6" })
+              'g',
+              { id: '77744030-a5d8-4d71-88ad-2c70d4dcad7b', 'data-name': 'svg' },
+              React.createElement('path', { d: 'M15.72,45.31c18.87,0,29.19-15.63,29.19-29.19,0-.44,0-.89,0-1.33A20.87,20.87,0,0,0,50,9.49a20.48,20.48,0,0,1-5.89,1.61,10.29,10.29,0,0,0,4.51-5.67A20.56,20.56,0,0,1,42.1,7.92a10.27,10.27,0,0,0-17.48,9.36A29.12,29.12,0,0,1,3.48,6.56,10.27,10.27,0,0,0,6.66,20.25,10.18,10.18,0,0,1,2,19v.13a10.26,10.26,0,0,0,8.23,10.06,10.24,10.24,0,0,1-4.63.18,10.27,10.27,0,0,0,9.58,7.12,20.58,20.58,0,0,1-12.74,4.4A20.88,20.88,0,0,1,0,40.71a29,29,0,0,0,15.72,4.6' })
             )
           )
         ),
         React.createElement(
-          "a",
+          'a',
           {
-            "aria-label": "LinkedIn",
-            className: "shell-mr18 shell-color-blue shell-color-gray-dark-on-hover",
-            href: "https://www.linkedin.com/company/mapbox"
+            'aria-label': 'LinkedIn',
+            className: 'shell-mr18 shell-color-blue shell-color-gray-dark-on-hover',
+            href: 'https://www.linkedin.com/company/mapbox'
           },
           React.createElement(
-            "svg",
+            'svg',
             {
-              viewBox: "0 0 50 50",
-              className: "shell-icon shell-icon--s shell-inline"
+              viewBox: '0 0 50 50',
+              className: 'shell-icon shell-icon--s shell-inline'
             },
             React.createElement(
-              "g",
-              { id: "875e301f-501b-48d2-a663-a3a855ad9d70", "data-name": "svg" },
-              React.createElement("rect", { x: "1.32", y: "13.16", width: "10.53", height: "36.84" }),
-              React.createElement("path", { d: "M36.84,13.16c-7.34,0-8.61,2.68-9.21,5.26V13.16H17.11V50H27.63V28.95c0-3.41,1.85-5.26,5.26-5.26s5.26,1.81,5.26,5.26V50H48.68V31.58C48.68,21.05,47.31,13.16,36.84,13.16Z" }),
-              React.createElement("circle", { cx: "6.58", cy: "5.26", r: "5.26" })
+              'g',
+              { id: '875e301f-501b-48d2-a663-a3a855ad9d70', 'data-name': 'svg' },
+              React.createElement('rect', { x: '1.32', y: '13.16', width: '10.53', height: '36.84' }),
+              React.createElement('path', { d: 'M36.84,13.16c-7.34,0-8.61,2.68-9.21,5.26V13.16H17.11V50H27.63V28.95c0-3.41,1.85-5.26,5.26-5.26s5.26,1.81,5.26,5.26V50H48.68V31.58C48.68,21.05,47.31,13.16,36.84,13.16Z' }),
+              React.createElement('circle', { cx: '6.58', cy: '5.26', r: '5.26' })
             )
           )
         ),
         React.createElement(
-          "a",
+          'a',
           {
-            "aria-label": "Facebook",
-            className: "shell-mr18 shell-color-blue shell-color-gray-dark-on-hover",
-            href: "https://www.facebook.com/Mapbox"
+            'aria-label': 'Facebook',
+            className: 'shell-mr18 shell-color-blue shell-color-gray-dark-on-hover',
+            href: 'https://www.facebook.com/Mapbox'
           },
           React.createElement(
-            "svg",
+            'svg',
             {
-              viewBox: "0 0 50 50",
-              className: "shell-icon shell-icon--s shell-inline"
+              viewBox: '0 0 50 50',
+              className: 'shell-icon shell-icon--s shell-inline'
             },
             React.createElement(
-              "g",
-              { id: "38f48a9c-03c5-4a1e-8aed-38100e1cd6a4", "data-name": "svg" },
-              React.createElement("path", {
-                id: "c5d5da0e-6004-406b-ad77-825ffd134c21",
-                "data-name": "f",
-                d: "M28.87,50V27.19h7.65l1.15-8.89h-8.8V12.63c0-2.57.71-4.33,4.41-4.33H38v-8A63.78,63.78,0,0,0,31.13,0C24.34,0,19.69,4.14,19.69,11.75V18.3H12v8.89h7.68V50Z"
+              'g',
+              { id: '38f48a9c-03c5-4a1e-8aed-38100e1cd6a4', 'data-name': 'svg' },
+              React.createElement('path', {
+                id: 'c5d5da0e-6004-406b-ad77-825ffd134c21',
+                'data-name': 'f',
+                d: 'M28.87,50V27.19h7.65l1.15-8.89h-8.8V12.63c0-2.57.71-4.33,4.41-4.33H38v-8A63.78,63.78,0,0,0,31.13,0C24.34,0,19.69,4.14,19.69,11.75V18.3H12v8.89h7.68V50Z'
               })
             )
           )
         ),
         React.createElement(
-          "a",
+          'a',
           {
-            "aria-label": "Instagram",
-            className: "shell-color-blue shell-color-gray-dark-on-hover",
-            href: "https://www.instagram.com/Mapbox"
+            'aria-label': 'Instagram',
+            className: 'shell-color-blue shell-color-gray-dark-on-hover',
+            href: 'https://www.instagram.com/Mapbox'
           },
           React.createElement(
-            "svg",
+            'svg',
             {
-              viewBox: "0 0 50 50",
-              className: "shell-icon shell-icon--s shell-inline"
+              viewBox: '0 0 50 50',
+              className: 'shell-icon shell-icon--s shell-inline'
             },
             React.createElement(
-              "g",
-              { id: "fb2f6c01-da64-4dee-86ea-29fec95d4f45", "data-name": "svg" },
-              React.createElement("path", { d: "M25,0c-6.79,0-7.64,0-10.31.15A18.35,18.35,0,0,0,8.62,1.31,12.25,12.25,0,0,0,4.2,4.2,12.25,12.25,0,0,0,1.31,8.62,18.35,18.35,0,0,0,.15,14.69C0,17.36,0,18.21,0,25s0,7.64.15,10.31a18.35,18.35,0,0,0,1.16,6.07A12.26,12.26,0,0,0,4.2,45.8a12.25,12.25,0,0,0,4.43,2.88,18.35,18.35,0,0,0,6.07,1.16C17.36,50,18.21,50,25,50s7.64,0,10.31-.15a18.35,18.35,0,0,0,6.07-1.16,12.78,12.78,0,0,0,7.31-7.31,18.35,18.35,0,0,0,1.16-6.07C50,32.64,50,31.79,50,25s0-7.64-.15-10.31a18.35,18.35,0,0,0-1.16-6.07A12.25,12.25,0,0,0,45.8,4.2a12.26,12.26,0,0,0-4.43-2.88A18.35,18.35,0,0,0,35.31.15C32.64,0,31.79,0,25,0Zm0,4.5c6.68,0,7.47,0,10.1.15a13.83,13.83,0,0,1,4.64.86,7.75,7.75,0,0,1,2.87,1.87,7.75,7.75,0,0,1,1.87,2.87,13.83,13.83,0,0,1,.86,4.64c.12,2.64.15,3.43.15,10.1s0,7.47-.15,10.1a13.83,13.83,0,0,1-.86,4.64,8.28,8.28,0,0,1-4.74,4.74,13.83,13.83,0,0,1-4.64.86c-2.64.12-3.43.15-10.1.15s-7.47,0-10.1-.15a13.83,13.83,0,0,1-4.64-.86,7.74,7.74,0,0,1-2.87-1.87,7.75,7.75,0,0,1-1.87-2.87,13.83,13.83,0,0,1-.86-4.64C4.53,32.47,4.5,31.68,4.5,25s0-7.47.15-10.1a13.83,13.83,0,0,1,.86-4.64A7.75,7.75,0,0,1,7.38,7.38a7.75,7.75,0,0,1,2.87-1.87,13.83,13.83,0,0,1,4.64-.86c2.64-.12,3.43-.15,10.1-.15" }),
-              React.createElement("path", { d: "M25,33.33A8.33,8.33,0,1,1,33.33,25,8.33,8.33,0,0,1,25,33.33Zm0-21.17A12.84,12.84,0,1,0,37.84,25,12.84,12.84,0,0,0,25,12.16Z" }),
-              React.createElement("path", { d: "M41.35,11.65a3,3,0,1,1-3-3,3,3,0,0,1,3,3Z" })
+              'g',
+              { id: 'fb2f6c01-da64-4dee-86ea-29fec95d4f45', 'data-name': 'svg' },
+              React.createElement('path', { d: 'M25,0c-6.79,0-7.64,0-10.31.15A18.35,18.35,0,0,0,8.62,1.31,12.25,12.25,0,0,0,4.2,4.2,12.25,12.25,0,0,0,1.31,8.62,18.35,18.35,0,0,0,.15,14.69C0,17.36,0,18.21,0,25s0,7.64.15,10.31a18.35,18.35,0,0,0,1.16,6.07A12.26,12.26,0,0,0,4.2,45.8a12.25,12.25,0,0,0,4.43,2.88,18.35,18.35,0,0,0,6.07,1.16C17.36,50,18.21,50,25,50s7.64,0,10.31-.15a18.35,18.35,0,0,0,6.07-1.16,12.78,12.78,0,0,0,7.31-7.31,18.35,18.35,0,0,0,1.16-6.07C50,32.64,50,31.79,50,25s0-7.64-.15-10.31a18.35,18.35,0,0,0-1.16-6.07A12.25,12.25,0,0,0,45.8,4.2a12.26,12.26,0,0,0-4.43-2.88A18.35,18.35,0,0,0,35.31.15C32.64,0,31.79,0,25,0Zm0,4.5c6.68,0,7.47,0,10.1.15a13.83,13.83,0,0,1,4.64.86,7.75,7.75,0,0,1,2.87,1.87,7.75,7.75,0,0,1,1.87,2.87,13.83,13.83,0,0,1,.86,4.64c.12,2.64.15,3.43.15,10.1s0,7.47-.15,10.1a13.83,13.83,0,0,1-.86,4.64,8.28,8.28,0,0,1-4.74,4.74,13.83,13.83,0,0,1-4.64.86c-2.64.12-3.43.15-10.1.15s-7.47,0-10.1-.15a13.83,13.83,0,0,1-4.64-.86,7.74,7.74,0,0,1-2.87-1.87,7.75,7.75,0,0,1-1.87-2.87,13.83,13.83,0,0,1-.86-4.64C4.53,32.47,4.5,31.68,4.5,25s0-7.47.15-10.1a13.83,13.83,0,0,1,.86-4.64A7.75,7.75,0,0,1,7.38,7.38a7.75,7.75,0,0,1,2.87-1.87,13.83,13.83,0,0,1,4.64-.86c2.64-.12,3.43-.15,10.1-.15' }),
+              React.createElement('path', { d: 'M25,33.33A8.33,8.33,0,1,1,33.33,25,8.33,8.33,0,0,1,25,33.33Zm0-21.17A12.84,12.84,0,1,0,37.84,25,12.84,12.84,0,0,0,25,12.16Z' }),
+              React.createElement('path', { d: 'M41.35,11.65a3,3,0,1,1-3-3,3,3,0,0,1,3,3Z' })
             )
           )
         )
@@ -2082,6 +2153,10 @@ var FooterSocialMediaStrip = function (_React$Component) {
   }]);
   return FooterSocialMediaStrip;
 }(React.Component);
+
+FooterSocialMediaStrip.propTypes = {
+  className: PropTypes.string
+};
 
 var PageFooter = function (_React$Component) {
   inherits(PageFooter, _React$Component);
