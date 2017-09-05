@@ -34,7 +34,7 @@ const productPageOrder = {
     'directions-matrix',
     'geocoder',
     'static-image',
-    'telemtry'
+    'telemetry'
   ],
   'mapbox-services/examples/': ['index']
 };
