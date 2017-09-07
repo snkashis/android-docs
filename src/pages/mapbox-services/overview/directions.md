@@ -8,34 +8,55 @@ sideNavSections:
 
 # Directions
 
-The Directions API delivers routes for navigating the world. Driving, walking, and cycling directions are all possible for you to request, retrieve, and use in your Android project however you would like. 
+The Directions API delivers routes for navigating the world. Driving, walking, and cycling directions are all possible for you to request, retrieve, and use in your Android project. 
 
-The API is a wrapper for the Mapbox Directions API and it is specifically for Java/Android developers/users.
+The classes and methods in the Mapbox Services SDK are wrappers for the [Mapbox Directions API](https://www.mapbox.com/api-documentation/#directions) and it is for Java/Android developers/users.
 
-The Directions API does not return estimated time of arrival (ETA). If you would like ETAs for your Android project, please review [the Mapbox Matrix API](https://www.mapbox.com/android-docs/mapbox-services/overview/directions-matrix/). The Matrix API returns ETAs but _not_ route geometries or distances like the Directions API does.
+The Directions API does not return estimated time of arrival (ETA). Please review [the Mapbox Matrix API](https://www.mapbox.com/android-docs/mapbox-services/overview/directions-matrix/) if you would like ETAs for your Android project. The Matrix API returns ETAs but _not_ route geometries or distances like the Directions API does.
 
-The Directions API can be completely used on its own to get routes and other directional information. You should also know that [the Mapbox Navigation SDK](https://www.mapbox.com/android-docs/navigation/overview/) is built on top of and includes the Directions API. **Use the Mapbox Java Services dependency if you want to use the Mapbox Directions API without using the entire Mapbox Navigation SDK.**
+Make sure to have a look at the API documentation if you want [more information about the Directions API](https://www.mapbox.com/api-documentation/#directions).
+
+Along with the API documentation, you can also view [the Directions API example in the Mapbox Android demo app](https://github.com/mapbox/mapbox-android-demo/blob/eadaf3a81c01f1390753dbe24b560f77d117ec27/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/mas/DirectionsActivity.java) to see a complete example of how to use the API.
+
+### Adding the Directions API
+
+The Directions API can be used completely on its own to get routes and other directional information. You should also know that [the Mapbox Navigation SDK](https://www.mapbox.com/android-docs/navigation/overview/) is built "on top of" and includes the Directions API. **Use the Mapbox Java Services dependency if you want to use the Mapbox Directions API without using the entire Mapbox Navigation SDK.**
 
 ```groovy
 compile 'com.mapbox.mapboxsdk:mapbox-java-services:{masVersion}'
 ```
 
-Make sure to have a look at the API documentation if you want [more information about the Directions API](https://www.mapbox.com/api-documentation/#directions).
-
-Along with the API documentation, you can also view [the Directions API example in the Mapbox Android demo app](https://github.com/mapbox/mapbox-android-demo/blob/eadaf3a81c01f1390753dbe24b560f77d117ec27/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/mas/DirectionsActivity.java) to see a complete example of how the API is used.
-
-
 ### Directions request
 
-Using the Mapbox Directions API requires you to build a url with various parameters to request the information that you want. This url has required and optional parameters. We've created a `MapboxDirections.Builder()` to help you easily set these various parameters.
+The Mapbox Directions API requires you to build a URL with various parameters to request the information that you want. This URL has required and optional parameters. We've created a `MapboxDirections.Builder()` class to help you set these various parameters.
 
-The two Building the request requires an origin `Position` object, a destination `Position` object.
+The three required parameters are:
 
+- an origin `Position` object
+- a destination `Position` object
+- a routing profile
 
-- Talk about Builder
-- required parameters
-- important optional params
-- different profiles
+The important optional parameters are:
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+[Full information on all optional parameters](https://www.mapbox.com/api-documentation/#retrieve-directions)
+
+Profiles:
+
+- Traffic: 
+- Driving:
+- Cycling:
+- Walking:
+
 - alternative routes (ordered by descending recommendation rank. May contain at most two routes.)
 - bearings and continue straight and how that effects the route
 
@@ -64,13 +85,13 @@ Requests using the driving-traffic profile can specify up to 3 waypoints.
 
 ### Directions response
 
-If the call was successful, you can access the API's returned response inside of `onResponse`.
+You can access the API's returned response inside of `onResponse`, if the call was successful.
 
 
 - not all request have a result, go through potential outcomes (usage of `code`)
 - waypoints inside response (original points snapped to route and with additional info)
 
-Like all API calls inside of Mapbox Services, the response will come inside a Retrofit callback. 
+The response will come inside a Retrofit callback, similar to all of the Mapbox Services SDK's API calls.
 
 - convert line geometry to a lineString
 
