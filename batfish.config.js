@@ -88,7 +88,7 @@ module.exports = () => {
         ]
       }
     ],
-    babelPlugins: ['lodash', 'transform-class-properties'],
+    babelPlugins: [require('babel-plugin-lodash')],
     applicationWrapperPath: path.join(
       __dirname,
       'src/components/application-wrapper.js'

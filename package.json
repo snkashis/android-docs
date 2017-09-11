@@ -26,7 +26,7 @@
   "dependencies": {
     "@mapbox/appropriate-images-get-url": "^0.1.1",
     "@mapbox/appropriate-images-react": "^0.1.2",
-    "@mapbox/batfish": "^0.9.4",
+    "@mapbox/batfish": "^0.10.4",
     "@mapbox/frontend-util-omit": "^1.0.0",
     "@mapbox/mapbox-assembly": "^0.20.1",
     "@mapbox/page-loading-indicator": "^0.1.0",
