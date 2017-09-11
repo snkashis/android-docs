@@ -20,7 +20,7 @@ const productPageOrder = {
   ],
   'map-sdk/examples/': ['index'],
   'map-sdk/tutorials/': ['index'],
-  'plugins/overview/': ['index', 'building', 'location-layer', 'traffic'],
+  'plugins/overview/': ['index', 'building', 'location-layer', 'traffic','geojson'],
   'plugins/examples/': ['index'],
   'navigation/overview/': [
     'index',
