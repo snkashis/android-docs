@@ -944,6 +944,18 @@ var navigationMenuData = {
       to: '/use-cases/data-visualization/',
       displayBackgroundColor: 'shell-bg-purple',
       displayImage: DataVisualizationImg
+    }, {
+      name: 'Ridesharing',
+      description: '',
+      to: '/ridesharing/',
+      displayBackgroundColor: '',
+      hideInHeader: true
+    }, {
+      name: 'Turn-by-turn navigation',
+      description: '',
+      to: '/use-cases/turn-by-turn/',
+      displayBackgroundColor: '',
+      hideInHeader: true
     }],
     highlightedLinks: [{
       name: 'Customer showcase',
@@ -1056,12 +1068,12 @@ function SecondaryMenu(props) {
           if (highlightedLink.hideInHeader) return;
           return React.createElement(
             'li',
-            { key: i, className: 'shell-block' },
+            { key: i, className: 'shell-block shell-pr6' },
             React.createElement(
               'a',
               {
                 href: highlightedLink.to,
-                className: shellStyles.popoverNavLinkHighlight + ' shell-pb3',
+                className: shellStyles.popoverNavLinkHighlight,
                 'data-nav-link': highlightedLink.name,
                 'data-test': 'nav-link-' + highlightedLink.name
               },
@@ -1077,6 +1089,7 @@ function SecondaryMenu(props) {
           'ul',
           { className: 'shell-grid shell-grid--gut12 shell-grid--gut18-ml shell-grid--gut24-mxl' },
           navigationMenuData[props.id].links.map(function (link, i) {
+            if (link.hideInHeader) return;
             return React.createElement(
               'li',
               { className: 'shell-col shell-col--6', key: i },
@@ -1104,7 +1117,7 @@ function SecondaryMenu(props) {
                   { className: 'shell-col shell-col--8' },
                   React.createElement(
                     'p',
-                    { className: 'shell-txt-bold shell-txt-s shell-pb3 shell-mt18 shell-mb0' },
+                    { className: 'shell-txt-bold shell-txt-s shell-mb3 shell-mt18 shell-mb0' },
                     link.name
                   ),
                   React.createElement(
@@ -1146,12 +1159,12 @@ function ProductMenu() {
             if (highlightedLink.hideInHeader) return;
             return React.createElement(
               'li',
-              { key: i, className: 'shell-block' },
+              { key: i, className: 'shell-block shell-pr6' },
               React.createElement(
                 'a',
                 {
                   href: highlightedLink.to,
-                  className: shellStyles.popoverNavLinkHighlight + ' shell-pb3',
+                  className: shellStyles.popoverNavLinkHighlight + ' shell-mb3',
                   'data-nav-link': highlightedLink.name,
                   'data-test': 'nav-link-' + highlightedLink.name
                 },
@@ -1300,12 +1313,12 @@ function DocumentationMenu() {
               if (highlightedLink.hideInHeader) return;
               return React.createElement(
                 'li',
-                { key: i, className: 'shell-block' },
+                { key: i, className: 'shell-block shell-pr6' },
                 React.createElement(
                   'a',
                   {
                     href: highlightedLink.to,
-                    className: shellStyles.popoverNavLinkHighlight + ' shell-pb3',
+                    className: shellStyles.popoverNavLinkHighlight + ' shell-mb3',
                     'data-nav-link': highlightedLink.name,
                     'data-test': 'nav-link-' + highlightedLink.name
                   },

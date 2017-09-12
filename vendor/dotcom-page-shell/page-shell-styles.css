@@ -461,6 +461,9 @@
 .shell-wrapper .shell-pr12 {
   padding-right: 12px !important;
 }
+.shell-wrapper .shell-pr6 {
+  padding-right: 6px !important;
+}
 .shell-wrapper .shell-pb3 {
   padding-bottom: 3px !important;
 }
@@ -791,8 +794,8 @@
     padding-top: 84px;
   }
   .shell-wrapper .shell-footer-column {
-    /* width based on API Documentation in Documentation column */
-    width: 110px;
+    /* width based on Customer Showcase in Use Cases column */
+    width: 130px;
   }
   .shell-wrapper .compatibility-warning-copy {
     padding-right: 150px;
