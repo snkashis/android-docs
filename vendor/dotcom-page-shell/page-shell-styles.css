@@ -300,8 +300,8 @@
 /* Requires a special selector for working outside the shell-wrapper */
 .shell-wrapper .shell-flex-parent,
 .shell-flex-parent {
-  display: -webkit-flex !important;
-  display: flex !important;
+  display: -webkit-flex;
+  display: flex;
 }
 /* Requires a special selector for working outside the shell-wrapper */
 .shell-wrapper .shell-flex-parent--column,
