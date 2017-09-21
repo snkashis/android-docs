@@ -592,74 +592,6 @@ HowMapboxWorksImg.propTypes = {
   className: PropTypes.string
 };
 
-var AssetTrackingImg = function (_React$Component) {
-  inherits(AssetTrackingImg, _React$Component);
-
-  function AssetTrackingImg() {
-    classCallCheck(this, AssetTrackingImg);
-    return possibleConstructorReturn(this, (AssetTrackingImg.__proto__ || Object.getPrototypeOf(AssetTrackingImg)).apply(this, arguments));
-  }
-
-  createClass(AssetTrackingImg, [{
-    key: 'shouldComponentUpdate',
-    value: function shouldComponentUpdate() {
-      return false;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'svg',
-        {
-          xmlns: 'http://www.w3.org/2000/svg',
-          className: this.props.className,
-          viewBox: '0 0 110 66'
-        },
-        React.createElement(
-          'g',
-          { 'data-name': 'svg' },
-          React.createElement('path', {
-            d: 'M12.29 28.26a1.25 1.25 0 0 1-.88-.36A1.3 1.3 0 0 1 11 27a1.28 1.28 0 0 1 .37-.88 1.3 1.3 0 0 1 1.77 0 1.27 1.27 0 0 1 .36.88 1.23 1.23 0 0 1-1.25 1.25zM20.33 41.06a1.25 1.25 0 0 1 .33-1.74 1.24 1.24 0 0 1 1.73.33 1.25 1.25 0 0 1-.33 1.74 1.27 1.27 0 0 1-.7.21 1.25 1.25 0 0 1-1.03-.54zm-3-4.45a1.25 1.25 0 0 1 .34-1.74 1.24 1.24 0 0 1 1.73.33 1.25 1.25 0 0 1-.4 1.74 1.2 1.2 0 0 1-.7.22 1.29 1.29 0 0 1-1-.55zm-3-4.45a1.24 1.24 0 0 1 .33-1.73 1.25 1.25 0 0 1 1.74.33 1.24 1.24 0 0 1-.4 1.73 1.23 1.23 0 0 1-.7.22 1.25 1.25 0 0 1-1.02-.55zM24.38 46a1.26 1.26 0 0 1-1.25-1.25 1.3 1.3 0 0 1 .37-.89 1.27 1.27 0 0 1 1.13-.34l.23.07a1.48 1.48 0 0 1 .22.12 1.43 1.43 0 0 1 .19.15 1.29 1.29 0 0 1 .36.89 1.25 1.25 0 0 1-.36.88l-.19.16-.22.11a.88.88 0 0 1-.23.07 1 1 0 0 1-.25.03zM27.78 42.23a1.25 1.25 0 0 1 .22-1.75 1.24 1.24 0 0 1 1.75.24 1.25 1.25 0 0 1-.24 1.75 1.23 1.23 0 0 1-.75.25 1.26 1.26 0 0 1-.98-.49zm4.39-3.33a1.25 1.25 0 0 1 .24-1.75 1.27 1.27 0 0 1 1.76.25 1.26 1.26 0 0 1-.25 1.75 1.23 1.23 0 0 1-.75.25 1.25 1.25 0 0 1-1-.5zM41 32.26a1.25 1.25 0 0 1 .24-1.75 1.25 1.25 0 0 1 1.75.24 1.25 1.25 0 0 1-.24 1.75 1.25 1.25 0 0 1-.75.25 1.25 1.25 0 0 1-1-.49zm4.39-3.33a1.25 1.25 0 0 1 .24-1.75 1.25 1.25 0 0 1 1.75.24 1.25 1.25 0 0 1-.24 1.75 1.24 1.24 0 0 1-.75.26 1.25 1.25 0 0 1-1.04-.5zM50.74 26.1h-.24l-.23-.1a.94.94 0 0 1-.22-.12.88.88 0 0 1-.19-.15 1.3 1.3 0 0 1-.37-.89 1.26 1.26 0 0 1 .37-.88l.19-.16a1.44 1.44 0 0 1 .22-.11.86.86 0 0 1 .23-.07 1.33 1.33 0 0 1 .49 0 .86.86 0 0 1 .23.07 1.49 1.49 0 0 1 .22.11l.19.16a1.35 1.35 0 0 1 .15.19 1 1 0 0 1 .12.22 1.56 1.56 0 0 1 .07.23 1 1 0 0 1 0 .24 1.29 1.29 0 0 1-.36.89.87.87 0 0 1-.19.15 1 1 0 0 1-.22.12l-.23.07zM72 51.95a1.25 1.25 0 0 1 .14-1.76 1.24 1.24 0 0 1 1.76.15 1.25 1.25 0 0 1-.14 1.76 1.24 1.24 0 0 1-.81.29 1.24 1.24 0 0 1-.95-.44zm-3.71-4.38a1.25 1.25 0 0 1 .15-1.76 1.25 1.25 0 0 1 1.76.14 1.25 1.25 0 0 1-.15 1.77 1.27 1.27 0 0 1-.8.29 1.26 1.26 0 0 1-.94-.44zm-7.39-8.76a1.26 1.26 0 0 1 .15-1.81 1.25 1.25 0 0 1 1.76.15 1.24 1.24 0 0 1-.15 1.76 1.22 1.22 0 0 1-.8.3 1.26 1.26 0 0 1-.96-.4zm-3.7-4.39a1.25 1.25 0 0 1 .14-1.76 1.26 1.26 0 0 1 1.77.15 1.25 1.25 0 0 1-.11 1.76 1.25 1.25 0 0 1-.81.3 1.22 1.22 0 0 1-.99-.46zM53.49 30a1.25 1.25 0 0 1 .15-1.76 1.25 1.25 0 0 1 1.76.15 1.24 1.24 0 0 1-.15 1.76 1.22 1.22 0 0 1-.8.3 1.24 1.24 0 0 1-.96-.45zM76.68 56.77a1.29 1.29 0 0 1-.89-.36 1.27 1.27 0 0 1-.36-.89 1.25 1.25 0 0 1 .36-.88 1.26 1.26 0 0 1 2.14.88 1.3 1.3 0 0 1-.37.89 1.25 1.25 0 0 1-.88.36zM80.18 53a1.25 1.25 0 0 1 .29-1.74 1.26 1.26 0 0 1 1.75.29 1.24 1.24 0 0 1-.3 1.74 1.21 1.21 0 0 1-.72.23 1.24 1.24 0 0 1-1.02-.52zm4.52-3.23A1.25 1.25 0 0 1 85 48a1.26 1.26 0 0 1 1.75.29 1.25 1.25 0 0 1-.29 1.74 1.25 1.25 0 0 1-.73.24 1.27 1.27 0 0 1-1.03-.48zM90.24 47.08a1.25 1.25 0 0 1-.88-.36 1.3 1.3 0 0 1-.37-.89 1 1 0 0 1 0-.24.86.86 0 0 1 .07-.23 1.42 1.42 0 0 1 .11-.22 1.5 1.5 0 0 1 .16-.19 1.3 1.3 0 0 1 1.77 0 1.35 1.35 0 0 1 .15.19 1 1 0 0 1 .12.22 1.56 1.56 0 0 1 .07.23 2 2 0 0 1 0 .24 2 2 0 0 1 0 .25 1.56 1.56 0 0 1-.07.23 1 1 0 0 1-.12.22 1.35 1.35 0 0 1-.15.19 1.29 1.29 0 0 1-.86.36zM65.61 46.26a3.85 3.85 0 1 1 3.85-3.85 3.85 3.85 0 0 1-3.85 3.85zm0-5.7a1.85 1.85 0 1 0 1.85 1.85 1.85 1.85 0 0 0-1.85-1.85z',
-            fill: '#fff'
-          }),
-          React.createElement('path', {
-            d: 'M93.7 42.77h-4.63a1.25 1.25 0 0 1 0-2.5h4.63a1.25 1.25 0 0 1 0 2.5z',
-            fill: '#269561'
-          }),
-          React.createElement('path', {
-            d: 'M99.46 27.53H83.31a4.19 4.19 0 1 0 0 8.37h6l1.5 2.6a.69.69 0 0 0 1.2 0l1.5-2.6h5.93a4.19 4.19 0 0 0 0-8.37z',
-            fill: '#afdec5'
-          }),
-          React.createElement('path', {
-            d: 'M97.46 33H85.3a1.24 1.24 0 0 1 0-2.48h12.16a1.24 1.24 0 0 1 0 2.48z',
-            fill: '#33c377'
-          }),
-          React.createElement('path', {
-            d: 'M14.44 24.44H9.19a1.25 1.25 0 1 1 0-2.5h5.25a1.25 1.25 0 0 1 0 2.5z',
-            fill: '#269561'
-          }),
-          React.createElement('path', {
-            d: 'M17.28 14.7a5.46 5.46 0 0 0-5.62-5.46 5.52 5.52 0 0 0-5.3 5.64 5.46 5.46 0 0 0 3.41 4.88l1.61 2.79a.55.55 0 0 0 .95 0L14 19.72a5.46 5.46 0 0 0 3.28-5.02z',
-            fill: '#afdec5'
-          }),
-          React.createElement('circle', { cx: '11.82', cy: '14.7', r: '2.43', fill: '#33c377' }),
-          React.createElement('circle', { cx: '65.61', cy: '42.41', r: '1.85', fill: '#269561' }),
-          React.createElement('path', {
-            d: 'M37.44 38.38a3.85 3.85 0 1 1 3.85-3.85 3.85 3.85 0 0 1-3.85 3.85zm0-5.7a1.85 1.85 0 1 0 1.85 1.85 1.85 1.85 0 0 0-1.85-1.85z',
-            fill: '#fff'
-          }),
-          React.createElement('circle', { cx: '37.44', cy: '34.53', r: '1.85', fill: '#269561' })
-        )
-      );
-    }
-  }]);
-  return AssetTrackingImg;
-}(React.Component);
-
-AssetTrackingImg.propTypes = {
-  className: PropTypes.string
-};
-
 var TutorialsImg = function (_React$Component) {
   inherits(TutorialsImg, _React$Component);
 
@@ -755,136 +687,6 @@ var TutorialsImg = function (_React$Component) {
 }(React.Component);
 
 TutorialsImg.propTypes = {
-  className: PropTypes.string
-};
-
-var DataVisualizationImg = function (_React$Component) {
-  inherits(DataVisualizationImg, _React$Component);
-
-  function DataVisualizationImg() {
-    classCallCheck(this, DataVisualizationImg);
-    return possibleConstructorReturn(this, (DataVisualizationImg.__proto__ || Object.getPrototypeOf(DataVisualizationImg)).apply(this, arguments));
-  }
-
-  createClass(DataVisualizationImg, [{
-    key: 'shouldComponentUpdate',
-    value: function shouldComponentUpdate() {
-      return false;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'svg',
-        {
-          xmlns: 'http://www.w3.org/2000/svg',
-          className: this.props.className,
-          viewBox: '0 0 110 66'
-        },
-        React.createElement(
-          'g',
-          { 'data-name': 'svg' },
-          React.createElement('path', {
-            fill: '#5a3fc0',
-            d: 'M57.6 19.85l-5.99-3.51 5.99-3.51 5.99 3.51-5.99 3.51z'
-          }),
-          React.createElement('path', { fill: '#fff', d: 'M57.6 19.85v28.62l5.99-3.1V16.34l-5.99 3.51z' }),
-          React.createElement('path', {
-            fill: '#c5b9eb',
-            d: 'M57.6 19.85v28.62l-5.89-3.93v-28.2l5.89 3.51z'
-          }),
-          React.createElement('path', {
-            fill: '#5a3fc0',
-            d: 'M46.74 32.02l-5.99-3.52 5.99-3.51 5.99 3.51-5.99 3.52z'
-          }),
-          React.createElement('path', { fill: '#fff', d: 'M46.74 32.02v21.15l5.99-3.1V28.5l-5.99 3.52z' }),
-          React.createElement('path', {
-            fill: '#c5b9eb',
-            d: 'M46.74 32.02v21.15l-5.89-3.92V28.5l5.89 3.52z'
-          }),
-          React.createElement('path', {
-            fill: '#5a3fc0',
-            d: 'M68.79 36.4l-5.99-3.52 5.99-3.51 5.99 3.51-5.99 3.52z'
-          }),
-          React.createElement('path', { fill: '#fff', d: 'M68.79 36.4v15.73l5.99-3.1V32.88l-5.99 3.52z' }),
-          React.createElement('path', {
-            fill: '#c5b9eb',
-            d: 'M68.79 36.4v15.73L62.9 48.2V32.88l5.89 3.52z'
-          }),
-          React.createElement('path', {
-            d: 'M42.28 38.36h-8v-6.73a1.37 1.37 0 0 0-1.36-1.36H14.37A1.37 1.37 0 0 0 13 31.63v13.89a1.37 1.37 0 0 0 1.36 1.36h18.53a1.37 1.37 0 0 0 1.36-1.36v-5.16h8a1 1 0 0 0 0-2z',
-            fill: '#5a3fc0'
-          }),
-          React.createElement('path', {
-            d: 'M18.12 43.06a.75.75 0 0 1-.75-.75v-7.47a.75.75 0 0 1 1.5 0v7.48a.75.75 0 0 1-.75.74z',
-            fill: '#7753eb'
-          }),
-          React.createElement('path', {
-            d: 'M18.12 43.06a.75.75 0 0 1-.75-.75v-4.9a.75.75 0 0 1 1.5 0v4.91a.75.75 0 0 1-.75.74z',
-            fill: '#c5b9eb'
-          }),
-          React.createElement('path', {
-            d: 'M21.71 43.06a.75.75 0 0 1-.75-.75v-7.47a.75.75 0 0 1 1.5 0v7.48a.75.75 0 0 1-.75.74z',
-            fill: '#7753eb'
-          }),
-          React.createElement('path', {
-            d: 'M21.71 43.06a.75.75 0 0 1-.75-.75v-2.62a.75.75 0 0 1 1.5 0v2.62a.75.75 0 0 1-.75.75z',
-            fill: '#c5b9eb'
-          }),
-          React.createElement('path', {
-            d: 'M25.55 43.06a.75.75 0 0 1-.75-.75v-7.47a.75.75 0 0 1 1.5 0v7.48a.75.75 0 0 1-.75.74z',
-            fill: '#7753eb'
-          }),
-          React.createElement('path', {
-            d: 'M25.55 43.06a.75.75 0 0 1-.75-.75v-4.9a.75.75 0 0 1 1.5 0v4.91a.75.75 0 0 1-.75.74z',
-            fill: '#c5b9eb'
-          }),
-          React.createElement('path', {
-            d: 'M29.14 43.06a.75.75 0 0 1-.75-.75v-7.47a.75.75 0 0 1 1.5 0v7.48a.75.75 0 0 1-.75.74z',
-            fill: '#7753eb'
-          }),
-          React.createElement('path', {
-            d: 'M29.14 43.06a.75.75 0 0 1-.75-.75v-3.58a.75.75 0 0 1 1.5 0v3.58a.75.75 0 0 1-.75.75z',
-            fill: '#c5b9eb'
-          }),
-          React.createElement('path', {
-            d: 'M86.65 15.11a8.34 8.34 0 0 0-8.26 7.22H62.32a1 1 0 0 0 0 2h16a8.35 8.35 0 1 0 8.3-9.22z',
-            fill: '#5a3fc0'
-          }),
-          React.createElement('path', {
-            d: 'M91.52 19.84a.75.75 0 0 0-1 .42L89.05 24l-3.83-2.42a.71.71 0 0 0-.14-.05h-.42l-.14.06-.13.06a.77.77 0 0 0-.11.11.71.71 0 0 0-.1.1l-2.72 4.09a.75.75 0 1 0 1.25.83L85 23.22l4 2.51h.08a.75.75 0 0 0 .25 0 .74.74 0 0 0 .32-.08h.05a.74.74 0 0 0 .24-.22v-.08l1.82-4.55a.75.75 0 0 0-.24-.96z',
-            fill: '#7753eb'
-          }),
-          React.createElement('circle', { cx: '82.1', cy: '26.28', r: '1.12', fill: '#c5b9eb' }),
-          React.createElement('circle', {
-            cx: '89.41',
-            cy: '25.09',
-            r: '1.2',
-            transform: 'rotate(-45 89.41 25.085)',
-            fill: '#c5b9eb'
-          }),
-          React.createElement('circle', {
-            cx: '91.24',
-            cy: '20.54',
-            r: '1.03',
-            transform: 'rotate(-45 91.237 20.538)',
-            fill: '#c5b9eb'
-          }),
-          React.createElement('circle', {
-            cx: '84.83',
-            cy: '22.19',
-            r: '1.47',
-            transform: 'rotate(-45 84.823 22.195)',
-            fill: '#c5b9eb'
-          })
-        )
-      );
-    }
-  }]);
-  return DataVisualizationImg;
-}(React.Component);
-
-DataVisualizationImg.propTypes = {
   className: PropTypes.string
 };
 
@@ -1015,28 +817,16 @@ var navigationMenuData = {
     name: 'Use cases',
     links: [{
       name: 'Asset tracking',
-      description: 'Manage fleets, plan routes, and track assets',
-      to: '/use-cases/asset-tracking/',
-      displayBackgroundColor: 'shell-bg-green-light',
-      displayImage: AssetTrackingImg
+      to: '/use-cases/asset-tracking/'
     }, {
       name: 'Data visualization',
-      description: 'Make more informed decisions with data',
-      to: '/use-cases/data-visualization/',
-      displayBackgroundColor: 'shell-bg-purple',
-      displayImage: DataVisualizationImg
+      to: '/use-cases/data-visualization/'
     }, {
-      name: 'Ridesharing',
-      description: '',
-      to: '/ridesharing/',
-      displayBackgroundColor: '',
-      hideInHeader: true
+      name: 'On-demand logistics',
+      to: '/use-cases/on-demand-logistics/'
     }, {
       name: 'Turn-by-turn navigation',
-      description: '',
-      to: '/use-cases/turn-by-turn/',
-      displayBackgroundColor: '',
-      hideInHeader: true
+      to: '/use-cases/turn-by-turn-navigation/'
     }],
     highlightedLinks: [{
       name: 'Customer showcase',
@@ -1124,114 +914,6 @@ var navigationMenuData = {
     }]
   }
 };
-
-var PopoverSectionSecondary = function (_React$Component) {
-  inherits(PopoverSectionSecondary, _React$Component);
-
-  function PopoverSectionSecondary() {
-    classCallCheck(this, PopoverSectionSecondary);
-    return possibleConstructorReturn(this, (PopoverSectionSecondary.__proto__ || Object.getPrototypeOf(PopoverSectionSecondary)).apply(this, arguments));
-  }
-
-  createClass(PopoverSectionSecondary, [{
-    key: 'shouldComponentUpdate',
-    value: function shouldComponentUpdate() {
-      return false;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      // Special case for help menu in documentation menu; limiters are added
-      // per section due to an added background color
-      return React.createElement(
-        'div',
-        { className: 'shell-col shell-col--offl1 shell-col--10 shell-col--offr1 shell-py30' },
-        React.createElement(
-          'div',
-          {
-            className: shellStyles.popoverNavHeading + ' shell-pb6 shell-border-b shell-border--gray-light'
-          },
-          navigationMenuData[this.props.id].name
-        ),
-        React.createElement(
-          'div',
-          { className: 'shell-grid' },
-          React.createElement(
-            'ul',
-            { className: 'shell-col shell-col--3 shell-col--2-mxl shell-pt18' },
-            navigationMenuData[this.props.id].highlightedLinks.map(function (highlightedLink, i) {
-              if (highlightedLink.hideInHeader) return;
-              return React.createElement(
-                'li',
-                { key: i, className: 'shell-block shell-pr6' },
-                React.createElement(
-                  'a',
-                  {
-                    href: highlightedLink.to,
-                    className: shellStyles.popoverNavLinkHighlight + ' shell-mb3',
-                    'data-nav-link': highlightedLink.name,
-                    'data-test': 'nav-link-' + highlightedLink.name
-                  },
-                  React.createElement(NavigationHighlightLink, { label: highlightedLink.name })
-                )
-              );
-            })
-          ),
-          React.createElement(
-            'div',
-            { className: 'shell-col shell-col--9 shell-col--10-mxl' },
-            React.createElement(
-              'ul',
-              { className: 'shell-grid shell-grid--gut12 shell-grid--gut18-ml shell-grid--gut24-mxl' },
-              navigationMenuData[this.props.id].links.map(function (link, i) {
-                if (link.hideInHeader) return;
-                return React.createElement(
-                  'li',
-                  { className: 'shell-col shell-col--6', key: i },
-                  React.createElement(
-                    'a',
-                    {
-                      href: link.to,
-                      className: 'shell-grid shell-grid--gut12 shell-grid--gut18-ml shell-grid--gut24-mxl shell-link shell-color-gray-dark shell-color-blue-on-hover',
-                      'data-nav-link': true,
-                      'data-test': 'nav-link-' + link.name
-                    },
-                    React.createElement(
-                      'div',
-                      { className: 'shell-col shell-col--4' },
-                      React.createElement(
-                        'div',
-                        {
-                          className: link.displayBackgroundColor + ' shell-relative shell-mt18 shell-illustration-container'
-                        },
-                        React.createElement(link.displayImage, { className: 'shell-flex-child shell-absolute shell-w-full shell-h-full' })
-                      )
-                    ),
-                    React.createElement(
-                      'div',
-                      { className: 'shell-col shell-col--8' },
-                      React.createElement(
-                        'p',
-                        { className: 'shell-txt-bold shell-txt-s shell-mb3 shell-mt18 shell-mb0' },
-                        link.name
-                      ),
-                      React.createElement(
-                        'p',
-                        { className: 'shell-color-darken50 shell-txt-s shell-my0' },
-                        link.description
-                      )
-                    )
-                  )
-                );
-              })
-            )
-          )
-        )
-      );
-    }
-  }]);
-  return PopoverSectionSecondary;
-}(React.Component);
 
 var PopoverWrapper = function (_React$Component) {
   inherits(PopoverWrapper, _React$Component);
@@ -1381,12 +1063,190 @@ var PopoverContentProducts = function (_React$Component) {
               )
             )
           ),
-          React.createElement(PopoverSectionSecondary, { id: 'useCaseMenu' })
+          React.createElement(
+            'div',
+            { className: 'shell-col shell-col--offl1 shell-col--10 shell-col--offr1 shell-py30' },
+            React.createElement(
+              'div',
+              {
+                className: shellStyles.popoverNavHeading + ' shell-pb6 shell-border-b shell-border--gray-light'
+              },
+              navigationMenuData.useCaseMenu.name
+            ),
+            React.createElement(
+              'div',
+              { className: 'shell-grid' },
+              React.createElement(
+                'ul',
+                {
+                  className: 'shell-col shell-col--3 shell-col--2-mxl shell-pt18'
+                },
+                navigationMenuData.useCaseMenu.highlightedLinks.map(function (highlightedLink, i) {
+                  if (highlightedLink.hideInHeader) return;
+                  return React.createElement(
+                    'li',
+                    { key: i, className: 'shell-block shell-pr6' },
+                    React.createElement(
+                      'a',
+                      {
+                        href: highlightedLink.to,
+                        className: shellStyles.popoverNavLinkHighlight + ' shell-mb3',
+                        'data-nav-link': highlightedLink.name,
+                        'data-test': 'nav-link-' + highlightedLink.name
+                      },
+                      React.createElement(NavigationHighlightLink, {
+                        label: highlightedLink.name
+                      })
+                    )
+                  );
+                })
+              ),
+              React.createElement(
+                'div',
+                { className: 'shell-col shell-col--9 shell-col--10-mxl' },
+                React.createElement(
+                  'ul',
+                  { className: 'shell-grid shell-grid--gut12 shell-grid--gut18-ml shell-grid--gut24-mxl' },
+                  navigationMenuData.useCaseMenu.links.map(function (link, i) {
+                    return React.createElement(
+                      'li',
+                      {
+                        className: 'shell-col shell-col--4 shell-col--3-mxl',
+                        key: i
+                      },
+                      React.createElement(
+                        'a',
+                        {
+                          className: 'shell-link shell-color-gray-dark shell-color-blue-on-hover',
+                          href: link.to,
+                          'data-nav-link': true,
+                          'data-test': 'nav-link-' + link.name
+                        },
+                        React.createElement(
+                          'p',
+                          { className: 'shell-txt-bold shell-txt-s shell-py3 shell-mt18 shell-mb0' },
+                          link.name
+                        )
+                      )
+                    );
+                  })
+                )
+              )
+            )
+          )
         )
       );
     }
   }]);
   return PopoverContentProducts;
+}(React.Component);
+
+var PopoverSectionSecondary = function (_React$Component) {
+  inherits(PopoverSectionSecondary, _React$Component);
+
+  function PopoverSectionSecondary() {
+    classCallCheck(this, PopoverSectionSecondary);
+    return possibleConstructorReturn(this, (PopoverSectionSecondary.__proto__ || Object.getPrototypeOf(PopoverSectionSecondary)).apply(this, arguments));
+  }
+
+  createClass(PopoverSectionSecondary, [{
+    key: 'shouldComponentUpdate',
+    value: function shouldComponentUpdate() {
+      return false;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      // Special case for help menu in documentation menu; limiters are added
+      // per section due to an added background color
+      return React.createElement(
+        'div',
+        { className: 'shell-col shell-col--offl1 shell-col--10 shell-col--offr1 shell-py30' },
+        React.createElement(
+          'div',
+          {
+            className: shellStyles.popoverNavHeading + ' shell-pb6 shell-border-b shell-border--gray-light'
+          },
+          navigationMenuData[this.props.id].name
+        ),
+        React.createElement(
+          'div',
+          { className: 'shell-grid' },
+          React.createElement(
+            'ul',
+            { className: 'shell-col shell-col--3 shell-col--2-mxl shell-pt18' },
+            navigationMenuData[this.props.id].highlightedLinks.map(function (highlightedLink, i) {
+              if (highlightedLink.hideInHeader) return;
+              return React.createElement(
+                'li',
+                { key: i, className: 'shell-block shell-pr6' },
+                React.createElement(
+                  'a',
+                  {
+                    href: highlightedLink.to,
+                    className: shellStyles.popoverNavLinkHighlight + ' shell-mb3',
+                    'data-nav-link': highlightedLink.name,
+                    'data-test': 'nav-link-' + highlightedLink.name
+                  },
+                  React.createElement(NavigationHighlightLink, { label: highlightedLink.name })
+                )
+              );
+            })
+          ),
+          React.createElement(
+            'div',
+            { className: 'shell-col shell-col--9 shell-col--10-mxl' },
+            React.createElement(
+              'ul',
+              { className: 'shell-grid shell-grid--gut12 shell-grid--gut18-ml shell-grid--gut24-mxl' },
+              navigationMenuData[this.props.id].links.map(function (link, i) {
+                if (link.hideInHeader) return;
+                return React.createElement(
+                  'li',
+                  { className: 'shell-col shell-col--6', key: i },
+                  React.createElement(
+                    'a',
+                    {
+                      href: link.to,
+                      className: 'shell-grid shell-grid--gut12 shell-grid--gut18-ml shell-grid--gut24-mxl shell-link shell-color-gray-dark shell-color-blue-on-hover',
+                      'data-nav-link': true,
+                      'data-test': 'nav-link-' + link.name
+                    },
+                    React.createElement(
+                      'div',
+                      { className: 'shell-col shell-col--4' },
+                      React.createElement(
+                        'div',
+                        {
+                          className: link.displayBackgroundColor + ' shell-relative shell-mt18 shell-illustration-container'
+                        },
+                        React.createElement(link.displayImage, { className: 'shell-flex-child shell-absolute shell-w-full shell-h-full' })
+                      )
+                    ),
+                    React.createElement(
+                      'div',
+                      { className: 'shell-col shell-col--8' },
+                      React.createElement(
+                        'p',
+                        { className: 'shell-txt-bold shell-txt-s shell-mb3 shell-mt18 shell-mb0' },
+                        link.name
+                      ),
+                      React.createElement(
+                        'p',
+                        { className: 'shell-color-darken50 shell-txt-s shell-my0' },
+                        link.description
+                      )
+                    )
+                  )
+                );
+              })
+            )
+          )
+        )
+      );
+    }
+  }]);
+  return PopoverSectionSecondary;
 }(React.Component);
 
 var PopoverContentDocumentation = function (_React$Component) {
