@@ -7,6 +7,7 @@ var React = _interopDefault(require('react'));
 var PropTypes = _interopDefault(require('prop-types'));
 var Helmet = require('react-helmet');
 var Helmet__default = _interopDefault(Helmet);
+var LiveRegion = _interopDefault(require('live-region'));
 
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -1001,20 +1002,22 @@ var PopoverContentProducts = function (_React$Component) {
               'div',
               { className: 'shell-grid' },
               React.createElement(
-                'ul',
-                {
-                  className: 'shell-col shell-col--3 shell-col--2-mxl shell-pt18'
-                },
+                'div',
+                { className: 'shell-col shell-col--3 shell-col--2-mxl shell-mt18' },
                 navigationMenuData.headerMainMenus.products.highlightedLinks.map(function (highlightedLink, i) {
                   if (highlightedLink.hideInHeader) return;
                   return React.createElement(
-                    'li',
-                    { key: i, className: 'shell-block shell-pr6' },
+                    'div',
+                    {
+                      key: i,
+                      className: 'shell-block shell-pr6 shell-mb6',
+                      style: { lineHeight: 1 }
+                    },
                     React.createElement(
                       'a',
                       {
                         href: highlightedLink.to,
-                        className: shellStyles.popoverNavLinkHighlight + ' shell-mb3',
+                        className: shellStyles.popoverNavLinkHighlight,
                         'data-nav-link': highlightedLink.name,
                         'data-test': 'nav-link-' + highlightedLink.name
                       },
@@ -1036,7 +1039,8 @@ var PopoverContentProducts = function (_React$Component) {
                       'li',
                       {
                         className: 'shell-col shell-col--4 shell-col--3-mxl',
-                        key: i
+                        key: i,
+                        style: { lineHeight: 1 }
                       },
                       React.createElement(
                         'a',
@@ -1048,7 +1052,7 @@ var PopoverContentProducts = function (_React$Component) {
                         },
                         React.createElement(
                           'p',
-                          { className: 'shell-txt-bold shell-txt-s shell-py3 shell-mt18 shell-mb0' },
+                          { className: 'shell-txt-bold shell-txt-s shell-mb3 shell-mt18' },
                           link.name
                         ),
                         React.createElement(
@@ -1077,20 +1081,22 @@ var PopoverContentProducts = function (_React$Component) {
               'div',
               { className: 'shell-grid' },
               React.createElement(
-                'ul',
-                {
-                  className: 'shell-col shell-col--3 shell-col--2-mxl shell-pt18'
-                },
+                'div',
+                { className: 'shell-col shell-col--3 shell-col--2-mxl shell-mt18' },
                 navigationMenuData.useCaseMenu.highlightedLinks.map(function (highlightedLink, i) {
                   if (highlightedLink.hideInHeader) return;
                   return React.createElement(
-                    'li',
-                    { key: i, className: 'shell-block shell-pr6' },
+                    'div',
+                    {
+                      key: i,
+                      className: 'shell-block',
+                      style: { lineHeight: 1 }
+                    },
                     React.createElement(
                       'a',
                       {
                         href: highlightedLink.to,
-                        className: shellStyles.popoverNavLinkHighlight + ' shell-mb3',
+                        className: shellStyles.popoverNavLinkHighlight + ' shell-mb3 shell-pr6',
                         'data-nav-link': highlightedLink.name,
                         'data-test': 'nav-link-' + highlightedLink.name
                       },
@@ -1124,7 +1130,7 @@ var PopoverContentProducts = function (_React$Component) {
                         },
                         React.createElement(
                           'p',
-                          { className: 'shell-txt-bold shell-txt-s shell-py3 shell-mt18 shell-mb0' },
+                          { className: 'shell-txt-bold shell-txt-s shell-mt18' },
                           link.name
                         )
                       )
@@ -1171,20 +1177,24 @@ var PopoverSectionSecondary = function (_React$Component) {
         ),
         React.createElement(
           'div',
-          { className: 'shell-grid' },
+          { className: 'shell-grid shell-mt18' },
           React.createElement(
-            'ul',
-            { className: 'shell-col shell-col--3 shell-col--2-mxl shell-pt18' },
+            'div',
+            { className: 'shell-col shell-col--3 shell-col--2-mxl' },
             navigationMenuData[this.props.id].highlightedLinks.map(function (highlightedLink, i) {
               if (highlightedLink.hideInHeader) return;
               return React.createElement(
-                'li',
-                { key: i, className: 'shell-block shell-pr6' },
+                'div',
+                {
+                  key: i,
+                  className: 'shell-block shell-mb6 shell-pr6',
+                  style: { lineHeight: 1 }
+                },
                 React.createElement(
                   'a',
                   {
                     href: highlightedLink.to,
-                    className: shellStyles.popoverNavLinkHighlight + ' shell-mb3',
+                    className: shellStyles.popoverNavLinkHighlight,
                     'data-nav-link': highlightedLink.name,
                     'data-test': 'nav-link-' + highlightedLink.name
                   },
@@ -1218,7 +1228,7 @@ var PopoverSectionSecondary = function (_React$Component) {
                       React.createElement(
                         'div',
                         {
-                          className: link.displayBackgroundColor + ' shell-relative shell-mt18 shell-illustration-container'
+                          className: link.displayBackgroundColor + ' shell-relative shell-illustration-container'
                         },
                         React.createElement(link.displayImage, { className: 'shell-flex-child shell-absolute shell-w-full shell-h-full' })
                       )
@@ -1228,7 +1238,7 @@ var PopoverSectionSecondary = function (_React$Component) {
                       { className: 'shell-col shell-col--8' },
                       React.createElement(
                         'p',
-                        { className: 'shell-txt-bold shell-txt-s shell-mb3 shell-mt18 shell-mb0' },
+                        { className: 'shell-txt-bold shell-txt-s shell-mb3' },
                         link.name
                       ),
                       React.createElement(
@@ -2296,15 +2306,35 @@ var PageFooter = function (_React$Component) {
 var DEFAULT_SOCIAL_IMAGE_URL = 'https://www.mapbox.com/social-1200x630.png';
 var DEFAULT_SOCIAL_IMAGE_THUMBNAIL_URL = 'https://www.mapbox.com/social-120x120.png';
 
+var liveRegion = void 0;
+
 var MetaTagger = function (_React$PureComponent) {
   inherits(MetaTagger, _React$PureComponent);
 
   function MetaTagger() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     classCallCheck(this, MetaTagger);
-    return possibleConstructorReturn(this, (MetaTagger.__proto__ || Object.getPrototypeOf(MetaTagger)).apply(this, arguments));
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = MetaTagger.__proto__ || Object.getPrototypeOf(MetaTagger)).call.apply(_ref, [this].concat(args))), _this), _this.handleHelmetStateChange = function () {
+      liveRegion.announce('Loaded page ' + _this.props.title + '.');
+    }, _temp), possibleConstructorReturn(_this, _ret);
   }
 
   createClass(MetaTagger, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (!liveRegion) {
+        liveRegion = new LiveRegion();
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var props = this.props;
@@ -2346,7 +2376,11 @@ var MetaTagger = function (_React$PureComponent) {
         metaItems.push({ name: 'robots', content: 'noindex' });
       }
 
-      return React.createElement(Helmet__default, { title: suffixedTitle, meta: metaItems });
+      return React.createElement(Helmet__default, {
+        title: suffixedTitle,
+        meta: metaItems,
+        onChangeClientState: this.handleHelmetStateChange
+      });
     }
   }]);
   return MetaTagger;
