@@ -20,12 +20,19 @@ const productPageOrder = {
   ],
   'map-sdk/examples/': ['index'],
   'map-sdk/tutorials/': ['index'],
-  'plugins/overview/': ['index', 'building', 'location-layer', 'traffic','geojson'],
+  'plugins/overview/': [
+    'index',
+    'building',
+    'location-layer',
+    'traffic',
+    'geojson'
+  ],
   'plugins/examples/': ['index'],
   'navigation/overview/': [
     'index',
     'milestones',
     'navigation-options',
+    'navigation-ui',
     'off-route',
     'route-progress'
   ],

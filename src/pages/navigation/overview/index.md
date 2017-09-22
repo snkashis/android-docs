@@ -79,7 +79,7 @@ For best navigation results, we strongly recommend using the fine location permi
 
 ### 4. Requesting a route
 
-Now that you have created a way for the `MapboxNavigation` object to get the user's location, the other thing needed is a route. Call `getRoute` and pass in an origin, destination, and a callback to handle the response. If you've ever worked with Retrofit, the callback here will look familiar since this is what we are using under the hood. Inside the `onResponse`, you can draw the directions route on a map or show time and distance using the full directions response.
+Now that you have created a way for the `MapboxNavigation` object to get the user's location, the other thing needed is a route. Use `NavigationRoute` and pass in an origin, destination, and a callback to handle the response. If you've ever worked with Retrofit, the callback here will look familiar since this is what we are using under the hood. Inside the `onResponse`, you can draw the directions route on a map or show time and distance using the full directions response.
 
 For increasing the likelihood that the route you receive starts off in the same direction the user is traveling, you also have the option to pass in the user’s location bearing value; the value ranges from 0 to 355.
 
@@ -88,25 +88,42 @@ For increasing the likelihood that the route you receive starts off in the same 
 Position origin = Position.fromLatLng(38.90992, -77.03613);
 Position destination = Position.fromLatLng(38.8977, -77.0365);
 
-navigation.getRoute(origin, destination, 90f, new Callback<DirectionsResponse>() {
-  @Override
-  public void onResponse(
-    Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
+NavigationRoute.builder()
+      .accessToken(Mapbox.getAccessToken())
+      .origin(origin)
+      .destination(destination)
+      .build()
+      .getRoute(new Callback<DirectionsResponse>() {
+        @Override
+        public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
 
-  }
+        }
 
-  @Override
-  public void onFailure(Call<DirectionsResponse> call, Throwable t) {
+        @Override
+        public void onFailure(Call<DirectionsResponse> call, Throwable t) {
 
-  }
-});
+        }
+      });
 ```
 
-If your navigation involves a bunch of pick-up and drop-off points, you can pass in a list of up to 25 coordinates rather than an origin and destination; the first and last items in the list will default to the origin and destination respectively.
+If your navigation involves a bunch of pick-up and drop-off points, you can add up to 25 coordinates to the `NavigationRoute` builder; these are considered stops in between the origin and destination `Position`s (in the order that you add them - first waypoint is the first stop):
+
+```java
+NavigationRoute.Builder builder = NavigationRoute.builder()
+      .accessToken(Mapbox.getAccessToken())
+      .origin(origin)
+      .destination(destination);
+
+    for (Position waypoint : waypoints) {
+      builder.addWaypoint(waypoint);
+    }
+
+    builder.build();
+```
 
 ## MapboxNavigation object
 
-You will find most of the navigation APIs inside the `MapboxNavigation` class including fetching the route, starting and ending the navigation session, and attaching listeners. Assign and initialize a new instance of `MapboxNavigation` inside your navigation activity. When initializing, you'll need to pass in a `Context` and your Mapbox access token. Read the access token section in this getting started document to learn how to get a free access token.
+You will find most of the navigation APIs inside the `MapboxNavigation` class such as starting and ending the navigation session or attaching listeners. Assign and initialize a new instance of `MapboxNavigation` inside your navigation activity. When initializing, you'll need to pass in a `Context` and your Mapbox access token. Read the access token section in this getting started document to learn how to get a free access token.
 
 ```java
 MapboxNavigation navigation = new MapboxNavigation(this, MAPBOX_ACCESS_TOKEN);
@@ -125,20 +142,15 @@ navigation.setLocationEngine(locationEngine);
 
 ## Lifecycle methods
 
-Inside your application's activity, you'll want to override the onDestroy lifecycle method, remove any navigation listeners you are using, and end the navigation session. Doing this prevents any memory leaks from occurring but still allows navigation to run in the background if, for example, your user goes to their home screen.
+Inside your application's activity, you'll want to override the onDestroy lifecycle method, end the navigation session (if running) and use the `MabpoxNavigation#onDestroy` method. Doing this prevents any memory leaks and ensures proper shutdown of the service.
 
 ```java
 @Override
 protected void onDestroy() {
   super.onDestroy();
-  // Remove all navigation listeners being used
-  navigation.removeAlertLevelChangeListener(this);
-  navigation.removeNavigationEventListener(this);
-  navigation.removeProgressChangeListener(this);
-  navigation.removeOffRouteListener(this);
-
   // End the navigation session
   navigation.endNavigation();
+  navigation.onDestroy();
 }
 ```
 
