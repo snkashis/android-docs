@@ -7,7 +7,6 @@ var React = _interopDefault(require('react'));
 var PropTypes = _interopDefault(require('prop-types'));
 var Helmet = require('react-helmet');
 var Helmet__default = _interopDefault(Helmet);
-var LiveRegion = _interopDefault(require('live-region'));
 
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -2306,6 +2305,7 @@ var PageFooter = function (_React$Component) {
 var DEFAULT_SOCIAL_IMAGE_URL = 'https://www.mapbox.com/social-1200x630.png';
 var DEFAULT_SOCIAL_IMAGE_THUMBNAIL_URL = 'https://www.mapbox.com/social-120x120.png';
 
+/* globals MapboxPageShell */
 var liveRegion = void 0;
 
 var MetaTagger = function (_React$PureComponent) {
@@ -2331,7 +2331,7 @@ var MetaTagger = function (_React$PureComponent) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       if (!liveRegion) {
-        liveRegion = new LiveRegion();
+        liveRegion = new MapboxPageShell.LiveRegion();
       }
     }
   }, {
