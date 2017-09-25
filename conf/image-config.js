@@ -240,5 +240,17 @@ module.exports = {
   firstStepsAvd: {
     basename: 'first-steps-avd.png',
     sizes: [{ width: 24 }]
+  },
+  tutorialsFirstStepsIntro: {
+    basename: 'first-steps-intro.png',
+    sizes: [{ width: 1200 }]
+  },
+  tutorialsDDSIntro: {
+    basename: 'dds-intro.png',
+    sizes: [{ width: 1200 }]
+  },
+  tutorialsStoreLocatorIntro: {
+    basename: 'store-locator-intro.png',
+    sizes: [{ width: 1200 }]
   }
 };
