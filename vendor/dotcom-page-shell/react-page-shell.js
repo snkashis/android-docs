@@ -816,17 +816,20 @@ var navigationMenuData = {
   useCaseMenu: {
     name: 'Use cases',
     links: [{
-      name: 'Asset tracking',
-      to: '/use-cases/asset-tracking/'
+      name: 'Store Locator',
+      to: '/use-cases/store-locator/'
     }, {
-      name: 'Data visualization',
-      to: '/use-cases/data-visualization/'
+      name: 'Turn-by-turn navigation',
+      to: '/use-cases/turn-by-turn-navigation/'
     }, {
       name: 'On-demand logistics',
       to: '/use-cases/on-demand-logistics/'
     }, {
-      name: 'Turn-by-turn navigation',
-      to: '/use-cases/turn-by-turn-navigation/'
+      name: 'Data visualization',
+      to: '/use-cases/data-visualization/'
+    }, {
+      name: 'Asset tracking',
+      to: '/use-cases/asset-tracking/'
     }],
     highlightedLinks: [{
       name: 'Customer showcase',
