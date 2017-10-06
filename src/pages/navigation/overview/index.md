@@ -85,8 +85,8 @@ For increasing the likelihood that the route you receive starts off in the same 
 
 ```java
 // From Mapbox to The White House
-Position origin = Position.fromLatLng(38.90992, -77.03613);
-Position destination = Position.fromLatLng(38.8977, -77.0365);
+Position origin = Position.fromLngLat(-77.03613, 38.90992);
+Position destination = Position.fromLngLat(-77.0365, 38.8977);
 
 NavigationRoute.builder()
       .accessToken(Mapbox.getAccessToken())
