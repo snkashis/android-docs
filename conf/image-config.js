@@ -57,6 +57,10 @@ module.exports = {
     basename: 'style-map-custom-colors.png',
     sizes: [{ width: 520 }]
   },
+  examplesStyleLineLayer: {
+    basename: 'style-map-line-layer.png',
+    sizes: [{ width: 520 }]
+  },
   examplesStyleMapLayerOpacity: {
     basename: 'style-map-layer-opacity.png',
     sizes: [{ width: 520 }]
@@ -85,12 +89,16 @@ module.exports = {
     basename: 'camera-animated-camera.gif',
     sizes: [{ width: 520 }]
   },
+  examplesAnnotationsDrawMarker: {
+    basename: 'annotations-draw-marker.png',
+    sizes: [{ width: 520 }]
+  },
   examplesCameraCameraBbox: {
     basename: 'camera-camera-bbox.gif',
     sizes: [{ width: 520 }]
   },
-  examplesAnnotationsDrawMarker: {
-    basename: 'annotations-draw-marker.png',
+  examplesCameraRestrictPanning: {
+    basename: 'camera-restrict-panning.png',
     sizes: [{ width: 520 }]
   },
   examplesAnnotationsCustomInfoWindow: {
@@ -121,10 +129,6 @@ module.exports = {
     basename: 'annotations-polygon-with-holes.png',
     sizes: [{ width: 520 }]
   },
-  examples3dExtrusions3dBuilds: {
-    basename: '3d-extrusions-3d-builds.gif',
-    sizes: [{ width: 520 }]
-  },
   examples3dExtrusionsPopulationExtrusions: {
     basename: '3d-extrusions-population_extrusions.gif',
     sizes: [{ width: 520 }]
@@ -137,6 +141,14 @@ module.exports = {
     basename: '3d-extrusions-extrusion_light.gif',
     sizes: [{ width: 520 }]
   },
+  examples3dExtrusionsIndoorMapping: {
+    basename: '3d-extrusions-indoor-mapping-extrusions.png',
+    sizes: [{ width: 520 }]
+  },
+  examples3dExtrusionsDeviceFeedback: {
+    basename: '3d-extrusions-device-rotation.png',
+    sizes: [{ width: 520 }]
+  },
   examplesDdsCategoricallyDds: {
     basename: 'dds-categorically-dds.gif',
     sizes: [{ width: 520 }]
@@ -147,6 +159,18 @@ module.exports = {
   },
   examplesDdsColorZoom: {
     basename: 'dds-color-zoom.gif',
+    sizes: [{ width: 520 }]
+  },
+  examplesDdsLinePropertyStyling: {
+    basename: 'dds-line-style-identity.png',
+    sizes: [{ width: 520 }]
+  },
+  examplesDdsJSONVectorMerge: {
+    basename: 'dds-json-vector-merge.png',
+    sizes: [{ width: 520 }]
+  },
+  examplesDdsDataTimeLapse: {
+    basename: 'dds-data-time-lapse.png',
     sizes: [{ width: 520 }]
   },
   examplesOfflineSimpleOffline: {
@@ -167,6 +191,10 @@ module.exports = {
   },
   examplesQueryQueryMap: {
     basename: 'query-query-map.png',
+    sizes: [{ width: 520 }]
+  },
+  examplesQuerySingleLayerClick: {
+    basename: 'query-single-layer-click.png',
     sizes: [{ width: 520 }]
   },
   examplesTrafficPlugin: {

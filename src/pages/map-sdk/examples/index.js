@@ -99,6 +99,15 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/ColorSwitcherActivity.java"
           />
           <ExampleCard
+            exampleTitle={'Create a line layer'}
+            exampleDescription={
+              'Create a GeoJSON line source, style it using properties, and add the layer to the map.'
+            }
+            difficulty="intro"
+            exampleImgID="examplesStyleLineLayer"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/eadaf3a81c01f1390753dbe24b560f77d117ec27/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/LineLayerActivity.java"
+          />
+          <ExampleCard
             exampleTitle={"Adjust a layer's opacity"}
             exampleDescription="Drag the seek bar to adjust the opacity of a raster layer on top of a map."
             difficulty="intermediate"
@@ -157,6 +166,13 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             difficulty="intro"
             exampleImgID="examplesCameraCameraBbox"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/camera/BoundingBoxCameraActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Restrict map panning"
+            exampleDescription="Prevent a map from being panned to a different place."
+            difficulty="intermediate"
+            exampleImgID="examplesCameraRestrictPanning"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/eadaf3a81c01f1390753dbe24b560f77d117ec27/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/camera/RestrictCameraActivity.java"
           />
         </ExampleCardContainer>
         <ExampleCardContainer exampleTitle="Annotations">
@@ -245,6 +261,24 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             exampleImgID="examples3dExtrusionsExtrusionLight"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/extrusions/AdjustExtrusionLightActivity.java"
           />
+          <ExampleCard
+            exampleTitle="Extrude polygons for 3D indoor mapping"
+            exampleDescription={
+              'Create a 3D indoor map with the full-extrude-height paint property'
+            }
+            difficulty="advanced"
+            exampleImgID="examples3dExtrusionsIndoorMapping"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/eadaf3a81c01f1390753dbe24b560f77d117ec27/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/extrusions/Indoor3DMapActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Adjust light location and color"
+            exampleDescription={
+              "Change the location and color of the light that's shined on extrusions"
+            }
+            difficulty="intermediate"
+            exampleImgID="examples3dExtrusionsDeviceFeedback"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/1a035aebf0299b506c03bad0cb09dd32a3bf5ec7/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/extrusions/RotationExtrusionActivity.java"
+          />
         </ExampleCardContainer>
         <ExampleCardContainer exampleTitle="Data Driven Styling">
           <ExampleCard
@@ -273,6 +307,33 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             difficulty="intermediate"
             exampleImgID="examplesDdsColorZoom"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/ZoomDependentFillColorActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Style lines using an identity property function"
+            exampleDescription={
+              'Using an identity line-color property function for a visualization.'
+            }
+            difficulty="intro"
+            exampleImgID="examplesDdsLinePropertyStyling"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/eadaf3a81c01f1390753dbe24b560f77d117ec27/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/StyleLineIdentityPropertyActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Join local JSON data with vector tile geometries"
+            exampleDescription={
+              'Style a choropleth map by merging local JSON data with vector tile geometries.'
+            }
+            difficulty="advanced"
+            exampleImgID="examplesDdsJSONVectorMerge"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/eadaf3a81c01f1390753dbe24b560f77d117ec27/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/ChoroplethJsonVectorMixActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Data time lapse"
+            exampleDescription={
+              'Use data-driven styling to visualize point data with a time lapse effect; rainfall in China in this example.'
+            }
+            difficulty="advanced"
+            exampleImgID="examplesDdsDataTimeLapse"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/5bd275476e8c9b70e09aa71f7ced955a33f8fe61/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/AddRainFallStyleActivity.java"
           />
         </ExampleCardContainer>
         <ExampleCardContainer exampleTitle="Offline">
@@ -313,6 +374,15 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             difficulty="intermediate"
             exampleImgID="examplesQueryFeatureCount"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/query/FeatureCountActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Click on a single layer"
+            exampleDescription={
+              'Click on and highlight a selected a GeoJSON polygon'
+            }
+            difficulty="intermediate"
+            exampleImgID="examplesQuerySingleLayerClick"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/112c80a2816c512e5ea7c0459fcf28f96e4fc811/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/query/ClickOnLayerActivity.java"
           />
           <ExampleCard
             exampleTitle="Query a map feature"
