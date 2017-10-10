@@ -25,11 +25,11 @@ let MapSdkTutorialsLayout = class MapSdkTutorialsLayout extends React.Component 
             tutorialUrl="https://www.mapbox.com/help/first-steps-android-sdk/"
           />
           <TutorialCard
-            tutorialTitle="Build a store locator for Android"
-            tutorialDescription="Build a store locator to integrate into an Android application."
+            tutorialTitle="Runtime styling for Android"
+            tutorialDescription="Create a map for Android and change its layers' properties with the press of a button."
             difficulty="intermediate"
-            tutorialImgID="tutorialsStoreLocatorIntro"
-            tutorialUrl="https://www.mapbox.com/help/android-store-locator/"
+            tutorialImgID="tutorialsRuntimeIntro"
+            tutorialUrl="https://www.mapbox.com/help/android-runtime-styling-intro/"
           />
           <TutorialCard
             tutorialTitle="Data-driven styling for Android"
@@ -37,6 +37,13 @@ let MapSdkTutorialsLayout = class MapSdkTutorialsLayout extends React.Component 
             difficulty="intermediate"
             tutorialImgID="tutorialsDDSIntro"
             tutorialUrl="https://www.mapbox.com/help/android-dds-circle-layer/"
+          />
+          <TutorialCard
+            tutorialTitle="Build a store locator for Android"
+            tutorialDescription="Build a store locator to integrate into an Android application."
+            difficulty="intermediate"
+            tutorialImgID="tutorialsStoreLocatorIntro"
+            tutorialUrl="https://www.mapbox.com/help/android-store-locator/"
           />
         </TutorialCardContainer>
       </PageShell>

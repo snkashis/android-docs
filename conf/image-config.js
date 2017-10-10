@@ -277,6 +277,10 @@ module.exports = {
     basename: 'dds-intro.png',
     sizes: [{ width: 1200 }]
   },
+  tutorialsRuntimeIntro: {
+    basename: 'android-runtime-intro.png',
+    sizes: [{ width: 1200 }]
+  },
   tutorialsStoreLocatorIntro: {
     basename: 'store-locator-intro.png',
     sizes: [{ width: 1200 }]
