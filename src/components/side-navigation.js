@@ -161,16 +161,35 @@ class SideNavigation extends React.Component {
 
   getNavigationApiItem() {
     return (
-      <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
-        <a
-          href={prefixUrl(
-            `/api/navigation-sdk/${constants.NAVIGATION_VERSION}/index.html`
-          )}
-          className="txt-fancy color-blue-on-hover"
-        >
-          API Reference
-        </a>
-      </div>
+      <PopoverTrigger
+        content={
+          <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
+            <strong className={'color-gray-light p6 txt-mm'}>Javadoc</strong>
+            <a
+              href={prefixUrl(
+                `/api/navigation-sdk/navigation/${constants.NAVIGATION_VERSION}/index.html`
+              )}
+              className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
+            >
+              navigation
+            </a>
+            <a
+              href={prefixUrl(
+                `/api/navigation-sdk/navigation-ui/${constants.NAVIGATION_VERSION}/index.html`
+              )}
+              className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
+            >
+              navigation-ui
+            </a>
+          </div>
+        }
+        respondsToHover={true}
+        popoverProps={sideNavPopoverProps}
+      >
+        <button className={'txt-fancy color-blue-on-hover'}>
+          <strong>API Reference</strong>
+        </button>
+      </PopoverTrigger>
     );
   }
 
