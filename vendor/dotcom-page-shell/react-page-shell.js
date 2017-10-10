@@ -742,6 +742,10 @@ var navigationMenuData = {
         name: 'Unity SDK',
         to: '/unity-sdk/',
         hideInHeader: true
+      }, {
+        name: 'Qt SDK',
+        to: '/qt/',
+        hideInHeader: true
       }],
       highlightedLinks: [{
         name: 'More documentation',
@@ -775,6 +779,9 @@ var navigationMenuData = {
     }, {
       name: 'GL JS',
       to: '/mapbox-gl-js/api/'
+    }, {
+      name: 'Qt SDK',
+      to: '/qt/'
     }],
     highlightedLinks: []
   },
@@ -816,7 +823,7 @@ var navigationMenuData = {
   useCaseMenu: {
     name: 'Use cases',
     links: [{
-      name: 'Store Locator',
+      name: 'Store locator',
       to: '/use-cases/store-locator/'
     }, {
       name: 'Turn-by-turn navigation',
