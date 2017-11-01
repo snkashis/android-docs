@@ -33,8 +33,8 @@ module.exports = {
     basename: 'style-map-studio-style.png',
     sizes: [{ width: 520 }]
   },
-  examplesStyleMapHeatmapRuntime: {
-    basename: 'style-map-heatmap-runtime.gif',
+  examplesStyleMapHotspotsRuntime: {
+    basename: 'style-map-hotspots-runtime.gif',
     sizes: [{ width: 520 }]
   },
   examplesStyleMapChangeMapLanguage: {

@@ -55,15 +55,8 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/MapboxStudioStyleActivity.java"
           />
           <ExampleCard
-            exampleTitle="Create a heatmap from points"
-            exampleDescription="Use the Map SDK to visualize point data as a heatmap."
-            difficulty="advanced"
-            exampleImgID="examplesStyleMapHeatmapRuntime"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/CreateHeatmapPointsActivity.java"
-          />
-          <ExampleCard
             exampleTitle={"Change a map's language"}
-            exampleDescription="Switch the maps language dynamically."
+            exampleDescription="Switch the map's language dynamically."
             difficulty="intermediate"
             exampleImgID="examplesStyleMapChangeMapLanguage"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/LanguageSwitchActivity.java"
@@ -334,6 +327,13 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             difficulty="advanced"
             exampleImgID="examplesDdsDataTimeLapse"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/5bd275476e8c9b70e09aa71f7ced955a33f8fe61/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/AddRainFallStyleActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Create hotspots from points"
+            exampleDescription="Use the Map SDK to visualize point data as hotspots."
+            difficulty="advanced"
+            exampleImgID="examplesStyleMapHotspotsRuntime"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/CreateHotspotsActivity.java"
           />
         </ExampleCardContainer>
         <ExampleCardContainer exampleTitle="Offline">
