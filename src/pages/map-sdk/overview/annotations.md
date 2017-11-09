@@ -1,6 +1,6 @@
 ---
 title: "Annotations"
-description: "Mapbox Android Map SDK annotations"
+description: "Mapbox Maps SDK annotations"
 sideNavSections:
   - title: "Markers"
   - title: "Info window"
@@ -11,7 +11,7 @@ prependJs:
 
 # Annotations
 
-The Map SDK provides several different ways to mark a single point, add a line between many points, or draw a polygon. Often, these objects are drawn either on top of the map or in some cases, within the map itself. This document walks you through how to add high-level objects. If you'd like more control over annotations, make sure to check out the [runtime styling](/map-sdk/overview/runtime-styling/) documentation.
+The Mapbox Maps SDK for Android provides several different ways to mark a single point, add a line between many points, or draw a polygon. Often, these objects are drawn either on top of the map or in some cases, within the map itself. This document walks you through how to add high-level objects. If you'd like more control over annotations, make sure to check out the [runtime styling](/map-sdk/overview/runtime-styling/) documentation.
 
 ## Markers
 
@@ -60,7 +60,7 @@ mapboxMap.addMarker(new MarkerViewOptions()
 
 ### Capturing marker events
 
-The Maps SDK provides a handy listener for capturing when a user taps on a marker. By default, all markers come with an onMarkerClick event listener for displaying and hiding info windows. You can override this default event listener and set your own with the `setOnMarkerClickListener` method.
+The Mapbox Maps SDK for Android provides a handy listener for capturing when a user taps on a marker. By default, all markers come with an onMarkerClick event listener for displaying and hiding info windows. You can override this default event listener and set your own with the `setOnMarkerClickListener` method.
 
 To display a toast message with the clicked marker’s title, listen for a click event with `setOnMarkerClickListener` and finally call `Toast.makeText()`. To prevent displaying a toast message and an info window at the same time, return true at the end:
 

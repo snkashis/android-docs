@@ -18,8 +18,8 @@ let MapSdkTutorialsLayout = class MapSdkTutorialsLayout extends React.Component 
       <PageShell frontMatter={this.props.frontMatter}>
         <TutorialCardContainer tutorialTitle="Getting started">
           <TutorialCard
-            tutorialTitle="First steps with the Mapbox Android SDK"
-            tutorialDescription="Walk through installing the Mapbox Android SDK, getting a map on the screen, and changing the style."
+            tutorialTitle="First steps with the Mapbox Maps SDK for Android"
+            tutorialDescription="Walk through installing the Mapbox Maps SDK for Android, getting a map on the screen, and changing the style."
             difficulty="intermediate"
             tutorialImgID="tutorialsFirstStepsIntro"
             tutorialUrl="https://www.mapbox.com/help/first-steps-android-sdk/"
