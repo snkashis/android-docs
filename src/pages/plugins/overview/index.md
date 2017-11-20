@@ -34,7 +34,7 @@ Mapbox Plugins build on top of the [Map SDK](/android-docs/map-sdk/overview/gett
 
 ## Install a plugin
 
-By using a plugin, you also include the Android Map SDK which means that you'll need to setup your project to use the Map SDK if you haven't already. Head over to the [Map SDK Getting Started](/android-docs/map-sdk/overview/getting-started/) documentation to learn more. The example below shows how to install the Traffic Plugin, but the process is identical for other plugins.
+By using a plugin, you also include the Android Map SDK which means that you'll need to setup your project to use the Map SDK if you haven't already. Head over to the [Map SDK Getting Started](/android-docs/map-sdk/overview) documentation to learn more. The example below shows how to install the Traffic Plugin, but the process is identical for other plugins.
 
 Note that depending on the plugin you add, there might be required permissions and additional setup steps. You'll find more information on whether or not more configuration steps are involved when looking at the specific plugin documentation.
 
