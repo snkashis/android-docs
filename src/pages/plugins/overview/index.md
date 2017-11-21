@@ -52,7 +52,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.mapbox.mapboxsdk:mapbox-android-plugin-traffic:{{ TRAFFIC_PLUGIN_VERSION }}'
+  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-traffic:{{ TRAFFIC_PLUGIN_VERSION }}'
 }
 ```
 
@@ -63,8 +63,8 @@ Plugins give you the flexibility to only include the features your particular ap
 The list below shows all the current separated dependencies you can use in your Android application.
 
 ```groovy
-compile 'com.mapbox.mapboxsdk:mapbox-android-plugin-traffic:{{ TRAFFIC_PLUGIN_VERSION }}'
-compile 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:{{ LOCATION_LAYER_PLUGIN_VERSION }}'
-compile 'com.mapbox.mapboxsdk:mapbox-android-plugin-building:{{ BUILDING_PLUGIN_VERSION }}'
-compile 'com.mapbox.mapboxsdk:mapbox-android-plugin-geojson:{{ GEOJSON_PLUGIN_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-traffic:{{ TRAFFIC_PLUGIN_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:{{ LOCATION_LAYER_PLUGIN_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-building:{{ BUILDING_PLUGIN_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-geojson:{{ GEOJSON_PLUGIN_VERSION }}'
 ```
