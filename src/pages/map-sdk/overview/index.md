@@ -51,7 +51,7 @@ If your application is close or exceeds the 65k method count limit, you can miti
 
 1. Start Android Studio
 2. Open up your application's `build.gradle`
-3. Make sure that your project's `minSdkVersion` is at API 15 or higher
+3. Make sure that your project's `minSdkVersion` is at API 14 or higher
 4. Under dependencies, add a new build rule for the latest `mapbox-android-sdk`
 5. Click the Sync Project with Gradle Files near the toolbar in Studio.
 
