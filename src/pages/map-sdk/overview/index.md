@@ -61,7 +61,9 @@ repositories {
 }
 
 dependencies {
-  implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:{{ MAP_SDK_VERSION }}@aar'
+  implementation ('com.mapbox.mapboxsdk:mapbox-android-sdk:{{ MAP_SDK_VERSION }}'){
+    transitive = true
+  }
 }
 ```
 
