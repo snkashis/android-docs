@@ -48,9 +48,7 @@ repositories {
 }
 
 dependencies {
-  implementation ('com.mapbox.mapboxsdk:mapbox-android-navigation:{{ NAVIGATION_VERSION }}'){
-    transitive = true
-  }
+  implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation:{{ NAVIGATION_VERSION }}'
 }
 ```
 
