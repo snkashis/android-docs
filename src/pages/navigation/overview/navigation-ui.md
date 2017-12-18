@@ -224,7 +224,7 @@ as well as the map style.  Both have comments outlining where the given color sh
     <item name="navigationViewBannerBackground">#FFFFFF</item>
     <!-- Color for the primary label that displays the turn name -->
     <item name="navigationViewBannerPrimaryText">#37516F</item>
-    <!-- Color for the seconary label that occasionally appears underneath the primary label -->
+    <!-- Color for the secondary label that occasionally appears underneath the primary label -->
     <item name="navigationViewBannerSecondaryText">#E637516F</item>
     <!-- Primary color for the turn arrow icons-->
     <item name="navigationViewBannerManeuverPrimary">#37516F</item>
