@@ -6,6 +6,7 @@ sideNavSections:
   - title: "Launch the Navigation UI"
   - title: "NavigationViewOptions"
   - title: "NavigationView"
+  - title: "Listening to the NavigationView"
   - title: "Styling the NavigationView"
   - title: "InstructionView"
 prependJs:
@@ -61,7 +62,6 @@ NavigationViewOptions options = NavigationViewOptions.builder()
   .origin(origin)
   .destination(destination)
   .awsPoolId(awsPoolId)
-  .unitType(NavigationUnitType.TYPE_IMPERIAL)
   .shouldSimulateRoute(simulateRoute)
   .build();
 
@@ -82,8 +82,22 @@ If you provide both, only the `DirectionsRoute` will be used.
 ```java
 NavigationViewOptions options = NavigationViewOptions.builder()
   .directionsRoute(DirectionsRoute route)
-  .unitType(int NavigationUnitType.TYPE_METRIC)
   .shouldSimulateRoute(boolean simulateRoute)
+  .build();
+```
+
+#### Unit Type (Metric / Imperial)
+You can also provide a `MapboxNavigationOptions` object with the same customization you would
+provide when passing this object to `MapboxNavigation`.  We have added a `unitType` to the builder that will allow
+you to customize how the turn-by-turn-UI parses the distance data (on the UI and in the voice announcements).
+
+```java
+MapboxNavigationOptions navigationOptions = MapboxNavigationOptions.builder()
+  .unitType(NavigationUnitType.TYPE_METRIC)
+  .build();
+
+NavigationViewOptions viewOptions = NavigationViewOptions.builder()
+  .navigationOptions(navigationOptions)
   .build();
 ```
 
@@ -151,7 +165,6 @@ public void onNavigationReady() {
     .origin(origin)
     .destination(destination)
     .awsPoolId(awsPoolId)
-    .unitType(NavigationUnitType.TYPE_IMPERIAL)
     .shouldSimulateRoute(simulateRoute)
     .build();
 
@@ -164,10 +177,49 @@ public void onNavigationFinished() {
 }
 ```
 
+## Listening to the NavigationView
+Using `NavigationView` in your XML also gives you the ability to listen to different
+updates or events that may occur during navigation.  Both the `ProgressChangeListener` and `MilestoneEventListener` from our
+core SDK are able to be added, as well as three others: `NavigationListener`, `RouteListener`, and `FeedbackListener`.  
+
+#### `NavigationListener`
+- `onCancelNavigation()`: Will be triggered when the user clicks on the cancel "X" icon while navigating.
+- `onNavigationFinished()`: Will be triggered when `MapboxNavigation` has finished and the service is completely shutdown.
+- `onNavigationRunning()`: Will be triggered when `MapboxNavigation` has been initialized and the user is navigating the given route.
+
+#### `RouteListener`
+- `allowRerouteFrom(Point offRoutePoint)`: Will trigger in an off-route scenario.  
+   - Given the `Point` the user has gone off-route, this listener can return true or false.
+   - Returning true will allow the SDK to proceed with the re-route process and fetch a new route with this given off-route `Point`.
+   - Returning false will stop the re-route process and the user will continue without a new route in the direction they are traveling.
+- `onOffRoute(Point offRoutePoint)`: Will trigger only if `RouteListener#allowRerouteFrom(Point)` returns true.
+   - This serves as the official off-route event and will continue the process to fetch a new route with the given off-route `Point`.
+- `onRerouteAlong(DirectionsRoute directionsRoute)`: Will trigger when a new `DirectionsRoute` has been retrieved post off-route.
+   - This is the new route the user will be following until another off route event is triggered.
+- `onFailedReroute(String errorMessage)`: Will trigger if the request for a new `DirectionsRoute` fails.
+   - Provides the error message from the directions API used to retrieve the `DirectionsRoute`.
+
+#### `FeedbackListener`
+- `onFeedbackOpened()`: Will be triggered when the feedback bottomsheet is opened by a user while navigating.
+- `onFeedbackCancelled()`: Will be triggered when the feedback bottomsheet is opened by a user while navigating but then dismissed without clicking on a specific `FeedbackItem` in the list.
+- `onFeedbackSent(FeedbackItem feedbackItem)`: Will be triggered when the feedback bottomsheet is opened by a user while navigating and then the user clicks on a specific `FeedbackItem` in the list.
+
+To add these listeners, you can add them to your `NavigationViewOptions` before
+you call `navigationView.startNavigation(NavigationViewOptions options)`:
+``` java
+NavigationViewOptions options = NavigationViewOptions.builder()
+  .navigationListener(this)
+  .routeListener(this)
+  .feedbackListener(this)
+  .build();
+```
+**Please note** these listeners are only available if you are adding `NavigationView`
+to your `Activity` or `Fragment` layout XML.  Trying to pass `NavigationViewOptions` with listeners
+to `NavigationLauncher` will result in the listeners never firing.
+
 ## Styling the NavigationView
-With a custom implementation (like the one above), you can also style the `NavigationView` colors.
-This includes the style of the map and/or route.  To do this, provide a light and dark style in the XML where
-you have put your `NavigationView`:
+You can also style the `NavigationView` colors.  This includes the style of the map and/or route.  
+To do this, provide a light and dark style in the XML where you have put your `NavigationView`:
 
 ```xml
 <com.mapbox.services.android.navigation.ui.v5.NavigationView

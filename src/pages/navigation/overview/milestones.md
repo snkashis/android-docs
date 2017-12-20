@@ -80,4 +80,11 @@ Instruction myInstruction = new Instruction() {
 
 ## Milestone event listener
 
-All the milestones use the `onMilestoneEvent` callback to alert when they get triggered. If you want to make use of the milestones API, you will want to attach a `MilestoneEventListener` inside your app. When all the milestone trigger conditions are true, the callback is invoked and provides you with the latest routeProgress along with the milestones corresponding `String` instruction and identifier. The identifier is critical if you have multiple milestones that you would like to isolate logic to. You can also use your text-to-speech engine of choice and have it consume the instruction.
+All the milestones use the `onMilestoneEvent` callback to alert when they get triggered. If you want to make use of the milestones API, you will want to attach a `MilestoneEventListener` inside your app. When all the milestone trigger conditions are true, the callback is invoked and provides you with the latest routeProgress along with the milestone's corresponding `String` instruction and the `Milestone` itself that was triggered. You can use your text-to-speech engine of choice and have it consume the instruction.
+
+```java
+@Override
+public void onMilestoneEvent(RouteProgress routeProgress, String instruction, Milestone milestone) {
+  exampleInstructionPlayer.play(instruction);
+}
+```
