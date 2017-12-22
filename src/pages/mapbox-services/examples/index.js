@@ -38,7 +38,7 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             exampleDescription="Using the polylines utility, simplify a polyline which reduces the amount of coordinates making up the polyline depending on tolerance."
             difficulty="intro"
             exampleImgID="examplesSimplifyLine"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/basics/SimplifyPolylineActivity.java"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/mas/SimplifyPolylineActivity.java"
           />
         </ExampleCardContainer>
         <ExampleCardContainer exampleTitle="Geocoding">

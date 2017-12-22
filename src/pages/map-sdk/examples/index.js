@@ -140,7 +140,7 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             exampleDescription="Display markers on the map by adding a symbol layer."
             difficulty="advanced"
             exampleImgID="examplesStyleMapSymbolLayer"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/SymbolLayerActivity.java"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/BasicSymbolLayerActivity.java"
           />
         </ExampleCardContainer>
         <ExampleCardContainer exampleTitle="Map Camera">
