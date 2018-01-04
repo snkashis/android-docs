@@ -67,7 +67,7 @@ dependencies {
 
 ### 2. Get an access token
 
-If you don't have a Mapbox account, sign up for one [here](https://www.mapbox.com/signup/), then navigate to the [token page](https://www.mapbox.com/studio/account/tokens/) in Mapbox Studio and copy your **default public token** to your clipboard. After you've added the Map SDK as a dependency inside your Android project, open the `string.xml` file, create a new string, and paste the access token. Then to pass this into the Map SDK, you'll want to place the access token inside of your application's `onCreate()` method.
+If you don't have a Mapbox account, sign up for one [here](https://www.mapbox.com/signup/), then navigate to your [Account page](https://www.mapbox.com/account/) and copy your **default public token** to your clipboard. After you've added the Map SDK as a dependency inside your Android project, open the `string.xml` file, create a new string, and paste the access token. Then to pass this into the Map SDK, you'll want to place the access token inside of your application's `onCreate()` method.
 
 ```java
 public class MyApplication extends Application {

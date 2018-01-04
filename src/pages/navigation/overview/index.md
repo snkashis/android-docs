@@ -53,7 +53,8 @@ dependencies {
 ```
 
 ### 2. Get an access token
-If you don't have a Mapbox account, [sign up for one here](https://www.mapbox.com/signup/). Navigate to the token page in Mapbox Studio and copy your default public token to your clipboard. After you've added the Navigation SDK as a dependency inside your Android project, open the `string.xml` file, create a new string, and paste the access token. Then, pass this into the Navigation SDK.
+
+If you don't have a Mapbox account, sign up for one [here](https://www.mapbox.com/signup/), then navigate to your [Account page](https://www.mapbox.com/account/) and copy your **default public token** to your clipboard. After you've added the Navigation SDK as a dependency inside your Android project, open the `string.xml` file, create a new string, and paste the access token. Then, pass this into the Navigation SDK.
 
 ```java
 @Override
