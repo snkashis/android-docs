@@ -1,0 +1,9 @@
+com.mapbox.plugins.places.autocomplete
+com.mapbox.plugins.places.autocomplete.data
+com.mapbox.plugins.places.autocomplete.data.converter
+com.mapbox.plugins.places.autocomplete.data.dao
+com.mapbox.plugins.places.autocomplete.data.entity
+com.mapbox.plugins.places.autocomplete.model
+com.mapbox.plugins.places.autocomplete.ui
+com.mapbox.plugins.places.autocomplete.viewmodel
+com.mapbox.plugins.places.common
