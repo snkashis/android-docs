@@ -25,7 +25,7 @@ Using Runtime styling, you're able to dynamically change the look and feel of yo
 
 Runtime styling expands upon the design power of Mapbox Studio and exposes all the same properties and attributes directly to mobile developers in our SDK.
 
-If you'd like to add simple annotations on your map quickly, you might want to make use of the [annotations offered](/map-sdk/overview/annotations/).
+If you'd like to add simple annotations on your map quickly, you might want to make use of the [annotations offered](https://www.mapbox.com/android-docs/map-sdk/overview/annotations/).
 
 ## Sources
 
