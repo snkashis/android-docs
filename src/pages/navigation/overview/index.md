@@ -4,21 +4,21 @@ description: "Mapbox Android Navigation SDK overview"
 sideNavSections:
   - title: "Overview"
   - title: "Install the Navigation SDK"
-  - title: "MapboxNavigation object"
+  - title: "MapboxNavigation Object"
   - title: "LocationEngine"
-  - title: "Lifecycle methods"
-  - title: "Navigation running"
+  - title: "Lifecycle Methods"
+  - title: "Navigation Running"
 overviewHeaderProps:
   imageId: overviewNavigationSdk
   sdk: Navigation SDK
   changelogLink: "https://github.com/mapbox/mapbox-navigation-android/blob/master/CHANGELOG.md"
   ghLink: "https://github.com/mapbox/mapbox-navigation-android"
   sdkFeatures:
-    - Off-route detection
-    - Timed instructions
-    - Snap to route
-    - Route progress info
-    - Traffic routing
+    - Off-route Detection
+    - Timed Instructions
+    - Snap-to-Route
+    - Route Progress Information
+    - Traffic Routing
   newFeature:
     - false
     - false
@@ -122,7 +122,7 @@ NavigationRoute.Builder builder = NavigationRoute.builder()
     builder.build();
 ```
 
-## MapboxNavigation object
+## MapboxNavigation Object
 
 You will find most of the navigation APIs inside the `MapboxNavigation` class such as starting and ending the navigation session or attaching listeners. Assign and initialize a new instance of `MapboxNavigation` inside your navigation activity. When initializing, you'll need to pass in a `Context` and your Mapbox access token. Read the access token section in this getting started document to learn how to get a free access token.
 
@@ -141,7 +141,7 @@ LocationEngine locationEngine = LostLocationEngine.getLocationEngine(this);
 navigation.setLocationEngine(locationEngine);
 ```
 
-## Lifecycle methods
+## Lifecycle Methods
 
 Inside your application's activity, you'll want to override the onDestroy lifecycle method, end the navigation session (if running) and use the `MabpoxNavigation#onDestroy` method. Doing this prevents any memory leaks and ensures proper shutdown of the service.
 
@@ -155,7 +155,7 @@ protected void onDestroy() {
 }
 ```
 
-## Navigation running
+## Navigation Running
 
 The `onRunning` callback's helpful for being notified when the navigation session has started, the user has canceled the session, or the user has arrived at their final destination. From this information, you can decide when to show navigation notifications, know when it's safe to stop requesting user location updates, and much more.
 

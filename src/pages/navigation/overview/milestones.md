@@ -11,6 +11,29 @@ sideNavSections:
 Navigation milestones inside the SDK provide a powerful way to give your user instructions at custom defined locations along their route.
 You can create custom milestones that fit your particular app needs.
 
+## Default Milestones Provided by the SDK
+
+### `VoiceInstructionMilestone`
+
+The `VoiceInstructionMilestone` will fire every time it's time to announce an instruction along a given `DirectionsRoute`.  This milestone provides
+a plain text instruction with `VoiceInstructionMilestone#getInstruction` as well as a SSML version of the same instruction with `VoiceInstructionMilestone#getSsmlAnnouncement`.  
+SSML stands for Speech Synthesis Markup Language and is designed to work with [AWS Polly](https://aws.amazon.com/documentation/polly/).  
+
+### `BannerInstructionMilestone`
+
+The `BannerInstructionMilestone` will fire every time textual instructions should be updated, most of the time in the format of a "banner" view on the top of the screen. This milestone provides a `BannerInstructions` object for the given point along the route.  This object contains text and URLs for shield images that can be displayed on screen at the time the milestone fires.  
+
+## Milestone event listener
+
+All the milestones use the `onMilestoneEvent` callback to alert when they get triggered. If you want to make use of the milestones API, you will want to attach a `MilestoneEventListener` inside your app. When all the milestone trigger conditions are true, the callback is invoked and provides you with the latest routeProgress along with the milestone's corresponding `String` instruction and the `Milestone` itself that was triggered. You can use your text-to-speech engine of choice and have it consume the instruction.
+
+```java
+@Override
+public void onMilestoneEvent(RouteProgress routeProgress, String instruction, Milestone milestone) {
+  exampleInstructionPlayer.play(instruction);
+}
+```
+
 ## Building a custom milestone
 
 Milestones bring flexibility to your app and how it handles navigation events. Creating a milestone is done in just a few steps. First, choose how frequently you'd like the milestone to be triggered. Two options are currently provided, `StepMilestone`, which is triggered each step in the route and `RouteMilestone`, which will only get trigger once during the entire route. You can also implement your own behavior for triggers by extending the `Milestone` class. Give the milestone a unique identifier which can be used to determine which milestone triggered the `onMilestoneEvent` callback. Set the triggers using any combination of the properties shown in the table below. It is important to note that trigger properties have different corresponding variable types that need to be accounted for when setting the milestone up. Lastly, build the milestone and pass it into the `MapboxNavigation` instance using `addMilestone()`.
@@ -76,15 +99,4 @@ Instruction myInstruction = new Instruction() {
     return routeProgress.getCurrentLegProgress().getUpComingStep().getManeuver().getInstruction();
   }
 });
-```
-
-## Milestone event listener
-
-All the milestones use the `onMilestoneEvent` callback to alert when they get triggered. If you want to make use of the milestones API, you will want to attach a `MilestoneEventListener` inside your app. When all the milestone trigger conditions are true, the callback is invoked and provides you with the latest routeProgress along with the milestone's corresponding `String` instruction and the `Milestone` itself that was triggered. You can use your text-to-speech engine of choice and have it consume the instruction.
-
-```java
-@Override
-public void onMilestoneEvent(RouteProgress routeProgress, String instruction, Milestone milestone) {
-  exampleInstructionPlayer.play(instruction);
-}
 ```
