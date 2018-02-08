@@ -112,10 +112,10 @@ mapboxMap.addSource(geoJsonSource);
 
 {{
   <Floater
-    url="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/LineLayerActivity.java"
-    title="Runtime animations"
+    url="https://www.mapbox.com/help/android-runtime-styling-intro/"
+    title="Runtime intro"
     category="tutorial"
-    text="Android tutorial walking through various ways to animate map sources and layers."
+    text="Read an explanation and view the code for using runtime styling to change a map's water color."
   />
 }}
 
