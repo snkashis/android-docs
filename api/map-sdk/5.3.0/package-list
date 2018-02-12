@@ -17,7 +17,6 @@ com.mapbox.mapboxsdk.net
 com.mapbox.mapboxsdk.offline
 com.mapbox.mapboxsdk.snapshotter
 com.mapbox.mapboxsdk.storage
-com.mapbox.mapboxsdk.style.expressions
 com.mapbox.mapboxsdk.style.functions
 com.mapbox.mapboxsdk.style.functions.stops
 com.mapbox.mapboxsdk.style.layers

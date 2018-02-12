@@ -1,5 +1,6 @@
 com.mapbox.mapboxsdk
 com.mapbox.mapboxsdk.annotations
+com.mapbox.mapboxsdk.attribution
 com.mapbox.mapboxsdk.camera
 com.mapbox.mapboxsdk.constants
 com.mapbox.mapboxsdk.exceptions
