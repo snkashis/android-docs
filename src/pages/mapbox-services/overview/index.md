@@ -110,20 +110,26 @@ Starting with 2.0, you now have the option to include either the entire package 
 
 The list below shows all the current separated dependencies you can use in your Android application.
 
+If you're using a version _above_ 3.0.0:
+
 ```groovy
-compile 'com.mapbox.mapboxsdk:mapbox-java-core:{{ MAS_VERSION }}'
-compile 'com.mapbox.mapboxsdk:mapbox-java-geojson:{{ MAS_VERSION }}'
-compile 'com.mapbox.mapboxsdk:mapbox-java-services:{{ MAS_VERSION }}'
-compile 'com.mapbox.mapboxsdk:mapbox-java-services-rx:{{ MAS_VERSION }}'
+compile 'com.mapbox.mapboxsdk:mapbox-sdk-core:{{ MAS_VERSION }}'
+compile 'com.mapbox.mapboxsdk:mapbox-sdk-geojson:{{ MAS_VERSION }}'
+compile 'com.mapbox.mapboxsdk:mapbox-sdk-services:{{ MAS_VERSION }}'
+compile 'com.mapbox.mapboxsdk:mapbox-sdk-turf:{{ MAS_VERSION }}'
 compile 'com.mapbox.mapboxsdk:mapbox-android-services:{{ MAS_VERSION }}'
 compile 'com.mapbox.mapboxsdk:mapbox-android-telemetry:{{ MAS_VERSION }}'
 ```
 
-- Mapbox Java core
-- GeoJSON
-- Mapbox Java Services
-- Mapbox Java Services for RxJava projects
-- Mapbox Android Services
-- Telemetry
+If you're using a version _below_ 3.0.0:
+```groovy
+compile 'com.mapbox.mapboxsdk:mapbox-java-core:VERSION_NUMBER'
+compile 'com.mapbox.mapboxsdk:mapbox-java-geojson:VERSION_NUMBER'
+compile 'com.mapbox.mapboxsdk:mapbox-java-services:VERSION_NUMBER'
+compile 'com.mapbox.mapboxsdk:mapbox-java-services-rx:VERSION_NUMBER'
+compile 'com.mapbox.mapboxsdk:mapbox-android-services:VERSION_NUMBER'
+compile 'com.mapbox.mapboxsdk:mapbox-android-telemetry:VERSION_NUMBER'
+compile 'com.mapbox.mapboxsdk:mapbox-android-ui:VERSION_NUMBER'
+```
 
 > **Note:** ProGuard directives are included in the Android dependencies to preserve the required classes.
