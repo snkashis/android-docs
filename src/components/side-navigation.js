@@ -147,14 +147,6 @@ class SideNavigation extends React.Component {
             >
               mapbox-android-telemetry
             </a>
-            <a
-              href={prefixUrl(
-                `/api/mapbox-java/libandroid-ui/${constants.MAS_VERSION}/index.html`
-              )}
-              className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
-            >
-              mapbox-android-ui
-            </a>
           </div>
         }
         respondsToHover={true}

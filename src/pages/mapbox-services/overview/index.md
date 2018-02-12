@@ -52,7 +52,6 @@ All public methods in all the project modules are well documented and even inclu
 - [mapbox-java-services-rx](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-services-rx/2.1.0/index.html)
 - [mapbox-android-services](https://www.mapbox.com/android-docs/api/mapbox-java/libandroid-services/2.1.0/index.html)
 - [mapbox-android-telemetry](https://www.mapbox.com/android-docs/api/mapbox-java/libandroid-telemetry/2.1.0/index.html)
-- [mapbox-android-ui](https://www.mapbox.com/android-docs/api/mapbox-java/libandroid-ui/2.1.0/index.html)
 
 ### Access tokens
 
@@ -118,7 +117,6 @@ compile 'com.mapbox.mapboxsdk:mapbox-java-services:{{ MAS_VERSION }}'
 compile 'com.mapbox.mapboxsdk:mapbox-java-services-rx:{{ MAS_VERSION }}'
 compile 'com.mapbox.mapboxsdk:mapbox-android-services:{{ MAS_VERSION }}'
 compile 'com.mapbox.mapboxsdk:mapbox-android-telemetry:{{ MAS_VERSION }}'
-compile 'com.mapbox.mapboxsdk:mapbox-android-ui:{{ MAS_VERSION }}'
 ```
 
 - Mapbox Java core
@@ -127,6 +125,5 @@ compile 'com.mapbox.mapboxsdk:mapbox-android-ui:{{ MAS_VERSION }}'
 - Mapbox Java Services for RxJava projects
 - Mapbox Android Services
 - Telemetry
-- Mapbox Android UI
 
 > **Note:** ProGuard directives are included in the Android dependencies to preserve the required classes.

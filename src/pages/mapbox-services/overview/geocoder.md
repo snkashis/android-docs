@@ -73,35 +73,6 @@ MapboxGeocoding reverseGeocode = new MapboxGeocoding.Builder()
 
 // The result of this reverse geocode will give you "Pennsylvania Ave NW"
 ```
-## Android widgets
-
-In the geocoding examples above, we have been performing request to the API by directly using the builder, making the call, and then handling the response. The Android widgets found in the mapbox-android-ui module make the process of geocoding a bit easier by offering basic widgets.
-
-For forward geocoding, the AutoCompleteWidget is offered. It provides a search box with support for autocomplete results. When the user clicks a result, `onFeatureClick`'s invoked and you can get the address' coordinates and handle them.
-
-<!-- TODO link Example -->
-```xml
-<com.mapbox.services.android.ui.geocoder.GeocoderAutoCompleteView
-  android:id="@+id/autoCompleteWidget"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:hint="Search Location"
-  android:maxLines="1"/>
-```
-
-```java
-// Set up autocomplete widget
-GeocoderAutoCompleteView autoComplete = (GeocoderAutoCompleteView) findViewById(R.id.autoCompleteWidget);
-autoComplete.setAccessToken(Mapbox.getAccessToken());
-autoComplete.setType(GeocodingCriteria.TYPE_POI);
-autoComplete.setOnFeatureListener(new GeocoderAutoCompleteView.OnFeatureListener() {
-  @Override
-  public void onFeatureClick(CarmenFeature feature) {
-    Position position = feature.asPosition();
-    // using the position you can drop a marker or move the map's camera.
-  }
-});
-```
 
 ## Batch geocoding
 
