@@ -117,35 +117,19 @@ class SideNavigation extends React.Component {
             </a>
             <a
               href={prefixUrl(
+                `/api/mapbox-java/libjava-turf/${constants.MAS_VERSION}/index.html`
+              )}
+              className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
+            >
+              mapbox-java-turf
+            </a>
+            <a
+              href={prefixUrl(
                 `/api/mapbox-java/libjava-services/${constants.MAS_VERSION}/index.html`
               )}
               className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
             >
               mapbox-java-services
-            </a>
-            <a
-              href={prefixUrl(
-                `/api/mapbox-java/libjava-services-rx/${constants.MAS_VERSION}/index.html`
-              )}
-              className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
-            >
-              mapbox-java-services-rx
-            </a>
-            <a
-              href={prefixUrl(
-                `/api/mapbox-java/libandroid-services/${constants.MAS_VERSION}/index.html`
-              )}
-              className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
-            >
-              mapbox-android-services
-            </a>
-            <a
-              href={prefixUrl(
-                `/api/mapbox-java/libandroid-telemetry/${constants.MAS_VERSION}/index.html`
-              )}
-              className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
-            >
-              mapbox-android-telemetry
             </a>
           </div>
         }
