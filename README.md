@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/mapbox/android-docs.svg?style=svg)](https://circleci.com/gh/mapbox/android-docs)
 
-This repo host all the Android documentation for the Mapbox platform, including Map SDK, Mapbox Services, Navigation SDK, and Mapbox Plugins. Visit [Mapbox Android Docs](https://www.mapbox.com/android-docs/map-sdk/overview/) to view the live website.
+This repo hosts all of the Android documentation for the Mapbox platform, including the Maps SDK, Mapbox Services, Navigation SDK, and Mapbox Plugins. Visit [Mapbox Android Docs](https://www.mapbox.com/android-docs/map-sdk/overview/) to view the live website.
 
 ## Getting started
 
@@ -30,4 +30,4 @@ This will set up a server running at http://localhost:8080/android-docs/. If you
 
 ## Contributing new documentation
 
-TODO
+_Coming soon_
