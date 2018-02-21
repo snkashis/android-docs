@@ -74,7 +74,7 @@ If your application needs location information, the `locationEngine` can help yo
 
 ### Getting location updates
 
-To start off, it's required to either include the mapbox-android-services or copy over the [LostLocationEngine class](https://github.com/mapbox/mapbox-java/blob/master/mapbox/libandroid-services/src/main/java/com/mapbox/services/android/location/LostLocationEngine.java) into your project. You'll then want to initialize a new instance of LocationEngine, activate it, and optionally add a location listener. Inside the `onConnected` you can begin requesting for location updates or wait for the proper time to do so.
+To start off, it's required to either include the mapbox-android-services or copy over the [LostLocationEngine class](https://github.com/mapbox/mapbox-events-android/blob/c4e28e8ec737fbbad543d495b084b5da86cf1b80/liblocation/src/main/java/com/mapbox/android/core/location/LostLocationEngine.java) into your project. You'll then want to initialize a new instance of LocationEngine, activate it, and optionally add a location listener. Inside the `onConnected` you can begin requesting for location updates or wait for the proper time to do so.
 
 ```java
 LocationEngine locationEngine = LostLocationEngine.getLocationEngine(this);
