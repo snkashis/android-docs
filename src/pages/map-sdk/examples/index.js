@@ -177,13 +177,6 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/DrawMarkerActivity.java"
           />
           <ExampleCard
-            exampleTitle="Custom info window"
-            exampleDescription="Use an info window adapter to customize the info window."
-            difficulty="intro"
-            exampleImgID="examplesAnnotationsCustomInfoWindow"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/CustomInfoWindowActivity.java"
-          />
-          <ExampleCard
             exampleTitle="Animate marker position"
             exampleDescription="Animate the marker to a new position on the map."
             difficulty="intermediate"

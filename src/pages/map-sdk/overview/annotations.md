@@ -95,23 +95,6 @@ marker.setPosition(new LatLng(-37.822884, 144.981916));
 marker.setIcon(icon);
 ```
 
-## Info window
-
-Info windows are used to display information in a popup window anchored to a marker. Their default behavior is to appear when the marker is tapped and then show a title text view above a snippet text view. An info window gets created if you provide a given marker with either a title or a snippet of text. If you need to add an info window at a later time or need to update the title, for example, use `marker.setTitle()`.
-
-### Custom view
-
-{{
-  <Floater
-    url="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/CustomInfoWindowActivity.java"
-    title="Custom info window"
-    category="example"
-    text="  Take advantage of the info window adapter to customize the info window."
-  />
-}}
-
-The Maps SDK also provides an API to customize the contents and design of info windows. You'll need to create an implementation of the `InfoWindowAdapter` and then call `MapboxMap.setInfoWindowAdapter()` and pass in your implementation as a parameter.  Inside the `InfoWindowAdapter`, a method called `getInfoWindow` gives the attached marker object and returns the info window view.
-
 ## Polyline and polygons
 
 Adding a line or polygon to your map is like adding a marker. Due to the nature of these objects, different APIs are exposed, such as polygon color or line width. Instead of taking in a single position,  bundle all your LatLng's inside a List and then pass them in using the `addAll()` API.
