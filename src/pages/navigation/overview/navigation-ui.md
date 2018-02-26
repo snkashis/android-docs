@@ -149,6 +149,12 @@ protected void onRestoreInstanceState(Bundle savedInstanceState) {
   super.onRestoreInstanceState(savedInstanceState);
   navigationView.onRestoreInstanceState(savedInstanceState);
 }
+
+@Override
+protected void onDestroy() {
+  super.onDestroy();
+  navigationView.onDestroy();
+}
 ```
 
 #### Step 2
@@ -326,12 +332,19 @@ The top `View` that displays the maneuver image, instruction text, and sound but
         android:layout_height="wrap_content"/>
 ```
 
-Once inflated in your `Activity`, the `InstructionView` can be updated with a `RouteProgress` object inside a `ProgressChangeListener`.  You can pass in a `NavigationUnitType` (imperial or metric) to determine how the `InstructionView` will format the distance data.
+Once inflated in your `Activity`, the `InstructionView` can be updated with a `RouteProgress` object inside a `ProgressChangeListener`.  
+
+Prior to the first time you call `InstructionView#update(RouteProgress)`, you can pass in a `NavigationUnitType` (imperial or metric)
+and `Locale` to determine how the `InstructionView` will format the distance data.  If you only pass a `Locale`, the view will default
+the `NavigationUnitType` based on this `Locale`.  If neither are provided, we will get the device `Locale` and use this for both.
 
 ```java
+instructionView.setLocale(Locale.getDefault());
+instructionView.setUnitType(NavigationUnitType.TYPE_METRIC);
+
 @Override
 public void onProgressChange(Location location, RouteProgress routeProgress) {
-  instructionView.update(routeProgress, NavigationUnitType.TYPE_IMPERIAL);
+  instructionView.update(routeProgress);
 }
 ```
 

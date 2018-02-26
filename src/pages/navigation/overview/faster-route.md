@@ -1,8 +1,8 @@
 ---
-title: "Faster-route detection"
-description: "Faster-route detection in the Mapbox Navigation SDK for Android"
+title: "Faster-Route Detection"
+description: "Faster-Route Detection in the Mapbox Navigation SDK for Android"
 ---
-# Faster-route detection
+# Faster-Route Detection
 
 Similar to off-route detection, a default faster-route detection class is included inside the Navigation SDK. This class checks each location update as well as the progress along the current route to determine if a new route should be retrieved.  
 

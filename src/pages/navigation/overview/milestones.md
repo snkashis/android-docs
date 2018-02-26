@@ -2,24 +2,25 @@
 title: "Milestones"
 description: "Mapbox Android Navigation SDK milestones"
 sideNavSections:
+  - title: "Default Milestones"
+  - title: "Milestone event listener"
   - title: "Building a custom milestone"
   - title: "Custom instructions"
-  - title: "Milestone event listener"
 ---
 # Milestones
 
-Navigation milestones inside the SDK provide a powerful way to give your user instructions at custom defined locations along their route.
-You can create custom milestones that fit your particular app needs.
+Navigation milestones inside the SDK provide a powerful way to give your user instructions or get cues to hide or show
+custom UI at defined locations along their route.  You can create custom milestones that fit your particular app needs.
 
-## Default Milestones Provided by the SDK
+## Default Milestones
 
-### `VoiceInstructionMilestone`
+### VoiceInstructionMilestone
 
 The `VoiceInstructionMilestone` will fire every time it's time to announce an instruction along a given `DirectionsRoute`.  This milestone provides
 a plain text instruction with `VoiceInstructionMilestone#getInstruction` as well as a SSML version of the same instruction with `VoiceInstructionMilestone#getSsmlAnnouncement`.  
 SSML stands for Speech Synthesis Markup Language and is designed to work with [AWS Polly](https://aws.amazon.com/documentation/polly/).  
 
-### `BannerInstructionMilestone`
+### BannerInstructionMilestone
 
 The `BannerInstructionMilestone` will fire every time textual instructions should be updated, most of the time in the format of a "banner" view on the top of the screen. This milestone provides a `BannerInstructions` object for the given point along the route.  This object contains text and URLs for shield images that can be displayed on screen at the time the milestone fires.  
 
