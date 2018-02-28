@@ -30,10 +30,7 @@ overviewHeaderProps:
 prependJs:
   - "import { MAS_VERSION } from '../../../constants';"
 ---
-Mapbox Java is an open source toolset for building applications that need navigation, directions, geocoding, static map imagery, etc. It conveniently wraps Mapbox APIs and builds off of them with tools which are useful for your applications. This SDK consist of two parts:
-
-1. **Mapbox-Java-Services:** Has no dependency on the Android API and can be used in any of your Java projects.
-2. **Mapbox-Android-Services:** Contains specific code for Android applications such as widgets and UI elements.
+Mapbox Java is an open source toolset for building applications that need navigation, directions, geocoding, static map imagery, etc. It conveniently wraps Mapbox APIs and builds off of them with tools which are useful for your applications. This SDK has no dependency on the Android API and can be used in any of your Java projects.
 
 ### Support and contributions
 
@@ -87,7 +84,7 @@ To start developing your application using Mapbox Java, you'll need to first dec
 > **Note:** If your application is close or exceeds the 65k method count limit, you can mitigate this problem by specifying only the specific Mapbox Android Service APIs. See the selectively compiling APIs section below.
 
 ```groovy
-compile 'com.mapbox.mapboxsdk:mapbox-android-services:{{ MAS_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:{{ MAS_VERSION }}'
 ```
 
 ### Maven
@@ -97,7 +94,7 @@ If your project's using Maven instead of Gradle, you can add the dependency insi
 ```xml
 <dependency>
     <groupId>com.mapbox.mapboxsdk</groupId>
-    <artifactId>mapbox-java-services</artifactId>
+    <artifactId>mapbox-sdk-services</artifactId>
     <version>{{ MAS_VERSION }}</version>
 </dependency>
 ```
@@ -113,23 +110,21 @@ The list below shows all the current separated dependencies you can use in your 
 If you're using a version _above_ 3.0.0:
 
 ```groovy
-compile 'com.mapbox.mapboxsdk:mapbox-sdk-core:{{ MAS_VERSION }}'
-compile 'com.mapbox.mapboxsdk:mapbox-sdk-geojson:{{ MAS_VERSION }}'
-compile 'com.mapbox.mapboxsdk:mapbox-sdk-services:{{ MAS_VERSION }}'
-compile 'com.mapbox.mapboxsdk:mapbox-sdk-turf:{{ MAS_VERSION }}'
-compile 'com.mapbox.mapboxsdk:mapbox-android-services:{{ MAS_VERSION }}'
-compile 'com.mapbox.mapboxsdk:mapbox-android-telemetry:{{ MAS_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-sdk-core:{{ MAS_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-sdk-geojson:{{ MAS_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:{{ MAS_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-sdk-turf:{{ MAS_VERSION }}'
 ```
 
 If you're using a version _below_ 3.0.0:
 ```groovy
-compile 'com.mapbox.mapboxsdk:mapbox-java-core:VERSION_NUMBER'
-compile 'com.mapbox.mapboxsdk:mapbox-java-geojson:VERSION_NUMBER'
-compile 'com.mapbox.mapboxsdk:mapbox-java-services:VERSION_NUMBER'
-compile 'com.mapbox.mapboxsdk:mapbox-java-services-rx:VERSION_NUMBER'
-compile 'com.mapbox.mapboxsdk:mapbox-android-services:VERSION_NUMBER'
-compile 'com.mapbox.mapboxsdk:mapbox-android-telemetry:VERSION_NUMBER'
-compile 'com.mapbox.mapboxsdk:mapbox-android-ui:VERSION_NUMBER'
+implementation 'com.mapbox.mapboxsdk:mapbox-java-core:VERSION_NUMBER'
+implementation 'com.mapbox.mapboxsdk:mapbox-java-geojson:VERSION_NUMBER'
+implementation 'com.mapbox.mapboxsdk:mapbox-java-services:VERSION_NUMBER'
+implementation 'com.mapbox.mapboxsdk:mapbox-java-services-rx:VERSION_NUMBER'
+implementation 'com.mapbox.mapboxsdk:mapbox-android-services:VERSION_NUMBER'
+implementation 'com.mapbox.mapboxsdk:mapbox-android-telemetry:VERSION_NUMBER'
+implementation 'com.mapbox.mapboxsdk:mapbox-android-ui:VERSION_NUMBER'
 ```
 
 > **Note:** ProGuard directives are included in the Android dependencies to preserve the required classes.
