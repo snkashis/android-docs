@@ -9,6 +9,8 @@ sideNavSections:
   - title: "Listening to the NavigationView"
   - title: "Styling the NavigationView"
   - title: "InstructionView"
+  - title: "NavigationMapRoute"
+  - title: "NavigationCamera"
 prependJs:
   - "import { NAVIGATION_VERSION } from '../../../constants';"
 ---
@@ -360,7 +362,7 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-#### NavigationMapRoute
+## NavigationMapRoute
 
 You can use `NavigationMapRoute` to draw the route line on your map.  Instantiate it with a
 `MapView` and `MapboxMap`, then add a `DirectionsRoute` from our Directions API.  The `DirectionsRoute` will automatically be added (even in off-route scenarios) if you instantiate with `MapboxNavigation`.  You can also style the route with a given style:
@@ -385,3 +387,31 @@ The given style will determine route color, congestion colors, and the route sca
     <item name="routeScale">1.0</item>
 </style>
 ```
+
+## NavigationCamera
+
+Driven by `DynamicCamera` engine, the `NavigationCamera` holds all of the logic needed to drive a `MapboxMap` camera
+that reacts and adjusts to the current progress along a `DirectionsRoute`.
+
+To create an instance of `NavigationCamera`, you need a `MapboxMap` and `MapboxNavigation` object:
+
+```java
+NavigationCamera camera = new NavigationCamera(MapboxMap map, MapboxNavigation navigation);
+```
+
+Calling `NavigationCamera#start(DirectionsRoute route)` will begin an animation to the start of the
+`DirectionsRoute` you provided:
+
+```java
+camera.start(DirectionsRoute directionsRoute);
+```
+
+At the end of this animation or if the user interacts with the screen while it is running and
+subsequently cancels the animation, a `ProgressChangeListener` is added to `MapboxNavigation` so
+the camera can begin to listen to updates from the SDK.
+
+The `NavigationCamera` also adds a `MapboxMap.OnScrollListener` when it is initialized, so if a user scrolls the map,
+camera tracking will stop.  This can be checked with `NavigationCamera#isTrackingEnabled()`.  
+
+`NavigationCamera#resetCameraPositon()` will reset the camera to the last known position update and will
+resume tracking of future updates.
