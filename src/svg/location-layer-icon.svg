@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="70px" viewBox="0 0 60 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 11 + Group 11 + Rectangle 6 + Rectangle 6 Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="60" height="70" rx="12"></rect>
+        <circle id="path-3" cx="25" cy="25" r="12"></circle>
+        <filter x="-37.5%" y="-37.5%" width="175.0%" height="175.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-Copy-15" transform="translate(-456.000000, -880.000000)">
+            <g id="Group-11-+-Group-11-+-Rectangle-6-+-Rectangle-6-Mask" transform="translate(456.000000, 880.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#47B9F3" xlink:href="#path-1"></use>
+                <g id="Group-11" mask="url(#mask-2)">
+                    <g transform="translate(26.000000, 0.000000)">
+                        <rect id="Rectangle-4" fill="#77CCF7" x="0" y="0" width="15" height="70"></rect>
+                        <rect id="Rectangle-6" fill="#C9E8F4" x="6.42857143" y="47.5" width="2.14285714" height="4.75"></rect>
+                        <rect id="Rectangle-6" fill="#C9E8F4" x="6.42857143" y="56.5" width="2.14285714" height="4.75"></rect>
+                        <rect id="Rectangle-6" fill="#C9E8F4" x="6.42857143" y="65.5" width="2.14285714" height="4.75"></rect>
+                        <rect id="Rectangle-6" fill="#C9E8F4" x="6.42857143" y="19" width="2.14285714" height="4.75"></rect>
+                        <rect id="Rectangle-6" fill="#C9E8F4" x="6.42857143" y="9.5" width="2.14285714" height="4.75"></rect>
+                        <rect id="Rectangle-6" fill="#C9E8F4" x="6.42857143" y="0" width="2.14285714" height="4.75"></rect>
+                    </g>
+                </g>
+                <g id="Group-11" mask="url(#mask-2)">
+                    <g transform="translate(7.363961, 54.447222) rotate(45.000000) translate(-7.363961, -54.447222) translate(-0.136039, 20.447222)">
+                        <rect id="Rectangle-4" fill="#77CCF7" x="0" y="0" width="15" height="67.0687864"></rect>
+                        <rect id="Rectangle-6" fill="#C9E8F4" x="6.42857143" y="36.4087698" width="2.14285714" height="4.55109622"></rect>
+                        <rect id="Rectangle-6" fill="#C9E8F4" x="6.42857143" y="27.3065773" width="2.14285714" height="4.55109622"></rect>
+                        <rect id="Rectangle-6" fill="#C9E8F4" x="6.42857143" y="18.2043849" width="2.14285714" height="4.55109622"></rect>
+                        <rect id="Rectangle-6" fill="#C9E8F4" x="6.42857143" y="9.10219244" width="2.14285714" height="4.55109622"></rect>
+                    </g>
+                </g>
+                <rect id="Rectangle-6" fill="#C9E8F4" mask="url(#mask-2)" x="32.4285714" y="38" width="2.14285714" height="4.75"></rect>
+                <rect id="Rectangle-6" fill="#C9E8F4" mask="url(#mask-2)" x="32.4285714" y="28.5" width="2.14285714" height="4.75"></rect>
+                <g id="Group" mask="url(#mask-2)">
+                    <g transform="translate(17.000000, 7.000000)">
+                        <circle id="Oval-8" fill="#3682C1" fill-rule="evenodd" opacity="0.152926772" cx="24.5" cy="24.5" r="24.5"></circle>
+                        <g id="Oval-6" fill="none" fill-opacity="1">
+                            <use fill="black" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                        </g>
+                        <circle id="Oval-6" fill="#3682C1" fill-rule="evenodd" cx="25" cy="25" r="12"></circle>
+                        <circle id="Oval-6" fill="#47B9F3" fill-rule="evenodd" cx="25" cy="25" r="7"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

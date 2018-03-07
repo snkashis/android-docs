@@ -36,7 +36,7 @@ export class OverviewHeader extends React.PureComponent {
     const imageContainerClasses = `absolute top right hmax360 block-mxl none w${props.imageWidth}`;
 
     return (
-      <div className="bg-gray-faint clip mt6 wmax960 round-bold relative">
+      <div className="bg-gray-faint scroll-hidden mt6 wmax960 round-bold relative">
         <div
           className="bg-green py18 color-white round-t-bold clearfix pl24 pr24-until-mxl"
           style={{ minHeight: 100, paddingRight: props.imageWidth + 24 }}

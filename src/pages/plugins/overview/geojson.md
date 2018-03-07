@@ -2,18 +2,44 @@
 title: "GeoJSON"
 description: "Mapbox Android GeoJSON Plugin"
 sideNavSections:
+  - title: "Install the GeoJSON Plugin"
   - title: "Using the GeoJSON plugin"
   - title: "Marker click event"
   - title: "Load listeners"
+prependJs:
+  - |
+    import {
+      GEOJSON_PLUGIN_VERSION
+    } from '../../../constants';
 ---
 
 # GeoJSON plugin
-
 GeoJSON is a JSON standard format for describing a wide variety of geographic data structures such as points, lines, or areas. [Click here to read more GeoJSON information](https://en.wikipedia.org/wiki/GeoJSON).
 
-The Mapbox Android GeoJSON plugin makes it simple for you to load GeoJSON data into your project from a URL, an asset file, or path. The plugin also automatically draws the GeoJSON data on your map once the information is retrieved. 
+The Mapbox Android GeoJSON plugin makes it simple for you to load GeoJSON data into your project from a URL, an asset file, or path. The plugin also automatically draws the GeoJSON data on your map once the information is retrieved.
 
-To install the plugin, head over to the [Mapbox Plugin Overview](/android-docs/plugins/overview/) page which will walk you through adding the dependency.
+## Install the GeoJSON Plugin
+To start developing an application using the GeoJSON Plugin, you'll need to add the appropriate dependencies inside your `build.gradle` file. This dependency includes the Maps SDK for Android. All dependencies given below can be found on MavenCentral.
+
+If your application is close or exceeds the 65k method count limit, you can mitigate this problem by enabling ProGuard inside your application. ProGuard directives are included in the Android dependencies to preserve the required classes.
+
+### Add the dependency
+
+1. Start Android Studio.
+2. Open up your application's `build.gradle`.
+3. Make sure that your project's `minSdkVersion` is API 15 or higher.
+4. Under dependencies, add a new build rule for the latest `mapbox-android-plugin-geojson`.
+5. Click the Sync Project with Gradle Files near the toolbar in Studio.
+
+```groovy
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-geojson:{{ GEOJSON_PLUGIN_VERSION }}'
+}
+```
 
 
 ## Using the GeoJSON plugin

@@ -2,71 +2,61 @@
 title: "Mapbox Plugins"
 description: "Mapbox Android plugins overview"
 sideNavSections:
-  - title: "Overview"
-  - title: "Install a plugin"
-  - title: "Selectively compiling plugins"
+  - title: "What are Mapbox Plugins"
+  - title: "How plugins work"
+  - title: "Prerequisites"
+  - title: "Available documentation"
+  - title: "Support and contributions"
 overviewHeaderProps:
   imageId: overviewPlugins
   sdk: Mapbox Plugins
   ghLink: "https://github.com/mapbox/mapbox-plugins-android"
   sdkFeatures:
-    - Traffic on any style
-    - Location layer
-    - Show user orientation
-    - Navigation puck
-    - 3D Buildings
+    - Add in-app place searching
+    - Load GeoJSON files onto the map
+    - Show user location
+    - Display traffic and 3D buildings
+    - Change the map's language
   newFeature:
+    - true
     - false
-    - true
-    - true
-    - true
-    - true
-prependJs:
-  - |
-    import {
-      TRAFFIC_PLUGIN_VERSION,
-      LOCATION_LAYER_PLUGIN_VERSION,
-      BUILDING_PLUGIN_VERSION,
-      GEOJSON_PLUGIN_VERSION,
-      PLACES_PLUGIN_VERSION
-    } from '../../../constants';
+    - false
+    - false
+    - false
 ---
-Mapbox Plugins build on top of the [Map SDK](/android-docs/map-sdk/overview/getting-started/) providing extra features in lightweight dependencies. Whether you're looking to include traffic on top of your map or show the user location as a layer, plugins offer customizable APIs with a few lines of code to get started. Separating features into different plugins also allows for a more aggressive updating timeline.
 
-## Install a plugin
+## What are Mapbox Plugins?
 
-By using a plugin, you also include the Android Map SDK which means that you'll need to setup your project to use the Map SDK if you haven't already. Head over to the [Map SDK Getting Started](/android-docs/map-sdk/overview) documentation to learn more. The example below shows how to install the Traffic Plugin, but the process is identical for other plugins.
+Mapbox Plugins for Android are a collection of libraries that extend our Maps, Navigation, and Services SDKs for Android to help you integrate powerful mapping features into your applications. Use plugins to show a user's location, display traffic or building overlays, or search for places. With these plugins, you can pick the features that your app needs without losing the ability to customize; all bundled into lightweight dependencies.
 
-Note that depending on the plugin you add, there might be required permissions and additional setup steps. You'll find more information on whether or not more configuration steps are involved when looking at the specific plugin documentation.
+### How plugins work
 
-### 1. Add the dependency
+The plugins we offer are extensive and cover many of our SDKs for Android. They can be used together or separately depending on your needs. A brief summary of each plugin and its purpose is provided below:
 
-1. Start Android Studio
-2. Open up your application's `build.gradle`
-3. Make sure that your project's `minSdkVersion` is at API 15 or higher
-4. Under dependencies, add a new build rule for the latest plugin version you are trying to use.
-5. Click the Sync Project with Gradle Files near the toolbar in Studio.
+- **Building**: Add 3D buildings to your map style with as few as two lines of code. Take this further by allowing users to toggle the layer visibility.
+- **Location Layer**: A popular, often critical feature is showing the user's current location as an annotation to give a reference point on the map.
+- **Traffic**: Place realtime traffic data within your map style as a layer.
+- **Places**: Add UI components such as a Place Picker or Autocomplete search built on top of the [Mapbox Geocoding API](https://www.mapbox.com/api-documentation/#geocoding). Each component includes an intentBuilder which starts an activity for results and returns a Carmen Feature.
 
-```groovy
-repositories {
-  mavenCentral()
-}
+## Prerequisites
 
-dependencies {
-  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-traffic:{{ TRAFFIC_PLUGIN_VERSION }}'
-}
-```
+Before using any of the Mapbox Plugins for Android, you will need:
 
-## Selectively compiling plugins
+- The latest version of [Android Studio](https://developer.android.com/studio/index.html).
+- JDK version 7.0 or higher.
+- A recent version of the Android SDK.
+- Android API Level 15 or higher (Android 4.0.3 and above).
+- A Mapbox [access token](https://www.mapbox.com/help/how-access-tokens-work/).
 
-Plugins give you the flexibility to only include the features your particular application requires, meaning you can selectively choose which specific APIs your application needs. For example, if you only want to display a traffic layer inside your app you only need to include the Traffic Plugin dependency in your project.
+## Available documentation
 
-The list below shows all the current separated dependencies you can use in your Android application.
+- **Guides**. Each plugin has an associated guide which contains both technical descriptions about the plugin and its features, as well as, conceptual explanations of the different components and how they work together.
+- [**Examples**](/plugins/examples). See the code in action inside of [our demo app](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo) and use the source code as a good starting point for your project.
 
-```groovy
-implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-traffic:{{ TRAFFIC_PLUGIN_VERSION }}'
-implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:{{ LOCATION_LAYER_PLUGIN_VERSION }}'
-implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-building:{{ BUILDING_PLUGIN_VERSION }}'
-implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-geojson:{{ GEOJSON_PLUGIN_VERSION }}'
-implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-places:{{ PLACES_PLUGIN_VERSION }}'
-```
+<!-- - Tutorials — The tutorials section contains several step-by-step guides for creating apps using Mapbox SDKs for Android alongside plugins. -->
+
+## Support and contributions
+- If you are looking for support using this SDK, either reach out through [Stack Overflow](https://stackoverflow.com/questions/tagged/mapbox+android) or through our [contact page](https://www.mapbox.com/contact/).
+- If you find a bug and can provide steps to reliably reproduce it, open an issue in the [/mapbox-plugins-android repository](https://github.com/mapbox/mapbox-plugins-android) on GitHub and apply the bug label.
+- If you have a feature request, open an issue in the [/mapbox-plugins-android repository](https://github.com/mapbox/mapbox-plugins-android) on GitHub, and apply the enhancement label.
+- If you want to contribute, look over [our contribution guidelines](https://github.com/mapbox/mapbox-plugins-android/blob/master/CONTRIBUTING.md) and open a pull request with your changes.

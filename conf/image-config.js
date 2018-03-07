@@ -284,5 +284,9 @@ module.exports = {
   tutorialsStoreLocatorIntro: {
     basename: 'store-locator-intro.png',
     sizes: [{ width: 1200 }]
+  },
+  placesSplash: {
+    basename: 'places-splash.png',
+    sizes: [{ width: 600 }]
   }
 };
