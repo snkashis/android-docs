@@ -51,7 +51,7 @@ Before using any of the Mapbox Plugins for Android, you will need:
 ## Available documentation
 
 - **Guides**. Each plugin has an associated guide which contains both technical descriptions about the plugin and its features, as well as, conceptual explanations of the different components and how they work together.
-- [**Examples**](/plugins/examples). See the code in action inside of [our demo app](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo) and use the source code as a good starting point for your project.
+- [**Examples**]({{prefixUrl('plugins/examples')}}) See the code in action inside of [our demo app](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo) and use the source code as a good starting point for your project.
 
 <!-- - Tutorials — The tutorials section contains several step-by-step guides for creating apps using Mapbox SDKs for Android alongside plugins. -->
 
