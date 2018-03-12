@@ -26,7 +26,7 @@ overviewHeaderProps:
     - false
     - false
     - false
-    - true
+    - false
 prependJs:
   - "import { MAS_VERSION } from '../../../constants';"
 ---
@@ -48,7 +48,7 @@ All public methods in all the project modules are well documented and even inclu
 - [mapbox-java-services](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-services/2.1.0/index.html)
 - [mapbox-java-services-rx](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-services-rx/2.1.0/index.html)
 - [mapbox-android-services](https://www.mapbox.com/android-docs/api/mapbox-java/libandroid-services/2.1.0/index.html)
-- [mapbox-android-telemetry](https://www.mapbox.com/android-docs/api/mapbox-java/libandroid-telemetry/2.1.0/index.html)
+- [mapbox-android-ui](https://www.mapbox.com/android-docs/api/mapbox-java/libandroid-ui/2.1.0/index.html)
 
 ### Access tokens
 
@@ -117,6 +117,7 @@ implementation 'com.mapbox.mapboxsdk:mapbox-sdk-turf:{{ MAS_VERSION }}'
 ```
 
 If you're using a version _below_ 3.0.0:
+
 ```groovy
 implementation 'com.mapbox.mapboxsdk:mapbox-java-core:VERSION_NUMBER'
 implementation 'com.mapbox.mapboxsdk:mapbox-java-geojson:VERSION_NUMBER'

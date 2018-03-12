@@ -43,10 +43,10 @@ const productPageOrder = {
     'index',
     'directions-matrix',
     'geocoder',
-    'static-image',
-    'telemetry'
+    'static-image'
   ],
-  'mapbox-services/examples/': ['index']
+  'mapbox-services/examples/': ['index'],
+  'telemetry/overview/': ['index']
 };
 
 module.exports = () => {

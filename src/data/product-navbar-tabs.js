@@ -39,5 +39,11 @@ export const productNavbarTabs = {
       text: 'Overview',
       pathname: 'navigation/overview'
     }
+  ],
+  telemetry: [
+    {
+      text: 'Overview',
+      pathname: 'telemetry/overview'
+    }
   ]
 };

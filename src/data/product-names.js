@@ -3,5 +3,6 @@ export const productNames = {
   'map-sdk': 'Map SDK',
   plugins: 'Plugins',
   'mapbox-services': 'Mapbox Services',
-  navigation: 'Navigation SDK'
+  navigation: 'Navigation SDK',
+  telemetry: 'Telemetry'
 };
