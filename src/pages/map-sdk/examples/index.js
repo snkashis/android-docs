@@ -1,6 +1,6 @@
 /*---
 title: 'Android Map SDK Examples'
-description: 'Mapbox Android Map SDK Examples'
+description: 'View various examples to see the power of the Mapbox Maps SDK for Android.'
 sideNavSections:
   - title: "Getting Started"
   - title: "Styling Map"

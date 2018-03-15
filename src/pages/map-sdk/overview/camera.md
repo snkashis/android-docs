@@ -1,6 +1,6 @@
 ---
 title: "Camera"
-description: "Mapbox Android Map SDK camera"
+description: "Information about map camera behavior in the Mapbox Maps SDK for Android. Updating the camera position. Restricting the camera. It's all covered inside."
 prependJs:
   - "import { Floater } from '../../../components/floater';"
 sideNavSections:

@@ -1,6 +1,6 @@
 ---
 title: "Runtime styling"
-description: "Mapbox Android Map SDK runtime styling"
+description: "Documentation for changing the look and feel of your Mapbox map in real time with the Mapbox Maps SDK for Android."
 prependJs:
   - "import { Floater } from '../../../components/floater';"
 sideNavSections:

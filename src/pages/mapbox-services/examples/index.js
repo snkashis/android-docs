@@ -1,6 +1,6 @@
 /*---
 title: 'Android Mapbox Services Examples'
-description: 'Android Mapbox Services SDK examples'
+description: 'Mapbox Java Services code examples'
 sideNavSections:
   - title: "Routing"
   - title: "Geocoding"

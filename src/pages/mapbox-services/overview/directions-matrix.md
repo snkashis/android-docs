@@ -1,6 +1,6 @@
 ---
 title: "Directions Matrix"
-description: "Android Mapbox Services SDK Directions Matrix API"
+description: "Mapbox Java Services' Matrix API"
 sideNavSections:
   - title: "Building and making requests"
   - title: "API response"

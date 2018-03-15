@@ -1,6 +1,6 @@
 ---
 title: "Navigation Options"
-description: "Mapbox Android Navigation SDK navigation options"
+description: "Mapbox documentation about navigation options within the Mapbox Navigation SDK for Android. Custom notifications, off-route thresholds, plus even more."
 sideNavSections:
   - title: Adjusting step completion thresholds
   - title: Off-route threshold

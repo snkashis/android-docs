@@ -1,6 +1,6 @@
 ---
 title: "Annotations"
-description: "Mapbox Maps SDK annotations"
+description: "Looking to annotate a map with the Mapbox Maps SDK for Android. Read this documentation to learn about markers, info windows, lines, polygons, plus more."
 sideNavSections:
   - title: "Markers"
   - title: "Info window"

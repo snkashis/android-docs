@@ -1,6 +1,6 @@
 ---
 title: "Off-Route Detection"
-description: "Mapbox Android Navigation SDK Off-Route Detection"
+description: "The Mapbox Navigation SDK for Android offers off-route detection for your Android app's navigation experience. Read this documentation to learn how."
 ---
 # Off-Route Detection
 

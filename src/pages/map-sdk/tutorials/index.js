@@ -1,6 +1,6 @@
 /*---
 title: 'Android Map SDK Tutorials'
-description: 'Mapbox Android Map SDK Tutorials'
+description: 'In-depth step-by-step tutorials for using the Mapbox Maps SDK for Android'
 sideNavSections:
   - title: "Getting started"
 ---*/

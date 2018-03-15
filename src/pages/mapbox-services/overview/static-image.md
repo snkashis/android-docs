@@ -1,6 +1,6 @@
 ---
 title: "Static Image"
-description: "Android Mapbox Services SDK Static API"
+description: "Mapbox Java Services' Static API"
 sideNavSections:
   - title: "Building the URL"
   - title: "Downloading the image"

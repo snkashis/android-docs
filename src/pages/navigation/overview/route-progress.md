@@ -1,6 +1,6 @@
 ---
 title: "Route Progress Object"
-description: "Mapbox Android Navigation SDK RouteProgress object"
+description: "Read these docs and learn how to use a user's progress information along a route with the Mapbox Navigation SDK for Android."
 sideNavSections:
   - title: "On progress change"
   - title: "RouteProgress Object"

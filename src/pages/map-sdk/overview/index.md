@@ -1,6 +1,6 @@
 ---
 title: "Map SDK"
-description: "Mapbox Android Map SDK overview"
+description: "The official overview documentation for the Mapbox Maps SDK for Android. Learn how to customize your Android app's maps, visualize data, and much more."
 sideNavSections:
   - title: "Overview"
   - title: "Install the Map SDK"

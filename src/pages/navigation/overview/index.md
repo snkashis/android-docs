@@ -1,6 +1,6 @@
 ---
 title: "Navigation SDK"
-description: "Mapbox Android Navigation SDK overview"
+description: "Official documentation and overview of the Mapbox Navigation SDK for Android."
 sideNavSections:
   - title: "Overview"
   - title: "Install the Navigation SDK"

@@ -1,6 +1,6 @@
 ---
-title: "GeoJSON"
-description: "Mapbox Android GeoJSON Plugin"
+title: "Mapbox GeoJSON Plugin"
+description: "The Mapbox Android GeoJSON Plugin loads GeoJSON data into your project from a URL, an asset file, or path to quickly display data on your Mapbox map."
 sideNavSections:
   - title: "Install the GeoJSON Plugin"
   - title: "Using the GeoJSON plugin"

@@ -1,6 +1,6 @@
 ---
-title: "Location Layer"
-description: "Mapbox Android Location Layer Plugin"
+title: "Mapbox Android Location Layer Plugin"
+description: "Offical documentation about the Mapbox Android Location Layer Plugin. Show the Android device's location on a Mapbox Map in just a few quick steps."
 sideNavSections:
   - title: "Install the Location Layer Plugin"
   - title: "Setup permissions"

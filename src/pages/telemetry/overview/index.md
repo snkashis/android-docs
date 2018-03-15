@@ -1,6 +1,6 @@
 ---
 title: "Telemetry"
-description: "Mapbox telemetry library for Android"
+description: "Overview of the Mapbox Telemetry Library for Android"
 sideNavSections:
   - title: "Installation"
   - title: "PermissionsManager"

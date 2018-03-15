@@ -1,6 +1,6 @@
 ---
 title: "Navigation turn-by-turn UI"
-description: "Mapbox Android Navigation SDK Drop-in UI"
+description: "Customize the design of your Android app's turn-by-turn navigation experience. How? The Mapbox Navigation SDK for Android. Click for docs and info."
 sideNavSections:
   - title: "Install the Navigation UI SDK"
   - title: "Launch the Navigation UI"

@@ -1,6 +1,6 @@
 ---
 title: "Faster-Route Detection"
-description: "Faster-Route Detection in the Mapbox Navigation SDK for Android"
+description: "Faster-route detection in the Mapbox Navigation SDK for Android. Read all about it in this official Mapbox documentation."
 ---
 # Faster-Route Detection
 

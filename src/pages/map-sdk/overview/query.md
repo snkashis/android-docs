@@ -1,6 +1,6 @@
 ---
 title: "Query map features"
-description: "Mapbox Android Map SDK query"
+description: "Official documentation about querying map features within the Mapbox Maps SDK for Android. Discover how to retrieve information about a selected place of interest."
 prependJs:
   - "import { Floater } from '../../../components/floater';"
 sideNavSections:

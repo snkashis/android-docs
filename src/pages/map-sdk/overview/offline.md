@@ -1,6 +1,6 @@
 ---
 title: "Offline"
-description: "Mapbox Android Map SDK offline"
+description: "The Mapbox Maps SDK for Android supports offline maps, which is great for situation when your Android app has no internet connection. Get started with offline docs here."
 sideNavSections:
   - title: "Limitations"
   - title: "Automatic tile updates"

@@ -1,6 +1,6 @@
 ---
 title: "Styling the map"
-description: "Mapbox Android Map SDK styling the map"
+description: "Learn how to use the Mapbox Maps SDK for Android to change your map style to a custom style or a pre-made style made by the talented Mapbox cartography team."
 sideNavSections:
   - title: "Changing the default style"
   - title: "Custom Mapbox Studio style"

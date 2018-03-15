@@ -1,6 +1,6 @@
 ---
 title: "Geocoder"
-description: "Android Mapbox Services SDK Geocoder API"
+description: "Mapbox Java Services' Geocoding API"
 sideNavSections:
   - title: "Geocoding request"
   - title: "Geocoding response"

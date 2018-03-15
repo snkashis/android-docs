@@ -1,6 +1,6 @@
 ---
 title: "Places"
-description: "Mapbox Places Plugin for Android"
+description: "Read docs on the Mapbox Places Plugin for Android. Easily search destinations, explore what's nearby, or find favorite restaurants, coffee shops, or stores."
 sideNavSections:
   - title: "Install the Places plugin"
   - title: "Add Autocomplete"

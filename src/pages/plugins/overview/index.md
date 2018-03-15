@@ -1,6 +1,6 @@
 ---
 title: "Mapbox Plugins"
-description: "Mapbox Android plugins overview"
+description: "Overview of Mapbox Android plugins"
 sideNavSections:
   - title: "What are Mapbox Plugins"
   - title: "How plugins work"

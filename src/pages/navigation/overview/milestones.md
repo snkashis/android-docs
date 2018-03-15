@@ -1,6 +1,6 @@
 ---
 title: "Milestones"
-description: "Mapbox Android Navigation SDK milestones"
+description: "Trusted documentation about milestones within the Mapbox Navigation SDK for Android. Know when to instruct your users and/or when to hide or show custom UI."
 sideNavSections:
   - title: "Default Milestones"
   - title: "Milestone event listener"

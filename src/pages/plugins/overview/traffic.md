@@ -1,6 +1,6 @@
 ---
 title: "Traffic"
-description: "Mapbox Android Traffic Plugin"
+description: "Discover how to display real-time road traffic on your Android map with the Mapbox Android Traffic Plugin. All it requires is two lines of code."
 sideNavSections:
   - title: "Install the Traffic Plugin"
   - title: "Add traffic"

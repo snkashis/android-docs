@@ -1,6 +1,6 @@
 ---
 title: "Events"
-description: "Mapbox Android Map SDK events"
+description: "Documentation about map "events" within the Mapbox Maps SDK for Android. Read about map clicking, flinging, scrolling, and other Mapbox map events."
 sideNavSections:
   - title: "Map click & long click events"
   - title: "Camera change events"

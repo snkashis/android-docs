@@ -1,6 +1,6 @@
 ---
 title: "Building"
-description: "Mapbox Android Building Plugin"
+description: "Read official documentation on the Mapbox Android Building Plugin and how its several lines of code can help you add 3D buildings to your Android app's map. "
 sideNavSections:
   - title: "install the Building Plugin"
   - title: "Add the Building Plugin"
