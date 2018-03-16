@@ -323,7 +323,7 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
           />
           <ExampleCard
             exampleTitle="Create hotspots from points"
-            exampleDescription="Use the Map SDK to visualize point data as hotspots."
+            exampleDescription="Use the Maps SDK to visualize point data as hotspots."
             difficulty="advanced"
             exampleImgID="examplesStyleMapHotspotsRuntime"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/CreateHotspotsActivity.java"
@@ -333,7 +333,7 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
           <ExampleCard
             exampleTitle="A simple offline map"
             exampleDescription={
-              'Download and view an offline map using the Map SDK.'
+              'Download and view an offline map using the Maps SDK.'
             }
             difficulty="intermediate"
             exampleImgID="examplesOfflineSimpleOffline"

@@ -56,7 +56,7 @@ Before using the location layer plugin, you'll need to include either the coarse
 </manifest>
 ```
 
-If your application's targeting Android 6.0 (API 23) or higher, you'll want to use the new permissions model which request permissions at runtime rather than during the installation process. It's important to request the permission either during the application startup or when the location layer gets initialized. [PermissionsManager](/android-docs/telemetry/overview/#permissionsmanager) is a utility offered as part of the Mapbox Services package inside the Map SDK and streamlines the permission request process.
+If your application's targeting Android 6.0 (API 23) or higher, you'll want to use the new permissions model which request permissions at runtime rather than during the installation process. It's important to request the permission either during the application startup or when the location layer gets initialized. [PermissionsManager](/android-docs/telemetry/overview/#permissionsmanager) is a utility offered as part of the Mapbox Services package inside the Maps SDK. It streamlines the permission request process.
 
 ### Lifecycles
 It's important to include the location layer `onStart()` and `onStop()` lifecycle events in their respective activity methods. This prevents memory leaks from occurring and reduces battery consumption. The plugin has support for the new `LifecycleObserver` APIs, by adding the plugin as a lifecycle observer in your activity, you won't need to handle the lifecycles manually.

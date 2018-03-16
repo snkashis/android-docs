@@ -12,7 +12,7 @@ The maps SDK allows full customization when it comes to displaying your map. Thi
 
 ## Changing the default style
 
-As powerful as styling the map can be, to get started using the Map SDK, it offers six professional styles that will look great in your app:
+As powerful as styling the map can be, to get started using the Maps SDK, it offers six professional styles that will look great in your app:
 
 1. **Mapbox Streets:** Mapbox Streets is a comprehensive, general-purpose map that emphasizes legible styling of road and transit networks.
 2. **Outdoor:** Mapbox Outdoors is a general-purpose map with curated datasets and specialized styling tailored to hiking, biking, and the most adventurous use cases.

@@ -10,7 +10,7 @@ sideNavSections:
 
 # Query map features
 
-The Map SDK gives you the tools to query the map layers to get a list of GeoJSON features which hold valuable information used for rendering the map. An example usage of this can be to query where the user clicks/taps the map and determine if they selected a POI displaying on the map. You can then move through the provided GeoJSON Feature to get the properties which holds the POI name as a `String`. It's important to consider that querying a map won't always return the information you are looking for, therefore, it is possible to receive a Feature list with 0 items in it.
+The Maps SDK gives you the tools to query the map layers to get a list of GeoJSON features which hold valuable information used for rendering the map. An example usage of this can be to query where the user clicks/taps the map and determine if they selected a POI displaying on the map. You can then move through the provided GeoJSON Feature to get the properties which holds the POI name as a `String`. It's important to consider that querying a map won't always return the information you are looking for, therefore, it is possible to receive a Feature list with 0 items in it.
 
 {{
   <Floater

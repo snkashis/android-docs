@@ -11,7 +11,7 @@ sideNavSections:
 
 # Events
 
-The Map SDK provides various ways to listen to map events. The majority of listeners that the SDK offers are listed below. However, you'll occasionally find other listeners specific to their corresponding API inside other overview documents.
+The Maps SDK provides various ways to listen to map events. The majority of listeners that the SDK offers are listed below. However, you'll occasionally find other listeners specific to their corresponding API inside other overview documents.
 
 ## Map click & long click events
 

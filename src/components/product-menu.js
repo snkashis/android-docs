@@ -5,7 +5,7 @@ import { NavbarDropdownMenu } from './navbar-dropdown-menu';
 const menuItems = [
   {
     url: prefixUrl('/map-sdk/overview/'),
-    text: 'Map SDK'
+    text: 'Maps SDK'
   },
   {
     url: prefixUrl('/plugins/overview/'),

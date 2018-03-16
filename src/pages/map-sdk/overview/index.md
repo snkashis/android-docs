@@ -1,9 +1,9 @@
 ---
-title: "Map SDK"
+title: "Mapbox Maps SDK for Android"
 description: "The official overview documentation for the Mapbox Maps SDK for Android. Learn how to customize your Android app's maps, visualize data, and much more."
 sideNavSections:
   - title: "Overview"
-  - title: "Install the Map SDK"
+  - title: "Install the Maps SDK"
   - title: "Attribution"
   - title: "MapView XML attributes"
 overviewHeaderProps:
@@ -28,20 +28,20 @@ prependJs:
   - "import { Floater } from '../../../components/floater';"
   - "import { MAP_SDK_VERSION } from '../../../constants';"
 ---
-The Mapbox Android Map SDK is an open source toolset for displaying maps inside of your Android application. [Mapbox's demo app on the Google Play Store](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en) includes many examples of how to use Mapbox Maps. Various pages in this documentation reference examples in the demo app.
+The Mapbox Maps SDK for Android is an open source toolset for displaying maps inside of your Android application. [Mapbox's demo app on the Google Play Store](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en) includes many examples of how to use Mapbox Maps. Various pages in this documentation reference examples in the demo app.
 
-## Install the Map SDK
+## Install the Maps SDK
 
 {{
   <Floater
     url="https://www.mapbox.com/install/android/"
     title="Begin installation"
     category="guide"
-    text="A step-by-step walkthrough to help you get started with Android Map SDK."
+    text="A step-by-step walkthrough to help you get started with Maps SDK for Android."
   />
 }}
 
-Before starting to develop your application with the Map SDK, you'll need to add the SDK as a dependency. You can find the following dependency given below in the MavenCentral repository. While this document shows how to install the SDK through gradle, we also offer support for [Fabric](https://fabric.io/kits/android/mapbox/install).
+Before starting to develop your application with the Maps SDK, you'll need to add the SDK as a dependency. You can find the following dependency given below in the MavenCentral repository. While this document shows how to install the SDK through gradle, we also offer support for [Fabric](https://fabric.io/kits/android/mapbox/install).
 
 While we show how to insert the stable version of the SDK inside your project, you can also use the nightly build/snapshot or the beta version, if one is available. Find more information about how to do this inside the project’s [GitHub repository](https://github.com/mapbox/mapbox-gl-native/tree/master/platform/android/#readme).
 
@@ -67,7 +67,7 @@ dependencies {
 
 ### 2. Get an access token
 
-If you don't have a Mapbox account, sign up for one [here](https://www.mapbox.com/signup/), then navigate to your [Account page](https://www.mapbox.com/account/) and copy your **default public token** to your clipboard. After you've added the Map SDK as a dependency inside your Android project, open the `string.xml` file, create a new string, and paste the access token. Then to pass this into the Map SDK, you'll want to place the access token inside of your application's `onCreate()` method.
+If you don't have a Mapbox account, sign up for one [here](https://www.mapbox.com/signup/), then navigate to your [Account page](https://www.mapbox.com/account/) and copy your **default public token** to your clipboard. After you've added the Maps SDK as a dependency inside your Android project, open the `string.xml` file, create a new string, and paste the access token. Then to pass this into the Maps SDK, you'll want to place the access token inside of your application's `onCreate()` method.
 
 ```java
 public class MyApplication extends Application {
@@ -162,7 +162,7 @@ onDestroy();
   />
 }}
 
-You must include the Mapbox wordmark and attribution notice on any map that uses the Mapbox Map SDK. We provide an Attribution layout that includes all required information and can be customized either in xml or using the `UiSettings` object.
+You must include the Mapbox wordmark and attribution notice on any map that uses the Mapbox Maps SDK for Android. We provide an Attribution layout that includes all required information and can be customized either in xml or using the `UiSettings` object.
 
 You may adjust the position of the Mapbox wordmark and attribution notice, but they must stay visible on the map. You may also change the background and text color of the attribution notice to best match your design aesthetics, but all information must be  legible.
 

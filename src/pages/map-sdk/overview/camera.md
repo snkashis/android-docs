@@ -13,11 +13,11 @@ sideNavSections:
 
 # Camera
 
-The Map SDKs maps represented as a flat plane using a [Mercator projection](https://en.wikipedia.org/wiki/Mercator_projection). On the east-west-axis, the map seamlessly wraps around on itself an infinite amount of times. Because the bottom and the top of the map could infinitely grow larger and further distort the map towards the poles, the north-south-axis gets cut off around the 90 degrees north and 90 degrees south. With this in mind, the camera object's introduced to represent the user's viewpoint above the map.
+The Maps SDK's maps are represented as a flat plane using a [Mercator projection](https://en.wikipedia.org/wiki/Mercator_projection). On the east-west-axis, the map seamlessly wraps around on itself an infinite amount of times. Because the bottom and the top of the map could infinitely grow larger and further distort the map towards the poles, the north-south-axis gets cut off around the 90 degrees north and 90 degrees south. With this in mind, the camera object's introduced to represent the user's viewpoint above the map.
 
 By default, the camera can be tilted, rotated, zoomed, and/or moved either by the user or developer. It's important to know that the camera object will not make any changes to markers, layer's sources, or other annotations that you've added without you directly influencing this behavior.
 
-A few camera event listeners are provided in the Map SDK to notify when, for example, the camera's adjusted. You can read more about these listeners inside the [Events documentation](https://www.mapbox.com/android-docs/map-sdk/overview/events/#camera-change-events).
+A few camera event listeners are provided in the Maps SDK to notify when, for example, the camera's adjusted. You can read more about these listeners inside the [Events documentation](https://www.mapbox.com/android-docs/map-sdk/overview/events/#camera-change-events).
 
 ## Camera position
 
@@ -72,7 +72,7 @@ Check out [this Mapbox blogpost](https://www.mapbox.com/blog/designing-maps-for-
   />
 }}
 
-The `MapboxMap` class in the Map SDK has several methods to change the camera's position. Each camera movement API takes in a `CameraUpdate` (built using `CameraUpdateFactory`) which is how you provide the new camera position information. Camera update factory can build several different `CameraUpdate` objects including a `newLatLngZoom()`, `zoomBy()`, `newLatLngBounds()`, and several more. One particularly interesting `CameraUpdate` is `newCameraPosition()` which is how you'd pass in a built `CameraPosition`.
+The `MapboxMap` class in the Maps SDK has several methods to change the camera's position. Each camera movement API takes in a `CameraUpdate` (built using `CameraUpdateFactory`) which is how you provide the new camera position information. Camera update factory can build several different `CameraUpdate` objects including a `newLatLngZoom()`, `zoomBy()`, `newLatLngBounds()`, and several more. One particularly interesting `CameraUpdate` is `newCameraPosition()` which is how you'd pass in a built `CameraPosition`.
 
 Aside from consuming a Camera Update object, a cancelable callback can be added to know when the animation finishes or if the user cancels the camera move by performing a gesture on the map. The ease and animate APIs have an optional duration parameter (in milliseconds) that lets you control the camera's animation duration.
 

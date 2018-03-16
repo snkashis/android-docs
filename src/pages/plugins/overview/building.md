@@ -20,12 +20,12 @@ To start developing an application using the Building Plugin, you'll need to add
 If your application is close or exceeds the 65k method count limit, you can mitigate this problem by enabling ProGuard inside your application. ProGuard directives are included in the Android dependencies to preserve the required classes.
 
 ### Add the dependency
+Support for extrusions was added with `5.1.0` of the Maps SDK, unlocking the possibility to display 3D buildings on your favorite map style. The building plugin extends this functionality and makes it even easier to add buildings to a map style. To install, head over to the [Mapbox Plugin Overview](/android-docs/plugins/overview/) page which will walk you through adding the dependency.
 
 1. Start Android Studio.
-2. Open up your application's `build.gradle`.
+2. Open up your application's `build.gradle` file.
 3. Make sure that your project's `minSdkVersion` is API 15 or higher.
 4. Under dependencies, add a new build rule for the latest `mapbox-android-plugin-building`.
-5. Click the Sync Project with Gradle Files near the toolbar in Studio.
 
 ```groovy
 repositories {
@@ -36,6 +36,7 @@ dependencies {
   implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-building:{{ BUILDING_PLUGIN_VERSION }}'
 }
 ```
+5. Click the Sync Project with Gradle Files near the toolbar in Studio.
 
 ## Add the Building Plugin
 The Building Plugin requires no additional permissions and initialized by passing in both the map view and `mapboxMap` objects that you'd like the building layer to show on. In addition to the required params, you also have the option to provide a layer ID which you'd like the buildings to appear below. Once initialized, setting `setVisibility()` to true will result in the building layer getting added on top of your map style.
