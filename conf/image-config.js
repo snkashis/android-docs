@@ -217,6 +217,10 @@ module.exports = {
     basename: 'mapbox-services-map-matching.png',
     sizes: [{ width: 520 }]
   },
+  examplesMatrix: {
+    basename: 'mapbox-services-matrix.png',
+    sizes: [{ width: 520 }]
+  },
   examplesSimplifyLine: {
     basename: 'mapbox-services-simplify-line.gif',
     sizes: [{ width: 520 }]

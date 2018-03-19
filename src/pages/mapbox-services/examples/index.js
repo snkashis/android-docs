@@ -2,9 +2,11 @@
 title: 'Android Mapbox Services Examples'
 description: 'Mapbox Java Services code examples'
 sideNavSections:
-  - title: "Routing"
-  - title: "Geocoding"
-  - title: "Static Maps"
+  - title: "Directions"
+  - title: "Map matching"
+  - title: "Simplify a polyline"
+  - title: "Static maps"
+  - title: "Matrix"
 ---*/
 
 import React from 'react';
@@ -18,45 +20,45 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
   render() {
     return (
       <PageShell frontMatter={this.props.frontMatter}>
-        <ExampleCardContainer exampleTitle="Routing">
+        <ExampleCardContainer exampleTitle="Directions">
           <ExampleCard
             exampleTitle="Show directions on a map"
-            exampleDescription="Use Mapbox Services to request directions"
+            exampleDescription="Request directions between two points."
             difficulty="intro"
             exampleImgID="examplesDirection"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/mas/DirectionsActivity.java"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/javaservices/DirectionsActivity.java"
           />
           <ExampleCard
-            exampleTitle="Map Matching"
+            exampleTitle="Map matching"
             exampleDescription="Match raw GPS points to the map so they align with the roads/pathways."
             difficulty="intro"
             exampleImgID="examplesMapMatching"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/mas/MapMatchingActivity.java"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/javaservices/MapMatchingActivity.java"
           />
           <ExampleCard
             exampleTitle="Simplify a polyline"
-            exampleDescription="Using the polylines utility, simplify a polyline which reduces the amount of coordinates making up the polyline depending on tolerance."
+            exampleDescription="Simplify a polyline which, depending on the set tolerance, reduces the amount of coordinates needed to create the polyline."
             difficulty="intro"
             exampleImgID="examplesSimplifyLine"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/mas/SimplifyPolylineActivity.java"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/javaservices/SimplifyPolylineActivity.java"
           />
         </ExampleCardContainer>
-        <ExampleCardContainer exampleTitle="Geocoding">
-          <ExampleCard
-            exampleTitle="Geocoding Auto Complete Widget"
-            exampleDescription="Use the provided geocoding auto complete widget to convert location text into geographic coordinates."
-            difficulty="intro"
-            exampleImgID="examplesGeocodingAutoComplete"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/mas/DirectionsActivity.java"
-          />
-        </ExampleCardContainer>
-        <ExampleCardContainer exampleTitle="Static Maps">
+        <ExampleCardContainer exampleTitle="Static maps">
           <ExampleCard
             exampleTitle="Download a static map"
-            exampleDescription="Use Mapbox Android Services to build a url and download a static map"
+            exampleDescription="Build a URL and download a static map image."
             difficulty="intro"
             exampleImgID="examplesStaticImage"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/mas/DirectionsActivity.java"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/javaservices/StaticImageActivity.java"
+          />
+        </ExampleCardContainer>
+        <ExampleCardContainer exampleTitle="Matrix">
+          <ExampleCard
+            exampleTitle="Get a travel time matrix"
+            exampleDescription="Calculate travel times between many points."
+            difficulty="intro"
+            exampleImgID="examplesMatrix"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/javaservices/MatrixApiActivity.java"
           />
         </ExampleCardContainer>
       </PageShell>

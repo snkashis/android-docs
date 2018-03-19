@@ -1,6 +1,6 @@
 /*---
-title: 'Android Plugin Examples'
-description: 'Working code examples of Mapbox Android Plugins'
+title: 'Mapbox Plugins for Android'
+description: 'Working code examples of Mapbox Plugins for Android'
 sideNavSections:
   - title: "Traffic"
   - title: "Location Layer"
