@@ -89,18 +89,18 @@ PermissionsListener permissionsListener = new PermissionsListener() {
 
 ## LocationEngine
 
-If your application needs location information, the `locationEngine` can help you get this information while also simplifying the process and being flexible enough to use different services. The LocationEngine found in the telemetry module now supports the following location providers:
+If your application needs location information, the `locationEngine` can help you get this information while also simplifying the process and being flexible enough to use different services. The `LocationEngine` found in the telemetry module now supports the following location providers:
 
 - [LOST](https://github.com/mapzen/lost/)
 - Google Play Services
 - Android Location
 - Mock Location Engine
 
-> **Note:** if you are using our Android Maps SDK, you can also set the locationEngine equal to the `LocationSource.getLocationEngine(this);` and it will use the same location engine used by the maps SDK. This eliminates the need to create a new locationEngine from scratch.
+If you are using our Maps SDK for Android, you can also set the `locationEngine` equal to the `LocationEngine locationEngine = new LocationEngineProvider(this).obtainBestLocationEngineAvailable();`. This will obtain the best location engine that is available and the same location engine that is used by the Maps SDK for Android. This eliminates the need to create a new locationEngine from scratch.
 
 ### Getting location updates
 
-To start off, it's required to either include the mapbox-android-services or copy over the [LostLocationEngine class](https://github.com/mapbox/mapbox-events-android/blob/c4e28e8ec737fbbad543d495b084b5da86cf1b80/liblocation/src/main/java/com/mapbox/android/core/location/LostLocationEngine.java) into your project. You'll then want to initialize a new instance of LocationEngine, activate it, and optionally add a location listener. Inside the `onConnected` you can begin requesting for location updates or wait for the proper time to do so.
+To start off, it's required to either include the mapbox-android-services or copy over the [LostLocationEngine class](https://github.com/mapbox/mapbox-events-android/blob/c4e28e8ec737fbbad543d495b084b5da86cf1b80/liblocation/src/main/java/com/mapbox/android/core/location/LostLocationEngine.java) into your project. You'll then want to initialize a new instance of `LocationEngine`, activate it, and optionally add a location listener. Inside the `onConnected` you can begin requesting for location updates or wait for the proper time to do so.
 
 ```java
 LocationEngine locationEngine = new LocationEngineProvider(this).obtainBestLocationEngineAvailable();
@@ -122,6 +122,33 @@ Rather than adding the LocationEngineListener like above, you can also implement
 
 To prevent your application from having a memory leak, it is a good idea to stop requesting location updated inside your activity's `onStop` method and continue requesting them in `onStart`.
 
+```java
+@Override
+  protected void onStart() {
+    super.onStart();
+    
+    mapView.onStart();
+
+    if (locationEngine != null) {
+      locationEngine.requestLocationUpdates();
+    }
+}
+```
+and
+
+```java
+@Override
+  protected void onStop() {
+    super.onStop();
+    
+    if (locationEngine != null) {
+      locationEngine.removeLocationUpdates();
+    }
+    
+    mapView.onStop();
+}
+```
+
 ### Last location
 
 If your application needs to quickly get a user location, you can call the `getLastLocation` which will return the user's last position. You can then use the location object returned to decide the timing the location was given.
@@ -132,6 +159,7 @@ If your application needs to quickly get a user location, you can call the `getL
 Location lastLocation = locationEngine.getLastLocation();
 if (lastLocation != null) {
   // Location logic here
+  
 }
 ```
 
