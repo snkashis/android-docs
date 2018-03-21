@@ -18,11 +18,22 @@ overviewHeaderProps:
     - Display traffic and 3D buildings
     - Change the map's language
   newFeature:
-    - true
     - false
     - false
     - false
     - false
+    - false
+    - false
+prependJs:
+  - |
+    import {
+      TRAFFIC_PLUGIN_VERSION,
+      LOCATION_LAYER_PLUGIN_VERSION,
+      BUILDING_PLUGIN_VERSION,
+      GEOJSON_PLUGIN_VERSION,
+      PLACES_PLUGIN_VERSION,
+      LOCALIZATION_PLUGIN_VERSION
+    } from '../../../constants';
 ---
 
 Mapbox Plugins build on top of the [Maps SDK](/android-docs/map-sdk/overview/getting-started/) providing extra features in lightweight dependencies. Whether you're looking to include traffic on top of your map or show the user location as a layer, plugins offer customizable APIs with a few lines of code to get started. Separating features into different plugins also allows for a more aggressive updating timeline.
@@ -64,3 +75,4 @@ Before using any of the Mapbox Plugins for Android, you will need:
 - If you find a bug and can provide steps to reliably reproduce it, open an issue in the [/mapbox-plugins-android repository](https://github.com/mapbox/mapbox-plugins-android) on GitHub and apply the bug label.
 - If you have a feature request, open an issue in the [/mapbox-plugins-android repository](https://github.com/mapbox/mapbox-plugins-android) on GitHub, and apply the enhancement label.
 - If you want to contribute, look over [our contribution guidelines](https://github.com/mapbox/mapbox-plugins-android/blob/master/CONTRIBUTING.md) and open a pull request with your changes.
+

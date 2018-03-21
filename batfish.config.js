@@ -25,6 +25,7 @@ const productPageOrder = {
     'building',
     'location-layer',
     'traffic',
+    'localization',
     'places',
     'geojson'
   ],
