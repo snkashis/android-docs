@@ -1,6 +1,6 @@
 ---
 title: "Directions Matrix"
-description: "Mapbox Java Services' Matrix API"
+description: "Official documentation on the Mapbox Java Services Matrix API"
 sideNavSections:
   - title: "Building and making requests"
   - title: "API response"

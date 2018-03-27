@@ -1,6 +1,6 @@
 ---
 title: "Geocoder"
-description: "Mapbox Java Services' Geocoding API"
+description: "Official documentation on the Mapbox Java Services Geocoding API"
 sideNavSections:
   - title: "Geocoding request"
   - title: "Geocoding response"

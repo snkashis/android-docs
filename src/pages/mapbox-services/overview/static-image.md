@@ -1,6 +1,6 @@
 ---
 title: "Static Image"
-description: "Mapbox Java Services' Static API"
+description: "Official documentation on the Mapbox Java Services Static API"
 sideNavSections:
   - title: "Building the URL"
   - title: "Downloading the image"

@@ -1,6 +1,6 @@
 ---
 title: "Mapbox Services SDK"
-description: "Overview of Mapbox Java Services"
+description: "Official documentation on Mapbox Java Services"
 sideNavSections:
   - title: "Support and contributions"
   - title: "API reference"
