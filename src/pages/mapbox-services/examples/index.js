@@ -46,10 +46,19 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
         <ExampleCardContainer exampleTitle="Static maps">
           <ExampleCard
             exampleTitle="Download a static map"
-            exampleDescription="Build a URL and download a static map image."
+            exampleDescription="Use Mapbox Java Services to build a URL and download a static map image"
             difficulty="intro"
             exampleImgID="examplesStaticImage"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/javaservices/StaticImageActivity.java"
+          />
+        </ExampleCardContainer>
+        <ExampleCardContainer exampleTitle="Optimization">
+          <ExampleCard
+            exampleTitle="Optimization"
+            exampleDescription="Use the Optimization API to retrieve the fastest route between 2 to 12 locations."
+            difficulty="intro"
+            exampleImgID="examplesOptimization"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/javaservices/OptimizationActivity.java"
           />
         </ExampleCardContainer>
         <ExampleCardContainer exampleTitle="Matrix">

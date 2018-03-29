@@ -44,6 +44,7 @@ const productPageOrder = {
     'index',
     'directions-matrix',
     'geocoder',
+    'optimization',
     'static-image'
   ],
   'mapbox-services/examples/': ['index'],

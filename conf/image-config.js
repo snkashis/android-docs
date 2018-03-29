@@ -233,6 +233,10 @@ module.exports = {
     basename: 'mapbox-services-static-image.gif',
     sizes: [{ width: 520 }]
   },
+  examplesOptimization: {
+    basename: 'mapbox-services-optimization.png',
+    sizes: [{ width: 520 }]
+  },
   firstStepsProjectConfigure: {
     basename: 'first-steps-project-configure.png',
     sizes: [{ width: 320 }, { width: 640 }, { width: 1200 }]
