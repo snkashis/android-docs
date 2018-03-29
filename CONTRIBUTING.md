@@ -15,9 +15,21 @@ We welcome contributions to this Android documentation repository. Please follow
 
 ## Code of conduct
 
-Everyone is invited to participate in Mapbox’s open source projects and public discussions: we want to create a welcoming and friendly environment. Harassmewnt of participants or other unethical and unprofessional behavior will not be tolerated in our spaces. The [Contributor Covenant](http://contributor-covenant.org) applies to all projects under the Mapbox organization and we ask that you please read [the full text](http://contributor-covenant.org/version/1/2/0/).
+Everyone is invited to participate in Mapbox’s open source projects and public discussions: we want to create a welcoming and friendly environment. Harassment of participants or other unethical and unprofessional behavior will not be tolerated in our spaces. The [Contributor Covenant](http://contributor-covenant.org) applies to all projects under the Mapbox organization and we ask that you please read [the full text](http://contributor-covenant.org/version/1/2/0/).
 
 You can learn more about our open source philosophy on [mapbox.com](https://www.mapbox.com/about/open/).
+
+## Mapbox Java SDK
+
+All overview guides for APIs in the Mapbox Java SDK should follow this format: 
+
+- Intro section
+  - Description of what the API does
+  - High-level overview of the wrapper and where to find it
+  - Any prerequisites (i.e. "Before using this wrapper....")
+- API request (with code sample)
+- API response (with code sample)
+- Other options as necessary
 
 ## Images
 
