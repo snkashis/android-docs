@@ -182,7 +182,7 @@ class SideNavigation extends React.Component {
       <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
         <a
           href={prefixUrl(
-            `/api/telemetry/libandroid-core/${constants.CORE_VERSION}/index.html`
+            `/api/telemetry/libcore/${constants.CORE_VERSION}/index.html`
           )}
           className="txt-fancy color-blue-on-hover"
         >
