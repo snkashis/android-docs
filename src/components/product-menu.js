@@ -20,8 +20,8 @@ const menuItems = [
     text: 'Navigation SDK'
   },
   {
-    url: prefixUrl('/telemetry/overview/'),
-    text: 'Telemetry'
+    url: prefixUrl('/core/overview/'),
+    text: 'Core'
   }
 ];
 

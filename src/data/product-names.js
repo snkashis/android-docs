@@ -4,5 +4,5 @@ export const productNames = {
   plugins: 'Plugins',
   'mapbox-services': 'Mapbox Services',
   navigation: 'Navigation SDK',
-  telemetry: 'Telemetry'
+  core: 'Core'
 };

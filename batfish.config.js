@@ -48,7 +48,7 @@ const productPageOrder = {
     'static-image'
   ],
   'mapbox-services/examples/': ['index'],
-  'telemetry/overview/': ['index']
+  'core/overview/': ['index']
 };
 
 module.exports = () => {

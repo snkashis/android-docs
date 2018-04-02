@@ -17,6 +17,10 @@ module.exports = {
     basename: 'overview-services-sdk.png',
     sizes: [{ width: 322 }]
   },
+  overviewCoreLibSdk: {
+    basename: 'overview-core-lib.png',
+    sizes: [{ width: 322 }]
+  },
   examplesGettingStartedSimpleMap: {
     basename: 'getting-started-simple-map.png',
     sizes: [{ width: 520 }]

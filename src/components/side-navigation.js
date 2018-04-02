@@ -177,12 +177,12 @@ class SideNavigation extends React.Component {
     );
   }
 
-  getTelemetryApiItem() {
+  getCoreApiItem() {
     return (
       <div className={'flex-parent wmin180 pb12 flex-parent--column'}>
         <a
           href={prefixUrl(
-            `/api/telemetry/libandroid-telemetry/${constants.TELEMETRY_VERSION}/index.html`
+            `/api/telemetry/libandroid-core/${constants.CORE_VERSION}/index.html`
           )}
           className="txt-fancy color-blue-on-hover"
         >
@@ -249,8 +249,8 @@ class SideNavigation extends React.Component {
       apiItem = this.getServicesApiItem();
     } else if (/\/navigation\/overview\//.test(props.currentPath)) {
       apiItem = this.getNavigationApiItem();
-    } else if (/\/telemetry\/overview\//.test(props.currentPath)) {
-      apiItem = this.getTelemetryApiItem();
+    } else if (/\/core\/overview\//.test(props.currentPath)) {
+      apiItem = this.getCoreApiItem();
     }
     return (
       <div className="col col--2-mm pt12 fixed none block-mm color-gray-dark unstyled-list scroll-styled scroll-auto">
