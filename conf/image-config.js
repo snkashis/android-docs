@@ -209,6 +209,22 @@ module.exports = {
     basename: 'plugins-location-layer.png',
     sizes: [{ width: 520 }]
   },
+  examplesGeoJson: {
+    basename: 'plugins-geojson.png',
+    sizes: [{ width: 520 }]
+  },
+  examplesLocalization: {
+    basename: 'plugins-localization.png',
+    sizes: [{ width: 520 }]
+  },
+  examplesMarkerClusters: {
+    basename: 'plugins-marker-cluster.jpg',
+    sizes: [{ width: 520 }]
+  },
+  examplesPlaces: {
+    basename: 'plugins-places.png',
+    sizes: [{ width: 520 }]
+  },
   examplesBuilding: {
     basename: 'plugins-building.png',
     sizes: [{ width: 520 }]

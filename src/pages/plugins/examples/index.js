@@ -5,6 +5,10 @@ sideNavSections:
   - title: "Traffic"
   - title: "Location Layer"
   - title: "Building"
+  - title: "GeoJSON"  
+  - title: "Localization"  
+  - title: "Marker clusters"
+  - title: "Places"
 ---*/
 
 import React from 'react';
@@ -39,10 +43,46 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
         <ExampleCardContainer exampleTitle="Building">
           <ExampleCard
             exampleTitle="Display 3D buildings on any map style"
-            exampleDescription="Plugin allows you to toggle building layer on and off and can be used with any style."
+            exampleDescription="Toggle building layer on and off and can be used with any style."
             difficulty="intro"
             exampleImgID="examplesBuilding"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/plugins/BuildingPluginActivity.java"
+          />
+        </ExampleCardContainer>
+        <ExampleCardContainer exampleTitle="GeoJSON">
+          <ExampleCard
+            exampleTitle="Load GeoJSON data"
+            exampleDescription="Easily retrieve and display GeoJSON data from a URL, a file included in an app, or file stored on the device."
+            difficulty="intro"
+            exampleImgID="examplesGeoJson"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/plugins/GeoJsonPluginActivity.java"
+          />
+        </ExampleCardContainer>
+        <ExampleCardContainer exampleTitle="Localization">
+          <ExampleCard
+            exampleTitle="Change map text to device language"
+            exampleDescription="Automatically change map label text to the language set on the device"
+            difficulty="intro"
+            exampleImgID="examplesLocalization"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/plugins/LocalizationPluginActivity.java"
+          />
+        </ExampleCardContainer>
+        <ExampleCardContainer exampleTitle="Marker clusters">
+          <ExampleCard
+            exampleTitle="Add marker clusters"
+            exampleDescription="Add marker clusters to the map to better display your data"
+            difficulty="intro"
+            exampleImgID="examplesMarkerClusters"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/plugins/MarkerClustersPluginActivity.java"
+          />
+        </ExampleCardContainer>
+        <ExampleCardContainer exampleTitle="Places">
+          <ExampleCard
+            exampleTitle="Global location search"
+            exampleDescription="Add geocoding search functionality and UI for finding any region, country, place, or address in the world."
+            difficulty="intro"
+            exampleImgID="examplesPlaces"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/plugins/PlacesPluginActivity.java"
           />
         </ExampleCardContainer>
       </PageShell>
