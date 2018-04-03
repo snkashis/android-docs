@@ -5,7 +5,8 @@ sideNavSections:
   - title: "Install the Navigation UI SDK"
   - title: "Launch the Navigation UI"
   - title: "NavigationViewOptions"
-  - title: "NavigationView"
+  - title: "NavigationView Activity Example"
+  - title: "NavigationView Fragment Example"
   - title: "Listening to the NavigationView"
   - title: "Styling the NavigationView"
   - title: "InstructionView"
@@ -59,8 +60,8 @@ String awsPoolId = "your_cognito_pool_id";
 
 boolean simulateRoute = true;
 
-// Create a NavigationViewOptions object to package everything together
-NavigationViewOptions options = NavigationViewOptions.builder()
+// Create a NavigationLauncherOptions object to package everything together
+NavigationLauncherOptions options = NavigationLauncherOptions.builder()
   .origin(origin)
   .destination(destination)
   .awsPoolId(awsPoolId)
@@ -103,7 +104,7 @@ NavigationViewOptions viewOptions = NavigationViewOptions.builder()
   .build();
 ```
 
-## NavigationView
+## NavigationView Activity Example
 
 You can also inflate the entire navigation UI in your `Activity` or `Fragment`
 rather than using `NavigationLauncher`.
@@ -124,6 +125,18 @@ protected void onCreate(@Nullable Bundle savedInstanceState) {
   navigationView = findViewById(R.id.navigationView);
   navigationView.onCreate(savedInstanceState);
   navigationView.getNavigationAsync(this);
+}
+
+@Override
+public void onStart() {
+  super.onStart();
+  navigationView.onStart();
+}
+
+@Override
+public void onResume() {
+  super.onResume();
+  navigationView.onResume();
 }
 
 @Override
@@ -153,6 +166,18 @@ protected void onRestoreInstanceState(Bundle savedInstanceState) {
 }
 
 @Override
+public void onPause() {
+  super.onPause();
+  navigationView.onPause();
+}
+
+@Override
+public void onStop() {
+  super.onStop();
+  navigationView.onStop();
+}
+
+@Override
 protected void onDestroy() {
   super.onDestroy();
   navigationView.onDestroy();
@@ -162,7 +187,7 @@ protected void onDestroy() {
 #### Step 2
 Your `Activity` or `Fragment` must implement `NavigationViewListener`. This interface includes callbacks for the start and end of the turn-by-turn UI.  `onNavigationReady()` is your cue to start navigation with `NavigationView#startNavigation(NavigationViewOptions options)`.  
 
-`NavigationViewOptions` is the same options object you can use to launch the navigation UI from `NavigationLauncher`.  It holds all of the custom data and settings that you can provide to the `NavigationView`.
+`NavigationViewOptions` holds all of the custom data and settings that you can provide to the `NavigationView`.
 
 `onNavigationFinished()` is your cue if the navigation session has ended or a user has cancelled the UI.
 
@@ -182,6 +207,106 @@ public void onNavigationReady() {
 @Override
 public void onNavigationFinished() {
   finish();
+}
+```
+## NavigationView Fragment Example
+
+```java
+@Nullable
+@Override
+public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                         @Nullable Bundle savedInstanceState) {
+  return inflater.inflate(R.layout.navigation_view_fragment_layout, container);
+}
+
+@Override
+public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+  super.onViewCreated(view, savedInstanceState);
+  navigationView = view.findViewById(R.id.navigation_view_fragment);
+  navigationView.onCreate(savedInstanceState);
+  navigationView.getNavigationAsync(this);
+}
+
+@Override
+public void onStart() {
+  super.onStart();
+  navigationView.onStart();
+}
+
+@Override
+public void onResume() {
+  super.onResume();
+  navigationView.onResume();
+}
+
+@Override
+public void onSaveInstanceState(@NonNull Bundle outState) {
+  navigationView.onSaveInstanceState(outState);
+  super.onSaveInstanceState(outState);
+}
+
+@Override
+public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+  super.onViewStateRestored(savedInstanceState);
+  if (savedInstanceState != null) {
+    navigationView.onRestoreInstanceState(savedInstanceState);
+  }
+}
+
+@Override
+public void onPause() {
+  super.onPause();
+  navigationView.onPause();
+}
+
+@Override
+public void onStop() {
+  super.onStop();
+  navigationView.onStop();
+}
+
+@Override
+public void onLowMemory() {
+  super.onLowMemory();
+  navigationView.onLowMemory();
+}
+
+@Override
+public void onDestroyView() {
+  super.onDestroyView();
+  navigationView.onDestroy();
+}
+
+@Override
+public void onNavigationReady() {
+  Point origin = Point.fromLngLat(ORIGIN_LONGITUDE, ORIGIN_LATITUDE);
+  Point destination = Point.fromLngLat(DESTINATION_LONGITUDE, DESTINATION_LATITUDE);
+  NavigationViewOptions options = NavigationViewOptions.builder()
+    .origin(origin)
+    .destination(destination)
+    .shouldSimulateRoute(true)
+    .navigationListener(this)
+    .build();
+  navigationView.startNavigation(options);
+}
+
+@Override
+public void onCancelNavigation() {
+  if (getActivity() != null) {
+    getActivity().finish();
+  }
+}
+
+@Override
+public void onNavigationFinished() {
+  if (getActivity() != null) {
+    getActivity().finish();
+  }
+}
+
+@Override
+public void onNavigationRunning() {
+  // no-op
 }
 ```
 
