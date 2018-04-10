@@ -12,27 +12,27 @@ The Mapbox Static API returns static maps and raster tiles from styles in the Ma
 
 ## Building the URL
 
-To begin with you'll need to create a new instance of the `MapboxStaticImage` object and use it's builder to customize your image request. The options offered in the builder include anything from setting the latitude and longitude to adding markers and other annotations. the image width and height are important parameters for displaying the correct aspect ratio inside your applications image view, and often, you will want to check if your users device supports retina or not by using `getResources().getDisplayMetrics().density`.
+To begin with, you'll need to create a new instance of the `MapboxStaticMap` object and use its builder to customize your image request. The options offered in the builder include anything from setting the latitude and longitude to adding markers and other annotations. The image width and height are important parameters for displaying the correct aspect ratio inside of your application's ImageView. Oftentimes, you'll will want to check if your user's device supports retina or not by using `getResources().getDisplayMetrics().density`.
 
 ```java
-MapboxStaticImage staticImage = new MapboxStaticImage.Builder()
-  .setAccessToken(getString(R.string.access_token))
-  .setStyleId(Constants.MAPBOX_STYLE_LIGHT)
-  .setLat(45.4338) // Image center Latitude
-  .setLon(12.3378) // Image center longitude
-  .setZoom(13)
-  .setWidth(320) // Image width
-  .setHeight(320) // Image height
-  .setRetina(true) // Retina 2x image will be returned
+MapboxStaticMap staticImage = MapboxStaticMap.builder()
+  .accessToken(getString(R.string.access_token))
+  .styleId(Style.LIGHT)
+  .cameraPoint(Point.fromLngLat(lastLocation.getLongitude(),
+  lastLocation.getLatitude())) // Image's centerpoint on map
+  .cameraZoom(13)
+  .width(320) // Image width
+  .height(320) // Image height
+  .retina(true) // Retina 2x image will be returned
   .build();
 ```
 
 ### Downloading the image
 
-After creating the `MapboxStaticImage` instance with all your customization parameters, you'll need to handle downloading the image directly into your application so it is displayed properly to the user. The Mapbox Services SDK doesn't offer any sort of image downloading/loading APIs but we highly recommend using a third party library such as [Picasso](http://square.github.io/picasso/) or [Glide](https://github.com/bumptech/glide) rather then an asynchronous task. Using Picasso, you can downloading the static map image with only a few lines of code.
+After creating the `MapboxStaticMap` instance with all your customization parameters, you'll need to handle downloading the image directly into your application so it is displayed properly to the user. The Mapbox Java SDK doesn't offer any sort of image downloading/loading APIs but we highly recommend using a third party library such as [Picasso](http://square.github.io/picasso/) or [Glide](https://github.com/bumptech/glide) rather then an asynchronous task. Using Picasso, you can downloading the static map image with only a few lines of code.
 
 ```java
-String imageUrl = staticImage.getUrl().toString();
+String imageUrl = staticImage.url().toString();
 Picasso.with(this).load(imageUrl).into(imageView);
 ```
 
@@ -49,7 +49,7 @@ Marker marker = new Marker()
   .setLat(45.4338)
   .setLon(12.3378);
 
-MapboxStaticImage staticImage = new MapboxStaticImage.Builder()
+MapboxStaticMap staticImage = MapboxStaticMap.builder()
   .setMarker(marker)
   ...
 ``` -->
