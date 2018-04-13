@@ -1,5 +1,5 @@
 ---
-title: "Matrix"
+title: "Directions Matrix"
 description: "Official documentation on the Mapbox Java SDK Matrix API"
 sideNavSections:
   - title: "Building and making requests"
@@ -14,14 +14,10 @@ This API allows you to build tools that efficiently check the reachability of co
 
 The standard limit for request are a maximum 60 requests per minute and maximum 25 input coordinates. For example you can request a symmetric 25x25 matrix, an asymmetric 1x24 matrix with distinct coordinates or a 12x24 where sources and destinations share some coordinates. For higher volumes [contact us](https://www.mapbox.com/contact/sales).
 
-You'll find the wrapper for the Mapbox Matrix API in the mapbox-java-services module.
-
 Before using this wrapper:
 
 - We recommend reading over [Mapbox Matrix API documentation](https://www.mapbox.com/api-documentation/#matrix). The API documentation contains all available parameters including some that are not listed in this guide.
 - Make sure you have included the correct permissions inside of your `AndroidManifest.xml` file if you plan to use this API inside of an Android application.
-
-_Note: This replace the distance.v1 API which will be removed when `3.0.0` of Java Services is released._
 
 ## API request
 
@@ -37,7 +33,7 @@ MapboxMatrix directionsMatrixClient = MapboxMatrix.builder()
 
 ## API response
 
-Like all API calls inside of Mapbox Java Services, the response will come inside a retrofit callback. inside the onResponse, you can access the APIs returned response if successful.
+Like all API calls inside of the Mapbox Java SDK, the response will come inside a retrofit callback. inside the onResponse, you can access the APIs returned response if successful.
 
 ```java
 client.enqueueCall(new Callback<MatrixResponse>() {

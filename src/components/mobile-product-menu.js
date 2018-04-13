@@ -98,7 +98,7 @@ function MobileProductMenuSection(props) {
   });
 
   props.productOverviewSections.forEach(item => {
-    const rgxp = /(Maps SDK|Mapbox Plugins|Mapbox Services SDK|Navigation SDK)/;
+    const rgxp = /(Maps SDK|Mapbox Plugins|Mapbox Java SDK|Navigation SDK)/;
     const text = rgxp.test(item.title) ? 'Overview' : item.title;
     items.push(
       <a key={item.path} className={mobileMenuItemClasses} href={item.path}>

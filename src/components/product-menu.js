@@ -12,8 +12,8 @@ const menuItems = [
     text: 'Plugins'
   },
   {
-    url: prefixUrl('/mapbox-services/overview/'),
-    text: 'Mapbox Services'
+    url: prefixUrl('/java-sdk/overview/'),
+    text: 'Java SDK'
   },
   {
     url: prefixUrl('/navigation/overview/'),

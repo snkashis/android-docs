@@ -134,10 +134,10 @@ You can also optionally pass in a `MapboxNavigationOptions` object if you’d li
 
 ## LocationEngine
 
-Navigation requires the user's location to run; this is done using the `LocationEngine` class introduced in Mapbox Services 2.0. Visit the [`LocationEngine`](/telemetry/overview/#locationengine) documentation for detailed instructions on how to use this class. You'll need to set up an instance of a location engine and pass it in to the `MapboxNavigation` object.
+Navigation requires the user's location to run; this is done using the `LocationEngine` class introduced in the 2.0 release of the Mapbox Java SDK. Visit the [`LocationEngine`](/telemetry/overview/#locationengine) documentation for detailed instructions on how to use this class. You'll need to set up an instance of a location engine and pass it in to the `MapboxNavigation` object.
 
 ```java
-LocationEngine locationEngine = LostLocationEngine.getLocationEngine(this);
+Location location = new LocationEngineProvider(this).obtainBestLocationEngineAvailable();
 navigation.setLocationEngine(locationEngine);
 ```
 

@@ -1,6 +1,6 @@
 /*---
-title: 'Android Mapbox Services Examples'
-description: 'Mapbox Java Services code examples'
+title: 'Mapbox Java SDK Examples'
+description: 'Mapbox Java SDK code examples'
 sideNavSections:
   - title: "Directions"
   - title: "Map matching"
@@ -46,7 +46,7 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
         <ExampleCardContainer exampleTitle="Static maps">
           <ExampleCard
             exampleTitle="Download a static map"
-            exampleDescription="Use Mapbox Java Services to build a URL and download a static map image"
+            exampleDescription="Use the Mapbox Java SDK to build a URL and download a static map image"
             difficulty="intro"
             exampleImgID="examplesStaticImage"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/javaservices/StaticImageActivity.java"

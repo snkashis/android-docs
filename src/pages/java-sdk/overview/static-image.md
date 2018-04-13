@@ -1,6 +1,6 @@
 ---
 title: "Static Image"
-description: "Official documentation on the Mapbox Java Services Static API"
+description: "Official documentation on the Mapbox Java SDK Static API"
 sideNavSections:
   - title: "Building the URL"
   - title: "Downloading the image"
@@ -29,7 +29,7 @@ MapboxStaticMap staticImage = MapboxStaticMap.builder()
 
 ### Downloading the image
 
-After creating the `MapboxStaticMap` instance with all your customization parameters, you'll need to handle downloading the image directly into your application so it is displayed properly to the user. The Mapbox Java SDK doesn't offer any sort of image downloading/loading APIs but we highly recommend using a third party library such as [Picasso](http://square.github.io/picasso/) or [Glide](https://github.com/bumptech/glide) rather then an asynchronous task. Using Picasso, you can downloading the static map image with only a few lines of code.
+After creating the `MapboxStaticImage` instance with all your customization parameters, you'll need to handle downloading the image directly into your application so it is displayed properly to the user. The Mapbox Java SDK doesn't offer any sort of image downloading/loading APIs but we highly recommend using a third party library such as [Picasso](http://square.github.io/picasso/) or [Glide](https://github.com/bumptech/glide) rather then an asynchronous task. Using Picasso, you can downloading the static map image with only a few lines of code.
 
 ```java
 String imageUrl = staticImage.url().toString();

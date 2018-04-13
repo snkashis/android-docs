@@ -230,72 +230,32 @@ module.exports = {
     sizes: [{ width: 520 }]
   },
   examplesDirection: {
-    basename: 'mapbox-services-direction.png',
+    basename: 'mapbox-java-direction.png',
     sizes: [{ width: 520 }]
   },
   examplesMapMatching: {
-    basename: 'mapbox-services-map-matching.png',
+    basename: 'mapbox-java-map-matching.png',
     sizes: [{ width: 520 }]
   },
   examplesMatrix: {
-    basename: 'mapbox-services-matrix.png',
+    basename: 'mapbox-java-matrix.png',
     sizes: [{ width: 520 }]
   },
   examplesSimplifyLine: {
-    basename: 'mapbox-services-simplify-line.gif',
+    basename: 'mapbox-java-simplify-line.gif',
     sizes: [{ width: 520 }]
   },
   examplesGeocodingAutoComplete: {
-    basename: 'mapbox-services-geocoding-auto-complete.gif',
+    basename: 'mapbox-java-geocoding-auto-complete.gif',
     sizes: [{ width: 520 }]
   },
   examplesStaticImage: {
-    basename: 'mapbox-services-static-image.gif',
+    basename: 'mapbox-java-static-image.gif',
     sizes: [{ width: 520 }]
   },
   examplesOptimization: {
     basename: 'mapbox-services-optimization.png',
     sizes: [{ width: 520 }]
-  },
-  firstStepsProjectConfigure: {
-    basename: 'first-steps-project-configure.png',
-    sizes: [{ width: 320 }, { width: 640 }, { width: 1200 }]
-  },
-  firstStepsActivityCustomize: {
-    basename: 'first-steps-activity-customize.png',
-    sizes: [{ width: 320 }, { width: 640 }, { width: 1200 }]
-  },
-  firstStepsBuildGradle: {
-    basename: 'first-steps-build-gradle.png',
-    sizes: [{ width: 435 }]
-  },
-  firstStepsStrings: {
-    basename: 'first-steps-strings.png',
-    sizes: [{ width: 435 }]
-  },
-  firstStepsMapviewSetup: {
-    basename: 'first-steps-mapview-setup.png',
-    sizes: [{ width: 425 }]
-  },
-  firstStepsFinalWorkspace: {
-    basename: 'first-steps-final-workspace.png',
-    sizes: [{ width: 435 }]
-  },
-  firstStepsInitialMap: {
-    basename: 'first-steps-initial-map.png',
-    sizes: [{ width: 435 }]
-  },
-  firstStepsChangeStyle: {
-    basename: 'first-steps-change-style.png',
-    sizes: [{ width: 435 }]
-  },
-  firstStepsRun: {
-    basename: 'first-steps-run.png',
-    sizes: [{ width: 22 }]
-  },
-  firstStepsAvd: {
-    basename: 'first-steps-avd.png',
-    sizes: [{ width: 24 }]
   },
   tutorialsFirstStepsIntro: {
     basename: 'first-steps-intro.png',

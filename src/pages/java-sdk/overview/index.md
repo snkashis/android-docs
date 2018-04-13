@@ -1,6 +1,6 @@
 ---
-title: "Mapbox Services SDK"
-description: "Official documentation on Mapbox Java Services"
+title: "Mapbox Java SDK"
+description: "Official documentation on the Mapbox Java SDK"
 sideNavSections:
   - title: "Support and contributions"
   - title: "API reference"
@@ -12,7 +12,7 @@ sideNavSections:
   - title: "Selectively compiling APIs"
 overviewHeaderProps:
   imageId: overviewServicesSdk
-  sdk: Mapbox Services SDK
+  sdk: Mapbox Java SDK
   changelogLink: "https://github.com/mapbox/mapbox-java/blob/master/CHANGELOG.md"
   ghLink: "https://github.com/mapbox/mapbox-java"
   sdkFeatures:
@@ -28,9 +28,9 @@ overviewHeaderProps:
     - false
     - false
 prependJs:
-  - "import { MAS_VERSION } from '../../../constants';"
+  - "import { JAVA_SDK_VERSION } from '../../../constants';"
 ---
-Mapbox Java is an open source toolset for building applications that need navigation, directions, geocoding, static map imagery, etc. It conveniently wraps Mapbox APIs and builds off of them with tools which are useful for your applications. This SDK has no dependency on the Android API and can be used in any of your Java projects.
+The Mapbox Java SDK is an open source toolset for building applications that need navigation, directions, geocoding, static map imagery, etc. It conveniently wraps Mapbox APIs and builds off of them with tools which are useful for your applications. This SDK has no dependency on the Android API and can be used in any of your Java projects.
 
 ### Support and contributions
 
@@ -59,7 +59,7 @@ Version _below_ 3.0.0:
 
 ### Access tokens
 
-If you plan to use any of our APIs such as directions, geocoding, navigation, etc. you'll need to have a Mapbox access token which you'll pass in as a parameter. An access token isn't needed if you plan to use Mapbox Java only for GeoJSON parsing or Turf calculations. Read [this document](https://www.mapbox.com/help/create-api-access-token/) to learn more about access tokens.
+If you plan to use any of our APIs such as directions, geocoding, navigation, etc. you'll need to have a Mapbox access token which you'll pass in as a parameter. An access token isn't needed if you plan to use the Mapbox Java SDK only for GeoJSON parsing or Turf calculations. Read [this document](https://www.mapbox.com/help/create-api-access-token/) to learn more about access tokens.
 
 ### Position and Point objects
 
@@ -78,7 +78,7 @@ Position position = Position.fromCoordinates(-77.03655, 38.89770);
 
 ## Installation
 
-To start developing your application using Mapbox Java, you'll need to first decide which installation method works best for you. The SDK is fully compatible with Android using Gradle and most of the project (besides the Android dependent modules) can also be included in a generic Java project using either Gradle or Maven. All dependencies given below can be found on MavenCentral.
+To start developing your application using the Mapbox Java SDK, you'll need to first decide which installation method works best for you. The SDK is fully compatible with Android using Gradle and most of the project (besides the Android dependent modules) can also be included in a generic Java project using either Gradle or Maven. All dependencies given below can be found on MavenCentral.
 
 ### Gradle
 
@@ -91,7 +91,7 @@ To start developing your application using Mapbox Java, you'll need to first dec
 > **Note:** If your application is close or exceeds the 65k method count limit, you can mitigate this problem by specifying only the specific Mapbox Android Service APIs. See the selectively compiling APIs section below.
 
 ```groovy
-implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:{{ MAS_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:{{ JAVA_SDK_VERSION }}'
 ```
 
 ### Maven
@@ -102,13 +102,13 @@ If your project's using Maven instead of Gradle, you can add the dependency insi
 <dependency>
     <groupId>com.mapbox.mapboxsdk</groupId>
     <artifactId>mapbox-sdk-services</artifactId>
-    <version>{{ MAS_VERSION }}</version>
+    <version>{{ JAVA_SDK_VERSION }}</version>
 </dependency>
 ```
 
 ### Selectively compiling APIs
 
-In earlier versions of Mapbox Java before to 2.0, you would have to compile the entire package of APIs. This in some cases, could cause Android applications to go over the 65,536 method count limit.
+In versions of the Mapbox Java SDK before 2.0, you would have to compile the entire package of APIs. This in some cases, could cause Android applications to go over the 65,536 method count limit.
 
 Starting with 2.0, you now have the option to include either the entire package of APIs (using the dependencies listed above) or you can now selectively choose which specific APIs your application needs. For example, if you only need to handle GeoJSON serialization or deserialization inside your application you only need to include the GeoJSON dependency in your project.
 
@@ -117,10 +117,10 @@ The list below shows all the current separated dependencies you can use in your 
 If you're using a version _above_ 3.0.0:
 
 ```groovy
-implementation 'com.mapbox.mapboxsdk:mapbox-sdk-core:{{ MAS_VERSION }}'
-implementation 'com.mapbox.mapboxsdk:mapbox-sdk-geojson:{{ MAS_VERSION }}'
-implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:{{ MAS_VERSION }}'
-implementation 'com.mapbox.mapboxsdk:mapbox-sdk-turf:{{ MAS_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-sdk-core:{{ JAVA_SDK_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-sdk-geojson:{{ JAVA_SDK_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:{{ JAVA_SDK_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-sdk-turf:{{ JAVA_SDK_VERSION }}'
 ```
 
 If you're using a version _below_ 3.0.0:

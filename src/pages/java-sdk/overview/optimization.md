@@ -1,6 +1,6 @@
 ---
 title: "Optimization"
-description: "Mapbox Java Services' Optimization API"
+description: "Official documentation on the Mapbox Java SDK Optimization API"
 sideNavSections:
   - title: "Optimization request"
   - title: "Optimization response"

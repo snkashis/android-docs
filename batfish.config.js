@@ -40,14 +40,14 @@ const productPageOrder = {
     'camera',
     'route-progress'
   ],
-  'mapbox-services/overview/': [
+  'java-sdk/overview/': [
     'index',
     'directions-matrix',
     'geocoder',
     'optimization',
     'static-image'
   ],
-  'mapbox-services/examples/': ['index'],
+  'java-sdk/examples/': ['index'],
   'core/overview/': ['index']
 };
 

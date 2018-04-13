@@ -93,7 +93,7 @@ class SideNavigation extends React.Component {
     );
   }
 
-  getServicesApiItem() {
+  getJavaApiItem() {
     return (
       <PopoverTrigger
         content={
@@ -101,7 +101,7 @@ class SideNavigation extends React.Component {
             <strong className={'color-gray-light p6 txt-mm'}>Javadoc</strong>
             <a
               href={prefixUrl(
-                `/api/mapbox-java/libjava-core/${constants.MAS_VERSION}/index.html`
+                `/api/mapbox-java/libjava-core/${constants.JAVA_SDK_VERSION}/index.html`
               )}
               className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
             >
@@ -109,7 +109,7 @@ class SideNavigation extends React.Component {
             </a>
             <a
               href={prefixUrl(
-                `/api/mapbox-java/libjava-geojson/${constants.MAS_VERSION}/index.html`
+                `/api/mapbox-java/libjava-geojson/${constants.JAVA_SDK_VERSION}/index.html`
               )}
               className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
             >
@@ -117,7 +117,7 @@ class SideNavigation extends React.Component {
             </a>
             <a
               href={prefixUrl(
-                `/api/mapbox-java/libjava-turf/${constants.MAS_VERSION}/index.html`
+                `/api/mapbox-java/libjava-turf/${constants.JAVA_SDK_VERSION}/index.html`
               )}
               className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
             >
@@ -125,7 +125,7 @@ class SideNavigation extends React.Component {
             </a>
             <a
               href={prefixUrl(
-                `/api/mapbox-java/libjava-services/${constants.MAS_VERSION}/index.html`
+                `/api/mapbox-java/libjava-services/${constants.JAVA_SDK_VERSION}/index.html`
               )}
               className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
             >
@@ -245,8 +245,8 @@ class SideNavigation extends React.Component {
       apiItem = this.getMapSdkApiItem();
     } else if (/\/plugins\/overview\//.test(props.currentPath)) {
       apiItem = this.getPluginsApiItem();
-    } else if (/\/mapbox-services\/overview\//.test(props.currentPath)) {
-      apiItem = this.getServicesApiItem();
+    } else if (/\/java-sdk\/overview\//.test(props.currentPath)) {
+      apiItem = this.getJavaApiItem();
     } else if (/\/navigation\/overview\//.test(props.currentPath)) {
       apiItem = this.getNavigationApiItem();
     } else if (/\/core\/overview\//.test(props.currentPath)) {

@@ -24,14 +24,14 @@ export const productNavbarTabs = {
       pathname: 'plugins/examples'
     }
   ],
-  'mapbox-services': [
+  'java-sdk': [
     {
       text: 'Overview',
-      pathname: 'mapbox-services/overview'
+      pathname: 'java-sdk/overview'
     },
     {
       text: 'Examples',
-      pathname: 'mapbox-services/examples'
+      pathname: 'java-sdk/examples'
     }
   ],
   navigation: [

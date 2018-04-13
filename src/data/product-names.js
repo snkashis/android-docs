@@ -2,7 +2,7 @@
 export const productNames = {
   'map-sdk': 'Maps SDK',
   plugins: 'Plugins',
-  'mapbox-services': 'Mapbox Services',
+  'java-sdk': 'Java SDK',
   navigation: 'Navigation SDK',
   core: 'Core'
 };

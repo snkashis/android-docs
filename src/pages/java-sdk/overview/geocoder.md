@@ -1,11 +1,10 @@
 ---
 title: "Geocoder"
-description: "Official documentation on the Mapbox Java Services Geocoding API"
+description: "Official documentation on the Mapbox Java SDK Geocoding API"
 sideNavSections:
   - title: "Geocoding request"
   - title: "Geocoding response"
   - title: "Reverse geocoding"
-  - title: "Android widgets"
   - title: "Batch geocoding"
 ---
 # Geocoder

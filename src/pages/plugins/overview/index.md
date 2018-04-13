@@ -40,7 +40,7 @@ Mapbox Plugins build on top of the [Maps SDK](/android-docs/map-sdk/overview/get
 
 ## What are Mapbox Plugins?
 
-Mapbox Plugins for Android are a collection of libraries that extend our Maps, Navigation, and Services SDKs for Android to help you integrate powerful mapping features into your applications. Use plugins to show a user's location, display traffic or building overlays, or search for places. With these plugins, you can pick the features that your app needs without losing the ability to customize; all bundled into lightweight dependencies.
+Mapbox Plugins for Android are a collection of libraries that extend our Maps, Navigation, and Java SDKs for Android to help you integrate powerful mapping features into your applications. Use plugins to show a user's location, display traffic or building overlays, or search for places. With these plugins, you can pick the features that your app needs without losing the ability to customize; all bundled into lightweight dependencies.
 
 By using a plugin, you also include the Maps SDK for Android which means that you'll need to setup your project to use the Maps SDK if you haven't already. Head over to the [Maps SDK Getting Started](/android-docs/map-sdk/overview) documentation to learn more. The example below shows how to install the Traffic Plugin, but the process is identical for other plugins.
 
