@@ -10,6 +10,7 @@ sideNavSections:
   - title: "Data Driven Styling"
   - title: "Offline"
   - title: "Query Map"
+  - title: "Gestures"
 ---*/
 
 import React from 'react';
