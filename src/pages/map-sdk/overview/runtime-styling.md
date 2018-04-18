@@ -250,28 +250,6 @@ museumsLayer.setProperties(
 );
 ```
 
-## Filtering
-
-A filter selects specific features from a layer. A filter is an array of one of the following forms:
-
-| API             | Description                                                   |
-|-----------------|---------------------------------------------------------------|
-| `Filter.notIn`  | Check the property is not within the given set                |
-| `Filter.in`     | Check the property is within the given set                    |
-| `Filter.lte`    | Check the property equals or does not exceeds the given value |
-| `Filter.lt`     | Check the property does not exceed the given value            |
-| `Filter.gte`    | Check the property exceeds or equals the given value          |
-| `Filter.gt`     | Check the property exceeds the given value                    |
-| `Filter.neq`    | Check the property does not equal the given value             |
-| `Filter.eq`     | Check the property equals the given value                     |
-| `Filter.notHas` | Check the property's existence, negated                       |
-| `Filter.has`    | Check the property's existence                                |
-| `Filter.none`   | Groups a collection of statements in an 'none' relationship   |
-| `Filter.any`    | Groups a collection of statements in an 'any' relationship    |
-| `Filter.all`    | Groups a collection of statements in an 'all' relationship    |
-
-A key must be a string that identifies a feature property or a special key. Read [more on filters here](https://www.mapbox.com/mapbox-gl-js/style-spec/#types-filter)
-
 ## Modify properties
 
 Sources and layers aren't immutable and therefore, can be modified anytime during the map render. For example, to alter the fill color of a layer after it's been added to the map, you use the `mapboxMap` object to get the layer and set the property.
