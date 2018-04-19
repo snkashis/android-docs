@@ -64,9 +64,9 @@ mapboxMap.addSource(rasterSource);
   />
 }}
 
-Adding a GeoJSON source can be done in a few different ways. Providing a URL to the GeoJSON raw data hosted online (or locally inside the assets folder for example) or you can build your own GeoJSON feature collection directly inside the code. The snippets of code below show the different ways to add a GeoJSON source to your map.
+Adding a GeoJSON source can be done in a few different ways. You can provide a URL to the GeoJSON raw data hosted online, provide a link to a GeoJSON file hosted locally inside of the app's assets folder, or you can build your own GeoJSON feature collection directly inside of the code. The snippets of code below show the different ways to add a GeoJSON source to your map.
 
-Add a GeoJSON source from URL:
+Add a GeoJSON source from a URL:
 
 ```java
 URL geoJsonUrl = new URL("https://url-to-geojson-file.geojson");
@@ -74,13 +74,11 @@ GeoJsonSource geoJsonSource = new GeoJsonSource("geojson-source", geoJsonUrl);
 mapboxMap.addSource(geoJsonSource);
 ```
 
-Load a locally stored GeoJSON file and add it to your map as a source:
+Load a locally stored GeoJSON file. Either use the `loadJsonFromAsset()` method found below or use your own preferred way of loading in a JSON file:
 
 ```java
-// Either use the method provided below or your preferred way of loading in a JSON file.
-private String loadJsonFromAsset(String filename) throws IOException {
-  // loads in GeoJSON files from the assets folder.
-  InputStream is = getAssets().open(filename);
+private String loadJsonFromAsset(String nameOfLocalFile) throws IOException {
+  InputStream is = getAssets().open(nameOfLocalFile);
   int size = is.available();
   byte[] buffer = new byte[size];
   is.read(buffer);
@@ -96,7 +94,6 @@ Create a GeoJSON feature collection and then add it to your map:
 
 ```java
 // Create a list to store our line coordinates.
-
 List routeCoordinates = new ArrayList<Point>();
 routeCoordinates.add(Point.fromLngLat(-118.394391, 33.397676));
 routeCoordinates.add(Point.fromLngLat(-118.370917, 33.391142));
@@ -110,7 +107,6 @@ new Feature[]{Feature.fromGeometry(lineString)});
 
 GeoJsonSource geoJsonSource = new GeoJsonSource("geojson-source", featureCollection);
 mapboxMap.addSource(geoJsonSource);
-
 ```
 
 {{
@@ -124,13 +120,68 @@ mapboxMap.addSource(geoJsonSource);
 
 A benefit of having your data inside a GeoJSON source is that you can update, remove, or add additional features inside the source at any time, providing a solution to animating data in your map through the Runtime Styling API. For example, using an Android [ValueAnimator](https://developer.android.com/reference/android/animation/ValueAnimator.html), you can move a feature by updating its coordinates within the GeoJSON data.
 
-<!-- NOTE link to GoJSON plugin -->
+### Image
+
+`ImageSource` allows for a georeferenced raster image to be shown on top of the map. The georeferenced image scales and rotates as the user zooms and rotates the map. The geographic location of the raster image content, supplied with `LatLngQuad`, can be non-axis aligned.
+
+```java
+// Set the latitude and longitude coordinates of the image's four corners
+LatLngQuad quad = new LatLngQuad(
+  new LatLng(46.437, -80.425),
+  new LatLng(46.437, -71.516),
+  new LatLng(37.936, -71.516),
+  new LatLng(37.936, -80.425));
+  
+mapboxMap.addSource(new ImageSource(ID_IMAGE_SOURCE, quad, R.drawable));
+
+// Add layer
+RasterLayer layer = new RasterLayer(ID_IMAGE_LAYER, ID_IMAGE_SOURCE);
+mapboxMap.addLayer(layer);
+```    
+
+The `setImage()` method is a convenient way to update the `ImageSource`'s image by passing in a drawable.
+
+```java
+mapboxMap.getSource(ID_IMAGE_SOURCE)).setImage(R.drawable.image_to_use)
+```
+
+### Custom geometry
+
+There might be a situation when you want to draw a shape that doesn't fit the standard `Point`, `LineString`, `Polygon`, `MultiPoint`, `MultiLineString`, and `MultiPolygon` GeoJSON geometries. A `CustomGeometrySource` can help you achieve this. 
+
+```java 
+CustomGeometrySource source = new CustomGeometrySource(ID_GRID_SOURCE, GeometryTileProvider);
+mapboxMap.addSource(source);
+```
+
+One example of `CustomGeometrySource` usage is to create a black grid on top of the map. This example's code can be found in [the `GridSourceActivity` of the Maps SDK for Android test application](https://github.com/mapbox/mapbox-gl-native/blob/4498917a3b9dbf6cc9728da01f479a027f27f902/platform/android/MapboxGLAndroidSDKTestApp/src/main/java/com/mapbox/mapboxsdk/testapp/activity/style/GridSourceActivity.java).
+
+
+### Raster DEM
+
+`RasterDemSource` currently supports Mapbox Terrain RGB (mapbox://mapbox.terrain-rgb) and [Mapzen Terrarium](https://mapzen.com/documentation/terrain-tiles/formats/#terrarium) tile formats.
+
+The Mapbox terrain tileset is for adding hill terrain to any Mapbox map. Runtime styling can also be used to change the hillshade appearance.
+
+```java
+RasterDemSource rasterDemSource = new RasterDemSource("source-id", "mapbox://mapbox.terrain-rgb");
+mapboxMap.addSource(rasterDemSource);
+
+// Create hillshade layer source to map
+HillshadeLayer hillshadeLayer = new HillshadeLayer("hillshade-layer-id", "source-id").withProperties(
+  hillshadeHighlightColor(Color.parseColor(HILLSHADE_HIGHLIGHT_COLOR)),
+  hillshadeShadowColor(Color.BLACK)
+);
+
+// Add hillshade layer to map
+mapboxMap.addLayer(hillshadeLayer);
+```
 
 ## Layers
 
 While sources hold the data, layers are used to style and display the information. Several layer types are offered depending on your source geometry. Except for layers of the background type, each layer needs to refer to a source. You can optionally filter features and then define how those features are styled.
 
-Each layer offers a `setProperties` API which can be used to style the layer in many different ways. Note that instead of creating different layers depending on certain cases inside your source data, it's recommended to use data-driven styling instead to reduce the number of layers the map needs to render.
+Each layer offers a `setProperties` API which can be used to style the layer in many different ways. Note that instead of creating different layers depending on certain cases inside your source data, it's recommended to use data-driven styling to reduce the number of layers that the map needs to render.
 
 ### Background
 
@@ -226,7 +277,7 @@ mapboxMap.addLayer(selectedMarker);
 
 ### Raster
 
-Raster layers are typically a collection of images that display on top of the base map tiles. While Vector tiles are preferred, satellite imagery or legacy map styles render as a raster layer.
+Raster layers are typically a collection of images that display on top of the base map tiles. While vector tiles are preferred, satellite imagery or legacy map styles render as a raster layer.
 
 ```java
 RasterSource rasterSource = new RasterSource("source-id", "mapbox://mapbox.u8yyzaor");
@@ -236,9 +287,17 @@ RasterLayer rasterLayer = new RasterLayer("layer-id", "source-id");
 mapboxMap.addLayer(rasterLayer);
 ```
 
+One common use case for a `RasterLayer` is adding a layer of satellite tiles to the map:
+
+```java
+// Adding a raster source layer
+RasterSource satelliteRasterSource = new RasterSource("satellite-raster-source", "mapbox://mapbox.satellite",512);
+mapboxMap.addSource(satelliteRasterSource);
+```
+
 ### Circle
 
-Circle layers have a single center coordinate which comes from the source data. It's a geographically accurate projection of a circle on the Earth's surface drawn on the map. A few default properties are provided but can be overriddenwhen the layers first created.
+Circle layers have a single center coordinate which comes from the source data. It's a geographically accurate projection of a circle on the Earth's surface drawn on the map. A few default properties are provided but can be overridden when the layer's first created.
 
 ```java
 VectorSource vectorSource = new VectorSource("source-id", "mapbox://mapbox.2opop9hr");
@@ -277,4 +336,4 @@ if (geoJsonSource != null) {
 
 ## Capturing click events
 
-Layers are not clickable and don't expose any event listeners for you to handle user input. Instead, the map querying feature described in a separate doc go over how to detect when a user has clicked on a polygon inside your fill layer for example.
+Layers are not clickable and don't expose any event listeners for you to handle user input. Instead, the map querying feature described in a separate doc goes over how to detect when a user has clicked on a polygon inside your fill layer for example.
