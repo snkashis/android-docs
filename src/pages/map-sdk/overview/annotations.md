@@ -17,21 +17,22 @@ The Mapbox Maps SDK for Android provides several different ways to mark a single
 
 Markers are useful when identifying a single point on the map. The SDK comes with a default marker icon which can be configured to fit your specific needs. APIs are exposed to optionally change this icon to any bitmap image you wish. To create a marker for you map, you are only required to provide a `LatLng` position which defines where the marker will be placed on the map. Call `mapboxMap.addMarker()` to actually add the marker to the map.
 
+{{
+  <Floater
+    url="https://www.mapbox.com/help/marker-playground"
+    title="Mapbox Marker Playground"
+    category="playground"
+    text="Visit the Mapbox Marker Playground to get started with placing markers on your Mapbox map. Use the playground to choose the marker's location and the map style that you want. Mapbox then generates performant Android code that you can copy and paste into your Android project."
+  />
+}}
+
+
 ```java
 mapboxMap.addMarker(new MarkerOptions()
   .position(new LatLng(48.85819, 2.29458))
   .title("Eiffel Tower")
   );
 ```
-
-{{
-  <Floater
-    url="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/AnimatedMarkerActivity.java"
-    title="Marker views"
-    category="example"
-    text="Control more marker behavior using the MarkerView API which extends a typical Android view."
-  />
-}}
 
 Besides providing the position, you can also add a title and snippet which display inside of an [info window](#info-window). The info window is displayed when users tap on the marker and close when they tap outside of the info window.
 
