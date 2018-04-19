@@ -96,18 +96,21 @@ Create a GeoJSON feature collection and then add it to your map:
 
 ```java
 // Create a list to store our line coordinates.
-List routeCoordinates = new ArrayList<Position>();
-routeCoordinates.add(Position.fromCoordinates(-118.394391, 33.397676));
-routeCoordinates.add(Position.fromCoordinates(-118.370917, 33.391142));
 
-// Create the LineString from the list of coordinates and then make a GeoJSON
-// FeatureCollection so we can add the line to our map as a layer.
-LineString lineString = LineString.fromCoordinates(routeCoordinates);
-FeatureCollection featureCollection =
-  FeatureCollection.fromFeatures(new Feature[]{Feature.fromGeometry(lineString)});
+List routeCoordinates = new ArrayList<Point>();
+routeCoordinates.add(Point.fromLngLat(-118.394391, 33.397676));
+routeCoordinates.add(Point.fromLngLat(-118.370917, 33.391142));
+
+// Create the LineString from the list of coordinates and then make a GeoJSON FeatureCollection
+// so that we can add the line to our map as a layer.
+
+LineString lineString = LineString.fromLngLats(routeCoordinates);
+FeatureCollection featureCollection = FeatureCollection.fromFeatures(
+new Feature[]{Feature.fromGeometry(lineString)});
 
 GeoJsonSource geoJsonSource = new GeoJsonSource("geojson-source", featureCollection);
 mapboxMap.addSource(geoJsonSource);
+
 ```
 
 {{
@@ -192,7 +195,7 @@ mapboxMap.addLayer(lineLayer);
 
 ### Symbol
 
-Symbol layers indicate a single position on the map with either an icon or text label. Similar to GL Markers and Marker Views, the symbol layer can represent the same data and offers the most power for in map displaying. To begin with, we will show how to add a marker image to the map and then display it as your symbol layer.
+Symbol layers indicate a single location on the map with either an icon or text label. Similar to GL Markers and Marker Views, the symbol layer can represent the same data and offers the most power for in map displaying. To begin with, we will show how to add a marker image to the map and then display it as your symbol layer.
 
 ```java
 Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.my_marker_icon);
