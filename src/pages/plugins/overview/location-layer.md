@@ -66,13 +66,13 @@ If your application's targeting Android 6.0 (API 23) or higher, you'll want to u
 It's important to include the location layer `onStart()` and `onStop()` lifecycle events in their respective activity methods. This prevents memory leaks from occurring and reduces battery consumption. The plugin has support for the new `LifecycleObserver` APIs, by adding the plugin as a lifecycle observer in your activity, you won't need to handle the lifecycles manually.
 
 ## Add the location layer
-To initialize the Location layer plugin, you'll need to pass in both the map view and the `mapboxMap` object. Depending on whether or not you'd like the Location Layer to track the user's location automatically or not, you can either pass in a locationEngine or `null`.
+You'll need to pass in both a `MapView` and `MapboxMap` object to initialize the Location Layer Plugin. Depending on whether or not you'd like the plugin to track the user's location automatically or not, you can either pass in a locationEngine or `null`.
 
 ```java
 locationLayerPlugin = new LocationLayerPlugin(mapView, mapboxMap, locationEngine);
 ```
 
-If no location engines provided, you are responsible for updating the location position manually using `LocationLayerPlugin#forceLocationUpdate(@Nullable Location location)`.
+If no location engine is provided, you are responsible for updating the location position manually using `LocationLayerPlugin#forceLocationUpdate(@Nullable Location location)`.
 
 ### Enabling or disabling the LocationLayerPlugin
 
@@ -129,7 +129,7 @@ There are currently 7 modes available:
 | `TRACKING_GPS` | Camera tracks the user location, with bearing provided by a normalized `Location#getBearing()`. |
 | `TRACKING_GPS_NORTH` | Camera tracks the user location, with bearing always set to north (0). |
 
-Here are a few examples from [`LocationLayerModesActivity`](https://github.com/mapbox/mapbox-plugins-android/blob/master/app/src/main/java/com/mapbox/mapboxsdk/plugins/testapp/activity/location/LocationLayerModesActivity.java) in the plugin test application:
+Here are a few examples from [the `LocationLayerModesActivity` in the plugin's test application](https://github.com/mapbox/mapbox-plugins-android/blob/master/app/src/main/java/com/mapbox/mapboxsdk/plugins/testapp/activity/location/LocationLayerModesActivity.java):
 
 **CameraMode.NORMAL**
 
@@ -151,7 +151,7 @@ Here are a few examples from [`LocationLayerModesActivity`](https://github.com/m
 
 ### Gesture thresholds to dismiss camera tracking
 
-This release includes integration with our new gesture library and options to adjust thresholds for tracking a user’s interaction with the map and subsequently, breaking camera tracking if the threshold is exceeded:
+The plugin is integrated with the Mapbox Gestures library. You have the option to adjust thresholds for tracking a user’s interaction with the map, and subsequently, breaking camera tracking if the threshold is exceeded:
 
 - `LocationLayerOptions#trackingInitialMoveThreshold(float)` adjusts the minimum single pointer movement in pixels required to break camera tracking.
 - `LocationLayerOptions#trackingMultiFingerMoveThreshold(float)` adjusts minimum multi pointer movement in pixels required to break camera tracking (for example during scale gesture).
@@ -172,20 +172,11 @@ This release includes integration with our new gesture library and options to ad
 ```
 
 ## Usage with navigation
-Once a navigation session's started using the [Mapbox Navigation SDK](/android-docs/navigation/overview/), a few adjustments will need to be made to the Location Layer plugin to improve the performance and behavior.
+Once a navigation session's started using the [Mapbox Navigation SDK](/android-docs/navigation/overview/), a few adjustments will need to be made to the plugin to improve its performance and behavior.
 
-If you plan to use the snapped location provided by the navigation SDK, you'll need to use `locationLayerPlugin.setLocationEngine()` to `null` to prevent location coordinates that aren't snapped to update the icon location. Instead, you'll need to add `forceLocationUpdate()` inside the navigation SDKs `onProgressChange()` callback which _does_ provided the snapped location.
+If you plan to use the snapped location provided by the Navigation SDK, you'll need to use `locationLayerPlugin.setLocationEngine()` to `null` to prevent location coordinates that aren't snapped to update the icon's location. Instead, you'll need to add `forceLocationUpdate()` inside of the Navigation SDK's `onProgressChange()` callback, which _does_ provide the snapped location.
 
 ## Customization
-The plugin allows for several customizations such as drawables, opacities, and more by passing in a style either while constructing the plugin or using the provided `applyStyle()` API. For example, if you'd like to change the location layer icon from the default blue to red, I'd first need to generate a new icon drawable showing the change, add the drawable to my project, and then create a new style with the parentLayout being `LocationLayer`. The snippet below shows all the currently customizable attributes.
+The plugin allows for several customizations such as drawables, opacities, and more by passing in a style either while constructing the plugin or by using the provided `applyStyle()` API.
 
-```xml
-<style name="CustomLocationLayer" parent="LocationLayer">
-  <item name="foregroundDrawable">@drawable/custom_user_icon</item>
-  <item name="backgroundDrawable">@drawable/mapbox_user_stroke_icon</item>
-  <item name="bearingDrawable">@drawable/mapbox_user_bearing_icon</item>
-  <item name="navigationDrawable">@drawable/mapbox_user_puck_icon</item>
-  <item name="accuracyAlpha">0.15</item>
-  <item name="accuracyColor">@color/mapbox_plugin_location_layer_blue</item>
-</style>
-```
+For example, if you'd like to change the location layer icon from the default blue to a red, you first generate a new icon drawable showing the change. Then add the drawable to your project and then create a new style with the `parentLayout` being `LocationLayer`. [Here is a list of all of the attributes that can be customized](https://github.com/mapbox/mapbox-plugins-android/blob/4cb4a740c03340ec1cf5a1c21a47538e20a29454/app/src/main/res/values/styles.xml#L13).
