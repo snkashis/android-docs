@@ -276,5 +276,29 @@ module.exports = {
   placesSplash: {
     basename: 'places-splash.png',
     sizes: [{ width: 600 }]
+  },
+  locationLayerNormal: {
+    basename: 'location-layer-normal.png',
+    sizes: [{ width: 600 }]
+  },
+  locationLayerCompass: {
+    basename: 'location-layer-compass.png',
+    sizes: [{ width: 600 }]
+  },
+  locationLayerGps: {
+    basename: 'location-layer-gps.png',
+    sizes: [{ width: 600 }]
+  },
+  locationLayerNormalGif: {
+    basename: 'location-layer-normal.gif',
+    sizes: [{ width: 500 }]
+  },
+  locationLayerCompassGif: {
+    basename: 'location-layer-compass.gif',
+    sizes: [{ width: 500 }]
+  },
+  locationLayerGpsGif: {
+    basename: 'location-layer-gps.gif',
+    sizes: [{ width: 500 }]
   }
 };
