@@ -13,16 +13,16 @@ prependJs:
 ---
 # Offline
 
-A user's device won't always have a strong enough internet connection to download and view map tiles. You might want to build an offline mode into your Android project to account for this situation. The Mapbox Offline Plugin for Android is a convenient way to send information to [the Maps SDK's `OfflineManager` class](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/java/com/mapbox/mapboxsdk/offline/OfflineManager.java) and use the manager in a background service to download map tiles for offline use. Once the offline download region is defined and initialized, the plugin handles everything else for you. Because the plugin uses a service, the downloading continues even if when your application is running in the background.
+A user's device won't always have a strong enough internet connection to download and view map tiles. You might want to build an offline mode into your Android project to account for this situation. The Mapbox Offline Plugin for Android is a convenient way to send information to [the Maps SDK's `OfflineManager` class](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/java/com/mapbox/mapboxsdk/offline/OfflineManager.java) and use the manager in a background service to download map tiles for offline use. Once the offline download region is defined and initialized, the plugin handles everything else for you. Because the plugin uses a service, the downloading continues even if your application is running in the background.
 
 View [our offline documentation for more information about how the Mapbox Maps SDK for Android handles offline mapping](https://www.mapbox.com/android-docs/map-sdk/overview/offline/).
 
 
 ## Install the Offline Plugin
 
-To start developing an application using the Offline Plugin, you'll need to add the appropriate dependencies inside your `build.gradle` file. This dependency includes the Maps SDK for Android. All dependencies given below can be found on MavenCentral.
+To start developing an application using the Offline Plugin, you'll need to add the appropriate dependencies inside of your `build.gradle` file. This dependency includes the Maps SDK for Android. All dependencies given below can be found on MavenCentral.
 
-If your application is close or exceeds the 65k method count limit, you can mitigate this problem by enabling ProGuard inside your application. ProGuard directives are included in the Android dependencies to preserve the required classes.
+If your application is close or exceeds the 65k method count limit, you can mitigate this problem by enabling ProGuard inside of your application. ProGuard directives are included in the Android dependencies to preserve the required classes.
 
 ### Add the dependency
 To install the offline plugin, head over to the [Mapbox Plugin Overview](/android-docs/plugins/overview/) page which will walk you through adding the dependency.
@@ -44,7 +44,7 @@ dependencies {
 5. Click the Sync Project with Gradle Files near the toolbar in Studio.
 
 ## Add the Offline Plugin
-The Offline Plugin requires no permissions and is initialized by eventually passing in a _built_ ` OfflineDownloadOptions`. But before you do that, you'll want to define the map region that you want to download.
+The Offline Plugin requires no permissions and is initialized by eventually passing in a _built_ ` OfflineDownloadOptions` object. But before you do that, you'll want to define the map region that you want to download.
 
 ```java
 // Define region of map tiles 
