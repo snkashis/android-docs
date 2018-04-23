@@ -10,4 +10,5 @@ export const LOCATION_LAYER_PLUGIN_VERSION = '0.5.0';
 export const BUILDING_PLUGIN_VERSION = '0.2.0';
 export const GEOJSON_PLUGIN_VERSION = '0.2.0';
 export const LOCALIZATION_PLUGIN_VERSION = '0.2.0';
+export const OFFLINE_PLUGIN_VERSION = '0.1.0';
 export const STYLE_VERSION = '8';

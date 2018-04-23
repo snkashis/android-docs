@@ -81,6 +81,14 @@ class SideNavigation extends React.Component {
             >
               Traffic
             </a>
+            <a
+              href={prefixUrl(
+                `/api/plugins/offline/${constants.OFFLINE_PLUGIN_VERSION}/index.html`
+              )}
+              className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
+            >
+              Offline
+            </a>
           </div>
         }
         respondsToHover={true}

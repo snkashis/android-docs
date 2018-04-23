@@ -17,6 +17,7 @@ overviewHeaderProps:
     - Show user location
     - Display traffic and 3D buildings
     - Change the map's language
+    - Offline mapping
   newFeature:
     - false
     - false
@@ -32,7 +33,8 @@ prependJs:
       BUILDING_PLUGIN_VERSION,
       GEOJSON_PLUGIN_VERSION,
       PLACES_PLUGIN_VERSION,
-      LOCALIZATION_PLUGIN_VERSION
+      LOCALIZATION_PLUGIN_VERSION,
+      OFFLINE_PLUGIN_VERSION
     } from '../../../constants';
 ---
 
@@ -52,6 +54,8 @@ The plugins we offer are extensive and cover many of our SDKs for Android. They 
 - **Location Layer**: A popular, often critical feature is showing the user's current location as an annotation to give a reference point on the map.
 - **Traffic**: Place realtime traffic data within your map style as a layer.
 - **Places**: Add UI components such as a Place Picker or Autocomplete search built on top of the [Mapbox Geocoding API](https://www.mapbox.com/api-documentation/#geocoding). Each component includes an intentBuilder which starts an activity for results and returns a Carmen Feature.
+- **Offline**: Download map tiles and easily view already-downloaded regions for offline mapping.
+
 
 ## Prerequisites
 

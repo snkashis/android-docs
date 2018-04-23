@@ -28,7 +28,8 @@ const productPageOrder = {
     'traffic',
     'localization',
     'places',
-    'geojson'
+    'geojson',
+    'offline'
   ],
   'plugins/examples/': ['index'],
   'navigation/overview/': [
