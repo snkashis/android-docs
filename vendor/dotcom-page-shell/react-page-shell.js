@@ -904,6 +904,9 @@ var navigationMenuData = {
       name: 'Customers',
       to: '/showcase/'
     }, {
+      name: 'Community',
+      to: '/community/'
+    }, {
       name: 'Careers',
       to: '/careers/'
     }, {
