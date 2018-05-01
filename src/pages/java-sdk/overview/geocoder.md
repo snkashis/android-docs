@@ -68,7 +68,7 @@ You can narrow the response like forward geocoding by biasing the result using t
 ```java
 MapboxGeocoding reverseGeocode = MapboxGeocoding.builder()
         .accessToken(ACCESS_TOKEN)
-        .query(Point.fromCoordinates(-77.03655, 38.89770))
+        .query(Point.fromLngLat(-77.03655, 38.89770))
         .geocodingTypes(GeocodingCriteria.TYPE_ADDRESS)
         .build();
 
