@@ -8,16 +8,16 @@ const menuItems = [
     text: 'Maps SDK'
   },
   {
-    url: prefixUrl('/plugins/overview/'),
-    text: 'Plugins'
+    url: prefixUrl('/navigation/overview/'),
+    text: 'Navigation SDK'
   },
   {
     url: prefixUrl('/java-sdk/overview/'),
     text: 'Java SDK'
   },
   {
-    url: prefixUrl('/navigation/overview/'),
-    text: 'Navigation SDK'
+    url: prefixUrl('/plugins/overview/'),
+    text: 'Plugins'
   },
   {
     url: prefixUrl('/core/overview/'),
