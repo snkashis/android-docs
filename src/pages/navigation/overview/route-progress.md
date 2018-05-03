@@ -36,6 +36,8 @@ navigation.addProgressChangeListener(new ProgressChangeListener() {
 | fractionTraveled            | A `float` value between 0 and 1 giving the total percentage the user has completed in the navigation session, based on distance.
 | currentLegProgress          | returns the `LegProgress` object with information specific to the current route leg. You can also access step information through this object. |
 | remainingWaypoints          | Number of waypoints remaining on the current route.    |
+| currentStepPoints           | List of `Point`s representing the current step geometry.  |
+| upcomingStepPoints          | List of `Point`s representing the upcoming step geometry.    |
 
 | RouteLegProgress APIs       | Description           |
 | --------------------------- |:---------------------:|
@@ -48,6 +50,7 @@ navigation.addProgressChangeListener(new ProgressChangeListener() {
 | previousStep                | Get the previous step the user traversed along, if the user is still on the first step, this will return null. |
 | currentStep                 | Returns the current step the user is traversing along.  Should be used to provide voice / banner instructions. |
 | upComingStep                | Get the next/upcoming step immediately after the current step. If the user is on the last step on the last leg, this will return null since a next step doesn't exist. |
+| currentLegAnnotation        | Provides the current annotation data that the `Location` updates are traveling along.  Note: the `DirectionsRoute` must be requested with `ANNOTATION_DISTANCE` to enable this within the RouteProgress - we now do this by default in `NavigationRoute`. |
 
 | StepProgress APIs           | Description           |
 | --------------------------- |:---------------------:|
@@ -55,3 +58,5 @@ navigation.addProgressChangeListener(new ProgressChangeListener() {
 | durationRemaining           | The estimated duration remaining till the user reaches the next step maneuver. |
 | fractionTraveled            | A `float` value between 0 and 1 giving the total percentage the user has traveled along the current step. |
 | distanceRemaining           | The total distance the user has traveled along the current step.   |
+| currentIntersection         | An intersection is considered a current intersection once passed through and will remain so until a different intersection is passed through.   |
+| upcomingIntersection        | The intersection being traveled towards on the route. Will be null if the upcoming step is null (last step of the leg). |

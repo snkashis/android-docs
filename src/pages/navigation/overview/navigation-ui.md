@@ -54,17 +54,12 @@ With either a `DirectionsRoute` from `NavigationRoute` or two `Point` objects (o
 Point origin = Point.fromLngLat(-77.03613, 38.90992);
 Point destination = Point.fromLngLat(-77.0365, 38.8977);
 
-// Pass in your Amazon Polly pool id for speech synthesis using Amazon Polly
-// Set to null to use the default Android speech synthesizer
-String awsPoolId = "your_cognito_pool_id";
-
 boolean simulateRoute = true;
 
 // Create a NavigationLauncherOptions object to package everything together
 NavigationLauncherOptions options = NavigationLauncherOptions.builder()
   .origin(origin)
   .destination(destination)
-  .awsPoolId(awsPoolId)
   .shouldSimulateRoute(simulateRoute)
   .build();
 
@@ -112,9 +107,9 @@ rather than using `NavigationLauncher`.
 To use this implementation, there is some setup you have to do to ensure the `View` works properly:
 
 #### Step 1
-The `NavigationView` has lifecycle methods to ensure the `View` properly handles Android configuration changes or user interactions.  You must also call `navigationView.getNavigationAsync(NavigationViewListener listener);` when `NavigationView` is inflated and `NavigationView#onCreate()` has been called.  
+The `NavigationView` has lifecycle methods to ensure the `View` properly handles Android configuration changes or user interactions.  You must also call `navigationView.initialize(OnNavigationReadyCallback callback);` when `NavigationView` is inflated and `NavigationView#onCreate()` has been called.  
 
-Calling `getNavigationAsync()` will ultimately call `onNavigationReady()` once all components for the `View` have been properly initialized.
+Calling `initialize()` will ultimately call `onNavigationReady()` once all components for the `View` have been properly initialized.
 
 ``` java
 @Override
@@ -124,7 +119,7 @@ protected void onCreate(@Nullable Bundle savedInstanceState) {
   setContentView(R.layout.activity_navigation);
   navigationView = findViewById(R.id.navigationView);
   navigationView.onCreate(savedInstanceState);
-  navigationView.getNavigationAsync(this);
+  navigationView.initialize(this);
 }
 
 @Override
@@ -224,7 +219,7 @@ public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceStat
   super.onViewCreated(view, savedInstanceState);
   navigationView = view.findViewById(R.id.navigation_view_fragment);
   navigationView.onCreate(savedInstanceState);
-  navigationView.getNavigationAsync(this);
+  navigationView.initialize(this);
 }
 
 @Override
