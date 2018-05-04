@@ -40,7 +40,8 @@ const productPageOrder = {
     'off-route',
     'faster-route',
     'camera',
-    'route-progress'
+    'route-progress',
+    'map-matching'
   ],
   'java-sdk/overview/': [
     'index',
