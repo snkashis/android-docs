@@ -31,7 +31,6 @@ prependJs:
       TRAFFIC_PLUGIN_VERSION,
       LOCATION_LAYER_PLUGIN_VERSION,
       BUILDING_PLUGIN_VERSION,
-      GEOJSON_PLUGIN_VERSION,
       PLACES_PLUGIN_VERSION,
       LOCALIZATION_PLUGIN_VERSION,
       OFFLINE_PLUGIN_VERSION
@@ -79,4 +78,3 @@ Before using any of the Mapbox Plugins for Android, you will need:
 - If you find a bug and can provide steps to reliably reproduce it, open an issue in the [/mapbox-plugins-android repository](https://github.com/mapbox/mapbox-plugins-android) on GitHub and apply the bug label.
 - If you have a feature request, open an issue in the [/mapbox-plugins-android repository](https://github.com/mapbox/mapbox-plugins-android) on GitHub, and apply the enhancement label.
 - If you want to contribute, look over [our contribution guidelines](https://github.com/mapbox/mapbox-plugins-android/blob/master/CONTRIBUTING.md) and open a pull request with your changes.
-
