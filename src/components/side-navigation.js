@@ -105,6 +105,14 @@ class SideNavigation extends React.Component {
             >
               Localization
             </a>
+            <a
+              href={prefixUrl(
+                `/api/plugins/china/${constants.LOCALIZATION_PLUGIN_VERSION}/index.html`
+              )}
+              className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
+            >
+              China
+            </a>
           </div>
         }
         respondsToHover={true}

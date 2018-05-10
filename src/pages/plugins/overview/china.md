@@ -37,7 +37,7 @@ repositories {
 
 dependencies {
   // China flavor dependency
-  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-china:{{ CHINA_PLUGIN_VER
+  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-china:{{ CHINA_PLUGIN_VERSION }}'
 
   // Global flavor dependency
   implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-china-global:{{ CHINA_PLUGIN_VERSION }}'
