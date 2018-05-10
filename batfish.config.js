@@ -28,6 +28,7 @@ const productPageOrder = {
     'traffic',
     'localization',
     'places',
+    'china',
     'offline'
   ],
   'plugins/examples/': ['index'],
