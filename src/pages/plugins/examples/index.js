@@ -4,8 +4,7 @@ description: 'Working code examples of Mapbox Plugins for Android'
 sideNavSections:
   - title: "Traffic"
   - title: "Location Layer"
-  - title: "Building"
-  - title: "GeoJSON"  
+  - title: "Building"  
   - title: "Localization"  
   - title: "Marker clusters"
   - title: "Places"
@@ -47,15 +46,6 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             difficulty="intro"
             exampleImgID="examplesBuilding"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/plugins/BuildingPluginActivity.java"
-          />
-        </ExampleCardContainer>
-        <ExampleCardContainer exampleTitle="GeoJSON">
-          <ExampleCard
-            exampleTitle="Load GeoJSON data"
-            exampleDescription="Easily retrieve and display GeoJSON data from a URL, a file included in an app, or file stored on the device."
-            difficulty="intro"
-            exampleImgID="examplesGeoJson"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/plugins/GeoJsonPluginActivity.java"
           />
         </ExampleCardContainer>
         <ExampleCardContainer exampleTitle="Localization">
