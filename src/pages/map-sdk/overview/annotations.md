@@ -2,6 +2,7 @@
 title: "Annotations"
 description: "Looking to annotate a map with the Mapbox Maps SDK for Android. Read this documentation to learn about markers, info windows, lines, polygons, plus more."
 sideNavSections:
+  - title: "Source and layer"
   - title: "Markers"
   - title: "Info window"
   - title: "Polyline and polygons"
@@ -11,7 +12,17 @@ prependJs:
 
 # Annotations
 
-The Mapbox Maps SDK for Android provides several different ways to mark a single point, add a line between many points, or draw a polygon. Often, these objects are drawn either on top of the map or in some cases, within the map itself. This document walks you through how to add high-level objects. If you'd like more control over annotations, make sure to check out the [runtime styling](/map-sdk/overview/runtime-styling/) documentation.
+The Mapbox Maps SDK for Android provides several different ways to mark a single point, add a line between many points, or draw a polygon. Often, these objects are drawn either on top of the map or in some cases, within the map itself. This document walks you through how to add high-level objects. 
+
+## Source and layer
+
+Using [data sources](/android-docs/map-sdk/overview/runtime-styling/#sources) and [map layers](/android-docs/map-sdk/overview/runtime-styling/#layers) together is the most performant option for showing data on a Mapbox map. This combination also gives you much more fine-grain control over:
+
+- Icons that represent individual points
+- Lines
+- Polygons
+
+See [the runtime styling page](/android-docs/map-sdk/overview/runtime-styling/) for more information. We recommend you explore the source and layer combination for creating annotations. Below, you'll find information about less complex (and less performant) ways to show annotations.
 
 ## Markers
 
@@ -98,17 +109,32 @@ marker.setIcon(icon);
 
 ## Polyline and polygons
 
-Adding a line or polygon to your map is like adding a marker. Due to the nature of these objects, different APIs are exposed, such as polygon color or line width. Instead of taking in a single position,  bundle all your LatLng's inside a List and then pass them in using the `addAll()` API.
+Adding a line or polygon to your map is like adding a marker. Due to the nature of these objects, different APIs are exposed, such as polygon color or line width. Instead of taking in a single position, bundle all your `LatLng` objects inside of a `List` and then pass them in using the `addAll()` method.
+
+### Draw a polyline on the map 
+
+Make sure that the first and last `Point` locations are the same.
 
 ```java
-// Draw polyline on the map
 mapboxMap.addPolyline(new PolylineOptions()
   .addAll(points)
   .color(Color.parseColor("#3bb2d0"))
   .width(2));
+```
 
-// Draw a polygon on the map
+### Draw a polygon on the map
+
+Make sure that the first and last `Point` locations are the same.
+
+```java
 mapboxMap.addPolygon(new PolygonOptions()
   .addAll(polygon)
   .fillColor(Color.parseColor("#3bb2d0")));
 ```
+
+### Use line and fill layers
+
+To use the `addPolyline()` or `addPolygon()` methods in the code above, you'll have a list of `LatLng` objects which represent the line or the polygon area. As explained at the top of this page, using sources and layers gives you much more flexibility to show geographic data on your map. With your list of `LatLng` objects, you could create a `FeatureCollection` and use that `FeatureCollection` to create a `GeoJsonSource`. Feed the `GeoJsonSource` to:
+
+-  a `LineLayer` to show the line that you'd otherwise draw via `addPolyline()`.
+-  a `FillLayer` to show the area that you'd otherwise draw via `addPolygon()`.
