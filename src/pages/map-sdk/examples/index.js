@@ -206,13 +206,6 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/DrawPolygonActivity.java"
           />
           <ExampleCard
-            exampleTitle="Draw a marker view"
-            exampleDescription="Attach a view to a given position on the map."
-            difficulty="intro"
-            exampleImgID="examplesAnnotationsMarkerView"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/BasicMarkerViewActivity.java"
-          />
-          <ExampleCard
             exampleTitle="Draw a polygon with holes"
             exampleDescription="Draw a vector polygon with holes on a map using the Map SDK."
             difficulty="intermediate"

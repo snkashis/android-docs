@@ -125,10 +125,6 @@ module.exports = {
     basename: 'annotations-polygon.png',
     sizes: [{ width: 520 }]
   },
-  examplesAnnotationsMarkerView: {
-    basename: 'annotations-marker-view.png',
-    sizes: [{ width: 520 }]
-  },
   examplesAnnotationsPolygonWithHoles: {
     basename: 'annotations-polygon-with-holes.png',
     sizes: [{ width: 520 }]
