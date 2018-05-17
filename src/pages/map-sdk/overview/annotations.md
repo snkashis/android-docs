@@ -6,6 +6,7 @@ sideNavSections:
   - title: "Markers"
   - title: "Info window"
   - title: "Polyline and polygons"
+  - title: "Bubble annotations"
 prependJs:
   - "import { Floater } from '../../../components/floater';"
 ---
@@ -138,3 +139,13 @@ To use the `addPolyline()` or `addPolygon()` methods in the code above, you'll h
 
 -  a `LineLayer` to show the line that you'd otherwise draw via `addPolyline()`.
 -  a `FillLayer` to show the area that you'd otherwise draw via `addPolygon()`.
+
+
+## Bubble annotations
+
+The 5.1.0 release of the Mapbox Maps SDK for Android introduced the bubble annotation. This annotation is a default pop-up window, which is commonly shown when a map marker is selected. The annotation can hold images, text, and other location information that you'd like to show.
+
+You have fine-grain control over the the bubble window's design if you'd like to change its appearance. The various XML attributes for a `BubbleLayout`, such as the bubble's color or radius, [can be found here](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/res/values/attrs.xml#L126-L141).
+
+An example of bubble annotation usage is in the [the Mapbox Android demo app's `SymbolLayerMapillaryActivity` example](https://github.com/mapbox/mapbox-android-demo/blob/2f90c88df82fccc8bb6b1488465649d2ab479329/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/labs/SymbolLayerMapillaryActivity.java#L749). The bubble layout that is used in the example, is set in [this XML file](https://github.com/mapbox/mapbox-android-demo/blob/75ec397785028356961eea879338ffb39f5f1cba/MapboxAndroidDemo/src/main/res/layout/layout_callout.xml#L2-L20).
+
