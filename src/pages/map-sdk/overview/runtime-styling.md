@@ -336,4 +336,4 @@ if (geoJsonSource != null) {
 
 ## Capturing click events
 
-Layers are not clickable and don't expose any event listeners for you to handle user input. Instead, the map querying feature described in a separate doc goes over how to detect when a user has clicked on a polygon inside your fill layer for example.
+Layers are not clickable and don't expose any event listeners for you to handle user input. Instead, [the Mapbox Maps SDK for Android offers several ways to query the map's rendered features](https://www.mapbox.com/android-docs/map-sdk/overview/query/).
