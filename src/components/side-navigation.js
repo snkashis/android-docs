@@ -91,14 +91,6 @@ class SideNavigation extends React.Component {
             </a>
             <a
               href={prefixUrl(
-                `/api/plugins/cluster/${constants.MARKER_CLUSTER_PLUGIN_VERSION}/index.html`
-              )}
-              className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}
-            >
-              Marker cluster
-            </a>
-            <a
-              href={prefixUrl(
                 `/api/plugins/localization/${constants.LOCALIZATION_PLUGIN_VERSION}/index.html`
               )}
               className={`transition color-blue-on-hover txt-bold color-gray-dark mt3 bg-transparent txt-ms`}

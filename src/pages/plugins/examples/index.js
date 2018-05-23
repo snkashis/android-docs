@@ -6,7 +6,6 @@ sideNavSections:
   - title: "Location Layer"
   - title: "Building"  
   - title: "Localization"  
-  - title: "Marker clusters"
   - title: "Places"
 ---*/
 
@@ -55,15 +54,6 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             difficulty="intro"
             exampleImgID="examplesLocalization"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/plugins/LocalizationPluginActivity.java"
-          />
-        </ExampleCardContainer>
-        <ExampleCardContainer exampleTitle="Marker clusters">
-          <ExampleCard
-            exampleTitle="Add marker clusters"
-            exampleDescription="Add marker clusters to the map to better display your data"
-            difficulty="intro"
-            exampleImgID="examplesMarkerClusters"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/plugins/MarkerClustersPluginActivity.java"
           />
         </ExampleCardContainer>
         <ExampleCardContainer exampleTitle="Places">
