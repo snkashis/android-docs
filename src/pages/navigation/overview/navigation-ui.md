@@ -182,7 +182,6 @@ public void onNavigationReady() {
   NavigationViewOptions options = NavigationViewOptions.builder()
     .origin(origin)
     .destination(destination)
-    .awsPoolId(awsPoolId)
     .shouldSimulateRoute(simulateRoute)
     .build();
 
