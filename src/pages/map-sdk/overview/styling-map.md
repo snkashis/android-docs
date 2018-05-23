@@ -29,6 +29,26 @@ Programatically in Java:
 mapView.setStyleUrl(Style.DARK);
 ```
 
+Set the style _before_ `mapView.onCreate(savedInstanceState)` :
+
+```java
+@Override
+  protected void onCreate(final Bundle savedInstanceState) {
+	
+	mapView = findViewById(R.id.mapView);
+	
+	mapView.setStyleUrl(Style.DARK);
+	
+	mapView.onCreate(savedInstanceState);
+	mapView.getMapAsync(new OnMapReadyCallback() {
+	  @Override
+	  public void onMapReady(MapboxMap mapboxMap) {
+	  
+	  }
+	});	
+}
+```
+
 In a XML layout file:
 
 ```xml
