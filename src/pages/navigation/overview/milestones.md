@@ -50,6 +50,11 @@ navigation.addMilestone(new RouteMilestone.Builder()
       Trigger.gt(TriggerProperty.STEP_DISTANCE_TOTAL_METERS, 200)
     )
   ).build());
+
+// Adding a list of Milestones
+List<Milestone> milestones = new ArrayList<>();
+...
+navigation.addMilestones(milestones);
 ```
 
 ### Trigger conditions

@@ -89,31 +89,31 @@ For increasing the likelihood that the route you receive starts off in the same 
 Point origin = Point.fromLngLat(-77.03613, 38.90992);
 Point destination = Point.fromLngLat(-77.0365, 38.8977);
 
-NavigationRoute.builder()
-      .accessToken(Mapbox.getAccessToken())
-      .origin(origin)
-      .destination(destination)
-      .build()
-      .getRoute(new Callback<DirectionsResponse>() {
-        @Override
-        public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
+NavigationRoute.builder(this)
+    .accessToken(Mapbox.getAccessToken())
+    .origin(origin)
+    .destination(destination)
+    .build()
+    .getRoute(new Callback<DirectionsResponse>() {
+      @Override
+      public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
 
-        }
+      }
 
-        @Override
-        public void onFailure(Call<DirectionsResponse> call, Throwable t) {
+      @Override
+      public void onFailure(Call<DirectionsResponse> call, Throwable t) {
 
-        }
-      });
+      }
+    });
 ```
 
 If your navigation involves a bunch of pick-up and drop-off points, you can add up to 25 coordinates to the `NavigationRoute` builder; these are considered stops in between the origin and destination `Position`s (in the order that you add them - first waypoint is the first stop):
 
 ```java
-NavigationRoute.Builder builder = NavigationRoute.builder()
-      .accessToken(Mapbox.getAccessToken())
-      .origin(origin)
-      .destination(destination);
+NavigationRoute.Builder builder = NavigationRoute.builder(this)
+    .accessToken(Mapbox.getAccessToken())
+    .origin(origin)
+    .destination(destination);
 
     for (Point waypoint : waypoints) {
       builder.addWaypoint(waypoint);
