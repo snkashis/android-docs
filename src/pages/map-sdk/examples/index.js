@@ -10,6 +10,8 @@ sideNavSections:
   - title: "Data Driven Styling"
   - title: "Offline"
   - title: "Query Map"
+  - title: "Image generation"
+
 ---*/
 
 import React from 'react';
@@ -129,18 +131,39 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/AddWmsSourceActivity.java"
           />
           <ExampleCard
-            exampleTitle="Create and style data clusters"
-            exampleDescription="Use GeoJSON to visualize point data in clusters."
-            difficulty="advanced"
-            exampleImgID="examplesStyleMapClustering"
-            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/GeoJsonClusteringActivity.java"
-          />
-          <ExampleCard
             exampleTitle="Marker symbol layer"
             exampleDescription="Display markers on the map by adding a symbol layer."
             difficulty="advanced"
             exampleImgID="examplesStyleMapSymbolLayer"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/BasicSymbolLayerActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Image source"
+            exampleDescription="Use an image source to display images on the map."
+            difficulty="intermediate"
+            exampleImgID="examplesStyleImageSource"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/ImageSourceActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Data time lapse"
+            exampleDescription="Use an image source and a runnable to show data changes over time."
+            difficulty="advanced"
+            exampleImgID="examplesStyleImageTimelapseSource"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/ImageSourceTimeLapseActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Hillshading"
+            exampleDescription="Use elevation data to show and customize hills and mountains."
+            difficulty="intro"
+            exampleImgID="examplesStyleHillShading"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/HillShadeActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Fading map style switch"
+            exampleDescription="Fade map styles in and out based on zoom level."
+            difficulty="intro"
+            exampleImgID="examplesStyleStyleZoomFadeSwitch"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/HillShadeActivity.java"
           />
         </ExampleCardContainer>
         <ExampleCardContainer exampleTitle="Map Camera">
@@ -288,6 +311,13 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/ZoomDependentFillColorActivity.java"
           />
           <ExampleCard
+            exampleTitle="Create and style data clusters"
+            exampleDescription="Use GeoJSON to visualize point data in clusters."
+            difficulty="advanced"
+            exampleImgID="examplesStyleMapClustering"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/GeoJsonClusteringActivity.java"
+          />
+          <ExampleCard
             exampleTitle="Style lines using an identity property function"
             exampleDescription={
               'Using an identity line-color property function for a visualization.'
@@ -320,6 +350,41 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             difficulty="advanced"
             exampleImgID="examplesStyleMapHotspotsRuntime"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/CreateHotspotsActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Heatmap data"
+            exampleDescription="Add and customize a heatmap to visualize data."
+            difficulty="intro"
+            exampleImgID="examplesDdsHeatmapData"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/HeatmapActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Styling heatmaps"
+            exampleDescription="Gain minute control over heatmap coloring, size, density, and other styling."
+            difficulty="intermediate"
+            exampleImgID="examplesDdsHeatmapStylingData"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/MultipleHeatmapStylingActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Water depth"
+            exampleDescription="Use data-driven styling to show bathymetry (water depth) data."
+            difficulty="intermediate"
+            exampleImgID="examplesDdsWaterDepthData"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/BathymetryActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Multiple geometries"
+            exampleDescription="Filter and draw multiple geometries from a single GeoJSON file."
+            difficulty="intermediate"
+            exampleImgID="examplesDdsMultipleGeometries"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/MultipleGeometriesActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="SymbolLayer info window"
+            exampleDescription="Use a SymbolLayer and icons to show data in a BubbleLayout-style info window."
+            difficulty="advanced"
+            exampleImgID="examplesDdsSymbolLayerInfoWindow"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/InfoWindowSymbolLayerActivity.java"
           />
         </ExampleCardContainer>
         <ExampleCardContainer exampleTitle="Offline">
@@ -378,6 +443,24 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             difficulty="intermediate"
             exampleImgID="examplesQueryQueryMap"
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/query/QueryFeatureActivity.java"
+          />
+        </ExampleCardContainer>
+        <ExampleCardContainer exampleTitle="Image generation">
+          <ExampleCard
+            exampleTitle="Snapshot notification"
+            exampleDescription={
+              'Show a snapshotted map image in a notification.'
+            }
+            difficulty="intro"
+            exampleImgID="examplesSnapshotNotification"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/snapshot/SnapshotNotificationActivity.java"
+          />
+          <ExampleCard
+            exampleTitle="Snapshot sharing"
+            exampleDescription={'Send and share a map snapshot image'}
+            difficulty="intro"
+            exampleImgID="examplesSnapshotShare"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/snapshot/SnapshotShareActivity.java"
           />
         </ExampleCardContainer>
       </PageShell>

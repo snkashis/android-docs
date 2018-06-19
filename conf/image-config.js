@@ -89,6 +89,22 @@ module.exports = {
     basename: 'style-map-symbol-layer.png',
     sizes: [{ width: 520 }]
   },
+  examplesStyleImageSource: {
+    basename: 'style-map-image-source.png',
+    sizes: [{ width: 520 }]
+  },
+  examplesStyleImageTimelapseSource: {
+    basename: 'style-map-image-time-lapse.png',
+    sizes: [{ width: 520 }]
+  },
+  examplesStyleHillShading: {
+    basename: 'style-map-hillshading.png',
+    sizes: [{ width: 520 }]
+  },
+  examplesStyleStyleZoomFadeSwitch: {
+    basename: 'style-map-zoom-style-switch-fade.png',
+    sizes: [{ width: 520 }]
+  },
   examplesCameraAnimatedCamera: {
     basename: 'camera-animated-camera.gif',
     sizes: [{ width: 520 }]
@@ -173,6 +189,26 @@ module.exports = {
     basename: 'dds-data-time-lapse.png',
     sizes: [{ width: 520 }]
   },
+  examplesDdsHeatmapData: {
+    basename: 'dds-heatmap.png',
+    sizes: [{ width: 520 }]
+  },
+  examplesDdsHeatmapStylingData: {
+    basename: 'dds-heatmap-styling.png',
+    sizes: [{ width: 520 }]
+  },
+  examplesDdsWaterDepthData: {
+    basename: 'dds-water-depth.png',
+    sizes: [{ width: 520 }]
+  },
+  examplesDdsMultipleGeometries: {
+    basename: 'dds-multiple-geometries.png',
+    sizes: [{ width: 520 }]
+  },
+  examplesDdsSymbolLayerInfoWindow: {
+    basename: 'dds-info-window-symbol-layer.png',
+    sizes: [{ width: 520 }]
+  },
   examplesOfflineSimpleOffline: {
     basename: 'offline-simple-offline.png',
     sizes: [{ width: 520 }]
@@ -247,6 +283,14 @@ module.exports = {
   },
   examplesOptimization: {
     basename: 'mapbox-services-optimization.png',
+    sizes: [{ width: 520 }]
+  },
+  examplesSnapshotNotification: {
+    basename: 'snapshot-notification.png',
+    sizes: [{ width: 520 }]
+  },
+  examplesSnapshotShare: {
+    basename: 'snapshot-share.png',
     sizes: [{ width: 520 }]
   },
   tutorialsFirstStepsIntro: {
