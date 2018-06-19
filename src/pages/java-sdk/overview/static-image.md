@@ -3,6 +3,7 @@ title: "Static Image"
 description: "Official documentation on the Mapbox Java SDK Static API"
 sideNavSections:
   - title: "Building the URL"
+  - title: "Overlays"
   - title: "Downloading the image"
 ---
 
@@ -28,6 +29,19 @@ MapboxStaticMap staticImage = MapboxStaticMap.builder()
 ```
 
 Make sure to use the `StaticMapCriteria` to reference the default Mapbox map styles such as Light, Dark, or Streets. The `MapboxStaticMap` image generation will not work correctly if you try to use the `Style` class from the Mapbox Maps SDK for Android to retrieve the styles' strings.
+
+
+## Overlays
+
+An overlay is data that can be applied on top of a static map at request time. These are comma separated and can be either valid GeoJSON, a marker, a custom marker, or polyline. Overlays cannot consist of more than 100 features. The maximum overlay length is 2083 characters. The order of the features dictates their Z-order on the page. The last item in the list will have the highest Z-order (will overlap the other features in the list), and the first item in the list will have the lowest (will appear below other features).
+
+The following methods can be used with the `MapboxStaticMap.builder()` to add overlays to a static map image:
+
+| Method | Description |
+| --- | --- |
+| `staticMarkerAnnotations` | A list of marker annotations that can be placed on the static map image during the image rendering process.
+| `staticPolylineAnnotations ` | A list of polyline annotations that can be placed on the static map image during the image rendering process.
+| `geoJson ` | A GeoJSON object that represents a specific annotation which will be placed on the static map. The GeoJSON must be a value.
 
 ### Downloading the image
 
