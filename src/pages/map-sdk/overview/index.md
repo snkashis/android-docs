@@ -173,16 +173,13 @@ Mapbox Telemetry is a [powerful location analytics platform](https://www.mapbox.
 
 ## MapView XML attributes
 
-To further customize the map such as setting the starting camera position, style, or adjusting the UI, attributes can be added inside the xml map view. all `MapView` XML attributes start with
+To further customize the map such as setting the starting camera position, style, or adjusting the UI, attributes can be added inside the XML `MapView`. All `MapView` XML attributes start with
 `mapbox_` for identification and for removing any potential conflicts with other libraries.
 
 Some examples of `MapView` attributes are:
 
 ```xml
 <com.mapbox.mapboxsdk.maps.MapView
-
-  ...
-
   mapbox:mapbox_cameraTargetLat="-36.84"
   mapbox:mapbox_cameraTargetLng="174.76"
   mapbox:mapbox_cameraZoom="10"
