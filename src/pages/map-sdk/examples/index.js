@@ -302,6 +302,13 @@ let MapSdkExamplesLayout = class MapSdkExamplesLayout extends React.Component {
             exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/ChoroplethZoomChangeActivity.java"
           />
           <ExampleCard
+            exampleTitle="Create and style data clusters"
+            exampleDescription="Use GeoJSON to visualize point data in clusters."
+            difficulty="advanced"
+            exampleImgID="examplesStyleMapClustering"
+            exampleUrl="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/GeoJsonClusteringActivity.java"
+          />
+          <ExampleCard
             exampleTitle="Color dependent on zoom level"
             exampleDescription={
               'Make a property depend on the map zoom level, in this case, the water layers fill color.'
