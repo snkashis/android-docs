@@ -33,6 +33,13 @@ class PageShell extends React.Component {
     )
   };
 
+  componentDidMount() {
+    // initialize analytics
+    if (window && window.initializeMapboxAnalytics) {
+      window.initializeMapboxAnalytics();
+    }
+  }
+
   render() {
     const { frontMatter, location, children } = this.props;
     const meta = this.props.meta || {};
@@ -82,7 +89,9 @@ class PageShell extends React.Component {
     let title = null;
     if (meta.title !== 'Introduction') {
       title = (
-        <h1 className="pt0 mt0 mb12 prose txt-fancy txt-xl">{meta.title}</h1>
+        <h1 className="pt0 mt0 mb12 prose txt-fancy txt-xl">
+          {meta.title}
+        </h1>
       );
     }
 
