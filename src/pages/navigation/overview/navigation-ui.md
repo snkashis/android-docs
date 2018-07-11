@@ -2,7 +2,11 @@
 title: "Navigation turn-by-turn UI"
 description: "Customize the design of your Android app's turn-by-turn navigation experience. How? The Mapbox Navigation SDK for Android. Click for docs and info."
 prependJs:
-  - "import { NAVIGATION_VERSION } from '../../../constants';"
+- |
+  import {
+    NAVIGATION_VERSION
+  } from '../../../constants';
+  import AppropriateImage from '../../../components/appropriate-image';
 ---
 
 Mapbox Navigation gives you all of the tools that you need to add turn-by-turn navigation to your apps.
@@ -428,6 +432,13 @@ as well as the map style.  Both have comments outlining where the given color sh
 </style>
 </resources>
 ```
+
+Please reference the diagram below to see where these attribute names align within the
+actual UI:
+
+{{
+<AppropriateImage imageId="navigationViewColorDiagram" className="block mx-auto pt18" />
+}}
 
 ## InstructionView
 

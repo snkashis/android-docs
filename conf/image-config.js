@@ -567,6 +567,10 @@ module.exports = {
     basename: 'location-layer-gps.gif',
     sizes: [{ width: 500 }]
   },
+  navigationViewColorDiagram: {
+    basename: 'navigation-view-color-diagram.png',
+    sizes: [{ width: 1000 }]
+  },
   //
   // DEVICE FRAMES
   //
