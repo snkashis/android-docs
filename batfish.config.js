@@ -20,7 +20,8 @@ const productPageOrder = {
     'offline',
     'query',
     'runtime-styling',
-    'gestures'
+    'gestures',
+    'snapshotter'
   ],
   'maps/examples/': ['index'],
   'maps/tutorials/': ['index'],
