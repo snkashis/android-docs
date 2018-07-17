@@ -56,13 +56,17 @@ If your application's targeting Android 6.0 (API 23) or higher, you'll want to u
 It's important to include the location layer `onStart()` and `onStop()` lifecycle events in their respective activity methods. This prevents memory leaks from occurring and reduces battery consumption. The plugin has support for the new `LifecycleObserver` APIs, by adding the plugin as a lifecycle observer in your activity, you won't need to handle the lifecycles manually.
 
 ## Add the location layer
-You'll need to pass in both a `MapView` and `MapboxMap` object to initialize the Location Layer Plugin. Depending on whether or not you'd like the plugin to track the user's location automatically or not, you can either pass in a locationEngine or `null`.
+You'll need to pass in both a `MapView` and `MapboxMap` object to initialize the Location Layer Plugin. Depending on whether or not you'd like the plugin to track the user's location automatically or not, you can either use a default `LocationEngine`, pass in your own or `null`.
 
 ```java
+// Use the default engine
+locationLayerPlugin = new LocationLayerPlugin(mapView, mapboxMap);
+  
+// Pass in your own
 locationLayerPlugin = new LocationLayerPlugin(mapView, mapboxMap, locationEngine);
 ```
 
-If no location engine is provided, you are responsible for updating the location position manually using `LocationLayerPlugin#forceLocationUpdate(@Nullable Location location)`.
+If a `null` location engine is provided, you are responsible for updating the location position manually using `LocationLayerPlugin#forceLocationUpdate(@Nullable Location location)`.
 
 ### Enabling or disabling the LocationLayerPlugin
 
@@ -167,6 +171,6 @@ Once a navigation session's started using the [Mapbox Navigation SDK](/android-d
 If you plan to use the snapped location provided by the Navigation SDK, you'll need to use `locationLayerPlugin.setLocationEngine()` to `null` to prevent location coordinates that aren't snapped to update the icon's location. Instead, you'll need to add `forceLocationUpdate()` inside of the Navigation SDK's `onProgressChange()` callback, which _does_ provide the snapped location.
 
 ## Customization
-The plugin allows for several customizations such as drawables, opacities, and more by passing in a style either while constructing the plugin or by using the provided `applyStyle()` API.
+The plugin allows for several customizations such as drawables, opacities, and more by passing in a style or a [LocationLayerOptions](https://github.com/mapbox/mapbox-plugins-android/blob/master/plugin-locationlayer/src/main/java/com/mapbox/mapboxsdk/plugins/locationlayer/LocationLayerOptions.java) object either while constructing the plugin or by using the provided `applyStyle()` API.
 
-For example, if you'd like to change the location layer icon from the default blue to a red, you first generate a new icon drawable showing the change. Then add the drawable to your project and then create a new style with the `parentLayout` being `LocationLayer`. [Here is a list of all of the attributes that can be customized](https://github.com/mapbox/mapbox-plugins-android/blob/4cb4a740c03340ec1cf5a1c21a47538e20a29454/app/src/main/res/values/styles.xml#L13).
+For example, if you'd like to change the location layer icon from the default blue to a red, you first generate a new icon drawable showing the change. Then add the drawable to your project and then create a new style with the `parentLayout` being `LocationLayer`. [Here is a list of all of the attributes that can be customized](https://github.com/mapbox/mapbox-plugins-android/blob/master/plugin-locationlayer/src/main/res-public/values/public_attrs.xml).
