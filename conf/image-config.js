@@ -569,7 +569,7 @@ module.exports = {
   },
   navigationViewColorDiagram: {
     basename: 'navigation-view-color-diagram.png',
-    sizes: [{ width: 1000 }]
+    sizes: [{ width: 600 }]
   },
   //
   // DEVICE FRAMES

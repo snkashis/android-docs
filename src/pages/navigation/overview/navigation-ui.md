@@ -437,8 +437,33 @@ Please reference the diagram below to see where these attribute names align with
 actual UI:
 
 {{
-<AppropriateImage imageId="navigationViewColorDiagram" className="block mx-auto pt18" />
+<AppropriateImage imageId="navigationViewColorDiagram" className="block mx-auto pt18 wmax300" />
 }}
+
+
+| Letter | Resource name |
+| --- | --- |
+| A | navigationViewPrimary |
+| B | navigationViewSecondary |
+| C | navigationViewSecondaryText |
+| D | navigationViewPrimaryText |
+| E | navigationViewSecondary |
+| F | navigationViewSecondary |
+| G | navigationViewAccent |
+| H | navigationViewLocationLayerStyle> mapbox_gpsDrawable |
+| I | navigationViewRouteStyle > upcomingManeuverArrowBorderColor |
+| J | navigationViewRouteStyle > upcomingManeuverArrowColor |
+| K | navigationViewRouteStyle > routeColor |
+| L | navigationViewRouteStyle > routeSevereCongestionColor |
+| M | navigationViewRouteStyle > routeShieldColor |
+| N | navigationViewMapStyle |
+| O | navigationViewRouteOverviewDrawable|
+| P | navigationViewBannerSecondaryText |
+| Q | navigationViewBannerPrimaryText |
+| R | navigationViewBannerBackground |
+| S | navigationViewBannerManeuverPrimary |
+
+
 
 ## InstructionView
 
