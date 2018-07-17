@@ -14,6 +14,7 @@ const productPageOrder = {
     'index',
     'styling-map',
     'annotations',
+    'clustering',
     'camera',
     'events',
     'offline',

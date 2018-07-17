@@ -563,6 +563,14 @@ module.exports = {
     basename: 'location-layer-compass.gif',
     sizes: [{ width: 500 }]
   },
+  SymbolLayerCluster: {
+    basename: 'symbol-layer-cluster.png',
+    sizes: [{ width: 1400 }]
+  },
+  CircleLayerCluster: {
+    basename: 'circle-layer-cluster.png',
+    sizes: [{ width: 1400 }]
+  },
   locationLayerGpsGif: {
     basename: 'location-layer-gps.gif',
     sizes: [{ width: 500 }]
