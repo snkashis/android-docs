@@ -483,6 +483,10 @@ module.exports = {
     basename: 'mapbox-java-geocoding-auto-complete.gif',
     sizes: [{ width: 800 }, { width: 400 }]
   },
+  thumbnailDashedDrivingRoute: {
+    basename: 'dashed-driving-line.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
 
   //
   // PLUGINS FOR ANDROID
