@@ -1,6 +1,6 @@
 ---
-title: Create and style data clusters
-description: Use GeoJSON to visualize point data in clusters.
+title: CircleLayer clustering
+description: Use GeoJSON data and circle layers to visualize point data as circle clusters.
 thumbnail: thumbnailCreateAndStyleDataClusters
 topic: Add markers and infoWindows to the map
 prependJs:
