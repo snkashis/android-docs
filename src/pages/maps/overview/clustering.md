@@ -17,7 +17,7 @@ Adjusting the amount of data shown on the map to the map's camera zoom level, is
 
 {{
   <Floater
-    url="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/GeoJsonClusteringActivity.java"
+    url="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/CircleLayerClusteringActivity.java"
     title="CircleLayer clustering"
     category="example"
     text="Use GeoJSON data and layers to show data with circle clusters"
