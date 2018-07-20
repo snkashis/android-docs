@@ -77,7 +77,7 @@ NavigationViewOptions options = NavigationViewOptions.builder()
 
 #### Unit Type (Metric / Imperial)
 You can also provide a `MapboxNavigationOptions` object with the same customization you would
-provide when passing this object to `MapboxNavigation`.  We have added a `unitType` to the builder that will allow
+provide when passing this object to `MapboxNavigation`. We have added a `unitType` to the builder that will allow
 you to customize how the turn-by-turn-UI parses the distance data (on the UI and in the voice announcements).
 
 ```java
@@ -98,7 +98,7 @@ rather than using `NavigationLauncher`.
 To use this implementation, there is some setup you have to do to ensure the `View` works properly:
 
 #### Step 1
-The `NavigationView` has lifecycle methods to ensure the `View` properly handles Android configuration changes or user interactions.  You must also call `navigationView.initialize(OnNavigationReadyCallback callback);` when `NavigationView` is inflated and `NavigationView#onCreate()` has been called.  
+The `NavigationView` has lifecycle methods to ensure the `View` properly handles Android configuration changes or user interactions. You must also call `navigationView.initialize(OnNavigationReadyCallback callback);` when `NavigationView` is inflated and `NavigationView#onCreate()` has been called.  
 
 Calling `initialize()` will ultimately call `onNavigationReady()` once all components for the `View` have been properly initialized.
 
@@ -171,7 +171,7 @@ protected void onDestroy() {
 ```
 
 #### Step 2
-Your `Activity` or `Fragment` must implement `NavigationViewListener`. This interface includes callbacks for the start and end of the turn-by-turn UI.  `onNavigationReady()` is your cue to start navigation with `NavigationView#startNavigation(NavigationViewOptions options)`.  
+Your `Activity` or `Fragment` must implement `NavigationViewListener`. This interface includes callbacks for the start and end of the turn-by-turn UI. `onNavigationReady()` is your cue to start navigation with `NavigationView#startNavigation(NavigationViewOptions options)`.  
 
 `NavigationViewOptions` holds all of the custom data and settings that you can provide to the `NavigationView`.
 
@@ -298,7 +298,7 @@ public void onNavigationRunning() {
 
 ## Listening to the NavigationView
 Using `NavigationView` in your XML also gives you the ability to listen to different
-updates or events that may occur during navigation.  Both the `ProgressChangeListener` and `MilestoneEventListener` from our
+updates or events that may occur during navigation. Both the `ProgressChangeListener` and `MilestoneEventListener` from our
 core SDK are able to be added, as well as three others: `NavigationListener`, `RouteListener`, and `FeedbackListener`.  
 
 #### `NavigationListener`
@@ -323,6 +323,12 @@ core SDK are able to be added, as well as three others: `NavigationListener`, `R
 - `onFeedbackCancelled()`: Will be triggered when the feedback bottomsheet is opened by a user while navigating but then dismissed without clicking on a specific `FeedbackItem` in the list.
 - `onFeedbackSent(FeedbackItem feedbackItem)`: Will be triggered when the feedback bottomsheet is opened by a user while navigating and then the user clicks on a specific `FeedbackItem` in the list.
 
+#### `BannerInstructionsListener`
+- `willDisplay(BannerInstructions instructions)`: Will be triggered when a `BannerInstructions` is about to be displayed. The listener gives you the option to override any values and pass as the return value, which will be the value used for the banner instructions. You can return `null` and the instructions will be ignored.
+
+#### `SpeechAnnouncementListener`
+- `willVoice(SpeechAnnouncement announcement)`: Will be triggered when a voice announcement is about to be voiced. The listener gives you the option to override any values and pass as the return value, which will be the value used for the voice announcement. You can return `null` and the announcement will be ignored.
+
 To add these listeners, you can add them to your `NavigationViewOptions` before
 you call `navigationView.startNavigation(NavigationViewOptions options)`:
 ``` java
@@ -333,12 +339,11 @@ NavigationViewOptions options = NavigationViewOptions.builder()
   .build();
 ```
 **Please note** these listeners are only available if you are adding `NavigationView`
-to your `Activity` or `Fragment` layout XML.  Trying to pass `NavigationViewOptions` with listeners
+to your `Activity` or `Fragment` layout XML. Trying to pass `NavigationViewOptions` with listeners
 to `NavigationLauncher` will result in the listeners never firing.
 
 ## Styling the NavigationView
-You can also style the `NavigationView` colors.  This includes the style of the map and/or route.  
-To do this, provide a light and dark style in the XML where you have put your `NavigationView`:
+You can also style the `NavigationView` colors. This includes the style of the map and/or route. To do this, provide a light and dark style in the XML where you have put your `NavigationView`:
 
 ```xml
 <com.mapbox.services.android.navigation.ui.v5.NavigationView
@@ -351,8 +356,7 @@ To do this, provide a light and dark style in the XML where you have put your `N
         />
 ```
 
-**Please note**: each style must provide a value for every custom attribute or have a parent style `NavigationViewLight` / `NavigationViewDark` - otherwise the `View` will not properly inflate.  
-Our default Mapbox style will be used if you do not provide a style for either of the light or dark theme attributes.
+**Please note**: each style must provide a value for every custom attribute or have a parent style `NavigationViewLight` / `NavigationViewDark` - otherwise the `View` will not properly inflate. Our default Mapbox style will be used if you do not provide a style for either of the light or dark theme attributes.
 
 An example of how to create your own style can be found by looking at one of our default
 styles like `R.style.NavigationViewLight`:
@@ -366,9 +370,9 @@ styles like `R.style.NavigationViewLight`:
 </style>
 ```
 
-Here are a two more examples of custom themes.  `CustomNavigationMapRoute` is for the route line shown and is
+Here are a two more examples of custom themes. `CustomNavigationMapRoute` is for the route line shown and is
 used in `CustomNavigationViewLight` which allows you to customize the remaining `NavigationView` colors,
-as well as the map style.  Both have comments outlining where the given color should show on the screen:
+as well as the map style. Both have comments outlining where the given color should show on the screen:
 
 ```xml
 <resources>
@@ -463,7 +467,11 @@ actual UI:
 | R | navigationViewBannerBackground |
 | S | navigationViewBannerManeuverPrimary |
 
+## Day and Night mode
 
+If you're using `NavigationLauncher`, we will automatically set `AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO)` _only_ if your device is currently following the system setting.
+
+If you're using `NavigationView` within your own `Activity` the view will update based on whatever the current mode is in the `Activity`.
 
 ## InstructionView
 
@@ -480,8 +488,8 @@ The top `View` that displays the maneuver image, instruction text, and sound but
 Once inflated in your `Activity`, the `InstructionView` can be updated with a `RouteProgress` object inside a `ProgressChangeListener`.  
 
 Prior to the first time you call `InstructionView#update(RouteProgress)`, you can pass in a `NavigationUnitType` (imperial or metric)
-and `Locale` to determine how the `InstructionView` will format the distance data.  If you only pass a `Locale`, the view will default
-the `NavigationUnitType` based on this `Locale`.  If neither are provided, we will get the device `Locale` and use this for both.
+and `Locale` to determine how the `InstructionView` will format the distance data. If you only pass a `Locale`, the view will default
+the `NavigationUnitType` based on this `Locale`. If neither are provided, we will get the device `Locale` and use this for both.
 
 ```java
 instructionView.setLocale(Locale.getDefault());
@@ -493,7 +501,7 @@ public void onProgressChange(Location location, RouteProgress routeProgress) {
 }
 ```
 
-Please make sure to set our default theme: `R.style.NavigationViewLight` (or create your own) and set it in your `Activity` or `Fragment` before `super.onCreate()`.  The custom `View`s will now look for the attributes in the default theme to set text and background colors:
+Please make sure to set our default theme: `R.style.NavigationViewLight` (or create your own) and set it in your `Activity` or `Fragment` before `super.onCreate()`. The custom `View`s will now look for the attributes in the default theme to set text and background colors:
 
 ```java
 @Override
@@ -507,8 +515,8 @@ protected void onCreate(Bundle savedInstanceState) {
 
 ## NavigationMapRoute
 
-You can use `NavigationMapRoute` to draw the route line on your map.  Instantiate it with a
-`MapView` and `MapboxMap`, then add a `DirectionsRoute` from our Directions API.  The `DirectionsRoute` will automatically be added (even in off-route scenarios) if you instantiate with `MapboxNavigation`.  You can also style the route with a given style:
+You can use `NavigationMapRoute` to draw the route line on your map. Instantiate it with a
+`MapView` and `MapboxMap`, then add a `DirectionsRoute` from our Directions API. The `DirectionsRoute` will automatically be added (even in off-route scenarios) if you instantiate with `MapboxNavigation`. You can also style the route with a given style:
 
 ```java
 NavigationMapRoute mapRoute = new NavigationMapRoute(MapboxNavigation navigation, MapView mapView,
@@ -554,7 +562,7 @@ subsequently cancels the animation, a `ProgressChangeListener` is added to `Mapb
 the camera can begin to listen to updates from the SDK.
 
 The `NavigationCamera` also adds a `MapboxMap.OnScrollListener` when it is initialized, so if a user scrolls the map,
-camera tracking will stop.  This can be checked with `NavigationCamera#isTrackingEnabled()`.  
+camera tracking will stop. This can be checked with `NavigationCamera#isTrackingEnabled()`.
 
 `NavigationCamera#resetCameraPositon()` will reset the camera to the last known position update and will
 resume tracking of future updates.
