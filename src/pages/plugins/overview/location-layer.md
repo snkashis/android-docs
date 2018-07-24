@@ -145,6 +145,9 @@ Here are a few examples from [the `LocationLayerModesActivity` in the plugin's t
 
 Traditional camera transitions will be canceled when any of the camera modes, besides `CameraMode#NONE`, are engaged. Use `LocationLayerPlugin#zoomWhileTracking` and `LocationLayerPlugin#tiltWhileTracking` to manipulate the camera in a tracking state. Use these two in combination with `MapboxMap#CancelableCallback` to schedule fluid transitions.
 
+When instantiating the location layer plugin for the first time, the map's max/min zoom levels will be set to`LocationLayerOptions#MAX_ZOOM_DEFAULT` and `LocationLayerOptions#MIN_ZOOM_DEFAULT` respectively. Adjust the zoom range with the `maxZoom()` and `minZoom()` methods in the `LocationLayerOptions` class.
+
+
 ### Gesture thresholds to dismiss camera tracking
 
 The plugin is integrated with the Mapbox Gestures library. You have the option to adjust thresholds for tracking a user’s interaction with the map, and subsequently, breaking camera tracking if the threshold is exceeded:
