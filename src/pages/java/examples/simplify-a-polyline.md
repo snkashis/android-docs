@@ -4,13 +4,18 @@ description: Simplify a polyline which, depending on the set tolerance, reduces 
 thumbnail: thumbnailSimplifyLine
 topic: Getting started
 prependJs:
-  - "import AppropriateImage from '../../../components/appropriate-image'"
+  - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
+  - "import videoSimplifyPolyline from '../../../video/example-simplify-polyline-javaservice.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
   - "import { SimplifyPolylineActivity } from '../../../example-code/SimplifyPolylineActivity.js'"
 ---
 
 {{
-  <AppropriateImage imageId="exampleSimplifyAPolyline" />
+  <VideoWithDeviceFrame 
+    videoFile={videoSimplifyPolyline}
+    rotation="horizontal"
+    device="pixel-2"
+  />
 }}
 
 <!-- Any notes about this example would go here.  -->

@@ -141,11 +141,6 @@ module.exports = {
     basename: 'thumbnail-create-a-line-layer.png',
     sizes: [{ width: 800 }, { width: 400 }]
   },
-  // Create a simple map view
-  exampleCreateASimpleMapView: {
-    basename: 'example-create-a-simple-map-view.png',
-    sizes: [{ width: 1400 }]
-  },
   thumbnailCreateASimpleMapView: {
     basename: 'thumbnail-create-a-simple-map-view.png',
     sizes: [{ width: 800 }, { width: 400 }]
@@ -331,11 +326,6 @@ module.exports = {
     basename: 'thumbnail-style-lines-using-as-identity-property-function.png',
     sizes: [{ width: 800 }, { width: 400 }]
   },
-  // Support map fragment
-  exampleSupportMapFragment: {
-    basename: 'example-support-map-fragment.png',
-    sizes: [{ width: 1400 }]
-  },
   thumbnailSupportMapFragment: {
     basename: 'thumbnail-support-map-fragment.png',
     sizes: [{ width: 800 }, { width: 400 }]
@@ -461,19 +451,9 @@ module.exports = {
     basename: 'mapbox-java-direction.png',
     sizes: [{ width: 800 }, { width: 400 }]
   },
-  // Simplify a polyline
-  exampleSimplifyAPolyline: {
-    basename: 'example-simplify-a-polyline.png',
-    sizes: [{ width: 1400 }]
-  },
   thumbnailSimplifyLine: {
     basename: 'mapbox-java-simplify-line.gif',
     sizes: [{ width: 800 }, { width: 400 }]
-  },
-  // Use map matching
-  exampleMapMatching: {
-    basename: 'example-map-matching.png',
-    sizes: [{ width: 1400 }]
   },
   thumbnailMapMatching: {
     basename: 'mapbox-java-map-matching.png',
@@ -509,11 +489,6 @@ module.exports = {
     basename: 'plugins-localization.png',
     sizes: [{ width: 800 }, { width: 400 }]
   },
-  // Display 3D buildings on any map style
-  exampleDisplayBuildingsIn3d: {
-    basename: 'example-display-buildings-in-3d.png',
-    sizes: [{ width: 1400 }]
-  },
   thumbnailBuilding: {
     basename: 'plugins-building.png',
     sizes: [{ width: 800 }, { width: 400 }]
@@ -527,11 +502,6 @@ module.exports = {
   thumbnailLocationLayer: {
     basename: 'plugins-location-layer.png',
     sizes: [{ width: 800 }, { width: 400 }]
-  },
-  // Show real-time traffic on a map
-  exampleDisplayRealTimeTraffic: {
-    basename: 'example-display-real-time-traffic.png',
-    sizes: [{ width: 1400 }]
   },
   thumbnailTrafficPlugin: {
     basename: 'plugins-traffic-plugin.png',

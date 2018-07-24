@@ -4,13 +4,18 @@ description: Toggle the Mapbox Traffic plugin to display real-time traffic data 
 thumbnail: thumbnailTrafficPlugin
 topic: Getting started
 prependJs:
-  - "import AppropriateImage from '../../../components/appropriate-image'"
+  - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
+  - "import videoTrafficPlugin from '../../../video/example-traffic-plugin.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
   - "import { TrafficPluginActivity } from '../../../example-code/TrafficPluginActivity.js'"
 ---
 
 {{
-  <AppropriateImage imageId="exampleDisplayRealTimeTraffic" />
+  <VideoWithDeviceFrame 
+    videoFile={videoTrafficPlugin}
+    rotation="vertical"
+    device="pixel-2"
+  />
 }}
 
 <!-- Any notes about this example would go here.  -->
