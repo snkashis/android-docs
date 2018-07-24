@@ -2,7 +2,7 @@
 title: Rotate extrusions
 description: Rotate a map with 3D buildings.
 thumbnail: thumbnailRotateExtrusions
-topic: 3D
+topic: Extrusions
 prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoRotateAndTilt3DBuildings from '../../../video/example-rotateandtilt3dbuildings.mp4'"

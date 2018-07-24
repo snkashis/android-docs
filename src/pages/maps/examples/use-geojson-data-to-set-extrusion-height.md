@@ -2,7 +2,7 @@
 title: Use GeoJSON data to set extrusion height
 description: Use data-driven styling and GeoJSON data to set extrusions' heights
 thumbnail: thumbnailUseGeojsonDataToSetExtrusionHeight
-topic: 3D
+topic: Extrusions
 prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoGeojsonMarathonExtrusion from '../../../video/example-marathon-geojson-extrusion.mp4'"

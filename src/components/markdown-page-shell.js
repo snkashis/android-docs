@@ -13,7 +13,7 @@ export default class MarkdownPageShell extends React.Component {
         'Getting started',
         'Dynamic styling',
         'Data visualization',
-        '3D',
+        'Extrusions',
         'Add markers and infoWindows to the map',
         'User interaction',
         'Add features to a map',

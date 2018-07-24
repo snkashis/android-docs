@@ -2,7 +2,7 @@
 title: Display 3D building height based on vector data
 description: Use imported vector data to set the height of 3D building extrusions
 thumbnail: thumbnailDisplay3dBuildingHeightBasedOnVectorData
-topic: 3D
+topic: Extrusions
 prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"

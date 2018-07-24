@@ -2,7 +2,7 @@
 title: Adjust light location and color
 description: Change the location and color of the light that's shined on extrusions
 thumbnail: thumbnailAdjustLightLocationAndColor
-topic: 3D
+topic: Extrusions
 prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoAdjustLightLocationColor from '../../../video/example-adjustlightlocationcolor.mp4'"
