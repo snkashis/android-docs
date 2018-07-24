@@ -31,7 +31,7 @@ MapboxMatrix directionsMatrixClient = MapboxMatrix.builder()
 
 ## API response
 
-Like all API calls inside of the Mapbox Java SDK, the response will come inside a retrofit callback. inside the onResponse, you can access the APIs returned response if successful.
+Like all API calls inside of the Mapbox Java SDK, the response will come inside a Retrofit callback. Inside `onResponse()`, you can access the API's returned response if successful.
 
 ```java
 client.enqueueCall(new Callback<MatrixResponse>() {

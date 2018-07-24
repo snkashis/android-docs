@@ -52,7 +52,8 @@ const productPageOrder = {
     'directions-matrix',
     'geocoder',
     'optimization',
-    'static-image'
+    'static-image',
+    'map-matching'
   ],
   'java/examples/': ['index'],
   'core/overview/': ['index']
