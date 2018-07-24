@@ -19,3 +19,7 @@ As powerful as styling the map can be, to get started using the Maps SDK, it off
 ## Custom Mapbox Studio style
 
 To use a custom style, paste your style URL into your MapView's mapbox:mapbox_styleUrl attribute in your activity's layout file. If you would like to change the map style later on, call MapboxMap.setStyleUrl() with the new style and your map will update.
+
+## Style-related events
+
+Changing the map's style in real time (known as "runtime styling"), triggers a map event. Read [the map change event documentation](https://www.mapbox.com/android-docs/maps/overview/events/#map-change-events) for more information about the events and how to display data on your map _after_ a map style has finished loaded.

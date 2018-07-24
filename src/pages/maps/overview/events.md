@@ -141,3 +141,17 @@ Instead of adding the listener through the `MapboxMap` object, the listeners add
 | `SOURCE_DID_CHANGE`                         | Triggered when a source attribution changes. |
 
 When the event that you were interested in actually occurs and you no longer need to listen to the map change events, `mapView.removeOnMapChangedListener(mapChangeListener)` can be used to remove the listener.
+
+`DID_FINISH_LOADING_STYLE ` is useful if you're using runtime styling to change the Mapbox map style in real time. Here's how you'd use the constant:
+
+```java
+@Override
+  public void onMapChanged(int change) {
+    if (change == MapView.DID_FINISH_LOADING_STYLE) {
+
+      // Here is where you can re-add the source(s) and layer(s)
+      // for displaying data on top of the new map style
+      
+    }
+  }
+```
