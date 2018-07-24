@@ -3,6 +3,8 @@ title: "Camera Engine"
 description: "Fine grain control over the map camera during your Android app navigation experience with the Mapbox Navigation SDK for Android. Click to learn how."
 ---
 
+Before you begin reading this document, you might want to begin with [the general overview and basics of the map's camera](https://mapbox.com/android-docs/maps/overview/camera/).
+
 `MapboxNavigation` creates a `SimpleCamera` by default that you can access with the
 `MapboxNavigation#getCameraEngine()` method.
 

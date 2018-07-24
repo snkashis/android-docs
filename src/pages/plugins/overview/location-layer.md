@@ -172,6 +172,8 @@ Once a navigation session's started using the [Mapbox Navigation SDK](/android-d
 
 If you plan to use the snapped location provided by the Navigation SDK, you'll need to use `locationLayerPlugin.setLocationEngine()` to `null` to prevent location coordinates that aren't snapped to update the icon's location. Instead, you'll need to add `forceLocationUpdate()` inside of the Navigation SDK's `onProgressChange()` callback, which _does_ provide the snapped location.
 
+For more specific information and code snippets about displaying a user's location during the navigation experience, see the [Mapbox tutorial for building a navigation app for Android](https://www.mapbox.com/help/android-navigation-sdk/#display-user-location).
+
 ## Customization
 The plugin allows for several customizations such as drawables, opacities, and more by passing in a style or a [LocationLayerOptions](https://github.com/mapbox/mapbox-plugins-android/blob/master/plugin-locationlayer/src/main/java/com/mapbox/mapboxsdk/plugins/locationlayer/LocationLayerOptions.java) object either while constructing the plugin or by using the provided `applyStyle()` API.
 
