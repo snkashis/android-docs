@@ -53,7 +53,8 @@ const productPageOrder = {
     'geocoder',
     'optimization',
     'static-image',
-    'map-matching'
+    'map-matching',
+    'turf'
   ],
   'java/examples/': ['index'],
   'core/overview/': ['index']
