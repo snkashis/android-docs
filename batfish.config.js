@@ -6,6 +6,7 @@ const rehypeSlug = require('rehype-slug');
 const rehypeHighlightCodeBlock = require('@mapbox/rehype-highlight-code-block');
 const mapboxHighlighter = require('@mapbox/mapbox-highlighter');
 const mapboxAssembly = require('@mapbox/mapbox-assembly');
+const modifyConfig = require('@mapbox/mapbox-batfish-helpers/modify-config');
 const addLinksToHeadings = require('./plugins/add-links-to-headings');
 const makeTableScroll = require('./plugins/make-table-scroll');
 
@@ -61,7 +62,7 @@ const productPageOrder = {
 };
 
 module.exports = () => {
-  const config = {
+  let config = {
     siteBasePath: '/android-docs',
     siteOrigin: 'https://www.mapbox.com',
     browserslist: mapboxAssembly.browsersList,
@@ -162,5 +163,8 @@ module.exports = () => {
       ]
     }
   };
+
+  config = modifyConfig.addDeployEnv(config);
+
   return config;
 };

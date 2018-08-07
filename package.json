@@ -48,7 +48,8 @@
     "underscore.string": "^3.3.4"
   },
   "devDependencies": {
-    "@mapbox/batfish": "^1.9.1",
+    "@mapbox/batfish": "^1.9.5",
+    "@mapbox/mapbox-batfish-helpers": "^0.5.1",
     "@mapbox/mapbox-highlighter": "^0.2.2",
     "@mapbox/rehype-highlight-code-block": "^1.0.0",
     "@mapbox/svg-react-transformer-loader": "^1.0.1",
