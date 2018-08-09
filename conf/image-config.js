@@ -465,6 +465,7 @@ module.exports = {
   },
   thumbnailGeocodingJavaService: {
     basename: 'geocoding-java-services.png',
+    sizes: [{ width: 800 }, { width: 400 }]
   },
   thumbnailDashedDrivingRoute: {
     basename: 'dashed-driving-line.png',
