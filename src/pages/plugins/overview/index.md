@@ -18,7 +18,9 @@ overviewHeaderProps:
     - Display traffic and 3D buildings
     - Change the map's language
     - Offline mapping
+    - Support Chinese users
   newFeature:
+    - false
     - false
     - false
     - false
@@ -56,6 +58,7 @@ The plugins we offer are extensive and cover many of our SDKs for Android. They 
 - **Offline**: Download map tiles and easily view already-downloaded regions for offline mapping.
 - **Marker cluster**: Add map marker clusters to show large sets of data with a clean UI experience.
 - **Localization**: Change the map's language based on the device's default language settings or other runtime variables.
+- **China**: Provide accurate map tiles and data for Chinese users.
 
 
 ## Prerequisites
