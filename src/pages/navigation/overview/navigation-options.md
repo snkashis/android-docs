@@ -91,14 +91,7 @@ your notification ID to notify the manager.
 ## Adjusting location validation thresholds
 
 `MapboxNavigationOptions` also gives you the ability to adjust the thresholds that determine valid or invalid
-`Location` updates that come from the device.  
-
-There are 4 variables that can be adjusted:
+`Location` updates that come from the device:
 
 - `locationAcceptableAccuracyInMetersThreshold`:  This variable is used to determine if a `Location` update is considered acceptable or not based on `Location#getAccuracy()`. The accuracy is measured in meters. The remaining checks do not execute if the location accuracy is below this threshold. For example, the update will be considered _valid_ if an update is received with an accuracy of `20` and
-the threshold is set to `50`.
-- `locationAccuracyPercentThreshold`: This variable is used when an update is received that has _worse_ accuracy.  It defines, based on
-a percentage, how much worse the next `Location` update may be to still be considered valid.  If this variable is set to `10`, an update with
-an accuracy that is less than `10` percent worse compared to the previous, will still be considered valid.  
-- `locationUpdateTimeInMillisThreshold`: This variable is used as the maximum amount of time that the Navigation SDK will discard invalid updates if continuously given inaccurate updates. If set to `5` and the phone receives a series of inaccurate updates, `5` seconds will pass, then the next update will be considered valid regardless of its accuracy.  
-- `locationVelocityInMetersPerSecondThreshold`:  This variable is used to define the maximum velocity that the Navigation SDK considers valid. If the device receives a rogue location update that is far from the last update, the velocity, measured in meters-per-second, will be invalid / will detect the jump from the rogue update. The velocity is calculated from the previous to the new update (that is being validated).
+the threshold is set to `100`, which is the default.

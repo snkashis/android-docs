@@ -42,15 +42,14 @@ dependencies {
 With either a `DirectionsRoute` from `NavigationRoute` or two `Point` objects (origin and destination), you can launch the UI with `NavigationLauncher` from within your `Activity`:
 
 ```java
-Point origin = Point.fromLngLat(-77.03613, 38.90992);
-Point destination = Point.fromLngLat(-77.0365, 38.8977);
+// Route fetched from NavigationRoute
+DirectionsRoute route = ...
 
 boolean simulateRoute = true;
 
 // Create a NavigationLauncherOptions object to package everything together
 NavigationLauncherOptions options = NavigationLauncherOptions.builder()
-  .origin(origin)
-  .destination(destination)
+  .directionsRoute(route)
   .shouldSimulateRoute(simulateRoute)
   .build();
 
@@ -70,24 +69,26 @@ If you provide both, only the `DirectionsRoute` will be used.
 
 ```java
 NavigationViewOptions options = NavigationViewOptions.builder()
-  .directionsRoute(DirectionsRoute route)
-  .shouldSimulateRoute(boolean simulateRoute)
+  .directionsRoute(route)
+  .shouldSimulateRoute(simulateRoute)
   .build();
 ```
 
 #### Unit Type (Metric / Imperial)
-You can also provide a `MapboxNavigationOptions` object with the same customization you would
-provide when passing this object to `MapboxNavigation`. We have added a `unitType` to the builder that will allow
-you to customize how the turn-by-turn-UI parses the distance data (on the UI and in the voice announcements).
+Metric / imperial unit formatting is based on the voice unit type you used for fetching
+the `DirectionsRoute` with `NavigationRoute`.  The `NavigationView` will look at the option
+from the API request and use this for the UI formatting.  The `NavigationRoute` `Builder` takes
+an Android `Context` so that if you don't specify a voice unit type, the default will be
+based on the device `Locale` (from `Configuration`).
 
 ```java
-MapboxNavigationOptions navigationOptions = MapboxNavigationOptions.builder()
-  .unitType(NavigationUnitType.TYPE_METRIC)
-  .build();
-
-NavigationViewOptions viewOptions = NavigationViewOptions.builder()
-  .navigationOptions(navigationOptions)
-  .build();
+// this being Context
+NavigationRoute.builder(this)
+  .accessToken(Mapbox.getAccessToken())
+  .origin(origin)
+  .destination(destination)
+  .voiceUnits(DirectionsCriteria.METRIC)
+  .build()
 ```
 
 ## NavigationView Activity Example
@@ -339,8 +340,8 @@ NavigationViewOptions options = NavigationViewOptions.builder()
   .build();
 ```
 **Please note** these listeners are only available if you are adding `NavigationView`
-to your `Activity` or `Fragment` layout XML. Trying to pass `NavigationViewOptions` with listeners
-to `NavigationLauncher` will result in the listeners never firing.
+to your `Activity` or `Fragment` layout XML via `NavigationViewOptions`.  You are not able
+to add them to `NavigationLauncherOptions`.
 
 ## Styling the NavigationView
 You can also style the `NavigationView` colors. This includes the style of the map and/or route. To do this, provide a light and dark style in the XML where you have put your `NavigationView`:
@@ -487,13 +488,13 @@ The top `View` that displays the maneuver image, instruction text, and sound but
 
 Once inflated in your `Activity`, the `InstructionView` can be updated with a `RouteProgress` object inside a `ProgressChangeListener`.  
 
-Prior to the first time you call `InstructionView#update(RouteProgress)`, you can pass in a `NavigationUnitType` (imperial or metric)
+Prior to the first time you call `InstructionView#update(RouteProgress)`, you can pass in a `DirectionsCriteria` (IMPERIAL or METRIC)
 and `Locale` to determine how the `InstructionView` will format the distance data. If you only pass a `Locale`, the view will default
-the `NavigationUnitType` based on this `Locale`. If neither are provided, we will get the device `Locale` and use this for both.
+the `DirectionsCriteria` based on this `Locale`. If neither are provided, we will get the device `Locale` and use this for both.
 
 ```java
 instructionView.setLocale(Locale.getDefault());
-instructionView.setUnitType(NavigationUnitType.TYPE_METRIC);
+instructionView.setUnitType(DirectionsCriteria.METRIC);
 
 @Override
 public void onProgressChange(Location location, RouteProgress routeProgress) {
