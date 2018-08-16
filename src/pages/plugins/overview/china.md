@@ -68,6 +68,9 @@ As mentioned above, Android Lint will attempt to warn you when you are using the
 ## China Map Styles
 Mapbox currently offers 3 government-certified map styles for China that match the look of our equivalent Mapbox Streets, Dark, and Light styles. The China styles provide up to 10x faster map loading. You can either manually hardcode the style URL inside your app or use the provided constants found inside this plugin. The table below lists the Java constant, XML string constant, and the actual map style URL which can be hardcoded in your app.
 
+**You will need a special China Mapbox access token if you want to use any of our China map styles.** 
+_Please fill out the form at [https://www.mapbox.cn/contact](https://www.mapbox.cn/contact/) to start the process of receiving this special access token._
+
 | Java Constant | XML String | URL |
 | --- | --- | --- |
 | `ChinaStyle.MAPBOX_STREETS_CHINESE` | `mapbox_style_mapbox_streets_chinese` | `mapbox://styles/mapbox/streets-zh-v1` |
