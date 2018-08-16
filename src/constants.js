@@ -11,5 +11,5 @@ export const LOCATION_LAYER_PLUGIN_VERSION = '0.7.1';
 export const BUILDING_PLUGIN_VERSION = '0.3.0';
 export const LOCALIZATION_PLUGIN_VERSION = '0.3.0';
 export const OFFLINE_PLUGIN_VERSION = '0.2.0';
-export const CHINA_PLUGIN_VERSION = '0.4.4';
+export const CHINA_PLUGIN_VERSION = '0.4.5';
 export const STYLE_VERSION = '8';
