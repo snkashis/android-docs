@@ -508,6 +508,15 @@ module.exports = {
     basename: 'plugins-traffic-plugin.png',
     sizes: [{ width: 800 }, { width: 400 }]
   },
+  // Location tracking on a fragment
+  thumbnailLocationFragment: {
+    basename: 'thumbnail-location-fragment.png',
+    sizes: [{ width: 400 }]
+  },
+  exampleLocationFragment: {
+    basename: 'example-location-fragment.png',
+    sizes: [{ width: 1400 }]
+  },
 
   thumbnailGeoJson: {
     basename: 'plugins-geojson.png',
