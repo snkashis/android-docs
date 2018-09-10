@@ -5,10 +5,10 @@ product: 'java'
 ---*/
 
 import React from 'react';
-import ExamplesPage from '../../../components/examples-page';
+import AndroidExamplesPage from '../../../components/android-examples-page';
 
-export default class JavaSdkExamplesPage extends React.PureComponent {
+export default class JavaExamplesPage extends React.PureComponent {
   render() {
-    return <ExamplesPage frontMatter={this.props.frontMatter} />;
+    return <AndroidExamplesPage frontMatter={this.props.frontMatter} />;
   }
 }

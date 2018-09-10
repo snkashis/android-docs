@@ -7,7 +7,6 @@ const rehypeHighlightCodeBlock = require('@mapbox/rehype-highlight-code-block');
 const mapboxHighlighter = require('@mapbox/mapbox-highlighter');
 const mapboxAssembly = require('@mapbox/mapbox-assembly');
 const modifyConfig = require('@mapbox/mapbox-batfish-helpers/modify-config');
-const addLinksToHeadings = require('./plugins/add-links-to-headings');
 const makeTableScroll = require('./plugins/make-table-scroll');
 
 const productPageOrder = {
@@ -71,7 +70,8 @@ module.exports = () => {
       require.resolve('@mapbox/mapbox-assembly/dist/assembly.css'),
       require.resolve('@mapbox/mapbox-highlighter/dist/mapbox.css'),
       path.join(__dirname, './vendor/dotcom-page-shell/page-shell-styles.css'),
-      path.join(__dirname, './src/css/site.css')
+      path.join(__dirname, './src/css/site.css'),
+      require.resolve('@mapbox/dr-ui/css/docs-prose.css')
     ],
     dataSelectors: {
       platform: function() {
@@ -110,12 +110,12 @@ module.exports = () => {
               title: example.frontMatter.title,
               description: example.frontMatter.description,
               topic: example.frontMatter.topic,
-              thumbnail: example.frontMatter.thumbnail
+              image: example.frontMatter.thumbnail
             };
           });
         return examples;
       },
-      listSubFolders: data => {
+      listSubfolders: data => {
         const folders = data.pages
           .filter(file => {
             return file.path.split('/').length === 5;
@@ -157,7 +157,7 @@ module.exports = () => {
       wrapper: path.join(__dirname, './src/components/markdown-page-shell.js'),
       rehypePlugins: [
         rehypeSlug,
-        addLinksToHeadings,
+        require('@mapbox/dr-ui/plugins/add-links-to-headings'),
         makeTableScroll,
         [rehypeHighlightCodeBlock, { highlight: mapboxHighlighter.highlight }]
       ]

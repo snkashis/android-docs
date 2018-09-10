@@ -9,19 +9,19 @@ function removeDuplicateUsingFilter(arr) {
   return uniqueArray;
 }
 
-export function getCategoriesForProduct(examplesByProduct) {
-  const allPossibleCategories = examplesByProduct.map(example => {
+export function getTopics(examples) {
+  const allPossibleCategories = examples.map(example => {
     return example.topic;
   });
   slugger.reset();
   const uniqueCategories = removeDuplicateUsingFilter(allPossibleCategories)
-    .filter(category => {
-      return category !== undefined;
+    .filter(topic => {
+      return topic !== undefined;
     })
-    .map(category => {
+    .map(topic => {
       return {
-        title: category,
-        path: '#' + slugger.slug(category)
+        title: topic,
+        path: '#' + slugger.slug(topic)
       };
     });
 

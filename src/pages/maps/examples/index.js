@@ -5,10 +5,10 @@ product: 'maps'
 ---*/
 
 import React from 'react';
-import ExamplesPage from '../../../components/examples-page';
+import AndroidExamplesPage from '../../../components/android-examples-page';
 
 export default class MapsExamplesPage extends React.PureComponent {
   render() {
-    return <ExamplesPage frontMatter={this.props.frontMatter} />;
+    return <AndroidExamplesPage frontMatter={this.props.frontMatter} />;
   }
 }

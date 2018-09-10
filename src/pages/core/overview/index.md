@@ -1,30 +1,28 @@
 ---
 title: "Introduction"
 description: "Overview of the Mapbox Core Libraries for Android. Easily handle telemetry, device location, and connectivity for any app."
-sideNavSections:
-  - title: "Installation"
-  - title: "ConnectivityReceiver"
-  - title: "PermissionsManager"
-  - title: "LocationEngine"
-overviewHeaderProps:
-  imageId: overviewCoreLibSdk
-  sdk: Core Libraries
-  versionConstant: CORE_VERSION
-  changelogLink: "https://github.com/mapbox/mapbox-events-android/blob/master/CHANGELOG.md"
-  ghLink: "https://github.com/mapbox/mapbox-events-android"
-  sdkFeatures:
-    - "Real-time device location"
-    - "Checking and requesting permissions"
-    - "Connectivity"
-  newFeature:
-    - false
-    - false
-    - false
 prependJs:
+  - "import OverviewHeader from '@mapbox/dr-ui/overview-header';"
+  - "import AppropriateImage from '../../../components/appropriate-image';"
   - "import { CORE_VERSION } from '../../../constants';"
 ---
 
-# Core Libraries
+{{
+  <div className="mb24">
+    <OverviewHeader 
+      features={[
+        "Real-time device location",
+        "Checking and requesting permissions",
+        "Connectivity"
+      ]}
+      title="Android Core library"
+      version={CORE_VERSION}
+      changelogLink="https://github.com/mapbox/mapbox-events-android/blob/master/CHANGELOG.md"
+      ghLink="https://github.com/mapbox/mapbox-events-android"
+      image={<AppropriateImage imageId="overviewCoreLibSdk" alt="Mobile devices displaying applications using the Mapbox Core for Android." />}
+    />
+  </div>
+}}
 
 The Mapbox Core Libraries for Android are a set of utilities that help you with permissions, device location, and connectivity within your Android project. With these libraries, you can:
 

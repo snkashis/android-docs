@@ -2,15 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withLocation } from '@mapbox/batfish/modules/with-location';
 import ReactPageShell from '../../vendor/dotcom-page-shell/react-page-shell.js';
-import platform from '@mapbox/batfish/data/platform';
-import { StickyTopNav } from './sticky-top-nav';
-import { PageLayout } from './page-layout';
-import { ProductMenu } from './product-menu';
-import { TopNavTabs } from './top-nav-tabs';
-import listSubFolders from '@mapbox/batfish/data/list-sub-folders';
+import { routeToPrefixed } from '@mapbox/batfish/modules/route-to';
+// dr-ui components
+import TopbarSticker from '@mapbox/dr-ui/topbar-sticker';
+import BackToTopButton from '@mapbox/dr-ui/back-to-top-button';
+import ProductMenu from '@mapbox/dr-ui/product-menu/product-menu';
+import ProductMenuDropdown from '@mapbox/dr-ui/product-menu-dropdown';
+import { ProductMenuItems } from '@mapbox/dr-ui/data/product-menu-items';
+import PageLayout from '@mapbox/dr-ui/page-layout';
+import NavigationAccordion from '@mapbox/dr-ui/navigation-accordion';
+import SectionedNavigation from '@mapbox/dr-ui/sectioned-navigation';
+// util functions
+import { getTopics } from '../util/get-topics';
+// data
+import { RelatedHelpPages } from '../data/related-help-pages';
+import { productNames } from '../data/product-names';
 import listExamples from '@mapbox/batfish/data/list-examples';
 import orderedPages from '@mapbox/batfish/data/ordered-pages';
-import { MAP_SDK_VERSION } from '../constants';
+import TopNavTabs from './top-nav-tabs';
 
 class PageShell extends React.Component {
   static propTypes = {
@@ -53,121 +62,164 @@ class PageShell extends React.Component {
       meta.pathname = location.pathname;
     }
 
-    const normalizedPathname = /\/$/.test(this.props.location.pathname)
+    const normalizedPathname = /\/$/.test(location.pathname)
       ? this.props.location.pathname
       : `${this.props.location.pathname}/`;
     const baseUrl = location.pathname.split('/')[1];
     const checkBaseUrl = new RegExp(`/${baseUrl}/([^/]+/)([^/]+/)`);
     const pathPrefixMatch = checkBaseUrl.exec(normalizedPathname);
     if (!pathPrefixMatch) {
-      throw new Error(`No subnav known for ${this.props.location.pathname}`);
+      throw new Error(`No subnav known for ${location.pathname}`);
     }
 
     const product = location.pathname.split('/')[2];
-    const productProper = product.charAt(0).toUpperCase() + product.slice(1);
+    const activeTab = location.pathname.split('/')[3];
+    const activeTabProper =
+      activeTab.charAt(0).toUpperCase() + activeTab.slice(1);
 
-    let sidebarContent = {};
-
-    if (location.pathname.indexOf('help') > -1) {
-      sidebarContent = {
-        firstLevelToc: null,
-        secondLevelToc: listExamples
-      };
-    } else if (location.pathname.indexOf('examples') > -1) {
-      sidebarContent = {
-        firstLevelToc: null,
-        secondLevelToc: listExamples
-      };
-    } else {
-      sidebarContent = {
-        firstLevelToc: orderedPages[pathPrefixMatch[1] + pathPrefixMatch[2]],
-        secondLevelToc: this.props.headings.filter(heading => {
+    let pageNavigation = '';
+    let pageNavigationNarrowStick = false;
+    if (activeTab === 'overview') {
+      pageNavigationNarrowStick = true;
+      const secondLevelItems = frontMatter.headings
+        .filter(heading => {
           return heading.level === 2;
         })
-      };
+        .map(h2 => {
+          return {
+            title: h2.text,
+            path: h2.slug
+          };
+        });
+      pageNavigation = (
+        <div className="mx0-mm ml-neg24 mr-neg36 relative-mm absolute right left">
+          <NavigationAccordion
+            currentPath={location.pathname}
+            contents={{
+              firstLevelItems:
+                orderedPages[pathPrefixMatch[1] + pathPrefixMatch[2]],
+              secondLevelItems: secondLevelItems
+            }}
+            onDropdownChange={value => {
+              routeToPrefixed(value);
+            }}
+          />
+        </div>
+      );
+    } else {
+      let sections = [];
+      if (activeTab === 'examples') {
+        const allTopics = getTopics(listExamples);
+        const examplesByProduct = listExamples.filter(example => {
+          return example.path.indexOf(product) > -1;
+        });
+        sections = allTopics
+          .map(topic => {
+            const examplesForTopic = examplesByProduct
+              .filter(example => {
+                return example.topic === topic.title;
+              })
+              .map(example => {
+                return {
+                  text: example.title,
+                  url: example.path
+                };
+              });
+            return {
+              title: topic.title,
+              url: topic.path,
+              items: examplesForTopic
+            };
+          })
+          .filter(topic => {
+            return topic.items.length > 0;
+          });
+      } else if (activeTab === 'help') {
+        const allSections = RelatedHelpPages.map(section => {
+          return {
+            title: section.title,
+            path: section.path
+          };
+        });
+        sections = allSections
+          .map(section => {
+            const guidesForSection = RelatedHelpPages.filter(group => {
+              if (section.path === group.path) {
+                return group.guides;
+              }
+            });
+            const items = guidesForSection[0].guides
+              .filter(guide => {
+                return guide.products.indexOf(product) > -1;
+              })
+              .map(guide => {
+                return {
+                  text: guide.title,
+                  url: guide.path
+                };
+              });
+            return {
+              title: section.title,
+              url: `#${section.path}`,
+              items: items
+            };
+          })
+          .filter(section => {
+            return section.items.length > 0;
+          });
+      }
+      pageNavigation = (
+        <div className="ml36 mr12">
+          <SectionedNavigation sections={sections} />
+        </div>
+      );
     }
-    let title = null;
-    if (meta.title !== 'Introduction') {
-      title = (
-        <h1 className="pt0 mt0 mb12 prose txt-fancy txt-xl">
-          {meta.title}
+
+    // Determine what to display as the title
+    let renderedTitle = '';
+    if (frontMatter.title === 'Introduction') {
+      renderedTitle = <div className="mt0-mm mt60" />;
+    } else {
+      renderedTitle = (
+        <h1 className="txt-h1 txt-fancy mt0-mm mt60 pt0-mm pt24 pb24">
+          {frontMatter.title}
         </h1>
       );
     }
 
-    const folder = location.pathname.split('/')[2];
-    let apiTabURL = null;
-    if (product === 'maps') {
-      apiTabURL = `/${baseUrl}/api/map-sdk/${MAP_SDK_VERSION}`;
-    } else {
-      apiTabURL = '#';
-    }
-
-    const subFolders = listSubFolders
-      .filter(folder => {
-        return (
-          folder.path.indexOf(product) > -1 &&
-          folder.path.indexOf('overview') < 0
-        );
-      })
-      .map(tab => {
-        let title = '';
-        if (tab.frontMatter.title === 'Introduction') {
-          title = 'Overview';
-        } else {
-          title = tab.frontMatter.title;
-        }
-        return {
-          name: title,
-          id: tab.path.split('/')[3],
-          url: tab.path
-        };
-      });
-
-    subFolders.unshift({
-      name: 'Overview',
-      id: 'overview',
-      url: `/${baseUrl}/${folder}/overview/`
-    });
-    subFolders.push({
-      name: 'API reference',
-      id: 'api',
-      url: apiTabURL
-    });
-
-    const activeTab = location.pathname.split('/')[3];
-
     return (
       <ReactPageShell {...this.props} meta={meta} darkHeaderText={true}>
         <div className="shell-header-buffer" />
-        <StickyTopNav
-          currentPath={location.pathname}
-          platform={platform}
-          product={productProper}
-        >
+        <TopbarSticker>
           <div className="limiter">
             <div className="grid grid--gut36 mr-neg36 mr0-mm">
               <div className="col col--4-mm col--12">
-                <ProductMenu platform={platform} product={productProper} />
+                <div className="ml24 pt12">
+                  <ProductMenu productName={productNames[product]}>
+                    <ProductMenuDropdown categories={ProductMenuItems} />
+                  </ProductMenu>
+                </div>
               </div>
               <div className="col col--8-mm col--12">
-                <TopNavTabs
-                  options={subFolders}
-                  activeTab={activeTab}
-                  product={product}
-                />
+                <TopNavTabs product={product} activeTab={activeTab} />
               </div>
             </div>
           </div>
-        </StickyTopNav>
+        </TopbarSticker>
         <div className="limiter">
           <PageLayout
-            sidebarContent={sidebarContent}
-            product={product}
+            sidebarTitle={<div className="ml36">{activeTabProper}</div>}
+            sidebarContent={pageNavigation}
+            sidebarContentStickyTop={60}
+            sidebarContentStickyTopNarrow={0}
             currentPath={location.pathname}
+            sidebarStackedOnNarrowScreens={pageNavigationNarrowStick}
           >
-            {title}
+            {renderedTitle}
             {children}
+            <div className="fixed block none-mm mx24 my24 z5 bottom right">
+              <BackToTopButton />
+            </div>
           </PageLayout>
         </div>
       </ReactPageShell>

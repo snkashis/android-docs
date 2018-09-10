@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PageShell from './page-shell';
-import { HelpSection } from './help-section';
+import ExamplesPage from '@mapbox/dr-ui/examples-page';
+import CardContainer from '@mapbox/dr-ui/card-container';
+import Card from '@mapbox/dr-ui/card';
 import { RelatedHelpPages } from '../data/related-help-pages.js';
 
 class HelpPage extends React.PureComponent {
@@ -13,27 +15,78 @@ class HelpPage extends React.PureComponent {
     }).isRequired
   };
   render() {
-    const helpSections = RelatedHelpPages.map((section, index) => {
-      return (
-        <HelpSection
-          key={index}
-          path={section.path}
-          title={section.title}
-          description={section.description}
-          guides={section.guides}
-          product={this.props.frontMatter.product}
-        />
-      );
+    const { props } = this;
+    const allSections = RelatedHelpPages.map(section => {
+      return {
+        title: section.title,
+        path: section.path
+      };
+    });
+    const renderedCardContainers = allSections.map(section => {
+      const guidesForSection = RelatedHelpPages.filter(group => {
+        if (group.path === section.path) {
+          return group.guides;
+        }
+      });
+      const cardsForSection = guidesForSection[0].guides
+        .filter(guide => {
+          return guide.products.indexOf(props.frontMatter.product) > -1;
+        })
+        .map((guide, index) => {
+          return (
+            <Card
+              key={index}
+              title={guide.title}
+              description={guide.description}
+              path={guide.path}
+            />
+          );
+        });
+      if (cardsForSection.length > 0) {
+        return (
+          <CardContainer
+            title={section.title}
+            path={`#${section.path}`}
+            fullWidthCards={true}
+            cards={cardsForSection}
+          />
+        );
+      }
     });
     return (
-      <PageShell frontMatter={this.props.frontMatter}>
-        <div className="txt-l">
+      <PageShell {...this.props}>
+        <p className="txt-l">
           Our Help page contains tutorials, troubleshooting guides, and other
           resources to help you get started.
-        </div>
-        {helpSections}
+        </p>
+        <ExamplesPage
+          frontMatter={this.props.frontMatter}
+          cardContainers={renderedCardContainers}
+        />
       </PageShell>
     );
+
+    // const helpSections = RelatedHelpPages.map((section, index) => {
+    //   return (
+    //     <HelpSection
+    //       key={index}
+    //       path={section.path}
+    //       title={section.title}
+    //       description={section.description}
+    //       guides={section.guides}
+    //       product={this.props.frontMatter.product}
+    //     />
+    //   );
+    // });
+    // return (
+    //   <PageShell frontMatter={this.props.frontMatter}>
+    //     <div className="txt-l">
+    //       Our Help page contains tutorials, troubleshooting guides, and other
+    //       resources to help you get started.
+    //     </div>
+    //     {helpSections}
+    //   </PageShell>
+    // );
   }
 }
 

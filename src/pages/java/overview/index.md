@@ -1,27 +1,31 @@
 ---
 title: "Introduction"
 description: "Official documentation for the Mapbox Java SDK."
-overviewHeaderProps:
-  imageId: overviewServicesSdk
-  versionConstant: JAVA_SDK_VERSION
-  changelogLink: "https://github.com/mapbox/mapbox-java/blob/master/CHANGELOG.md"
-  ghLink: "https://github.com/mapbox/mapbox-java"
-  installLink: "https://github.com/mapbox/mapbox-java"
-  sdkFeatures:
-    - Directions
-    - Geocoding
-    - Map Matching
-    - Directions Matrix
-    - Optimization
-  newFeature:
-    - false
-    - false
-    - false
-    - false
-    - false
 prependJs:
+  - "import OverviewHeader from '@mapbox/dr-ui/overview-header';"
+  - "import AppropriateImage from '../../../components/appropriate-image';"
   - "import { JAVA_SDK_VERSION } from '../../../constants';"
 ---
+
+{{
+  <div className="mb24">
+    <OverviewHeader 
+      features={[
+        "Directions",
+        "Geocoding",
+        "Map Matching",
+        "Directions Matrix",
+        "Optimization"
+      ]}
+      title="Java SDK for Android"
+      version={JAVA_SDK_VERSION}
+      changelogLink="https://github.com/mapbox/mapbox-java/blob/master/CHANGELOG.md"
+      ghLink="https://github.com/mapbox/mapbox-java"
+      image={<AppropriateImage imageId="overviewServicesSdk" alt="Mobile devices displaying applications using the Mapbox Java SDK for Android." />}
+    />
+  </div>
+}}
+
 The Mapbox Java SDK is an open source toolset for building applications that need navigation, directions, geocoding, static map imagery, etc. It conveniently wraps Mapbox APIs and builds off of them with tools which are useful for your applications. This SDK has no dependency on the Android API and can be used in any of your Java projects.
 
 ### Support and contributions

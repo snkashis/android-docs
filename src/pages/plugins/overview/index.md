@@ -1,33 +1,9 @@
 ---
 title: "Introduction"
 description: "Overview of Mapbox Android plugins"
-sideNavSections:
-  - title: "What are Mapbox Plugins"
-  - title: "How plugins work"
-  - title: "Prerequisites"
-  - title: "Available documentation"
-  - title: "Support and contributions"
-overviewHeaderProps:
-  imageId: overviewPlugins
-  sdk: Mapbox Plugins
-  ghLink: "https://github.com/mapbox/mapbox-plugins-android"
-  sdkFeatures:
-    - Add in-app place searching
-    - Load GeoJSON files onto the map
-    - Show user location
-    - Display traffic and 3D buildings
-    - Change the map's language
-    - Offline mapping
-    - Support Chinese users
-  newFeature:
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
 prependJs:
+  - "import OverviewHeader from '@mapbox/dr-ui/overview-header';"
+  - "import AppropriateImage from '../../../components/appropriate-image';"
   - |
     import {
       TRAFFIC_PLUGIN_VERSION,
@@ -38,6 +14,25 @@ prependJs:
       OFFLINE_PLUGIN_VERSION
     } from '../../../constants';
 ---
+
+{{
+  <div className="mb24">
+    <OverviewHeader 
+      features={[
+        "Add in-app place searching",
+        "Load GeoJSON files onto the map",
+        "Show user location",
+        "Display traffic and 3D buildings",
+        "Change the map's language",
+        "Offline mapping",
+        "Support Chinese users"
+      ]}
+      title="Android Plugins"
+      ghLink="https://github.com/mapbox/mapbox-plugins-android"
+      image={<AppropriateImage imageId="overviewPlugins" alt="Mobile devices displaying applications using the Mapbox Java SDK for Android." />}
+    />
+  </div>
+}}
 
 Mapbox Plugins build on top of the [Maps SDK](/android-docs/map-sdk/overview/getting-started/) providing extra features in lightweight dependencies. Whether you're looking to include traffic on top of your map or show the user location as a layer, plugins offer customizable APIs with a few lines of code to get started. Separating features into different plugins also allows for a more aggressive updating timeline.
 

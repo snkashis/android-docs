@@ -1,22 +1,33 @@
 ---
 title: "Introduction"
 description: "The official overview documentation for the Mapbox Maps SDK for Android. Learn how to customize your Android app's maps, visualize data, and much more."
-overviewHeaderProps:
-  imageId: overviewMapSdk
-  versionConstant: MAP_SDK_VERSION
-  changelogLink: "https://www.github.com/mapbox/mapbox-gl-native/blob/master/platform/android/CHANGELOG.md"
-  ghLink: "https://github.com/mapbox/mapbox-gl-native"
-  installLink: "https://www.mapbox.com/install/android"
-  sdkFeatures:
-    - "Live traffic"
-    - "Runtime styling"
-    - "Annotations"
-    - "3D extrusions"
-    - "Offline support"
 prependJs:
+  - "import OverviewHeader from '@mapbox/dr-ui/overview-header';"
+  - "import AppropriateImage from '../../../components/appropriate-image';"
   - "import { Floater } from '../../../components/floater';"
   - "import { MAP_SDK_VERSION } from '../../../constants';"
 ---
+
+{{
+  <div className="mb24">
+    <OverviewHeader 
+      features={[
+        "Live traffic",
+        "Runtime styling",
+        "Annotations",
+        "3D extrusions",
+        "Offline support"
+      ]}
+      title="Maps SDK for Android"
+      version={MAP_SDK_VERSION}
+      changelogLink="https://www.github.com/mapbox/mapbox-gl-native/blob/master/platform/android/CHANGELOG.md"
+      ghLink="https://github.com/mapbox/mapbox-gl-native"
+      installLink="https://www.mapbox.com/install/android"
+      image={<AppropriateImage imageId="overviewMapSdk" alt="Mobile devices displaying applications using the Mapbox Maps SDK for Android." />}
+    />
+  </div>
+}}
+
 The Mapbox Maps SDK for Android is an open source toolset for displaying maps inside of your Android application. [Mapbox's demo app on the Google Play Store](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en) includes many examples of how to use the Mapbox Maps SDK for Android. Various pages in this documentation reference the demo app's examples as well.
 
 ## Install the Maps SDK

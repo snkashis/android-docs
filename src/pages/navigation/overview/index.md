@@ -1,20 +1,31 @@
 ---
 title: "Introduction"
 description: "Official documentation and overview of the Mapbox Navigation SDK for Android."
-overviewHeaderProps:
-  imageId: overviewNavigationSdk
-  sdk: Navigation SDK
-  changelogLink: "https://github.com/mapbox/mapbox-navigation-android/blob/master/CHANGELOG.md"
-  ghLink: "https://github.com/mapbox/mapbox-navigation-android"
-  sdkFeatures:
-    - Off-route Detection
-    - Timed Instructions
-    - Snap-to-Route
-    - Route Progress Information
-    - Traffic Routing
 prependJs:
+  - "import OverviewHeader from '@mapbox/dr-ui/overview-header';"
+  - "import AppropriateImage from '../../../components/appropriate-image';"
   - "import { NAVIGATION_VERSION } from '../../../constants';"
 ---
+
+{{
+  <div className="mb24">
+    <OverviewHeader 
+      features={[
+        "Off-route Detection",
+        "Timed Instructions",
+        "Snap-to-Route",
+        "Route Progress Information",
+        "Traffic Routing"
+      ]}
+      title="Navigation SDK for Android"
+      version={NAVIGATION_VERSION}
+      changelogLink="https://github.com/mapbox/mapbox-navigation-android/blob/master/CHANGELOG.md"
+      ghLink="https://github.com/mapbox/mapbox-navigation-android"
+      image={<AppropriateImage imageId="overviewNavigationSdk" alt="Mobile devices displaying applications using the Mapbox Navigation SDK for Android." />}
+    />
+  </div>
+}}
+
 The Navigation SDK is built on top of our Directions API and contains logic needed to get timed navigation instructions. The calculations compare the user’s current location to their route and provide critical by-the-second information. This includes voice instruction announcements, real-time user progress to their destination, and detecting when a user goes off-route; all critical when building a navigation app.
 
 ## Install the Navigation SDK
