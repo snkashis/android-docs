@@ -13,7 +13,7 @@
 
 We welcome contributions to this Android documentation repository. Please follow these steps if you're interested in adding to our documentation:
 
-- [Open a ticket](https://github.com/mapbox/mapbox-plugins-android/issues/new) to kick off a conversation, feel free to tag the `@mapbox/android` team. It's a good idea to explain your plans before you push any code to make sure no one else is working on something similar and to discuss the best approaches to tackle your particular idea.
+- [Open a ticket](https://github.com/mapbox/android-docs/issues/new) to kick off a conversation, feel free to tag the `@mapbox/android` team. It's a good idea to explain your plans before you push any code to make sure no one else is working on something similar and to discuss the best approaches to tackle your particular idea.
 - Create a new branch off of `mb-pages`. This new branch will contain your additions.
 - Make the changes you'd like to see in the documentation. As you make changes, don't forget to test the site locally (described above) to see your changes in action.
 - Double check. Triple check. Spell check your writing. If you have code snippets, please make sure they're correct as well.
