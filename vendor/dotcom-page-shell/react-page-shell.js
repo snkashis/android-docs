@@ -2744,10 +2744,6 @@ var MetaTagger = function (_React$PureComponent) {
         metaItems.push({ name: 'twitter:card', content: 'summary' }, { name: 'twitter:image', content: props.imageUrlThumbnail });
       }
 
-      if (process.env.DEPLOY_ENV !== 'production') {
-        metaItems.push({ name: 'robots', content: 'noindex' });
-      }
-
       return React__default.createElement(Helmet__default, { title: suffixedTitle, meta: metaItems });
     }
   }]);
