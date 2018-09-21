@@ -35,7 +35,7 @@
     "@mapbox/react-simple-surveyor": "^1.0.0",
     "@mapbox/react-control-toggle-set": "^0.4.1",
     "@mapbox/mr-ui": "^0.2.1",
-    "@mapbox/dr-ui": "^0.0.7",
+    "@mapbox/dr-ui": "^0.0.8",
     "array-find": "^1.0.0",
     "classnames": "^2.2.5",
     "github-slugger": "^1.1.3",
