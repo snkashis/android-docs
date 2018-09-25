@@ -36,7 +36,7 @@ Before developing your app with the Navigation SDK, you'll need to add the SDK a
 
 1. Start Android Studio
 2. Open up your app's `build.gradle` file
-3. Make sure that your project's `minSdkVersion` is at API 15 or higher
+3. Make sure that your project's `minSdkVersion` is at API 14 or higher
 4. Under dependencies, add a new build rule for the latest `mapbox-android-navigation`
 5. Click the `Sync Project with Gradle Files` near the toolbar in Studio.
 
