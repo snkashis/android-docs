@@ -23,17 +23,15 @@ repositories {
 }
 
 dependencies {
-  compile ('com.mapbox.mapboxsdk:mapbox-android-navigation-ui:{{ NAVIGATION_VERSION }}') {
-    transitive = true
-  }
+  implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:{{ NAVIGATION_VERSION }}'
+
 }
 ```
 #### Gradle 3.0
 ```groovy
 dependencies {
-  implementation ('com.mapbox.mapboxsdk:mapbox-android-navigation-ui:{{ NAVIGATION_VERSION }}') {
-    transitive = true
-  }
+  implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:{{ NAVIGATION_VERSION }}'
+  
 }
 ```
 
