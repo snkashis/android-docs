@@ -63,6 +63,15 @@ dependencies {
 }
 ```
 
+_Note: You might have mismatching gradle dependencies once you add the Mapbox Maps SDK for Android. Don't forget that you can use `exclude group` like below, to remove certain dependencies:_
+
+```
+implementation ('com.mapbox.mapboxsdk:mapbox-android-sdk:{{ MAP_SDK_VERSION }}'){
+    exclude group: 'group_name', module: 'module_name'
+}
+```
+Additionally, running `gradle app_module_name_here:dependencies` in your command line will print a list of dependencies. `./gradlew app:dependencies` works if you have a Gradle wrapper. They are helpful for troubleshooting nimble Gradle configurations when various libraries are included in a single project. You can see the dependencies that specific libaries are bringing and where conflicts might be happening.
+
 ### 2. Get an access token
 
 If you don't have a Mapbox account, sign up for one [here](https://www.mapbox.com/signup/), and then navigate to your [Account page](https://www.mapbox.com/account/). Copy your **default public token** to your clipboard. After you've added the Maps SDK as a dependency inside of your Android project, open the `R.strings.xml` file, create a new String resource, and paste the access token. 
