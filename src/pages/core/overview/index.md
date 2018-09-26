@@ -112,7 +112,6 @@ PermissionsListener permissionsListener = new PermissionsListener() {
 
 If your application needs location information, the `LocationEngine` class can help you get this information while also simplifying the process and being flexible enough to use different services. The `LocationEngine` found in the core module now supports the following location providers:
 
-- [LOST](https://github.com/mapzen/lost/)
 - Google Play Services
 - Android Location
 
@@ -126,25 +125,25 @@ This will obtain the best location engine that is available and eliminate the ne
 
 ### Getting location updates
 
-It's required to either include the `mapbox-android-core` dependency or copy over the [LostLocationEngine class](https://github.com/mapbox/mapbox-events-android/blob/c4e28e8ec737fbbad543d495b084b5da86cf1b80/liblocation/src/main/java/com/mapbox/android/core/location/LostLocationEngine.java) into your project. You'll then want to initialize a new instance of `LocationEngine`, activate it, and optionally add a location listener. Inside `onConnected()`, you can begin requesting location updates or wait for the proper time to do so.
+Add the `mapbox-android-core` dependency to your project in order to listen to location changes. Then initialize a new instance of `LocationEngine` as described above. Once it's created, activate the `LocationEngine` object and optionally add a location listener. Implementing the `LocationEngineListener` interface will require you to override the `onConnected()` and `onLocationChanged()` methods. Inside of `onConnected()`, you can begin requesting location updates or wait for the proper time to do so.
 
 ```java
 LocationEngine locationEngine = new LocationEngineProvider(this).obtainBestLocationEngineAvailable();
 locationEngine.activate();
-locationEngine.addLocationEngineListener(new LocationEngineListener() {
-  @Override
-  public void onConnected() {
-    locationEngine.requestLocationUpdates();
-  }
+locationEngine.addLocationEngineListener(this);
 
-  @Override
-  public void onLocationChanged(Location location) {
+...
 
-  }
-});
+@Override
+public void onConnected() {
+    
+}
+
+@Override
+public void onLocationChanged(Location location) {
+
+}
 ```
-
-Rather than adding the `LocationEngineListener` like above, you can also implement the `LocationEngineListener` interface and override `onConnected()` and `onLocationChanged()`.
 
 To prevent your application from having a memory leak, it is a good idea to stop requesting location updates inside of your activity's `onStop()` method and continue requesting them in `onStart()`.
 
