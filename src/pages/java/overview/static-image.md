@@ -16,9 +16,8 @@ To begin with, you'll need to create a new instance of the `MapboxStaticMap` obj
 ```java
 MapboxStaticMap staticImage = MapboxStaticMap.builder()
   .accessToken(getString(R.string.access_token))
-  .styleId(Style.LIGHT)
-  .cameraPoint(Point.fromLngLat(lastLocation.getLongitude(),
-  lastLocation.getLatitude())) // Image's centerpoint on map
+  .styleId(StaticMapCriteria.LIGHT_STYLE)
+  .cameraPoint(Point.fromLngLat(longitude,latitude) // Image's centerpoint on map
   .cameraZoom(13)
   .width(320) // Image width
   .height(320) // Image height
@@ -26,8 +25,7 @@ MapboxStaticMap staticImage = MapboxStaticMap.builder()
   .build();
 ```
 
-Make sure to use the `StaticMapCriteria` to reference the default Mapbox map styles such as Light, Dark, or Streets. The `MapboxStaticMap` image generation will not work correctly if you try to use the `Style` class from the Mapbox Maps SDK for Android to retrieve the styles' strings.
-
+Make sure to use the `StaticMapCriteria` to reference the default Mapbox map styles such as Light, Dark, or Streets. The `MapboxStaticMap` image generation will not work correctly if you try to retrieve the styles' strings from the `Style` class that lives in the Mapbox Maps SDK for Android.
 
 ## Overlays
 
