@@ -167,13 +167,21 @@ Typically found inside any application which offers search history like the plac
 PlaceAutocomplete.clearRecentHistory(this);
 ```
 
-## Add Place Picker
+## Place Picker
 
-While the Autocomplete UI component allows a user to search for a place based on an address or name, the **Place Picker** UI component allows them to select a point on the map an get the address at that point. With the Place Picker, you can launch an activity for result and provide your users a way to pick a location on the map. The result returned is a `CarmenFeature`, which can be used to get information such as the coordinate, place name, address, phone number, and more.
+{{
+<AppropriateImage imageId="placePickerScreenshot" className="block mx-auto wmax360 pt18" />
+}}
 
-To begin, inside the activity you'd like the Place Picker to launch from, add the Place Picker `IntentBuilder`, which builds an intent ready to be launched using the `startActivityForResult`.
+The Autocomplete UI component described above, searches for a place based on an address or name. The **Place Picker** UI component retrieves information about a selected map location. With the Place Picker, you can launch an activity for result and provide your users a way to pick a location on the map. The result returned is a `CarmenFeature`, which can be used to get information such as the coordinate, place name, address, phone number, and more.
+
+To begin, create the Place Picker `IntentBuilder`, which builds an intent ready to be launched by the `startActivityForResult` method. 
 
 ```java
+private static final int PLACE_SELECTION_REQUEST_CODE = 56789
+
+...
+
 Intent intent = new PlacePicker.IntentBuilder()
   .accessToken(Mapbox.getAccessToken())
   .placeOptions(PlacePickerOptions.builder()
@@ -181,7 +189,23 @@ Intent intent = new PlacePicker.IntentBuilder()
       .target(new LatLng(40.7544, -73.9862)).zoom(16).build())
     .build())
   .build(this);
-startActivityForResult(intent, REQUEST_CODE);
+startActivityForResult(intent, PLACE_SELECTION_REQUEST_CODE);
+```
+
+Override the `onActivityResult()` method and extract information from the `CarmenFeature`:
+
+```
+@Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
+    
+      // Retrieve the information from the selected location's CarmenFeature
+      CarmenFeature carmenFeature = PlacePicker.getPlace(data);
+
+     
+    }
+}
 ```
 
 ### PlaceOptions for Place Picker

@@ -549,6 +549,10 @@ module.exports = {
     basename: 'location-layer-compass.gif',
     sizes: [{ width: 500 }]
   },
+  placePickerScreenshot: {
+    basename: 'place-picker-android.png',
+    sizes: [{ width: 360 }, { width: 720 }]
+  },
   SymbolLayerCluster: {
     basename: 'symbol-layer-cluster.png',
     sizes: [{ width: 1400 }]
