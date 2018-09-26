@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import CodeSnippet from '@mapbox/react-code-snippet';
 import { AppContext } from '../context.js';
 
+const highlightTheme = require('raw-loader!../css/prism.css');
+
 export default class ToggleableCodeBlock extends React.Component {
   static propTypes = {
     codeSnippet: PropTypes.shape({
@@ -43,6 +45,7 @@ export default class ToggleableCodeBlock extends React.Component {
           code={code.raw}
           highlightedCode={code.highlighted}
           maxHeight={480}
+          highlightThemeCss={highlightTheme}
           onCopy={
             (/*value*/) => {
               /* console.log(value)*/

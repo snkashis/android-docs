@@ -3,11 +3,9 @@
 const _ = require('lodash');
 const path = require('path');
 const rehypeSlug = require('rehype-slug');
-const rehypeHighlightCodeBlock = require('@mapbox/rehype-highlight-code-block');
-const mapboxHighlighter = require('@mapbox/mapbox-highlighter');
-const mapboxAssembly = require('@mapbox/mapbox-assembly');
-const modifyConfig = require('@mapbox/mapbox-batfish-helpers/modify-config');
+const mapboxAssembly = require('@mapbox/mbx-assembly');
 const makeTableScroll = require('./plugins/make-table-scroll');
+const cssDir = path.join(__dirname, './src/css');
 
 const productPageOrder = {
   'maps/overview/': [
@@ -62,14 +60,14 @@ const productPageOrder = {
 };
 
 module.exports = () => {
-  let config = {
+  const config = {
     siteBasePath: '/android-docs',
     siteOrigin: 'https://www.mapbox.com',
     browserslist: mapboxAssembly.browsersList,
     postcssPlugins: mapboxAssembly.postcssPipeline.plugins,
     stylesheets: [
-      require.resolve('@mapbox/mapbox-assembly/dist/assembly.css'),
-      require.resolve('@mapbox/mapbox-highlighter/dist/mapbox.css'),
+      require.resolve('@mapbox/mbx-assembly/dist/assembly.css'),
+      path.join(cssDir, 'prism.css'),
       path.join(__dirname, './vendor/dotcom-page-shell/page-shell-styles.css'),
       path.join(__dirname, './src/css/site.css'),
       require.resolve('@mapbox/dr-ui/css/docs-prose.css')
@@ -160,12 +158,10 @@ module.exports = () => {
         rehypeSlug,
         require('@mapbox/dr-ui/plugins/add-links-to-headings'),
         makeTableScroll,
-        [rehypeHighlightCodeBlock, { highlight: mapboxHighlighter.highlight }]
+        require('@mapbox/rehype-prism')
       ]
     }
   };
-
-  config = modifyConfig.addDeployEnv(config);
 
   return config;
 };

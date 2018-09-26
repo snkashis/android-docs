@@ -1,15 +1,8 @@
 import React from 'react';
 import { AppContext } from '../context.js';
 
-// Disable Raven if this isn't a production build, so we don't send development
-// errors to Sentry.
-if (process.env.DEPLOY_ENV !== 'production' && typeof window !== 'undefined') {
-  window.MapboxPageShell.disableRaven();
-}
-
 if (typeof window !== 'undefined') {
-  window.MapboxPageShellProduction = true;
-  import(/* webpackChunkName: "assembly-js" */ '@mapbox/mapbox-assembly/dist/assembly.js');
+  import(/* webpackChunkName: "assembly-js" */ '@mapbox/mbx-assembly/dist/assembly.js');
 }
 
 class ApplicationWrapper extends React.Component {

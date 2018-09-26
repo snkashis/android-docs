@@ -1,7 +1,8 @@
-import hljs from 'highlight.js';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-java';
 
 function highlightCodeSnippet(rawCode) {
-  return hljs.highlightAuto(rawCode).value;
+  return Prism.highlight(rawCode, Prism.languages['java']);
 }
 
 export { highlightCodeSnippet };
