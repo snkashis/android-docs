@@ -130,6 +130,31 @@ MapboxNavigation navigation = new MapboxNavigation(this, MAPBOX_ACCESS_TOKEN);
 
 You can also optionally pass in a `MapboxNavigationOptions` object if you’d like to change the default behavior of the navigation SDK. Note that many of the options offered must be set before the `MapboxNavigation`  object is initialized.
 
+## Approaches
+
+You can add `approaches` to the `NavigationRoute` builder if you are interested in indicating from which side of the road to approach a waypoint. 
+
+There are three options found in `DirectionsCriteria.ApproachesCriteria`: `"unrestricted"` (default), `"curb"` or `null` (default). 
+
+- If set to `"unrestricted"`, the route can approach waypoints from either side of the road.
+- If set to `"curb"`, the route will be returned so that on arrival, the waypoint will be found on the side that corresponds with the `driving_side` of the region in which the returned route is located. 
+- If no option is specified (`null`), it is translated internally to `""`,​ which has the same result as setting an approach to `"unrestricted"`​.
+
+If provided, the list of approaches **must** be the same length as the list of waypoints (including the `origin` and the `destination`) and in that particular order i.e. `origin`, *waypoints*, `destination`.
+
+If a re-route occurs and `approaches` were used to fetch the `DirectionsRoute` that was originally provided to the `NavigationView`, the new route fetched will take the same `approaches` criteria into account.
+
+```java
+NavigationRoute.Builder builder = NavigationRoute.builder()
+    .accessToken(Mapbox.getAccessToken())
+    .origin(origin)
+    .addWaypoint(pickup)
+    .destination(destination);
+    
+builder.addApproaches("unrestricted", "curb", "curb");
+builder.build();
+```
+
 ## LocationEngine
 
 Navigation requires the user's location to run; this is done using the `LocationEngine` class introduced in the 2.0 release of the Mapbox Java SDK. [Visit the `LocationEngine` documentation](https://www.mapbox.com/android-docs/core/overview/#locationengine) for detailed instructions on how to use this class. You'll need to set up an instance of a location engine and pass it in to the `MapboxNavigation` object.
