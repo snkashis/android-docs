@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoGeocodingJavaService from '../../../video/example-geocoding-java-service.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { GeocodingJavaServiceActivity } from '../../../example-code/GeocodingJavaServiceActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/GeocodingJavaServiceActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={GeocodingJavaServiceActivity}
+    java={rawJavaCode}
   />
 }}

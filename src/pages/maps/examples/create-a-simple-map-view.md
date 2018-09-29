@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoSimpleMapViewVideo from '../../../video/example-simple-mapview.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { SimpleMapViewActivity } from '../../../example-code/SimpleMapViewActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/SimpleMapViewActivity.js'"
 ---
 
 {{
@@ -18,12 +18,10 @@ prependJs:
   />
 }}
 
-
-
 <!-- Any notes about this example would go here.  -->
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={SimpleMapViewActivity}
+    java={rawJavaCode}
   />
 }}

@@ -1,24 +1,5 @@
-import { highlightCodeSnippet } from '../util/highlight-code-snippet';
+const rawJavaCode = require('raw-loader!./java/geojson-clustering-activity--full-java.java');
 
-function MakeCodeSnippetJava() {
-  const rawJavaCode = require('raw-loader!./java/geojson-clustering-activity--full-java.java');
-  return {
-    raw: rawJavaCode,
-    highlighted: highlightCodeSnippet(rawJavaCode)
-  };
-}
+const rawKotlinCode = '// Not available';
 
-function MakeCodeSnippetKotlin() {
-  const rawKotlinCode = '// Not available';
-  return {
-    raw: rawKotlinCode,
-    highlighted: highlightCodeSnippet(rawKotlinCode)
-  };
-}
-
-const GeoJsonClusteringActivity = {
-  java: MakeCodeSnippetJava(),
-  kotlin: MakeCodeSnippetKotlin()
-};
-
-export { GeoJsonClusteringActivity };
+export { rawJavaCode, rawKotlinCode };

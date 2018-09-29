@@ -6,7 +6,7 @@ topic: Getting started
 prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { LocationPluginFragmentActivity } from '../../../example-code/LocationPluginFragmentActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/LocationPluginFragmentActivity.js'"
 ---
 
 {{
@@ -19,6 +19,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={LocationPluginFragmentActivity}
+    java={rawJavaCode}
   />
 }}

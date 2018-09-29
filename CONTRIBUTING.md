@@ -85,6 +85,51 @@ Any time you add a new overview guide or alter the filename of an overview guide
 1. Open `batfish.config.js`.
 2. Add, alter, or move a string that matches the filename (without the `.md` file extension) of the Overview guide you added/altered _exactly_. These are case-sensitive. The order these appear are the order in which the guides will appear in the table of contents. 
 
+#### Code blocks in overview guides
+
+To add a code block for a single language use <code>```</code> followed by the language of the code. For example, here's a Java code block: 
+
+<pre>
+```java
+mapboxMap.addMarker(new MarkerOptions()
+  .position(new LatLng(48.85819, 2.29458))
+  .title("Eiffel Tower")
+```
+</pre>
+
+To add a code block that toggles between Java and Kotlin, use a combination of the `CodeLanguageToggle` and `ToggleableCodeBlock` components. First import them into the Markdown file using the following: 
+
+```md
+prependJs:
+  - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
+  - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
+```
+
+Then, in the body of the Markdown file, include these components using JSXtreme Markdown. Here's an example:
+
+```
+{{
+<CodeLanguageToggle id="markers-code" />
+<ToggleableCodeBlock
+
+java={`
+mapboxMap.addMarker(new MarkerOptions()
+  .position(new LatLng(48.85819, 2.29458))
+  .title("Eiffel Tower")
+`}
+
+kotlin={`
+hi hello 
+i am kotlin code
+💁‍♀️
+`}
+
+/>
+}}
+```
+
+Language preference (Java vs. Kotlin) will persist throughout /android-docs when navigating between pages. 
+
 #### Mapbox Java SDK
 
 All overview guides for APIs in the Mapbox Java SDK should follow this format: 
@@ -158,7 +203,7 @@ topic: Dynamic styling
 prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { HillShadeActivity } from '../../../example-code/HillShadeActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/HillShadeActivity.js'"
 ---
 
 {{
@@ -171,10 +216,12 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={HillShadeActivity}
+    java={rawJavaCode}
   />
 }}
 ```
+
+_Note: There are not currently any examples written in Kotlin, but they could be added by importing `rawKotlinCode`, adding a `kotlin` prop to the `ToggleableCodeBlock`, and importing and adding a `CodeLanguageToggle`._
 
 
 ### Help

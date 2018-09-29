@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoUseALocalStyleSource from '../../../video/example-localstyleorcustomrasterstyle.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { LocalStyleSourceActivity } from '../../../example-code/LocalStyleSourceActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/LocalStyleSourceActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={LocalStyleSourceActivity}
+    java={rawJavaCode}
   />
 }}

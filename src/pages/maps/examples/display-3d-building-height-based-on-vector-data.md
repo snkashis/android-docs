@@ -6,7 +6,7 @@ topic: Extrusions
 prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { PopulationDensityExtrusionActivity } from '../../../example-code/PopulationDensityExtrusionActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/PopulationDensityExtrusionActivity.js'"
 ---
 
 {{
@@ -17,6 +17,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={PopulationDensityExtrusionActivity}
+    java={rawJavaCode}
   />
 }}

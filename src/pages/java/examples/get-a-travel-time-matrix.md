@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoGetATravelTimeMatrix from '../../../video/example-directionsmatrixapi.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { MatrixApiActivity } from '../../../example-code/MatrixApiActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/MatrixApiActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={MatrixApiActivity}
+    java={rawJavaCode}
   />
 }}

@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoAnimateTheMapCamera from '../../../video/example-animatethemapcamera.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { AnimateMapCameraActivity } from '../../../example-code/AnimateMapCameraActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/AnimateMapCameraActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={AnimateMapCameraActivity}
+    java={rawJavaCode}
   />
 }}

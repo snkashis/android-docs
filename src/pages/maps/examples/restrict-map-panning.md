@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoRestrictMapPanning from '../../../video/example-restrictmappanning.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { RestrictCameraActivity } from '../../../example-code/RestrictCameraActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/RestrictCameraActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={RestrictCameraActivity}
+    java={rawJavaCode}
   />
 }}

@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoTrafficPlugin from '../../../video/example-traffic-plugin.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { TrafficPluginActivity } from '../../../example-code/TrafficPluginActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/TrafficPluginActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={TrafficPluginActivity}
+    java={rawJavaCode}
   />
 }}

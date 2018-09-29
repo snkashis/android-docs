@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoDisplayDataWithATimeLapseEffect from '../../../video/example-datatimelapse.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { AddRainFallStyleActivity } from '../../../example-code/AddRainFallStyleActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/AddRainFallStyleActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={AddRainFallStyleActivity}
+    java={rawJavaCode}
   />
 }}

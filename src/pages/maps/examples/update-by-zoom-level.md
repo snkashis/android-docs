@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoUpdateByZoomLevel from '../../../video/example-updatechoroplethlayerbyzoom.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { ChoroplethZoomChangeActivity } from '../../../example-code/ChoroplethZoomChangeActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/ChoroplethZoomChangeActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={ChoroplethZoomChangeActivity}
+    java={rawJavaCode}
   />
 }}

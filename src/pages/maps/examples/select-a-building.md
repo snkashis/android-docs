@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoSelectABuilding from '../../../video/example-selectabuilding.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { SelectBuildingActivity } from '../../../example-code/SelectBuildingActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/SelectBuildingActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={SelectBuildingActivity}
+    java={rawJavaCode}
   />
 }}

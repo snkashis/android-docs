@@ -6,7 +6,7 @@ topic: Extrusions
 prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { Indoor3DMapActivity } from '../../../example-code/Indoor3DMapActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/Indoor3DMapActivity.js'"
 ---
 
 {{
@@ -17,6 +17,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={Indoor3DMapActivity}
+    java={rawJavaCode}
   />
 }}

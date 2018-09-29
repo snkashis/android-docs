@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoAdjustLightLocationColor from '../../../video/example-adjustlightlocationcolor.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { AdjustExtrusionLightActivity } from '../../../example-code/AdjustExtrusionLightActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/AdjustExtrusionLightActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={AdjustExtrusionLightActivity}
+    java={rawJavaCode}
   />
 }}

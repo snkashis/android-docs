@@ -6,7 +6,7 @@ topic: Add features to a map
 prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { MultipleGeometriesActivity } from '../../../example-code/MultipleGeometriesActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/MultipleGeometriesActivity.js'"
 ---
 
 {{
@@ -17,6 +17,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={MultipleGeometriesActivity}
+    java={rawJavaCode}
   />
 }}

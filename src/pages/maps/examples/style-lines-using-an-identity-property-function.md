@@ -6,7 +6,7 @@ topic: Dynamic styling
 prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { StyleLineIdentityPropertyActivity } from '../../../example-code/StyleLineIdentityPropertyActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/StyleLineIdentityPropertyActivity.js'"
 ---
 
 {{
@@ -17,6 +17,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={StyleLineIdentityPropertyActivity}
+    java={rawJavaCode}
   />
 }}

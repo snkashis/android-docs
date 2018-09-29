@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoChangeALayersColor from '../../../video/example-changealayerscolor.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { ColorSwitcherActivity } from '../../../example-code/ColorSwitcherActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/ColorSwitcherActivity.js'"
 ---
 
 {{
@@ -23,6 +23,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={ColorSwitcherActivity}
+    java={rawJavaCode}
   />
 }}

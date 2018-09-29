@@ -5,7 +5,7 @@ thumbnail: thumbnailJoinLocalJsonDataWithVectorTileGeometries
 topic: Data visualization
 prependJs:
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { ChoroplethJsonVectorMixActivity } from '../../../example-code/ChoroplethJsonVectorMixActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/ChoroplethJsonVectorMixActivity.js'"
 ---
 
 <!-- Broken demo -->
@@ -14,6 +14,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={ChoroplethJsonVectorMixActivity}
+    java={rawJavaCode}
   />
 }}

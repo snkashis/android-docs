@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoGeojsonMarathonExtrusion from '../../../video/example-marathon-geojson-extrusion.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { MarathonExtrusionActivity } from '../../../example-code/MarathonExtrusionActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/MarathonExtrusionActivity.js'"
 
 ---
 
@@ -24,6 +24,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={MarathonExtrusionActivity}
+    java={rawJavaCode}
   />
 }}

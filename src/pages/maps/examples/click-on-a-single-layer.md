@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoClickOnSingleLayer from '../../../video/example-clickonsinglelayer.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { ClickOnLayerActivity } from '../../../example-code/ClickOnLayerActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/ClickOnLayerActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={ClickOnLayerActivity}
+    java={rawJavaCode}
   />
 }}

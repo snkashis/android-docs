@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoShowDirectionsOnAMap from '../../../video/example-showdirectionsonamap.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { DirectionsActivity } from '../../../example-code/DirectionsActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/DirectionsActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={DirectionsActivity}
+    java={rawJavaCode}
   />
 }}

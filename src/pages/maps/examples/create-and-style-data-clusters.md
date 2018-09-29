@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoCreateAndStyleClusters from '../../../video/example-createandstyleclusters.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { GeoJsonClusteringActivity } from '../../../example-code/GeoJsonClusteringActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/GeoJsonClusteringActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={GeoJsonClusteringActivity}
+    java={rawJavaCode}
   />
 }}

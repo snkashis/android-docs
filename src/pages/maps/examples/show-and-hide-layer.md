@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoShowAndHideLayers from '../../../video/example-showandhidelayers.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { ShowHideLayersActivity } from '../../../example-code/ShowHideLayersActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/ShowHideLayersActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={ShowHideLayersActivity}
+    java={rawJavaCode}
   />
 }}

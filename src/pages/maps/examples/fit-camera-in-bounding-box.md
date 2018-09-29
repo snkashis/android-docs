@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoFitCameraInBoundingBox from '../../../video/example-fitcamerainboundingbox.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { BoundingBoxCameraActivity } from '../../../example-code/BoundingBoxCameraActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/BoundingBoxCameraActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={BoundingBoxCameraActivity}
+    java={rawJavaCode}
   />
 }}

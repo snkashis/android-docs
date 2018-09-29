@@ -6,7 +6,7 @@ topic: Dynamic styling
 prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { GeojsonLayerInStackActivity } from '../../../example-code/GeojsonLayerInStackActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/GeojsonLayerInStackActivity.js'"
 ---
 
 {{
@@ -17,6 +17,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={GeojsonLayerInStackActivity}
+    java={rawJavaCode}
   />
 }}

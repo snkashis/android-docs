@@ -6,7 +6,7 @@ topic: Dynamic styling
 prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { AddWmsSourceActivity } from '../../../example-code/AddWmsSourceActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/AddWmsSourceActivity.js'"
 ---
 
 {{
@@ -17,6 +17,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={AddWmsSourceActivity}
+    java={rawJavaCode}
   />
 }}

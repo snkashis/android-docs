@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoDashedDirectionsLine from '../../../video/example-dashed-directions-line.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { DashedDirectionsLineActivity } from '../../../example-code/DashedDirectionsLineActivity'"
+  - "import { rawJavaCode } from '../../../example-code/DashedDirectionsLineActivity'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={DashedDirectionsLineActivity}
+    java={rawJavaCode}
   />
 }}

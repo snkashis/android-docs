@@ -1,28 +1,9 @@
 // 1. Copy and paste this code into a new file in `src/example-code/`
-// 2. Update the filepath in line 8 to point to the file for your example.
-// 3. Find and replace all instances of `NameOfExample` with the name of the example.
+// 2. Update the filepath in line 5 (and line 7 if including Kotlin)
+//    to point to the file(s) for your example.
 
-import { highlightCodeSnippet } from '../util/highlight-code-snippet';
+const rawJavaCode = require('raw-loader!./YOUR_FILE_PATH');
 
-function MakeCodeSnippetJava() {
-  const rawJavaCode = require('raw-loader!./YOUR_FILE_PATH');
-  return {
-    raw: rawJavaCode,
-    highlighted: highlightCodeSnippet(rawJavaCode)
-  };
-}
+const rawKotlinCode = '// Not available';
 
-function MakeCodeSnippetKotlin() {
-  const rawKotlinCode = '// Not available';
-  return {
-    raw: rawKotlinCode,
-    highlighted: highlightCodeSnippet(rawKotlinCode)
-  };
-}
-
-const NameOfExample = {
-  java: MakeCodeSnippetJava(),
-  kotlin: MakeCodeSnippetKotlin()
-};
-
-export { NameOfExample };
+export { rawJavaCode, rawKotlinCode };

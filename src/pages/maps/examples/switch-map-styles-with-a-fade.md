@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoSwitchMapStylesWithAFade from '../../../video/example-switchmapstyleswithfade.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { StyleFadeSwitchActivity } from '../../../example-code/StyleFadeSwitchActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/StyleFadeSwitchActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={StyleFadeSwitchActivity}
+    java={rawJavaCode}
   />
 }}

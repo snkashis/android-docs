@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoDisplayAHeatmap from '../../../video/example-showheatmapdata.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { HeatmapActivity } from '../../../example-code/HeatmapActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/HeatmapActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={HeatmapActivity}
+    java={rawJavaCode}
   />
 }}

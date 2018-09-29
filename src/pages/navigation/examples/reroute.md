@@ -6,13 +6,13 @@ thumbnail: thumbnailReroute
 prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { RerouteActivity } from '../../../example-code/RerouteActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/RerouteActivity.js'"
 ---
 
 <!-- Any notes about this example would go here.  -->
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={RerouteActivity}
+    java={rawJavaCode}
   />
 }}

@@ -6,13 +6,13 @@ thumbnail: thumbnailNavigationViewWithFragment
 prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { NavigationViewWithFragmentActivity } from '../../../example-code/NavigationViewWithFragmentActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/NavigationViewWithFragmentActivity.js'"
 ---
 
 <!-- Any notes about this example would go here.  -->
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={NavigationViewWithFragmentActivity}
+    java={rawJavaCode}
   />
 }}

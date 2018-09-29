@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoCreateHotspotsFromPoints from '../../../video/example-createhotspotsfrompoints.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { CreateHotspotsActivity } from '../../../example-code/CreateHotspotsActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/CreateHotspotsActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={CreateHotspotsActivity}
+    java={rawJavaCode}
   />
 }}

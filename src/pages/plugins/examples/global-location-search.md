@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoGlobalLocationSearch from '../../../video/example-locationsearch.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { PlacesPluginActivity } from '../../../example-code/PlacesPluginActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/PlacesPluginActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={PlacesPluginActivity}
+    java={rawJavaCode}
   />
 }}

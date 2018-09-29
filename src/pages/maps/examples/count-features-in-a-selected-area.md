@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoCountFeaturesInASelectedArea from '../../../video/example-featurecount.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { FeatureCountActivity } from '../../../example-code/FeatureCountActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/FeatureCountActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={FeatureCountActivity}
+    java={rawJavaCode}
   />
 }}

@@ -6,7 +6,7 @@ topic: Getting started
 prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { MapboxMapOptionActivity } from '../../../example-code/MapboxMapOptionActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/MapboxMapOptionActivity.js'"
 ---
 
 {{
@@ -17,6 +17,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={MapboxMapOptionActivity}
+    java={rawJavaCode}
   />
 }}

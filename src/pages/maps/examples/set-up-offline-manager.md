@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoOfflineManager from '../../../video/example-offlinemanager.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { OfflineManagerActivity } from '../../../example-code/OfflineManagerActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/OfflineManagerActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={OfflineManagerActivity}
+    java={rawJavaCode}
   />
 }}

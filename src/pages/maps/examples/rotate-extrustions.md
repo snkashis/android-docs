@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoRotateAndTilt3DBuildings from '../../../video/example-rotateandtilt3dbuildings.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { RotationExtrusionActivity } from '../../../example-code/RotationExtrusionActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/RotationExtrusionActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={RotationExtrusionActivity}
+    java={rawJavaCode}
   />
 }}

@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoDrawACustomMarkerIcon from '../../../video/example-drawacustomermarkericon.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { DrawCustomMarkerActivity } from '../../../example-code/DrawCustomMarkerActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/DrawCustomMarkerActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={DrawCustomMarkerActivity}
+    java={rawJavaCode}
   />
 }}

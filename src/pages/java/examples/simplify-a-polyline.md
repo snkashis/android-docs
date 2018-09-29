@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoSimplifyPolyline from '../../../video/example-simplify-polyline-javaservice.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { SimplifyPolylineActivity } from '../../../example-code/SimplifyPolylineActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/SimplifyPolylineActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={SimplifyPolylineActivity}
+    java={rawJavaCode}
   />
 }}

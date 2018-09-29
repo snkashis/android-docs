@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoQueryAMapFeature from '../../../video/example-queryamapfeature.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { QueryFeatureActivity } from '../../../example-code/QueryFeatureActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/QueryFeatureActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={QueryFeatureActivity}
+    java={rawJavaCode}
   />
 }}

@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoSupportMapFragment from '../../../video/example-support-map-fragment.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { SupportMapFragmentActivity } from '../../../example-code/SupportMapFragmentActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/SupportMapFragmentActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={SupportMapFragmentActivity}
+    java={rawJavaCode}
   />
 }}

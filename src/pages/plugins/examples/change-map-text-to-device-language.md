@@ -5,7 +5,7 @@ thumbnail: thumbnailLocalization
 topic: Getting started
 prependJs:
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { LocalizationPluginActivity } from '../../../example-code/LocalizationPluginActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/LocalizationPluginActivity.js'"
 ---
 
 <!-- BROKEN DEMO -->
@@ -14,6 +14,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={LocalizationPluginActivity}
+    java={rawJavaCode}
   />
 }}

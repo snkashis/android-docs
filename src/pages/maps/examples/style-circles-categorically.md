@@ -6,7 +6,7 @@ topic: Dynamic styling
 prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { StyleCirclesCategoricallyActivity } from '../../../example-code/StyleCirclesCategoricallyActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/StyleCirclesCategoricallyActivity.js'"
 ---
 
 {{
@@ -17,6 +17,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={StyleCirclesCategoricallyActivity}
+    java={rawJavaCode}
   />
 }}

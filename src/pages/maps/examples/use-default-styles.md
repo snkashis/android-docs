@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoDefaultStyles from '../../../video/example-defaultstyles.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { DefaultStyleActivity } from '../../../example-code/DefaultStyleActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/DefaultStyleActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={DefaultStyleActivity}
+    java={rawJavaCode}
   />
 }}

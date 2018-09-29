@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoColorDependentOnZoomLevel from '../../../video/example-colordependentonzoomlevel.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { ZoomDependentFillColorActivity } from '../../../example-code/ZoomDependentFillColorActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/ZoomDependentFillColorActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={ZoomDependentFillColorActivity}
+    java={rawJavaCode}
   />
 }}

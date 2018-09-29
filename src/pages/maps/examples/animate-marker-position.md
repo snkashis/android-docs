@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoAnimateMarkerPosition from '../../../video/example-animatemarkerposition.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { AnimatedMarkerActivity } from '../../../example-code/AnimatedMarkerActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/AnimatedMarkerActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={AnimatedMarkerActivity}
+    java={rawJavaCode}
   />
 }}

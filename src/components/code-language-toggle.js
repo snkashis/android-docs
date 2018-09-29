@@ -1,13 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ControlToggleSet from '@mapbox/react-control-toggle-set';
 import { AppContext } from '../context.js';
 
 export default class CodeLanguageToggle extends React.Component {
-  unconnectedToggle(context) {
+  constructor(props) {
+    super(props);
+    this.unconnectedToggle = this.unconnectedToggle.bind(this);
+  }
+  unconnectedToggle = context => {
     return (
       <ControlToggleSet
-        id="ios-languages"
-        themeToggleGroup="bg-blue py3 px3 mb12"
+        id={this.props.id}
+        themeToggleGroup="bg-blue py3 px3 my12"
         themeToggle="txt-s py3 toggle--white toggle--active-blue"
         onChange={value => {
           context.changeLanguage(value);
@@ -16,9 +21,13 @@ export default class CodeLanguageToggle extends React.Component {
         options={context.languages}
       />
     );
-  }
+  };
 
   render() {
     return <AppContext.Consumer>{this.unconnectedToggle}</AppContext.Consumer>;
   }
 }
+
+CodeLanguageToggle.propTypes = {
+  id: PropTypes.string
+};

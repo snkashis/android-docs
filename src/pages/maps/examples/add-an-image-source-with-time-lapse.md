@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoAddAnImageSourceWithTimeLapse from '../../../video/example-showtimelapse.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { ImageSourceTimeLapseActivity } from '../../../example-code/ImageSourceTimeLapseActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/ImageSourceTimeLapseActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={ImageSourceTimeLapseActivity}
+    java={rawJavaCode}
   />
 }}

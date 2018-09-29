@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoGenerateAnOptimizedRoute from '../../../video/example-showoptimizeddirectoinsonmap.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { OptimizationActivity } from '../../../example-code/OptimizationActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/OptimizationActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={OptimizationActivity}
+    java={rawJavaCode}
   />
 }}

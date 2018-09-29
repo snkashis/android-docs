@@ -1,22 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CodeSnippet from '@mapbox/react-code-snippet';
+import { highlightCodeSnippet } from '../util/highlight-code-snippet';
 import { AppContext } from '../context.js';
 
 const highlightTheme = require('raw-loader!../css/prism.css');
 
-export default class ToggleableCodeBlock extends React.Component {
+export default class OtherCodeBlock extends React.Component {
   static propTypes = {
-    codeSnippet: PropTypes.shape({
-      java: PropTypes.shape({
-        raw: PropTypes.string.isRequired,
-        highlighted: PropTypes.string.isRequired
-      }).isRequired,
-      kotlin: PropTypes.shape({
-        raw: PropTypes.string.isRequired,
-        highlighted: PropTypes.string.isRequired
-      }).isRequired
-    }).isRequired
+    java: PropTypes.string.isRequired,
+    kotlin: PropTypes.string
   };
 
   constructor(props) {
@@ -34,16 +27,16 @@ export default class ToggleableCodeBlock extends React.Component {
   unconnectedCodeBlock = context => {
     let code = null;
     if (context.preferredLanguage === 'java') {
-      code = this.props.codeSnippet.java;
+      code = this.props.java;
     } else if (context.preferredLanguage === 'kotlin') {
-      code = this.props.codeSnippet.kotlin;
+      code = this.props.kotlin;
     }
     return (
       <div className="unprose mb12">
         <CodeSnippet
           style={{ background: '#273d56' }}
-          code={code.raw}
-          highlightedCode={code.highlighted}
+          code={code}
+          highlightedCode={highlightCodeSnippet(code)}
           maxHeight={480}
           highlightThemeCss={highlightTheme}
           onCopy={

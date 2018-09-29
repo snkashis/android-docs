@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoChangeAMapsLanguage from '../../../video/example-changeamapslanguage.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { LanguageSwitchActivity } from '../../../example-code/LanguageSwitchActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/LanguageSwitchActivity.js'"
 ---
 
 {{
@@ -23,6 +23,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={LanguageSwitchActivity}
+    java={rawJavaCode}
   />
 }}

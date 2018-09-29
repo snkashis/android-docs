@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoSnapshotShare from '../../../video/example-shareasnapshotimage.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { SnapshotShareActivity } from '../../../example-code/SnapshotShareActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/SnapshotShareActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={SnapshotShareActivity}
+    java={rawJavaCode}
   />
 }}

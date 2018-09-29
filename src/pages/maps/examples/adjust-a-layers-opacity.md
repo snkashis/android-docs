@@ -7,7 +7,7 @@ prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoAdjustALayersOpacity from '../../../video/example-adjustalayersopacity.mp4'"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { AdjustLayerOpacityActivity } from '../../../example-code/AdjustLayerOpacityActivity.js'"
+  - "import { rawJavaCode } from '../../../example-code/AdjustLayerOpacityActivity.js'"
 ---
 
 {{
@@ -22,6 +22,6 @@ prependJs:
 
 {{
   <ToggleableCodeBlock 
-    codeSnippet={AdjustLayerOpacityActivity}
+    java={rawJavaCode}
   />
 }}
