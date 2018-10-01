@@ -1,3 +1,6 @@
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -27,7 +30,7 @@ import com.mapbox.services.android.navigation.testapp.Utils;
 import com.mapbox.services.android.navigation.testapp.activity.notification.CustomNavigationNotification;
 import com.mapbox.services.android.navigation.ui.v5.route.NavigationMapRoute;
 import com.mapbox.services.android.navigation.v5.instruction.Instruction;
-import com.mapbox.services.android.navigation.v5.location.MockLocationEngine;
+import com.mapbox.services.android.navigation.v5.location.replay.ReplayRouteLocationEngine;
 import com.mapbox.services.android.navigation.v5.milestone.Milestone;
 import com.mapbox.services.android.navigation.v5.milestone.MilestoneEventListener;
 import com.mapbox.services.android.navigation.v5.milestone.RouteMilestone;
@@ -42,6 +45,8 @@ import com.mapbox.services.android.navigation.v5.routeprogress.ProgressChangeLis
 import com.mapbox.services.android.navigation.v5.routeprogress.RouteProgress;
 import com.mapbox.turf.TurfConstants;
 import com.mapbox.turf.TurfMeasurement;
+
+import java.lang.ref.WeakReference;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -78,6 +83,20 @@ public class MockNavigationActivity extends AppCompatActivity implements OnMapRe
   private Point destination;
   private Point waypoint;
 
+  private static class MyBroadcastReceiver extends BroadcastReceiver {
+    private final WeakReference<MapboxNavigation> weakNavigation;
+
+    MyBroadcastReceiver(MapboxNavigation navigation) {
+      this.weakNavigation = new WeakReference<>(navigation);
+    }
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+      MapboxNavigation navigation = weakNavigation.get();
+      navigation.stopNavigation();
+    }
+  }
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -87,10 +106,10 @@ public class MockNavigationActivity extends AppCompatActivity implements OnMapRe
     mapView.onCreate(savedInstanceState);
     mapView.getMapAsync(this);
 
-    // Use a custom notification
-    CustomNavigationNotification customNavigationNotification = new CustomNavigationNotification(this);
+    Context context = getApplicationContext();
+    CustomNavigationNotification customNotification = new CustomNavigationNotification(context);
     MapboxNavigationOptions options = MapboxNavigationOptions.builder()
-      .navigationNotification(customNavigationNotification)
+      .navigationNotification(customNotification)
       .build();
 
     navigation = new MapboxNavigation(this, Mapbox.getAccessToken(), options);
@@ -105,6 +124,7 @@ public class MockNavigationActivity extends AppCompatActivity implements OnMapRe
           Trigger.gte(TriggerProperty.STEP_DISTANCE_TRAVELED_METERS, 75)
         )
       ).build());
+    customNotification.register(new MyBroadcastReceiver(navigation), context);
   }
 
   @OnClick(R.id.startRouteButton)
@@ -120,8 +140,9 @@ public class MockNavigationActivity extends AppCompatActivity implements OnMapRe
       navigation.addMilestoneEventListener(this);
       navigation.addOffRouteListener(this);
 
-      ((MockLocationEngine) locationEngine).setRoute(route);
+      ((ReplayRouteLocationEngine) locationEngine).assign(route);
       navigation.setLocationEngine(locationEngine);
+      locationLayerPlugin.setLocationLayerEnabled(true);
       navigation.startNavigation(route);
       mapboxMap.removeOnMapClickListener(this);
     }
@@ -135,7 +156,7 @@ public class MockNavigationActivity extends AppCompatActivity implements OnMapRe
   private void newOrigin() {
     if (mapboxMap != null) {
       LatLng latLng = Utils.getRandomLatLng(new double[] {-77.1825, 38.7825, -76.9790, 39.0157});
-      ((MockLocationEngine) locationEngine).setLastLocation(
+      ((ReplayRouteLocationEngine) locationEngine).assignLastLocation(
         Point.fromLngLat(latLng.getLongitude(), latLng.getLatitude())
       );
       mapboxMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12));
@@ -146,14 +167,15 @@ public class MockNavigationActivity extends AppCompatActivity implements OnMapRe
   public void onMapReady(MapboxMap mapboxMap) {
     this.mapboxMap = mapboxMap;
 
-    locationLayerPlugin = new LocationLayerPlugin(mapView, mapboxMap, null);
+    locationLayerPlugin = new LocationLayerPlugin(mapView, mapboxMap);
     locationLayerPlugin.setRenderMode(RenderMode.GPS);
+    locationLayerPlugin.setLocationLayerEnabled(false);
     navigationMapRoute = new NavigationMapRoute(navigation, mapView, mapboxMap);
 
     mapboxMap.addOnMapClickListener(this);
     Snackbar.make(findViewById(R.id.container), "Tap map to place waypoint", BaseTransientBottomBar.LENGTH_LONG).show();
 
-    locationEngine = new MockLocationEngine(1000, 50, true);
+    locationEngine = new ReplayRouteLocationEngine();
 
     newOrigin();
   }

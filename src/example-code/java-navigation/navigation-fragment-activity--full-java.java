@@ -2,6 +2,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,12 +30,13 @@ public class NavigationFragment extends Fragment implements OnNavigationReadyCal
   private static final double DESTINATION_LATITUDE = 38.91113678979344;
 
   private NavigationView navigationView;
+  private DirectionsRoute directionsRoute;
 
   @Nullable
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                            @Nullable Bundle savedInstanceState) {
-    return inflater.inflate(R.layout.navigation_view_fragment_layout, container);
+    return inflater.inflate(R.layout.navigation_view_fragment_layout, container, false);
   }
 
   @Override
@@ -96,7 +98,7 @@ public class NavigationFragment extends Fragment implements OnNavigationReadyCal
   }
 
   @Override
-  public void onNavigationReady() {
+  public void onNavigationReady(boolean isRunning) {
     Point origin = Point.fromLngLat(ORIGIN_LONGITUDE, ORIGIN_LATITUDE);
     Point destination = Point.fromLngLat(DESTINATION_LONGITUDE, DESTINATION_LATITUDE);
     fetchRoute(origin, destination);
@@ -104,16 +106,13 @@ public class NavigationFragment extends Fragment implements OnNavigationReadyCal
 
   @Override
   public void onCancelNavigation() {
-    if (getActivity() != null) {
-      getActivity().finish();
-    }
+    navigationView.stopNavigation();
+    stopNavigation();
   }
 
   @Override
   public void onNavigationFinished() {
-    if (getActivity() != null) {
-      getActivity().finish();
-    }
+    // no-op
   }
 
   @Override
@@ -130,18 +129,30 @@ public class NavigationFragment extends Fragment implements OnNavigationReadyCal
       .getRoute(new SimplifiedCallback() {
         @Override
         public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
-          DirectionsRoute directionsRoute = response.body().routes().get(0);
-          startNavigation(directionsRoute);
+          directionsRoute = response.body().routes().get(0);
+          startNavigation();
         }
       });
   }
 
-  private void startNavigation(DirectionsRoute directionsRoute) {
+  private void startNavigation() {
+    if (directionsRoute == null) {
+      return;
+    }
     NavigationViewOptions options = NavigationViewOptions.builder()
       .directionsRoute(directionsRoute)
       .shouldSimulateRoute(true)
       .navigationListener(NavigationFragment.this)
       .build();
     navigationView.startNavigation(options);
+  }
+
+  private void stopNavigation() {
+    FragmentActivity activity = getActivity();
+    if (activity != null && activity instanceof FragmentNavigationActivity) {
+      FragmentNavigationActivity fragmentNavigationActivity = (FragmentNavigationActivity) activity;
+      fragmentNavigationActivity.showPlaceholderFragment();
+      fragmentNavigationActivity.showNavigationFab();
+    }
   }
 }
