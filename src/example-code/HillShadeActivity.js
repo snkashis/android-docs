@@ -1,4 +1,4 @@
-const rawJavaCode = require('raw-loader!./java/hill-shade-activity--full-java.java');
+const rawJavaCode = require('raw-loader!../../examples/maps/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/HillShadeActivity.java');
 
 const rawKotlinCode = '// Not available';
 

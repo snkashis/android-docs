@@ -1,4 +1,4 @@
-const rawJavaCode = require('raw-loader!./java/traffic-plugin-activity--full-java.java');
+const rawJavaCode = require('raw-loader!../../examples/maps/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/plugins/TrafficPluginActivity.java');
 
 const rawKotlinCode = '// Not available';
 

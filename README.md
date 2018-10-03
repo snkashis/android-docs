@@ -13,7 +13,16 @@ To host this website locally, you'll need to have Node.js installed and setup:
 brew install nodejs
 ```
 
-Once you have Node.js set up, navigate to this repository's directory on your machine, and run install to grab all the required dependencies:
+This repository uses git submodules, so it needs to be cloned recursively to include:
+
+- `examples/maps`, sourced from [`mapbox-android-demo`](https://github.com/mapbox/mapbox-android-demo)
+- `examples/navigation`, sourced from [`mapbox-navigation-android`](https://github.com/mapbox/mapbox-navigation-android/tree/master/app/src/main/java/com/mapbox/services/android/navigation/testapp/activity)
+
+```
+git clone --recursive https://github.com/mapbox/android-docs.git
+```
+
+Once you have Node.js setup and the submodules properly cloned, navigate to this repository's directory on your machine, and run install to grab all the required dependencies:
 
 ```
 npm install

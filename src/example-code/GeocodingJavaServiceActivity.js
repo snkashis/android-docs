@@ -1,4 +1,4 @@
-const rawJavaCode = require('raw-loader!./java/geocoding-java-service-activity--full-java.java');
+const rawJavaCode = require('raw-loader!../../examples/maps/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/javaservices/GeocodingActivity.java');
 
 const rawKotlinCode = '// Not available';
 

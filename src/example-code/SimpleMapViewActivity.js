@@ -1,4 +1,4 @@
-const rawJavaCode = require('raw-loader!./java/simple-map-view-activity--full-java.java');
+const rawJavaCode = require('raw-loader!../../examples/maps/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/basics/SimpleMapViewActivity.java');
 
 const rawKotlinCode = '// Not available';
 

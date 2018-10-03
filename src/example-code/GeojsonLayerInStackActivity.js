@@ -1,4 +1,4 @@
-const rawJavaCode = require('raw-loader!./java/geojson-layer-in-stack-activity--full-java.java');
+const rawJavaCode = require('raw-loader!../../examples/maps/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/GeojsonLayerInStackActivity.java');
 
 const rawKotlinCode = '// Not available';
 

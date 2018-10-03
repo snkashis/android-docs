@@ -1,4 +1,4 @@
-const rawJavaCode = require('raw-loader!./java/animate-map-camera-activity--full-java.java');
+const rawJavaCode = require('raw-loader!../../examples/maps/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/camera/AnimateMapCameraActivity.java');
 
 const rawKotlinCode = '// Not available';
 

@@ -1,4 +1,4 @@
-const rawJavaCode = require('raw-loader!./java/mapbox-map-option-activity--full-java.java');
+const rawJavaCode = require('raw-loader!../../examples/maps/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/basics/MapboxMapOptionActivity.java');
 
 const rawKotlinCode = '// Not available';
 

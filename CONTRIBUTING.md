@@ -29,7 +29,7 @@ You can learn more about our open source philosophy on [mapbox.com](https://www.
 
 ## Content types
 
-The Android documentation consists of four distinct content types: Overview guides, Examples, Help resources, and API references. See below for how to contribute each type of content. 
+The Android documentation consists of four distinct content types: Overview guides, Examples, Help resources, and API references. See below for how to contribute each type of content.
 
 
 ### Overview guides
@@ -40,7 +40,7 @@ There are two files that will need to be added or modified for new technical nar
 
 #### Step one: Markdown file
 
-1. Create a new Markdown file in either `src/pages/maps/overview` for guides about the Maps SDK or `src/pages/navigation/overview` for the Navigation SDK, etc. 
+1. Create a new Markdown file in either `src/pages/maps/overview` for guides about the Maps SDK or `src/pages/navigation/overview` for the Navigation SDK, etc.
 2. Add front matter.
   - `title` (required): Name of example in title case.
   - `description` (required): One to two sentence description of the example. Must end in a period.
@@ -80,14 +80,14 @@ The `MapboxMap` class in the Maps SDK has several methods to change the camera's
 
 #### Step two: batfish.config.js
 
-Any time you add a new overview guide or alter the filename of an overview guide, you will need to modify the `productPageOrder` variable in the `batfish.config.js` file. This is where the table of contents order is determined. 
+Any time you add a new overview guide or alter the filename of an overview guide, you will need to modify the `productPageOrder` variable in the `batfish.config.js` file. This is where the table of contents order is determined.
 
 1. Open `batfish.config.js`.
-2. Add, alter, or move a string that matches the filename (without the `.md` file extension) of the Overview guide you added/altered _exactly_. These are case-sensitive. The order these appear are the order in which the guides will appear in the table of contents. 
+2. Add, alter, or move a string that matches the filename (without the `.md` file extension) of the Overview guide you added/altered _exactly_. These are case-sensitive. The order these appear are the order in which the guides will appear in the table of contents.
 
 #### Code blocks in overview guides
 
-To add a code block for a single language use <code>```</code> followed by the language of the code. For example, here's a Java code block: 
+To add a code block for a single language use <code>```</code> followed by the language of the code. For example, here's a Java code block:
 
 <pre>
 ```java
@@ -97,7 +97,7 @@ mapboxMap.addMarker(new MarkerOptions()
 ```
 </pre>
 
-To add a code block that toggles between Java and Kotlin, use a combination of the `CodeLanguageToggle` and `ToggleableCodeBlock` components. First import them into the Markdown file using the following: 
+To add a code block that toggles between Java and Kotlin, use a combination of the `CodeLanguageToggle` and `ToggleableCodeBlock` components. First import them into the Markdown file using the following:
 
 ```md
 prependJs:
@@ -119,7 +119,7 @@ mapboxMap.addMarker(new MarkerOptions()
 `}
 
 kotlin={`
-hi hello 
+hi hello
 i am kotlin code
 💁‍♀️
 `}
@@ -128,11 +128,11 @@ i am kotlin code
 }}
 ```
 
-Language preference (Java vs. Kotlin) will persist throughout /android-docs when navigating between pages. 
+Language preference (Java vs. Kotlin) will persist throughout /android-docs when navigating between pages.
 
 #### Mapbox Java SDK
 
-All overview guides for APIs in the Mapbox Java SDK should follow this format: 
+All overview guides for APIs in the Mapbox Java SDK should follow this format:
 
 - Intro section
   - Description of what the API does
@@ -142,9 +142,19 @@ All overview guides for APIs in the Mapbox Java SDK should follow this format:
 - API response (with code sample)
 - Other options as necessary
 
-### Examples 
+### Examples
 
-The examples section contains **code examples**. Each example requires three pieces: (1) a code snippet, (2) visual assets, and (3) a Markdown file. 
+The examples section contains **code examples**. Examples are updated by bumping the either the `examples/maps` or `examples/navigation` submodule, based on the code in the [mapbox/mapbox-android-demo](https://github.com/mapbox/mapbox-android-demo) or the [mapbox/mapbox-navigation-android](https://github.com/mapbox/mapbox-navigation-android) repo. These repos contain working Android projects with apps that integrate the Java or Kotlin examples.
+
+⚠️ **Note**: please refer to this repo's [README.md](https://github.com/mapbox/android-docs/blob/mb-pages/README.md#installation) to make sure you have properly cloned the repo, otherwise the submodule references will not load properly.
+
+#### Update examples
+1. Make and commit your changes in the proper repo.
+2. `git submodule update --remote examples/maps` (or `examples/navigation`) to update the submodule. This should typically point to the latest commit in master.
+3. `git add examples/maps` (or `examples/navigation`) to stage the submodule update.
+4. `git commit -m "Bumped examples submodule for <some reason>"``
+
+Each example requires three pieces: (1) a code snippet, (2) visual assets, and (3) a Markdown file.
 
 #### Step one: Code snippet
 
@@ -172,22 +182,22 @@ Adding a new Markdown file to the `src/pages/maps/examples/` folder will add bot
 2. Add front matter.
     - `title`: Name of example in title case.
     - `description`: One to two sentence description of the example. Must end in a period.
-    - `topic`: Choose from: 
-        `Getting started`, 
-        `Dynamic styling`, 
-        `Data visualization`, 
-        `3D`, 
-        `Add markers and infoWindows to the map`, 
-        `User interaction`, 
-        `Add features to a map`, 
-        `Set a map style`, 
+    - `topic`: Choose from:
+        `Getting started`,
+        `Dynamic styling`,
+        `Data visualization`,
+        `3D`,
+        `Add markers and infoWindows to the map`,
+        `User interaction`,
+        `Add features to a map`,
+        `Set a map style`,
         `Image generation`,  
         `Offline`
     - `thumbnail`: The image ID from the image config file.
     - `prependJs`:
       - `AppropriateImage` or `VideoWithDeviceFrame` depending on if your full-size preview is a `png` or an `mp4`.
       - `ToggleableCodeBlock` component: Import the component to display your code.
-      - Example code: Import the raw and highlighted code pulled in the file you created in `src/example-code/`. 
+      - Example code: Import the raw and highlighted code pulled in the file you created in `src/example-code/`.
 3. The content in the Markdown file (outside of the front matter) will be displayed as text on the individual example page.
 4. Add your visual preview using JSX inside `{{ }}` to add an `AppropriateImage` or `VideoWithDeviceFrame`.
 5. Add any number of `ToggleableCodeBlock` components and set the `codeSnippet` prop to your imported code.
@@ -207,7 +217,7 @@ prependJs:
 ---
 
 {{
-  <AppropriateImage 
+  <AppropriateImage
     imageId="exampleAddAHillshadeLayer"
   />
 }}
@@ -215,7 +225,7 @@ prependJs:
 <!-- Any notes about this example would go here.  -->
 
 {{
-  <ToggleableCodeBlock 
+  <ToggleableCodeBlock
     java={rawJavaCode}
   />
 }}
@@ -228,7 +238,7 @@ _Note: There are not currently any examples written in Kotlin, but they could be
 
 The Help tab contains links to tutorials and troubleshooting guides that live at https://www.mapbox.com/help/.
 
-The links on this page come from `src/data/related-help-pages.js`. To add new links to help guides, add a new object to the `guides` array for the appropriate guide type (tutorials, troubleshooting, etc). The object should follow the pattern of this example: 
+The links on this page come from `src/data/related-help-pages.js`. To add new links to help guides, add a new object to the `guides` array for the appropriate guide type (tutorials, troubleshooting, etc). The object should follow the pattern of this example:
 
 ```json
 {

@@ -1,4 +1,4 @@
-const rawJavaCode = require('raw-loader!./java/vector-source-activity--full-java.java');
+const rawJavaCode = require('raw-loader!../../examples/maps/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/styles/VectorSourceActivity.java');
 
 const rawKotlinCode = '// Not available';
 

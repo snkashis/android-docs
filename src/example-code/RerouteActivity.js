@@ -1,4 +1,4 @@
-const rawJavaCode = require('raw-loader!./java-navigation/reroute-activity--full-java.java');
+const rawJavaCode = require('raw-loader!../../examples/navigation/app/src/main/java/com/mapbox/services/android/navigation/testapp/activity/RerouteActivity.java');
 
 const rawKotlinCode = '// Not available';
 
