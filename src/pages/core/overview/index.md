@@ -5,6 +5,8 @@ prependJs:
   - "import OverviewHeader from '@mapbox/dr-ui/overview-header';"
   - "import AppropriateImage from '../../../components/appropriate-image';"
   - "import { CORE_VERSION } from '../../../constants';"
+  - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
+  - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
 ---
 
 {{
@@ -67,7 +69,10 @@ Once you have set up your permissions manager, you will still need to override `
 
 _**Note:** The `PermissionsManager` can be used for requesting other permissions in addition to location._
 
-```java
+{{
+<CodeLanguageToggle id="permissions-manager" />
+<ToggleableCodeBlock
+ java={`
 PermissionsManager permissionsManager = new PermissionsManager(this);
 
 if (PermissionsManager.areLocationPermissionsGranted(this)) {
@@ -78,11 +83,27 @@ if (PermissionsManager.areLocationPermissionsGranted(this)) {
 }
 
 @Override
-public void onRequestPermissionsResult(
-int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
   permissionsManager.onRequestPermissionsResult(requestCode, permissions, grantResults);
 }
-```
+`}
+kotlin={`
+var permissionsManager: PermissionsManager
+
+if (PermissionsManager.areLocationPermissionsGranted(this)) {
+
+} else {
+	permissionsManager = PermissionsManager(this)
+	permissionsManager.requestLocationPermissions(this)
+}
+
+override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, 
+	grantResults: IntArray) {
+	permissionsManager.onRequestPermissionsResult(requestCode, permissions, grantResults)
+}
+`}
+ />
+}}
 
 ### PermissionsListener
 
@@ -90,23 +111,43 @@ The `PermissionsListener` is an interface that needs to be set up and passed int
 
 The permission result is invoked once the user decides whether to allow or deny the permission. A boolean value is given, which you can then use to write an `if` statement. Both cases should be handled correctly. Continue with your permission-sensitive logic if the user approves. Otherwise, if the user denies, we recommend displaying a message that tells the user that the permission is required for your application to work.
 
-```java
+{{
+<CodeLanguageToggle id="permissions-listener" />
+<ToggleableCodeBlock
+ java={`
 PermissionsListener permissionsListener = new PermissionsListener() {
-  @Override
-  public void onExplanationNeeded(List<String> permissionsToExplain) {
-
-  }
-
-  @Override
-  public void onPermissionResult(boolean granted) {
-    if (granted) {
-      // Permission sensitive logic called here
-    } else {
-      // User denied the permission
-    }
-  }
+	@Override
+	public void onExplanationNeeded(List<String> permissionsToExplain) {
+	
+	}
+		
+	@Override
+	public void onPermissionResult(boolean granted) {
+		if (granted) {
+      	// Permission sensitive logic called here
+    	} else {
+     	// User denied the permission
+		}
+	}
 };
-```
+`}
+kotlin={`
+var permissionsListener: PermissionsListener = object : PermissionsListener {
+	override fun onExplanationNeeded(permissionsToExplain: List<String>) {
+	
+	}
+	
+	override fun onPermissionResult(granted: Boolean) {
+		if (granted) {
+        // Permission sensitive logic called here
+		} else {
+        // User denied the permission
+		}
+	}
+}
+`}
+ />
+}}
 
 ## LocationEngine
 
@@ -117,9 +158,17 @@ If your application needs location information, the `LocationEngine` class can h
 
 If you are using the Mapbox Maps SDK for Android, create a `LocationEngine` object using: 
 
-```java
+{{
+<CodeLanguageToggle id="location-engine" />
+<ToggleableCodeBlock
+ java={`
 LocationEngine locationEngine = new LocationEngineProvider(this).obtainBestLocationEngineAvailable();
-```
+`}
+kotlin={`
+var locationEngine = LocationEngineProvider(this).obtainBestLocationEngineAvailable()
+`}
+ />
+}}
 
 This will obtain the best location engine that is available and eliminate the need to create a new `LocationEngine` from scratch.
 
@@ -127,7 +176,10 @@ This will obtain the best location engine that is available and eliminate the ne
 
 Add the `mapbox-android-core` dependency to your project in order to listen to location changes. Then initialize a new instance of `LocationEngine` as described above. Once it's created, activate the `LocationEngine` object and optionally add a location listener. Implementing the `LocationEngineListener` interface will require you to override the `onConnected()` and `onLocationChanged()` methods. Inside of `onConnected()`, you can begin requesting location updates or wait for the proper time to do so.
 
-```java
+{{
+<CodeLanguageToggle id="location-updates" />
+<ToggleableCodeBlock
+ java={`
 LocationEngine locationEngine = new LocationEngineProvider(this).obtainBestLocationEngineAvailable();
 locationEngine.activate();
 locationEngine.addLocationEngineListener(this);
@@ -143,11 +195,31 @@ public void onConnected() {
 public void onLocationChanged(Location location) {
 
 }
-```
+`}
+kotlin={`
+var locationEngine = LocationEngineProvider(this).obtainBestLocationEngineAvailable()
+locationEngine.activate()
+locationEngine.addLocationEngineListener(this)
+
+...
+
+override fun onConnected() {
+
+}
+
+override fun onLocationChanged(location: Location?) {
+
+} 
+`}
+ />
+}}
 
 To prevent your application from having a memory leak, it is a good idea to stop requesting location updates inside of your activity's `onStop()` method and continue requesting them in `onStart()`.
 
-```java
+{{
+<CodeLanguageToggle id="start-stop" />
+<ToggleableCodeBlock
+ java={`
 @Override
   protected void onStart() {
     super.onStart();
@@ -169,7 +241,30 @@ To prevent your application from having a memory leak, it is a good idea to stop
     
     mapView.onStop();
 }
-```
+`}
+kotlin={`
+override fun onStart() {
+    super.onStart()
+
+    mapView.onStart()
+
+    if (locationEngine != null) {
+        locationEngine.requestLocationUpdates()
+    }
+}
+
+override fun onStop() {
+    super.onStop()
+
+    if (locationEngine != null) {
+        locationEngine.removeLocationUpdates()
+    }
+
+    mapView.onStop()
+}
+`}
+ />
+}}
 
 ### Last location
 
@@ -177,11 +272,22 @@ If your application needs to quickly get a user's location, you can call the `ge
 
 _**Note:** Be careful when requesting the user's last location because it is possible for the last location to be `null`._
 
-```java
+{{
+<CodeLanguageToggle id="last-location" />
+<ToggleableCodeBlock
+ java={`
 Location lastLocation = locationEngine.getLastLocation();
 
 if (lastLocation != null) {
   // Location logic here
-  
 }
-```
+`}
+kotlin={`
+val lastLocation = locationEngine.lastLocation
+
+if (lastLocation != null) {
+    // Location logic here
+}
+`}
+ />
+}}
