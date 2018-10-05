@@ -43,6 +43,7 @@ Before developing your app with the Navigation SDK, you'll need to add the SDK a
 ```groovy
 repositories {
   mavenCentral()
+  maven { url 'https://mapbox.bintray.com/mapbox' }
 }
 
 dependencies {

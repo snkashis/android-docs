@@ -15,11 +15,12 @@ Get up and running in a few minutes with our drop-in turn-by-turn navigation, or
 
 ## Install the Navigation UI SDK
 
-You'll need to add the SDK as a dependency before developing your app with the Navigation UI components. This dependency is different from the one used to compile the core Navigation SDK, but it will still include everything from the core library. Note that while we show how to insert the stable version of the SDK inside of your project, you can also use the nightly build/snapshot or the beta version if one is available. You can find the dependency given below in the MavenCentral repository.
+You'll need to add the Navigation UI SDK as a dependency before developing your app with the Navigation UI components. This dependency is different from the one used to compile the core Navigation SDK. When using this Navigation UI SDK, you do not need to add both dependencies. The UI SDK will automatically pull in the core Navigation SDK. Note that while we show how to insert the stable version of the SDK inside of your project, you can also use the nightly build/SNAPSHOT or the beta version if one is available.
 
 ```groovy
 repositories {
   mavenCentral()
+  maven { url 'https://mapbox.bintray.com/mapbox' }
 }
 
 dependencies {
