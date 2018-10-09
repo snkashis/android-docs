@@ -20,7 +20,7 @@ Support for extrusions was added with `5.1.0` of the Maps SDK, unlocking the pos
 
 1. Start Android Studio.
 2. Open up your application's `build.gradle` file.
-3. Make sure that your project's `minSdkVersion` is API 15 or higher.
+3. Make sure that your project's `minSdkVersion` is API 14 or higher.
 4. Under dependencies, add a new build rule for the latest `mapbox-android-plugin-building`.
 
 ```groovy
