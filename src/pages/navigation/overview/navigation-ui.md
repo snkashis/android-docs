@@ -9,13 +9,15 @@ prependJs:
   import AppropriateImage from '../../../components/appropriate-image';
 ---
 
-Mapbox Navigation gives you all of the tools that you need to add turn-by-turn navigation to your apps.
+The Mapbox Navigation UI SDK gives you all of the tools that you need to add turn-by-turn navigation to your apps.
 
 Get up and running in a few minutes with our drop-in turn-by-turn navigation, or build a more custom turn-by-turn navigation app with our UI components.
 
 ## Install the Navigation UI SDK
 
-You'll need to add the Navigation UI SDK as a dependency before developing your app with the Navigation UI components. This dependency is different from the one used to compile the core Navigation SDK. When using this Navigation UI SDK, you do not need to add both dependencies. The UI SDK will automatically pull in the core Navigation SDK. Note that while we show how to insert the stable version of the SDK inside of your project, you can also use the nightly build/SNAPSHOT or the beta version if one is available.
+You'll need to add the Navigation UI SDK as a dependency before developing your app with the Navigation UI components. This dependency is different from the one used to compile the core Mapbox Navigation SDK, but it will still include everything from the core Mapbox Navigation SDK. _If you're using the Navigation UI SDK, you **don't** have to declare the Mapbox Navigation SDK as well. If you only declare the Navigation UI SDK in your project's Gradle file, the Mapbox Navigation SDK will automatically be included._
+
+Note that while we show how to insert the stable version of the Navigation UI SDK inside of your project, you can also use the nightly build/SNAPSHOT or the beta version if one is available. You can find the dependency given below in the MavenCentral repository.
 
 ```groovy
 repositories {
