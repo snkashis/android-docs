@@ -6,6 +6,8 @@ prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image';"
   - "import { Floater } from '../../../components/floater';"
   - "import { MAP_SDK_VERSION } from '../../../constants';"
+  - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
+  - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
 ---
 
 {{
@@ -169,6 +171,35 @@ onSaveInstanceState();
 onLowMemory();
 onDestroy();
 ```
+
+If you're using a fragment, call `mapview.onDestroy()` inside the fragment's `onDestroyView()` method rather than inside `onDestroy()`:
+
+{{
+<CodeLanguageToggle id="fragment-ondestroyview" />
+<ToggleableCodeBlock
+
+java={`
+@Override
+public void onDestroyView() {
+	super.onDestroyView();
+	
+		mapView.onDestroy();
+	
+}
+`}
+
+kotlin={`
+fun onDestroyView() {
+	super.onDestroyView()
+	
+		mapView.onDestroy()
+
+}
+`}
+
+/>
+}}
+
 
 ### 6. Java 8
 
