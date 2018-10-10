@@ -579,5 +579,12 @@ module.exports = {
   pixel2FrameVertical: {
     basename: 'pixel-2-device-vertical.png',
     sizes: [{ width: 1200 }]
+  },
+  //
+  // PLAY STORE BADGE
+  //
+  demoAppPlayStoreBadge: {
+    basename: 'google-play-badge.png',
+    sizes: [{ width: 1400 }]
   }
 };

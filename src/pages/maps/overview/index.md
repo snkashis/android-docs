@@ -28,7 +28,15 @@ prependJs:
   </div>
 }}
 
-The Mapbox Maps SDK for Android is an open source toolset for displaying maps inside of your Android application. [Mapbox's demo app on the Google Play Store](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en) includes many examples of how to use the Mapbox Maps SDK for Android. Various pages in this documentation reference the demo app's examples as well.
+The Mapbox Maps SDK for Android is an open source toolset for displaying maps inside of your Android application. 
+
+{{
+  <a href='https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' class="fr-mm block wmax180 mx-auto pl24">
+    <AppropriateImage imageId="demoAppPlayStoreBadge" alt='Get it on Google Play' />
+  </a>
+}}
+
+[Mapbox's demo app on the Google Play Store](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en) includes many examples of how to use the Mapbox Maps SDK for Android. The demo app and [the examples section of this documentation](https://www.mapbox.com/android-docs/maps/examples/) are great places to start for understanding the power of the Mapbox Maps SDK for Android.
 
 ## Install the Maps SDK
 
