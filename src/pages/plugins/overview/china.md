@@ -8,25 +8,19 @@ prependJs:
     } from '../../../constants';
 ---
 
-Traditional map services are either blocked in China or suffer from slow internet connections. Our mapbox.cn infrastructure allows for unparalleled speed advantages for anyone using our maps in China or through Chinese mobile carriers internationally. This plugin specifically bundles the Mapbox Maps SDK for Android and automatically configures it to ensure the correct endpoints are being called. Accurate endpoints ensure that the mobile device retrieves the correct map tiles, map styles, and other information. Additionally, one of the dependencies allows for annotation shifting, which ensures all your overlays and annotations are accurately being depicted on the map.
+Traditional map services are either blocked in China or suffer from slow internet connections. Our mapbox.cn infrastructure allows for unparalleled speed advantages for anyone using our maps in China or through Chinese mobile carriers internationally. This plugin specifically bundles the Mapbox Maps SDK for Android and automatically configures it to ensure the correct endpoints are being called. Accurate endpoints ensure that the mobile device retrieves the correct map tiles, map styles, and other information. Additionally, the plugin allows for annotation shifting, which ensures all your overlays and annotations are accurately depicted on the map.
 
 ## Install the China plugin
 
-You'll need to add the appropriate dependencies inside of your `build.gradle` file to start developing an application using the China Plugin. Both dependencies include the Maps SDK for Android. Version bumps of this plugin tend to follow new stable releases of the Maps SDK for Android, which happen approximately every 4 weeks. All dependencies given below can be found on Bintray.
-
-### Choosing the right dependency
-There are two dependency options, or flavors, available. The choice between the two ultimately comes down to the location of the app's end user. The end user is either inside or outside of China. Using the `Global` flavor within China will result in slower speeds for fetching map tiles and inaccurate coordinates. Using the `China` flavor corrects for these issues in two major ways:
-
-- It changes the endpoints that the Mapbox APIs get their data from. The China flavor makes all API requests and receives map tiles from within China, making the app up to 10x faster.
-- The `China` flavor includes the [shifting module](#shifting-annotations), which allow you to shift all of your map annotations to be accurately represented on top of the map. These flavors are interchangeable. Switching between the two requires no changes in code other than changing the dependency name in the your app-level 'build.gradle' file. This allows you the flexibility to have a single app for inside China, or an app with two equal flavors - one for within China and one for everywhere else.
+You'll need to add the appropriate dependencies inside of your `build.gradle` file to start developing an application using the China Plugin. The plugin includes the Mapbox Maps SDK for Android, so there's no need for you to declare both the Maps SDK and the plugin. Version bumps of this plugin tend to follow new stable releases of the Maps SDK for Android, which happen approximately every four weeks. The plugin's dependency below can be found on Bintray.
 
 ### Add the dependency
 
 1. Start Android Studio.
-2. Open up your application's `build.gradle`.
+2. Open up your application's `build.gradle` file.
 3. Make sure that your project's `minSdkVersion` is API 14 or higher.
-4. Decide on the appropriate flavor inside your App and add it to your dependencies.
-5. Click the Sync Project with Gradle Files near the toolbar in Studio.
+4. Add the plugin's dependency to your application's `build.gradle` file.
+5. Click the **Sync Project with Gradle Files** near the toolbar in Studio.
 
 ```groovy
 repositories {
@@ -34,11 +28,8 @@ repositories {
 }
 
 dependencies {
-  // China flavor dependency
+  // China plugin dependency
   implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-china:{{ CHINA_PLUGIN_VERSION }}'
-
-  // Global flavor dependency
-  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-china-global:{{ CHINA_PLUGIN_VERSION }}'
 }
 ```
 
@@ -61,7 +52,6 @@ The China Plugin for Android has wrapper classes to be used in place of their "t
 | --- | --- |
 | `MapView` | `ChinaMapView` |
 | `MapboxMapOptions` | `MapboxMapChinaOptions` |
-| `MapboxDirections` | `MapboxDirectionsChina` |
 
 As mentioned above, Android Lint will attempt to warn you when you are using the wrong classes. This does not occur in every instance, however, so we still recommend manually confirming that you are using the right object each time.
 
@@ -84,7 +74,7 @@ When using the constants found in this SDK, you'll always be using the latest ve
 
 We shift the base map for our default styles in order to comply with the Chinese government's mapping requirements. This means you are required to also shift any annotations that you place on top of your map so that they will match the shifted base map coordinate system. The plugin's shifting function will convert WGS-84 coordinates into GCJ-02 standards. We recommend reading [this wiki entry](https://en.wikipedia.org/wiki/Restrictions_on_geographic_data_in_China#The_China_GPS_shift_problem) and [this article](http://www.travelandleisure.com/articles/digital-maps-skewed-china) to better understand why shifting is required.
 
-The plugin's China "flavor" has a `ShiftForChina` class with the `String shift(double lon, double lat)` method. You can pass _unshifted_ longitude and latitude coordinates to the `shift()` method. The method returns a `String` that represents a JSONObject. Use this `String` of shifted coordinates to add data to your map.
+The plugin has a `ShiftForChina` class with the `String shift(double lon, double lat)` method. You can pass _unshifted_ longitude and latitude coordinates to the `shift()` method. The method returns a `String` that represents a JSONObject. Use this `String` of shifted coordinates to add data to your map.
 
 ```java
 String shiftedCoordinatesJson = shiftForChina.shift(unshiftedLong, unshiftedLat);
@@ -102,12 +92,7 @@ try {
 } catch (JSONException jsonException) {
   jsonException.printStackTrace();
 }
-```    
-
-Do note that as mentioned above, the shift module is only available in the plugin's `China` flavor. This is the one exception to the rule mentioned above that you only need to switch dependency names if you'd like to support both global and China flavors of your app.
-
-In the case of a global version of your app, you'll need to remove the code that shifts your annotations. This will change in future releases of this plugin, so that shifting becomes much easier.
-
+```
 
 ## Shifting location
 
