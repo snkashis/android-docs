@@ -1,6 +1,6 @@
 [submodule "examples/maps"]
 	path = examples/maps
-	url = git@github.com:mapbox/mapbox-android-demo.git
+	url = https://github.com/mapbox/mapbox-android-demo.git
 [submodule "examples/navigation"]
 	path = examples/navigation
-	url = git@github.com:mapbox/mapbox-navigation-android.git
+	url = https://github.com/mapbox/mapbox-navigation-android.git
