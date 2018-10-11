@@ -178,17 +178,16 @@ Make sure that the first and last `Point` locations are the same.
 
 java={`
 mapboxMap.addPolyline(new PolylineOptions()
-  .addAll(points)
-  .color(Color.parseColor("#3bb2d0"))
-  .width(2));
+	.addAll(points)
+	.color(Color.parseColor("#3bb2d0"))
+	.width(2));
 `}
 
 kotlin={`
 mapboxMap.addPolyline(PolylineOptions()
-                .add(*pointsArray)
-                .color(Color.parseColor("#8a8acb"))
-                .alpha(0.65f)
-                .width(4f))
+	.addAll(points)
+	.color(Color.parseColor("#3bb2d0"))
+	.width(2));
 `}
 
 />
