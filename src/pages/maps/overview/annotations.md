@@ -76,8 +76,8 @@ Icon icon = iconFactory.fromResource(R.drawable.blue_marker);
 
 // Add the marker to the map
 mapboxMap.addMarker(new MarkerViewOptions()
-  .position(new LatLng(-37.821648, 144.978594))
-  .icon(icon));
+	.position(new LatLng(-37.821648, 144.978594))
+	.icon(icon));
 `}
 kotlin={`
 // Create an Icon object for the marker to use
@@ -85,9 +85,9 @@ val icon = IconFactory.getInstance(this)
 icon.fromResource(R.drawable. R.drawable.blue_marker)
 
 // Add the marker to the map
-mapboxMap.addMarker(new MarkerOptions()
-  .position(new LatLng(-37.821648, 144.978594))
-  .title("Eiffel Tower")
+mapboxMap?.addMarker(MarkerViewOptions()
+	.position(LatLng(-37.821648, 144.978594))
+	.icon(icon))
 `}
 
 />
