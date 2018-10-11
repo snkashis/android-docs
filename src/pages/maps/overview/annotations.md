@@ -39,7 +39,7 @@ Markers are useful when identifying a single point on the map. The SDK comes wit
 java={`
 mapboxMap.addMarker(new MarkerOptions()
 	.position(new LatLng(48.85819, 2.29458))
-	.title("Eiffel Tower")
+	.title("Eiffel Tower"));
 `}
 kotlin={`
 mapboxMap?.addMarker(MarkerOptions()
