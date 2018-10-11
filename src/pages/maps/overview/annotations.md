@@ -86,7 +86,7 @@ icon.fromResource(R.drawable. R.drawable.blue_marker)
 
 // Add the marker to the map
 mapboxMap.addMarker(new MarkerOptions()
-  .position(new LatLng(48.85819, 2.29458))
+  .position(new LatLng(-37.821648, 144.978594))
   .title("Eiffel Tower")
 `}
 
