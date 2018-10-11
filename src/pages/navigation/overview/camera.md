@@ -1,6 +1,9 @@
 ---
 title: "Camera Engine"
 description: "Fine grain control over the map camera during your Android app navigation experience with the Mapbox Navigation SDK for Android. Click to learn how."
+prependJs:
+  - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
+  - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
 ---
 
 Before you begin reading this document, you might want to begin with [the general overview and basics of the map's camera](https://mapbox.com/android-docs/maps/overview/camera/).
@@ -14,32 +17,84 @@ tilt, zoom, and a target `Point` given a `RouteInformation`.
 A `RouteInformation` object can be created from a `DirectionsRoute`, `Location`, or `RouteProgress`.
 Depending on which objects are provided, `SimpleCamera` will return a value for each camera method:
 
-```java
-RouteInformation.create(DirectionsRoute route, Location location, RouteProgress routeProgress);
-```
+{{
+<CodeLanguageToggle id="route-info" />
+<ToggleableCodeBlock
 
-For example, if `RouteInformation` has a `Location`, the `SimpleCamera` will return the
-`LocationBearing` for the camera bearing. This bearing value represents the GPS system's understanding of where the user is going:
+java={`
+RouteInformation.create(route, location, routeProgress); 
+`}
 
-```java
-@Override
-  public double bearing(RouteInformation routeInformation) {
-    if (routeInformation.location() != null) {
-      return routeInformation.location().getBearing();
-    }
-    return 0;
+kotlin={`
+RouteInformation.create(route, location, routeProgress)
+`}
+
+/>
+}}
+
+
+For example, if `RouteInformation` has a `DirectionsRoute`, the `SimpleCamera` will return the
+`List` of `Point`s based on the route geometry for `Camera#overview(RouteInformation routeInformation)`:
+
+{{
+<CodeLanguageToggle id="route-bearing" />
+<ToggleableCodeBlock
+
+java={`
+public List<Point> overview(RouteInformation routeInformation) {
+  ...
+  if (invalidCoordinates) {
+    buildRouteCoordinatesFromRouteData(routeInformation);
   }
-```
+  return routeCoordinates;
+}
+`}
 
-You can then use the returned `bearing` to update the `MapboxMap` camera:
+kotlin={`
+fun overview(routeInformation: RouteInformation): List<Point>? {
+	if (invalidCoordinates) {
+	    buildRouteCoordinatesFromRouteData(routeInformation)
+	}
+	return routeCoordinates
+}
+`}
 
-```java
-double bearing = cameraEngine.bearing(routeInformation);
-CameraPosition position = new CameraPosition.Builder()
-  .bearing(bearing)
-  .build();
+/>
+}}
+
+You can then use the returned `List` to update the `MapboxMap` camera.  In this case,
+you can use the list to build a `LatLngBounds` that the camera will move to include:
+
+{{
+<CodeLanguageToggle id="route-camera" />
+<ToggleableCodeBlock
+
+java={`
+Camera cameraEngine = navigation.getCameraEngine();
+
+List<Point> routePoints = cameraEngine.overview(routeInformation);
+
+LatLngBounds routeBounds = ...
+
+CameraUpdateFactory.newLatLngBounds(routeBounds, padding[0], padding[1], padding[2], padding[3]);
+
 mapboxMap.easeCamera(CameraUpdateFactory.newCameraPosition(position));
-```
+`}
+
+kotlin={`
+val cameraEngine = navigation.getCameraEngine()
+
+val routePoints = cameraEngine.overview(routeInformation)
+
+val routeBounds: LatLngBounds
+
+CameraUpdateFactory.newLatLngBounds(routeBounds, padding[0], padding[1], padding[2], padding[3])
+
+mapboxMap.easeCamera(CameraUpdateFactory.newCameraPosition(position))
+`}
+
+/>
+}}
 
 ## Creating a custom `Camera`
 The Navigation SDK provides a `SimpleCamera` by default. You're also able to create your

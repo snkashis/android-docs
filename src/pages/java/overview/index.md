@@ -5,6 +5,8 @@ prependJs:
   - "import OverviewHeader from '@mapbox/dr-ui/overview-header';"
   - "import AppropriateImage from '../../../components/appropriate-image';"
   - "import { JAVA_SDK_VERSION } from '../../../constants';"
+  - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
+  - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
 ---
 
 {{
@@ -65,12 +67,22 @@ The SDK will try to detect if your coordinates are outside the excepted range an
 
 > **Note:** if you happen to be using our Maps SDK with this SDK, you'll notice that the LatLng object has the reverse order, latitude comes before the longitude value.
 
-Point will also be found in this SDK which is used specifically for GeoJSON objects. You can create a Point either directly from a Position object or passing in a longitude, latitude double array.
+{{
+<CodeLanguageToggle id="location" />
+<ToggleableCodeBlock
 
-```java
-// Position representing The White House
-Position position = Position.fromCoordinates(-77.03655, 38.89770);
-```
+java={`
+// Point representing The White House
+Point point = Point.fromLngLat(-77.03655, 38.89770);
+`}
+
+kotlin={`
+// Point representing The White House
+val point = Point.fromLngLat(-77.03655, 38.89770);
+`}
+/>
+}}
+
 
 ## Installation
 
