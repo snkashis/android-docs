@@ -204,19 +204,19 @@ Make sure that the first and last `Point` locations are the same.
 java={`
 List<LatLng> polygonLatLngList = new ArrayList<>();
 
-polygon.add(new LatLng(45.522585, -122.685699));
-polygon.add(new LatLng(45.534611, -122.708873));
-polygon.add(new LatLng(45.530883, -122.678833));
-polygon.add(new LatLng(45.547115, -122.667503));
-polygon.add(new LatLng(45.530643, -122.660121));
-polygon.add(new LatLng(45.533529, -122.636260));
-polygon.add(new LatLng(45.521743, -122.659091));
-polygon.add(new LatLng(45.510677, -122.648792));
-polygon.add(new LatLng(45.515008, -122.664070));
-polygon.add(new LatLng(45.502496, -122.669048));
-polygon.add(new LatLng(45.515369, -122.678489));
-polygon.add(new LatLng(45.506346, -122.702007));
-polygon.add(new LatLng(45.522585, -122.685699));
+polygonLatLngList.add(new LatLng(45.522585, -122.685699));
+polygonLatLngList.add(new LatLng(45.534611, -122.708873));
+polygonLatLngList.add(new LatLng(45.530883, -122.678833));
+polygonLatLngList.add(new LatLng(45.547115, -122.667503));
+polygonLatLngList.add(new LatLng(45.530643, -122.660121));
+polygonLatLngList.add(new LatLng(45.533529, -122.636260));
+polygonLatLngList.add(new LatLng(45.521743, -122.659091));
+polygonLatLngList.add(new LatLng(45.510677, -122.648792));
+polygonLatLngList.add(new LatLng(45.515008, -122.664070));
+polygonLatLngList.add(new LatLng(45.502496, -122.669048));
+polygonLatLngList.add(new LatLng(45.515369, -122.678489));
+polygonLatLngList.add(new LatLng(45.506346, -122.702007));
+polygonLatLngList.add(new LatLng(45.522585, -122.685699));
 
 mapboxMap.addPolygon(new PolygonOptions()
 .addAll(polygonLatLngList)
@@ -224,26 +224,25 @@ mapboxMap.addPolygon(new PolygonOptions()
 `}
 
 kotlin={`
-
 val polygonLatLngList = ArrayList<LatLng>()
 
-polygon.add(LatLng(45.522585, -122.685699))
-polygon.add(LatLng(45.534611, -122.708873))
-polygon.add(LatLng(45.530883, -122.678833))
-polygon.add(LatLng(45.547115, -122.667503))
-polygon.add(LatLng(45.530643, -122.660121))
-polygon.add(LatLng(45.533529, -122.636260))
-polygon.add(LatLng(45.521743, -122.659091))
-polygon.add(LatLng(45.510677, -122.648792))
-polygon.add(LatLng(45.515008, -122.664070))
-polygon.add(LatLng(45.502496, -122.669048))
-polygon.add(LatLng(45.515369, -122.678489))
-polygon.add(LatLng(45.506346, -122.702007))
-polygon.add(LatLng(45.522585, -122.685699))
+polygonLatLngList.add(LatLng(45.522585, -122.685699))
+polygonLatLngList.add(LatLng(45.534611, -122.708873))
+polygonLatLngList.add(LatLng(45.530883, -122.678833))
+polygonLatLngList.add(LatLng(45.547115, -122.667503))
+polygonLatLngList.add(LatLng(45.530643, -122.660121))
+polygonLatLngList.add(LatLng(45.533529, -122.636260))
+polygonLatLngList.add(LatLng(45.521743, -122.659091))
+polygonLatLngList.add(LatLng(45.510677, -122.648792))
+polygonLatLngList.add(LatLng(45.515008, -122.664070))
+polygonLatLngList.add(LatLng(45.502496, -122.669048))
+polygonLatLngList.add(LatLng(45.515369, -122.678489))
+polygonLatLngList.add(LatLng(45.506346, -122.702007))
+polygonLatLngList.add(LatLng(45.522585, -122.685699))
 
-mapboxMap.addPolygon(PolygonOptions()
-.addAll(polygonLatLngList)
-.fillColor(Color.parseColor("#3bb2d0")))
+mapboxMap.addPolygon(PolygonOptions()s
+	.addAll(polygonLatLngList)
+	.fillColor(Color.parseColor("#3bb2d0")))
 `}
 
 />
