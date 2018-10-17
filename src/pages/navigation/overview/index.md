@@ -194,6 +194,10 @@ need to request a route that's continuing along the path that the user is travel
 a tolerance that determines how far you are willing to deviate from the provided bearing.  You can also do this for the origin, way points,
 and the destination using `NavigationRoute`:
 
+{{
+<CodeLanguageToggle id="location-object" />
+<ToggleableCodeBlock
+
 java={`
 // An Android Location object
 double bearing = Float.valueOf(location.getBearing()).doubleValue();
