@@ -11,7 +11,7 @@ prependJs:
 
 {{
   <div className="mb24">
-    <OverviewHeader 
+    <OverviewHeader
       features={[
         "Off-route Detection",
         "Timed Instructions",
@@ -66,7 +66,7 @@ java={`
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    MapboxNavigation navigation = new MapboxNavigation(this, "<access token>");
+    MapboxNavigation navigation = new MapboxNavigation(context, "<access token>");
 
     ...
 
@@ -77,7 +77,7 @@ kotlin={`
 override fun onCreate(savedInstanceState: Bundle?) {
 	super.onCreate(savedInstanceState)
 
-	val navigation = MapboxNavigation(this, "<access token>")
+	val navigation = MapboxNavigation(context, "<access token>")
 
 	...
 }
@@ -112,7 +112,7 @@ java={`
 Point origin = Point.fromLngLat(-77.03613, 38.90992);
 Point destination = Point.fromLngLat(-77.0365, 38.8977);
 
-NavigationRoute.builder(this)
+NavigationRoute.builder(context)
       .accessToken(Mapbox.getAccessToken())
       .origin(origin)
       .destination(destination)
@@ -135,18 +135,18 @@ kotlin={`
 val origin = Point.fromLngLat(-77.03613, 38.90992)
 val destination = Point.fromLngLat(-77.0365, 38.8977)
 
-NavigationRoute.builder(this)
+NavigationRoute.builder(context)
 	.accessToken(Mapbox.getAccessToken())
 	.origin(origin)
 	.destination(destination)
 	.build()
 	.getRoute(object : Callback<DirectionsResponse> {
 	override fun onResponse(call: Call<DirectionsResponse>, response: Response<DirectionsResponse>) {
-	
+
 	}
-	
+
 	override fun onFailure(call: Call<DirectionsResponse>, t: Throwable) {
-	
+
 	}
 })
 `}
@@ -161,20 +161,20 @@ If your navigation involves a bunch of pick-up and drop-off points, you can add 
 <ToggleableCodeBlock
 
 java={`
-NavigationRoute.Builder builder = NavigationRoute.builder()
+NavigationRoute.Builder builder = NavigationRoute.builder(context)
 	.accessToken(Mapbox.getAccessToken())
 	.origin(origin)
 	.destination(destination);
-	
+
 for (Point waypoint : waypoints) {
   builder.addWaypoint(waypoint);
 }
-    
+
 builder.build();
 `}
 
 kotlin={`
-val builder = NavigationRoute.builder()
+val builder = NavigationRoute.builder(context)
 	.accessToken(Mapbox.getAccessToken()!!)
 	.origin(origin)
 	.destination(destination)
@@ -189,6 +189,36 @@ builder.build()
 />
 }}
 
+You also have the ability to request routes in specific directions.  This is useful for off-route scenarios, when you
+need to request a route that's continuing along the path that the user is traveling.  You can specify a bearing, as well as
+a tolerance that determines how far you are willing to deviate from the provided bearing.  You can also do this for the origin, way points,
+and the destination using `NavigationRoute`:
+
+java={`
+// An Android Location object
+double bearing = Float.valueOf(location.getBearing()).doubleValue();
+double tolerance = 90d;
+NavigationRoute.builder(context)
+    .accessToken(accessToken)
+    .origin(origin, bearing, tolerance)
+    .destination(destination)
+    .build();
+`}
+
+kotlin={`
+// An Android Location object
+val bearing = location.bearing.toDouble()
+val tolerance = 90.0
+NavigationRoute.builder(context)
+    .accessToken(accessToken)
+    .origin(origin, bearing, tolerance)
+    .destination(destination)
+    .build()
+`}
+
+/>
+}}
+
 ## MapboxNavigation Object
 
 You will find most of the navigation APIs inside the `MapboxNavigation` class such as starting and ending the navigation session or attaching listeners. Assign and initialize a new instance of `MapboxNavigation` inside your navigation activity. When initializing, you'll need to pass in a `Context` and your Mapbox access token. Read the access token section in this getting started document to learn how to get a free access token.
@@ -198,11 +228,11 @@ You will find most of the navigation APIs inside the `MapboxNavigation` class su
 <ToggleableCodeBlock
 
 java={`
-MapboxNavigation navigation = new MapboxNavigation(this, MAPBOX_ACCESS_TOKEN);
+MapboxNavigation navigation = new MapboxNavigation(context, MAPBOX_ACCESS_TOKEN);
 `}
 
 kotlin={`
-val navigation = MapboxNavigation(this, MAPBOX_ACCESS_TOKEN)
+val navigation = MapboxNavigation(context, MAPBOX_ACCESS_TOKEN)
 `}
 
 />
@@ -212,12 +242,12 @@ You can also optionally pass in a `MapboxNavigationOptions` object if you’d li
 
 ## Approaches
 
-You can add `approaches` to the `NavigationRoute` builder if you are interested in indicating from which side of the road to approach a waypoint. 
+You can add `approaches` to the `NavigationRoute` builder if you are interested in indicating from which side of the road to approach a waypoint.
 
-There are three options found in `DirectionsCriteria.ApproachesCriteria`: `"unrestricted"` (default), `"curb"` or `null` (default). 
+There are three options found in `DirectionsCriteria.ApproachesCriteria`: `"unrestricted"` (default), `"curb"` or `null` (default).
 
 - If set to `"unrestricted"`, the route can approach waypoints from either side of the road.
-- If set to `"curb"`, the route will be returned so that on arrival, the waypoint will be found on the side that corresponds with the `driving_side` of the region in which the returned route is located. 
+- If set to `"curb"`, the route will be returned so that on arrival, the waypoint will be found on the side that corresponds with the `driving_side` of the region in which the returned route is located.
 - If no option is specified (`null`), it is translated internally to `""`,​ which has the same result as setting an approach to `"unrestricted"`​.
 
 If provided, the list of approaches **must** be the same length as the list of waypoints (including the `origin` and the `destination`) and in that particular order i.e. `origin`, *waypoints*, `destination`.
@@ -229,18 +259,18 @@ If a re-route occurs and `approaches` were used to fetch the `DirectionsRoute` t
 <ToggleableCodeBlock
 
 java={`
-NavigationRoute.Builder builder = NavigationRoute.builder(this)
+NavigationRoute.Builder builder = NavigationRoute.builder(context)
     .accessToken(Mapbox.getAccessToken())
     .origin(origin)
     .addWaypoint(pickup)
     .destination(destination);
-    
+
 builder.addApproaches("unrestricted", "curb", "curb");
 builder.build();
 `}
 
 kotlin={`
-val builder = NavigationRoute.builder(this)
+val builder = NavigationRoute.builder(context)
 	.accessToken(Mapbox.getAccessToken()!!)
 	.origin(origin)
 	.addWaypoint(pickup)
@@ -262,12 +292,12 @@ Navigation requires the user's location to run; this is done using the `Location
 <ToggleableCodeBlock
 
 java={`
-Location location = new LocationEngineProvider(this).obtainBestLocationEngineAvailable();
+Location location = new LocationEngineProvider(context).obtainBestLocationEngineAvailable();
 navigation.setLocationEngine(locationEngine);
 `}
 
 kotlin={`
-val location = LocationEngineProvider(this).obtainBestLocationEngineAvailable()
+val location = LocationEngineProvider(context).obtainBestLocationEngineAvailable()
 navigation?.locationEngine = locationEngine!!
 `}
 
@@ -286,7 +316,7 @@ java={`
 @Override
 protected void onDestroy() {
   super.onDestroy();
-  
+
 	// End the navigation session
 	navigation.stopNavigation();
 	navigation.onDestroy();
@@ -318,7 +348,7 @@ java={`
 navigation.addNavigationEventListener(new NavigationEventListener() {
   @Override
   public void onRunning(boolean running) {
-  
+
   }
 });
 `}
