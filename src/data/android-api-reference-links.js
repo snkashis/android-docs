@@ -112,5 +112,12 @@ export const androidApiReferenceLinks = {
         constants.CORE_VERSION
       }/index.html`
     }
+  ],
+  vision: [
+    {
+      label: 'Vision',
+      id: 'vision',
+      href: `/android-docs/api/vision/index.html`
+    }
   ]
 };

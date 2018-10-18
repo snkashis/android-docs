@@ -57,7 +57,8 @@ const productPageOrder = {
     'turf'
   ],
   'java/examples/': ['index'],
-  'core/overview/': ['index']
+  'core/overview/': ['index'],
+  'vision/overview/': ['index']
 };
 
 module.exports = () => {

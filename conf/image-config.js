@@ -27,6 +27,14 @@ module.exports = {
     basename: 'overview-core-lib.png',
     sizes: [{ width: 322 }]
   },
+  overviewVisionSdk: {
+    basename: 'overview-vision-sdk.png',
+    sizes: [{ width: 480 }]
+  },
+  overviewVisionAr: {
+    basename: 'overview-vision-ar.png',
+    sizes: [{ width: 480 }]
+  },
   // ------------------------
   // EXAMPLES
   // ------------------------
