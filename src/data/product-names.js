@@ -4,5 +4,6 @@ export const productNames = {
   maps: 'Maps SDK for Android',
   navigation: 'Navigation SDK for Android',
   plugins: 'Android Plugins',
-  vision: 'Vision SDK for Android'
+  vision: 'Vision SDK for Android',
+  'vision-ar': 'Vision AR for Android'
 };

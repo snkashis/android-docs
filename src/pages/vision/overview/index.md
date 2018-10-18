@@ -18,7 +18,6 @@ prependJs:
         "Following distance detection"
       ]}
       title="Vision SDK for Android"
-      ghLink="https://github.com/mapbox/mapbox-vision-android"
       image={<AppropriateImage imageId="overviewVisionSdk" alt="Mobile devices displaying applications using the Mapbox Vision SDK for Android." />}
     />
   </div>
@@ -53,11 +52,11 @@ The Vision SDK for Android is a framework written in Java that allows developers
 
 There are three components to the Vision SDK: VisionCore, VisionSDK, and VisionAR.
 
-VisionCore is the core logic of the system, including all machine learning models; it exists as compiled library for each platform with a user-facing API.
+**VisionCore** is the core logic of the system, including all machine learning models; it exists as compiled library for each platform with a user-facing API.
 
-[VisionSDK](https://github.com/mapbox/mapbox-vision-android) is a framework written in native language (Kotlin for Android, Swift for iOS) that encapsulates core utilization and platform-dependent tasks. It calls VisionCore.
+**VisionSDK** is a framework written in native language (Kotlin for Android, Swift for iOS) that encapsulates core utilization and platform-dependent tasks. It calls VisionCore.
 
-[VisionAR](https://github.com/mapbox/mapbox-vision-ar-android) is a native framework with dependency on the Mapbox Navigation SDK. It takes information from the specified navigation route, transfers it to VisionCore via VisionSDK, receives instructions on displaying the route, and then finally renders it on top of camera frame using native instruments.
+[**VisionAR**](/android-docs/vision-ar/overview/) is a native framework with dependency on the Mapbox Navigation SDK. It takes information from the specified navigation route, transfers it to VisionCore via VisionSDK, receives instructions on displaying the route, and then finally renders it on top of camera frame using native instruments.
 
 ## Requirements
 

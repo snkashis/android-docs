@@ -58,7 +58,8 @@ const productPageOrder = {
   ],
   'java/examples/': ['index'],
   'core/overview/': ['index'],
-  'vision/overview/': ['index']
+  'vision/overview/': ['index'],
+  'vision-ar/overview/': ['index']
 };
 
 module.exports = () => {

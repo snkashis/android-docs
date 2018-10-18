@@ -119,5 +119,12 @@ export const androidApiReferenceLinks = {
       id: 'vision',
       href: `/android-docs/api/vision/index.html`
     }
+  ],
+  'vision-ar': [
+    {
+      label: 'Vision AR',
+      id: 'vision-ar',
+      href: `/android-docs/api/vision-ar/index.html`
+    }
   ]
 };
