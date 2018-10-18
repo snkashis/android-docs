@@ -14,7 +14,7 @@ Showing the user's current location as a map annotation is a popular and often c
 
 {{
 <DocNote>
-    <p>This <code>LocationComponent</code> has replaced the now-deprecated Location Layer Plugin. The <code>LocationComponent</code> is integrated into the Maps SDK for Android so that you don't need to add additional dependencies, it brings the same set of functionality that you were used to with the plugin, as well as additional bug fixes.</p>
+    <p>This <code>LocationComponent</code> has replaced the now-deprecated Location Layer Plugin. The <code>LocationComponent</code> is integrated into the Maps SDK for Android so that you don't need to add additional dependencies. It brings the same set of functionality that you were used to with the plugin, as well as additional bug fixes.</p>
 </DocNote>
 }}
 
