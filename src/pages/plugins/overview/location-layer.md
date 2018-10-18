@@ -2,16 +2,22 @@
 title: "Location"
 description: "Offical documentation about the Mapbox Android Location Layer Plugin. Show the Android device's location on a Mapbox Map in just a few quick steps."
 prependJs:
-  - |
-    import {
+  - import {
       LOCATION_LAYER_PLUGIN_VERSION
     } from '../../../constants';
     import AppropriateImage from '../../../components/appropriate-image';
   - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"     
+  - "import { WarningNote } from '../../../components/warning-note';" 
 ---
 
-A popular, often critical feature is showing the users current location as an annotation to give a reference point on the map. This plugin makes use of the latest [runtime styling](/android-docs/map-sdk/overview/runtime-styling/) features to display the location icons/markers within the map itself rather than on top as an Android view. This brings several fixes and performance improvements previously experienced when using the now deprecated `MyLocationView`.
+
+
+{{
+<WarningNote title="The Mapbox Location Layer Plugin for Android has been deprecated">
+    <p>Device location work is continuing in the <code>LocationComponent</code> class which is in the Mapbox Maps SDK for Android. We highly recommend that you use the Maps SDK's <code>LocationComponent</code> instead of this Location Layer Plugin. See the <a href="/android-docs/maps/overview/location-component/">Maps SDK <code>LocationComponent</code> documentation</a>.</p>
+</WarningNote>
+}}
 
 ## Install the Location Layer Plugin
 To start developing an application using the Location Layer Plugin, you'll need to add the appropriate dependencies inside your `build.gradle` file. This dependency includes the Maps SDK for Android. All dependencies given below can be found on MavenCentral.
@@ -107,27 +113,28 @@ There are three types of `RenderMode`:
 **RenderMode.NORMAL**
 
 {{
-<AppropriateImage imageId="locationLayerNormal" className="block mx-auto pt18" />
+<AppropriateImage imageId="locationLayerNormalRender" className="block mx-auto pt18" />
 }}
 
 **RenderMode.COMPASS**
 
 {{
-<AppropriateImage imageId="locationLayerCompass" className="block mx-auto pt18" />
+<AppropriateImage imageId="locationLayerCompassRender" className="block mx-auto pt18" />
 }}
 
 **RenderMode.GPS**
 
 {{
-<AppropriateImage imageId="locationLayerGps" className="block mx-auto pt18" />
+<AppropriateImage imageId="locationLayerGpsRender" className="block mx-auto pt18" />
 }}
 
-**Note:** the `Drawable` icon for `RenderMode.GPS` is customizable via `LocationLayerOptions#foregroundDrawable()`
+**Note:** the `Drawable` icon for `RenderMode.GPS` is highly customizable with methods such as `LocationLayerOptions#foregroundDrawable()` and `LocationLayerOptions#backgroundDrawable()`.
 
-### Following the user location with CameraMode
+### Following the device location with CameraMode
 
 The method `LocationLayerPlugin#setCameraMode(@CameraMode.Mode int cameraMode)` allows developers to track `Location` updates with the `MapboxMap` camera.  
 There are currently 7 modes available:
+<br>
 
 | `CameraMode` | Description |
 | --- | --- |
@@ -144,19 +151,19 @@ Here are a few examples from [the `LocationLayerModesActivity` in the plugin's t
 **CameraMode.NORMAL**
 
 {{
-<AppropriateImage imageId="locationLayerNormalGif" className="block mx-auto pt18" />
+<AppropriateImage imageId="locationLayerNormalCamera" className="block mx-auto pt18" />
 }}
 
 **CameraMode.COMPASS**
 
 {{
-<AppropriateImage imageId="locationLayerCompassGif" className="block mx-auto pt18" />
+<AppropriateImage imageId="locationLayerCompassCamera" className="block mx-auto pt18" />
 }}
 
 **CameraMode.GPS**
 
 {{
-<AppropriateImage imageId="locationLayerGpsGif" className="block mx-auto pt18" />
+<AppropriateImage imageId="locationLayerGpsCamera" className="block mx-auto pt18" />
 }}
 
 Traditional camera transitions will be canceled when any of the camera modes, besides `CameraMode#NONE`, are engaged. Use `LocationLayerPlugin#zoomWhileTracking` and `LocationLayerPlugin#tiltWhileTracking` to manipulate the camera in a tracking state. Use these two in combination with `MapboxMap#CancelableCallback` to schedule fluid transitions.

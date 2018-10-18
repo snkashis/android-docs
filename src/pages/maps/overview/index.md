@@ -14,11 +14,13 @@ prependJs:
   <div className="mb24">
     <OverviewHeader 
       features={[
-        "Live traffic",
-        "Runtime styling",
-        "Annotations",
-        "3D extrusions",
-        "Offline support"
+        "Map styles",
+        "Run-time styling",
+        "Data clusters",
+        "Camera manipulation",
+        "Querying the map",
+        "Gestures",
+        "Map images"
       ]}
       title="Maps SDK for Android"
       version={MAP_SDK_VERSION}
@@ -33,7 +35,7 @@ prependJs:
 The Mapbox Maps SDK for Android is an open source toolset for displaying maps inside of your Android application. 
 
 {{
-  <a href='https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' class="fr-mm block wmax180 mx-auto pl24">
+  <a href='https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' className="fr-mm block wmax180 mx-auto pl24">
     <AppropriateImage imageId="demoAppPlayStoreBadge" alt='Get it on Google Play' />
   </a>
 }}

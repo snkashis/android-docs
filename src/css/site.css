@@ -60,12 +60,22 @@
   height: 480px !important;
 }
 
+.w200 {
+  width: 200px !important;
+}
+
 .w480 {
   width: 480px !important;
 }
 
 .wmax480 {
   max-width: 480px !important;
+}
+
+@media screen and (min-width: 640px) {
+  .pt90-mm {
+    padding-top: 90px !important;
+  }
 }
 
 @media screen and (min-width: 800px) {

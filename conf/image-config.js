@@ -529,25 +529,29 @@ module.exports = {
     basename: 'places-splash.png',
     sizes: [{ width: 600 }]
   },
-  locationLayerNormal: {
-    basename: 'location-layer-normal.png',
+  locationLayerNormalRender: {
+    basename: 'location-layer-normal-render.png',
     sizes: [{ width: 600 }]
   },
-  locationLayerCompass: {
-    basename: 'location-layer-compass.png',
+  locationLayerCompassRender: {
+    basename: 'location-layer-compass-render.png',
     sizes: [{ width: 600 }]
   },
-  locationLayerGps: {
-    basename: 'location-layer-gps.png',
+  locationLayerGpsRender: {
+    basename: 'location-layer-gps-render.png',
     sizes: [{ width: 600 }]
   },
-  locationLayerNormalGif: {
-    basename: 'location-layer-normal.gif',
-    sizes: [{ width: 500 }]
+  locationLayerNormalCamera: {
+    basename: 'location-layer-normal-camera.gif',
+    sizes: [{ width: 480 }, { width: 600 }]
   },
-  locationLayerCompassGif: {
-    basename: 'location-layer-compass.gif',
-    sizes: [{ width: 500 }]
+  locationLayerCompassCamera: {
+    basename: 'location-layer-compass-camera.gif',
+    sizes: [{ width: 480 }, { width: 600 }]
+  },
+  locationLayerGpsCamera: {
+    basename: 'location-layer-gps-camera.gif',
+    sizes: [{ width: 480 }, { width: 600 }]
   },
   placePickerScreenshot: {
     basename: 'place-picker-android.png',
@@ -560,10 +564,6 @@ module.exports = {
   CircleLayerCluster: {
     basename: 'circle-layer-cluster.png',
     sizes: [{ width: 1400 }]
-  },
-  locationLayerGpsGif: {
-    basename: 'location-layer-gps.gif',
-    sizes: [{ width: 500 }]
   },
   navigationViewColorDiagram: {
     basename: 'navigation-view-color-diagram.png',

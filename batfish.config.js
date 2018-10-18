@@ -12,6 +12,7 @@ const productPageOrder = {
     'index',
     'styling-map',
     'annotations',
+    'location-component',
     'runtime-styling',
     'expressions',
     'clustering',
