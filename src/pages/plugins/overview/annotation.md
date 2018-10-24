@@ -35,7 +35,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-annoation:{{ ANNOTATION_PLUGIN_VERSION }}'
+  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-annotation:{{ ANNOTATION_PLUGIN_VERSION }}'
 }
 ```
 
@@ -73,7 +73,7 @@ mapView?.getMapAsync { mapboxMap ->
 
 ## Manager
 
-The circle, line, fill, and symbol map layers have accompanying manager classes. Each manager class has methods for setting layer properties that are less related to the visual styling. For example, `SymbolManager` adjusts the position of the `SymbolLayer`'s icon or text with methods such as `setFillTranslate()` or `setFillTranslateAnchor()`.
+The circle, line, fill, and symbol map layers have accompanying manager classes. Each manager class has methods for setting layer properties that are less related to the visual styling. For example, `SymbolManager` adjusts the position of the `SymbolLayer`'s icon or text with methods such as `iconAllowOverlap()` or `iconTranslate()`.
 
 You can also set `onClick` and `onLongClick` listeners to the type of annotations that you're adding to the map.
 
@@ -144,7 +144,7 @@ symbolManager?.iconRotationAlignment = ICON_ROTATION_ALIGNMENT_VIEWPORT
 
 ## Options
 
-The circle, line, fill, and symbol map layers _also_ have accompanying options classes. The options classes follow the builder pattern, which allows you to set various layer properties that are more related to visual styling. For example, `FillOptions` adjusts the look of `SymbolLayer` icon or text with methods such as `withFillColor()`, `withFillOpacity()`, and `withFillPattern()`.
+The circle, line, fill, and symbol map layers _also_ have accompanying options classes. The options classes follow the builder pattern, which allows you to set various layer properties that are more related to visual styling. For example, `FillOptions` adjusts the look of a `FillLayer` polygon with methods such as `withFillColor()`, `withFillOpacity()`, and `withFillPattern()`.
 
 | Layer type | Option class
 | --- | --- |
