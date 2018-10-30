@@ -37,21 +37,19 @@ navigation.addOffRouteListener(new OffRouteListener() {
 `}
 
 kotlin={`
-navigation?.addOffRouteListener {
-NavigationRoute.builder(this)
-	.accessToken(Mapbox.getAccessToken()!!)
-	.origin(newOrigin)
-	.destination(destination)
-	.build().getRoute(object : Callback<DirectionsResponse> {
+navigation.addOffRouteListener {
+  NavigationRoute.builder(this)
+  	.accessToken(Mapbox.getAccessToken()!!)
+  	.origin(newOrigin)
+  	.destination(destination)
+  	.build().getRoute(object : Callback<DirectionsResponse> {
 
-    override fun onResponse(call: Call<DirectionsResponse>, response: Response<DirectionsResponse>) {
-        
+      override fun onResponse(call: Call<DirectionsResponse>, response: Response<DirectionsResponse>) {
         // Update MapboxNavigation here with new route
         // MapboxNavigation#startNavigation
-        
     	}
 
-    override fun onFailure(call: Call<DirectionsResponse>, t: Throwable) 		{
+      override fun onFailure(call: Call<DirectionsResponse>, t: Throwable) {
 
     	}
 	})

@@ -143,7 +143,7 @@ rather than using `NavigationLauncher`.
 To use this implementation, there is some setup you have to do to ensure the `View` works properly:
 
 #### Step 1
-The `NavigationView` has lifecycle methods to ensure the `View` properly handles Android configuration changes or user interactions. You must also call `navigationView.initialize(OnNavigationReadyCallback callback);` when `NavigationView` is inflated and `NavigationView#onCreate()` has been called. 
+The `NavigationView` has lifecycle methods to ensure the `View` properly handles Android configuration changes or user interactions. You must also call `navigationView.initialize(OnNavigationReadyCallback callback);` when `NavigationView` is inflated and `NavigationView#onCreate()` has been called.
 
 Calling `initialize()` will ultimately call `onNavigationReady()` once all components for the `View` have been properly initialized.
 
@@ -225,28 +225,28 @@ setTheme(R.style.Theme_AppCompat_NoActionBar)
 super.onCreate(savedInstanceState)
 	setContentView(R.layout.activity_navigation)
 	navigationView = findViewById(R.id.navigationView)
-	navigationView!!.onCreate(savedInstanceState)
-	navigationView!!.initialize(this)
+	navigationView.onCreate(savedInstanceState)
+	navigationView.initialize(this)
 }
 
 public override fun onStart() {
 	super.onStart()
-	navigationView!!.onStart()
+	navigationView.onStart()
 }
 
 public override fun onResume() {
 	super.onResume()
-	navigationView!!.onResume()
+	navigationView.onResume()
 }
 
 override fun onLowMemory() {
 	super.onLowMemory()
-	navigationView!!.onLowMemory()
+	navigationView.onLowMemory()
 }
 
 override fun onBackPressed() {
 	// If the navigation view didn't need to do anything, call super
-	if (!navigationView!!.onBackPressed()) {
+	if (!navigationView.onBackPressed()) {
 	    super.onBackPressed()
 	}
 }
@@ -258,22 +258,22 @@ override fun onSaveInstanceState(outState: Bundle) {
 
 override fun onRestoreInstanceState(savedInstanceState: Bundle) {
 	super.onRestoreInstanceState(savedInstanceState)
-	navigationView!!.onRestoreInstanceState(savedInstanceState)
+	navigationView.onRestoreInstanceState(savedInstanceState)
 }
 
 public override fun onPause() {
 	super.onPause()
-	navigationView!!.onPause()
+	navigationView.onPause()
 }
 
 public override fun onStop() {
 	super.onStop()
-	navigationView!!.onStop()
+	navigationView.onStop()
 }
 
 override fun onDestroy() {
 	super.onDestroy()
-	navigationView!!.onDestroy()
+	navigationView.onDestroy()
 }
 `}
 />
@@ -282,7 +282,7 @@ override fun onDestroy() {
 #### Step 2
 Your `Activity` or `Fragment` must implement `OnNavigationReadyCallback`. This interface includes the callback for when the turn-by-turn UI is ready to start - `onNavigationReady(boolean isRunning)` is your cue to start navigation with `NavigationView#startNavigation(NavigationViewOptions options)`.
 
-The `boolean isRunning` will always be true upon the first initialization of the `NavigationView`. If will be true if the `NavigationView` was previously initialized and navigation has already started - for example, upon second initialization of an `Activity` or `Fragment` like from a configuration change. 
+The `boolean isRunning` will always be true upon the first initialization of the `NavigationView`. If will be true if the `NavigationView` was previously initialized and navigation has already started - for example, upon second initialization of an `Activity` or `Fragment` like from a configuration change.
 
 `NavigationViewOptions` holds all of the custom data, settings, and listeners that you can provide to the `NavigationView`.
 
@@ -304,12 +304,12 @@ public void onNavigationReady(boolean isRunning) {
 
 kotlin={`
 fun onNavigationReady(isRunning: Boolean) {
-val options = NavigationViewOptions.builder()
-	.directionsRoute(directionsRoute)
-	.shouldSimulateRoute(simulateRoute)
-	.build()
+  val options = NavigationViewOptions.builder()
+  	.directionsRoute(directionsRoute)
+  	.shouldSimulateRoute(simulateRoute)
+  	.build()
 
-navigationView.startNavigation(options)
+  navigationView.startNavigation(options)
 }
 
 `}
@@ -410,25 +410,25 @@ companion object {
 }
 
 override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-savedInstanceState: Bundle?): View? { 
+    savedInstanceState: Bundle?): View? {
 	return inflater.inflate(R.layout.navigation_view_fragment_layout, container)
 }
 
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 	super.onViewCreated(view, savedInstanceState)
 	navigationView = view.findViewById(R.id.navigation_view_fragment)
-	navigationView?.onCreate(savedInstanceState)
-	navigationView?.initialize(this)
+	navigationView.onCreate(savedInstanceState)
+	navigationView.initialize(this)
 }
 
 override fun onStart() {
 	super.onStart()
-	navigationView?.onStart()
+	navigationView.onStart()
 }
 
 override fun onResume() {
 	super.onResume()
-	navigationView?.onResume()
+	navigationView.onResume()
 }
 
 override fun onSaveInstanceState(outState: Bundle) {
@@ -439,28 +439,28 @@ override fun onSaveInstanceState(outState: Bundle) {
 override fun onViewStateRestored(savedInstanceState: Bundle?) {
 	super.onViewStateRestored(savedInstanceState)
 	if (savedInstanceState != null) {
-	    navigationView?.onRestoreInstanceState(savedInstanceState)
+	    navigationView.onRestoreInstanceState(savedInstanceState)
 	}
 }
 
 override fun onPause() {
 	super.onPause()
-	navigationView?.onPause()
+	navigationView.onPause()
 }
 
 override fun onStop() {
 	super.onStop()
-	navigationView?.onStop()
+	navigationView.onStop()
 }
 
 override fun onLowMemory() {
 	super.onLowMemory()
-	navigationView?.onLowMemory()
+	navigationView.onLowMemory()
 }
 
 override fun onDestroyView() {
     super.onDestroyView()
-    navigationView?.onDestroy()
+    navigationView.onDestroy()
 }
 
 override fun onNavigationReady(isRunning: Boolean) {
@@ -474,7 +474,7 @@ val options = NavigationViewOptions.builder()
 	.navigationListener(this)
 	.build()
 
-navigationView?.startNavigation(options)
+navigationView.startNavigation(options)
 }
 `}
 />
@@ -483,7 +483,7 @@ navigationView?.startNavigation(options)
 ## Listening to the NavigationView
 Using `NavigationView` in your XML also gives you the ability to listen to different
 updates or events that may occur during navigation. Both the `ProgressChangeListener` and `MilestoneEventListener` from our
-core SDK are able to be added, as well as three others: `NavigationListener`, `RouteListener`, and `FeedbackListener`. 
+core SDK are able to be added, as well as three others: `NavigationListener`, `RouteListener`, and `FeedbackListener`.
 
 #### `NavigationListener`
 - `onCancelNavigation()`: Will be triggered when the user clicks on the cancel "X" icon while navigating.
@@ -491,7 +491,7 @@ core SDK are able to be added, as well as three others: `NavigationListener`, `R
 - `onNavigationRunning()`: Will be triggered when `MapboxNavigation` has been initialized and the user is navigating the given route.
 
 #### `RouteListener`
-- `allowRerouteFrom(Point offRoutePoint)`: Will trigger in an off-route scenario. 
+- `allowRerouteFrom(Point offRoutePoint)`: Will trigger in an off-route scenario.
    - Given the `Point` the user has gone off-route, this listener can return true or false.
    - Returning true will allow the SDK to proceed with the re-route process and fetch a new route with this given off-route `Point`.
    - Returning false will stop the re-route process and the user will continue without a new route in the direction they are traveling.
@@ -669,9 +669,8 @@ actual UI:
 
 ## Day and Night mode
 
-If you're using `NavigationLauncher`, we will automatically set `AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO)` _only_ if your device is currently following the system setting.
-
-If you're using `NavigationView` within your own `Activity` the view will update based on whatever the current mode is in the `Activity`.
+If you're using `NavigationLauncher` or `NavigationView` within your own `Activity` or `Fragment` the view will update based on
+whatever the current mode is in the `Activity`.  The current night mode is determined by [`AppCompatDelegate#getDefaultNightMode()`](https://developer.android.com/reference/android/support/v7/app/AppCompatDelegate.html#getDefaultNightMode()).
 
 ## InstructionView
 
@@ -685,28 +684,31 @@ The top `View` that displays the maneuver image, instruction text, and sound but
         android:layout_height="wrap_content"/>
 ```
 
-Once inflated in your `Activity`, the `InstructionView` can be updated with `RouteProgress` and `Milestone` objects inside a `ProgressChangeListener` and `MilestoneEventListener` respectively. 
+Once inflated in your `Activity`, the `InstructionView` can be updated with `RouteProgress` and `Milestone` objects inside a `ProgressChangeListener` and `MilestoneEventListener` respectively.
 
 {{
 <CodeLanguageToggle id="instruction-view" />
 <ToggleableCodeBlock
 
 java={`
-instructionView.setLocale(Locale.getDefault());
-instructionView.setUnitType(DirectionsCriteria.METRIC);
-
 @Override
 public void onProgressChange(Location location, RouteProgress routeProgress) {
 	instructionView.updateDistanceWith(routeProgress);
 }
+
+@Override
+public void onMilestoneEvent(RouteProgress routeProgress, String instruction, Milestone milestone) {
+  instructionView.updateBannerInstructionsWith(milestone);
+}
 `}
 
 kotlin={`
-instructionView?.setLocale(Locale.getDefault())
-instructionView?.setUnitType(DirectionsCriteria.METRIC)
-
 override fun onProgressChange(location: Location, routeProgress: RouteProgress) {
-instructionView?.updateDistanceWith(routeProgress)
+	instructionView.updateDistanceWith(routeProgress)
+}
+
+override fun onMilestoneEvent(routeProgress: RouteProgress, instruction: String, milestone: Milestone) {
+  instructionView.updateBannerInstructionsWith(milestone)
 }
 `}
 />
@@ -766,9 +768,9 @@ protected void onCreate(Bundle savedInstanceState) {
 
 kotlin={`
 override fun onCreate(savedInstanceState: Bundle?) {
-setTheme(R.style.NavigationViewLight)
-super.onCreate(savedInstanceState)
-setContentView(R.layout.activity_navigation)
+	setTheme(R.style.NavigationViewLight)
+	super.onCreate(savedInstanceState)
+	setContentView(R.layout.activity_navigation)
 }
 `}
 />
@@ -789,7 +791,7 @@ NavigationMapRoute mapRoute = new NavigationMapRoute(navigation, mapView, mapbox
 `}
 
 kotlin={`
-val mapRoute = NavigationMapRoute(navigation, mapView, mapboxMap!!, styleRes)
+val mapRoute = NavigationMapRoute(navigation, mapView, mapboxMap, styleRes)
 `}
 />
 }}
@@ -821,12 +823,12 @@ To create an instance of `NavigationCamera`, you need a `MapboxMap`, `MapboxNavi
 <ToggleableCodeBlock
 
 java={`
-NavigationCamera camera = new NavigationCamera(mapboxMap, mapboxNavigation, locationLayerPlugin);
+NavigationCamera camera = new NavigationCamera(mapboxMap, mapboxNavigation, locationComponent);
 }
 `}
 
 kotlin={`
-val camera = NavigationCamera(mapboxMap, mapboxNavigation, locationLayerPlugin)
+val camera = NavigationCamera(mapboxMap, mapboxNavigation, locationComponent)
 `}
 />
 }}
@@ -867,7 +869,7 @@ camera.updateCameraTrackingMode(NavigationCamera.NAVIGATION_TRACKING_MODE_NORTH)
 />
 }}
 
-
 `NavigationCamera#showRouteOverview(int[] padding)` will also adjust the camera to the bounds of the `DirectionsRoute` being traveled along with the given padding that is passed.  
 
-`NavigationCamera#resetCameraPositon()` will reset the camera to the last known position update and will resume tracking of future updates.
+`NavigationCamera#resetCameraPositonWith(NAVIGATION_TRACKING_MODE_GPS)` will reset the camera to the last known position update and will resume tracking of future updates with
+the mode you pass - in this case, tracking will resume with GPS tracking.  

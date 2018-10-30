@@ -88,54 +88,53 @@ kotlin={`
 class CustomNavigationNotification(context: Context) : NavigationNotification {
 
 	companion object {
-	
 		private val CUSTOM_NOTIFICATION_ID = 91234821
 		private val STOP_NAVIGATION_ACTION = "stop_navigation_action"
 	}
 
-private val customNotification: Notification
-private val customNotificationBuilder: NotificationCompat.Builder
-private val notificationManager: NotificationManager
-private var stopNavigationReceiver: BroadcastReceiver? = null
-private var numberOfUpdates: Int = 0
+  private val customNotification: Notification
+  private val customNotificationBuilder: NotificationCompat.Builder
+  private val notificationManager: NotificationManager
+  private var stopNavigationReceiver: BroadcastReceiver? = null
+  private var numberOfUpdates: Int = 0
 
 	init {
-	notificationManager = applicationContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-	
-	customNotificationBuilder = NotificationCompat.Builder(applicationContext, NAVIGATION_NOTIFICATION_CHANNEL)
-		.setSmallIcon(R.drawable.ic_navigation)
-		.setContentTitle("Custom Navigation Notification")
-		.setContentText("Display your own content here!")
-		.setContentIntent(createPendingStopIntent(applicationContext))
-	
-	customNotification = customNotificationBuilder.build()
+  	notificationManager = applicationContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+  	customNotificationBuilder = NotificationCompat.Builder(applicationContext, NAVIGATION_NOTIFICATION_CHANNEL)
+  		.setSmallIcon(R.drawable.ic_navigation)
+  		.setContentTitle("Custom Navigation Notification")
+  		.setContentText("Display your own content here!")
+  		.setContentIntent(createPendingStopIntent(applicationContext))
+
+  	customNotification = customNotificationBuilder.build()
 	}
-	
+
 	override fun getNotification(): Notification {
 	    return customNotification
 	}
-	
+
 	override fun getNotificationId(): Int {
 	    return CUSTOM_NOTIFICATION_ID
 	}
-	
+
 	override fun updateNotification(routeProgress: RouteProgress) {
 	    // Update the builder with a new number of updates
 	    customNotificationBuilder.setContentText("Number of updates: " + numberOfUpdates++)
-	
+
 		notificationManager.notify(CUSTOM_NOTIFICATION_ID, customNotificationBuilder.build())
 	}
-	
+
 	override fun onNavigationStopped(context: Context) {
 	    context.unregisterReceiver(stopNavigationReceiver)
 	    notificationManager.cancel(CUSTOM_NOTIFICATION_ID)
 	}
-	
+
 	fun register(stopNavigationReceiver: BroadcastReceiver, applicationContext: Context) {
 	    this.stopNavigationReceiver = stopNavigationReceiver
 	    applicationContext.registerReceiver(stopNavigationReceiver, IntentFilter(STOP_NAVIGATION_ACTION))
 	}
-	
+
 	private fun createPendingStopIntent(context: Context): PendingIntent {
 	    val stopNavigationIntent = Intent(STOP_NAVIGATION_ACTION)
 	    return PendingIntent.getBroadcast(context, 0, stopNavigationIntent, 0)
