@@ -6,7 +6,6 @@ prependJs:
   - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
   - "import AppropriateImage from '../../../components/appropriate-image';"
-  - "import { PixelTwoVertical } from '../../../components/pixel-two-vertical';"
   - "import { DocNote } from '../../../components/note';" 
 ---
 
@@ -99,27 +98,30 @@ Here are a few examples from [the `LocationModesActivity` in the Maps SDK's test
 **CameraMode.NORMAL**
 
 {{
-<PixelTwoVertical 
+<AppropriateImage 
     imageId="locationLayerNormalCamera"
     alt="screenshot of a the normal location layer mode on an Android device"
+    className="block mx-auto wmax300"
 />
 }}
 
 **CameraMode.COMPASS**
 
 {{
-<PixelTwoVertical
+<AppropriateImage
     imageId="locationLayerCompassCamera"
     alt="screenshot of a the compass location layer mode on an Android device"
+    className="block mx-auto wmax300"
 />
 }}
 
 **CameraMode.GPS**
 
 {{
-<PixelTwoVertical
+<AppropriateImage
     imageId="locationLayerGpsCamera"
     alt="screenshot of a the GPS location layer mode on an Android device"
+    className="block mx-auto wmax300"
 />
 }}
 
