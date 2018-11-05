@@ -904,6 +904,9 @@ var navigationMenuData = {
       }, {
         name: 'Careers',
         to: '/jobs/'
+      }, {
+        name: 'Diversity & Inclusion',
+        to: '/diversity-inclusion/'
       }]
     }
   },
@@ -985,6 +988,9 @@ var navigationMenuData = {
       name: 'Careers',
       to: '/careers/'
     }, {
+      name: 'Diversity & Inclusion',
+      to: '/diversity-inclusion/'
+    }, {
       name: 'Team',
       to: '/about/team/'
     }, {
@@ -1051,7 +1057,7 @@ var CompanyMenu = function (_React$Component) {
         _extends({}, this.props, { name: 'Company' }),
         React__default.createElement(
           'div',
-          { className: 'shell-w180-mm shell-py30 shell-px30' },
+          { className: 'shell-py30 shell-px30' },
           React__default.createElement(
             'ul',
             null,
