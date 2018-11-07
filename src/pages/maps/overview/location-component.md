@@ -62,9 +62,29 @@ locationComponent.isLocationComponentEnabled = true
  />
 }} 
 
-### Showing the device location with RenderMode
+## Customization
 
-There are three types of `RenderMode`:
+The `LocationComponent` allows for several customizations such as drawables, opacities, and more by passing in a style or a [LocationComponentOptions](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/java/com/mapbox/mapboxsdk/location/LocationComponentOptions.java) object either while activating the component or by using the provided `LocationComponent#applyStyle()` API.
+
+For example, if you'd like to change the component's icon from the default blue to red, you first generate a new icon drawable showing the change. Then add the drawable to your project and create a new style with the `parentLayout` being `LocationComponent`. [Here is a list of all of the attributes that can be customized](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/res-public/values/public.xml#L109-L154).
+
+## RenderMode
+
+The `RenderMode` class contains preset options for the device location image.
+
+{{
+<CodeLanguageToggle id="location-component-render-mode" />
+<ToggleableCodeBlock
+ java={`
+locationComponent.setRenderMode(RenderMode.NORMAL);
+`}
+ kotlin={`
+locationComponent?.renderMode = RenderMode.NORMAL
+`}
+ />
+}} 
+
+There are three types of `RenderMode` options:
 
 | `RenderMode` | Description |
 | --- | --- |
@@ -78,10 +98,24 @@ There are three types of `RenderMode`:
 </DocNote>
 }}
 
-### Following the device location with CameraMode
 
-The method `LocationComponent#setCameraMode(@CameraMode.Mode int cameraMode)` allows developers to track `Location` updates with the `MapboxMap` camera.  
-There are currently 7 modes available:
+## CameraMode
+
+The method `LocationComponent#setCameraMode(@CameraMode.Mode int cameraMode)` allows developers to set specific camera tracking instructions as the device location changes. 
+
+{{
+<CodeLanguageToggle id="location-component-camera-mode" />
+<ToggleableCodeBlock
+ java={`
+locationComponent.setCameraMode(CameraMode.TRACKING);
+`}
+ kotlin={`
+locationComponent?.cameraMode = CameraMode.TRACKING
+`}
+ />
+}} 
+
+There are currently 7 `CameraMode` options available:
 
 | `CameraMode` | Description |
 | --- | --- |
@@ -92,6 +126,7 @@ There are currently 7 modes available:
 | `TRACKING_COMPASS` | Camera tracks the device location, tracking bearing provided by the device compass. |
 | `TRACKING_GPS` | Camera tracks the device location, with bearing provided by a normalized `Location#getBearing()`. |
 | `TRACKING_GPS_NORTH` | Camera tracks the device location, with bearing always set to north (0). |
+
 
 Here are a few examples from [the `LocationModesActivity` in the Maps SDK's test application](https://github.com/mapbox/mapbox-gl-native/tree/master/platform/android/MapboxGLAndroidSDKTestApp/src/main/java/com/mapbox/mapboxsdk/testapp/activity/location):
 
@@ -131,7 +166,7 @@ Traditional camera transitions will be canceled when any of the camera modes, be
 When instantiating the `LocationComponent` for the first time, the map's max/min zoom levels will be set to`LocationComponentOptions#MAX_ZOOM_DEFAULT` and `LocationComponentOptions#MIN_ZOOM_DEFAULT` respectively. Adjust the zoom range with the `LocationComponentOptions#maxZoom()` and `LocationComponentOptions#minZoom()` methods in the `LocationComponentOptions` class.
 
 
-### Gesture thresholds while camera tracking
+## Gesture thresholds while camera tracking
 
 The `LocationComponent` is integrated with [the Mapbox Gestures for Android library](https://www.mapbox.com/android-docs/maps/overview/gestures/). The component will adjust the camera's focal point and increase thresholds to enable camera manipulation, like zooming in and out, without breaking tracking. Enabling this feature is explicitly opt-in because it overwrites custom gestures detection implementation set with `MapboxMap#setGesturesManager(AndroidGesturesManager, boolean, boolean)`.
 
@@ -181,11 +216,4 @@ locationComponent.addOnCameraTrackingChangedListener(object : OnCameraTrackingCh
 `}
  />
 }} 
-
-## Customization
-
-The `LocationComponent` allows for several customizations such as drawables, opacities, and more by passing in a style or a [LocationComponentOptions](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/java/com/mapbox/mapboxsdk/location/LocationComponentOptions.java) object either while activating the component or by using the provided `LocationComponent#applyStyle()` API.
-
-For example, if you'd like to change the component's icon from the default blue to red, you first generate a new icon drawable showing the change. Then add the drawable to your project and create a new style with the `parentLayout` being `LocationComponent`. [Here is a list of all of the attributes that can be customized](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/res-public/values/public.xml#L109-L154).
-
 
