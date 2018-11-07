@@ -6,12 +6,11 @@ This repo hosts all of the Android documentation for the Mapbox platform, includ
 
 ## Getting started
 
-### Installation
-To host this website locally, you'll need to have Node.js installed and setup:
+### Requirements
 
-```
-brew install nodejs
-```
+To host this website locally, you'll need to have Node.js installed and setup via [nvm](https://github.com/creationix/nvm#installation).
+
+### Installation
 
 This repository uses git submodules, so it needs to be cloned recursively to include:
 
@@ -22,13 +21,33 @@ This repository uses git submodules, so it needs to be cloned recursively to inc
 git clone --recursive https://github.com/mapbox/android-docs.git
 ```
 
-Once you have Node.js setup and the submodules properly cloned, navigate to this repository's directory on your machine, and run install to grab all the required dependencies:
+Change your working directory to the cloned repository:
 
 ```
+cd android-docs
+```
+
+Use `nvm` to install and use the version of node specified in `.nvmrc`:
+
+ ```
+nvm install
+nvm use
+```
+
+Upgrade your version of `npm`:
+ 
+ ```
+npm install -g npm@6
+```
+
+To install site and build dependencies, run:
+
+```sh
 npm install
 ```
 
 ### Hosting locally
+
 The Android documentation uses [Batfish](https://github.com/mapbox/batfish), a static-site generator powered by react and webpack. To get started contributing to the documentation and running the site locally you'll need to navigate to this projects folder and execute:
 
 ```
