@@ -13,7 +13,7 @@ const productPageOrder = {
     'styling-map',
     'annotations',
     'location-component',
-    'runtime-styling',
+    'data-driven-styling',
     'expressions',
     'clustering',
     'camera',

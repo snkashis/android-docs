@@ -1,5 +1,5 @@
 ---
-title: "Runtime styling"
+title: "Data-driven styling"
 description: "Documentation for changing the look and feel of your Mapbox map in real time with the Mapbox Maps SDK for Android."
 prependJs:
   - "import { Floater } from '../../../components/floater';"
@@ -17,9 +17,7 @@ prependJs:
   />
 }}
 
-Using runtime styling, you're able to dynamically change the look and feel of your map in real time. Lighten or darken the map based on the time of day, personalize icons and the colors of parks based on your users’ activity, switch languages on the fly, or bump the size of labels based on user preferences to improve legibility. Style existing map data or mix in your own – Runtime Styling is performant even with massive datasets.
-
-Runtime styling expands upon the design power of Mapbox Studio and exposes all the same properties and attributes directly to mobile developers in Mapbox Maps SDK for Android.
+Use the Maps SDK's data-driven styling capabilities to create and display many types of data. You can dynamically change the look and feel of your map in real time based on the information within a particular dataset. Data-driven styling is largely built on the idea of sources and layers.
 
 {{
 <WarningNote title="Annotation Plugin for Android">
