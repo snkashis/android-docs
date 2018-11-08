@@ -34,7 +34,8 @@ const productPageOrder = {
     'localization',
     'places',
     'china',
-    'offline'
+    'offline',
+    'markerview'
   ],
   'plugins/examples/': ['index'],
   'navigation/overview/': [

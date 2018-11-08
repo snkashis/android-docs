@@ -14,7 +14,8 @@ prependJs:
       BUILDING_PLUGIN_VERSION,
       PLACES_PLUGIN_VERSION,
       LOCALIZATION_PLUGIN_VERSION,
-      OFFLINE_PLUGIN_VERSION
+      OFFLINE_PLUGIN_VERSION,
+      MARKERVIEW_PLUGIN_VERSION
     } from '../../../constants';
 ---
 
@@ -28,7 +29,8 @@ prependJs:
         "Display traffic and 3D buildings",
         "Change the map's language",
         "Offline mapping",
-        "Support Chinese users"
+        "Support Chinese users",
+        "Quickly add markers"
       ]}
       title="Android Plugins"
       ghLink="https://github.com/mapbox/mapbox-plugins-android"

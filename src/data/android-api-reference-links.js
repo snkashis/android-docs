@@ -10,6 +10,20 @@ export const androidApiReferenceLinks = {
   ],
   plugins: [
     {
+      label: 'MarkerView',
+      id: 'markerview',
+      href: `/android-docs/api/plugins/markerview/${
+        constants.MARKERVIEW_PLUGIN_VERSION
+      }/index.html`
+    },
+    {
+      label: 'Annotation',
+      id: 'annotation',
+      href: `/android-docs/api/plugins/annotation/${
+        constants.ANNOTATION_PLUGIN_VERSION
+      }/index.html`
+    },
+    {
       label: 'Location layer',
       id: 'location',
       href: `/android-docs/api/plugins/locationlayer/${
