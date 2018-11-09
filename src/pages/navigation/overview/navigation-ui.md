@@ -480,6 +480,36 @@ navigationView.startNavigation(options)
 />
 }}
 
+## Initialize NavigationView with a CameraPosition
+
+You can initialize the `NavigationView` with a `CameraPosition` of your choice. This way, the `MapView` does
+not need to zoom in to the initial `Location` of the device from the world view.
+
+{{
+<CodeLanguageToggle id="initialize-camera-position" />
+<ToggleableCodeBlock
+
+java={`
+CameraPosition initialPosition = new CameraPosition.Builder()
+      .target(new LatLng(ORIGIN.latitude(), ORIGIN.longitude()))
+      .zoom(INITIAL_ZOOM)
+      .build();
+
+navigationView.initialize(this, initialPosition);
+`}
+
+kotlin={`
+val initialPosition = CameraPosition.Builder()
+      .target(LatLng(ORIGIN.latitude(), ORIGIN.longitude()))
+      .zoom(INITIAL_ZOOM)
+      .build()
+
+navigationView.initialize(this, initialPosition)
+`}
+/>
+}}
+
+
 ## Listening to the NavigationView
 Using `NavigationView` in your XML also gives you the ability to listen to different
 updates or events that may occur during navigation. Both the `ProgressChangeListener` and `MilestoneEventListener` from our
@@ -869,7 +899,7 @@ camera.updateCameraTrackingMode(NavigationCamera.NAVIGATION_TRACKING_MODE_NORTH)
 />
 }}
 
-`NavigationCamera#showRouteOverview(int[] padding)` will also adjust the camera to the bounds of the `DirectionsRoute` being traveled along with the given padding that is passed.  
+`NavigationCamera#showRouteOverview(int[] padding)` will also adjust the camera to the bounds of the `DirectionsRoute` being traveled along with the given padding which is passed.  
 
 `NavigationCamera#resetCameraPositonWith(NAVIGATION_TRACKING_MODE_GPS)` will reset the camera to the last known position update and will resume tracking of future updates with
 the mode you pass - in this case, tracking will resume with GPS tracking.  

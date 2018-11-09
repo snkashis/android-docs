@@ -50,6 +50,8 @@ override fun onProgressChange(location: Location, routeProgress: RouteProgress) 
 | remainingWaypoints          | Number of waypoints remaining on the current route.    |
 | currentStepPoints           | List of `Point`s representing the current step geometry.  |
 | upcomingStepPoints          | List of `Point`s representing the upcoming step geometry.    |
+| voiceInstruction            | The current `VoiceInstruction` for the given segment along the route.    |
+| currentState                | `RouteStateProgress` represents the current state of route initialization and location tracking along the route.    |
 
 | RouteLegProgress APIs       | Description           |
 | --------------------------- |:---------------------:|
