@@ -94,7 +94,7 @@ For example, here's how a `SymbolManager` would be used:
 
 java={`
 // create symbol manager object
-SymbolManager symbolManager = new SymbolManager(mapboxMap);
+SymbolManager symbolManager = new SymbolManager(mapView, mapboxMap);
 
 // add click listeners if desired
 symbolManager.addClickListener(symbol -> 
@@ -113,7 +113,7 @@ symbolManager.setIconRotationAlignment(ICON_ROTATION_ALIGNMENT_VIEWPORT);
 
 kotlin={`
 // create symbol manager object
-val symbolManager = SymbolManager(mapboxMap)
+val symbolManager = SymbolManager(mapView, mapboxMap)
 
 // add click listeners if desired
 symbolManager?.addClickListener { symbol ->
