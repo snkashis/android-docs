@@ -50,6 +50,7 @@
     "underscore.string": "^3.3.4"
   },
   "devDependencies": {
+    "@mapbox/appropriate-images": "1.0.0",
     "@mapbox/batfish": "^1.9.5",
     "@mapbox/rehype-prism": "^0.2.0",
     "@mapbox/svg-react-transformer-loader": "^1.0.1",
@@ -65,9 +66,6 @@
     "prettier": "1.12.1",
     "raw-loader": "^0.5.1",
     "rehype-slug": "^2.0.1"
-  },
-  "optionalDependencies": {
-    "@mapbox/appropriate-images": "^1.0.0"
   },
   "lint-staged": {
     "**/*.js": [

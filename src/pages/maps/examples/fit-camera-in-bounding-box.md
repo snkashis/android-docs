@@ -2,7 +2,7 @@
 title: Fit camera in bounding box
 description: Position the camera so that all the given markers are in view.
 thumbnail: thumbnailFitCameraInBoundingBox
-topic: Getting started
+topic: Camera
 prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoFitCameraInBoundingBox from '../../../video/example-fitcamerainboundingbox.mp4'"

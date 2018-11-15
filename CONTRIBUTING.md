@@ -149,10 +149,15 @@ The examples section contains **code examples**. Examples are updated by bumping
 ⚠️ **Note**: please refer to this repo's [README.md](https://github.com/mapbox/android-docs/blob/mb-pages/README.md#installation) to make sure you have properly cloned the repo, otherwise the submodule references will not load properly.
 
 #### Update examples
-1. Make and commit your changes in the proper repo.
-2. `git submodule update --remote examples/maps` (or `examples/navigation`) to update the submodule. This should typically point to the latest commit in master.
+
+1. Make and commit your changes in the proper demo repo.
+2. Move into this repo (`cd android-docs`) and `git submodule update --remote examples/maps` (or `examples/navigation`) to update the submodule. This should typically point to the latest commit in master.
 3. `git add examples/maps` (or `examples/navigation`) to stage the submodule update.
-4. `git commit -m "Bumped examples submodule for <some reason>"``
+4. `git commit -m "bumped examples submodule for <some reason>"``
+
+After commiting the bumped submodule(s), any updates to code snippets for _existing examples_ will automatically update on the related example page. For any _new examples_ that were recently added to the demo app and do not already have a dedicated example page in this repo, you will need to follow the steps below to create a new example page.
+
+#### Add a new example
 
 Each example requires three pieces: (1) a code snippet, (2) visual assets, and (3) a Markdown file.
 
@@ -162,7 +167,7 @@ Code for Android examples comes from public repos that contain completely functi
 
 1. Create a new example.
 2. Open a pull request. A Mapbox team member will pull that code into this repo when the pull request is approved.
-3. Create a new JavaScript file src/example-code/ file following the instructions in either the `boilerplate.js` file.
+3. Create a new JavaScript file in src/example-code/ following the instructions in either the `boilerplate.js` file.
 
 #### Step two: Visual assets
 

@@ -2,7 +2,7 @@
 title: Animate the map camera
 description: Animate the map's camera position, tilt, bearing, and zoom.
 thumbnail: thumbnailAnimateTheMapCamera
-topic: Getting started
+topic: Camera
 prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoAnimateTheMapCamera from '../../../video/example-animatethemapcamera.mp4'"
@@ -13,7 +13,7 @@ prependJs:
 {{
   <VideoWithDeviceFrame 
     videoFile={videoAnimateTheMapCamera}
-    rotation="vertical"
+    rotation="horizontal"
     device="pixel-2"
   />
 }}

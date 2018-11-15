@@ -386,6 +386,66 @@ module.exports = {
     basename: 'thumbnail-use-geojson-data-to-set-extrusion-height.gif',
     sizes: [{ width: 800 }, { width: 400 }]
   },
+  thumbnailMarkerSymbolLayer: {
+    basename: 'example-marker-symbol-layer-icon.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailTransparentBackground: {
+    basename: 'example-transparent-background.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailSymbolLayerClustering: {
+    basename: 'example-symbol-layer-clustering.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailSymbolLayerInfoWindow: {
+    basename: 'example-symbol-layer-info-window.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailDataTimeLapse: {
+    basename: 'example-data-time-lapse.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailMultipleExpressions: {
+    basename: 'example-multiple-expressions-temp-change.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailRedoSearch: {
+    basename: 'example-redo-search.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailBuildingOutline: {
+    basename: 'example-building-outline.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailHighlightedLine: {
+    basename: 'example-highlighted-line.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailMapillary: {
+    basename: 'example-mapillary.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailPulsingOpacity: {
+    basename: 'example-pulsing-opacity.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailIndoorFloorPlan: {
+    basename: 'example-indoor-floor-plan.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailPictureInPicture: {
+    basename: 'example-picture-in-picture.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailRecyclerViewInteraction: {
+    basename: 'example-recyclerview-integration.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailInsetMap: {
+    basename: 'example-inset-map.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
   //
   // NAVIGATION SDK FOR ANDROID
   //
@@ -525,9 +585,12 @@ module.exports = {
     basename: 'example-location-fragment.png',
     sizes: [{ width: 1400 }]
   },
-
   thumbnailGeoJson: {
     basename: 'plugins-geojson.png',
+    sizes: [{ width: 800 }, { width: 400 }]
+  },
+  thumbnailPlacePicker: {
+    basename: 'plugins-place-picker.png',
     sizes: [{ width: 800 }, { width: 400 }]
   },
 

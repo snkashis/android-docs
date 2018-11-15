@@ -2,7 +2,7 @@
 title: Restrict map panning
 description: Prevent a map from being panned to a different place.
 thumbnail: thumbnailRestrictMapPanning
-topic: Getting started
+topic: Camera
 prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
   - "import videoRestrictMapPanning from '../../../video/example-restrictmappanning.mp4'"
