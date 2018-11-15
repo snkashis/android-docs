@@ -8,9 +8,16 @@ prependJs:
   - "import Note from '@mapbox/dr-ui/note';"
   - "import BookImage from '@mapbox/dr-ui/book-image';"
   - "import { MAP_SDK_VERSION } from '../../../constants';"
+  - "import { WarningNote } from '../../../components/warning-note';" 
 ---
 
 Often, you might find your user base spends most of its time off the grid. The Maps SDK enables you to download and store pre-selected regions for usage when the device goes offline. The result of downloading the map is a fully functional map using your styles, tiles, and other resources inside the downloaded region.
+
+{{
+<WarningNote title="Offline Plugin">
+    <p>A user's device won't always have a strong enough internet connection to download and view map tiles. You might want to build an offline mode into your Android project to account for this situation. <a href="/android-docs/plugins/overview/offline/">The Mapbox Offline Plugin for Android</a> is a convenient way to send information to <a href="https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/java/com/mapbox/mapboxsdk/offline/OfflineManager.java">the Maps SDK's <code>OfflineManager</code> class</a> and use the manager in a background service to download map tiles for offline use. Once the offline download region is defined and initialized, the plugin handles everything else for you. Because the plugin uses a service, the downloading continues even if when your application is running in the background.</p>
+</WarningNote>
+}}
 
 ## Limitations
 
@@ -438,9 +445,3 @@ On Android, you can move the location of the main Maps SDK database from interna
 </application>
 ```
 
-## Offline Plugin
-
-A user's device won't always have a strong enough internet connection to download and view map tiles. You might want to build an offline mode into your Android project to account for this situation. [The Mapbox Offline Plugin for Android](https://www.mapbox.com/android-docs/plugins/overview/offline/) is a convenient way to send information to [the Maps SDK's `OfflineManager` class](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/java/com/mapbox/mapboxsdk/offline/OfflineManager.java) class and use the manager in a background service to download map tiles for offline use. Once the offline download region is defined and initialized, the plugin handles everything else for you. Because the plugin uses a service, the downloading continues even if when your application is running in the background.
-
-
-<!-- TODO ## Add inside a service -->

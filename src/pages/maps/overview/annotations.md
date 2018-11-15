@@ -11,7 +11,7 @@ prependJs:
 The Mapbox Maps SDK for Android provides several different ways to mark a single point, add a line between many points, or draw a polygon. Often, these objects are drawn either on top of the map or in some cases, within the map itself. This document walks you through how to add high-level objects. 
 
 {{
-<WarningNote title="Plugins to handle annotations">
+<WarningNote title="Plugin to handle annotations">
     <p>All of the writing and code snippets found below on this page are fine to use with the Mapbox Maps SDK for Android. However, we recommend that you look into the <a href="/android-docs/plugins/overview/annotation/">Mapbox Annotation Plugin for Android</a> if you plan to add any icons, text, lines, or polygons to the map. These plugins simplify annotations and provide additional flexibility for displaying data.</p>
 </WarningNote>
 }}
