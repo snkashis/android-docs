@@ -6,6 +6,7 @@ prependJs:
   - "import AppropriateImage from '../../../components/appropriate-image';"
   - "import { WarningNote } from '../../../components/warning-note';"
   - "import ChevronousText from '@mapbox/mr-ui/chevronous-text';"
+  - "import { VISION_VERSION } from '../../../constants';"
 ---
 
 {{
@@ -18,6 +19,7 @@ prependJs:
         "Following distance detection"
       ]}
       title="Vision SDK for Android"
+      version={VISION_VERSION}
       image={<AppropriateImage imageId="overviewVisionSdk" alt="Mobile devices displaying applications using the Mapbox Vision SDK for Android." />}
     />
   </div>
@@ -94,4 +96,4 @@ While the Vision SDK is using the camera you must display the Mapbox watermark o
 
 ## Available resources
 
-Learn more about the capabilities of the Vision SDK in the [API reference](/android-docs/api/vision/index.html) and data types reference. Contact our team to [request access to the SDK](https://www.mapbox.com/vision/).
+Learn more about the capabilities of the Vision SDK in the [API reference](/android-docs/api/vision/{{VISION_VERSION}}/index.html) and data types reference. Contact our team to [request access to the SDK](https://www.mapbox.com/vision/).
