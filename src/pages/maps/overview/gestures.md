@@ -3,6 +3,7 @@ title: "Gestures"
 description: "Detecting gestures in the Mapbox Maps SDK for Android"
 prependJs:
   - "import { GESTURES_VERSION } from '../../../constants';"
+  - "import { GESTURES_SNAPSHOT_VERSION } from '../../../constants';"
   - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';" 
 ---
@@ -39,7 +40,7 @@ repositories {
 ```java
 // In the app build.gradle file
 dependencies {
-	implementation 'com.mapbox.mapboxsdk:mapbox-gestures-android:{{ GESTURES_VERSION }}-SNAPSHOT'
+	implementation 'com.mapbox.mapboxsdk:mapbox-gestures-android:{{ GESTURES_SNAPSHOT_VERSION }}'
 }
 ```
 
