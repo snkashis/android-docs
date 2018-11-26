@@ -28,12 +28,6 @@ dependencies {
   implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:{{ NAVIGATION_VERSION }}'
 }
 ```
-#### Gradle 3.0
-```groovy
-dependencies {
-  implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:{{ NAVIGATION_VERSION }}'
-}
-```
 
 ## Launch the Navigation UI
 
