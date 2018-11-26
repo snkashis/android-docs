@@ -568,22 +568,23 @@ module.exports = {
     sizes: [{ width: 800 }, { width: 400 }]
   },
   // Location tracking
-  thumbnailLocationLayer: {
-    basename: 'plugins-location-layer.png',
-    sizes: [{ width: 800 }, { width: 400 }]
-  },
-  thumbnailTrafficPlugin: {
-    basename: 'plugins-traffic-plugin.png',
+  thumbnailLocationComponent: {
+    basename: 'location-component.png',
     sizes: [{ width: 800 }, { width: 400 }]
   },
   // Location tracking on a fragment
-  thumbnailLocationFragment: {
+  thumbnailLocationComponentFragment: {
     basename: 'thumbnail-location-fragment.png',
     sizes: [{ width: 400 }]
   },
   exampleLocationFragment: {
     basename: 'example-location-fragment.png',
     sizes: [{ width: 1400 }]
+  },
+  // Show traffic congestion
+  thumbnailTrafficPlugin: {
+    basename: 'plugins-traffic-plugin.png',
+    sizes: [{ width: 800 }, { width: 400 }]
   },
   thumbnailGeoJson: {
     basename: 'plugins-geojson.png',

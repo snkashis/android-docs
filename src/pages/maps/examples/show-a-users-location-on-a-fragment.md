@@ -1,19 +1,23 @@
 ---
 title: Add user's location to a map fragment
-description: Use the location layer plugin to show a user's location on a map fragment.
-thumbnail: thumbnailLocationFragment
+description: Use the LocationComponent to show a user's location in a map fragment.
+thumbnail: thumbnailLocationComponentFragment
 topic: Getting started
 prependJs:
-  - "import AppropriateImage from '../../../components/appropriate-image'"
-  - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
-  - "import { rawJavaCode } from '../../../example-code/LocationComponentFragmentActivity.js'"
+ - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
+ - "import videoShowAUsersLocationInFragment from '../../../video/show-user-location-in-fragment.mp4'"
+ - "import ToggleableCodeBlock from '../../../components/toggleable-code-block'"
+ - "import { rawJavaCode } from '../../../example-code/LocationComponentFragmentActivity.js'"
 ---
 
 {{
-  <AppropriateImage 
-    imageId="exampleLocationFragment"
+  <VideoWithDeviceFrame 
+    videoFile={videoShowAUsersLocationInFragment}
+    rotation="horizontal"
+    device="pixel-2"
   />
 }}
+
 
 <!-- Any notes about this example would go here.  -->
 

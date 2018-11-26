@@ -1,7 +1,7 @@
 ---
 title: Show a user's location
-description: Example showing how to setup the LocationComponent to indicate the user's current location on the map
-thumbnail: thumbnailLocationLayer
+description: Use the LocationComponent to indicate the user's current location on the map
+thumbnail: thumbnailLocationComponent
 topic: Getting started
 prependJs:
   - "import { VideoWithDeviceFrame } from '../../../components/video-with-device-frame'"
