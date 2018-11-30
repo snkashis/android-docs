@@ -1,6 +1,6 @@
 /* SDK Versions */
 export const JAVA_SDK_VERSION = '4.1.0';
-export const MAP_SDK_VERSION = '6.7.1';
+export const MAP_SDK_VERSION = '6.7.2';
 export const NAVIGATION_VERSION = '0.23.0';
 export const TELEMETRY_VERSION = '4.1.0';
 export const CORE_VERSION = '1.1.0';
