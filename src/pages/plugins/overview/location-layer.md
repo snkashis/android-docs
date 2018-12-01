@@ -113,19 +113,19 @@ There are three types of `RenderMode`:
 **RenderMode.NORMAL**
 
 {{
-<AppropriateImage imageId="locationLayerNormalRender" className="block mx-auto pt18" />
+<AppropriateImage imageId="locationComponentNormalRender" className="block mx-auto pt18" />
 }}
 
 **RenderMode.COMPASS**
 
 {{
-<AppropriateImage imageId="locationLayerCompassRender" className="block mx-auto pt18" />
+<AppropriateImage imageId="locationComponentCompassRender" className="block mx-auto pt18" />
 }}
 
 **RenderMode.GPS**
 
 {{
-<AppropriateImage imageId="locationLayerGpsRender" className="block mx-auto pt18" />
+<AppropriateImage imageId="locationComponentGpsRender" className="block mx-auto pt18" />
 }}
 
 **Note:** the `Drawable` icon for `RenderMode.GPS` is highly customizable with methods such as `LocationLayerOptions#foregroundDrawable()` and `LocationLayerOptions#backgroundDrawable()`.
@@ -151,19 +151,19 @@ Here are a few examples from [the `LocationLayerModesActivity` in the plugin's t
 **CameraMode.NORMAL**
 
 {{
-<AppropriateImage imageId="locationLayerNormalCamera" className="block mx-auto pt18" />
+<AppropriateImage imageId="locationComponentNormalCamera" className="block mx-auto pt18" />
 }}
 
 **CameraMode.COMPASS**
 
 {{
-<AppropriateImage imageId="locationLayerCompassCamera" className="block mx-auto pt18" />
+<AppropriateImage imageId="locationComponentCompassCamera" className="block mx-auto pt18" />
 }}
 
 **CameraMode.GPS**
 
 {{
-<AppropriateImage imageId="locationLayerGpsCamera" className="block mx-auto pt18" />
+<AppropriateImage imageId="locationComponentGpsCamera" className="block mx-auto pt18" />
 }}
 
 Traditional camera transitions will be canceled when any of the camera modes, besides `CameraMode#NONE`, are engaged. Use `LocationLayerPlugin#zoomWhileTracking` and `LocationLayerPlugin#tiltWhileTracking` to manipulate the camera in a tracking state. Use these two in combination with `MapboxMap#CancelableCallback` to schedule fluid transitions.

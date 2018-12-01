@@ -601,28 +601,28 @@ module.exports = {
     basename: 'places-splash.png',
     sizes: [{ width: 600 }]
   },
-  locationLayerNormalRender: {
-    basename: 'location-layer-normal-render.png',
+  locationComponentNormalRender: {
+    basename: 'location-component-normal-render.png',
     sizes: [{ width: 600 }]
   },
-  locationLayerCompassRender: {
-    basename: 'location-layer-compass-render.png',
+  locationComponentCompassRender: {
+    basename: 'location-component-compass-render.png',
     sizes: [{ width: 600 }]
   },
-  locationLayerGpsRender: {
-    basename: 'location-layer-gps-render.png',
+  locationComponentGpsRender: {
+    basename: 'location-component-gps-render.png',
     sizes: [{ width: 600 }]
   },
-  locationLayerNormalCamera: {
-    basename: 'location-layer-normal-camera.gif',
+  locationComponentNormalCamera: {
+    basename: 'location-component-normal-camera.gif',
     sizes: [{ width: 480 }, { width: 600 }]
   },
-  locationLayerCompassCamera: {
-    basename: 'location-layer-compass-camera.gif',
+  locationComponentCompassCamera: {
+    basename: 'location-component-compass-camera.gif',
     sizes: [{ width: 480 }, { width: 600 }]
   },
-  locationLayerGpsCamera: {
-    basename: 'location-layer-gps-camera.gif',
+  locationComponentGpsCamera: {
+    basename: 'location-component-gps-camera.gif',
     sizes: [{ width: 480 }, { width: 600 }]
   },
   placePickerScreenshot: {

@@ -840,7 +840,7 @@ The given style will determine route color, congestion colors, and the route sca
 Driven by `DynamicCamera` engine, the `NavigationCamera` holds all of the logic needed to drive a `MapboxMap` camera
 that reacts and adjusts to the current progress along a `DirectionsRoute`.
 
-To create an instance of `NavigationCamera`, you need a `MapboxMap`, `MapboxNavigation`, and `LocationLayerPlugin` object:
+To create an instance of `NavigationCamera`, you need a `MapboxMap`, `MapboxNavigation`, and `LocationComponent` object:
 
 {{
 <CodeLanguageToggle id="nav-map-camera" />

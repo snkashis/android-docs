@@ -150,5 +150,4 @@ The `setLatLngBoundsForCameraTarget` method in the `MapboxMap` class can limit t
 
 ## Camera and device location
 
-If you'd like to learn more about camera control and its role in your project's user interface experience, make sure to read about [the camera options that the Mapbox Location Layer Plugin for Android provides](https://www.mapbox.com/android-docs/plugins/overview/location-layer/#showing-the-user-location-with-rendermode
-).
+If you'd like to learn more about camera control and its role in your project's user interface experience, make sure to read about [the camera options that the Mapbox Location Layer Component provides](/android-docs/maps/overview/location-component/).

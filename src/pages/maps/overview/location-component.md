@@ -88,9 +88,9 @@ There are three types of `RenderMode` options:
 
 | `RenderMode` | Description |
 | --- | --- |
-| `NORMAL` | This mode shows the device location, ignoring both compass and GPS bearing (no arrow rendered). {{<AppropriateImage imageId="locationLayerNormalRender" className="block mx-auto pt18" />}} |
-| `COMPASS` | This mode shows the device location, as well as an arrow that is considering the compass of the device. {{<AppropriateImage imageId="locationLayerCompassRender" className="block mx-auto pt18" />}} |
-| `GPS` | This mode shows the device location with the icon bearing updated from the `Location` updates being provided to the `LocationComponent`. {{<AppropriateImage imageId="locationLayerGpsRender" className="block mx-auto pt18" />}} |
+| `NORMAL` | This mode shows the device location, ignoring both compass and GPS bearing (no arrow rendered). {{<AppropriateImage imageId="locationComponentNormalRender" className="block mx-auto pt18" />}} |
+| `COMPASS` | This mode shows the device location, as well as an arrow that is considering the compass of the device. {{<AppropriateImage imageId="locationComponentCompassRender" className="block mx-auto pt18" />}} |
+| `GPS` | This mode shows the device location with the icon bearing updated from the `Location` updates being provided to the `LocationComponent`. {{<AppropriateImage imageId="locationComponentGpsRender" className="block mx-auto pt18" />}} |
 
 {{
 <DocNote>
@@ -134,7 +134,7 @@ Here are a few examples from [the `LocationModesActivity` in the Maps SDK's test
 
 {{
 <AppropriateImage 
-    imageId="locationLayerNormalCamera"
+    imageId="locationComponentNormalCamera"
     alt="screenshot of a the normal location layer mode on an Android device"
     className="block mx-auto wmax300"
 />
@@ -144,7 +144,7 @@ Here are a few examples from [the `LocationModesActivity` in the Maps SDK's test
 
 {{
 <AppropriateImage
-    imageId="locationLayerCompassCamera"
+    imageId="locationComponentCompassCamera"
     alt="screenshot of a the compass location layer mode on an Android device"
     className="block mx-auto wmax300"
 />
@@ -154,7 +154,7 @@ Here are a few examples from [the `LocationModesActivity` in the Maps SDK's test
 
 {{
 <AppropriateImage
-    imageId="locationLayerGpsCamera"
+    imageId="locationComponentGpsCamera"
     alt="screenshot of a the GPS location layer mode on an Android device"
     className="block mx-auto wmax300"
 />
