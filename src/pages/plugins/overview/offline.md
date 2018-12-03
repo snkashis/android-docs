@@ -76,7 +76,7 @@ val definition = OfflineTilePyramidRegionDefinition(
 
 />
 }}
-Build a `NotificationOptions` object if you want to show some sort of notification at the top of the device's screen during the download. This is not required.
+Build a `NotificationOptions` object if you want to show some sort of notification at the top of the device's screen during the download.
 
 {{
 <CodeLanguageToggle id="notifications-options" />
@@ -100,7 +100,7 @@ val notificationOptions = NotificationOptions.builder(this)
 />
 }}
 
-Finally, start the actual download of the map tiles.
+Finally, start the actual download of the map tiles. The `NotificationsOptions` object _is_ required to start the download.
 
 {{
 <CodeLanguageToggle id="start-download" />
@@ -118,11 +118,14 @@ OfflinePlugin.getInstance(this).startDownload(
 `}
 
 kotlin={`
-// Customize the download notification's appearance
-val notificationOptions = NotificationOptions.builder(this)
-	.smallIconRes(R.drawable.mapbox_logo_icon)
-	.returnActivity(MainActivity::class.java!!.getName())
-	.build()
+// Start downloading the map tiles for offline use
+OfflinePlugin.getInstance(this).startDownload(
+	OfflineDownloadOptions.builder()
+		.definition(definition)
+		.metadata(OfflineUtils.convertRegionName(regionName))
+		.notificationOptions(notificationOptions)
+		.build()
+)
 `}
 />
 }}
