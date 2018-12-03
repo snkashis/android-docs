@@ -1,6 +1,6 @@
 ---
 title: "China"
-description: "Read official documentation on the Mapbox Android China Plugin which maximizes the Mapbox Maps SDK for Android's performance inside China."
+description: "Read official documentation on the Mapbox China Plugin for Android, which maximizes the Mapbox Maps SDK for Android's performance inside China."
 prependJs:
   - |
     import {
@@ -10,9 +10,9 @@ prependJs:
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';" 
 ---
 
-Traditional map services are either blocked in China or suffer from slow internet connections. Our mapbox.cn infrastructure allows for unparalleled speed advantages for anyone using our maps in China or through Chinese mobile carriers internationally. This plugin specifically bundles the Mapbox Maps SDK for Android and automatically configures it to ensure the correct endpoints are being called. Accurate endpoints ensure that the mobile device retrieves the correct map tiles, map styles, and other information. Additionally, the plugin allows for annotation shifting, which ensures all your overlays and annotations are accurately depicted on the map.
+Traditional map services are either blocked in China or suffer from slow internet connections. Our mapbox.cn infrastructure allows for unparalleled speed advantages for anyone using our maps in China or through Chinese mobile carriers internationally. The Mapbox China Plugin for Android specifically bundles the Mapbox Maps SDK for Android and automatically configures the Maps SDK to ensure that the correct endpoints are being called. Accurate endpoints ensure that a mobile device retrieves the correct map tiles, map styles, and other location information. Additionally, the plugin allows for annotation shifting, which ensures all your overlays and annotations are accurately depicted on the map.
 
-## Install the China plugin
+## Install the China Plugin
 
 You'll need to add the appropriate dependencies inside of your `build.gradle` file to start developing an application using the China Plugin. The plugin includes the Mapbox Maps SDK for Android, so there's no need for you to declare both the Maps SDK and the plugin. Version bumps of this plugin tend to follow new stable releases of the Maps SDK for Android, which happen approximately every four weeks. The plugin's dependency below can be found on Bintray.
 
@@ -48,17 +48,18 @@ Another option is to drop the architectures you do not need to support for your 
 All of these files add up to the resulting APK size. If, for example, your app doesn't need `x86` support, you could drop `x86` and `x86_64` to save some space. This is done using ABI Splitting, a feature that lets you build an APK file for each CPU, only containing the relevant native libraries. This process is described in the [Android Studio Project Site](http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits#TOC-ABIs-Splits). Aside from the Mapbox Maps SDK native libraries, the shift module native code will also be dropped and optionally split up if you set your project up to do so.
 
 ## Using the correct objects
-The China Plugin for Android has wrapper classes to be used in place of their "typical" counterparts. For example, in the regular Maps SDK for Android, you'd use the `MapView` inside your activities' layouts. When using this plugin, a lint error will appear telling you to use the `ChinaMapView` instead, which wraps the `MapView` object. Under the hood, the `ChinaMapView` class does nothing more but set default values for optimal performance inside China. This includes requesting map tiles from our Chinese servers. In the provided chart below, you'll find a list of the objects which you'd typically use in the Maps SDK for Android and their counterparts found inside of this plugin.
+The plugin has wrapper classes to be used in place of their "typical" counterparts. For example, in the regular Maps SDK for Android, you'd use the `MapView` inside your activities' layouts. When using this plugin, a lint error will appear telling you to use the `ChinaMapView` instead, which wraps the `MapView` object. The `ChinaMapView` class does nothing more but set default values for optimal performance inside China. This includes requesting map tiles from our Chinese servers. In the provided chart below, you'll find a list of the objects which you'd typically use in the Maps SDK for Android and their counterparts found inside of this plugin.
 
 | Mapbox Maps SDK for Android | China Plugin |
 | --- | --- |
 | `MapView` | `ChinaMapView` |
+| `SupportMapFragment` | `ChinaSupportMapFragment` |
 | `MapboxMapOptions` | `MapboxMapChinaOptions` |
 
 As mentioned above, Android Lint will attempt to warn you when you are using the wrong classes. This does not occur in every instance, however, so we still recommend manually confirming that you are using the right object each time.
 
 ## China Map Styles
-Mapbox currently offers 3 government-certified map styles for China that match the look of our equivalent Mapbox Streets, Dark, and Light styles. The China styles provide up to 10x faster map loading. You can either manually hardcode the style URL inside your app or use the provided constants found inside this plugin. The table below lists the Java constant, XML string constant, and the actual map style URL which can be hardcoded in your app.
+Mapbox currently offers three government-certified map styles for China that match the look of our equivalent Mapbox Streets, Dark, and Light styles. The China styles provide up to 10x faster map loading. You can either manually hardcode the style URL inside your app or use the provided constants found inside this plugin. The table below lists the Java constant, XML string constant, and the actual map style URL which can be hardcoded in your app.
 
 **You will need a special China Mapbox access token if you want to use any of our China map styles.**  
 _Please fill out the form at [https://www.mapbox.cn/contact](https://www.mapbox.cn/contact/) to start the process of receiving this special access token._
@@ -89,9 +90,9 @@ try {
 
   JSONObject jsonObject = new JSONObject(shiftedCoordinatesJson);
   
-  double shiftedLong = jsonObject.getDouble("lon");
+  double shiftedLongitude = jsonObject.getDouble("lon");
 
-  double shiftedLat = jsonObject.getDouble("lat");
+  double shiftedLatitude = jsonObject.getDouble("lat");
   
 	// You now have longitude and latitude values, which you can use however you'd like.
   
@@ -107,9 +108,9 @@ try {
 	
 	val jsonObject = JSONObject(shiftedCoordinatesJson)
 		
-	val shiftedLong = jsonObject.getDouble("lon")
+	val shiftedLongitude = jsonObject.getDouble("lon")
 		
-	val shiftedLat = jsonObject.getDouble("lat")
+	val shiftedLatitude = jsonObject.getDouble("lat")
 	
 	// You now have longitude and latitude values, which you can use however you'd like.
 	
