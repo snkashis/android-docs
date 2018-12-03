@@ -15,7 +15,7 @@ In order to implement offline routing in your own app, you will need to:
 1. Initialize `MapboxOfflineRouter`.
 1. Update your app to use `MapboxOfflineRouter.findRoute` to get a `DirectionsRoute`.
 
-These steps, along with example code, are described in this guide. For detailed information about the methods discussed in this guide, see the [`MapboxOfflineRouter` documentation](https://www.mapbox.com/android-docs/api/navigation-sdk/navigation/{NAVIGATION_VERSION}/com/mapbox/services/android/navigation/v5/navigation/MapboxOfflineRouter.html).
+These steps, along with example code, are described in this guide. For detailed information about the methods discussed in this guide, see the [`MapboxOfflineRouter` documentation](https://www.mapbox.com/android-docs/api/navigation-sdk/navigation/{{NAVIGATION_VERSION}}/com/mapbox/services/android/navigation/v5/navigation/MapboxOfflineRouter.html).
 
 ## Download the routing data
 Before you download data, first you will need to determine which tile version to download using `MapboxOfflineRouter.fetchAvailableTileVersions`:
