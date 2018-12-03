@@ -40,14 +40,15 @@ const productPageOrder = {
   'plugins/examples/': ['index'],
   'navigation/overview/': [
     'index',
+    'camera',
+    'faster-route',
+    'map-matching',
     'milestones',
     'navigation-options',
     'navigation-ui',
     'off-route',
-    'faster-route',
-    'camera',
-    'route-progress',
-    'map-matching'
+    'offline-routing',
+    'route-progress'
   ],
   'java/overview/': [
     'index',
