@@ -25,18 +25,18 @@ A `CameraPosition` object can change a single property of the camera object such
 
 java={`
 CameraPosition position = new CameraPosition.Builder()
-          .target(new LatLng(51.50550, -0.07520)) // Sets the new camera position
-          .zoom(10) // Sets the zoom to level 10
-          .tilt(20) // Set the camera tilt to 20 degrees
-          .build(); // Builds the CameraPosition object from the builder
+	.target(new LatLng(51.50550, -0.07520))
+	.zoom(10)
+	.tilt(20)
+	.build();
 `}
 
 kotlin={`
-val position = new CameraPosition.Builder()
-          .target(new LatLng(51.50550, -0.07520)) // Sets the new camera position
-          .zoom(10) // Sets the zoom to level 10
-          .tilt(20) // Set the camera tilt to 20 degrees
-          .build(); // Builds the CameraPosition object from the builder
+val position = CameraPosition.Builder()
+	.target(LatLng(51.50550, -0.07520))
+	.zoom(10.0)
+	.tilt(20.0)
+	.build()
 `}
 
 />
@@ -68,7 +68,7 @@ Zoom controls the scale of the map and consumes any value between 0 and 22. At z
 - Quickly tap twice on the map with a single finger _to zoom in_.
 - Quickly tap twice on the map with a single finger and hold your finger down on the screen after the second tap. Then slide the finger up _to zoom out_ and down _to zoom out_.
 
-Check out [this Mapbox blogpost](https://www.mapbox.com/blog/designing-maps-for-mobile-devices/) about the art/science of maps and visual information to ensure your map style shows the right data at the correct camera positions.
+Check out [this Mapbox blog post](https://www.mapbox.com/blog/designing-maps-for-mobile-devices/) about the art/science of maps and visual information to ensure your map style shows the right data at the correct camera positions.
 
 ## Update the camera position
 
@@ -81,7 +81,22 @@ Check out [this Mapbox blogpost](https://www.mapbox.com/blog/designing-maps-for-
   />
 }}
 
-The `MapboxMap` class in the Maps SDK has several methods to change the camera's position. Each camera movement API takes in a `CameraUpdate` (built using `CameraUpdateFactory`) which is how you provide the new camera position information. Camera update factory can build several different `CameraUpdate` objects including a `newLatLngZoom()`, `zoomBy()`, `newLatLngBounds()`, and several more. One particularly interesting `CameraUpdate` is `newCameraPosition()` which is how you'd pass in a built `CameraPosition`.
+The `MapboxMap` class in the Maps SDK has several methods to change the camera's position. Each camera movement API takes in a `CameraUpdate` object. You should use the `CameraUpdateFactory` class to provide the new camera position information. `CameraUpdateFactory` can build several different `CameraUpdate` objects including a `newLatLngZoom()`, `zoomBy()`, `newLatLngBounds()`, and several more. A straightforward method in `CameraUpdate` is `newCameraPosition()` which is how you'd pass in a built `CameraPosition`.
+
+
+{{
+<CodeLanguageToggle id="animate-camera" />
+<ToggleableCodeBlock
+
+java={`
+mapboxMap.animateCamera(CameraUpdateFactory.newCameraPosition(position), millisecondSpeed);
+`}
+
+kotlin={`
+mapboxMap.animateCamera(CameraUpdateFactory.newCameraPosition(position), millisecondSpeed)
+`}
+/>
+}}
 
 Aside from consuming a Camera Update object, a cancelable callback can be added to know when the animation finishes or if the user cancels the camera move by performing a gesture on the map. The ease and animate APIs have an optional duration parameter (in milliseconds) that lets you control the camera's animation duration.
 
@@ -94,7 +109,7 @@ Aside from consuming a Camera Update object, a cancelable callback can be added 
 
 ## Get the current camera position
 
-The `MapboxMap` class' `getCameraPosition()` method makes it easy for your code to understand what is going on with your map's camera and what the user's currently viewing. The method returns a `CameraPosition` object, and once you have the object, you can easily get and use the camera's target, tilt, zoom, and bearing values. For example, `mapboxMap.getCameraPosition().zoom` is how you would get the camera's zoom value.
+The `MapboxMap` class' `getCameraPosition()` method makes it easy for your code to understand what is going on with your map's camera and what the user's currently viewing. The method returns a `CameraPosition` object, and once you have the object, you can easily get and use the camera's target, tilt, zoom, and bearing values. For example, `mapboxMap.getCameraPosition().zoom` is how you would get the camera's current zoom value.
 
 ## Center the camera within a map area
 
@@ -145,7 +160,7 @@ mapboxMap.animateCamera(CameraUpdateFactory.newLatLngBounds(latLngBounds, 10));
   />
 }}
 
-The `setLatLngBoundsForCameraTarget` method in the `MapboxMap` class can limit the map camera to any area of the world that you'd like. If you feed the `LatLngBounds` object a minimum of two `LatLng` objects/coordinates, a _invisible_ square will automatically be created restricting the camera to the region.
+The `setLatLngBoundsForCameraTarget` method in the `MapboxMap` class can limit the map camera to any area of the world that you'd like. If you feed the `LatLngBounds` object a minimum of two `LatLng` objects/coordinates, a _invisible_ rectangle will automatically be created to restrict the camera to the region.
 
 
 ## Camera and device location
