@@ -55,6 +55,7 @@ const productPageOrder = {
     'directions',
     'directions-matrix',
     'geocoder',
+    'tilequery',
     'optimization',
     'static-image',
     'map-matching',
