@@ -59,26 +59,24 @@ Version _below_ 3.0.0:
 
 If you plan to use any of our APIs such as directions, geocoding, navigation, etc. you'll need to have a Mapbox access token which you'll pass in as a parameter. An access token isn't needed if you plan to use the Mapbox Java SDK only for GeoJSON parsing or Turf calculations. Read [this document](https://www.mapbox.com/help/create-api-access-token/) to learn more about access tokens.
 
-### Position and Point objects
+### Point object
 
-Throughout the APIs exposed within Mapbox-Java, you'll notice the Position object's used heavily representing a coordinate. The order in which the coordinate pair are longitude followed by latitude. Creating a new Position is fairly straightforward and can be converted from a LatLng object if you are using our Maps SDK.
+Throughout the APIs exposed within the Java SDK, you'll notice the common usage of the `Point` object to represent a coordinate. The order in which the coordinate pair are longitude followed by latitude. Creating a new `Point` is fairly straightforward and can be converted from a `LatLng` object if you are using the Mapbox Maps SDK for Android.
 
-The SDK will try to detect if your coordinates are outside the excepted range and log a warning. This range is between -180 to 180 for longitudes and -90 to 90 for latitude.
+The Java SDK will try to detect if your coordinates are outside the accepted range. This range is between -180 to 180 for longitudes and -90 to 90 for latitude. If the coordinates are outside the accepted range, the SDK will log a warning.
 
-> **Note:** if you happen to be using our Maps SDK with this SDK, you'll notice that the LatLng object has the reverse order, latitude comes before the longitude value.
+> **Note:** if you happen to be using our Maps SDK with the Java SDK, you'll notice that the `LatLng` object has the reverse order; latitude comes before the longitude value.
 
 {{
 <CodeLanguageToggle id="location" />
 <ToggleableCodeBlock
 
 java={`
-// Point representing The White House
-Point point = Point.fromLngLat(-77.03655, 38.89770);
+Point point = Point.fromLngLat(LONGITUDE, LATITUDE);
 `}
 
 kotlin={`
-// Point representing The White House
-val point = Point.fromLngLat(-77.03655, 38.89770);
+val singlePoint = Point.fromLngLat(LONGITUDE, LATITUDE);
 `}
 />
 }}

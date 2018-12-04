@@ -52,6 +52,7 @@ const productPageOrder = {
   ],
   'java/overview/': [
     'index',
+    'directions',
     'directions-matrix',
     'geocoder',
     'optimization',
