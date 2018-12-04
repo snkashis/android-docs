@@ -210,7 +210,89 @@ offlineRouter.findRoute(offlineRoute, object : OnOfflineRouteFoundCallback {
 }}
 
 ## Rerouting
-When the SDK detects that the user has diverged from the route, the offline navigator will offer a new route to their original destination. Having routing data on the client device means new routes are generated without having to go back to the server to calculate and retrieve a route. As long as the user is still within the boundaries of the offline routing data they can trigger a re-route event or request a new route anywhere within the dataset.
+When the SDK detects that the user has diverged from the route, `MapboxOfflineRouter` can be used to find a new route to their original destination. Having routing data on the client device means new routes are generated without having to go back to the server to calculate and retrieve a route. As long as the user is still within the boundaries of the offline routing data they can trigger a re-route event or request a new route anywhere within the dataset.
+
+#### Example re-route scenario with MapboxNavigation
+{{
+<CodeLanguageToggle id="offline-reroute-mapbox-navigation" />
+<ToggleableCodeBlock
+
+java={`
+navigation.addOffRouteListener(new OffRouteListener() {
+  @Override
+  public void userOffRoute(Location location) {
+    ...
+    OfflineRoute offlineRoute = OfflineRoute.builder(onlineRouteBuilder).build();
+    offlineRouter.findRoute(offlineRoute, new OnOfflineRouteFoundCallback() {
+      @Override
+      public void onRouteFound(@NonNull DirectionsRoute route) {
+        // Call MapboxNavigation#startNavigation with successful response
+      }
+
+      @Override
+      public void onError(@NonNull OfflineError error) {
+        // Handle route error
+      }
+    });  
+  }
+});
+`}
+
+kotlin={`
+navigation.addOffRouteListener { location ->
+  ...
+  val offlineRoute = OfflineRoute.builder(onlineRouteBuilder).build()
+  offlineRouter.findRoute(offlineRoute, object : OnOfflineRouteFoundCallback {
+    override fun onRouteFound(route: DirectionsRoute) {
+      // Call MapboxNavigation#startNavigation with successful response
+    }
+
+    override fun onError(error: OfflineError) {
+      // Handle route error
+    }
+  })
+}
+`}
+/>
+}}
+
+#### Example re-route scenario with NavigationView
+{{
+<CodeLanguageToggle id="offline-reroute-navigation-view" />
+<ToggleableCodeBlock
+
+java={`
+@Override
+public boolean allowRerouteFrom(Point offRoutePoint) {
+  return false;
+
+  // Fetch new route with MapboxOfflineRouter
+
+  // Create new options with offline route
+  NavigationViewOptions options = NavigationViewOptions.builder()
+    .directionsRoute(offlineDirectionsRoute)
+    .build();
+  navigationView.startNavigation(options);
+}
+`}
+
+kotlin={`
+override fun allowRerouteFrom(offRoutePoint: Point): Boolean {
+return false
+
+	// Fetch new route with MapboxOfflineRouter
+
+	// Create new options with offline route
+	val options = NavigationViewOptions.builder()
+		.directionsRoute(offlineDirectionsRoute)
+		.build()
+
+	navigationView.startNavigation(options)
+}
+`}
+/>
+}}
+
 
 ## Estimated local storage and memory benchmarks
 In addition to the storage required by the routing data, the device will also need to to store the map data needed for visual display. For more information on managing offline download size, see the [Offline maps troubleshooting guide](https://www.mapbox.com/help/mobile-offline/).
