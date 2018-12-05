@@ -46,7 +46,14 @@ val staticImage = MapboxStaticMap.builder()
 />
 }}
 
-Make sure to use the `StaticMapCriteria` to reference the default Mapbox map styles such as Light, Dark, or Streets. The `MapboxStaticMap` image generation will not work correctly if you try to retrieve the styles' strings from the `Style` class that lives in the Mapbox Maps SDK for Android.
+## Criteria
+
+Use the [`StaticMapCriteria` class](https://github.com/mapbox/mapbox-java/blob/master/services-staticmap/src/main/java/com/mapbox/api/staticmap/v1/StaticMapCriteria.java) to conveniently reference certain Strings (including map styles and pin sizes) as you build the `MapboxStaticMap.builder()` object. Using the `StaticMapCriteria` class helps ensure that you pass correctly formatted parameters.
+
+When retrieving a style URL, you must use `StaticMapCriteria`. Do not use the Maps SDK's `Style` class to retrieve a style URL.
+
+When adding pin overlays to a static image, you can use the `StaticMapCriteria` class to ensure you're using the exact string needed to specify the marker pin size.
+
 
 ## Overlays
 
@@ -60,7 +67,7 @@ The following methods can be used with the `MapboxStaticMap.builder()` to add ov
 | `staticPolylineAnnotations ` | A list of polyline annotations that can be placed on the static map image during the image rendering process.
 | `geoJson ` | A GeoJSON object that represents a specific annotation which will be placed on the static map. The GeoJSON must be a value.
 
-### Downloading the image
+## Downloading the image
 
 After creating the `MapboxStaticImage` instance with all your customization parameters, you'll need to handle downloading the image directly into your application so it is displayed properly to the user. The Mapbox Java SDK doesn't offer any sort of image downloading/loading APIs but we highly recommend using a third party library such as [Picasso](http://square.github.io/picasso/) or [Glide](https://github.com/bumptech/glide) rather then an asynchronous task. Using Picasso, you can downloading the static map image with only a few lines of code.
 
@@ -79,3 +86,7 @@ Picasso.with(this).load(imageUrl).into(imageView)
 `}
 />
 }}
+
+
+
+
