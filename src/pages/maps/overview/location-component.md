@@ -33,6 +33,7 @@ public void onMapReady(MapboxMap mapboxMap) {
 	LocationComponent locationComponent = mapboxMap.getLocationComponent();
 	
 	locationComponent.activateLocationComponent(this);
+	
 }
 `}
  kotlin={`
@@ -41,6 +42,7 @@ override fun onMapReady(mapboxMap: MapboxMap) {
 	val locationComponent = mapboxMap?.locationComponent
 	
 	locationComponent?.activateLocationComponent(this)
+	
 }
 `}
  />
@@ -64,9 +66,46 @@ locationComponent.isLocationComponentEnabled = true
 
 ## Customization
 
-The `LocationComponent` allows for several customizations such as drawables, opacities, and more by passing in a style or a [LocationComponentOptions](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/java/com/mapbox/mapboxsdk/location/LocationComponentOptions.java) object either while activating the component or by using the provided `LocationComponent#applyStyle()` API.
+The `LocationComponent` allows for several customizations. You can set the drawables, opacities, colors, and more. Create a [LocationComponentOptions](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/java/com/mapbox/mapboxsdk/location/LocationComponentOptions.java) object and then use whichever methods you'd like. Then use the object either while activating the component or by passing it through as a parameter of the `LocationComponent#applyStyle()` method at a later time.
 
-For example, if you'd like to change the component's icon from the default blue to red, you first generate a new icon drawable showing the change. Then add the drawable to your project and create a new style with the `parentLayout` being `LocationComponent`. [Here is a list of all of the attributes that can be customized](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/res-public/values/public.xml#L109-L154).
+See all the attributes that can be customized via the LocationComponent's methods in the [full list of attributes and styles that are part of the public API](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/res-public/values/public.xml#L109-L154).
+
+{{
+<CodeLanguageToggle id="location-component-customization" />
+<ToggleableCodeBlock
+ java={`
+@Override
+public void onMapReady(MapboxMap mapboxMap) {
+	
+LocationComponentOptions options = LocationComponentOptions.builder(this)
+	.layerBelow(layerId)
+	.foregroundDrawable(R.drawable.drawable_name)
+	.bearingTintColor(int color)
+	.accuracyAlpha(float)
+	.build();
+	
+locationComponent = mapboxMap.getLocationComponent();
+locationComponent.activateLocationComponent(this, options);
+
+}
+`}
+ kotlin={`
+override fun onMapReady(mapboxMap: MapboxMap) {
+
+val options = LocationComponentOptions.builder(this)
+	.layerBelow(layerId)
+	.foregroundDrawable(R.drawable.drawable_name)
+	.bearingTintColor(int color)
+	.accuracyAlpha(float)
+	.build()
+
+locationComponent = mapboxMap.locationComponent
+locationComponent?.activateLocationComponent(this, options)
+
+}
+`}
+ />
+}} 
 
 ## RenderMode
 
