@@ -23,7 +23,7 @@ The library is implemented in both the [Mapbox Maps SDK for Android](https://git
 5. Click on `Sync Project with Gradle Files` near the toolbar in Android Studio.
 
 ```groovy
-implementation 'com.mapbox.mapboxsdk:mapbox-gestures-android:{{ GESTURES_VERSION }}'
+implementation 'com.mapbox.mapboxsdk:mapbox-android-gestures:{{ GESTURES_VERSION }}'
 ```
 
 _**Note:** ProGuard directives are included in the Android dependencies to preserve the required classes._
