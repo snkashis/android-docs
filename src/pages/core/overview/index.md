@@ -162,10 +162,10 @@ If you are using the Mapbox Maps SDK for Android, create a `LocationEngine` obje
 <CodeLanguageToggle id="location-engine" />
 <ToggleableCodeBlock
  java={`
-LocationEngine locationEngine = new LocationEngineProvider(this).obtainBestLocationEngineAvailable();
+LocationEngine locationEngine = LocationEngineProvider.getBestLocationEngine(this);
 `}
 kotlin={`
-var locationEngine = LocationEngineProvider(this).obtainBestLocationEngineAvailable()
+var locationEngine = LocationEngineProvider.getBestLocationEngine(this)
 `}
  />
 }}
@@ -180,34 +180,41 @@ Add the `mapbox-android-core` dependency to your project in order to listen to l
 <CodeLanguageToggle id="location-updates" />
 <ToggleableCodeBlock
  java={`
-LocationEngine locationEngine = new LocationEngineProvider(this).obtainBestLocationEngineAvailable();
-locationEngine.activate();
-locationEngine.addLocationEngineListener(this);
+LocationEngine locationEngine = LocationEngineProvider.getBestLocationEngine(this);
+
+LocationEngineRequest request = new LocationEngineRequest.Builder(DEFAULT_INTERVAL_IN_MILLISECONDS)
+	.setPriority(LocationEngineRequest.PRIORITY_NO_POWER)
+    .setMaxWaitTime(DEFAULT_MAX_WAIT_TIME).build();
+
+locationEngine.requestLocationUpdates(request, this, getMainLooper());
 
 ...
 
 @Override
-public void onConnected() {
-    
+public void onSuccess(LocationEngineResult result) {
+	// Location logic here
 }
 
 @Override
-public void onLocationChanged(Location location) {
+public void onFailure(@NonNull Exception exception) {
 
 }
 `}
 kotlin={`
-var locationEngine = LocationEngineProvider(this).obtainBestLocationEngineAvailable()
-locationEngine.activate()
-locationEngine.addLocationEngineListener(this)
+var locationEngine = LocationEngineProvider.getBestLocationEngine(this)
+var request = LocationEngineRequest.Builder(DEFAULT_INTERVAL_IN_MILLISECONDS)
+		.setPriority(LocationEngineRequest.PRIORITY_NO_POWER)
+      	.setMaxWaitTime(DEFAULT_MAX_WAIT_TIME).build()
+		
+locationEngine.requestLocationUpdates(request, this, mainLooper)
 
 ...
 
-override fun onConnected() {
-
+override fun onSuccess(result: LocationEngineResult) {
+	// Location logic here
 }
 
-override fun onLocationChanged(location: Location?) {
+override fun onFailure(exception: Exception) {
 
 } 
 `}
@@ -227,7 +234,7 @@ To prevent your application from having a memory leak, it is a good idea to stop
     mapView.onStart();
 
     if (locationEngine != null) {
-      locationEngine.requestLocationUpdates();
+      locationEngine.requestLocationUpdates(request, this, getMainLooper());
     }
 }
 
@@ -236,7 +243,7 @@ To prevent your application from having a memory leak, it is a good idea to stop
     super.onStop();
     
     if (locationEngine != null) {
-      locationEngine.removeLocationUpdates();
+      locationEngine.removeLocationUpdates(this);
     }
     
     mapView.onStop();
@@ -249,7 +256,7 @@ override fun onStart() {
     mapView.onStart()
 
     if (locationEngine != null) {
-        locationEngine.requestLocationUpdates()
+        locationEngine.requestLocationUpdates(request, this, mainLooper)
     }
 }
 
@@ -257,7 +264,7 @@ override fun onStop() {
     super.onStop()
 
     if (locationEngine != null) {
-        locationEngine.removeLocationUpdates()
+        locationEngine.removeLocationUpdates(this)
     }
 
     mapView.onStop()
@@ -276,18 +283,32 @@ _**Note:** Be careful when requesting the user's last location because it is pos
 <CodeLanguageToggle id="last-location" />
 <ToggleableCodeBlock
  java={`
-Location lastLocation = locationEngine.getLastLocation();
+locationEngine.getLastLocation(this);
 
-if (lastLocation != null) {
-  // Location logic here
+...
+
+@Override
+public void onSuccess(LocationEngineResult result) {
+	// Location logic here
+}
+
+@Override
+public void onFailure(@NonNull Exception exception) {
+
 }
 `}
 kotlin={`
-val lastLocation = locationEngine.lastLocation
+locationEngine.getLastLocation(this)
 
-if (lastLocation != null) {
-    // Location logic here
+...
+
+override fun onSuccess(result: LocationEngineResult?) {
+	// Location logic here
 }
+
+override fun onFailure(exception: Exception) {
+
+} 
 `}
  />
 }}
