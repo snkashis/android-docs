@@ -153,8 +153,8 @@ var permissionsListener: PermissionsListener = object : PermissionsListener {
 
 If your application needs location information, the `LocationEngine` class can help you get this information while also simplifying the process and being flexible enough to use different services. The `LocationEngine` found in the core module now supports the following location providers:
 
-- Google Play Services
-- Android Location
+- Google's Fused Location Providers
+- Android GPS and Network Providers
 
 If you are using the Mapbox Maps SDK for Android, create a `LocationEngine` object using: 
 
@@ -174,7 +174,7 @@ This will obtain the best location engine that is available and eliminate the ne
 
 ### Getting location updates
 
-Add the `mapbox-android-core` dependency to your project in order to listen to location changes. Then initialize a new instance of `LocationEngine` as described above. Once it's created, activate the `LocationEngine` object and optionally add a location listener. Implementing the `LocationEngineListener` interface will require you to override the `onConnected()` and `onLocationChanged()` methods. Inside of `onConnected()`, you can begin requesting location updates or wait for the proper time to do so.
+Add the `mapbox-android-core` dependency to your project in order to listen to location changes. Then initialize a new instance of `LocationEngine` as described above. Once it's created, activate the `LocationEngine` object. Either the parent Activity should implement `LocationEngineCallback` or a separate `LocationEngineCallback` object to include in your update request. Implementing the `LocationEngineCallback` interface will require you to override the `onSuccess()` and `onFailure()` methods. Inside of `onSuccess()`, you will receive a `LocationEngineResult` which contains location results from the engine.
 
 {{
 <CodeLanguageToggle id="location-updates" />
@@ -183,8 +183,8 @@ Add the `mapbox-android-core` dependency to your project in order to listen to l
 LocationEngine locationEngine = LocationEngineProvider.getBestLocationEngine(this);
 
 LocationEngineRequest request = new LocationEngineRequest.Builder(DEFAULT_INTERVAL_IN_MILLISECONDS)
-	.setPriority(LocationEngineRequest.PRIORITY_NO_POWER)
-    .setMaxWaitTime(DEFAULT_MAX_WAIT_TIME).build();
+		.setPriority(LocationEngineRequest.PRIORITY_NO_POWER)
+		.setMaxWaitTime(DEFAULT_MAX_WAIT_TIME).build();
 
 locationEngine.requestLocationUpdates(request, this, getMainLooper());
 
@@ -204,7 +204,7 @@ kotlin={`
 var locationEngine = LocationEngineProvider.getBestLocationEngine(this)
 var request = LocationEngineRequest.Builder(DEFAULT_INTERVAL_IN_MILLISECONDS)
 		.setPriority(LocationEngineRequest.PRIORITY_NO_POWER)
-      	.setMaxWaitTime(DEFAULT_MAX_WAIT_TIME).build()
+		.setMaxWaitTime(DEFAULT_MAX_WAIT_TIME).build()
 		
 locationEngine.requestLocationUpdates(request, this, mainLooper)
 
@@ -275,9 +275,8 @@ override fun onStop() {
 
 ### Last location
 
-If your application needs to quickly get a user's location, you can call the `getLastLocation()` which will return the user's last known position. `getLastLocation()` returns a `Location` object, which you can then use however you'd like.
+If your application needs to quickly get a user's location, you can call the `getLastLocation()` which will return the user's last known position. `getLastLocation()` takes the same `LocationEngineCallback` you created above. Your location will be returned in the `onSuccess` method.
 
-_**Note:** Be careful when requesting the user's last location because it is possible for the last location to be `null`._
 
 {{
 <CodeLanguageToggle id="last-location" />
