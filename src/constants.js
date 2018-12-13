@@ -16,5 +16,5 @@ export const LOCALIZATION_PLUGIN_VERSION = '0.5.0';
 export const OFFLINE_PLUGIN_VERSION = '0.2.0';
 export const MARKERVIEW_PLUGIN_VERSION = '0.1.0';
 export const ANNOTATION_PLUGIN_VERSION = '0.3.0';
-export const CHINA_PLUGIN_VERSION = '1.1.0';
+export const CHINA_PLUGIN_VERSION = '1.2.0';
 export const STYLE_VERSION = '8';
