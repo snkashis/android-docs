@@ -6,15 +6,20 @@ prependJs:
     import {
       CHINA_PLUGIN_VERSION
     } from '../../../constants';
+  - |
+    import {
+      MAP_SDK_VERSION
+    } from '../../../constants';
+  
   - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';" 
 ---
 
-Traditional map services are either blocked in China or suffer from slow internet connections. Our mapbox.cn infrastructure allows for unparalleled speed advantages for anyone using our maps in China or through Chinese mobile carriers internationally. The Mapbox China Plugin for Android specifically bundles the Mapbox Maps SDK for Android and automatically configures the Maps SDK to ensure that the correct endpoints are being called. Accurate endpoints ensure that a mobile device retrieves the correct map tiles, map styles, and other location information. Additionally, the plugin allows for annotation shifting, which ensures all your overlays and annotations are accurately depicted on the map.
+Traditional map services are either blocked in China or suffer from slow internet connections. Our mapbox.cn infrastructure allows for unparalleled speed advantages for anyone using our maps in China or through Chinese mobile carriers internationally. The Mapbox China Plugin for Android is built on top of the Mapbox Maps SDK for Android. The plugin automatically configures the Maps SDK to ensure that the correct Mapbox API endpoints are being called. Accurate endpoints ensure that a mobile device retrieves the correct map tiles, map styles, and other location information. Additionally, the plugin handles shifting of various GeoJSON geometries (polygons, lines, points, etc.), which ensures that data is accurately placed on the map.
 
 ## Install the China Plugin
 
-You'll need to add the appropriate dependencies inside of your `build.gradle` file to start developing an application using the China Plugin. The plugin includes the Mapbox Maps SDK for Android, so there's no need for you to declare both the Maps SDK and the plugin. Version bumps of this plugin tend to follow new stable releases of the Maps SDK for Android, which happen approximately every four weeks. The plugin's dependency below can be found on Bintray.
+You'll need to add the appropriate dependencies inside of your `build.gradle` file to start developing an application using the China Plugin. The plugin _does not_ include the Mapbox Maps SDK for Android, so you'll need to declare both the Maps SDK and the plugin. Releases of the China Plugin tend to follow new stable releases of the Maps SDK for Android, which happen approximately every four weeks.
 
 ### Add the dependency
 
@@ -22,16 +27,23 @@ You'll need to add the appropriate dependencies inside of your `build.gradle` fi
 2. Open up your application's `build.gradle` file.
 3. Make sure that your project's `minSdkVersion` is API 14 or higher.
 4. Add the plugin's dependency to your application's `build.gradle` file.
+5. Add the dependency for the Mapbox Maps SDK, to your application's `build.gradle` file. [More info about installing the Maps SDK](/android-docs/maps/overview).
 5. Click the **Sync Project with Gradle Files** near the toolbar in Studio.
 
 ```groovy
 repositories {
+  mavenCentral()
   maven { url "https://mapbox.bintray.com/mapbox" }
 }
 
 dependencies {
-  // China plugin dependency
-  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-china:{{ CHINA_PLUGIN_VERSION }}'
+  
+	// China plugin dependency
+	implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-china:{{ CHINA_PLUGIN_VERSION }}'
+  
+	// Mapbox Maps SDK dependency
+	implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:{{ MAP_SDK_VERSION }}'
+  
 }
 ```
 
@@ -48,7 +60,9 @@ Another option is to drop the architectures you do not need to support for your 
 All of these files add up to the resulting APK size. If, for example, your app doesn't need `x86` support, you could drop `x86` and `x86_64` to save some space. This is done using ABI Splitting, a feature that lets you build an APK file for each CPU, only containing the relevant native libraries. This process is described in the [Android Studio Project Site](http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits#TOC-ABIs-Splits). Aside from the Mapbox Maps SDK native libraries, the shift module native code will also be dropped and optionally split up if you set your project up to do so.
 
 ## Using the correct objects
-The plugin has wrapper classes to be used in place of their "typical" counterparts. For example, in the regular Maps SDK for Android, you'd use the `MapView` inside your activities' layouts. When using this plugin, a lint error will appear telling you to use the `ChinaMapView` instead, which wraps the `MapView` object. The `ChinaMapView` class does nothing more but set default values for optimal performance inside China. This includes requesting map tiles from our Chinese servers. In the provided chart below, you'll find a list of the objects which you'd typically use in the Maps SDK for Android and their counterparts found inside of this plugin.
+The plugin has wrapper classes to be used in place of their "typical" counterparts. For example, in the Maps SDK for Android, you'd use the `MapView` inside your activities' layouts. When using this plugin, a lint error will appear telling you to use the `ChinaMapView` instead, which wraps the `MapView` object. The `ChinaMapView` class does nothing more but set default values for optimal performance inside China. This includes requesting map tiles from our Chinese servers.
+
+In the chart below, you'll find a list of the objects you'd typically use in the Maps SDK for Android and their counterparts found inside of this plugin.
 
 | Mapbox Maps SDK for Android | China Plugin |
 | --- | --- |
@@ -126,7 +140,7 @@ try {
 
 Rather than working with raw coordinate values, the `ShiftLocation` class and its `shift` method handle `Location` objects. Showing a device's current location via [the Maps SDK's `LocationComponent`](/android-docs/maps/overview/location-component/) is one of the most common use cases for using the `ShiftLocation` class.
 
-[After setting up your own Mapbox `LocationEngine`](/android-docs/core/overview/#locationengine), you'll eventually override the `onLocationChanged()` method. When a new location update occurs, you'll need to manually feed the unshifted `Location` object into the `ShiftLocation` class' `shift()` method. `shift()` returns a `Location` object, which you can now use however you'd like. If you pass the shifted `Location` object to `forceLocationUpdate()`, the `LocationComponent` will place the device location "puck" in the correct location.
+[After setting up your own Mapbox `LocationEngine`](/android-docs/core/overview/#locationengine), you'll eventually override the `onSuccess()` and `onFailure()` methods. When a new location update occurs, you'll need to manually feed the unshifted `Location` object into the `ShiftLocation` class' `shift()` method. `shift()` returns a `Location` object, which you can now use however you'd like. If you pass the shifted `Location` object to `forceLocationUpdate()`, the `LocationComponent` will place the device location "puck" in the correct location.
 
 {{
 <CodeLanguageToggle id="shifting-location" />
@@ -135,23 +149,33 @@ Rather than working with raw coordinate values, the `ShiftLocation` class and it
 java={`
 // Called when the location has changed.
 @Override
-public void onLocationChanged(Location location) {
-	    
-	Location shiftedDeviceLocation = ShiftLocation.shift(location);
-	    
-	locationComponent.forceLocationUpdate(shiftedLocation);
+public void onSuccess(LocationEngineResult result) {
+	
+	Location shiftedDeviceLocation = ShiftLocation.shift(result.getLastLocation())
+	
+	locationComponent.forceLocationUpdate(shiftedDeviceLocation)
 
 }
-
+ 
+@Override
+public void onFailure(@NonNull Exception exception) {
+	// Handle failure with whatever UI you'd like
+	
+}
 `}
 
 kotlin={`
 // Called when the location has changed.
-override fun onLocationChanged(location: Location) {
+override fun onSuccess(result: LocationEngineResult) {
 	
-	val shiftedDeviceLocation = ShiftLocation.shift(location)
+	val shiftedDeviceLocation = ShiftLocation.shift(result?.lastLocation)
 	
-	locationComponent?.forceLocationUpdate(shiftedLocation)
+	locationComponent?.forceLocationUpdate(shiftedDeviceLocation)
+	    
+}
+
+override fun onFailure(exception: Exception) {
+	// Handle failure with whatever UI you'd like
 	    
 }
 `}
