@@ -360,6 +360,7 @@ Using a command line tool is ideal if you want to build your offline packages se
 ##### CLI build instructions
 1. Clone the Maps SDK: `git clone https://github.com/mapbox/mapbox-gl-native.git`
 1. Change to the root folder: `cd mapbox-gl-native`
+1. Checkout the release commit equivalent to the version of the Maps SDK that you are using: ` git checkout {commit hash}` (all release commits can be found [here](https://github.com/mapbox/mapbox-gl-native/releases))
 1. Compile the binary: `make offline`
 
 Once the build is complete, you'll see the message `Build Succeeded` in the terminal. The binary is available under the `build` folder (for example, on a Mac the file will be in `build/macos/Debug/mbgl-offline`).
