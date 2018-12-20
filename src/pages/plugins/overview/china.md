@@ -136,7 +136,44 @@ try {
 />
 }}
 
-## Shifting location
+## Shifting GeoJSON data
+
+The plugin's `ChinaMapView` class will automatically shift GeoJSON coordinates so that data is accurately displayed on China map tiles. The [Mapbox Java SDK](/android-docs/java/overview/) includes a `CoordinateShifter` interface which is implemented by the plugin's `ChinaCoordinateShifter` class. The `ChinaCoordinateShifter` class helps apply specific coordinate shifting within the Java SDK's `Point` GeoJSON class, which then gets applied to all of the other types of GeoJSON geometries.
+
+If your data is _already_ shifted into GCJ-02 coordinates before it is fed to the map, then make sure to use the `ChinaMapView`'s `disableGeoJsonShifting()` method before any data is given to the map. You don't want pre-shifted data to be shifted again as the map ingests it.
+
+{{
+<CodeLanguageToggle id="disable-shifting" />
+<ToggleableCodeBlock
+
+java={`
+chinaMapView.disableGeoJsonShifting();
+`}
+
+kotlin={`
+chinaMapView?.disableGeoJsonShifting()
+`}
+/>
+}}
+
+Use the `enableGeoJsonShifting(CoordinateShifter coordinateShifter)` method if you need to enable coordinate shifting. Pass in an object of a class which implements the `CoordinateShifter` interface. This could be Mapbox's `ChinaCoordinateShifter` class or a class you've created yourself. A common scenario for enabling shifting could be when shifting is disabled via `disableGeoJsonShifting()` because pre-shifted data is first added to the map. Shifting is then enabled via `enableGeoJsonShifting()` before a user is able to interact with the map to add data by tapping on the map to add a marker.
+
+{{
+<CodeLanguageToggle id="enable-shifting" />
+<ToggleableCodeBlock
+
+java={`
+chinaMapView.enableGeoJsonShifting(new ChinaCoordinateShifter());
+`}
+
+kotlin={`
+chinaMapView?.enableGeoJsonShifting(ChinaCoordinateShifter())
+`}
+/>
+}}
+
+
+## Shifting device location
 
 Rather than working with raw coordinate values, the `ShiftLocation` class and its `shift` method handle `Location` objects. Showing a device's current location via [the Maps SDK's `LocationComponent`](/android-docs/maps/overview/location-component/) is one of the most common use cases for using the `ShiftLocation` class.
 
