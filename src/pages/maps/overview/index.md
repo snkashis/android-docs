@@ -126,6 +126,23 @@ class MapboxApplication : Application() {
 />
 }}
 
+The Maps SDK also provides a `setToken()` method in case you want to switch the Mapbox access token at runtime. Certain Mapbox APIs require special Mapbox tokens, such as maps in China. Setting a new token enables use of multiple Mapbox tools in conjunction with one another. This method allows you to set a token immediately before a specific Mapbox tool is used instead of setting the token initially and being required to use the same token for all Mapbox-related requests.
+
+{{
+<CodeLanguageToggle id="switch-token" />
+<ToggleableCodeBlock
+
+java={`
+Mapbox.setAccessToken(MAPBOX_ACCESS_TOKEN)
+`}
+
+kotlin={`
+Mapbox.setAccessToken(MAPBOX_ACCESS_TOKEN)
+`}
+
+/>
+}}
+
 
 ### 3. Setup permissions
 
