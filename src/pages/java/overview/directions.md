@@ -143,7 +143,7 @@ client?.enqueueCall(object : Callback<DirectionsResponse> {
        
        Log.e("Error: " + throwable.message)
 
-}
+})
 
 
 `}
