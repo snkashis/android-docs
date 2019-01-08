@@ -76,7 +76,7 @@ module.exports = () => {
     stylesheets: [
       require.resolve('@mapbox/mbx-assembly/dist/assembly.css'),
       path.join(cssDir, 'prism.css'),
-      path.join(__dirname, './vendor/dotcom-page-shell/page-shell-styles.css'),
+      path.join(__dirname, './vendor/docs-page-shell/page-shell-styles.css'),
       path.join(__dirname, './src/css/site.css'),
       require.resolve('@mapbox/dr-ui/css/docs-prose.css')
     ],
@@ -156,7 +156,7 @@ module.exports = () => {
       {
         filename: path.join(
           __dirname,
-          'vendor/dotcom-page-shell/page-shell-script.js'
+          'vendor/docs-page-shell/page-shell-script.js'
         )
       }
     ],

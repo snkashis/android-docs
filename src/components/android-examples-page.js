@@ -42,7 +42,11 @@ class AndroidExamplesPage extends React.PureComponent {
               description={example.description}
               path={example.path}
               thumbnail={
-                <AppropriateImage imageId={example.image} background={true} />
+                <AppropriateImage
+                  imageId={example.image}
+                  style={{ borderRadius: '4px' }}
+                  background={true}
+                />
               }
             />
           );

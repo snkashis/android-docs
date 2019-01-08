@@ -55,7 +55,7 @@ class HelpPage extends React.PureComponent {
     });
     return (
       <PageShell {...this.props}>
-        <p className="txt-l">
+        <p className="txt-l mb18">
           Our Help page contains tutorials, troubleshooting guides, and other
           resources to help you get started.
         </p>

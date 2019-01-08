@@ -11,8 +11,8 @@ prependJs:
 ---
 
 {{
-  <div className="mb24">
-    <OverviewHeader 
+  <div className="mb24 mt60 pt30 mt0-mm pt0-mm">
+    <OverviewHeader
       features={[
         "Map styles",
         "Run-time styling",
@@ -32,7 +32,7 @@ prependJs:
   </div>
 }}
 
-The Mapbox Maps SDK for Android is an open source toolset for displaying maps inside of your Android application. 
+The Mapbox Maps SDK for Android is an open source toolset for displaying maps inside of your Android application.
 
 {{
   <a href='https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' className="fr-mm block wmax180 mx-auto pl24">
@@ -86,7 +86,7 @@ Additionally, running `gradle app_module_name_here:dependencies` in your command
 
 ### 2. Get an access token
 
-If you don't have a Mapbox account, sign up for one [here](https://www.mapbox.com/signup/), and then navigate to your [Account page](https://www.mapbox.com/account/). Copy your **default public token** to your clipboard. After you've added the Maps SDK as a dependency inside of your Android project, open the `R.strings.xml` file, create a new String resource, and paste the access token. 
+If you don't have a Mapbox account, sign up for one [here](https://www.mapbox.com/signup/), and then navigate to your [Account page](https://www.mapbox.com/account/). Copy your **default public token** to your clipboard. After you've added the Maps SDK as a dependency inside of your Android project, open the `R.strings.xml` file, create a new String resource, and paste the access token.
 
 ```xml
 <string name="mapbox_access_token">PASTE_YOUR_ACCESS_TOKEN_HERE</string>
@@ -116,7 +116,7 @@ class MapboxApplication : Application() {
 
 	override fun onCreate() {
         super.onCreate()
-        
+
     // Mapbox Access token
     Mapbox.getInstance(getApplicationContext(), getString(R.string.mapbox_access_token));
 	}
@@ -189,17 +189,17 @@ override fun onCreate(savedInstanceState: Bundle?) {
 	// Mapbox access token is configured here. This needs to be called either in your application
 	// object or in the same activity which contains the mapview.
 	Mapbox.getInstance(this, getString(R.string.access_token))
-	
+
 	// This contains the MapView in XML and needs to be called after the access token is configured.
 	setContentView(R.layout.activity_basic_simple_mapview)
-	
+
 	mapView = findViewById(R.id.mapView)
 	mapView?.onCreate(savedInstanceState)
 	mapView?.getMapAsync {
-	    
+
 	    // Customize map with markers, polylines, etc.
-	    
-	    
+
+
 	}
 }
 `}
@@ -284,16 +284,16 @@ java={`
 @Override
 public void onDestroyView() {
 	super.onDestroyView();
-	
+
 		mapView.onDestroy();
-	
+
 }
 `}
 
 kotlin={`
 fun onDestroyView() {
 	super.onDestroyView()
-	
+
 		mapView.onDestroy()
 
 }
@@ -319,7 +319,7 @@ android {
 }
 ```
 
-This can also be done via your project settings (File > Project Structure > Your_Module > Source Compatibility / Target Compatibility). 
+This can also be done via your project settings (File > Project Structure > Your_Module > Source Compatibility / Target Compatibility).
 
 ## Attribution
 

@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withLocation } from '@mapbox/batfish/modules/with-location';
-import ReactPageShell from '../../vendor/dotcom-page-shell/react-page-shell.js';
+import ReactPageShell from '../../vendor/docs-page-shell/react-page-shell.js';
 import { routeToPrefixed } from '@mapbox/batfish/modules/route-to';
 // dr-ui components
 import TopbarSticker from '@mapbox/dr-ui/topbar-sticker';
 import BackToTopButton from '@mapbox/dr-ui/back-to-top-button';
 import ProductMenu from '@mapbox/dr-ui/product-menu/product-menu';
-import ProductMenuDropdown from '@mapbox/dr-ui/product-menu-dropdown';
-import { ProductMenuItems } from '@mapbox/dr-ui/data/product-menu-items';
 import PageLayout from '@mapbox/dr-ui/page-layout';
 import NavigationAccordion from '@mapbox/dr-ui/navigation-accordion';
 import SectionedNavigation from '@mapbox/dr-ui/sectioned-navigation';
@@ -127,7 +125,7 @@ class PageShell extends React.Component {
               });
             return {
               title: topic.title,
-              url: topic.path,
+              url: `/android-docs/maps/examples/${topic.path}`,
               items: examplesForTopic
             };
           })
@@ -170,7 +168,12 @@ class PageShell extends React.Component {
       }
       pageNavigation = (
         <div className="ml36 mr12">
-          <SectionedNavigation sections={sections} />
+          <SectionedNavigation
+            hideSubItems={
+              frontMatter.title === 'Examples' || frontMatter.title === 'Help'
+            }
+            sections={sections}
+          />
         </div>
       );
     }
@@ -195,9 +198,10 @@ class PageShell extends React.Component {
             <div className="grid grid--gut36 mr-neg36 mr0-mm">
               <div className="col col--4-mm col--12">
                 <div className="ml24 pt12">
-                  <ProductMenu productName={productNames[product]}>
-                    <ProductMenuDropdown categories={ProductMenuItems} />
-                  </ProductMenu>
+                  <ProductMenu
+                    productName={productNames[product]}
+                    homePage="/android-docs/"
+                  />
                 </div>
               </div>
               <div className="col col--8-mm col--12">
