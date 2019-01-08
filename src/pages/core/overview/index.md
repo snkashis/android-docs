@@ -77,6 +77,9 @@ PermissionsManager permissionsManager = new PermissionsManager(this);
 
 if (PermissionsManager.areLocationPermissionsGranted(this)) {
   
+  // Permission sensitive logic called here, such as activating the Maps SDK's LocationComponent to show the device's location
+  
+  
 } else {
   permissionsManager = new PermissionsManager(this);
   permissionsManager.requestLocationPermissions(this);
@@ -91,6 +94,10 @@ kotlin={`
 var permissionsManager: PermissionsManager
 
 if (PermissionsManager.areLocationPermissionsGranted(this)) {
+
+  // Permission sensitive logic called here, such as activating the Maps SDK's LocationComponent to show the device's location
+
+
 
 } else {
 	permissionsManager = PermissionsManager(this)
@@ -124,9 +131,16 @@ PermissionsListener permissionsListener = new PermissionsListener() {
 	@Override
 	public void onPermissionResult(boolean granted) {
 		if (granted) {
-      	// Permission sensitive logic called here
+			
+			// Permission sensitive logic called here, such as activating the Maps SDK's LocationComponent to show the device's location
+
+			
+			
     	} else {
-     	// User denied the permission
+    	
+			// User denied the permission
+     	
+     	
 		}
 	}
 };
@@ -139,9 +153,15 @@ var permissionsListener: PermissionsListener = object : PermissionsListener {
 	
 	override fun onPermissionResult(granted: Boolean) {
 		if (granted) {
-        // Permission sensitive logic called here
+		
+			// Permission sensitive logic called here, such as activating the Maps SDK's LocationComponent to show the device's location
+			
+			
 		} else {
-        // User denied the permission
+		
+			// User denied the permission
+
+        
 		}
 	}
 }
@@ -192,7 +212,11 @@ locationEngine.requestLocationUpdates(request, this, getMainLooper());
 
 @Override
 public void onSuccess(LocationEngineResult result) {
+	
 	// Location logic here
+	
+	Location lastLocation = result.getLastLocation();
+
 }
 
 @Override
@@ -211,7 +235,10 @@ locationEngine.requestLocationUpdates(request, this, mainLooper)
 ...
 
 override fun onSuccess(result: LocationEngineResult) {
+	
 	// Location logic here
+	
+	Location lastLocation = result.lastLocation
 }
 
 override fun onFailure(exception: Exception) {
@@ -302,7 +329,10 @@ locationEngine.getLastLocation(this)
 ...
 
 override fun onSuccess(result: LocationEngineResult?) {
+	
 	// Location logic here
+	
+	Location lastLocation = result.lastLocation
 }
 
 override fun onFailure(exception: Exception) {
