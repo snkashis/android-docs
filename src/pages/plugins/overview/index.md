@@ -76,6 +76,10 @@ Before using any of the Mapbox Plugins for Android, you will need:
 
 <!-- - Tutorials — The tutorials section contains several step-by-step guides for creating apps using Mapbox SDKs for Android alongside plugins. -->
 
+## Maps SDK compatibility
+
+The Mapbox Plugins for Android are heavily dependent on the major semantic versioning number of the Maps SDK. They either won't compile or hide runtime bugs when paired with a different major version of the Maps SDK. Each plugin's dependency name has a `vX` suffix which states the major version of the Maps SDK that the plugin is compatible with. This suffix makes the transition between versions easier and more educated without the need to jump into changelogs and compare repositories.
+
 ## Support and contributions
 - If you are looking for support using this SDK, either reach out through [Stack Overflow](https://stackoverflow.com/questions/tagged/mapbox+android) or through our [contact page](https://www.mapbox.com/contact/).
 - If you find a bug and can provide steps to reliably reproduce it, open an issue in the [/mapbox-plugins-android repository](https://github.com/mapbox/mapbox-plugins-android) on GitHub and apply the bug label.
