@@ -264,7 +264,6 @@ navigation.addOffRouteListener { location ->
 java={`
 @Override
 public boolean allowRerouteFrom(Point offRoutePoint) {
-  return false;
 
   // Fetch new route with MapboxOfflineRouter
 
@@ -273,12 +272,14 @@ public boolean allowRerouteFrom(Point offRoutePoint) {
     .directionsRoute(offlineDirectionsRoute)
     .build();
   navigationView.startNavigation(options);
+  
+  // Ignore internal routing, allowing offline route
+  return false;
 }
 `}
 
 kotlin={`
 override fun allowRerouteFrom(offRoutePoint: Point): Boolean {
-return false
 
 	// Fetch new route with MapboxOfflineRouter
 
@@ -288,6 +289,9 @@ return false
 		.build()
 
 	navigationView.startNavigation(options)
+	
+	 // Ignore internal routing, allowing offline route
+	return false
 }
 `}
 />

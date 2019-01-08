@@ -26,7 +26,7 @@ MapboxMapMatching.builder()
     .profile(DirectionsCriteria.PROFILE_DRIVING)
     .build()
     .enqueueCall(new Callback<MapMatchingResponse>() {
-    
+
     @Override
     public void onResponse(Call<MapMatchingResponse> call, Response<MapMatchingResponse> response) {
       if (response.isSuccessful()) {
@@ -52,16 +52,16 @@ MapboxMapMatching.builder()
 	.profile(DirectionsCriteria.PROFILE_DRIVING)
 	.build()
 	.enqueueCall(object : Callback<MapMatchingResponse> {
-		
+
     override fun onResponse(call: Call<MapMatchingResponse>, response: Response<MapMatchingResponse>) {
         if (response.isSuccessful) {
             val route = response.body()!!.matchings()!![0].toDirectionRoute()
             navigation!!.startNavigation(route)
         }
     }
-	
+
     override fun onFailure(call: Call<MapMatchingResponse>, throwable: Throwable) {
-	
+
     }
 })           
 `}
@@ -98,7 +98,7 @@ navigation?.addOffRouteListener { location ->
 
 	// Make the Map Matching request here
 	// Call MapboxNavigation#startNavigation with successful response
-         
+
 }
 `}
 
@@ -121,8 +121,7 @@ map matching response.
 java={`
 @Override
 public boolean allowRerouteFrom(Point offRoutePoint) {
-  return false;
-  
+
   // Fetch new route with MapboxMapMatching
 
   // Create new options with map matching response route
@@ -130,23 +129,27 @@ public boolean allowRerouteFrom(Point offRoutePoint) {
     .directionsRoute(mapMatchingDirectionsRoute)
     .build();
   navigationView.startNavigation(options);
+
+  // Ignore internal routing, allowing MapboxMapMatching call
+  return false;
 }
 `}
 
 kotlin={`
 override fun allowRerouteFrom(offRoutePoint: Point): Boolean {
-return false
 
 	// Fetch new route with MapboxMapMatching
-	
+
 	// Create new options with map matching response route
 	val options = NavigationViewOptions.builder()
 		.directionsRoute(mapMatchingDirectionsRoute)
 		.build()
-	
+
 	navigationView.startNavigation(options)
+
+  // Ignore internal routing, allowing MapboxMapMatching call
+  return false
 }
 `}
-
 />
 }}
