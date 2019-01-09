@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-description: "Overview of the Mapbox Core Libraries for Android. Easily handle telemetry, device location, and connectivity for any app."
+description: "Overview of the Mapbox Core Libraries for Android. Easily handle device location, permissions, and connectivity for any app."
 prependJs:
   - "import OverviewHeader from '@mapbox/dr-ui/overview-header';"
   - "import AppropriateImage from '../../../components/appropriate-image';"
