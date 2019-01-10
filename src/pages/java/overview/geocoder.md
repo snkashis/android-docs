@@ -12,7 +12,7 @@ You'll find the wrapper for the Mapbox Geocoding API in the mapbox-java-services
 
 Before using this wrapper:
 
-- We recommend reading over [Mapbox Geocoding API documentation](https://www.mapbox.com/api-documentation/#geocoding). The API documentation contains all available parameters including some that are not listed in this guide.
+- We recommend reading over [Mapbox Geocoding API documentation](https://www.mapbox.com/api-documentation/search/#geocoding). The API documentation contains all available parameters including some that are not listed in this guide.
 - Make sure you have included the correct permissions inside of your `AndroidManifest.xml` file if you plan to use this API inside of an Android application.
 
 ## Geocoding request

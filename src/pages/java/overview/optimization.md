@@ -12,7 +12,7 @@ You'll find the wrapper for the Mapbox Optimization API included in the `mapbox-
 
 Before using this wrapper:
 
-- We recommend reading over the [Mapbox Optimization API documentation](https://www.mapbox.com/api-documentation/#optimization).
+- We recommend reading over the [Mapbox Optimization API documentation](https://www.mapbox.com/api-documentation/navigation/#optimization).
 - Make sure that you have included the correct permissions inside of your `AndroidManifest.xml` file if you plan to use this API inside of an Android application.
 
 ## Optimization request
@@ -56,7 +56,7 @@ val optimizedClient = MapboxOptimization.builder()
 />
 }}
 
-You can read about optional parameters in the [Optimization API documentation](https://www.mapbox.com/api-documentation/#retrieve-an-optimization).
+You can read about optional parameters in the [Optimization API documentation](https://www.mapbox.com/api-documentation/navigation/#optimization).
 
 ## Optimization response
 
@@ -104,11 +104,11 @@ optimizedClient?.enqueueCall(object : Callback<OptimizationResponse> {
 			return
 		}
 	}
-	
+
 	val optimizedRoute = response.body()!!.trips()!![0]
-	
+
 	}
-	
+
 	override fun onFailure(call: Call<OptimizationResponse>, throwable: Throwable) {
 		Log.d(TAG, "Error: " + throwable.message)
 	}
@@ -128,7 +128,7 @@ java={`
 @Override
   protected void onDestroy() {
     super.onDestroy();
-    
+
     if (optimizedClient != null) {
       optimizedClient.cancelCall();
     }
@@ -140,7 +140,7 @@ kotlin={`
 @Override
   protected void onDestroy() {
     super.onDestroy();
-    
+
     optimizedClient?.cancelCall()
 
     mapView?.onDestroy()
@@ -148,4 +148,3 @@ kotlin={`
 `}
 />
 }}
-

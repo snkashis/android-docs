@@ -35,7 +35,7 @@ Mapbox Vision AR for Android is a high-level framework that sits on top of the [
 
 ## Integration with other tools
 
-Vision AR is intended to be used with the Mapbox Navigation SDK. Vision AR sits on top of the [Vision SDK for Android](/android-docs/vision/overview/) and adjacent to the [Mapbox Directions API](https://www.mapbox.com/api-documentation/#directions) and [Mapbox Core Navigation](/android-docs/navigation/overview/).
+Vision AR is intended to be used with the Mapbox Navigation SDK. Vision AR sits on top of the [Vision SDK for Android](/android-docs/vision/overview/) and adjacent to the [Mapbox Directions API](https://www.mapbox.com/api-documentation/navigation/#directions) and [Mapbox Core Navigation](/android-docs/navigation/overview/).
 
 ### Components of the Vision SDK
 

@@ -6,7 +6,7 @@ prependJs:
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
 ---
 
-The Mapbox Matrix API returns all travel times between many points. The Matrix API will always return the duration on the fastest route. Durations between points may not be symmetric (for example A to B may have a different duration than B to A), as the routes may differ by direction due to one-way streets or turn restrictions. The Matrix API returns durations in seconds. It does not return route geometries or distances. Make sure to have a look at the API documentation if you want [more information](https://www.mapbox.com/api-documentation/#matrix).
+The Mapbox Matrix API returns all travel times between many points. The Matrix API will always return the duration on the fastest route. Durations between points may not be symmetric (for example A to B may have a different duration than B to A), as the routes may differ by direction due to one-way streets or turn restrictions. The Matrix API returns durations in seconds. It does not return route geometries or distances. Make sure to have a look at the API documentation if you want [more information](https://www.mapbox.com/api-documentation/navigation/#matrix).
 
 This API allows you to build tools that efficiently check the reachability of coordinates from each other, filter points by travel time, or run your own algorithms for solving optimization problems.
 
@@ -14,7 +14,7 @@ The standard limit for request are a maximum 60 requests per minute and maximum 
 
 Before using this wrapper:
 
-- We recommend reading over [Mapbox Matrix API documentation](https://www.mapbox.com/api-documentation/#matrix). The API documentation contains all available parameters including some that are not listed in this guide.
+- We recommend reading over [Mapbox Matrix API documentation](https://www.mapbox.com/api-documentation/navigation/#matrix). The API documentation contains all available parameters including some that are not listed in this guide.
 - Make sure you have included the correct permissions inside of your `AndroidManifest.xml` file if you plan to use this API inside of an Android application.
 
 ## API request

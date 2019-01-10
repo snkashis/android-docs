@@ -28,7 +28,7 @@ prependJs:
   </div>
 }}
 
-The Navigation SDK for Android allows you to build a complete in-app navigation experience. With the Navigation SDK you get the power of the [Mapbox Directions API](https://www.mapbox.com/api-documentation/#directions) along with a collection of features that are critical when building navigation applications for Android, including:
+The Navigation SDK for Android allows you to build a complete in-app navigation experience. With the Navigation SDK you get the power of the [Mapbox Directions API](https://www.mapbox.com/api-documentation/navigation/#directions) along with a collection of features that are critical when building navigation applications for Android, including:
 
 - Detecting the direction a device is facing and start the route accordingly
 - Providing voice instruction announcements
@@ -184,7 +184,7 @@ navigation?.locationEngine = locationEngine!!
 
 Turn instructions are announced in the user interface language when turn instructions are available in that language. If instructions are not available in the user interface language, they are announced in English. To have instructions announced in a language other than the user interface language, set the `NavigationRoute.Builder#language` property when calculating the route with which to start navigation.
 
-Turn instructions are primarily designed to be announced by either the Mapbox Voice API (powered by [Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/SupportedLanguage.html)) or [TextToSpeech](https://developer.android.com/reference/android/speech/tts/TextToSpeech). By default, this SDK uses the Mapbox Voice API, which requires an Internet connection at various points along the route. If the Voice API lacks support for the turn instruction language or there is no Internet connection, TextToSpeech announces the instructions instead. 
+Turn instructions are primarily designed to be announced by either the Mapbox Voice API (powered by [Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/SupportedLanguage.html)) or [TextToSpeech](https://developer.android.com/reference/android/speech/tts/TextToSpeech). By default, this SDK uses the Mapbox Voice API, which requires an Internet connection at various points along the route. If the Voice API lacks support for the turn instruction language or there is no Internet connection, TextToSpeech announces the instructions instead.
 
 By default, distances are given in the predominant measurement system of the system region, which may not necessarily be the same region in which the user is traveling. To override the measurement system used in spoken instructions, set the `MapboxNavigationOptions.Builder#voiceUnits` property when calculating the route with which to start navigation.
 
@@ -229,7 +229,7 @@ The table below lists the languages that are supported for user interface elemen
 | Czech      | ✅             | -
 | Danish     | ✅             | ✅
 | English    | ✅             | ✅
-| Esperanto  | —              | ✅ 
+| Esperanto  | —              | ✅
 | Finnish    | —              | ✅ | Depends on the device; may require third-party text-to-speech
 | French     | ✅             | ✅
 | German     | ✅             | ✅
@@ -238,13 +238,13 @@ The table below lists the languages that are supported for user interface elemen
 | Italian    | ✅             | ✅
 | Korean     | ✅             | ✅
 | Norwegian  | —              | ✅
-| Polish     | —              | ✅ 
+| Polish     | —              | ✅
 | Portuguese | ✅             | ✅
-| Romanian   | —              | ✅ 
+| Romanian   | —              | ✅
 | Russian    | ✅             | ✅
 | Spanish    | ✅             | ✅
 | Swedish    | ✅             | ✅
-| Turkish    | —              | ✅ 
+| Turkish    | —              | ✅
 | Ukrainian  | ✅              | ✅ | Depends on the device; may require third-party text-to-speech
 | Vietnamese | ✅              | ✅ | Depends on the device; may require third-party text-to-speech
 
@@ -254,7 +254,7 @@ The table below lists the languages that are supported for user interface elemen
 
 See the [contributing guide](https://github.com/mapbox/mapbox-navigation-ios/blob/master/CONTRIBUTING.md#adding-or-updating-a-localization) for instructions on adding a new localization or improving an existing localization.
 
-[apidoc]: https://www.mapbox.com/api-documentation/#instructions-languages
+[apidoc]: https://www.mapbox.com/api-documentation/navigation/#instructions-languages
 
 ## Customize route requests
 

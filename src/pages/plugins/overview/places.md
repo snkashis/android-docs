@@ -9,7 +9,7 @@ prependJs:
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"   
 ---
 
-The **Places plugin for Android** lets users search for a destination, explore what's nearby, or find their favorite restaurants, coffee shops, or stores. The Places Plugin is built on top of our [Mapbox Geocoding API](https://www.mapbox.com/api-documentation/#geocoding) and offers UI components that can be integrated inside your app with a few lines of code.
+The **Places plugin for Android** lets users search for a destination, explore what's nearby, or find their favorite restaurants, coffee shops, or stores. The Places Plugin is built on top of our [Mapbox Geocoding API](https://www.mapbox.com/api-documentation/search/#geocoding) and offers UI components that can be integrated inside your app with a few lines of code.
 
 {{
 <AppropriateImage imageId="placesSplash" className="block mx-auto pt18" />

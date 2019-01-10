@@ -10,7 +10,7 @@ prependJs:
 
 The Mapbox Tilequery API allows you to retrieve data about specific features from a vector tileset, based on a given latitude and longitude. The API makes it possible to query for features within a radius, do point in polygon queries, query for features in multiple composite layers, and augment data from the Mapbox Geocoding API with custom data.
 
-For more information about this API, see the [Mapbox Tilequery API documentation](https://www.mapbox.com/api-documentation/#tilequery).
+For more information about this API, see the [Mapbox Tilequery API documentation](https://www.mapbox.com/api-documentation/maps/#tilequery).
 
 ## Building the query URL
 
@@ -59,7 +59,7 @@ val tilequery = MapboxTilequery.builder()
 
 ## Query response
 
-You can access the Tilequery API's response inside of the `onResponse` callback. 
+You can access the Tilequery API's response inside of the `onResponse` callback.
 The `onResponse` callback is built with [Retrofit](https://square.github.io/retrofit/), just like the Java SDK's other services' callbacks. The response will include a `List<Feature>` if the query you built has any `Feature`s in it. However, there's no guarantee that the response will have any `Feature` objects in it.  
 
 {{
@@ -69,15 +69,15 @@ The `onResponse` callback is built with [Retrofit](https://square.github.io/retr
 java={`
 tilequery.enqueueCall(new Callback<FeatureCollection>() {
 	@Override public void onResponse(Call<FeatureCollection> call, Response<FeatureCollection> response) {
-	
+
 		List<Feature> featureCollection = response.body().features();
-		
+
 	}
 
 	@Override public void onFailure(Call<FeatureCollection> call, Throwable throwable) {
-	
+
 		Log.d("Request failed: %s", throwable.getMessage());
-	
+
 	}
 });
 `}
@@ -91,9 +91,9 @@ tilequery.enqueueCall(object : Callback<FeatureCollection> {
 	}
 
 	override fun onFailure(call: Call<FeatureCollection>, throwable: Throwable){
-		
+
 		Timber.d("Request failed: %s", throwable.message)
-		
+
 	}
 })
 `}
@@ -109,25 +109,25 @@ Each `Feature` in the response has a `distance`, `geometry`, and `layer` propert
 java={`
 tilequery.enqueueCall(new Callback<FeatureCollection>() {
 	@Override public void onResponse(Call<FeatureCollection> call, Response<FeatureCollection> response) {
-	
+
 		// The FeatureCollection that is inside the API response
-		
+
 		List<Feature> featureCollection = response.body().features();
-		
+
 		// Distance that the Feature is from the original Tilequery Point coordinate
 		String distance = featureCollection.get(0).getProperty("tilequery").getAsJsonObject().get("distance").toString();
-        
+
 		// The Feature's GeoJSON geometry type     
         String geometryType = featureCollection.get(0).getProperty("tilequery").getAsJsonObject().get("geometry").toString();
-        
+
         // The id of the map layer which the Feature is a part of        
         String layerId = featureCollection.get(0).getProperty("tilequery").getAsJsonObject().get("layer").toString();
 	}
 
 	@Override public void onFailure(Call<FeatureCollection> call, Throwable throwable) {
-			
+
 		Log.d("Request failed: %s", throwable.getMessage());
-	
+
 	}
 });
 `}
@@ -139,9 +139,9 @@ tilequery.enqueueCall(object : Callback<FeatureCollection> {
 		// The FeatureCollection that is inside the API response
 
 		val featureCollection = response.body()?.features()
-		
+
 		// Distance that the Feature is from the original Tilequery Point coordinate
-		
+
 		val distance = featureCollection!![0].getProperty("tilequery").asJsonObject.get("distance").toString()
 
     // The Feature's GeoJSON geometry type
@@ -153,9 +153,9 @@ tilequery.enqueueCall(object : Callback<FeatureCollection> {
 	}
 
 	override fun onFailure(call: Call<FeatureCollection>, throwable: Throwable){
-		
+
 		Timber.d("Request failed: %s", throwable.message)
-		
+
 	}
 })
 `}
