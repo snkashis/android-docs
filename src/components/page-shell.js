@@ -125,7 +125,7 @@ class PageShell extends React.Component {
               });
             return {
               title: topic.title,
-              url: `/android-docs/maps/examples/${topic.path}`,
+              url: `/android-docs/${product}/examples/${topic.path}`,
               items: examplesForTopic
             };
           })
