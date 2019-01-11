@@ -68,21 +68,20 @@ In the chart below, you'll find a list of the objects you'd typically use in the
 | --- | --- |
 | `MapView` | `ChinaMapView` |
 | `SupportMapFragment` | `ChinaSupportMapFragment` |
-| `MapboxMapOptions` | `MapboxMapChinaOptions` |
 
 As mentioned above, Android Lint will attempt to warn you when you are using the wrong classes. This does not occur in every instance, however, so we still recommend manually confirming that you are using the right object each time.
 
 ## China Map Styles
-Mapbox currently offers three government-certified map styles for China that match the look of our equivalent Mapbox Streets, Dark, and Light styles. The China styles provide up to 10x faster map loading. You can either manually hardcode the style URL inside your app or use the provided constants found inside this plugin. The table below lists the Java constant, XML string constant, and the actual map style URL which can be hardcoded in your app.
+Mapbox currently offers three government-certified map styles for China that match the look of our equivalent Mapbox Streets, Dark, and Light styles. The China styles provide up to 10x faster map loading. You can either manually hardcode the style URL inside your app or use the provided constants found inside this plugin. The table below lists the Java constant and the actual map style URL which can be hardcoded in your app.
 
 **You will need a special China Mapbox access token if you want to use any of our China map styles.**  
 _Please fill out the form at [https://www.mapbox.cn/contact](https://www.mapbox.cn/contact/) to start the process of receiving this special access token._
 
-| Java Constant | XML String | URL |
-| --- | --- | --- |
-| `ChinaStyle.MAPBOX_STREETS_CHINESE` | `mapbox_style_mapbox_streets_chinese` | `mapbox://styles/mapbox/streets-zh-v1` |
-| `ChinaStyle.MAPBOX_LIGHT_CHINESE` | `mapbox_style_mapbox_dark_chinese` | `mapbox://styles/mapbox/light-zh-v1` |
-| `ChinaStyle.MAPBOX_DARK_CHINESE` | `mapbox_style_mapbox_light_chinese` | `mapbox://styles/mapbox/dark-zh-v1` |
+| Java constant | URL |
+| --- | --- |
+| `ChinaStyle.MAPBOX_STREETS_CHINESE` | `mapbox://styles/mapbox/streets-zh-v1` |
+| `ChinaStyle.MAPBOX_LIGHT_CHINESE` | `mapbox://styles/mapbox/light-zh-v1` |
+| `ChinaStyle.MAPBOX_DARK_CHINESE` | `mapbox://styles/mapbox/dark-zh-v1` |
 
 When using the constants found in this SDK, you'll always be using the latest version of the map style when the plugin gets updated. Conversely, hardcoding allows you to have more control over the map style version and determine when your apps map style gets an update.
 
