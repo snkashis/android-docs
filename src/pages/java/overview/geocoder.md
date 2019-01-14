@@ -27,14 +27,14 @@ _**Note:** If you are using our geocoder to find locations around the user's loc
 
 java={`
 MapboxGeocoding mapboxGeocoding = MapboxGeocoding.builder()
-  .accessToken(Mapbox.getAccessToken())
+  .accessToken(MAPBOX_ACCESS_TOKEN)
   .query("1600 Pennsylvania Ave NW")
   .build();
 `}
 
 kotlin={`
 val mapboxGeocoding = MapboxGeocoding.builder()
-	.accessToken(Mapbox.getAccessToken()!!)
+	.accessToken(MAPBOX_ACCESS_TOKEN)
 	.query("1600 Pennsylvania Ave NW")
 	.build()
 `}
@@ -122,7 +122,7 @@ You can narrow the response like forward geocoding by biasing the result using t
 
 java={`
 MapboxGeocoding reverseGeocode = MapboxGeocoding.builder()
-        .accessToken(ACCESS_TOKEN)
+        .accessToken(MAPBOX_ACCESS_TOKEN)
         .query(Point.fromLngLat(-77.03655, 38.89770))
         .geocodingTypes(GeocodingCriteria.TYPE_ADDRESS)
         .build();
@@ -132,7 +132,7 @@ MapboxGeocoding reverseGeocode = MapboxGeocoding.builder()
 
 kotlin={`
 val reverseGeocode = MapboxGeocoding.builder()
-	.accessToken(ACCESS_TOKEN)
+	.accessToken(MAPBOX_ACCESS_TOKEN)
 	.query(Point.fromLngLat(-77.03655, 38.89770))
 	.geocodingTypes(GeocodingCriteria.TYPE_ADDRESS)
 	.build()
@@ -155,7 +155,7 @@ Batch requests have the same parameters as normal requests, but can include more
 
 java={`
 MapboxGeocoding client = MapboxGeocoding.builder()
-	.accessToken(ACCESS_TOKEN)
+	.accessToken(MAPBOX_ACCESS_TOKEN)
 	.mode(GeocodingCriteria.MODE_PLACES_PERMANENT)
 	.query("20001;20009;22209")
 	.baseUrl(mockUrl.toString())
@@ -164,7 +164,7 @@ MapboxGeocoding client = MapboxGeocoding.builder()
 
 kotlin={`
 val client = MapboxGeocoding.builder()
-	.accessToken(ACCESS_TOKEN)
+	.accessToken(MAPBOX_ACCESS_TOKEN)
 	.mode(GeocodingCriteria.MODE_PLACES_PERMANENT)
 	.query("20001;20009;22209")
 	.baseUrl(mockUrl.toString())

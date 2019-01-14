@@ -37,7 +37,7 @@ private List<Point> coordinates;
 MapboxOptimization optimizedClient = MapboxOptimization.builder()
   .coordinates(coordinates)
   .profile(DirectionsCriteria.PROFILE_DRIVING)
-  .accessToken(ACCESS_TOKEN)
+  .accessToken(MAPBOX_ACCESS_TOKEN)
   .build();
 `}
 
@@ -50,7 +50,7 @@ private val coordinates: List<Point>? = null
 val optimizedClient = MapboxOptimization.builder()
 	.coordinates(coordinates)
 	.profile(DirectionsCriteria.PROFILE_DRIVING)
-	.accessToken(ACCESS_TOKEN)
+	.accessToken(MAPBOX_ACCESS_TOKEN)
 	.build()  
 `}
 />

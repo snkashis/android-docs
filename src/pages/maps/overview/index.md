@@ -97,7 +97,7 @@ Additionally, running `gradle app_module_name_here:dependencies` in your command
 If you don't have a Mapbox account, sign up for one [here](https://www.mapbox.com/signup/), and then navigate to your [Account page](https://www.mapbox.com/account/). Copy your **default public token** to your clipboard. After you've added the Maps SDK as a dependency inside of your Android project, open the `R.strings.xml` file, create a new String resource, and paste the access token.
 
 ```xml
-<string name="mapbox_access_token">PASTE_YOUR_ACCESS_TOKEN_HERE</string>
+<string name="mapbox_access_token">MAPBOX_ACCESS_TOKEN</string>
 ```
 
 Then to pass this into the Maps SDK, you'll want to place the access token inside of your application's `onCreate()` method.
@@ -114,7 +114,7 @@ public class MyApplication extends Application {
     super.onCreate();
 
     // Mapbox Access token
-    Mapbox.getInstance(getApplicationContext(), getString(R.string.mapbox_access_token));
+    Mapbox.getInstance(getApplicationContext(), MAPBOX_ACCESS_TOKEN);
   }
 }
 `}
@@ -126,7 +126,7 @@ class MapboxApplication : Application() {
         super.onCreate()
 
     // Mapbox Access token
-    Mapbox.getInstance(getApplicationContext(), getString(R.string.mapbox_access_token));
+    Mapbox.getInstance(getApplicationContext(), MAPBOX_ACCESS_TOKEN);
 	}
 }
 `}
@@ -175,7 +175,7 @@ private MapView mapView;
 protected void onCreate(Bundle savedInstanceState) {
 super.onCreate(savedInstanceState);
   
-	Mapbox.setAccessToken(MAPBOX_ACCESS_TOKEN);
+	Mapbox.getInstance(this, MAPBOX_ACCESS_TOKEN);
 	
 	setContentView(R.layout.activity_main);
 	
@@ -203,12 +203,13 @@ kotlin={`
 private var mapView: MapView? = null
 
 override fun onCreate(savedInstanceState: Bundle?) {
-	super.onCreate(savedInstanceState)
+super.onCreate(savedInstanceState)
 	
-	Mapbox.getInstance(this, getString(R.string.access_token))
+	Mapbox.getInstance(this, MAPBOX_ACCESS_TOKEN)
 	
 	setContentView(R.layout.activity_main)
-	mapView = findViewById(R.id.mapView)
+
+  mapView = findViewById(R.id.mapView)
 	mapView?.onCreate(savedInstanceState)
 	mapView?.getMapAsync { mapboxMap ->
 	

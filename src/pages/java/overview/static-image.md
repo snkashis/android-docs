@@ -22,7 +22,7 @@ To begin with, you'll need to create a new instance of the `MapboxStaticMap` obj
 
 java={`
 MapboxStaticMap staticImage = MapboxStaticMap.builder()
-  .accessToken(getString(R.string.access_token))
+  .accessToken(MAPBOX_ACCESS_TOKEN)
   .styleId(StaticMapCriteria.LIGHT_STYLE)
   .cameraPoint(Point.fromLngLat(longitude, latitude)) // Image's centerpoint on map
   .cameraZoom(13)
@@ -34,7 +34,7 @@ MapboxStaticMap staticImage = MapboxStaticMap.builder()
 
 kotlin={`
 val staticImage = MapboxStaticMap.builder()
-	.accessToken(getString(R.string.access_token))
+	.accessToken(MAPBOX_ACCESS_TOKEN)
 	.styleId(StaticMapCriteria.LIGHT_STYLE)
 	.cameraPoint(Point.fromLngLat(longitude, latitude) // Image's center point on map
 	.cameraZoom(13)

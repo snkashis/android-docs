@@ -73,7 +73,7 @@ java={`
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    MapboxNavigation navigation = new MapboxNavigation(context, "<access token>");
+    MapboxNavigation navigation = new MapboxNavigation(context, MAPBOX_ACCESS_TOKEN);
 
     ...
 
@@ -84,7 +84,7 @@ kotlin={`
 override fun onCreate(savedInstanceState: Bundle?) {
 	super.onCreate(savedInstanceState)
 
-	val navigation = MapboxNavigation(context, "<access token>")
+	val navigation = MapboxNavigation(context, MAPBOX_ACCESS_TOKEN)
 
 	...
 }
@@ -118,7 +118,7 @@ Point origin = Point.fromLngLat(-77.03613, 38.90992);
 Point destination = Point.fromLngLat(-77.0365, 38.8977);
 
 NavigationRoute.builder(context)
-      .accessToken(Mapbox.getAccessToken())
+      .accessToken(MAPBOX_ACCESS_TOKEN)
       .origin(origin)
       .destination(destination)
       .build()
@@ -141,7 +141,7 @@ val origin = Point.fromLngLat(-77.03613, 38.90992)
 val destination = Point.fromLngLat(-77.0365, 38.8977)
 
 NavigationRoute.builder(context)
-	.accessToken(Mapbox.getAccessToken())
+	.accessToken(MAPBOX_ACCESS_TOKEN)
 	.origin(origin)
 	.destination(destination)
 	.build()
@@ -195,7 +195,7 @@ By default, distances are given in the predominant measurement system of the sys
 java={`
 // Override measurement system in spoken instructions
 NavigationRoute.builder(context)
-    .accessToken(accessToken)
+    .accessToken(MAPBOX_ACCESS_TOKEN)
     .origin(origin, bearing, tolerance)
     .destination(destination)
     .voiceUnits(DirectionsCriteria.IMPERIAL)
@@ -205,7 +205,7 @@ NavigationRoute.builder(context)
 kotlin={`
 // Override measurement system in spoken instructions
 NavigationRoute.builder(context)
-    .accessToken(accessToken)
+    .accessToken(MAPBOX_ACCESS_TOKEN)
     .origin(origin, bearing, tolerance)
     .destination(destination)
     .voiceUnits(DirectionsCriteria.IMPERIAL)
@@ -275,7 +275,7 @@ java={`
 double bearing = Float.valueOf(location.getBearing()).doubleValue();
 double tolerance = 90d;
 NavigationRoute.builder(context)
-    .accessToken(accessToken)
+    .accessToken(MAPBOX_ACCESS_TOKEN)
     .origin(origin, bearing, tolerance)
     .destination(destination)
     .build();
@@ -286,7 +286,7 @@ kotlin={`
 val bearing = location.bearing.toDouble()
 val tolerance = 90.0
 NavigationRoute.builder(context)
-    .accessToken(accessToken)
+    .accessToken(MAPBOX_ACCESS_TOKEN)
     .origin(origin, bearing, tolerance)
     .destination(destination)
     .build()
@@ -313,7 +313,7 @@ If a re-route occurs and `approaches` were used to fetch the `DirectionsRoute` t
 
 java={`
 NavigationRoute.Builder builder = NavigationRoute.builder(context)
-    .accessToken(Mapbox.getAccessToken())
+    .accessToken(MAPBOX_ACCESS_TOKEN)
     .origin(origin)
     .addWaypoint(pickup)
     .destination(destination);
@@ -324,7 +324,7 @@ builder.build();
 
 kotlin={`
 val builder = NavigationRoute.builder(context)
-  .accessToken(Mapbox.getAccessToken()!!)
+  .accessToken(MAPBOX_ACCESS_TOKEN)
   .origin(origin)
   .addWaypoint(pickup)
   .destination(destination!!)
@@ -346,7 +346,7 @@ If your navigation involves a bunch of pick-up and drop-off points, you can add 
 
 java={`
 NavigationRoute.Builder builder = NavigationRoute.builder(context)
-	.accessToken(Mapbox.getAccessToken())
+	.accessToken(MAPBOX_ACCESS_TOKEN)
 	.origin(origin)
 	.destination(destination);
 
@@ -359,7 +359,7 @@ builder.build();
 
 kotlin={`
 val builder = NavigationRoute.builder(context)
-	.accessToken(Mapbox.getAccessToken()!!)
+	.accessToken(MAPBOX_ACCESS_TOKEN)
 	.origin(origin)
 	.destination(destination)
 

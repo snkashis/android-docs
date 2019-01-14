@@ -31,6 +31,11 @@ export default class OtherCodeBlock extends React.Component {
     } else if (context.preferredLanguage === 'kotlin') {
       code = this.props.kotlin;
     }
+
+    code = code.replace(
+      /(MAPBOX_ACCESS_TOKEN|ACCESS_TOKEN)/g,
+      context.userAccessToken || 'YOUR_MAPBOX_ACCESS_TOKEN'
+    );
     return (
       <div className="unprose mb12">
         <CodeSnippet

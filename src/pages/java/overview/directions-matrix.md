@@ -27,7 +27,7 @@ Before requesting and receiving the Matrix response, you'll need to use the `Map
 
 java={`
 MapboxMatrix directionsMatrixClient = MapboxMatrix.builder()
-	.accessToken(ACCESS_TOKEN)
+	.accessToken(MAPBOX_ACCESS_TOKEN)
 	.profile(DirectionsCriteria.PROFILE_DRIVING)
 	.coordinates(listOfPoints)
 	.build();
@@ -35,7 +35,7 @@ MapboxMatrix directionsMatrixClient = MapboxMatrix.builder()
 
 kotlin={`
 val directionsMatrixClient = MapboxMatrix.builder()
-	.accessToken(ACCESS_TOKEN)
+	.accessToken(MAPBOX_ACCESS_TOKEN)
 	.profile(DirectionsCriteria.PROFILE_DRIVING)
 	.coordinates(listOfPoints)
 	.build()

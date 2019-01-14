@@ -9,11 +9,20 @@ class ApplicationWrapper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      preferredLanguage: 'java'
+      preferredLanguage: 'java',
+      userAccessToken: undefined
     };
     this.changeLanguage = nextLang => {
       this.setState({ preferredLanguage: nextLang });
     };
+  }
+
+  componentDidMount() {
+    MapboxPageShell.afterUserCheck(() => {
+      this.setState({
+        userAccessToken: MapboxPageShell.getUserPublicAccessToken()
+      });
+    });
   }
 
   render() {
@@ -30,7 +39,8 @@ class ApplicationWrapper extends React.Component {
         }
       ],
       preferredLanguage: this.state.preferredLanguage,
-      changeLanguage: this.changeLanguage
+      changeLanguage: this.changeLanguage,
+      userAccessToken: this.state.userAccessToken
     };
     return (
       <AppContext.Provider value={context}>

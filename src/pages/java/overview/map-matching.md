@@ -19,7 +19,7 @@ To begin, you'll need to create a new instance of the `MapboxMapMatching` object
 
 java={`
 MapboxMapMatching client = MapboxMapMatching.builder()
-    .accessToken(Mapbox.getAccessToken())
+    .accessToken(MAPBOX_ACCESS_TOKEN)
     .profile(PROFILE_DRIVING)
     .coordinates(listOfPoints)
     .annotations(ANNOTATION_SPEED)
@@ -30,7 +30,7 @@ MapboxMapMatching client = MapboxMapMatching.builder()
 
 kotlin={`
 val client = MapboxMapMatching.builder()
-    .accessToken(Mapbox.getAccessToken()!!)
+    .accessToken(MAPBOX_ACCESS_TOKEN)
     .profile(PROFILE_DRIVING)
     .coordinates(listOfPoints)
     .annotations(ANNOTATION_SPEED)

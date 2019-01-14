@@ -58,7 +58,7 @@ If a separate search activity makes sense in your application, you can use the `
 
 java={`
 Intent intent = new PlaceAutocomplete.IntentBuilder()
-	.accessToken(Mapbox.getAccessToken())
+	.accessToken(MAPBOX_ACCESS_TOKEN)
 	.placeOptions(placeOptions)
 	.build(this);
 startActivityForResult(intent, REQUEST_CODE_AUTOCOMPLETE);
@@ -66,7 +66,7 @@ startActivityForResult(intent, REQUEST_CODE_AUTOCOMPLETE);
 
 kotlin={`
 val intent = PlaceAutocomplete.IntentBuilder()
-	.accessToken(Mapbox.getAccessToken()!!)
+	.accessToken(MAPBOX_ACCESS_TOKEN)
 	.placeOptions(placeOptions)
 	.build(this)
 startActivityForResult(intent, REQUEST_CODE_AUTOCOMPLETE)
