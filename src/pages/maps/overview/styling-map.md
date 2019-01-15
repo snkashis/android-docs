@@ -157,7 +157,7 @@ mapView?.getMapAsync {
 />
 }}
 
-Once you have an invidual map layer, you can then use [data-driven styling](/android-docs/maps/overview/data-driven-styling/) and [expressions](/android-docs/maps/overview/expressions/) to adjust the layer's properties. For example, here's how you'd use runtime styling to change the `park` layer's green color to a deeper green color:
+Once you have an invidual map layer, you can then use [data-driven styling](/android/maps/overview/data-driven-styling/) and [expressions](/android/maps/overview/expressions/) to adjust the layer's properties. For example, here's how you'd use runtime styling to change the `park` layer's green color to a deeper green color:
 
 {{
 <CodeLanguageToggle id="changing-park-layer" />

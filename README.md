@@ -54,7 +54,7 @@ The Android documentation uses [Batfish](https://github.com/mapbox/batfish), a s
 npm start
 ```
 
-This will set up a server running at http://localhost:8080/android-docs/. If you make changes to the source content, your browser should automatically refresh using livereload once you save the file.
+This will set up a server running at http://localhost:8080/android/. If you make changes to the source content, your browser should automatically refresh using livereload once you save the file.
 
 ## Contributing new documentation
 

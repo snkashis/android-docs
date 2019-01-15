@@ -656,6 +656,6 @@ geoJsonSource?.setGeoJson(featureCollection)
 
 ## Capturing click events
 
-Layers are not clickable and don't expose any event listeners for you to handle user input. Instead, the [map querying tools](/android-docs/maps/overview/query) can help you detect when a user has interacted with the map. For example, when a `FillLayer`'s `Polygon` has been tapped on.
+Layers are not clickable and don't expose any event listeners for you to handle user input. Instead, the [map querying tools](/android/maps/overview/query) can help you detect when a user has interacted with the map. For example, when a `FillLayer`'s `Polygon` has been tapped on.
 
-Alternatively, you can use the [Mapbox Annotation Plugin](/android-docs/plugins/overview/annotation/#manager), which provides `onClick()` and `onLongClick()` listening.
+Alternatively, you can use the [Mapbox Annotation Plugin](/android/plugins/overview/annotation/#manager), which provides `onClick()` and `onLongClick()` listening.

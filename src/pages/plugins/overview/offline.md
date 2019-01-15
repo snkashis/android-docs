@@ -22,7 +22,7 @@ To start developing an application using the Offline Plugin, you'll need to add 
 If your application is close or exceeds the 65k method count limit, you can mitigate this problem by enabling ProGuard inside of your application. ProGuard directives are included in the Android dependencies to preserve the required classes.
 
 ### Add the dependency
-To install the offline plugin, head over to the [Mapbox Plugin Overview](/android-docs/plugins/overview/) page which will walk you through adding the dependency.
+To install the offline plugin, head over to the [Mapbox Plugin Overview](/android/plugins/overview/) page which will walk you through adding the dependency.
 
 1. Start Android Studio.
 2. Open up your application's `build.gradle` file.

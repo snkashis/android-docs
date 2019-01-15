@@ -11,7 +11,7 @@ prependJs:
 
 {{
   <div className="mb24">
-    <OverviewHeader 
+    <OverviewHeader
       features={[
         "Renders an augmented reality, turn-by-turn navigation route",
         "Works with the device’s built-in camera"
@@ -29,13 +29,13 @@ prependJs:
 </WarningNote>
 }}
 
-Mapbox Vision AR for Android is a high-level framework that sits on top of the [Mapbox Vision SDK for Android](/android-docs/vision/overview/). Vision AR manages the navigation route, retranslates it to the core library, and renders an AR navigation route on top of the live video stream from the device’s built-in camera. 
+Mapbox Vision AR for Android is a high-level framework that sits on top of the [Mapbox Vision SDK for Android](/android/vision/overview/). Vision AR manages the navigation route, retranslates it to the core library, and renders an AR navigation route on top of the live video stream from the device’s built-in camera.
 
 <!-- ## Uses -->
 
 ## Integration with other tools
 
-Vision AR is intended to be used with the Mapbox Navigation SDK. Vision AR sits on top of the [Vision SDK for Android](/android-docs/vision/overview/) and adjacent to the [Mapbox Directions API](https://www.mapbox.com/api-documentation/navigation/#directions) and [Mapbox Core Navigation](/android-docs/navigation/overview/).
+Vision AR is intended to be used with the Mapbox Navigation SDK. Vision AR sits on top of the [Vision SDK for Android](/android/vision/overview/) and adjacent to the [Mapbox Directions API](https://www.mapbox.com/api-documentation/navigation/#directions) and [Mapbox Core Navigation](/android/navigation/overview/).
 
 ### Components of the Vision SDK
 
@@ -43,7 +43,7 @@ There are three components to the Vision SDK: VisionCore, VisionSDK, and VisionA
 
 **VisionCore** is the core logic of the system, including all machine learning models; it exists as compiled library for each platform with a user-facing API.
 
-[**VisionSDK**](/android-docs/vision-ar/overview/) is a framework written in native language (Kotlin for Android, Swift for iOS) that encapsulates core utilization and platform-dependent tasks. It calls VisionCore.
+[**VisionSDK**](/android/vision-ar/overview/) is a framework written in native language (Kotlin for Android, Swift for iOS) that encapsulates core utilization and platform-dependent tasks. It calls VisionCore.
 
 **VisionAR** is a native framework with dependency on the Mapbox Navigation SDK. It takes information from the specified navigation route, transfers it to VisionCore via VisionSDK, receives instructions on displaying the route, and then finally renders it on top of camera frame using native instruments.
 
@@ -83,4 +83,4 @@ While Vision AR is using the camera you must display the Mapbox watermark on scr
 
 ## Available resources
 
-Learn more about the capabilities of Vision AR in the [API reference](/android-docs/api/vision-ar/{{VISION_AR_VERSION}}/index.html) and data types reference. Contact our team to [request access](https://www.mapbox.com/vision/).
+Learn more about the capabilities of Vision AR in the [API reference](/android/api/vision-ar/{{VISION_AR_VERSION}}/index.html) and data types reference. Contact our team to [request access](https://www.mapbox.com/vision/).

@@ -10,9 +10,9 @@ prependJs:
     import {
       MAP_SDK_VERSION
     } from '../../../constants';
-  
+
   - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
-  - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';" 
+  - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
 ---
 
 Traditional map services are either blocked in China or suffer from slow internet connections. Our mapbox.cn infrastructure allows for unparalleled speed advantages for anyone using our maps in China or through Chinese mobile carriers internationally. The Mapbox China Plugin for Android is built on top of the Mapbox Maps SDK for Android. The plugin automatically configures the Maps SDK to ensure that the correct Mapbox API endpoints are being called. Accurate endpoints ensure that a mobile device retrieves the correct map tiles, map styles, and other location information. Additionally, the plugin handles shifting of various GeoJSON geometries (polygons, lines, points, etc.), which ensures that data is accurately placed on the map.
@@ -27,7 +27,7 @@ You'll need to add the appropriate dependencies inside of your `build.gradle` fi
 2. Open up your application's `build.gradle` file.
 3. Make sure that your project's `minSdkVersion` is API 14 or higher.
 4. Add the plugin's dependency to your application's `build.gradle` file.
-5. Add the dependency for the Mapbox Maps SDK, to your application's `build.gradle` file. [More info about installing the Maps SDK](/android-docs/maps/overview).
+5. Add the dependency for the Mapbox Maps SDK, to your application's `build.gradle` file. [More info about installing the Maps SDK](/android/maps/overview).
 5. Click the **Sync Project with Gradle Files** near the toolbar in Studio.
 
 ```groovy
@@ -37,13 +37,13 @@ repositories {
 }
 
 dependencies {
-  
+
 	// China plugin dependency
 	implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-china:{{ CHINA_PLUGIN_VERSION }}'
-  
+
 	// Mapbox Maps SDK dependency
 	implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:{{ MAP_SDK_VERSION }}'
-  
+
 }
 ```
 
@@ -74,7 +74,7 @@ As mentioned above, Android Lint will attempt to warn you when you are using the
 ## China Map Styles
 Mapbox currently offers three government-certified map styles for China that match the look of our equivalent Mapbox Streets, Dark, and Light styles. The China styles provide up to 10x faster map loading. You can either manually hardcode the style URL inside your app or use the provided constants found inside this plugin. The table below lists the Java constant and the actual map style URL which can be hardcoded in your app.
 
-**You will need a special China Mapbox access token if you want to use any of our China map styles.**  
+**You will need a special China Mapbox access token if you want to use any of our China map styles.**
 _Please fill out the form at [https://www.mapbox.cn/contact](https://www.mapbox.cn/contact/) to start the process of receiving this special access token._
 
 | Java constant | URL |
@@ -102,13 +102,13 @@ String shiftedCoordinatesJson = shiftForChina.shift(unshiftedLong, unshiftedLat)
 try {
 
   JSONObject jsonObject = new JSONObject(shiftedCoordinatesJson);
-  
+
   double shiftedLongitude = jsonObject.getDouble("lon");
 
   double shiftedLatitude = jsonObject.getDouble("lat");
-  
+
 	// You now have longitude and latitude values, which you can use however you'd like.
-  
+
 } catch (JSONException jsonException) {
   jsonException.printStackTrace();
 }
@@ -118,15 +118,15 @@ kotlin={`
 val shiftedCoordinatesJson = shiftForChina.shift(unshiftedLong, unshiftedLat)
 
 try {
-	
+
 	val jsonObject = JSONObject(shiftedCoordinatesJson)
-		
+
 	val shiftedLongitude = jsonObject.getDouble("lon")
-		
+
 	val shiftedLatitude = jsonObject.getDouble("lat")
-	
+
 	// You now have longitude and latitude values, which you can use however you'd like.
-	
+
 } catch (jsonException: JSONException) {
 	jsonException.printStackTrace()
 }
@@ -137,7 +137,7 @@ try {
 
 ## Shifting GeoJSON data
 
-The plugin's `ChinaMapView` class will automatically shift GeoJSON coordinates so that data is accurately displayed on China map tiles. The [Mapbox Java SDK](/android-docs/java/overview/) includes a `CoordinateShifter` interface which is implemented by the plugin's `ChinaCoordinateShifter` class. The `ChinaCoordinateShifter` class helps apply specific coordinate shifting within the Java SDK's `Point` GeoJSON class, which then gets applied to all of the other types of GeoJSON geometries.
+The plugin's `ChinaMapView` class will automatically shift GeoJSON coordinates so that data is accurately displayed on China map tiles. The [Mapbox Java SDK](/android/java/overview/) includes a `CoordinateShifter` interface which is implemented by the plugin's `ChinaCoordinateShifter` class. The `ChinaCoordinateShifter` class helps apply specific coordinate shifting within the Java SDK's `Point` GeoJSON class, which then gets applied to all of the other types of GeoJSON geometries.
 
 If your data is _already_ shifted into GCJ-02 coordinates before it is fed to the map, then make sure to use the `ChinaMapView`'s `disableGeoJsonShifting()` method before any data is given to the map. You don't want pre-shifted data to be shifted again as the map ingests it.
 
@@ -174,9 +174,9 @@ chinaMapView?.enableGeoJsonShifting(ChinaCoordinateShifter())
 
 ## Shifting device location
 
-Rather than working with raw coordinate values, the `ShiftLocation` class and its `shift` method handle `Location` objects. Showing a device's current location via [the Maps SDK's `LocationComponent`](/android-docs/maps/overview/location-component/) is one of the most common use cases for using the `ShiftLocation` class.
+Rather than working with raw coordinate values, the `ShiftLocation` class and its `shift` method handle `Location` objects. Showing a device's current location via [the Maps SDK's `LocationComponent`](/android/maps/overview/location-component/) is one of the most common use cases for using the `ShiftLocation` class.
 
-[After setting up your own Mapbox `LocationEngine`](/android-docs/core/overview/#locationengine), you'll eventually override the `onSuccess()` and `onFailure()` methods. When a new location update occurs, you'll need to manually feed the unshifted `Location` object into the `ShiftLocation` class' `shift()` method. `shift()` returns a `Location` object, which you can now use however you'd like. If you pass the shifted `Location` object to `forceLocationUpdate()`, the `LocationComponent` will place the device location "puck" in the correct location.
+[After setting up your own Mapbox `LocationEngine`](/android/core/overview/#locationengine), you'll eventually override the `onSuccess()` and `onFailure()` methods. When a new location update occurs, you'll need to manually feed the unshifted `Location` object into the `ShiftLocation` class' `shift()` method. `shift()` returns a `Location` object, which you can now use however you'd like. If you pass the shifted `Location` object to `forceLocationUpdate()`, the `LocationComponent` will place the device location "puck" in the correct location.
 
 {{
 <CodeLanguageToggle id="shifting-location" />
@@ -186,33 +186,33 @@ java={`
 // Called when the location has changed.
 @Override
 public void onSuccess(LocationEngineResult result) {
-	
+
 	Location shiftedDeviceLocation = ShiftLocation.shift(result.getLastLocation())
-	
+
 	locationComponent.forceLocationUpdate(shiftedDeviceLocation)
 
 }
- 
+
 @Override
 public void onFailure(@NonNull Exception exception) {
 	// Handle failure with whatever UI you'd like
-	
+
 }
 `}
 
 kotlin={`
 // Called when the location has changed.
 override fun onSuccess(result: LocationEngineResult) {
-	
+
 	val shiftedDeviceLocation = ShiftLocation.shift(result?.lastLocation)
-	
+
 	locationComponent?.forceLocationUpdate(shiftedDeviceLocation)
-	    
+
 }
 
 override fun onFailure(exception: Exception) {
 	// Handle failure with whatever UI you'd like
-	    
+
 }
 `}
 

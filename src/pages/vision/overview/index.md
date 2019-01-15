@@ -11,7 +11,7 @@ prependJs:
 
 {{
   <div className="mb24">
-    <OverviewHeader 
+    <OverviewHeader
       features={[
         "Real-time classification of road signs",
         "Semantic segmentation of the roadway",
@@ -58,7 +58,7 @@ There are three components to the Vision SDK: VisionCore, VisionSDK, and VisionA
 
 **VisionSDK** is a framework written in native language (Kotlin for Android, Swift for iOS) that encapsulates core utilization and platform-dependent tasks. It calls VisionCore.
 
-[**VisionAR**](/android-docs/vision-ar/overview/) is a native framework with dependency on the Mapbox Navigation SDK. It takes information from the specified navigation route, transfers it to VisionCore via VisionSDK, receives instructions on displaying the route, and then finally renders it on top of camera frame using native instruments.
+[**VisionAR**](/android/vision-ar/overview/) is a native framework with dependency on the Mapbox Navigation SDK. It takes information from the specified navigation route, transfers it to VisionCore via VisionSDK, receives instructions on displaying the route, and then finally renders it on top of camera frame using native instruments.
 
 ## Requirements
 
@@ -96,4 +96,4 @@ While the Vision SDK is using the camera you must display the Mapbox watermark o
 
 ## Available resources
 
-Learn more about the capabilities of the Vision SDK in the [API reference](/android-docs/api/vision/{{VISION_VERSION}}/index.html) and data types reference. Contact our team to [request access to the SDK](https://www.mapbox.com/vision/).
+Learn more about the capabilities of the Vision SDK in the [API reference](/android/api/vision/{{VISION_VERSION}}/index.html) and data types reference. Contact our team to [request access to the SDK](https://www.mapbox.com/vision/).

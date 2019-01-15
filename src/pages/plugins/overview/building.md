@@ -7,7 +7,7 @@ prependJs:
       BUILDING_PLUGIN_VERSION
     } from '../../../constants';
   - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
-  - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';" 
+  - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
 ---
 
 Support for extrusions was added with `5.1.0` of the Map SDK, unlocking the possibility to display **3D buildings** on your favorite map style. The building plugin extends this functionality and makes it even easier to add buildings to a map style.
@@ -18,7 +18,7 @@ To start developing an application using the Building Plugin, you'll need to add
 If your application is close or exceeds the 65k method count limit, you can mitigate this problem by enabling ProGuard inside your application. ProGuard directives are included in the Android dependencies to preserve the required classes.
 
 ### Add the dependency
-Support for extrusions was added with `5.1.0` of the Maps SDK, unlocking the possibility to display 3D buildings on your favorite map style. The building plugin extends this functionality and makes it even easier to add buildings to a map style. To install, head over to the [Mapbox Plugin Overview](/android-docs/plugins/overview/) page which will walk you through adding the dependency.
+Support for extrusions was added with `5.1.0` of the Maps SDK, unlocking the possibility to display 3D buildings on your favorite map style. The building plugin extends this functionality and makes it even easier to add buildings to a map style. To install, head over to the [Mapbox Plugin Overview](/android/plugins/overview/) page which will walk you through adding the dependency.
 
 1. Start Android Studio.
 2. Open up your application's `build.gradle` file.

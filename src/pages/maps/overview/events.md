@@ -21,11 +21,11 @@ java={`
 mapboxMap.addOnMapClickListener(new MapboxMap.OnMapClickListener() {
   @Override
   public void onMapClick(@NonNull LatLng point) {
-  
+
     String string = String.format(Locale.US, "User clicked at: %s", point.toString())
-    
+
     Toast.makeText(MainActivity.this, string, Toast.LENGTH_LONG).show();
-    
+
   }
 });
 `}
@@ -37,7 +37,7 @@ mapboxMap.addOnMapClickListener { latLngPoint ->
 	val string = String.format(Locale.US, "User clicked at: %s", latLngPoint.toString())
 
 	Toast.makeText(this@MainActivity, string, Toast.LENGTH_LONG).show()
-	
+
 }
 `}
 
@@ -48,7 +48,7 @@ mapboxMap.addOnMapClickListener { latLngPoint ->
 
 In occasions when you need to know the corresponding location on the screen where the user gesture occurred, you can convert the LatLng point to screen pixels. The MapboxMap object provides the `Projection` from the map which allows you to convert between `LatLng` coordinates to screen pixel using `mapboxMap.getProjection().toScreenLocation(<LatLng>);`. The reverse is available when you have a screen location in pixels and need to convert it to a corresponding `LatLng` object.
 
-A common use case for converting the values between `LatLng` and pixel coordinates is when you'd like to query a map layer or source to, for example, determine whether or not the users clicked on a POI. You can read more on how to do this in the [Query map features](/android-docs/map-sdk/overview/query/) documentation.
+A common use case for converting the values between `LatLng` and pixel coordinates is when you'd like to query a map layer or source to, for example, determine whether or not the users clicked on a POI. You can read more on how to do this in the [Query map features](/android/map-sdk/overview/query/) documentation.
 
 ## Camera change events
 
@@ -75,7 +75,7 @@ mapboxMap.addOnCameraMoveStartedListener(new MapboxMap.OnCameraMoveStartedListen
 
 mapboxMap.addOnCameraMoveListener(new MapboxMap.OnCameraMoveListener() {
   @Override
-  public void onCameraMove() {  
+  public void onCameraMove() {
     Toast.makeText(MainActivity.this, "onCameraMove", Toast.LENGTH_LONG).show();
   }
 });
@@ -97,14 +97,14 @@ mapboxMap.addOnCameraIdleListener(new MapboxMap.OnCameraIdleListener() {
 
 kotlin={`
 
-mapboxMap.addOnCameraMoveStartedListener(object : 
+mapboxMap.addOnCameraMoveStartedListener(object :
 	MapboxMap.OnCameraMoveStartedListener {
-	
+
 	private val REASONS = arrayOf("REASON_API_GESTURE", "REASON_DEVELOPER_ANIMATION", "REASON_API_ANIMATION")
-	
+
 	override fun onCameraMoveStarted(reason: Int) {
 		val string = String.format(Locale.US, "OnCameraMoveStarted: %s", REASONS[reason - 1])
-		
+
 		Toast.makeText(this@MainActivity, string, Toast.LENGTH_LONG).show()
 	}
 })
@@ -148,15 +148,15 @@ mapboxMap.addOnFlingListener(new MapboxMap.OnFlingListener() {
 
 kotlin={`
 
-mapboxMap.addOnScrollListener { 
+mapboxMap.addOnScrollListener {
 
-Toast.makeText(this@MainActivity, "onScroll", Toast.LENGTH_LONG).show() 
+Toast.makeText(this@MainActivity, "onScroll", Toast.LENGTH_LONG).show()
 
 }
 
-mapboxMap.addOnFlingListener { 
+mapboxMap.addOnFlingListener {
 
-Toast.makeText(this@MainActivity, "onFling", Toast.LENGTH_LONG).show() 
+Toast.makeText(this@MainActivity, "onFling", Toast.LENGTH_LONG).show()
 
 }
 `}
@@ -191,7 +191,7 @@ kotlin={`
 mapboxMap.setOnMarkerClickListener { marker ->
 
 	Toast.makeText(MainActivity.this, marker.getTitle(), Toast.LENGTH_LONG).show();
-	
+
 }
 `}
 
@@ -228,9 +228,9 @@ kotlin={`
 
 mapboxMap.onInfoWindowCloseListener = MapboxMap.OnInfoWindowCloseListener { marker -> val closedMarker = marker }
 
-mapboxMap.onInfoWindowClickListener = MapboxMap.OnInfoWindowClickListener { marker -> 
-	// Able to use the marker 
-marker.icon 
+mapboxMap.onInfoWindowClickListener = MapboxMap.OnInfoWindowClickListener { marker ->
+	// Able to use the marker
+marker.icon
 	false
 }
 `}
@@ -246,7 +246,7 @@ The map view goes through a series of events while building/changing the map. Th
 
 Instead of adding the listener through the `MapboxMap` object, the listeners added using the `MapView`, `mapView.addOnMapChangedListener(OnMapChangedListener());`. You can also implement the `MapView.OnMapChangedListener` interface and override the `onMapChanged()` method. When a new map change occurs, the `onMapChanged()` callback is invoked. This provides the constant, as an integer, as the parameter which you can then use to match up with one of the constants listed in the table below.
 
-The lifecycle events below are listed in the order in which they occur during the most basic loading of a `MapView`. 
+The lifecycle events below are listed in the order in which they occur during the most basic loading of a `MapView`.
 
 | MapChange Constants                       | Description |
 |-------------------------------------------|--------|
@@ -297,7 +297,7 @@ java={`
 
       // Here is where you can re-add the source(s) and layer(s)
       // for displaying data on top of the new map style
-      
+
     }
   }
 `}

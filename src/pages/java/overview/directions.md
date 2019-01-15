@@ -11,7 +11,7 @@ prependJs:
 
 The Mapbox Directions API delivers routes for navigating the world. Driving, walking, and cycling directions are all possible for you to request, retrieve, and use in your Android project. The Mapbox Java SDK's `MapboxDirections` class eases interaction with the [Mapbox Directions API](https://www.mapbox.com/api-documentation/navigation/#directions).
 
-The Directions API does not return estimated times of arrival (ETA). Please see [the Mapbox Matrix API](/android-docs/java/overview/directions-matrix/) if you would like ETAs for your Android project. Conversely, the Matrix API _does not_ provide directions routes and distances, which the Directions API _does_ provide.
+The Directions API does not return estimated times of arrival (ETA). Please see [the Mapbox Matrix API](/android/java/overview/directions-matrix/) if you would like ETAs for your Android project. Conversely, the Matrix API _does not_ provide directions routes and distances, which the Directions API _does_ provide.
 
 For more extensive information about this API, see the [Mapbox Directions API documentation](https://www.mapbox.com/api-documentation/navigation/#directions).
 
@@ -35,7 +35,7 @@ The three required parameters are:
 - a destination `Point` object
 - a routing profile
 
-A [`Point` object](/android-docs/java/overview/#point-object) is part of the Java SDK's set of GeoJSON classes.
+A [`Point` object](/android/java/overview/#point-object) is part of the Java SDK's set of GeoJSON classes.
 {{
 <CodeLanguageToggle id="directions-api-request" />
 <ToggleableCodeBlock
@@ -221,7 +221,7 @@ val directionsRouteFeature = Feature.fromGeometry(LineString.fromPolyline(curren
 
 Once you've created a `Feature` for which the geometry is a `LineString`, you can then use it with the `FeatureCollection`, `GeoJsonSource`, and `LineLayer` objects.
 
-This is called *data-driven styling*. For more information about how data-driven styling can be used in a map, see [the data-driven styling guide](/android-docs/maps/overview/data-driven-styling/).
+This is called *data-driven styling*. For more information about how data-driven styling can be used in a map, see [the data-driven styling guide](/android/maps/overview/data-driven-styling/).
 
 {{
   <Floater

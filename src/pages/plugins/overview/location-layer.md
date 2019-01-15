@@ -58,7 +58,7 @@ Before using the location layer plugin, you'll need to include either the coarse
 </manifest>
 ```
 
-If your application's targeting Android 6.0 (API 23) or higher, you'll want to use the new permissions model which request permissions at runtime rather than during the installation process. It's important to request the permission either during the application startup or when the location layer gets initialized. [PermissionsManager](/android-docs/telemetry/overview/#permissionsmanager) is a utility offered as part of the Mapbox Java SDK package inside of the Maps SDK. It streamlines the permission request process.
+If your application's targeting Android 6.0 (API 23) or higher, you'll want to use the new permissions model which request permissions at runtime rather than during the installation process. It's important to request the permission either during the application startup or when the location layer gets initialized. [PermissionsManager](/android/telemetry/overview/#permissionsmanager) is a utility offered as part of the Mapbox Java SDK package inside of the Maps SDK. It streamlines the permission request process.
 
 ### Lifecycles
 It's important to include the location layer `onStart()` and `onStop()` lifecycle events in their respective activity methods. This prevents memory leaks from occurring and reduces battery consumption. The plugin has support for the new `LifecycleObserver` APIs, by adding the plugin as a lifecycle observer in your activity, you won't need to handle the lifecycles manually.
@@ -220,7 +220,7 @@ locationLayerPlugin.addOnCameraTrackingChangedListener(object : OnCameraTracking
 }}
 
 ## Usage with navigation
-Once a navigation session's started using the [Mapbox Navigation SDK](/android-docs/navigation/overview/), a few adjustments will need to be made to the plugin to improve its performance and behavior.
+Once a navigation session's started using the [Mapbox Navigation SDK](/android/navigation/overview/), a few adjustments will need to be made to the plugin to improve its performance and behavior.
 
 If you plan to use the snapped location provided by the Navigation SDK, you'll need to use `locationLayerPlugin.setLocationEngine()` to `null` to prevent location coordinates that aren't snapped to update the icon's location. Instead, you'll need to add `forceLocationUpdate()` inside of the Navigation SDK's `onProgressChange()` callback, which _does_ provide the snapped location.
 

@@ -11,7 +11,7 @@ prependJs:
 
 ---
 
-Showing the user's current location as a map annotation is a popular and often critical feature of location-based apps. The Maps SDK's `LocationComponent` makes use of the Maps SDK's [runtime styling capabilities](/android-docs/maps/overview/runtime-styling/) to display the device location icon within the map itself rather than on top as a simple Android view. Mapbox map layers and layer styling give you precise control, if you want it, of the way that a device's location is shown on the map.
+Showing the user's current location as a map annotation is a popular and often critical feature of location-based apps. The Maps SDK's `LocationComponent` makes use of the Maps SDK's [runtime styling capabilities](/android/maps/overview/runtime-styling/) to display the device location icon within the map itself rather than on top as a simple Android view. Mapbox map layers and layer styling give you precise control, if you want it, of the way that a device's location is shown on the map.
 
 {{
 <DocNote>
@@ -21,7 +21,7 @@ Showing the user's current location as a map annotation is a popular and often c
 
 ## Requesting location permissions
 
-You'll need to request the Android-system location permission before using the `LocationComponent`. If your Android project is built targeting API level 23 or higher your application will need to request permissions during runtime. Handling this directly in your activity produces boilerplate code and can often be hard to manage. [Read more about using the Mapbox Core Library for Android's PermissionsManager](/android-docs/core/overview/#permissionsmanager) class.
+You'll need to request the Android-system location permission before using the `LocationComponent`. If your Android project is built targeting API level 23 or higher your application will need to request permissions during runtime. Handling this directly in your activity produces boilerplate code and can often be hard to manage. [Read more about using the Mapbox Core Library for Android's PermissionsManager](/android/core/overview/#permissionsmanager) class.
 
 ## Activating
 

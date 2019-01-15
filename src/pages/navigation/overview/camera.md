@@ -101,4 +101,4 @@ The Navigation SDK provides a `SimpleCamera` by default. You're also able to cre
 own `CameraEngine` and give it to the Navigation SDK like so: `MapboxNavigation#setCameraEngine(CameraEngine cameraEngine)`.
 
 An example of this would be the `DynamicCamera` provided by the `libandroid-navigation-ui`
-library. In [`DynamicCamera`](/android-docs/navigation/overview/navigation-ui/#navigationcamera), calculations are being made based on the user's location along the given route.
+library. In [`DynamicCamera`](/android/navigation/overview/navigation-ui/#navigationcamera), calculations are being made based on the user's location along the given route.

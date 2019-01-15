@@ -20,13 +20,13 @@ The Mapbox Maps SDK for Android provides several different ways to mark a single
 
 ## Source and layer
 
-Using [data sources](/android-docs/map-sdk/overview/runtime-styling/#sources) and [map layers](/android-docs/map-sdk/overview/runtime-styling/#layers) together is the most performant option for showing data on a Mapbox map. This combination also gives you much more fine-grain control over:
+Using [data sources](/android/map-sdk/overview/runtime-styling/#sources) and [map layers](/android/map-sdk/overview/runtime-styling/#layers) together is the most performant option for showing data on a Mapbox map. This combination also gives you much more fine-grain control over:
 
 - Icons that represent individual points
 - Lines
 - Polygons
 
-See [the runtime styling page](/android-docs/map-sdk/overview/runtime-styling/) for more information. We recommend you explore the source and layer combination for creating annotations. Below, you'll find information about less complex (and less performant) ways to show annotations.
+See [the runtime styling page](/android/map-sdk/overview/runtime-styling/) for more information. We recommend you explore the source and layer combination for creating annotations. Below, you'll find information about less complex (and less performant) ways to show annotations.
 
 ## Markers
 
