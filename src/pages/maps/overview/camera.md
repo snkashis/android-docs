@@ -11,7 +11,7 @@ The Maps SDK's maps are represented as a flat plane using a [Mercator projection
 
 By default, the camera can be tilted, rotated, zoomed, and/or moved either by the user or developer. It's important to know that the camera object will not make any changes to markers, layer's sources, or other annotations that you've added without you directly influencing this behavior.
 
-A few camera event listeners are provided in the Maps SDK to notify when, for example, the camera's adjusted. You can read more about these listeners inside the [Events documentation](https://docs.mapbox.com/android/map-sdk/overview/events/#camera-change-events).
+A few camera event listeners are provided in the Maps SDK to notify when, for example, the camera's adjusted. You can read more about these listeners inside the [Events documentation](https://docs.mapbox.com/android/maps/overview/events/#camera-change-events).
 
 ## Camera position
 
@@ -42,7 +42,7 @@ val position = CameraPosition.Builder()
 />
 }}
 
-Read all about [mapView XML attributes](https://docs.mapbox.com/android/map-sdk/overview/#mapview-xml-attributes) to learn about setting the camera's initial position. It's best to either set the initial camera position in XML or through `MapboxMapOptions` to prevent unnecessary downloading of map tiles using up your user's data.
+Read all about [mapView XML attributes](https://docs.mapbox.com/android/maps/overview/#mapview-xml-attributes) to learn about setting the camera's initial position. It's best to either set the initial camera position in XML or through `MapboxMapOptions` to prevent unnecessary downloading of map tiles using up your user's data.
 
 ### Target
 
