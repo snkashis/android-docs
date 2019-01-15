@@ -5,15 +5,15 @@ prependJs:
   - |
     import { MARKERVIEW_PLUGIN_VERSION } from '../../../constants';
   - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
-  - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"   
-  - "import { WarningNote } from '../../../components/warning-note';" 
+  - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
+  - "import { WarningNote } from '../../../components/warning-note';"
 ---
 
-The MarkerView Plugin for Android provides a simplified way to add map markers that are Android views. 
+The MarkerView Plugin for Android provides a simplified way to add map markers that are Android views.
 
 {{
 <WarningNote title="Alternative option">
-Please be aware that Android views are the less performant and less customizable option for adding icons to a map. The Mapbox Maps SDK's SymbolLayer is the recommended way to add icons. <a href="/android-docs/plugins/overview/annotation">View the Mapbox Annotation Plugin for Android</a> for more information about using a SymbolLayer.
+Please be aware that Android views are the less performant and less customizable option for adding icons to a map. The Mapbox Maps SDK's SymbolLayer is the recommended way to add icons. <a href="/android/plugins/overview/annotation">View the Mapbox Annotation Plugin for Android</a> for more information about using a SymbolLayer.
 </WarningNote>
 }}
 
@@ -53,23 +53,23 @@ java={`
 mapView.getMapAsync(new OnMapReadyCallback() {
 	@Override
 	public void onMapReady(MapboxMap mapboxMap) {
-  	
+
 		MarkerViewManager markerViewManager = new MarkerViewManager(mapView, mapboxMap);
-  		
+
 	}
 });
 `}
 
 kotlin={`
 mapView?.getMapAsync { mapboxMap ->
- 
+
  val markerViewManager = MarkerViewManager(mapView, mapboxMap)
-     
+
 }
 `}
 
 />
-}} 
+}}
 
 ## Adding a marker
 
@@ -93,7 +93,7 @@ marker?.let {
 }
 `}
 />
-}} 
+}}
 
 ## Removing a marker
 
@@ -113,7 +113,7 @@ marker?.let {
 }
 `}
 />
-}} 
+}}
 
 
 ## Destroying the manager
@@ -129,9 +129,9 @@ java={`
 @Override
 protected void onDestroy() {
 	super.onDestroy();
-	
+
 		markerViewManager.onDestroy();
-		
+
 		mapView.onDestroy();
 }
 `}
@@ -139,15 +139,15 @@ protected void onDestroy() {
 kotlin={`
 override fun onDestroy() {
 	super.onDestroy()
-		
+
 		markerViewManager?.onDestroy()
-		
+
 		mapView.onDestroy()
 }
 `}
 
 />
-}} 
+}}
 
 Fragment:
 
@@ -159,9 +159,9 @@ java={`
 @Override
 public void onDestroyView() {
 	super.onDestroyView();
-	
+
 		markerViewManager.onDestroy();
-		
+
 		mapView.onDestroy();
 }
 `}
@@ -171,13 +171,13 @@ override fun onDestroyView() {
 super.onDestroyView()
 
 	markerViewManager?.onDestroy()
-	
+
 	mapView.onDestroy()
 }
 `}
 
 />
-}} 
+}}
 
 
 

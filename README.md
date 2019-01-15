@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/mapbox/android-docs.svg?style=svg)](https://circleci.com/gh/mapbox/android-docs)
 
-This repo hosts all of the Android documentation for the Mapbox platform, including the Maps SDK, the Java SDK, the Navigation SDK, and Mapbox Plugins. Visit [Mapbox Android Docs](https://www.mapbox.com/android-docs/map-sdk/overview/) to view the live website.
+This repo hosts all of the Android documentation for the Mapbox platform, including the Maps SDK, the Java SDK, the Navigation SDK, and Mapbox Plugins. Visit [Mapbox Android Docs](https://docs.mapbox.com/android/map-sdk/overview/) to view the live website.
 
 ## Getting started
 
@@ -35,7 +35,7 @@ nvm use
 ```
 
 Upgrade your version of `npm`:
- 
+
  ```
 npm install -g npm@6
 ```

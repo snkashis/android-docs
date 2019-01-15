@@ -8,14 +8,14 @@ prependJs:
   - "import Note from '@mapbox/dr-ui/note';"
   - "import BookImage from '@mapbox/dr-ui/book-image';"
   - "import { MAP_SDK_VERSION } from '../../../constants';"
-  - "import { WarningNote } from '../../../components/warning-note';" 
+  - "import { WarningNote } from '../../../components/warning-note';"
 ---
 
 Often, you might find your user base spends most of its time off the grid. The Maps SDK enables you to download and store pre-selected regions for usage when the device goes offline. The result of downloading the map is a fully functional map using your styles, tiles, and other resources inside the downloaded region.
 
 {{
 <WarningNote title="Offline Plugin">
-    <p>A user's device won't always have a strong enough internet connection to download and view map tiles. You might want to build an offline mode into your Android project to account for this situation. <a href="/android-docs/plugins/overview/offline/">The Mapbox Offline Plugin for Android</a> is a convenient way to send information to <a href="https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/java/com/mapbox/mapboxsdk/offline/OfflineManager.java">the Maps SDK's <code>OfflineManager</code> class</a> and use the manager in a background service to download map tiles for offline use. Once the offline download region is defined and initialized, the plugin handles everything else for you. Because the plugin uses a service, the downloading continues even if when your application is running in the background.</p>
+    <p>A user's device won't always have a strong enough internet connection to download and view map tiles. You might want to build an offline mode into your Android project to account for this situation. <a href="/android/plugins/overview/offline/">The Mapbox Offline Plugin for Android</a> is a convenient way to send information to <a href="https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/java/com/mapbox/mapboxsdk/offline/OfflineManager.java">the Maps SDK's <code>OfflineManager</code> class</a> and use the manager in a background service to download map tiles for offline use. Once the offline download region is defined and initialized, the plugin handles everything else for you. Because the plugin uses a service, the downloading continues even if when your application is running in the background.</p>
 </WarningNote>
 }}
 
@@ -225,7 +225,7 @@ object : OfflineManager.CreateOfflineRegionCallback {
 	override fun onError(error: String) {
 	    Log.e(TAG, "Error: $error")
 	}
-})                  
+})
 `}
 
 />
@@ -339,8 +339,8 @@ This document describes how to generate these offline packages and how to make t
 {{
 <Note title="How is sideloading different than downloading maps?"
   imageComponent={<BookImage width="60" height="60" />}
->  
-  <p>Applications built with the <a href="https://www.mapbox.com/android-docs/maps/overview/">Mapbox Maps SDK for Android</a> can download maps of pre-selected regions for use when the device does not have network connectivity. This process is documented in detail in the <a href="https://www.mapbox.com/help/mobile-offline">Offline maps troubleshooting page</a>.</p>
+>
+  <p>Applications built with the <a href="https://docs.mapbox.com/android/maps/overview/">Mapbox Maps SDK for Android</a> can download maps of pre-selected regions for use when the device does not have network connectivity. This process is documented in detail in the <a href="https://www.mapbox.com/help/mobile-offline">Offline maps troubleshooting page</a>.</p>
   <p>This system works well for smaller regions where you don’t have a large number of resources to download. (You can use the <a href="https://www.mapbox.com/help/offline-estimator/">offline tile count estimator</a> to understand the number of tiles in a specific region.) However, because tiles are downloaded individually, this approach can be too slow for larger regions and might result in a poor user experience. In cases like this, offline sideloading can provide a better solution.</p>
 </Note>
 }}
@@ -384,9 +384,9 @@ Use the following optional flags to customize your offline package. To see all a
 
 Flag | Description
 --- | ---
-`--style` | The map style URL.                        
+`--style` | The map style URL.
 `--north` | The northern-most coordinate in the bounding box.
-`--south` | The southern-most coordinate in the bounding box.  
+`--south` | The southern-most coordinate in the bounding box.
 `--east` | The eastern-most coordinate in the bounding box.
 `--west` | The western most coordinate in the bounding box.
 `--minZoom` | The minimum zoom level you want your region to have.
@@ -433,7 +433,7 @@ To merge a secondary database into the main Maps SDK database:
     - `path` provides the secondary database (writable) path. If the app’s process doesn’t have write-access to the provided path, the file will be copied to the temporary, internal directory for the duration of the merge. (The secondary database may need to be upgraded to the latest schema. This is done in-place and requires write-access to the provided path.)
     - `callback` is the completion/error callback. When the merge is completed, or fails, the `OfflineManager.MergeOfflineRegionsCallback` will be invoked on the main thread.
 
-For a complete example, take a look at [`MergeOfflineRegionsActivity`](https://github.com/mapbox/mapbox-gl-native/blob/android-v{{MAP_SDK_VERSION}}/platform/android/MapboxGLAndroidSDKTestApp/src/main/java/com/mapbox/mapboxsdk/testapp/activity/offline/MergeOfflineRegionsActivity.kt) and the [sample database](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDKTestApp/src/main/assets/offline.db). For further details, see the [`mergeOfflineRegions` documentation](https://www.mapbox.com/android-docs/api/map-sdk/{{MAP_SDK_VERSION}}/com/mapbox/mapboxsdk/offline/OfflineManager.html#mergeOfflineRegions-java.lang.String-com.mapbox.mapboxsdk.offline.OfflineManager.MergeOfflineRegionsCallback-).
+For a complete example, take a look at [`MergeOfflineRegionsActivity`](https://github.com/mapbox/mapbox-gl-native/blob/android-v{{MAP_SDK_VERSION}}/platform/android/MapboxGLAndroidSDKTestApp/src/main/java/com/mapbox/mapboxsdk/testapp/activity/offline/MergeOfflineRegionsActivity.kt) and the [sample database](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDKTestApp/src/main/assets/offline.db). For further details, see the [`mergeOfflineRegions` documentation](https://docs.mapbox.com/android/api/map-sdk/{{MAP_SDK_VERSION}}/com/mapbox/mapboxsdk/offline/OfflineManager.html#mergeOfflineRegions-java.lang.String-com.mapbox.mapboxsdk.offline.OfflineManager.MergeOfflineRegionsCallback-).
 
 ##### Database location on Android
 On Android, you can move the location of the main Maps SDK database from internal storage to external storage. To do so, make sure the application has the `WRITE_EXTERNAL_STORAGE` permission inside the `AndroidManifest.xml` and the following flag:

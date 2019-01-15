@@ -181,7 +181,7 @@ Each example requires two visual assets: (1) a `png` thumbnail and (2) a full-si
 
 #### Step three: Markdown file
 
-Adding a new Markdown file to the `src/pages/maps/examples/` folder will add both a new thumbnail on mapbox.com/android-docs/maps/examples/ and create a new individual example pages like mapbox.com/android-docs/maps/examples/*.
+Adding a new Markdown file to the `src/pages/maps/examples/` folder will add both a new thumbnail on docs.mapbox.com/android/maps/examples/ and create a new individual example pages like docs.mapbox.com/android/maps/examples/*.
 
 1. Create a new Markdown file in `src/pages/maps/examples/` for Maps SDK examples, `src/pages/navigation/examples/` for Navigation SDK examples, etc.
 2. Add front matter.
@@ -196,7 +196,7 @@ Adding a new Markdown file to the `src/pages/maps/examples/` folder will add bot
         `User interaction`,
         `Add features to a map`,
         `Set a map style`,
-        `Image generation`,  
+        `Image generation`,
         `Offline`
     - `thumbnail`: The image ID from the image config file.
     - `prependJs`:

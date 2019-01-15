@@ -69,7 +69,7 @@ const productPageOrder = {
 
 module.exports = () => {
   const config = {
-    siteBasePath: '/android-docs',
+    siteBasePath: '/android',
     siteOrigin: 'https://www.mapbox.com',
     browserslist: mapboxAssembly.browsersList,
     postcssPlugins: mapboxAssembly.postcssPipeline.plugins,

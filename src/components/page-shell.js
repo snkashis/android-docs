@@ -125,7 +125,7 @@ class PageShell extends React.Component {
               });
             return {
               title: topic.title,
-              url: `/android-docs/${product}/examples/${topic.path}`,
+              url: `/android/${product}/examples/${topic.path}`,
               items: examplesForTopic
             };
           })
@@ -200,7 +200,7 @@ class PageShell extends React.Component {
                 <div className="ml24 pt12">
                   <ProductMenu
                     productName={productNames[product]}
-                    homePage="/android-docs/"
+                    homePage="/android/"
                   />
                 </div>
               </div>

@@ -56,14 +56,14 @@ java={`
 client.enqueueCall(new Callback<MapMatchingResponse>() {
 	@Override
 	public void onResponse(Call<MapMatchingResponse> call, Response<MapMatchingResponse> response) {
-	
+
 		// Handle the response here
-	
+
 	}
-	
+
 	@Override
 	public void onFailure(Call<MapMatchingResponse> call, Throwable t) {
-	
+
 	}
 });
 `}
@@ -71,12 +71,12 @@ client.enqueueCall(new Callback<MapMatchingResponse>() {
 kotlin={`
 client.enqueueCall(object : Callback<MapMatchingResponse> {
 	override fun onResponse(call: Call<MapMatchingResponse>, response: Response<MapMatchingResponse>) {
-	
-	
+
+
 	}
-	
+
 	override fun onFailure(call: Call<MapMatchingResponse>, t: Throwable) {
-	
+
 	}
 })
 `}
@@ -85,4 +85,4 @@ client.enqueueCall(object : Callback<MapMatchingResponse> {
 
 ##  Navigation
 
-Visit the [map matching guide](https://www.mapbox.com/android-docs/navigation/overview/map-matching/) for more information about how to use the Map Matching API with [the Mapbox Navigation SDK for Android](https://www.mapbox.com/android-docs/navigation/overview/).
+Visit the [map matching guide](https://docs.mapbox.com/android/navigation/overview/map-matching/) for more information about how to use the Map Matching API with [the Mapbox Navigation SDK for Android](https://docs.mapbox.com/android/navigation/overview/).

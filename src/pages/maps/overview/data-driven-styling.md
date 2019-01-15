@@ -5,12 +5,12 @@ prependJs:
   - "import { Floater } from '../../../components/floater';"
   - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
-  - "import { WarningNote } from '../../../components/warning-note';" 
+  - "import { WarningNote } from '../../../components/warning-note';"
 ---
 
 {{
   <Floater
-    url="/mapbox-gl-js/style-spec/"
+    url="https://wwww.mapbox.com/mapbox-gl-js/style-spec/"
     title="Style Spec Info"
     category="guide"
     text="View a full list of the features in runtime styling not specific to Android."
@@ -21,7 +21,7 @@ Use the Maps SDK's data-driven styling capabilities to create and display many t
 
 {{
 <WarningNote title="Annotation Plugin for Android">
-    <p>Sources and layers provide nimble options for customizing the look of a Mapbox map and the data displayed on the map. The <a href="/android-docs/plugins/overview/annotation/">Mapbox Annotation Plugin for Android</a> provides a simplified system for interacting with and customizing Mapbox map layers.</p>
+    <p>Sources and layers provide nimble options for customizing the look of a Mapbox map and the data displayed on the map. The <a href="/android/plugins/overview/annotation/">Mapbox Annotation Plugin for Android</a> provides a simplified system for interacting with and customizing Mapbox map layers.</p>
 </WarningNote>
 }}
 
@@ -153,7 +153,7 @@ kotlin={`
 		assets.close()
 		return String(buffer, "UTF-8")
 }
-    
+
 val source = GeoJsonSource("geojson-source", loadJsonFromAsset("local_file.geojson"))
 
 mapboxMap.addSource(source)
@@ -189,7 +189,7 @@ mapboxMap.getStyle().addSource(geoJsonSource);
 
 kotlin={`
  // Create a list to store our line coordinates.
- 
+
 val routeCoordinates = ArrayList<Point>()
 routeCoordinates.add(Point.fromLngLat(-118.394391, 33.397676))
 routeCoordinates.add(Point.fromLngLat(-118.370917, 33.391142))
@@ -231,7 +231,7 @@ LatLngQuad quad = new LatLngQuad(
   new LatLng(46.437, -71.516),
   new LatLng(37.936, -71.516),
   new LatLng(37.936, -80.425));
-  
+
 mapboxMap.getStyle().addSource(new ImageSource(ID_IMAGE_SOURCE, quad, DRAWABLE_IMAGE_HERE));
 
 // Add layer
@@ -402,7 +402,7 @@ fillLayer.setProperties(PropertyFactory.fillColor(Color.GREEN))
 To alter the shape of the geometry once you have added it, the layer can remain with no changes needed, only the source it's using should be updated. The layer will always display the latest updates inside its source.
 
 
- 
+
 
 ### Line
 

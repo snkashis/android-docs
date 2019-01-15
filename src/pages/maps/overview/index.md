@@ -8,7 +8,7 @@ prependJs:
   - "import { MAP_SDK_VERSION } from '../../../constants';"
   - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
-  - "import { WarningNote } from '../../../components/warning-note';" 
+  - "import { WarningNote } from '../../../components/warning-note';"
 
 ---
 
@@ -42,7 +42,7 @@ The Mapbox Maps SDK for Android is an open source toolset for displaying maps in
   </a>
 }}
 
-[Mapbox's demo app on the Google Play Store](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en) includes many examples of how to use the Mapbox Maps SDK for Android. The demo app and [the examples section of this documentation](https://www.mapbox.com/android-docs/maps/examples/) are great places to start for understanding the power of the Mapbox Maps SDK for Android.
+[Mapbox's demo app on the Google Play Store](https://play.google.com/store/apps/details?id=com.mapbox.mapboxandroiddemo&hl=en) includes many examples of how to use the Mapbox Maps SDK for Android. The demo app and [the examples section of this documentation](https://docs.mapbox.com/android/maps/examples/) are great places to start for understanding the power of the Mapbox Maps SDK for Android.
 
 {{
 <WarningNote title="7.0.0 Migration Guide">
@@ -154,7 +154,7 @@ Mapbox.setAccessToken(MAPBOX_ACCESS_TOKEN)
 
 ### 3. Setup permissions
 
-Starting with the 5.0 version of the Maps SDK, we are making use of the Manifest merge feature to reduce the need to include any Maps SDK required things inside of your application's manifest file. You'll need to add _either_ the Fine **or** Coarse location permission if you plan to display a user's location on the map or get the user's location information. The user location permission should also be checked during runtime using the [PermissionManager](https://www.mapbox.com/android-docs/core/overview/#permissionsmanager).
+Starting with the 5.0 version of the Maps SDK, we are making use of the Manifest merge feature to reduce the need to include any Maps SDK required things inside of your application's manifest file. You'll need to add _either_ the Fine **or** Coarse location permission if you plan to display a user's location on the map or get the user's location information. The user location permission should also be checked during runtime using the [PermissionManager](https://docs.mapbox.com/android/core/overview/#permissionsmanager).
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -174,25 +174,25 @@ private MapView mapView;
 @Override
 protected void onCreate(Bundle savedInstanceState) {
 super.onCreate(savedInstanceState);
-  
+
 	Mapbox.getInstance(this, MAPBOX_ACCESS_TOKEN);
-	
+
 	setContentView(R.layout.activity_main);
-	
+
 	mapView = (MapView) findViewById(R.id.mapView);
 	mapView.onCreate(savedInstanceState);
 	mapView.getMapAsync(new OnMapReadyCallback() {
 	@Override
 	public void onMapReady(@NonNull MapboxMap mapboxMap) {
-	
+
 		mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
-		@Override 
+		@Override
 		public void onStyleLoaded(@NonNull Style style) {
-	
+
 	  		// Map is set up and the style has loaded. Now you can add data or make other map adjustments
-	
-	
-	
+
+
+
 		}
 	});
 	}
@@ -204,17 +204,17 @@ private var mapView: MapView? = null
 
 override fun onCreate(savedInstanceState: Bundle?) {
 super.onCreate(savedInstanceState)
-	
+
 	Mapbox.getInstance(this, MAPBOX_ACCESS_TOKEN)
-	
+
 	setContentView(R.layout.activity_main)
 
   mapView = findViewById(R.id.mapView)
 	mapView?.onCreate(savedInstanceState)
 	mapView?.getMapAsync { mapboxMap ->
-	
+
 		mapboxMap.setStyle(Style.MAPBOX_STREETS) {
-	
+
 	    // Map is set up and the style has loaded. Now you can add data or make other map adjustments
 
 

@@ -19,7 +19,7 @@ Along with the API documentation, you can also view [the Directions API example 
 
 ## Installation
 
-The Directions API can be used completely on its own to get routes and other directional information. You should also know that [the Mapbox Navigation SDK for Android](https://www.mapbox.com/android-docs/navigation/overview/) is built "on top of" the Directions API. The Navigation SDK enables users to more easily interact with and use the information inside of the Directions API response. _Use the Mapbox Java Services dependency if you want to use the Mapbox Directions API without using the entire Mapbox Navigation SDK._
+The Directions API can be used completely on its own to get routes and other directional information. You should also know that [the Mapbox Navigation SDK for Android](https://docs.mapbox.com/android/navigation/overview/) is built "on top of" the Directions API. The Navigation SDK enables users to more easily interact with and use the information inside of the Directions API response. _Use the Mapbox Java Services dependency if you want to use the Mapbox Directions API without using the entire Mapbox Navigation SDK._
 
 ```groovy
 implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:{{ JAVA_SDK_VERSION }}'
@@ -72,7 +72,7 @@ val client = MapboxDirections.builder()
 
 For additional information on all of the available optional parameters, see the [Directions API documentation](https://www.mapbox.com/api-documentation/navigation/#directions).
 
-Directions API requests for driving, walking, and cycling routes can specify up to 25 total waypoints along the route.  
+Directions API requests for driving, walking, and cycling routes can specify up to 25 total waypoints along the route.
 
 Requests using the traffic profile can specify up to 3 waypoints.
 

@@ -15,7 +15,7 @@ In order to implement offline routing in your own app, you will need to:
 1. Initialize `MapboxOfflineRouter`.
 1. Update your app to use `MapboxOfflineRouter.findRoute` to get a `DirectionsRoute`.
 
-These steps, along with example code, are described in this guide. For detailed information about the methods discussed in this guide, see the [`MapboxOfflineRouter` documentation](https://www.mapbox.com/android-docs/api/navigation-sdk/navigation/{{NAVIGATION_VERSION}}/com/mapbox/services/android/navigation/v5/navigation/MapboxOfflineRouter.html).
+These steps, along with example code, are described in this guide. For detailed information about the methods discussed in this guide, see the [`MapboxOfflineRouter` documentation](https://docs.mapbox.com/android/api/navigation-sdk/navigation/{{NAVIGATION_VERSION}}/com/mapbox/services/android/navigation/v5/navigation/MapboxOfflineRouter.html).
 
 ## Download the routing data
 Before you download data, first you will need to determine which tile version to download using `MapboxOfflineRouter.fetchAvailableTileVersions`:
@@ -51,7 +51,7 @@ offlineRouter.fetchAvailableTileVersions(Mapbox.getAccessToken(), object : OnTil
 })
 `}
 
-/>  
+/>
 }}
 
 Next, you will update your app to use `MapboxOfflineRouter.downloadTiles` to get the data needed for routing in the desired region. The `MapboxOfflineRouter.downloadTiles` method takes an `OfflineTiles` and a `RouteTileDownloadListener`.
@@ -111,10 +111,10 @@ offlineRouter.downloadTiles(builder.build(), object : RouteTileDownloadListener 
     override fun onCompletion() {
       // Download has completed
     }
-})        
+})
 `}
 
-/>  
+/>
 }}
 
 The offline dataset that is downloaded includes data for the following modes of travel: driving, cycling, and walking.
@@ -144,7 +144,7 @@ offlineRouter.configure(versionString, new OnOfflineTilesConfiguredCallback() {
 `}
 
 kotlin={`
-val offlineRouter = MapboxOfflineRouter(offlinePath)  
+val offlineRouter = MapboxOfflineRouter(offlinePath)
 offlineRouter.configure(version, object : OnOfflineTilesConfiguredCallback {
 
   override fun onConfigured(numberOfTiles: Int) {
@@ -158,7 +158,7 @@ offlineRouter.configure(version, object : OnOfflineTilesConfiguredCallback {
 })
 `}
 
-/>  
+/>
 }}
 
 ## Find an offline DirectionsRoute
@@ -186,7 +186,7 @@ offlineRouter.findRoute(offlineRoute, new OnOfflineRouteFoundCallback() {
   public void onError(@NonNull OfflineError error) {
     // Handle route error
   }
-});  
+});
 `}
 
 kotlin={`
@@ -233,7 +233,7 @@ navigation.addOffRouteListener(new OffRouteListener() {
       public void onError(@NonNull OfflineError error) {
         // Handle route error
       }
-    });  
+    });
   }
 });
 `}
@@ -272,7 +272,7 @@ public boolean allowRerouteFrom(Point offRoutePoint) {
     .directionsRoute(offlineDirectionsRoute)
     .build();
   navigationView.startNavigation(options);
-  
+
   // Ignore internal routing, allowing offline route
   return false;
 }
@@ -289,7 +289,7 @@ override fun allowRerouteFrom(offRoutePoint: Point): Boolean {
 		.build()
 
 	navigationView.startNavigation(options)
-	
+
 	 // Ignore internal routing, allowing offline route
 	return false
 }

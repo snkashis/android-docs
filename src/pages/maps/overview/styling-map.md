@@ -19,9 +19,9 @@ A `Style` object refers to [the Mapbox map style](https://www.mapbox.com/help/de
 
 A `Style` object must be created and given to the map for the map to appear properly. Create a `Style` by using a:
 
-- default Mapbox style found in the `Style` class constants 
+- default Mapbox style found in the `Style` class constants
 - custom map style URL from a Mapbox account
-- raw style JSON string or referenced style JSON via `asset://` or `path://` 
+- raw style JSON string or referenced style JSON via `asset://` or `path://`
 
 If the style fails to load or an invalid style URL is set, the map view will become blank. An error message will be logged in the Android logcat and the `MapView.OnDidFailLoadingMapListener` callback will be triggered.
 
@@ -37,10 +37,10 @@ java={`
 mapboxMap.setStyle(new Style.Builder().fromUrl(uniqueStyleUrl), new Style.OnStyleLoaded() {
 	@Override
 	public void onStyleLoaded(@NonNull Style style) {
-	
+
 	// Custom map style has been loaded and map is now ready
-	    
-	
+
+
 	}
 });
 `}
@@ -77,10 +77,10 @@ java={`
 mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
 	@Override
 	public void onStyleLoaded(@NonNull Style style) {
-	
+
 	// Custom map style has been loaded and map is now ready
-	    
-	
+
+
 	}
 });
 `}
@@ -130,11 +130,11 @@ mapView.getMapAsync(new OnMapReadyCallback() {
 		mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
 			@Override
 			public void onStyleLoaded(@NonNull Style style) {
-				
+
 				for (Layer singleLayer : mapboxMap.getStyle().getLayers()) {
 					Log.d(TAG, "onMapReady: layer id = " + singleLayer.getId());
 				}
-				
+
 			}
 		});
 	}
@@ -144,11 +144,11 @@ mapView.getMapAsync(new OnMapReadyCallback() {
 kotlin={`
 mapView?.getMapAsync {
 	mapView?.getMapAsync { mapboxMap -> mapboxMap.setStyle(Style.MAPBOX_STREETS) {
-			
+
 			for (singleLayer in it.layers) {
 				Log.d(TAG, "onMapReady: layer id = " + singleLayer.id)
 			}
-		
+
 		}
 	}
 }
@@ -168,21 +168,21 @@ button.setOnClickListener(new View.OnClickListener() {
 @Override
 	public void onClick(View view) {
 		mapboxMap.getStyle().getLayer("park").setProperties(PropertyFactory.fillColor(Color.parseColor("#0e6001")));
-		
+
 	}
 });
 `}
 
 kotlin={`
-button.setOnClickListener { 
+button.setOnClickListener {
 	mapboxMap.style?.getLayer("park")?.setProperties(PropertyFactory.fillColor(Color.parseColor("#0e6001")))
 
 }
-          
+
 `}
 />
 }}
 
 ## Style-related events
 
-Changing the map's style triggers a "map event". Read [the map change event documentation](https://www.mapbox.com/android-docs/maps/overview/events/#map-change-events) for more information about the events and how to display or re-display data on your map _after_ a map style has finished loading.
+Changing the map's style triggers a "map event". Read [the map change event documentation](https://docs.mapbox.com/android/maps/overview/events/#map-change-events) for more information about the events and how to display or re-display data on your map _after_ a map style has finished loading.

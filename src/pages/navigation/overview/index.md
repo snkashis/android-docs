@@ -161,7 +161,7 @@ NavigationRoute.builder(context)
 
 ## Get the user’s location
 
-Navigation applications often use the user's current location as the `origin` when requesting a route. With the Navigation SDK, this is done using the `LocationEngine` class introduced in the 2.0 release of the Mapbox Java SDK. For detailed instructions on how to use this class, [see the `LocationEngine` documentation](https://www.mapbox.com/android-docs/core/overview/#locationengine). You'll need to set up an instance of a location engine and pass it in to the `MapboxNavigation` object.
+Navigation applications often use the user's current location as the `origin` when requesting a route. With the Navigation SDK, this is done using the `LocationEngine` class introduced in the 2.0 release of the Mapbox Java SDK. For detailed instructions on how to use this class, [see the `LocationEngine` documentation](https://docs.mapbox.com/android/core/overview/#locationengine). You'll need to set up an instance of a location engine and pass it in to the `MapboxNavigation` object.
 
 {{
 <CodeLanguageToggle id="nav-location-engine" />

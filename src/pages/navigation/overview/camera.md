@@ -6,7 +6,7 @@ prependJs:
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
 ---
 
-Before you begin reading this document, you might want to begin with [the general overview and basics of the map's camera](https://mapbox.com/android-docs/maps/overview/camera/).
+Before you begin reading this document, you might want to begin with [the general overview and basics of the map's camera](https://docs.mapbox.com/android/maps/overview/camera/).
 
 `MapboxNavigation` creates a `SimpleCamera` by default that you can access with the
 `MapboxNavigation#getCameraEngine()` method.
@@ -22,7 +22,7 @@ Depending on which objects are provided, `SimpleCamera` will return a value for 
 <ToggleableCodeBlock
 
 java={`
-RouteInformation.create(route, location, routeProgress); 
+RouteInformation.create(route, location, routeProgress);
 `}
 
 kotlin={`

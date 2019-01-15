@@ -5,7 +5,7 @@ prependJs:
   - "import { Floater } from '../../../components/floater';"
   - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
-  - "import { WarningNote } from '../../../components/warning-note';" 
+  - "import { WarningNote } from '../../../components/warning-note';"
 ---
 
 The Mapbox Maps SDK for Android provides several different ways to mark a single point, create a circle, add a line between many points, or draw a polygon. Often, these objects are drawn either on top of the map or in some cases, within the map itself.
@@ -14,7 +14,7 @@ The Mapbox Maps SDK for Android provides several different ways to mark a single
 <WarningNote title="Plugin to handle annotations">
     <p>As of the 7.0.0 release of the Mapbox Maps SDK for Android, much of the code on this page has been deprecated. Classes such as <code>Polygon</code>, <code>Polyline</code>, and <code>Marker</code> will not longer be maintained. This also means classes such as <code>PolygonOptions</code> and <code>PolylineOptions</code> should not be used. Lastly, this also means that methods such as <code>addPolygon()</code>, <code>addPolyline()</code>, or <code>addMarker()</code> also should not be used.</p>
 
-<p>We recommend that you look into the <a href="/android-docs/plugins/overview/annotation/">Mapbox Annotation Plugin for Android</a> if you plan to add any icons, text, lines, or polygons to the map. It simplifies annotations and provides additional flexibility for displaying data.</p>
+<p>We recommend that you look into the <a href="/android/plugins/overview/annotation/">Mapbox Annotation Plugin for Android</a> if you plan to add any icons, text, lines, or polygons to the map. It simplifies annotations and provides additional flexibility for displaying data.</p>
 </WarningNote>
 }}
 
@@ -26,7 +26,7 @@ Using [data sources](/android-docs/map-sdk/overview/runtime-styling/#sources) an
 - Lines
 - Polygons
 
-See [the runtime styling page](/android-docs/map-sdk/overview/runtime-styling/) for more information. We recommend you explore the source and layer combination for creating annotations. Below, you'll find information about less complex (and less performant) ways to show annotations. 
+See [the runtime styling page](/android-docs/map-sdk/overview/runtime-styling/) for more information. We recommend you explore the source and layer combination for creating annotations. Below, you'll find information about less complex (and less performant) ways to show annotations.
 
 ## Markers
 
@@ -116,7 +116,7 @@ java={`
 mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
   @Override
   public boolean onMarkerClick(@NonNull Marker marker) {
-  
+
   // Show a toast with the title of the selected marker
     Toast.makeText(this, marker.getTitle(), Toast.LENGTH_LONG).show();
     return true;
@@ -176,7 +176,7 @@ marker.setIcon(icon);
 
 Adding a line or polygon to your map is like adding a marker. Due to the nature of these objects, different APIs are exposed, such as polygon color or line width. Instead of taking in a single position, bundle all your `LatLng` objects inside of a `List` and then pass them in using the `addAll()` method.
 
-### Draw a polyline on the map 
+### Draw a polyline on the map
 
 Make sure that the first and last `Point` locations are the same.
 

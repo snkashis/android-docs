@@ -7,15 +7,15 @@ prependJs:
     } from '../../../constants';
     import AppropriateImage from '../../../components/appropriate-image';
   - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
-  - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"     
-  - "import { WarningNote } from '../../../components/warning-note';" 
+  - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
+  - "import { WarningNote } from '../../../components/warning-note';"
 ---
 
 
 
 {{
 <WarningNote title="The Mapbox Location Layer Plugin for Android has been deprecated">
-    <p>Device location work is continuing in the <code>LocationComponent</code> class which is in the Mapbox Maps SDK for Android. We highly recommend that you use the Maps SDK's <code>LocationComponent</code> instead of this Location Layer Plugin. See the <a href="/android-docs/maps/overview/location-component/">Maps SDK <code>LocationComponent</code> documentation</a>.</p>
+    <p>Device location work is continuing in the <code>LocationComponent</code> class which is in the Mapbox Maps SDK for Android. We highly recommend that you use the Maps SDK's <code>LocationComponent</code> instead of this Location Layer Plugin. See the <a href="/android/maps/overview/location-component/">Maps SDK <code>LocationComponent</code> documentation</a>.</p>
 </WarningNote>
 }}
 
@@ -73,7 +73,7 @@ You'll need to pass in both a `MapView` and `MapboxMap` object to initialize the
 java={`
 // Use the default engine
 LocationLayerPlugin locationLayerPlugin = new LocationLayerPlugin(mapView, mapboxMap);
-  
+
 // Pass in your own
 LocationLayerPlugin locationLayerPlugin = new LocationLayerPlugin(mapView, mapboxMap, locationEngine);
 `}
@@ -132,7 +132,7 @@ There are three types of `RenderMode`:
 
 ### Following the device location with CameraMode
 
-The method `LocationLayerPlugin#setCameraMode(@CameraMode.Mode int cameraMode)` allows developers to track `Location` updates with the `MapboxMap` camera.  
+The method `LocationLayerPlugin#setCameraMode(@CameraMode.Mode int cameraMode)` allows developers to track `Location` updates with the `MapboxMap` camera.
 There are currently 7 modes available:
 <br>
 
@@ -187,16 +187,16 @@ java={`
 locationLayerPlugin.addOnCameraTrackingChangedListener(new OnCameraTrackingChangedListener() {
 	@Override
 	public void onCameraTrackingDismissed() {
-	  
+
 	  // Tracking has been dismissed
-	  
+
 	}
-	
+
 	@Override
 	public void onCameraTrackingChanged(int currentMode) {
-	 
+
 	  // CameraMode has been updated
-	  
+
 	}
 });
 `}
@@ -204,15 +204,15 @@ locationLayerPlugin.addOnCameraTrackingChangedListener(new OnCameraTrackingChang
 kotlin={`
 locationLayerPlugin.addOnCameraTrackingChangedListener(object : OnCameraTrackingChangedListener {
 	override fun onCameraTrackingDismissed() {
-	
+
 	// Tracking has been dismissed
-	
+
 	}
-	
+
 	override fun onCameraTrackingChanged(currentMode: Int) {
-	
+
 	// CameraMode has been updated
-	
+
 	}
 })
 `}

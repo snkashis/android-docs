@@ -11,7 +11,7 @@ prependJs:
 
 {{
   <div className="mb24">
-    <OverviewHeader 
+    <OverviewHeader
       features={[
         "Directions",
         "Geocoding",
@@ -42,18 +42,18 @@ The Mapbox Java SDK is an open source toolset for building applications that nee
 All public methods in all the project modules are well documented and even include a since tag so you can find when an API was first added. A link for all the module javadoc pages can be found in the list below:
 
 Version _above_ 3.0.0:
-- [mapbox-sdk-turf](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-turf/3.0.1/index.html)
-- [mapbox-sdk-geojson](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-geojson/3.0.1/index.html) 
-- [mapbox-sdk-services](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-services/3.0.1/index.html)
-- [mapbox-sdk-core](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-core/3.0.1/index.html)
+- [mapbox-sdk-turf](https://docs.mapbox.com/android/api/mapbox-java/libjava-turf/3.0.1/index.html)
+- [mapbox-sdk-geojson](https://docs.mapbox.com/android/api/mapbox-java/libjava-geojson/3.0.1/index.html)
+- [mapbox-sdk-services](https://docs.mapbox.com/android/api/mapbox-java/libjava-services/3.0.1/index.html)
+- [mapbox-sdk-core](https://docs.mapbox.com/android/api/mapbox-java/libjava-core/3.0.1/index.html)
 
 Version _below_ 3.0.0:
-- [mapbox-java-core](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-geojson/2.2.10/index.html)
-- [mapbox-java-geojson](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-geojson/2.2.10/index.html)
-- [mapbox-java-services](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-services/2.2.10/index.html)
-- [mapbox-java-services-rx](https://www.mapbox.com/android-docs/api/mapbox-java/libjava-services-rx/2.2.10/index.html)
-- [mapbox-android-services](https://www.mapbox.com/android-docs/api/mapbox-java/libandroid-services/2.2.10/index.html)
-- [mapbox-android-ui](https://www.mapbox.com/android-docs/api/mapbox-java/libandroid-ui/2.2.10/index.html)
+- [mapbox-java-core](https://docs.mapbox.com/android/api/mapbox-java/libjava-geojson/2.2.10/index.html)
+- [mapbox-java-geojson](https://docs.mapbox.com/android/api/mapbox-java/libjava-geojson/2.2.10/index.html)
+- [mapbox-java-services](https://docs.mapbox.com/android/api/mapbox-java/libjava-services/2.2.10/index.html)
+- [mapbox-java-services-rx](https://docs.mapbox.com/android/api/mapbox-java/libjava-services-rx/2.2.10/index.html)
+- [mapbox-android-services](https://docs.mapbox.com/android/api/mapbox-java/libandroid-services/2.2.10/index.html)
+- [mapbox-android-ui](https://docs.mapbox.com/android/api/mapbox-java/libandroid-ui/2.2.10/index.html)
 
 ### Access tokens
 
