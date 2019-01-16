@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import { withLocation } from '@mapbox/batfish/modules/with-location';
 import ReactPageShell from '../../vendor/docs-page-shell/react-page-shell.js';
@@ -192,6 +193,12 @@ class PageShell extends React.Component {
 
     return (
       <ReactPageShell {...this.props} meta={meta} darkHeaderText={true}>
+        <Helmet>
+          <link
+            rel="canonical"
+            href={`https://docs.mapbox.com${meta.pathname}`}
+          />
+        </Helmet>
         <div className="shell-header-buffer" />
         <TopbarSticker>
           <div className="limiter">
