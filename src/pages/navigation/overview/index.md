@@ -39,7 +39,7 @@ The Navigation SDK for Android allows you to build a complete in-app navigation 
 
 ## Install the Navigation SDK
 
-Before developing your app with the Navigation SDK, you'll need to add the SDK as a dependency. Note that while we show how to insert the stable version of the SDK inside your project, you can also use the nightly build/snapshot or the beta version if one is available. You can find the dependency given below in the MavenCentral repository.
+You'll need to add the Navigation SDK as a dependency before developing your app with the Navigation SDK. Note that while we show how to insert the stable version of the SDK inside your project, you can also use the nightly build/SNAPSHOT or the beta version if one is available. Find more information about how to do this inside [the Navigation SDK's GitHub repository](https://github.com/mapbox/mapbox-navigation-android/#using-snapshots).
 
 ###  1. Add the dependency
 
