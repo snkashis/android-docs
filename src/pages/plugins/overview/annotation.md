@@ -51,24 +51,24 @@ java={`
 mapView.getMapAsync(new OnMapReadyCallback() {
     @Override
     public void onMapReady(MapboxMap mapboxMap) {
-  	
+
   	// Use a layer manager here
-  	
-  		
+
+
     }
 });
 `}
 
 kotlin={`
 mapView?.getMapAsync { mapboxMap ->
- 
+
  // Use a layer manager here
-     
+
 }
 `}
 
 />
-}} 
+}}
 
 
 ## Manager
@@ -97,12 +97,12 @@ java={`
 SymbolManager symbolManager = new SymbolManager(mapView, mapboxMap);
 
 // add click listeners if desired
-symbolManager.addClickListener(symbol -> 
+symbolManager.addClickListener(symbol ->
 
 );
-	
+
 symbolManager.addLongClickListener(symbol -> {
-		
+
 });
 
 // set non-data-driven properties, such as:
@@ -117,11 +117,11 @@ val symbolManager = SymbolManager(mapView, mapboxMap)
 
 // add click listeners if desired
 symbolManager?.addClickListener { symbol ->
-    
+
 }
 
 symbolManager?.addLongClickListener { symbol ->
-    
+
 }
 
 // set non-data-driven properties, such as:
@@ -131,7 +131,7 @@ symbolManager?.iconRotationAlignment = ICON_ROTATION_ALIGNMENT_VIEWPORT
 `}
 
 />
-}} 
+}}
 
 {{
   <Floater
@@ -166,7 +166,7 @@ innerLatLngs.add(new LatLng(-21.085074, -15.747196));
 
 List<List<LatLng>> latLngs = new ArrayList<>();
 latLngs.add(innerLatLngs);
-      
+
 FillOptions fillOptions = new FillOptions()
 	.withLatLngs(latLngs)
 	.withFillColor(PropertyFactory.colorToRgbaString(Color.RED));
@@ -227,5 +227,3 @@ fillManager?.create(fillOptionsList)
 }}
 
 As you saw above, the `FillManager#create()` method takes in a single `FillOptions` object as a parameter. A `List<>` of `FillOptions` is also a valid parameter for the `create()` method. This is the same for all of the manager classes. `LineManager` will require a `LineOptions` class and so on.
-
-
