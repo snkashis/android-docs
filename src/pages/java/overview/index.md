@@ -13,11 +13,14 @@ prependJs:
   <div className="mb24">
     <OverviewHeader
       features={[
-        "Directions",
+        "Global directions",
+        "Travel time matrix for multiple points",
         "Geocoding",
         "Map Matching",
-        "Directions Matrix",
-        "Optimization"
+        "Duration-optimized route between multiple points",
+        "Static images of maps",
+        "Snap traces to road network",
+        "Geospatial analysis"
       ]}
       title="Java SDK for Android"
       version={JAVA_SDK_VERSION}
