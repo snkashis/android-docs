@@ -36,7 +36,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-localization:{{ LOCALIZATION_PLUGIN_VERSION }}'
+  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-localization-v7:{{ LOCALIZATION_PLUGIN_VERSION }}'
 }
 ```
 

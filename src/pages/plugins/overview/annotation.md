@@ -35,7 +35,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-annotation:{{ ANNOTATION_PLUGIN_VERSION }}'
+  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-annotation-v7:{{ ANNOTATION_PLUGIN_VERSION }}'
 }
 ```
 

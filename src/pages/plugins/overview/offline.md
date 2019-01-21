@@ -35,7 +35,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-offline:{{ OFFLINE_PLUGIN_VERSION }}'
+  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-offline-v7:{{ OFFLINE_PLUGIN_VERSION }}'
 }
 ```
 5. Click the Sync Project with Gradle Files near the toolbar in Studio.

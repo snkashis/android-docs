@@ -35,7 +35,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-places:{{ PLACES_PLUGIN_VERSION }}'
+  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-places-v7:{{ PLACES_PLUGIN_VERSION }}'
 }
 ```
 

@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-traffic:{{ TRAFFIC_PLUGIN_VERSION }}'
+  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-traffic-v7:{{ TRAFFIC_PLUGIN_VERSION }}'
 }
 ```
 

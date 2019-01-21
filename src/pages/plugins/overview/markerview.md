@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-markerview:{{ MARKERVIEW_PLUGIN_VERSION }}'
+  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-markerview-v7:{{ MARKERVIEW_PLUGIN_VERSION }}'
 }
 ```
 

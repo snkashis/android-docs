@@ -31,7 +31,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-building:{{ BUILDING_PLUGIN_VERSION }}'
+  implementation 'com.mapbox.mapboxsdk:mapbox-android-plugin-building-v7:{{ BUILDING_PLUGIN_VERSION }}'
 }
 ```
 5. Click the Sync Project with Gradle Files near the toolbar in Studio.
