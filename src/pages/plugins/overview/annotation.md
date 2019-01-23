@@ -139,6 +139,7 @@ symbolManager?.iconRotationAlignment = ICON_ROTATION_ALIGNMENT_VIEWPORT
     title="Manager class usage"
     category="example"
     text="See more usage of various manager classes"
+    clear={true}
   />
 }}
 

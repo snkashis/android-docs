@@ -127,6 +127,7 @@ private fun enableLocationComponent() {
     title="Showing device location"
     category="example"
     text="Add the device's location to the map."
+    clear={true}
   />
 }}
 
@@ -328,4 +329,3 @@ locationComponent.addOnCameraTrackingChangedListener(object : OnCameraTrackingCh
 `}
  />
 }}
-

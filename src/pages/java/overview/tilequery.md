@@ -54,6 +54,7 @@ val tilequery = MapboxTilequery.builder()
     title="Tilequery Playground"
     category="playground"
     text="Explore how to use the Tilequery API to retrieve features from vector tiles."
+    clear={true}
   />
 }}
 
