@@ -694,7 +694,7 @@ actual UI:
 ## Day and Night mode
 
 If you're using `NavigationLauncher` or `NavigationView` within your own `Activity` or `Fragment` the view will update based on
-whatever the current mode is in the `Activity`.  The current night mode is determined by [`AppCompatDelegate#getDefaultNightMode()`](https://developer.android.com/reference/android/support/v7/app/AppCompatDelegate.html#getDefaultNightMode()).
+whatever the current mode is in the `Activity`. The current night mode is determined by [`AppCompatDelegate#getDefaultNightMode()`](https://developer.android.com/reference/android/support/v7/app/AppCompatDelegate.html#getDefaultNightMode()).
 
 ## InstructionView
 
@@ -897,3 +897,38 @@ camera.updateCameraTrackingMode(NavigationCamera.NAVIGATION_TRACKING_MODE_NORTH)
 
 `NavigationCamera#resetCameraPositonWith(NAVIGATION_TRACKING_MODE_GPS)` will reset the camera to the last known position update and will resume tracking of future updates with
 the mode you pass - in this case, tracking will resume with GPS tracking.  
+
+## Loading banner instructions into a `TextView`
+
+If you would like to use your own `TextView` and load a given `BannerText` instruction, you can do so
+with the `InstructionLoader`. The loader takes care of organizing text, loading road shields, and abbreviating
+text (if it doesn't fit in the `TextView`). Paired with our `MilestoneEventListener`, you can load instruction updates into
+your `TextView`:
+
+{{
+<CodeLanguageToggle id="textview-instruction-loader" />
+<ToggleableCodeBlock
+
+java={`
+@Override
+public void onMilestoneEvent(RouteProgress routeProgress, String instruction, Milestone milestone) {
+  if (milestone instanceof BannerInstructionMilestone) {
+    BannerText primaryInstruction = ((BannerInstructionMilestone) milestone).getBannerInstructions().primary();
+    InstructionLoader loader = new InstructionLoader(textView, primaryInstruction);
+    loader.loadInstruction();
+  }
+}
+}
+`}
+
+kotlin={`
+override fun onMilestoneEvent(routeProgress: RouteProgress, instruction: String, milestone: Milestone) {
+  if (milestone is BannerInstructionMilestone) {
+    val primaryInstruction = milestone.bannerInstructions.primary()
+    val loader = InstructionLoader(textView, primaryInstruction)
+    loader.loadInstruction()
+  }
+}
+`}
+/>
+}}

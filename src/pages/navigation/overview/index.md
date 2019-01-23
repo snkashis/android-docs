@@ -70,12 +70,12 @@ If you don't have a Mapbox account: [sign up](https://www.mapbox.com/signup/), n
 
 java={`
 @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
 
-    MapboxNavigation navigation = new MapboxNavigation(context, MAPBOX_ACCESS_TOKEN);
+  MapboxNavigation navigation = new MapboxNavigation(context, MAPBOX_ACCESS_TOKEN);
 
-    ...
+  ...
 
 }
 `}
@@ -118,21 +118,21 @@ Point origin = Point.fromLngLat(-77.03613, 38.90992);
 Point destination = Point.fromLngLat(-77.0365, 38.8977);
 
 NavigationRoute.builder(context)
-      .accessToken(MAPBOX_ACCESS_TOKEN)
-      .origin(origin)
-      .destination(destination)
-      .build()
-      .getRoute(new Callback<DirectionsResponse>() {
-        @Override
-        public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
-
-        }
-
-        @Override
-        public void onFailure(Call<DirectionsResponse> call, Throwable t) {
-
-        }
-      });
+	.accessToken(MAPBOX_ACCESS_TOKEN)
+	.origin(origin)
+	.destination(destination)
+	.build()
+	.getRoute(new Callback<DirectionsResponse>() {
+		@Override
+		public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
+		
+		}
+		
+		@Override
+		public void onFailure(Call<DirectionsResponse> call, Throwable t) {
+		
+		}
+	});
 `}
 
 kotlin={`
@@ -146,14 +146,14 @@ NavigationRoute.builder(context)
 	.destination(destination)
 	.build()
 	.getRoute(object : Callback<DirectionsResponse> {
-	override fun onResponse(call: Call<DirectionsResponse>, response: Response<DirectionsResponse>) {
-
-	}
-
-	override fun onFailure(call: Call<DirectionsResponse>, t: Throwable) {
-
-	}
-})
+		override fun onResponse(call: Call<DirectionsResponse>, response: 		Response<DirectionsResponse>) {
+			
+		}
+			
+		override fun onFailure(call: Call<DirectionsResponse>, t: Throwable) {
+			
+		}
+	})
 `}
 
 />
@@ -161,20 +161,78 @@ NavigationRoute.builder(context)
 
 ## Get the user’s location
 
-Navigation applications often use the user's current location as the `origin` when requesting a route. With the Navigation SDK, this is done using the `LocationEngine` class introduced in the 2.0 release of the Mapbox Java SDK. For detailed instructions on how to use this class, [see the `LocationEngine` documentation](https://docs.mapbox.com/android/core/overview/#locationengine). You'll need to set up an instance of a location engine and pass it in to the `MapboxNavigation` object.
+Navigation applications often use the user's current location as the `origin` when requesting a route. With the Navigation SDK, this is done using the `LocationEngine` class. For detailed instructions on how to use this class, [see the `LocationEngine` documentation](https://docs.mapbox.com/android/core/overview/#locationengine).
+
+You can set up an instance of a `LocationEngine` and pass it to the `MapboxNavigation` object. This is not required - the SDK will create a default `LocationEngine` with `LocationEngineProvider#getBestLocationEngine` if an engine is not passed before navigation is started.  
 
 {{
 <CodeLanguageToggle id="nav-location-engine" />
 <ToggleableCodeBlock
 
 java={`
-LocationEngine locationEngine = new LocationEngineProvider(context).obtainBestLocationEngineAvailable();
+LocationEngine locationEngine = LocationEngineProvider.getBestLocationEngine(context);
 navigation.setLocationEngine(locationEngine);
 `}
 
 kotlin={`
-val locationEngine = LocationEngineProvider(context).obtainBestLocationEngineAvailable()
-navigation?.locationEngine = locationEngine!!
+val locationEngine = LocationEngineProvider.getBestLocationEngine(context)
+navigation.locationEngine = locationEngine
+`}
+
+/>
+}}
+
+You can also pass a `LocationEngineRequest` to `MapboxNavigation`, specifying parameters such as update frequency or preferred accuracy. This is also not required - the SDK will create a default `LocationEngineRequest` with parameters suitable for navigation if a request is not passed before navigation is started.  
+
+{{
+<CodeLanguageToggle id="nav-location-request" />
+<ToggleableCodeBlock
+
+java={`
+LocationEngineRequest locationEngineRequest = new LocationEngineRequest.Builder(DEFAULT_INTERVAL_IN_MILLISECONDS)
+		.setPriority(LocationEngineRequest.PRIORITY_HIGH_ACCURACY)
+		.setMaxWaitTime(DEFAULT_MAX_WAIT_TIME)
+    .build();
+
+navigation.setLocationEngineRequest(locationEngineRequest);
+`}
+
+kotlin={`
+val locationEngineRequest = LocationEngineRequest.Builder(DEFAULT_INTERVAL_IN_MILLISECONDS)
+		.setPriority(LocationEngineRequest.PRIORITY_HIGH_ACCURACY)
+		.setMaxWaitTime(DEFAULT_MAX_WAIT_TIME)
+    .build()
+
+navigation.setLocationEngineRequest(locationEngineRequest)
+`}
+
+/>
+}}
+
+## Replaying a DirectionsRoute
+
+The SDK includes a `ReplayRouteLocationEngine`, which allows you to replay a given `DirectionsRoute` (mainly for testing, so you don't always have to code in a car). After retrieving a `DirectionsRoute`, you can create a replay engine and pass it to `MapboxNavigation`:
+
+java={`
+MapboxNavigation navigation = ...
+DirectionsRoute routeToReplay = ...
+
+ReplayRouteLocationEngine replayEngine = new ReplayRouteLocationEngine();
+replayEngine.assign(routeToReplay);
+
+navigation.setLocationEngine(replayEngine);
+navigation.startNavigation(routeToReplay);
+`}
+
+kotlin={`
+val navigation = ...
+val routeToReplay = ...
+
+ReplayRouteLocationEngine replayEngine = ReplayRouteLocationEngine()
+replayEngine.assign(routeToReplay)
+
+navigation.locationEngine = replayEngine
+navigation.startNavigation(routeToReplay)
 `}
 
 />
@@ -443,11 +501,11 @@ protected void onDestroy() {
 
 kotlin={`
 override fun onDestroy() {
-super.onDestroy()
+  super.onDestroy()
 
 	// End the navigation session
-	navigation?.stopNavigation()
-	navigation?.onDestroy()
+	navigation.stopNavigation()
+	navigation.onDestroy()
 }
 `}
 

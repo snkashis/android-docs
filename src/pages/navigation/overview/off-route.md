@@ -8,6 +8,14 @@ prependJs:
 
 A default off-route detection class, `OffRouteDetector`, is included in the Navigation SDK. This class uses our internal route-following library to run a series of calculations using the incoming `Location` and the current `DirectionsRoute` to determine if a user has strayed too far from the route.
 
+Upon loading a new route and if the `DirectionsRoute` JSON is valid, route-following will start in the `RouteProgressState#INITIALIZED` state. From there, route-following will attempt to gain confidence that the GPS locations being passed to the device, are actually the location where the user is. To establish this trust, at least a few location updates need to be delivered and they must be consecutively coherent in both time and space. While it is in the process of establishing this trust, the route-following logic will report that it's still in the `RouteProgressState#INITIALIZED` state.
+
+Once trust of the user's current stream of location updates has been established, route-following will attempt to measure the user's progress along the currently loaded route. If the user's location is found to be unreasonably far from the route itself, the state is flipped to the `RouteProgressState#OFFROUTE` state.
+
+If the user's current location is within a reasonable distance from the currently loaded route but not close enough to be considered on-route (`RouteProgressState#TRACKING`), the `RouteProgressState#INITIALIZED` state will be return until user to makes their way to the route. We call this "corralling". Corralling allows a user, in the user's driveway or a store's parking lot for example, to load up a route and not immediately get marked as `RouteProgressState#OFFROUTE`.
+
+If the user continually makes progress away from the route the user will eventually be marked `OFFROUTE`.
+
 The `OffRouteListener` can be used to handle reroute events. Listen for when a user goes off route using the `OffRouteListener`, fetch a new `DirectionsRoute`, and use `MapboxNavigation#startNavigation(DirectionsRoute)` with the fresh route to restart navigation.
 
 {{
