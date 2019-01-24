@@ -125,12 +125,12 @@ NavigationRoute.builder(context)
 	.getRoute(new Callback<DirectionsResponse>() {
 		@Override
 		public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
-		
+
 		}
-		
+
 		@Override
 		public void onFailure(Call<DirectionsResponse> call, Throwable t) {
-		
+
 		}
 	});
 `}
@@ -147,11 +147,11 @@ NavigationRoute.builder(context)
 	.build()
 	.getRoute(object : Callback<DirectionsResponse> {
 		override fun onResponse(call: Call<DirectionsResponse>, response: 		Response<DirectionsResponse>) {
-			
+
 		}
-			
+
 		override fun onFailure(call: Call<DirectionsResponse>, t: Throwable) {
-			
+
 		}
 	})
 `}
@@ -212,6 +212,10 @@ navigation.setLocationEngineRequest(locationEngineRequest)
 ## Replaying a DirectionsRoute
 
 The SDK includes a `ReplayRouteLocationEngine`, which allows you to replay a given `DirectionsRoute` (mainly for testing, so you don't always have to code in a car). After retrieving a `DirectionsRoute`, you can create a replay engine and pass it to `MapboxNavigation`:
+
+{{
+<CodeLanguageToggle id="nav-replay-engine" />
+<ToggleableCodeBlock
 
 java={`
 MapboxNavigation navigation = ...
