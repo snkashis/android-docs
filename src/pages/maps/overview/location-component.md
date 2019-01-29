@@ -149,9 +149,7 @@ locationComponent.isLocationComponentEnabled = true
 
 ## Customization
 
-The `LocationComponent` allows for several customizations. You can set the drawables, opacities, colors, and more. Create a [LocationComponentOptions](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/java/com/mapbox/mapboxsdk/location/LocationComponentOptions.java) object and then use whichever methods you'd like. Then use the object either while activating the component or by passing it through as a parameter of the `LocationComponent#applyStyle()` method at a later time.
-
-See all the attributes that can be customized via the LocationComponent's methods in the [full list of attributes and styles that are part of the public API](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/res-public/values/public.xml#L109-L154).
+The `LocationComponent` can be customized in many different ways. You can set the image drawables, opacities, colors, and more. [See a full list of XML attributes for styling the `LocationComponent` via XML](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/res-public/values/public.xml#L109-L154). [The `LocationComponentOptions` class](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/java/com/mapbox/mapboxsdk/location/LocationComponentOptions.java) can be used if you prefer to customize the `LocationComponent` programatically. Create a [LocationComponentOptions](https://github.com/mapbox/mapbox-gl-native/blob/master/platform/android/MapboxGLAndroidSDK/src/main/java/com/mapbox/mapboxsdk/location/LocationComponentOptions.java) object and then use whichever `LocationComponentOptions.builder()`'s various methods you'd like. Then use the built `LocationComponentOptions` object either while activating the component or by passing it through as a parameter of the `LocationComponent#applyStyle()` method at a later time.
 
 {{
 <CodeLanguageToggle id="location-component-customization" />
@@ -180,6 +178,51 @@ locationComponent?.activateLocationComponent(this, mapStyle, options)
 `}
  />
 }}
+
+{{
+  <Floater
+    url="https://github.com/mapbox/mapbox-android-demo/blob/master/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/location/LocationComponentOptionsActivity.java"
+    title="Customizing device location"
+    category="example"
+    text="Use LocationComponent options to style the device location icon."
+    clear={true}
+  />
+}}
+
+### Active styling options:
+
+{{
+<AppropriateImage imageId="locationComponentActive" className="block mx-auto pt18 wmax300" />
+}}
+
+| XML Option | Explanation |
+| --- | --- |
+| mapbox_foregroundDrawable | Drawable image which would replace the dark blue circle |
+| mapbox_foregroundTintColor | The dark blue circle |
+| mapbox_backgroundDrawable | Drawable image which would replace the white circle  |
+| mapbox_backgroundTintColor | White circle |
+| mapbox_bearingDrawable | Drawable image which would replace the blue arrow point |
+| mapbox_bearingTintColor | Blue arrow point |
+| mapbox_navigationDrawable | Drawable image used for the navigation state icon  |
+| mapbox_accuracyAlpha | The larger light blue circle surrounding the device location icon   |
+| mapbox_accuracyColor | Color of the larger light blue circle surrounding the device location icon   |
+| mapbox_elevation | The amount of space between the map and the device location icon. The elevation will adjust the size of the shadow as seen underneath the white circle   |
+| mapbox_compassAnimationEnabled | Enable or disable smooth animation of compass values for the blue arrow point |
+| mapbox_accuracyAnimationEnabled | Enable or disable smooth animation of the larger light blue accuracy circle surrounding the device location icon |
+
+### Stale styling options:
+
+{{
+<AppropriateImage imageId="locationComponentStale" className="block mx-auto pt18 wmax300" />
+}}
+
+| XML Option | Explanation |
+| --- | --- |
+| mapbox_foregroundDrawableStale | Drawable image which would replace the grey circle |
+| mapbox_foregroundStaleTintColor | Grey circle |
+| mapbox_backgroundDrawableStale | White circle underneath the grey circle |
+| mapbox_backgroundStaleTintColor | Drawable image which would replace the white circle |
+
 
 ## RenderMode
 

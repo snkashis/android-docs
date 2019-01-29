@@ -601,6 +601,14 @@ module.exports = {
     basename: 'places-splash.png',
     sizes: [{ width: 600 }]
   },
+  locationComponentActive: {
+    basename: 'location-component-active.png',
+    sizes: [{ width: 600 }]
+  },
+  locationComponentStale: {
+    basename: 'location-component-stale.png',
+    sizes: [{ width: 600 }]
+  },
   locationComponentNormalRender: {
     basename: 'location-component-normal-render.png',
     sizes: [{ width: 600 }]
