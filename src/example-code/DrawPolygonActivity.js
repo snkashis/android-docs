@@ -1,4 +1,4 @@
-const rawJavaCode = require('raw-loader!../../examples/maps/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/annotations/DrawPolygonActivity.java');
+const rawJavaCode = require('raw-loader!../../examples/maps/MapboxAndroidDemo/src/main/java/com/mapbox/mapboxandroiddemo/examples/dds/DrawPolygonActivity.java');
 
 const rawKotlinCode = '// Not available';
 
