@@ -44,7 +44,12 @@ class PageShell extends React.Component {
   componentDidMount() {
     // initialize analytics
     if (window && window.initializeMapboxAnalytics) {
-      window.initializeMapboxAnalytics();
+      window.initializeMapboxAnalytics({
+        sentry: {
+          sentryDsn:
+            'https://6ba8cfeeedad4fb7acb8576f0fd6e266@sentry.io/1384508'
+        }
+      });
     }
   }
 
