@@ -27,7 +27,7 @@ prependJs:
 
 {{
 <WarningNote title="The Mapbox Vision SDK for Android is currently in limited public beta">
-    <div><a className="unprose color-blue txt-bold" href="https://www.mapbox.com/vision/"><ChevronousText text="Request access" /></a></div>
+    <p><a href="https://www.mapbox.com/vision/"><ChevronousText text="Request access" /></a></p>
 </WarningNote>
 }}
 

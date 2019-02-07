@@ -4,8 +4,6 @@ const _ = require('lodash');
 const path = require('path');
 const rehypeSlug = require('rehype-slug');
 const mapboxAssembly = require('@mapbox/mbx-assembly');
-const makeTableScroll = require('./plugins/make-table-scroll');
-const cssDir = path.join(__dirname, './src/css');
 
 const productPageOrder = {
   'maps/overview/': [
@@ -75,7 +73,7 @@ module.exports = () => {
     postcssPlugins: mapboxAssembly.postcssPipeline.plugins,
     stylesheets: [
       require.resolve('@mapbox/mbx-assembly/dist/assembly.css'),
-      path.join(cssDir, 'prism.css'),
+      require.resolve('@mapbox/dr-ui/css/prism.css'),
       path.join(__dirname, './vendor/docs-page-shell/page-shell-styles.css'),
       path.join(__dirname, './src/css/site.css'),
       require.resolve('@mapbox/dr-ui/css/docs-prose.css')
@@ -165,7 +163,7 @@ module.exports = () => {
       rehypePlugins: [
         rehypeSlug,
         require('@mapbox/dr-ui/plugins/add-links-to-headings'),
-        makeTableScroll,
+        require('@mapbox/dr-ui/plugins/make-table-scroll'),
         require('@mapbox/rehype-prism')
       ]
     }

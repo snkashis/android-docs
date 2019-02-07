@@ -184,18 +184,6 @@ class PageShell extends React.Component {
       );
     }
 
-    // Determine what to display as the title
-    let renderedTitle = '';
-    if (frontMatter.title === 'Introduction') {
-      renderedTitle = <div className="mt0-mm mt60" />;
-    } else {
-      renderedTitle = (
-        <h1 className="txt-h1 txt-fancy mt0-mm mt60 pt0-mm pt24 pb24">
-          {frontMatter.title}
-        </h1>
-      );
-    }
-
     return (
       <ReactPageShell {...this.props} meta={meta} darkHeaderText={true}>
         <Helmet>
@@ -209,7 +197,7 @@ class PageShell extends React.Component {
           <div className="limiter">
             <div className="grid grid--gut36 mr-neg36 mr0-mm">
               <div className="col col--4-mm col--12">
-                <div className="ml24 pt12">
+                <div className="ml24-mm pt12">
                   <ProductMenu
                     productName={productNames[product]}
                     homePage="/android/"
@@ -231,8 +219,15 @@ class PageShell extends React.Component {
             currentPath={location.pathname}
             sidebarStackedOnNarrowScreens={pageNavigationNarrowStick}
           >
-            {renderedTitle}
-            {children}
+            <div
+              className={
+                activeTab === 'overview'
+                  ? 'mt60 pt30 mt0-mm pt0-mm'
+                  : 'mt30 mt0-mm'
+              }
+            >
+              {children}
+            </div>
             <div className="fixed block none-mm mx24 my24 z5 bottom right">
               <BackToTopButton />
             </div>

@@ -13,7 +13,7 @@ prependJs:
 ---
 
 {{
-  <div className="mb24 mt60 pt30 mt0-mm pt0-mm">
+  <div className="mb24">
     <OverviewHeader
       features={[
         "Map styles",

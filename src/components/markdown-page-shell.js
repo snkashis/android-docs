@@ -6,7 +6,12 @@ class MarkdownPageshell extends React.Component {
   render() {
     return (
       <PageShell {...this.props}>
-        <div id="docs-content" className="prose">
+        <div className="prose">
+          {this.props.frontMatter.title !== 'Introduction' ? (
+            <h1 className="txt-fancy">{this.props.frontMatter.title}</h1>
+          ) : (
+            ''
+          )}
           {this.props.children}
         </div>
       </PageShell>

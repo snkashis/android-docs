@@ -11,7 +11,7 @@ prependJs:
 
 {{
   <div className="mb24">
-    <OverviewHeader 
+    <OverviewHeader
       features={[
         "Real-time device location",
         "Checking and requesting permissions",
@@ -76,10 +76,10 @@ _**Note:** The `PermissionsManager` can be used for requesting other permissions
 PermissionsManager permissionsManager = new PermissionsManager(this);
 
 if (PermissionsManager.areLocationPermissionsGranted(this)) {
-  
+
   // Permission sensitive logic called here, such as activating the Maps SDK's LocationComponent to show the device's location
-  
-  
+
+
 } else {
   permissionsManager = new PermissionsManager(this);
   permissionsManager.requestLocationPermissions(this);
@@ -104,7 +104,7 @@ if (PermissionsManager.areLocationPermissionsGranted(this)) {
 	permissionsManager.requestLocationPermissions(this)
 }
 
-override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, 
+override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>,
 	grantResults: IntArray) {
 	permissionsManager.onRequestPermissionsResult(requestCode, permissions, grantResults)
 }
@@ -114,7 +114,7 @@ override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<Str
 
 ### PermissionsListener
 
-The `PermissionsListener` is an interface that needs to be set up and passed into the `PermissionsManager`'s constructor. You can use `permissionsManager = new PermissionsManager(this);` if you're implementing `PermissionsListener`. You'll notice that `PermissionsListener` overrides the `onExplanationNeeded()` and `onPermissionResult()` methods. An explanation isn't required but strongly encouraged to allow the user to understand why you are requesting this permission. 
+The `PermissionsListener` is an interface that needs to be set up and passed into the `PermissionsManager`'s constructor. You can use `permissionsManager = new PermissionsManager(this);` if you're implementing `PermissionsListener`. You'll notice that `PermissionsListener` overrides the `onExplanationNeeded()` and `onPermissionResult()` methods. An explanation isn't required but strongly encouraged to allow the user to understand why you are requesting this permission.
 
 The permission result is invoked once the user decides whether to allow or deny the permission. A boolean value is given, which you can then use to write an `if` statement. Both cases should be handled correctly. Continue with your permission-sensitive logic if the user approves. Otherwise, if the user denies, we recommend displaying a message that tells the user that the permission is required for your application to work.
 
@@ -125,22 +125,22 @@ The permission result is invoked once the user decides whether to allow or deny 
 PermissionsListener permissionsListener = new PermissionsListener() {
 	@Override
 	public void onExplanationNeeded(List<String> permissionsToExplain) {
-	
+
 	}
-		
+
 	@Override
 	public void onPermissionResult(boolean granted) {
 		if (granted) {
-			
+
 			// Permission sensitive logic called here, such as activating the Maps SDK's LocationComponent to show the device's location
 
-			
-			
+
+
     	} else {
-    	
+
 			// User denied the permission
-     	
-     	
+
+
 		}
 	}
 };
@@ -148,20 +148,20 @@ PermissionsListener permissionsListener = new PermissionsListener() {
 kotlin={`
 var permissionsListener: PermissionsListener = object : PermissionsListener {
 	override fun onExplanationNeeded(permissionsToExplain: List<String>) {
-	
+
 	}
-	
+
 	override fun onPermissionResult(granted: Boolean) {
 		if (granted) {
-		
+
 			// Permission sensitive logic called here, such as activating the Maps SDK's LocationComponent to show the device's location
-			
-			
+
+
 		} else {
-		
+
 			// User denied the permission
 
-        
+
 		}
 	}
 }
@@ -176,7 +176,7 @@ If your application needs location information, the `LocationEngine` class can h
 - Google's Fused Location Providers
 - Android GPS and Network Providers
 
-If you are using the Mapbox Maps SDK for Android, create a `LocationEngine` object using: 
+If you are using the Mapbox Maps SDK for Android, create a `LocationEngine` object using:
 
 {{
 <CodeLanguageToggle id="location-engine" />
@@ -212,9 +212,9 @@ locationEngine.requestLocationUpdates(request, this, getMainLooper());
 
 @Override
 public void onSuccess(LocationEngineResult result) {
-	
+
 	// Location logic here
-	
+
 	Location lastLocation = result.getLastLocation();
 
 }
@@ -229,21 +229,21 @@ var locationEngine = LocationEngineProvider.getBestLocationEngine(this)
 var request = LocationEngineRequest.Builder(DEFAULT_INTERVAL_IN_MILLISECONDS)
 		.setPriority(LocationEngineRequest.PRIORITY_NO_POWER)
 		.setMaxWaitTime(DEFAULT_MAX_WAIT_TIME).build()
-		
+
 locationEngine.requestLocationUpdates(request, this, mainLooper)
 
 ...
 
 override fun onSuccess(result: LocationEngineResult) {
-	
+
 	// Location logic here
-	
+
 	Location lastLocation = result.lastLocation
 }
 
 override fun onFailure(exception: Exception) {
 
-} 
+}
 `}
  />
 }}
@@ -257,7 +257,7 @@ To prevent your application from having a memory leak, it is a good idea to stop
 @Override
   protected void onStart() {
     super.onStart();
-    
+
     mapView.onStart();
 
     if (locationEngine != null) {
@@ -268,11 +268,11 @@ To prevent your application from having a memory leak, it is a good idea to stop
 @Override
   protected void onStop() {
     super.onStop();
-    
+
     if (locationEngine != null) {
       locationEngine.removeLocationUpdates(this);
     }
-    
+
     mapView.onStop();
 }
 `}
@@ -329,15 +329,15 @@ locationEngine.getLastLocation(this)
 ...
 
 override fun onSuccess(result: LocationEngineResult?) {
-	
+
 	// Location logic here
-	
+
 	Location lastLocation = result.lastLocation
 }
 
 override fun onFailure(exception: Exception) {
 
-} 
+}
 `}
  />
 }}
