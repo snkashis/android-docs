@@ -8,7 +8,7 @@
     "format": "prettier --single-quote --write \"{,src/**/,lib/**/,conf/**/,bin/**/}*.{js,css}\"",
     "lint": "eslint .",
     "start": "batfish start",
-    "build": "batfish build && cp -R api _batfish_site/api",
+    "build": "batfish build && cp -R api _site/api",
     "serve-static": "batfish serve-static",
     "pretest": "npm run lint",
     "test": "echo \"No tests yet\""

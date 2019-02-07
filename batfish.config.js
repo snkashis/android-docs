@@ -71,6 +71,8 @@ module.exports = () => {
     siteOrigin: 'https://docs.mapbox.com',
     browserslist: mapboxAssembly.browsersList,
     postcssPlugins: mapboxAssembly.postcssPipeline.plugins,
+    outputDirectory: path.join(__dirname, '_site/'),
+    temporaryDirectory: path.join(__dirname, '_site_tmp/'),
     stylesheets: [
       require.resolve('@mapbox/mbx-assembly/dist/assembly.css'),
       require.resolve('@mapbox/dr-ui/css/prism.css'),
