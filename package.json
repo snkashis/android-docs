@@ -50,7 +50,7 @@
     "underscore.string": "^3.3.4"
   },
   "devDependencies": {
-    "@mapbox/batfish": "^1.9.7",
+    "@mapbox/batfish": "^1.9.6",
     "@mapbox/rehype-prism": "^0.2.0",
     "@mapbox/svg-react-transformer-loader": "^1.0.1",
     "babel-eslint": "^8.2.2",
