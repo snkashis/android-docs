@@ -25,7 +25,7 @@
   "homepage": "https://github.com/mapbox/android-docs/",
   "dependencies": {
     "@mapbox/appropriate-images-react": "^1.0.0",
-    "@mapbox/dr-ui": "^0.6.0",
+    "@mapbox/dr-ui": "^0.5.0",
     "@mapbox/mbx-assembly": "^0.28.2",
     "@mapbox/mr-ui": "^0.5.0",
     "@mapbox/page-loading-indicator": "^0.1.0",
@@ -50,8 +50,8 @@
     "underscore.string": "^3.3.4"
   },
   "devDependencies": {
-    "@mapbox/batfish": "^1.9.8",
-    "@mapbox/rehype-prism": "^0.3.1",
+    "@mapbox/batfish": "^1.9.6",
+    "@mapbox/rehype-prism": "^0.2.0",
     "@mapbox/svg-react-transformer-loader": "^1.0.1",
     "babel-eslint": "^8.2.2",
     "babel-plugin-lodash": "^3.2.11",
@@ -67,7 +67,7 @@
     "rehype-slug": "^2.0.2"
   },
   "optionalDependencies": {
-    "@mapbox/appropriate-images": "^2.0.0"
+    "@mapbox/appropriate-images": "^1.0.0"
   },
   "lint-staged": {
     "**/*.js": [
