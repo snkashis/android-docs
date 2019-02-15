@@ -131,8 +131,8 @@ PermissionsListener permissionsListener = new PermissionsListener() {
 	@Override
 	public void onPermissionResult(boolean granted) {
 		if (granted) {
-
-			// Permission sensitive logic called here, such as activating the Maps SDK's LocationComponent to show the device's location
+		
+		// Permission sensitive logic called here, such as activating the Maps SDK's LocationComponent to show the device's location
 
 
 
@@ -192,151 +192,152 @@ var locationEngine = LocationEngineProvider.getBestLocationEngine(this)
 
 This will obtain the best location engine that is available and eliminate the need to create a new `LocationEngine` from scratch.
 
-### Getting location updates
+## Requesting location updates
 
-Add the `mapbox-android-core` dependency to your project in order to listen to location changes. Then initialize a new instance of `LocationEngine` as described above. Once it's created, activate the `LocationEngine` object. Either the parent Activity should implement `LocationEngineCallback` or a separate `LocationEngineCallback` object to include in your update request. Implementing the `LocationEngineCallback` interface will require you to override the `onSuccess()` and `onFailure()` methods. Inside of `onSuccess()`, you will receive a `LocationEngineResult` which contains location results from the engine.
+You'll need a class that implements `LocationEngineCallback<LocationEngineResult>`. Make sure the class requires Android system `Activity` as a constructor parameter. This class will serve as a "callback" and it's needed because a `LocationEngine` memory leak is possible if the activity/fragment directly implements the `LocationEngineCallback<LocationEngineResult>`. The `WeakReference` setup avoids the leak.
+
+When implementing the `LocationEngineCallback` interface, you are also required to override the `onSuccess()` and `onFailure()` methods. `OnSuccess()` runs whenever the Mapbox Core Libraries identifies a change in the device's location. `result.getLastLocation()` gives you a `Location` object that contains the latitude and longitude values. Now you can display the values in your app's UI, save it in memory, send it to your backend server, or use the device location information however you'd like.
 
 {{
-<CodeLanguageToggle id="location-updates" />
+<CodeLanguageToggle id="weak-reference-class" />
 <ToggleableCodeBlock
  java={`
-LocationEngine locationEngine = LocationEngineProvider.getBestLocationEngine(this);
+private static class LocationListeningCallback
+      implements LocationEngineCallback<LocationEngineResult> {
 
-LocationEngineRequest request = new LocationEngineRequest.Builder(DEFAULT_INTERVAL_IN_MILLISECONDS)
-		.setPriority(LocationEngineRequest.PRIORITY_NO_POWER)
-		.setMaxWaitTime(DEFAULT_MAX_WAIT_TIME).build();
+    private final WeakReference<MainActivity> activityWeakReference;
 
-locationEngine.requestLocationUpdates(request, this, getMainLooper());
+    LocationListeningCallback(MainActivity activity) {
+      this.activityWeakReference = new WeakReference<>(activity);
+    }
+       
+    @Override
+    public void onSuccess(LocationEngineResult result) {
+    
+    // The LocationEngineCallback interface's method which fires when the device's location has changed.
 
-...
+    
+    Location lastLocation = result.lastLocation
 
-@Override
-public void onSuccess(LocationEngineResult result) {
 
-	// Location logic here
+    }
+    
+    @Override
+    public void onFailure(@NonNull Exception exception) {
+    
+    // The LocationEngineCallback interface's method which fires when the device's location can not be captured
 
-	Location lastLocation = result.getLastLocation();
 
-}
-
-@Override
-public void onFailure(@NonNull Exception exception) {
-
+      
+    }
 }
 `}
 kotlin={`
-var locationEngine = LocationEngineProvider.getBestLocationEngine(this)
-var request = LocationEngineRequest.Builder(DEFAULT_INTERVAL_IN_MILLISECONDS)
-		.setPriority(LocationEngineRequest.PRIORITY_NO_POWER)
-		.setMaxWaitTime(DEFAULT_MAX_WAIT_TIME).build()
+private class LocationListeningCallback internal constructor(activity: MainActivity) : LocationEngineCallback<LocationEngineResult> {
 
-locationEngine.requestLocationUpdates(request, this, mainLooper)
+private val activityWeakReference: WeakReference<MainActivity>
 
-...
+	init {this.activityWeakReference = WeakReference(activity)}
+	
+	override fun onSuccess(result: LocationEngineResult) {
 
-override fun onSuccess(result: LocationEngineResult) {
+    // The LocationEngineCallback interface's method which fires when the device's location has changed.	
+    
+	    result.lastLocation
+	    
+	}
+	
+	/**
+	 * The LocationEngineCallback interface's method which fires when the device's location can not be captured
+	 *
+	 * @param exception the exception message
+	 */
+	override fun onFailure(exception: Exception) {
+	    
+	// The LocationEngineCallback interface's method which fires when the device's location can not be captured
 
-	// Location logic here
 
-	Location lastLocation = result.lastLocation
-}
-
-override fun onFailure(exception: Exception) {
-
+	    
+	}
 }
 `}
  />
 }}
 
-To prevent your application from having a memory leak, it is a good idea to stop requesting location updates inside of your activity's `onStop()` method and continue requesting them in `onStart()`.
+Globally declare an instance of the class you just created above:
+
+{{
+<CodeLanguageToggle id="global-declaration" />
+<ToggleableCodeBlock
+ java={`
+private LocationListeningCallback callback = new LocationListeningCallback(this);
+`}
+kotlin={`
+private val callback = LocationListeningCallback(this)
+`}
+ />
+}}
+
+
+Request location updates once you know location permissions have been granted:
+
+{{
+<CodeLanguageToggle id="location-updates" />
+<ToggleableCodeBlock
+ java={`
+long DEFAULT_INTERVAL_IN_MILLISECONDS = 1000L;
+long DEFAULT_MAX_WAIT_TIME = DEFAULT_INTERVAL_IN_MILLISECONDS * 5; 
+ 
+LocationEngine locationEngine = LocationEngineProvider.getBestLocationEngine(this);
+
+LocationEngineRequest request = new LocationEngineRequest.Builder(DEFAULT_INTERVAL_IN_MILLISECONDS)
+	.setPriority(LocationEngineRequest.PRIORITY_NO_POWER)
+	.setMaxWaitTime(DEFAULT_MAX_WAIT_TIME)
+	.build();
+
+locationEngine.requestLocationUpdates(request, callback, getMainLooper());
+locationEngine.getLastLocation(callback);
+`}
+kotlin={`
+val DEFAULT_INTERVAL_IN_MILLISECONDS = 1000L
+val DEFAULT_MAX_WAIT_TIME = DEFAULT_INTERVAL_IN_MILLISECONDS * 5
+
+locationEngine = LocationEngineProvider.getBestLocationEngine(this)
+var request = LocationEngineRequest.Builder(DEFAULT_INTERVAL_IN_MILLISECONDS)
+	.setPriority(LocationEngineRequest.PRIORITY_NO_POWER)
+	.setMaxWaitTime(DEFAULT_MAX_WAIT_TIME)
+	.build()
+
+locationEngine.requestLocationUpdates(request, callback, mainLooper)
+locationEngine.getLastLocation(callback)
+`}
+ />
+}}
+
+To prevent your application from having a memory leak, it is a good idea to stop requesting location updates inside of your activity's `onStop()` method.
 
 {{
 <CodeLanguageToggle id="start-stop" />
 <ToggleableCodeBlock
  java={`
 @Override
-  protected void onStart() {
-    super.onStart();
-
-    mapView.onStart();
-
-    if (locationEngine != null) {
-      locationEngine.requestLocationUpdates(request, this, getMainLooper());
-    }
-}
-
-@Override
   protected void onStop() {
     super.onStop();
-
+    
     if (locationEngine != null) {
-      locationEngine.removeLocationUpdates(this);
+        locationEngine.removeLocationUpdates(callback);
     }
-
+    
     mapView.onStop();
 }
 `}
 kotlin={`
-override fun onStart() {
-    super.onStart()
-
-    mapView.onStart()
-
-    if (locationEngine != null) {
-        locationEngine.requestLocationUpdates(request, this, mainLooper)
-    }
-}
-
 override fun onStop() {
     super.onStop()
-
-    if (locationEngine != null) {
-        locationEngine.removeLocationUpdates(this)
-    }
-
+    
+    locationEngine?.removeLocationUpdates(callback)
+    
     mapView.onStop()
-}
-`}
- />
-}}
-
-### Last location
-
-If your application needs to quickly get a user's location, you can call the `getLastLocation()` which will return the user's last known position. `getLastLocation()` takes the same `LocationEngineCallback` you created above. Your location will be returned in the `onSuccess` method.
-
-
-{{
-<CodeLanguageToggle id="last-location" />
-<ToggleableCodeBlock
- java={`
-locationEngine.getLastLocation(this);
-
-...
-
-@Override
-public void onSuccess(LocationEngineResult result) {
-	// Location logic here
-}
-
-@Override
-public void onFailure(@NonNull Exception exception) {
-
-}
-`}
-kotlin={`
-locationEngine.getLastLocation(this)
-
-...
-
-override fun onSuccess(result: LocationEngineResult?) {
-
-	// Location logic here
-
-	Location lastLocation = result.lastLocation
-}
-
-override fun onFailure(exception: Exception) {
-
 }
 `}
  />
