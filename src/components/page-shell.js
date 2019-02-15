@@ -200,7 +200,7 @@ class PageShell extends React.Component {
                 <div className="ml24-mm pt12">
                   <ProductMenu
                     productName={productNames[product]}
-                    homePage="/android/"
+                    homePage={`/android/${product}/overview/`}
                   />
                 </div>
               </div>
