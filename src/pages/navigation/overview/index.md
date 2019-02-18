@@ -10,7 +10,6 @@ prependJs:
 ---
 
 {{
-  <div className="mb24">
     <OverviewHeader
       features={[
         "Off-route Detection",
@@ -25,7 +24,6 @@ prependJs:
       ghLink="https://github.com/mapbox/mapbox-navigation-android"
       image={<AppropriateImage imageId="overviewNavigationSdk" alt="Mobile devices displaying applications using the Mapbox Navigation SDK for Android." />}
     />
-  </div>
 }}
 
 The Navigation SDK for Android allows you to build a complete in-app navigation experience. With the Navigation SDK you get the power of the [Mapbox Directions API](https://www.mapbox.com/api-documentation/navigation/#directions) along with a collection of features that are critical when building navigation applications for Android, including:

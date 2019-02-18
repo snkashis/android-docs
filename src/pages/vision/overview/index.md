@@ -10,7 +10,6 @@ prependJs:
 ---
 
 {{
-  <div className="mb24">
     <OverviewHeader
       features={[
         "Real-time classification of road signs",
@@ -22,7 +21,6 @@ prependJs:
       version={VISION_VERSION}
       image={<AppropriateImage imageId="overviewVisionSdk" alt="Mobile devices displaying applications using the Mapbox Vision SDK for Android." />}
     />
-  </div>
 }}
 
 {{
