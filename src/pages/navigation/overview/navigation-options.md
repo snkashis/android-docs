@@ -5,10 +5,10 @@ prependJs:
   - "import CodeLanguageToggle from '../../../components/code-language-toggle';"
   - "import ToggleableCodeBlock from '../../../components/toggleable-code-block';"
 ---
-## Configuring `MapboxNavigtionOptions`
+## Configuring `MapboxNavigationOptions`
 
-The `MapboxNavigtionOptions` object allows you to configure certain aspects of the navigation experience. For example, if you wanted
-to turn on debug logging, you would be able to do so with `MapboxNavigtionOptions#isDebugLoggingEnabled(boolean debugLoggingEnabled)`:
+The `MapboxNavigationOptions` object allows you to configure certain aspects of the navigation experience. For example, if you wanted
+to turn on debug logging, you would be able to do so with `MapboxNavigationOptions#isDebugLoggingEnabled(boolean debugLoggingEnabled)`:
 
 {{
 <CodeLanguageToggle id="debug-logging-enabled" />
@@ -34,7 +34,7 @@ val mapboxNavigation = MapboxNavigation(this, accessToken, options)
 
 ## Creating a custom notification
 
-You can also pass in a custom notification when creating `MapboxNavigtionOptions`. This notificiation will show once navigation begins.
+You can also pass in a custom notification when creating `MapboxNavigationOptions`. This notificiation will show once navigation begins.
 
 {{
 <CodeLanguageToggle id="custom-nav-notification" />
