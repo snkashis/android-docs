@@ -215,7 +215,7 @@ private static class LocationListeningCallback
     // The LocationEngineCallback interface's method which fires when the device's location has changed.
 
     
-    Location lastLocation = result.getLastLocation()
+    Location lastLocation = result.getLastLocation();
 
 
     }
